@@ -324,44 +324,6 @@ export default function AcknowledgmentsPage() {
             </div>
           </section>
 
-          {/* ── Data Pipeline ────────────────────────────────────────────────── */}
-          <section className="mb-12">
-            <SectionHeader
-              glyph="𓂧"
-              title="Data Pipeline"
-              subtitle="How raw sources become the unified glyphs.json"
-            />
-
-            <div className="rounded-xl border border-sandstone/20 overflow-hidden">
-              <div className="bg-papyrus/50 px-5 py-4 border-b border-sandstone/20">
-                <p className="text-xs text-sandstone font-mono leading-relaxed">
-                  kaikki.org JSONL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → scripts/process-data.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ─┐
-                  <br />
-                  Unicode Unikemet.txt &nbsp; → scripts/process-unikemet.ts &nbsp; ─┤
-                  <br />
-                  Aegyptus font cmap &nbsp;&nbsp;&nbsp; → scripts/process-aegyptus.ts &nbsp; ─┼→ lib/data/glyphs.json
-                  <br />
-                  JSesh signs_description → scripts/process-jsesh.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ─┤
-                  <br />
-                  St Andrews sign XMLs &nbsp;&nbsp; → scripts/process-standrews.ts ─┤
-                  <br />
-                  TLA corpus JSONL (×2) &nbsp; → scripts/process-tla.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ─┘
-                </p>
-              </div>
-              <div className="bg-papyrus/30 px-5 py-4">
-                <p className="text-xs text-sandstone font-mono leading-relaxed">
-                  JSesh SVGs (repo) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ─┐
-                  <br />
-                  NewGardiner TTF extract ─┤
-                  <br />
-                  Aegyptus TTF extract &nbsp;&nbsp;&nbsp; ─┼→ public/glyphs/&lbrace;code&rbrace;.svg &nbsp;(8,282 files)
-                  <br />
-                  Noto TTF extract &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ─┘
-                </p>
-              </div>
-            </div>
-          </section>
-
           {/* ── License Reference ───────────────────────────────────────────── */}
           <section className="mb-12">
             <SectionHeader

@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header className="header-blur sticky top-0 z-40 bg-ivory/95 dark:bg-ivory-dark/95 border-b border-sandstone/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-4 overflow-visible">
+        <div className="flex items-center justify-between h-16 gap-2 sm:gap-4 overflow-visible min-w-0">
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <span className="font-hieroglyph text-2xl">𓂀</span>
             <span className="font-display text-xl font-semibold text-brown hidden sm:block">
@@ -18,36 +18,70 @@ export function Header() {
             <SearchBar size="sm" placeholder="Search hieroglyphs..." />
           </div>
 
-          <nav className="flex items-center gap-1 sm:gap-2">
+          <nav className="flex items-center gap-0.5 sm:gap-1 shrink-0">
             <Link
               href="/browse"
-              className="px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors"
+              className="px-2 sm:px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden sm:block"
             >
               Browse
             </Link>
             <Link
               href="/categories"
-              className="px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors"
+              className="px-2 sm:px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden sm:block"
             >
               Categories
             </Link>
             <Link
               href="/pharaohs"
-              className="px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors"
+              className="px-2 sm:px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden sm:block"
             >
               Pharaohs
             </Link>
             <Link
               href="/alphabet"
-              className="px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden sm:block"
+              className="px-2 sm:px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden lg:block"
             >
               Alphabet
             </Link>
             <Link
               href="/search"
-              className="px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors md:hidden"
+              className="px-2 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors md:hidden"
+              aria-label="Search"
             >
-              Search
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </Link>
+            <Link
+              href="/browse"
+              className="px-2 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors sm:hidden"
+              aria-label="Browse"
+            >
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+              </svg>
             </Link>
             <a
               href="https://github.com/cursedcoder/pharalex"
