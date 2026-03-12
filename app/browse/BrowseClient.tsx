@@ -439,7 +439,8 @@ function GlyphTile({ glyph, variantCount = 0, size }: { glyph: Glyph; variantCou
       <img
         src={`/glyphs/${encodeURIComponent(glyph.code)}.svg`}
         alt={glyph.code}
-        className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+        className="object-contain"
+        style={{ width: "72%", height: "72%" }}
       />
       <span
         className="
