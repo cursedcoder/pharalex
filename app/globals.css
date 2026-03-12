@@ -31,7 +31,8 @@
   --color-papyrus: var(--papyrus);
 
   --font-serif: var(--font-source-serif), "Gentium Plus", Georgia, serif;
-  --font-display: var(--font-cormorant), "Cormorant Garamond", "Gentium Plus", Georgia, serif;
+  --font-display:
+    var(--font-cormorant), "Cormorant Garamond", "Gentium Plus", Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -89,12 +90,8 @@ body {
   font-display: swap;
   src: url("/fonts/GentiumPlus-Regular.woff2") format("woff2");
   unicode-range:
-    U+0160-0161,
-    U+032F,
-    U+1E0F, U+1E25, U+1E2B, U+1E33, U+1E6F, U+1E71, U+1E96,
-    U+2E17,
-    U+A723, U+A725,
-    U+A7BC-A7BD;
+    U+0160-0161, U+032F, U+1E0F, U+1E25, U+1E2B, U+1E33, U+1E6F, U+1E71, U+1E96,
+    U+2E17, U+A723, U+A725, U+A7BC-A7BD;
 }
 
 @font-face {
@@ -104,12 +101,8 @@ body {
   font-display: swap;
   src: url("/fonts/GentiumPlus-Italic.woff2") format("woff2");
   unicode-range:
-    U+0160-0161,
-    U+032F,
-    U+1E0F, U+1E25, U+1E2B, U+1E33, U+1E6F, U+1E71, U+1E96,
-    U+2E17,
-    U+A723, U+A725,
-    U+A7BC-A7BD;
+    U+0160-0161, U+032F, U+1E0F, U+1E25, U+1E2B, U+1E33, U+1E6F, U+1E71, U+1E96,
+    U+2E17, U+A723, U+A725, U+A7BC-A7BD;
 }
 
 /* Hieroglyph font support — served via Google Fonts unicode-range subsets (v30+) */
@@ -160,7 +153,8 @@ body {
 
 /* Smooth transitions */
 * {
-  transition-property: color, background-color, border-color, opacity, transform, filter;
+  transition-property:
+    color, background-color, border-color, opacity, transform, filter;
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
 }
@@ -181,16 +175,16 @@ body {
   pointer-events: none;
 }
 /* Dark-mode glyph visibility: SVGs loaded via <img> don't inherit CSS color,
-   so fill:currentColor defaults to black — invert and warm-tint to match the
-   dark theme's cream foreground (#f5f3ef) rather than rendering stark white. */
+   so fill:currentColor defaults to black. Invert + sepia chain tints glyphs
+   to a warm sandstone tone that fits the dark gold palette. */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) img[src*="/glyphs/"] {
-    filter: invert(1) sepia(0.2) brightness(0.97);
+    filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
   }
 }
 
 :root.dark img[src*="/glyphs/"] {
-  filter: invert(1) sepia(0.2) brightness(0.97);
+  filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
 }
 
 /* Paper texture overlay (optional) */
