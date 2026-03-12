@@ -16,15 +16,22 @@ function SearchContent() {
 
   const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [isSearching, setIsSearching] = useState(!!initialQuery);
 
   useEffect(() => {
     const q = searchParams.get("q") || "";
     setQuery(q);
     if (q.trim()) {
-      const searchResults = fuzzySearch(q, 100);
-      setResults(searchResults);
+      setIsSearching(true);
+      const timer = setTimeout(() => {
+        const searchResults = fuzzySearch(q, 100);
+        setResults(searchResults);
+        setIsSearching(false);
+      }, 1200);
+      return () => clearTimeout(timer);
     } else {
       setResults([]);
+      setIsSearching(false);
     }
   }, [searchParams]);
 
@@ -126,7 +133,7 @@ function SearchContent() {
             </div>
           </div>
 
-          {query && (
+          {query && !isSearching && (
             <div className="mb-6 flex items-center gap-4">
               <p className="text-sandstone">
                 {results.length} result{results.length !== 1 ? "s" : ""} for{" "}
@@ -154,7 +161,32 @@ function SearchContent() {
             </div>
           )}
 
-          {results.length > 0 ? (
+          {isSearching ? (
+            <div className="flex flex-col items-center justify-center py-20 select-none">
+              <div className="relative flex items-center justify-center mb-6">
+                <span className="font-hieroglyph text-6xl text-gold/80 animate-[hierospin_1.8s_ease-in-out_infinite]">
+                  𓂀
+                </span>
+                <span
+                  className="font-hieroglyph text-4xl text-sandstone/50 absolute -left-12
+                    animate-[hierofade_1.8s_ease-in-out_infinite]"
+                  style={{ animationDelay: "0.3s" }}
+                >
+                  𓃭
+                </span>
+                <span
+                  className="font-hieroglyph text-4xl text-sandstone/50 absolute -right-12
+                    animate-[hierofade_1.8s_ease-in-out_infinite]"
+                  style={{ animationDelay: "0.6s" }}
+                >
+                  𓆣
+                </span>
+              </div>
+              <p className="text-sandstone text-sm tracking-widest uppercase">
+                Consulting the scrolls…
+              </p>
+            </div>
+          ) : results.length > 0 ? (
             <div className="space-y-8">
               {Object.entries(groupedResults).map(([category, categoryResults]) => (
                 <div key={category} id={`category-${category}`}>
