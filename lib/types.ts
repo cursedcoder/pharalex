@@ -13,6 +13,7 @@ export interface Glyph {
   meanings: GlyphMeaning[];
   transliteration: string[];
   etymology?: string;
+  tags?: string[];
   related: string[];
   renderable?: boolean;
   source?: "wiktionary" | "unicode" | "both";

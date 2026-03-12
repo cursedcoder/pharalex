@@ -37,6 +37,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var s=localStorage.getItem('theme');if(s==='dark'){document.documentElement.classList.add('dark')}else if(s==='light'){document.documentElement.classList.add('light')}})()`,
+          }}
+        />
+      </head>
       <body
         className={`${cormorant.variable} ${sourceSerif.variable} font-serif antialiased bg-ivory text-brown min-h-screen`}
       >

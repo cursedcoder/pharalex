@@ -10,9 +10,14 @@ export function getAllGlyphs(): Glyph[] {
 }
 
 export function getGlyphByCode(code: string): Glyph | undefined {
+  const normalized = code.replace(/ /g, "+");
   return glyphs.find(
-    (g) => g.code.toLowerCase() === code.toLowerCase()
+    (g) => g.code.toLowerCase() === normalized.toLowerCase()
   );
+}
+
+export function glyphHref(code: string): string {
+  return `/glyph/${code.replace(/\+/g, "%2B")}`;
 }
 
 export function getGlyphsByCategory(categoryId: string): Glyph[] {
@@ -62,6 +67,28 @@ export function searchGlyphs(query: string): Glyph[] {
 
     return false;
   });
+}
+
+/**
+ * Returns the base Gardiner code for a variant, e.g. "G127F" → "G127".
+ * Returns null if the code is already a base or a U+ codepoint.
+ */
+export function getBaseCode(code: string): string | null {
+  if (code.startsWith("U+")) return null;
+  const m = code.match(/^([A-Z][a-z]?\d+)[A-Z]/);
+  if (!m) return null;
+  const base = m[1];
+  return base !== code ? base : null;
+}
+
+/**
+ * Returns all variant glyphs for a given base code,
+ * e.g. "G127" → [G127A, G127B, G127C, G127D, G127E, G127F]
+ */
+export function getGlyphVariants(code: string): Glyph[] {
+  if (code.startsWith("U+")) return [];
+  const re = new RegExp(`^${code}[A-Z]`);
+  return glyphs.filter((g) => re.test(g.code));
 }
 
 export function getRelatedGlyphs(code: string): Glyph[] {

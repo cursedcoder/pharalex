@@ -21,12 +21,14 @@ export default function HomePage() {
       <Header />
 
       <main>
-        <section className="relative py-20 sm:py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-papyrus/30 to-transparent" />
+        <section className="relative py-20 sm:py-28">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-b from-papyrus/30 to-transparent" />
 
-          <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none pointer-events-none">
-            <div className="font-hieroglyph text-[20rem] text-brown whitespace-nowrap">
-              {showcaseGlyphs.map((g) => g.unicode).join("")}
+            <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none">
+              <div className="font-hieroglyph text-[20rem] text-brown whitespace-nowrap">
+                {showcaseGlyphs.map((g) => g.unicode).join("")}
+              </div>
             </div>
           </div>
 

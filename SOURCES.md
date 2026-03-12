@@ -42,14 +42,15 @@ All extracted SVGs use `fill="currentColor"` so they respect the site's light/da
 
 ## Dictionary & Metadata Sources
 
-Glyph names, meanings, transliterations, phonetic values, and Gardiner categorisation come from three open datasets that were downloaded, parsed, and merged by the scripts in `scripts/`.
+Glyph names, meanings, transliterations, phonetic values, and Gardiner categorisation come from four open datasets that were downloaded, parsed, and merged by the scripts in `scripts/`.
 
 | Source | Records | What it provides | How obtained | License |
 |--------|--------:|------------------|--------------|---------|
 | **Wiktionary Egyptian Dictionary** (kaikki.org) | ~260 entries | Meanings, transliterations, etymology, usage examples | Downloaded JSONL from [kaikki.org](https://kaikki.org/dictionary/Ancient%20Egyptian/) and parsed with `scripts/process-data.ts` | CC BY-SA 3.0 |
 | **Unicode Unikemet database** (Unicode 16.0) | 4,376 entries | Gardiner/Hieroglyphica codes, Unicode codepoints, phonetic values (`kEH_FVal`), descriptions (`kEH_Desc`), category (`kEH_Cat`), cross-references (`kEH_UniK`, `kEH_JSesh`) | Downloaded `Unikemet.txt` from [unicode.org](https://unicode.org/); parsed with `scripts/process-unikemet.ts` | Unicode License |
 | **Aegyptus glyph list** | 3,900 entries | Additional Hieroglyphica sign codes (extended corpus beyond Unikemet) | Derived from Aegyptus font's character map; imported via `scripts/process-aegyptus.ts` | — |
-| **Combined** | **8,282** | All of the above, deduplicated and merged by Gardiner code + Unicode codepoint | Merged in `scripts/process-unikemet.ts`; final output at `lib/data/glyphs.json` | — |
+| **JSesh sign descriptions** (`signs_description.xml`) | 6,783 entries | Shape/visual tags (e.g. "seated", "holding something", "bird-headed"), additional phonetic transliterations with use/type metadata, composite part relationships | Cloned [`rosmord/jsesh`](https://github.com/rosmord/jsesh); extracted `jsesh/src/main/resources/jsesh/hieroglyphs/resources/signs_description.xml`; parsed with `scripts/process-jsesh.ts` | LGPL-3.0 |
+| **Combined** | **8,282** | All of the above, deduplicated and merged by Gardiner code | Final output at `lib/data/glyphs.json` | — |
 
 ---
 
@@ -58,7 +59,8 @@ Glyph names, meanings, transliterations, phonetic values, and Gardiner categoris
 ```
 kaikki.org JSONL          → scripts/process-data.ts      ─┐
 Unicode Unikemet.txt      → scripts/process-unikemet.ts  ─┼→ lib/data/glyphs.json
-Aegyptus font cmap        → scripts/process-aegyptus.ts  ─┘
+Aegyptus font cmap        → scripts/process-aegyptus.ts  ─┤
+JSesh signs_description   → scripts/process-jsesh.ts     ─┘
 
 JSesh SVGs (repo)         ─┐
 NewGardiner TTF extract   ─┤
@@ -73,6 +75,7 @@ Noto TTF extract          ─┘
 | Asset | License | Commercial use |
 |-------|---------|---------------|
 | JSesh glyphs | LGPL-3.0 | Yes (with attribution) |
+| JSesh sign descriptions | LGPL-3.0 | Yes (with attribution) |
 | NewGardiner / hierojax font | GPL-3.0 | Yes (with attribution) |
 | Noto Sans Egyptian Hieroglyphs | OFL-1.1 | Yes |
 | Aegyptus 6.17 (free release) | Freeware (non-commercial) | No |

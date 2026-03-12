@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Glyph } from "@/lib/types";
 import { Badge } from "./ui/Badge";
 import { SmartGlyph } from "./SmartGlyph";
+import { getGlyphVariants, glyphHref } from "@/lib/glyphs";
 
 interface GlyphCardProps {
   glyph: Glyph;
@@ -10,6 +11,7 @@ interface GlyphCardProps {
 
 export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
   const primaryMeaning = glyph.meanings[0];
+  const variants = getGlyphVariants(glyph.code);
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
     phonogram: "sandstone",
@@ -18,7 +20,7 @@ export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
   };
 
   return (
-    <Link href={`/glyph/${glyph.code}`} className="block group">
+    <Link href={glyphHref(glyph.code)} className="block group">
       <div
         className="
           bg-ivory-dark/50 dark:bg-ivory-dark
@@ -47,11 +49,17 @@ export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
 
             <p className="text-sm text-sandstone mb-2">{glyph.categoryName}</p>
 
-            {showDescription && primaryMeaning && (
+            {showDescription && (primaryMeaning ? (
               <p className="text-sm text-brown-light line-clamp-2">
                 {primaryMeaning.text}
               </p>
-            )}
+            ) : glyph.description ? (
+              <p className="text-sm text-brown-light/70 line-clamp-2 italic">
+                {glyph.description}
+              </p>
+            ) : (
+              <p className="text-sm text-sandstone/50 italic">No description available</p>
+            ))}
 
             {glyph.transliteration.length > 0 && (
               <div className="mt-2 flex flex-wrap gap-1">
@@ -68,6 +76,31 @@ export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
                     +{glyph.transliteration.length - 3} more
                   </span>
                 )}
+              </div>
+            )}
+
+            {variants.length > 0 && (
+              <div className="mt-3 pt-2 border-t border-sandstone/10 flex items-center gap-1.5">
+                <span className="text-xs text-sandstone shrink-0">
+                  {variants.length} variant{variants.length > 1 ? "s" : ""}:
+                </span>
+                <div className="flex gap-1 overflow-hidden">
+                  {variants.slice(0, 6).map((v) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      key={v.code}
+                      src={`/glyphs/${v.code}.svg`}
+                      alt={v.code}
+                      title={v.code}
+                      className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity"
+                    />
+                  ))}
+                  {variants.length > 6 && (
+                    <span className="text-xs text-sandstone self-center">
+                      +{variants.length - 6}
+                    </span>
+                  )}
+                </div>
               </div>
             )}
           </div>

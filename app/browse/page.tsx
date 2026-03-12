@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { SmartGlyph, GlyphChar } from "@/components/SmartGlyph";
-import { getAllGlyphs, getAllCategories } from "@/lib/glyphs";
+import { getAllGlyphs, getAllCategories, getBaseCode, glyphHref } from "@/lib/glyphs";
 import type { Glyph, MeaningType } from "@/lib/types";
 
 export default function BrowsePage() {
@@ -16,6 +16,7 @@ export default function BrowsePage() {
   const [selectedType, setSelectedType] = useState<MeaningType | null>(null);
   const [renderableOnly, setRenderableOnly] = useState(false);
   const [viewMode, setViewMode] = useState<"grid" | "compact">("grid");
+  const [groupVariants, setGroupVariants] = useState(true);
 
   const filteredGlyphs = useMemo(() => {
     let result = allGlyphs;
@@ -36,6 +37,27 @@ export default function BrowsePage() {
 
     return result;
   }, [allGlyphs, selectedCategory, selectedType, renderableOnly]);
+
+  // When grouping, suppress variant glyphs (those whose base is already in the list)
+  const displayGlyphs = useMemo(() => {
+    if (!groupVariants) return filteredGlyphs;
+    const inResult = new Set(filteredGlyphs.map((g) => g.code));
+    return filteredGlyphs.filter((g) => {
+      const base = getBaseCode(g.code);
+      return !base || !inResult.has(base);
+    });
+  }, [filteredGlyphs, groupVariants]);
+
+  // Build a map of base code → variant count for tiles
+  const variantCounts = useMemo(() => {
+    if (!groupVariants) return {};
+    const counts: Record<string, number> = {};
+    for (const g of filteredGlyphs) {
+      const base = getBaseCode(g.code);
+      if (base) counts[base] = (counts[base] || 0) + 1;
+    }
+    return counts;
+  }, [filteredGlyphs, groupVariants]);
 
   const renderableCount = allGlyphs.filter((g) => g.renderable !== false).length;
 
@@ -122,11 +144,21 @@ export default function BrowsePage() {
               </span>
             </label>
 
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={groupVariants}
+                onChange={(e) => setGroupVariants(e.target.checked)}
+                className="w-4 h-4 rounded border-sandstone/30 text-gold focus:ring-gold/50"
+              />
+              <span className="text-sm text-sandstone">Group variants</span>
+            </label>
+
             <div className="flex-1" />
 
             <div className="flex items-center gap-2">
               <span className="text-sm text-sandstone">
-                {filteredGlyphs.length} glyphs
+                {displayGlyphs.length} glyphs{groupVariants && filteredGlyphs.length !== displayGlyphs.length ? ` (${filteredGlyphs.length} total)` : ""}
               </span>
               <div className="flex border border-sandstone/30 rounded-lg overflow-hidden">
                 <button
@@ -173,19 +205,19 @@ export default function BrowsePage() {
 
           {viewMode === "grid" ? (
             <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-2">
-              {filteredGlyphs.map((glyph) => (
-                <GlyphTile key={glyph.code} glyph={glyph} />
+              {displayGlyphs.map((glyph) => (
+                <GlyphTile key={glyph.code} glyph={glyph} variantCount={variantCounts[glyph.code] || 0} />
               ))}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {filteredGlyphs.map((glyph) => (
-                <GlyphRow key={glyph.code} glyph={glyph} />
+              {displayGlyphs.map((glyph) => (
+                <GlyphRow key={glyph.code} glyph={glyph} variantCount={variantCounts[glyph.code] || 0} />
               ))}
             </div>
           )}
 
-          {filteredGlyphs.length === 0 && (
+          {displayGlyphs.length === 0 && (
             <div className="text-center py-12 text-sandstone">
               <p>No hieroglyphs match your filters.</p>
               <button
@@ -205,14 +237,14 @@ export default function BrowsePage() {
   );
 }
 
-function GlyphTile({ glyph }: { glyph: Glyph }) {
+function GlyphTile({ glyph, variantCount = 0 }: { glyph: Glyph; variantCount?: number }) {
   const hasSvg = !glyph.code.startsWith("U+");
   const isRenderable = glyph.renderable !== false;
   const canDisplay = hasSvg || isRenderable;
 
   return (
     <Link
-      href={`/glyph/${glyph.code}`}
+      href={glyphHref(glyph.code)}
       className={`
         group relative aspect-square
         rounded-lg
@@ -255,14 +287,19 @@ function GlyphTile({ glyph }: { glyph: Glyph }) {
       >
         {glyph.code}
       </span>
+      {variantCount > 0 && (
+        <span className="absolute top-0.5 right-0.5 text-[9px] leading-none px-1 py-0.5 rounded bg-gold/20 text-gold-dark font-medium">
+          +{variantCount}
+        </span>
+      )}
     </Link>
   );
 }
 
-function GlyphRow({ glyph }: { glyph: Glyph }) {
+function GlyphRow({ glyph, variantCount = 0 }: { glyph: Glyph; variantCount?: number }) {
   return (
     <Link
-      href={`/glyph/${glyph.code}`}
+      href={glyphHref(glyph.code)}
       className="
         flex items-center gap-3 p-3
         bg-ivory-dark/50 border border-sandstone/20 rounded-lg
@@ -278,6 +315,11 @@ function GlyphRow({ glyph }: { glyph: Glyph }) {
           {glyph.renderable === false && (
             <span className="text-[10px] px-1.5 py-0.5 bg-sandstone/10 rounded text-sandstone">
               Unicode 16
+            </span>
+          )}
+          {variantCount > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 bg-gold/10 rounded text-gold-dark font-medium">
+              +{variantCount} variants
             </span>
           )}
         </div>

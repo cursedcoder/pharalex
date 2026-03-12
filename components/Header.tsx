@@ -4,9 +4,9 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-ivory/95 dark:bg-ivory/95 backdrop-blur-sm border-b border-sandstone/20">
+    <header className="header-blur sticky top-0 z-40 bg-ivory/95 dark:bg-ivory-dark/95 border-b border-sandstone/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-4">
+        <div className="flex items-center justify-between h-16 gap-4 overflow-visible">
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <span className="font-hieroglyph text-2xl">𓂀</span>
             <span className="font-display text-xl font-semibold text-brown hidden sm:block">

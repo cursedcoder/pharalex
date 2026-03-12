@@ -10,6 +10,9 @@ import {
   getRelatedGlyphs,
   getAllGlyphs,
   getCategoryById,
+  getGlyphVariants,
+  getBaseCode,
+  glyphHref,
 } from "@/lib/glyphs";
 
 interface PageProps {
@@ -47,6 +50,9 @@ export default async function GlyphPage({ params }: PageProps) {
 
   const relatedGlyphs = getRelatedGlyphs(glyph.code);
   const category = getCategoryById(glyph.category);
+  const variants = getGlyphVariants(glyph.code);
+  const baseCode = getBaseCode(glyph.code);
+  const baseGlyph = baseCode ? getGlyphByCode(baseCode) : null;
 
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
@@ -125,6 +131,20 @@ export default async function GlyphPage({ params }: PageProps) {
                       <span>{glyph.categoryName}</span>
                     </Link>
 
+                    {baseGlyph && (
+                      <div className="mb-3 flex items-center gap-2 text-sm text-sandstone">
+                        <span>Variant of</span>
+                        <Link
+                          href={glyphHref(baseGlyph.code)}
+                          className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-gold/10 text-gold-dark hover:bg-gold/20 transition-colors font-medium"
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={`/glyphs/${baseGlyph.code}.svg`} alt={baseGlyph.code} className="w-5 h-5 object-contain" />
+                          {baseGlyph.code}
+                        </Link>
+                      </div>
+                    )}
+
                     {glyph.transliteration.length > 0 && (
                       <div className="mb-4">
                         <h2 className="text-sm font-medium text-sandstone mb-2">
@@ -165,61 +185,64 @@ export default async function GlyphPage({ params }: PageProps) {
                           </Badge>
                         ))}
                     </div>
+
+                    {glyph.tags && glyph.tags.length > 0 && (
+                      <div className="mt-4">
+                        <h2 className="text-sm font-medium text-sandstone mb-2">
+                          Shape tags
+                        </h2>
+                        <div className="flex flex-wrap gap-1.5">
+                          {glyph.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="
+                                px-2 py-0.5 rounded-md
+                                bg-sandstone/10 border border-sandstone/20
+                                text-xs text-sandstone
+                              "
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {variants.length > 0 && (
+                      <div className="mt-4 pt-4 border-t border-sandstone/15">
+                        <p className="text-xs font-medium text-sandstone mb-2">
+                          Variants ({variants.length})
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {variants.map((v) => (
+                            <Link
+                              key={v.code}
+                              href={glyphHref(v.code)}
+                              className="group flex flex-col items-center gap-1 p-2 rounded-lg border border-sandstone/20 bg-papyrus/40 hover:border-gold/50 hover:bg-gold/5 transition-all"
+                              title={v.meanings[0]?.text || v.code}
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={`/glyphs/${v.code}.svg`}
+                                alt={v.code}
+                                className="w-10 h-10 object-contain"
+                              />
+                              <span className="text-[11px] font-medium text-sandstone group-hover:text-gold-dark transition-colors">
+                                {v.code}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
 
-              <section>
-                <h2 className="font-display text-2xl font-semibold text-brown mb-4">
-                  Meanings
-                </h2>
-
-                <div className="space-y-4">
-                  {glyph.meanings.map((meaning, index) => (
-                    <div
-                      key={index}
-                      className="
-                        bg-ivory-dark/50 border border-sandstone/20 rounded-xl
-                        p-4 sm:p-6
-                      "
-                    >
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="
-                            w-8 h-8 rounded-lg shrink-0
-                            flex items-center justify-center
-                            text-sm font-medium
-                            bg-gold/10 text-gold-dark
-                          "
-                        >
-                          {index + 1}
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <Badge variant={typeColors[meaning.type]}>
-                              {meaning.type}
-                            </Badge>
-                            {meaning.period && (
-                              <Badge variant="outline">{meaning.period}</Badge>
-                            )}
-                          </div>
-                          <p className="text-brown-light leading-relaxed">
-                            {meaning.text}
-                          </p>
-                          <p className="text-xs text-sandstone mt-2">
-                            {typeDescriptions[meaning.type]}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {glyph.etymology && (
+              {glyph.description && glyph.meanings.length === 0 && (
                 <section>
                   <h2 className="font-display text-2xl font-semibold text-brown mb-4">
-                    Etymology & Description
+                    Description
                   </h2>
                   <div
                     className="
@@ -227,8 +250,79 @@ export default async function GlyphPage({ params }: PageProps) {
                       p-4 sm:p-6
                     "
                   >
-                    <p className="text-brown-light leading-relaxed whitespace-pre-line">
-                      {glyph.etymology}
+                    <p className="text-brown-light leading-relaxed">
+                      {glyph.description}
+                    </p>
+                  </div>
+                </section>
+              )}
+
+              {glyph.meanings.length > 0 && (
+                <section>
+                  <h2 className="font-display text-2xl font-semibold text-brown mb-4">
+                    Meanings
+                  </h2>
+
+                  {glyph.description && (
+                    <p className="text-sm text-brown-light/70 italic mb-4 leading-relaxed">
+                      {glyph.description}
+                    </p>
+                  )}
+
+                  <div className="space-y-4">
+                    {glyph.meanings.map((meaning, index) => (
+                      <div
+                        key={index}
+                        className="
+                          bg-ivory-dark/50 border border-sandstone/20 rounded-xl
+                          p-4 sm:p-6
+                        "
+                      >
+                        <div className="flex items-start gap-3">
+                          <div
+                            className="
+                              w-8 h-8 rounded-lg shrink-0
+                              flex items-center justify-center
+                              text-sm font-medium
+                              bg-gold/10 text-gold-dark
+                            "
+                          >
+                            {index + 1}
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Badge variant={typeColors[meaning.type]}>
+                                {meaning.type}
+                              </Badge>
+                              {meaning.period && (
+                                <Badge variant="outline">{meaning.period}</Badge>
+                              )}
+                            </div>
+                            <p className="text-brown-light leading-relaxed">
+                              {meaning.text}
+                            </p>
+                            <p className="text-xs text-sandstone mt-2">
+                              {typeDescriptions[meaning.type]}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {!glyph.description && glyph.meanings.length === 0 && (
+                <section>
+                  <div
+                    className="
+                      bg-ivory-dark/30 border border-dashed border-sandstone/30 rounded-xl
+                      p-6 sm:p-8 text-center
+                    "
+                  >
+                    <p className="text-sandstone font-medium mb-1">No description available</p>
+                    <p className="text-sm text-sandstone/60">
+                      This glyph has not yet been annotated in our dataset.
                     </p>
                   </div>
                 </section>
@@ -261,10 +355,24 @@ export default async function GlyphPage({ params }: PageProps) {
                     <dt className="text-sandstone">Category</dt>
                     <dd className="text-brown">{glyph.category}</dd>
                   </div>
-                  <div className="flex justify-between">
-                    <dt className="text-sandstone">Meanings</dt>
-                    <dd className="text-brown">{glyph.meanings.length}</dd>
-                  </div>
+                  {glyph.meanings.length > 0 && (
+                    <div className="flex justify-between">
+                      <dt className="text-sandstone">Meanings</dt>
+                      <dd className="text-brown">{glyph.meanings.length}</dd>
+                    </div>
+                  )}
+                  {glyph.transliteration.length > 0 && (
+                    <div className="flex justify-between">
+                      <dt className="text-sandstone">Transliterations</dt>
+                      <dd className="text-brown">{glyph.transliteration.length}</dd>
+                    </div>
+                  )}
+                  {glyph.source && (
+                    <div className="flex justify-between">
+                      <dt className="text-sandstone">Source</dt>
+                      <dd className="text-brown capitalize">{glyph.source}</dd>
+                    </div>
+                  )}
                 </dl>
 
                 {category && (

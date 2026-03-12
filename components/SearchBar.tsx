@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import type { Glyph } from "@/lib/types";
 import { instantSearch } from "@/lib/search";
+import { glyphHref } from "@/lib/glyphs";
 
 interface SearchBarProps {
   size?: "sm" | "md" | "lg";
@@ -64,7 +65,7 @@ export function SearchBar({
         case "Enter":
           e.preventDefault();
           if (selectedIndex >= 0 && results[selectedIndex]) {
-            router.push(`/glyph/${results[selectedIndex].code}`);
+            router.push(glyphHref(results[selectedIndex].code));
             setIsOpen(false);
           } else if (query.trim()) {
             router.push(`/search?q=${encodeURIComponent(query)}`);
@@ -143,7 +144,7 @@ export function SearchBar({
           {results.map((glyph, index) => (
             <Link
               key={glyph.code}
-              href={`/glyph/${glyph.code}`}
+            href={glyphHref(glyph.code)}
               onClick={() => setIsOpen(false)}
               className={`
                 flex items-center gap-3 px-4 py-3

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import type { Glyph } from "@/lib/types";
 
 interface SmartGlyphProps {
@@ -12,11 +11,11 @@ interface SmartGlyphProps {
 }
 
 const sizeConfig = {
-  xs: { container: "w-8 h-8", image: 24, font: "text-xl", code: "text-[8px]" },
-  sm: { container: "w-12 h-12", image: 40, font: "text-3xl", code: "text-[10px]" },
-  md: { container: "w-16 h-16", image: 56, font: "text-5xl", code: "text-xs" },
-  lg: { container: "w-24 h-24", image: 80, font: "text-7xl", code: "text-sm" },
-  xl: { container: "w-36 h-36", image: 120, font: "text-9xl", code: "text-base" },
+  xs: { container: "w-8 h-8", font: "text-xl", code: "text-[8px]" },
+  sm: { container: "w-12 h-12", font: "text-3xl", code: "text-[10px]" },
+  md: { container: "w-16 h-16", font: "text-5xl", code: "text-xs" },
+  lg: { container: "w-24 h-24", font: "text-7xl", code: "text-sm" },
+  xl: { container: "w-36 h-36", font: "text-9xl", code: "text-base" },
 };
 
 function hasSvg(code: string): boolean {
@@ -49,14 +48,12 @@ export function SmartGlyph({
         title={`${glyph.code}: ${glyph.unicode}`}
       >
         {canUseSvg ? (
-          <Image
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
             src={`/glyphs/${glyph.code}.svg`}
             alt={glyph.code}
-            width={config.image}
-            height={config.image}
-            className="object-contain"
+            className="w-full h-full object-contain p-1"
             onError={() => setSvgError(true)}
-            unoptimized
           />
         ) : isRenderable ? (
           <span className={`font-hieroglyph ${config.font}`}>{glyph.unicode}</span>
@@ -92,14 +89,13 @@ export function GlyphImage({
 
   if (canUseSvg) {
     return (
-      <Image
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
         src={`/glyphs/${glyph.code}.svg`}
         alt={glyph.code}
-        width={size}
-        height={size}
+        style={{ height: size, width: "auto", maxWidth: size * 2 }}
         className={`object-contain ${className}`}
         onError={() => setError(true)}
-        unoptimized
       />
     );
   }
