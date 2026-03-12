@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { Glyph } from "@/lib/types";
 import { Badge } from "./ui/Badge";
@@ -7,9 +9,10 @@ import { getGlyphVariants, glyphHref } from "@/lib/glyphs";
 interface GlyphCardProps {
   glyph: Glyph;
   showDescription?: boolean;
+  highlight?: boolean;
 }
 
-export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
+export function GlyphCard({ glyph, showDescription = true, highlight = false }: GlyphCardProps) {
   const primaryMeaning = glyph.meanings[0];
   const variants = getGlyphVariants(glyph.code);
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
@@ -43,6 +46,11 @@ export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
               {primaryMeaning && (
                 <Badge variant={typeColors[primaryMeaning.type] || "outline"}>
                   {primaryMeaning.type}
+                </Badge>
+              )}
+              {highlight && (
+                <Badge variant="gold" size="sm">
+                  Best match
                 </Badge>
               )}
             </div>
@@ -93,6 +101,9 @@ export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
                       alt={v.code}
                       title={v.code}
                       className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display = "none";
+                      }}
                     />
                   ))}
                   {variants.length > 6 && (

@@ -39,6 +39,11 @@ function SearchContent() {
     }
   };
 
+  const bestScore = useMemo(
+    () => (results.length > 0 ? results[0].score : 1),
+    [results]
+  );
+
   const groupedResults = useMemo(() => {
     const groups: Record<string, SearchResult[]> = {};
     for (const result of results) {
@@ -134,9 +139,15 @@ function SearchContent() {
                   {Object.entries(groupedResults)
                     .slice(0, 5)
                     .map(([cat, items]) => (
-                      <Badge key={cat} variant="outline">
-                        {cat}: {items.length}
-                      </Badge>
+                      <Link
+                        key={cat}
+                        href={`#category-${cat}`}
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Badge variant="outline">
+                          {cat}: {items.length}
+                        </Badge>
+                      </Link>
                     ))}
                 </div>
               )}
@@ -146,7 +157,7 @@ function SearchContent() {
           {results.length > 0 ? (
             <div className="space-y-8">
               {Object.entries(groupedResults).map(([category, categoryResults]) => (
-                <div key={category}>
+                <div key={category} id={`category-${category}`}>
                   <div className="flex items-center gap-2 mb-4">
                     <Link
                       href={`/categories/${category}`}
@@ -166,16 +177,11 @@ function SearchContent() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {categoryResults.map((result) => (
-                      <div key={result.glyph.code} className="relative">
-                        <GlyphCard glyph={result.glyph} />
-                        {result.score < 0.3 && (
-                          <div className="absolute top-2 right-2">
-                            <Badge variant="gold" size="sm">
-                              Best match
-                            </Badge>
-                          </div>
-                        )}
-                      </div>
+                      <GlyphCard
+                        key={result.glyph.code}
+                        glyph={result.glyph}
+                        highlight={result.score <= bestScore * 1.2 && result.score < 0.1}
+                      />
                     ))}
                   </div>
                 </div>
