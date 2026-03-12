@@ -43,8 +43,12 @@ export function getAllCategories(): Category[] {
 }
 
 export function getCategoryById(id: string): Category | undefined {
-  const name = categoryMap[id];
-  if (!name) return undefined;
+  const normalizedId = Object.keys(categoryMap).find(
+    (k) => k.toLowerCase() === id.toLowerCase()
+  );
+  if (!normalizedId) return undefined;
+  const name = categoryMap[normalizedId];
+  id = normalizedId;
 
   const count = glyphs.filter((g) => g.category === id).length;
   return { id, name, glyphCount: count };

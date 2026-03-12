@@ -17,7 +17,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { category: categoryId } = await params;
-  const category = getCategoryById(categoryId.toUpperCase());
+  const category = getCategoryById(categoryId);
 
   if (!category) {
     return { title: "Category Not Found - PharaLex" };
@@ -49,7 +49,7 @@ export async function generateStaticParams() {
 
 export default async function CategoryPage({ params }: PageProps) {
   const { category: categoryId } = await params;
-  const category = getCategoryById(categoryId.toUpperCase());
+  const category = getCategoryById(categoryId);
 
   if (!category) {
     notFound();
