@@ -180,6 +180,9 @@ export default function HomePage() {
               <span>PharaLex</span>
             </div>
             <p>Data sourced from Wiktionary and the Gardiner Sign List</p>
+            <Link href="/acknowledgments" className="hover:text-gold transition-colors">
+              Acknowledgments
+            </Link>
           </div>
         </Container>
       </footer>
