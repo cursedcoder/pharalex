@@ -30,7 +30,10 @@ export default function CategoriesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {categories.map((category) => {
-              const glyphs = getGlyphsByCategory(category.id).slice(0, 8);
+              const mainGlyphs = getGlyphsByCategory(category.id).filter(
+                (g) => /^[A-Z][a-z]?\d+$/.test(g.code)
+              );
+              const glyphs = mainGlyphs.slice(0, 8);
 
               return (
                 <Link
@@ -66,22 +69,26 @@ export default function CategoriesPage() {
 
                   <div className="flex flex-wrap gap-2">
                     {glyphs.map((glyph) => (
-                      <span
-                        key={glyph.code}
-                        className="
-                          font-hieroglyph text-2xl
-                          w-10 h-10 rounded-lg
-                          bg-papyrus/50 border border-sandstone/10
-                          flex items-center justify-center
-                          group-hover:border-gold/20
-                          transition-colors
-                        "
-                        title={glyph.code}
-                      >
-                        {glyph.unicode}
-                      </span>
+                        <div
+                          key={glyph.code}
+                          className="
+                            w-10 h-10 rounded-lg
+                            bg-papyrus/50 border border-sandstone/10
+                            flex items-center justify-center
+                            group-hover:border-gold/20
+                            transition-colors overflow-hidden
+                          "
+                          title={glyph.code}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={`/glyphs/${encodeURIComponent(glyph.code)}.svg`}
+                            alt={glyph.code}
+                            className="w-7 h-7 object-contain"
+                          />
+                        </div>
                     ))}
-                    {category.glyphCount > 8 && (
+                    {mainGlyphs.length > 8 && (
                       <span
                         className="
                           text-sm text-sandstone
@@ -90,7 +97,7 @@ export default function CategoriesPage() {
                           flex items-center justify-center
                         "
                       >
-                        +{category.glyphCount - 8}
+                        +{mainGlyphs.length - 8}
                       </span>
                     )}
                   </div>
