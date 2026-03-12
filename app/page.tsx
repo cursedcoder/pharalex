@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/Badge";
 import { getAllGlyphs, getAllCategories, getGlyphStats } from "@/lib/glyphs";
 import { getNotablePharaohs } from "@/lib/pharaohs";
 import { getAllTexts } from "@/lib/texts";
+import { mdcToCodes } from "@/lib/mdc";
 import { pickDaily } from "@/lib/daily";
 import type { PeriodId } from "@/lib/types";
 
@@ -223,7 +224,7 @@ export default function HomePage() {
               {featuredTexts.map((text) => {
                 const previewCodes = text.lines[0]?.tokens
                   .slice(0, 5)
-                  .flatMap((t) => t.codes)
+                  .flatMap((t) => mdcToCodes(t.mdc))
                   .slice(0, 8);
                 return (
                   <Link

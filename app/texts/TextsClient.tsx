@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import type { EgyptianText, PeriodId, PeriodInfo } from "@/lib/types";
+import { mdcToCodes } from "@/lib/mdc";
 
 const PERIOD_LABELS: Record<PeriodId, string> = {
   predynastic: "Predynastic",
@@ -97,7 +98,7 @@ export default function TextsClient({ texts, availablePeriods }: TextsClientProp
           const firstLine = text.lines[0];
           const previewCodes = firstLine?.tokens
             .slice(0, 6)
-            .flatMap((t) => t.codes)
+            .flatMap((t) => mdcToCodes(t.mdc))
             .slice(0, 10);
 
           return (

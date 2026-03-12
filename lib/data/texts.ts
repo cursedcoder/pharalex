@@ -17,315 +17,91 @@ export const TEXTS: EgyptianText[] = [
       {
         number: 1,
         tokens: [
-          {
-            codes: ["A30"],
-            transliteration: "jnḏ-ḥr=k",
-            translation: "Hail to you",
-            grammar: "VERB",
-          },
-          {
-            codes: ["G4", "R8", "D2"],
-            transliteration: "nfr-ḥr",
-            translation: "beautiful of face",
-            grammar: "ADJ",
-          },
-          {
-            codes: ["V30", "X1", "N35"],
-            transliteration: "nb",
-            translation: "lord",
-            grammar: "NOUN",
-          },
+          { mdc: "i-Aa27", transliteration: "j nḏ", translation: "O, hail", grammar: "PART" },
+          { mdc: "D&&&Y1", transliteration: "(ḏ)", translation: "(phonetic complement)", grammar: "PART" },
+          { mdc: "Hr*Z1:k", transliteration: "ḥr=k", translation: "to you", grammar: "PREP" },
+          { mdc: "nfr", transliteration: "nfr", translation: "beautiful", grammar: "ADJ" },
+          { mdc: "f:r", transliteration: "ḥr", translation: "of face", grammar: "NOUN" },
+          { mdc: "Hr*Z1:k-mA-A-G43&t-N8:Z2", transliteration: "nb", translation: "lord (of radiance)", grammar: "NOUN" },
         ],
-        lineTranslation: "Hail to you, beautiful of face, lord",
+        lineTranslation: "O, hail to you, beautiful of face, lord",
       },
       {
         number: 2,
         tokens: [
-          {
-            codes: ["M2", "G17", "N35", "X1"],
-            transliteration: "mꜣwt",
-            translation: "of radiance",
-            grammar: "NOUN",
-          },
+          { mdc: "Aa8:n-p:t-H-z:k:r-t:A40-z:A*q-A28-Y1:n-i-n:p-w-A40-r:D37-n:n", transliteration: "mꜣwt", translation: "of radiance", grammar: "NOUN" },
         ],
         lineTranslation: "of radiance,",
       },
       {
         number: 3,
         tokens: [
-          {
-            codes: ["X1", "N35", "V13", "D4", "N35"],
-            transliteration: "ṯs.n",
-            translation: "joined together by",
-            grammar: "VERB",
-          },
-          {
-            codes: ["R4", "X1", "Q3"],
-            transliteration: "Ptḥ",
-            translation: "Ptah",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["S29", "D46", "M40"],
-            transliteration: "Skr",
-            translation: "Sokar",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["D54", "N35"],
-            transliteration: "sqꜣ.n",
-            translation: "raised by",
-            grammar: "VERB",
-          },
-          {
-            codes: ["E17", "Z1", "G17"],
-            transliteration: "Jnpw",
-            translation: "Anubis",
-            grammar: "NOUN",
-          },
+          { mdc: "f-G26:t*Z4-z:T:z-w-U39*A2:Z2-nfr-f:r-Hr:Z1-Z11-m*(Z1*Z1)-(Z1*Z1*Z1)-A40-ir:t*Z1:k-R14-M:t:D41-M:z", transliteration: "ṯs.n Ptḥ-Skr sqꜣ.n Jnpw rḏj.n n=f", translation: "joined together by Ptah-Sokar, raised by Anubis, to whom were given", grammar: "VERB" },
         ],
-        lineTranslation: "joined together by Ptah-Sokar, raised by Anubis,",
+        lineTranslation: "joined together by Ptah-Sokar, raised by Anubis, to whom were given",
       },
       {
         number: 4,
         tokens: [
-          {
-            codes: ["D21", "D46", "N35"],
-            transliteration: "rḏj.n",
-            translation: "to whom were given",
-            grammar: "VERB",
-          },
-          {
-            codes: ["I9", "Z4"],
-            transliteration: "n=f",
-            translation: "for him",
-            grammar: "PREP",
-          },
-          {
-            codes: ["F36", "N35"],
-            transliteration: "sṯsw",
-            translation: "supports",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["G26"],
-            transliteration: "Ḏḥwtj",
-            translation: "of Thoth",
-            grammar: "NOUN",
-          },
+          { mdc: "V29-k:t-w-P3-ir:t*Z1:k-R15-tb-D41:M-V26:d-t*t:P3-i-w-i-K1:n-H-D13:D13:k", transliteration: "sṯsw Ḏḥwtj nfr ḥr jmj nṯrw jrt=k jmnt m", translation: "the supports of Thoth, beautiful of face, who is among the gods; your right eye is in the west", grammar: "NOUN" },
         ],
-        lineTranslation:
-          "to whom were given the supports of Thoth,",
+        lineTranslation: "the supports of Thoth, beautiful of face, who is among the gods. Your right eye is in the west",
       },
       {
         number: 5,
         tokens: [
-          {
-            codes: ["G4", "R8", "D2"],
-            transliteration: "nfr-ḥr",
-            translation: "beautiful of face",
-            grammar: "ADJ",
-          },
-          {
-            codes: ["C4"],
-            transliteration: "jmj",
-            translation: "who is among",
-            grammar: "PREP",
-          },
-          {
-            codes: ["R8", "Z2"],
-            transliteration: "nṯrw",
-            translation: "the gods",
-            grammar: "NOUN",
-          },
+          { mdc: "M:N9*t-(Z1*Z1*Z1)-A40-i-w-F13:t*Z1-k:M-i-n:p*w-i-w-M:D36:k-M16-A-tp:k", transliteration: "sktw jw jnḥwj=k jꜣbt mꜥnḏt jw jrt=k m tp=k", translation: "the evening bark; your eyebrows the east-bark; your left eye the morning bark on your head", grammar: "NOUN" },
         ],
-        lineTranslation: "beautiful of face, who is among the gods.",
+        lineTranslation: "the evening bark; your eyebrows in the east bark, your left eye the morning bark on your head",
       },
       {
         number: 6,
         tokens: [
-          {
-            codes: ["D4", "X1", "Z1"],
-            transliteration: "jrt=k",
-            translation: "your right eye",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["S28"],
-            transliteration: "jmnt",
-            translation: "is in the west",
-            grammar: "PREP",
-          },
+          { mdc: "M-G5-i-w-H-U8:n:z-Y1:k-M-p:t-H-z:k:r-t-A40-M-F4:t*Z1-ir:st*A40", transliteration: "m psḏt jw wpt=k m Jnpw mkḥꜣ=k m-ḥꜣt Wsjr", translation: "are of the Ennead; your brow is Anubis; the back of your head with Osiris", grammar: "PREP" },
         ],
-        lineTranslation: "Your right eye is in",
+        lineTranslation: "are of the Ennead, your brow is that of Anubis, the back of your head with Osiris",
       },
       {
         number: 7,
         tokens: [
-          {
-            codes: ["N31", "X1", "P1"],
-            transliteration: "sktw",
-            translation: "the evening bark",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["D4", "X1", "Z1"],
-            transliteration: "jrt=k",
-            translation: "your left eye",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["S28"],
-            transliteration: "jꜣbt",
-            translation: "is in the east",
-            grammar: "PREP",
-          },
-          {
-            codes: ["N31", "D46", "X1"],
-            transliteration: "mꜥnḏt",
-            translation: "the morning bark",
-            grammar: "NOUN",
-          },
+          { mdc: "ir:f-i-m-k-z:T32-M:D54-k-sw-w-r-N31:t*Z1*Z1*Z1-nfr*w:Z2-H-A25-D40:k-n:f", transliteration: "mꜣ=f jm=k sšm=k sw r wꜣwt nfrw ḥw=k n=f", translation: "who sees thanks to you; may you guide him on smooth paths; may you smite for him", grammar: "VERB" },
         ],
-        lineTranslation:
-          "the evening bark; your left eye is in the morning bark.",
+        lineTranslation: "who sees thanks to you, may you guide him on smooth paths, may you smite for him",
       },
       {
         number: 8,
         tokens: [
-          {
-            codes: ["N37", "X1", "Z1"],
-            transliteration: "jnḥwj=k",
-            translation: "your eyebrows",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["C4"],
-            transliteration: "m",
-            translation: "are those of",
-            grammar: "PREP",
-          },
-          {
-            codes: ["N8", "Z1"],
-            transliteration: "psḏt",
-            translation: "the Ennead",
-            grammar: "NOUN",
-          },
+          { mdc: "F36-A-i-i-t-D40:Z2-z:t:N37-A40-z:x:r-A15:D40-f:x:f-tyw*nw-Z2:k-Z2:k-x:r", transliteration: "smꜣyt Stš sḫr=f ḫftjw=k ḫr", translation: "the gang of Seth, that he may overthrow your enemies before", grammar: "NOUN" },
         ],
-        lineTranslation: "Your eyebrows are those of the Ennead,",
+        lineTranslation: "the gang of Seth, that he may overthrow your enemies before",
       },
       {
         number: 9,
         tokens: [
-          {
-            codes: ["D2", "X1", "Z1"],
-            transliteration: "wpt=k",
-            translation: "your brow",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["C4"],
-            transliteration: "m",
-            translation: "is that of",
-            grammar: "PREP",
-          },
-          {
-            codes: ["E17", "Z1", "G17"],
-            transliteration: "Jnpw",
-            translation: "Anubis",
-            grammar: "NOUN",
-          },
+          { mdc: "N9*t-A40:Z2-G36:r-i-Z11-O28-nw:O49-V15-t:D40-n:f-G36:r-r:t-i-m-x:r-G5", transliteration: "psḏt m ḥwt-sr wr jm Jwnw jṯ.n=f wrrt jm ḫr Ḥr", translation: "the Ennead in the great house in Heliopolis; that he take the crown before Horus", grammar: "NOUN" },
         ],
-        lineTranslation: "your brow is that of Anubis,",
+        lineTranslation: "the Ennead, in the great house in Heliopolis, and that he may take the crown before Horus,",
       },
       {
         number: 10,
         tokens: [
-          {
-            codes: ["N8", "Z1"],
-            transliteration: "psḏt",
-            translation: "the Ennead",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["O1", "Z1"],
-            transliteration: "m ḥwt",
-            translation: "in the house",
-            grammar: "PREP",
-          },
-          {
-            codes: ["V30", "X1", "N35"],
-            transliteration: "wr",
-            translation: "great",
-            grammar: "ADJ",
-          },
-          {
-            codes: ["N18", "N35"],
-            transliteration: "jm",
-            translation: "therein",
-            grammar: "PREP",
-          },
-          {
-            codes: ["N25", "X1"],
-            transliteration: "Jwnw",
-            translation: "in Heliopolis",
-            grammar: "NOUN",
-          },
-        ],
-        lineTranslation:
-          "the Ennead, in the great house in Heliopolis,",
-      },
-      {
-        number: 11,
-        tokens: [
-          {
-            codes: ["V30", "X1", "N35"],
-            transliteration: "nb",
-            translation: "lord",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["G1", "X1", "Z1"],
-            transliteration: "pꜥt",
-            translation: "of nobles",
-            grammar: "NOUN",
-          },
+          { mdc: "nb-p:D36:t-A1*B1:Z2", transliteration: "nb pꜥt", translation: "lord of nobles", grammar: "NOUN" },
         ],
         lineTranslation: "lord of nobles,",
       },
       {
-        number: 12,
+        number: 11,
         tokens: [
-          {
-            codes: ["C4", "A1"],
-            transliteration: "Wsjr",
-            translation: "the Osiris",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["M23", "X1", "L2", "X1"],
-            transliteration: "nsw",
-            translation: "king",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["V30", "D58", "X1", "M17", "N5"],
-            transliteration: "Nb-ḫprw-Rꜥ",
-            translation: "Nebkheperure",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["R12", "X1"],
-            transliteration: "mꜣꜥ-ḫrw",
-            translation: "true of voice",
-            grammar: "ADJ",
-          },
+          { mdc: "ir:st*A40-sw-t:n", transliteration: "Wsjr nsw", translation: "the Osiris, king", grammar: "NOUN" },
+          { mdc: "ra-xpr-Z2:nb", transliteration: "Nb-ḫprw-Rꜥ", translation: "Nebkheperure", grammar: "NOUN" },
+          { mdc: "Aa11v-P8", transliteration: "mꜣꜥ-ḫrw", translation: "true of voice", grammar: "ADJ" },
+          { mdc: "di-anx-ra:Z1-mi", transliteration: "ḏj ꜥnḫ mj Rꜥ", translation: "given life like Ra", grammar: "VERB" },
         ],
-        lineTranslation:
-          "the Osiris, king Nebkheperure (Tutankhamun), true of voice.",
+        lineTranslation: "the Osiris, king Nebkheperure (Tutankhamun), true of voice, given life like Ra.",
       },
     ],
     bibliography: [
+      "Nico Pollone, transcription of the Mask of Tutankhamun (CC-BY), via rosmord/MDC-texts",
       "James P. Allen, Middle Egyptian: An Introduction to the Language and Culture of Hieroglyphs, 3rd ed. (Cambridge, 2014)",
       "Nederhof, M.J., HieroJax Unicode Hieroglyphic Texts, https://nederhof.github.io/hierojax/texts/TutankhamunGoldMask.html",
       "Hawass, Z., Tutankhamun and the Golden Age of the Pharaohs (Washington D.C., 2005)",
@@ -347,7 +123,7 @@ export const TEXTS: EgyptianText[] = [
         number: 1,
         tokens: [
           {
-            codes: ["G5", "F36", "N19"],
+            mdc: "G5-F36:N19",
             transliteration: "Ḥr smꜣ-tꜢwj",
             translation: "Horus, Uniter of the Two Lands",
             grammar: "NOUN",
@@ -359,7 +135,7 @@ export const TEXTS: EgyptianText[] = [
         number: 2,
         tokens: [
           {
-            codes: ["G16", "F36", "N19"],
+            mdc: "G16-F36:N19",
             transliteration: "Nbty smꜣ-tꜢwj",
             translation: "Two Ladies, Uniter of the Two Lands",
             grammar: "NOUN",
@@ -371,45 +147,43 @@ export const TEXTS: EgyptianText[] = [
         number: 3,
         tokens: [
           {
-            codes: ["M23", "X1", "L2", "X1"],
+            mdc: "M23*X1-L2*X1",
             transliteration: "nsw-bjt",
             translation: "king of Upper and Lower Egypt",
             grammar: "NOUN",
           },
           {
-            codes: ["N35", "D58", "F12", "Q3", "X1", "D21", "G43"],
+            mdc: "N35-D58-F12:Q3-X1-D21-G43",
             transliteration: "Nb-ḥꜢpt-rꜤ",
             translation: "Possessor of the Rudder of Ra",
             grammar: "NOUN",
           },
         ],
-        lineTranslation:
-          "King of Upper and Lower Egypt, Nebhapetre,",
+        lineTranslation: "King of Upper and Lower Egypt, Nebhapetre,",
       },
       {
         number: 4,
         tokens: [
           {
-            codes: ["S3", "N35"],
+            mdc: "S3:N35",
             transliteration: "sꜢ-Rꜥ",
             translation: "Son of Ra",
             grammar: "NOUN",
           },
           {
-            codes: ["Y5", "N35", "X1", "G43", "F12", "X1", "Q3"],
+            mdc: "Y5:N35-X1-G43-F12:X1:Q3",
             transliteration: "Mnṯw-ḥtp",
             translation: "Montu Is Satisfied",
             grammar: "NOUN",
           },
           {
-            codes: ["D46", "X1", "Z5", "Q3"],
+            mdc: "D46:X1-Z5:Q3",
             transliteration: "ḏt",
             translation: "forever",
             grammar: "ADV",
           },
         ],
-        lineTranslation:
-          "Son of Ra, Mentuhotep, forever.",
+        lineTranslation: "Son of Ra, Mentuhotep, forever.",
       },
     ],
     bibliography: [
@@ -433,132 +207,51 @@ export const TEXTS: EgyptianText[] = [
       {
         number: 1,
         tokens: [
-          {
-            codes: ["G5"],
-            transliteration: "Ḥr",
-            translation: "Horus",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["K1", "N35", "X1"],
-            transliteration: "nḫt",
-            translation: "mighty bull",
-            grammar: "ADJ",
-          },
-          {
-            codes: ["M12", "Z1", "N14"],
-            transliteration: "mry-Mꜣꜥt",
-            translation: "beloved of Maat",
-            grammar: "ADJ",
-          },
+          { mdc: "HAt:a", transliteration: "ḥꜣt", translation: "beginning", grammar: "NOUN" },
+          { mdc: "m", transliteration: "m", translation: "of", grammar: "PREP" },
+          { mdc: "pA", transliteration: "pꜣ", translation: "the", grammar: "ART" },
+          { mdc: "n:xt:x*t-G45-Z2:n", transliteration: "nḫtw", translation: "victories", grammar: "NOUN" },
         ],
-        lineTranslation: "Horus, mighty bull, beloved of Maat,",
+        lineTranslation: "Beginning of the victories",
       },
       {
         number: 2,
         tokens: [
-          {
-            codes: ["G16"],
-            transliteration: "Nbty",
-            translation: "Two Ladies",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["V30", "X1", "N35"],
-            transliteration: "nb",
-            translation: "Lord",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["D58", "N25"],
-            transliteration: "qn",
-            translation: "of valor",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["M15", "X1"],
-            transliteration: "sḫꜣ",
-            translation: "who strikes",
-            grammar: "VERB",
-          },
-          {
-            codes: ["T14", "Z2"],
-            transliteration: "ḫꜣswt",
-            translation: "foreign lands",
-            grammar: "NOUN",
-          },
+          { mdc: "sw:t-bit:t", transliteration: "nsw-bjtj", translation: "King of Upper and Lower Egypt", grammar: "NOUN" },
+          { mdc: "ra-wsr-C10A-stp:n-ra", transliteration: "Wsr-mꜣꜥt-Rꜥ-stp-n-Rꜥ", translation: "Usermaatra-Setepenre", grammar: "NOUN" },
         ],
-        lineTranslation: "Two Ladies, lord of valor who strikes foreign lands,",
+        lineTranslation: "King of Upper and Lower Egypt, Usermaatra-Setepenre,",
       },
       {
         number: 3,
         tokens: [
-          {
-            codes: ["M23", "X1", "L2", "X1"],
-            transliteration: "nsw-bjt",
-            translation: "king of Upper and Lower Egypt",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["G17", "N5", "D21", "X1", "N35", "D21"],
-            transliteration: "Wsr-mꜣꜥt-Rꜥ-stp-n-Rꜥ",
-            translation: "Usermaatra-Setepenre",
-            grammar: "NOUN",
-          },
-        ],
-        lineTranslation:
-          "King of Upper and Lower Egypt, Usermaatra-Setepenre,",
-      },
-      {
-        number: 4,
-        tokens: [
-          {
-            codes: ["S3", "N35"],
-            transliteration: "sꜢ-Rꜥ",
-            translation: "Son of Ra",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["D21", "G43", "G17", "S29", "S29", "G17", "N35"],
-            transliteration: "Rꜥ-ms-sw",
-            translation: "Ramesses",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["M12", "Z1", "C2"],
-            transliteration: "mry-Jmn",
-            translation: "beloved of Amun",
-            grammar: "ADJ",
-          },
+          { mdc: "zA*ra", transliteration: "sꜢ-Rꜥ", translation: "Son of Ra", grammar: "NOUN" },
+          { mdc: "i-mn:n:N36-C2-ms-s-s", transliteration: "Rꜥ-ms-sw-mry-Jmn", translation: "Ramesses, beloved of Amun", grammar: "NOUN" },
         ],
         lineTranslation: "Son of Ra, Ramesses, beloved of Amun,",
       },
       {
+        number: 4,
+        tokens: [
+          { mdc: "di-anx", transliteration: "dj-ꜥnḫ", translation: "given life", grammar: "VERB" },
+          { mdc: "D*(t:tA)", transliteration: "ḏt", translation: "forever", grammar: "ADV" },
+        ],
+        lineTranslation: "given life forever.",
+      },
+      {
         number: 5,
         tokens: [
-          {
-            codes: ["S34", "Z1"],
-            transliteration: "ꜥnḫ",
-            translation: "given life",
-            grammar: "VERB",
-          },
-          {
-            codes: ["D46", "X1", "Z5", "Q3"],
-            transliteration: "ḏt",
-            translation: "forever",
-            grammar: "ADV",
-          },
-          {
-            codes: ["M17", "M17", "N35"],
-            transliteration: "mj-Rꜥ",
-            translation: "like Ra",
-            grammar: "PREP",
-          },
+          { mdc: "ir:n:f", transliteration: "jr.n=f", translation: "He made", grammar: "VERB" },
+          { mdc: "m", transliteration: "m", translation: "in", grammar: "PREP" },
+          { mdc: "pA", transliteration: "pꜣ", translation: "the", grammar: "ART" },
+          { mdc: "tA:N21*Z1:n", transliteration: "tꜣ", translation: "land", grammar: "NOUN" },
+          { mdc: "(x:t)*U30:N25", transliteration: "ẖrw", translation: "of Kharu", grammar: "NOUN" },
         ],
-        lineTranslation: "given life forever like Ra.",
+        lineTranslation: "He made in the land of Kharu",
       },
     ],
     bibliography: [
+      "Rosmord/MDC-texts: Qadesh Poem-Pentaour.gly (CC-BY), transcription by Nico Pollone",
       "Kitchen, K.A., Ramesside Inscriptions, Historical and Biographical, vol. II (Oxford, 1979)",
       "Lichtheim, M., Ancient Egyptian Literature vol. II (Berkeley, 1976)",
       "Spalinger, A.J., War in Ancient Egypt (Oxford, 2005)",
@@ -581,19 +274,19 @@ export const TEXTS: EgyptianText[] = [
         number: 1,
         tokens: [
           {
-            codes: ["N37", "Z1", "X1"],
+            mdc: "N37*Z1:X1",
             transliteration: "wꜢḏ",
             translation: "the green eye-paint",
             grammar: "NOUN",
           },
           {
-            codes: ["D4", "G17"],
+            mdc: "D4-G17",
             transliteration: "jrt",
             translation: "eye",
             grammar: "NOUN",
           },
           {
-            codes: ["G5"],
+            mdc: "G5",
             transliteration: "Ḥr",
             translation: "of Horus",
             grammar: "NOUN",
@@ -605,25 +298,25 @@ export const TEXTS: EgyptianText[] = [
         number: 2,
         tokens: [
           {
-            codes: ["D46", "D36", "X1"],
+            mdc: "D46-D36:X1",
             transliteration: "ḏꜢt",
             translation: "which",
             grammar: "PRON",
           },
           {
-            codes: ["N35", "D36"],
+            mdc: "N35-D36",
             transliteration: "nḏ",
             translation: "protects",
             grammar: "VERB",
           },
           {
-            codes: ["A1"],
+            mdc: "A1",
             transliteration: "=k",
             translation: "you",
             grammar: "PRON",
           },
           {
-            codes: ["C4", "R8"],
+            mdc: "C4-R8",
             transliteration: "m nṯr",
             translation: "as a god",
             grammar: "PREP",
@@ -635,19 +328,19 @@ export const TEXTS: EgyptianText[] = [
         number: 3,
         tokens: [
           {
-            codes: ["D4", "X1", "Z1"],
+            mdc: "D4*X1:Z1",
             transliteration: "jrt=k",
             translation: "your eye",
             grammar: "NOUN",
           },
           {
-            codes: ["V30", "X1", "N35"],
+            mdc: "V30*X1:N35",
             transliteration: "nbt",
             translation: "of every",
             grammar: "ADJ",
           },
           {
-            codes: ["N23", "X1"],
+            mdc: "N23:X1",
             transliteration: "tꜣ",
             translation: "land",
             grammar: "NOUN",
@@ -677,134 +370,55 @@ export const TEXTS: EgyptianText[] = [
         number: 1,
         tokens: [
           {
-            codes: ["O34", "G17"],
-            transliteration: "jst",
-            translation: "How hard",
+            mdc: "G43-U28-G1-Y1-G54-G43-A2-A1-V28-W14-O34:Y1-D52:X1-D50-D50-Y1",
+            transliteration: "jst bj nbt nḏt jꜣw",
+            translation: "How hard and painful are all afflictions of old age!",
             grammar: "PART",
           },
-          {
-            codes: ["D28", "Z1"],
-            transliteration: "bj",
-            translation: "and painful",
-            grammar: "ADJ",
-          },
-          {
-            codes: ["V30", "X1", "N35"],
-            transliteration: "nbt",
-            translation: "every",
-            grammar: "ADJ",
-          },
-          {
-            codes: ["N35", "D46", "Z5", "D4"],
-            transliteration: "nḏt",
-            translation: "affliction",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["F29", "Z1"],
-            transliteration: "jꜣw",
-            translation: "of old age",
-            grammar: "NOUN",
-          },
         ],
-        lineTranslation: "How hard and painful are every affliction of old age!",
+        lineTranslation: "How hard and painful are all afflictions of old age!",
       },
       {
         number: 2,
         tokens: [
           {
-            codes: ["D21", "G43", "G1", "X1"],
-            transliteration: "rwꜣt",
-            translation: "He who is weak",
+            mdc: "E34-N35:O31-D36-F26:N35-S28-N35-W11-D21-G43-A2-A1",
+            transliteration: "rmṯ nḫn fnḏ=f jrty=f msḏrwy=f",
+            translation: "A man grows weak — his nose stopped, his eyes dim, his ears deaf",
             grammar: "NOUN",
-          },
-          {
-            codes: ["D19"],
-            transliteration: "fnḏ",
-            translation: "his nose",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["D4"],
-            transliteration: "jrty",
-            translation: "his eyes",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["D28"],
-            transliteration: "=fj",
-            translation: "his",
-            grammar: "PRON",
           },
         ],
-        lineTranslation:
-          "He who is weak — his nose and eyes grow dim,",
+        lineTranslation: "A man grows weak — his nose stopped, his eyes dim, his ears deaf",
       },
       {
         number: 3,
         tokens: [
           {
-            codes: ["F21", "Z1"],
-            transliteration: "msḏrwj",
-            translation: "his ears",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["D35"],
-            transliteration: "n",
-            translation: "do not",
-            grammar: "NEG",
-          },
-          {
-            codes: ["D54"],
-            transliteration: "sḏm",
-            translation: "hear",
+            mdc: "G43-O34:Aa1-W10-Y1-Q1-X1-O1-N35:X1-O4-D21-Y1-A1-G17-S43-D46-G43-G43-A2-S29-Q3-D46-M44-Y1-D46-S29-Z7-T30:Z2",
+            transliteration: "wp=f r=f m Hw=f Dd nw=f n-j=f sḏmw sḏm",
+            translation: "Yet he speaks; and what he utters, let a listener hear it",
             grammar: "VERB",
           },
         ],
-        lineTranslation: "his ears do not hear.",
+        lineTranslation: "His heart fails, he cannot recall yesterday;",
       },
       {
         number: 4,
         tokens: [
           {
-            codes: ["G17", "D21"],
-            transliteration: "mr",
-            translation: "Be attentive",
+            mdc: "D21-X1:O4-D56-D54-G17:D36-X1:N35-T14-G41-G37-D35:N35-V28-M2-N35:D54-D35-M17-S29-D2-Z1-O34:Q3-O50:I9-M17-D21-N41-G17-S29-B4-V31A-V28-N35:D36-I1-G1-X1-A1*B1:Z2",
+            transliteration: "sḏm sꜢ mdwt nt nbt sꜣt",
+            translation: "Be attentive, listener, to the words of every excellence",
             grammar: "VERB",
-          },
-          {
-            codes: ["D54", "Z2"],
-            transliteration: "sḏmw",
-            translation: "listener",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["M17", "X1"],
-            transliteration: "mdt",
-            translation: "to the words",
-            grammar: "NOUN",
-          },
-          {
-            codes: ["V30", "X1", "N35"],
-            transliteration: "nbt",
-            translation: "of every",
-            grammar: "ADJ",
-          },
-          {
-            codes: ["G40", "X1", "Z1"],
-            transliteration: "sꜣt",
-            translation: "excellence",
-            grammar: "NOUN",
           },
         ],
         lineTranslation: "Be attentive, listener, to the words of every excellence.",
       },
     ],
     bibliography: [
+      "Rosmord/MDC-texts: P. Prisse (Gemnikai and Ptahotep).gly (CC-BY), transcription by Nico Pollone",
       "Lichtheim, M., Ancient Egyptian Literature vol. I (Berkeley, 1973), 61–80",
       "Simpson, W.K. (ed.), The Literature of Ancient Egypt, 3rd ed. (New Haven, 2003), 129–148",
-      "Žabkar, L.V., 'The Theocracy of Amarna and the Doctrine of the Ba', JNES 13 (1954)",
     ],
   },
 
@@ -822,25 +436,25 @@ export const TEXTS: EgyptianText[] = [
         number: 1,
         tokens: [
           {
-            codes: ["R7", "D21"],
+            mdc: "R7-D21",
             transliteration: "ḥnk.t",
             translation: "Beginning of",
             grammar: "NOUN",
           },
           {
-            codes: ["D46", "D21", "G43"],
+            mdc: "D46-D21-G43",
             transliteration: "drw",
             translation: "the chapters",
             grammar: "NOUN",
           },
           {
-            codes: ["G17", "N35", "X1"],
+            mdc: "G17-N35:X1",
             transliteration: "mnḫt",
             translation: "of going forth",
             grammar: "VERB",
           },
           {
-            codes: ["M17", "D54"],
+            mdc: "M17-D54",
             transliteration: "m hrw",
             translation: "by day",
             grammar: "PREP",
@@ -852,25 +466,25 @@ export const TEXTS: EgyptianText[] = [
         number: 2,
         tokens: [
           {
-            codes: ["D46", "Z5", "Q3"],
+            mdc: "D46:Z5-Q3",
             transliteration: "ḏd-mdw",
             translation: "words spoken",
             grammar: "VERB",
           },
           {
-            codes: ["N35"],
+            mdc: "N35",
             transliteration: "n",
             translation: "by",
             grammar: "PREP",
           },
           {
-            codes: ["C4", "A1"],
+            mdc: "C4-A1",
             transliteration: "Wsjr",
             translation: "Osiris",
             grammar: "NOUN",
           },
           {
-            codes: ["G17", "S29", "S29", "G17"],
+            mdc: "G17-S29*S29-G17",
             transliteration: "Jni",
             translation: "Ani",
             grammar: "NOUN",
@@ -882,25 +496,25 @@ export const TEXTS: EgyptianText[] = [
         number: 3,
         tokens: [
           {
-            codes: ["G17", "D21", "G17"],
+            mdc: "G17-D21-G17",
             transliteration: "wr",
             translation: "great",
             grammar: "ADJ",
           },
           {
-            codes: ["D46", "Z5"],
+            mdc: "D46:Z5",
             transliteration: "ḏd",
             translation: "scribe",
             grammar: "NOUN",
           },
           {
-            codes: ["G17", "G17", "N35", "X1"],
+            mdc: "G17*G17-N35:X1",
             transliteration: "mꜣꜥt",
             translation: "of the offerings",
             grammar: "NOUN",
           },
           {
-            codes: ["R8", "Z2"],
+            mdc: "R8*Z2",
             transliteration: "nṯrw",
             translation: "of all the gods",
             grammar: "NOUN",
@@ -912,19 +526,19 @@ export const TEXTS: EgyptianText[] = [
         number: 4,
         tokens: [
           {
-            codes: ["R12", "X1"],
+            mdc: "R12:X1",
             transliteration: "mꜣꜥ-ḫrw",
             translation: "true of voice",
             grammar: "ADJ",
           },
           {
-            codes: ["V30", "X1", "N35"],
+            mdc: "V30*X1:N35",
             transliteration: "nb",
             translation: "lord",
             grammar: "NOUN",
           },
           {
-            codes: ["X1", "D40"],
+            mdc: "X1-D40",
             transliteration: "tp",
             translation: "of reverence",
             grammar: "NOUN",

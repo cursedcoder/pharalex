@@ -101,7 +101,10 @@ export interface PeriodInfo {
 // ─── Texts ───────────────────────────────────────────────────────────────────
 
 export interface TextToken {
-  codes: string[];          // Gardiner codes for this word, e.g. ["N5", "D21"]
+  mdc: string;              // Manuel de Codage string, e.g. "N5:D21*Z1"
+                            //   -  separates quadrats (sequential)
+                            //   *  places signs side-by-side within a quadrat
+                            //   :  stacks signs vertically within a quadrat
   transliteration: string;  // Egyptological transliteration, e.g. "rꜤ"
   translation: string;      // English gloss, e.g. "Ra / sun god"
   grammar?: string;         // optional POS tag: "NOUN", "VERB", "PREP", etc.

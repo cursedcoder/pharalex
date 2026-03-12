@@ -13,6 +13,7 @@ import {
   formatYear,
 } from "@/lib/pharaohs";
 import { getTextsByPharaoh } from "@/lib/texts";
+import { mdcToCodes } from "@/lib/mdc";
 import { PHARAOHS } from "@/lib/data/pharaohs";
 
 interface Props {
@@ -250,7 +251,7 @@ export default async function PharaohPage({ params }: Props) {
                     {relatedTexts.map((text) => {
                       const previewCodes = text.lines[0]?.tokens
                         .slice(0, 5)
-                        .flatMap((t) => t.codes)
+                        .flatMap((t) => mdcToCodes(t.mdc))
                         .slice(0, 8);
                       return (
                         <Link

@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import type { EgyptianText, TextToken } from "@/lib/types";
+import { mdcToCodes } from "@/lib/mdc";
 import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
+import { Quadrat } from "./Quadrat";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 
 type DisplayMode = "hieroglyphs" | "parallel";
@@ -19,14 +21,16 @@ interface ActiveToken {
   token: TextToken;
 }
 
+/** Maximum tokens per visual row before wrapping. */
+const WRAP_AT = 6;
 
 function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void }) {
+  const codes = mdcToCodes(token.mdc);
   return (
     <div className="bg-papyrus/60 border border-gold/30 rounded-xl p-4 space-y-3 mt-3">
       <div className="flex items-start justify-between gap-3">
-        {/* Glyph cards */}
         <div className="flex items-end gap-4 flex-wrap">
-          {token.codes.map((code, i) => {
+          {codes.map((code, i) => {
             const glyph = getGlyphByCode(code);
             return (
               <Link
@@ -65,23 +69,21 @@ function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void
       </div>
 
       <div className="border-t border-gold/20 pt-3 space-y-2">
-        <div className="grid grid-cols-[8rem_1fr] gap-x-3 gap-y-0 items-baseline">
-          <span className="text-xs text-sandstone uppercase tracking-wider font-medium">
-            Transliteration
-          </span>
+        <div className="grid grid-cols-[8rem_1fr] gap-x-3 items-baseline">
+          <span className="text-xs text-sandstone uppercase tracking-wider font-medium">MdC</span>
+          <span className="font-mono text-xs text-sandstone/80">{token.mdc}</span>
+        </div>
+        <div className="grid grid-cols-[8rem_1fr] gap-x-3 items-baseline">
+          <span className="text-xs text-sandstone uppercase tracking-wider font-medium">Transliteration</span>
           <span className="italic text-brown-light font-medium">{token.transliteration}</span>
         </div>
-        <div className="grid grid-cols-[8rem_1fr] gap-x-3 gap-y-0 items-baseline">
-          <span className="text-xs text-sandstone uppercase tracking-wider font-medium">
-            Translation
-          </span>
+        <div className="grid grid-cols-[8rem_1fr] gap-x-3 items-baseline">
+          <span className="text-xs text-sandstone uppercase tracking-wider font-medium">Translation</span>
           <span className="text-brown">{token.translation}</span>
         </div>
         {token.grammar && (
-          <div className="grid grid-cols-[8rem_1fr] gap-x-3 gap-y-0 items-baseline">
-            <span className="text-xs text-sandstone uppercase tracking-wider font-medium">
-              Grammar
-            </span>
+          <div className="grid grid-cols-[8rem_1fr] gap-x-3 items-baseline">
+            <span className="text-xs text-sandstone uppercase tracking-wider font-medium">Grammar</span>
             <span className="text-xs font-mono bg-gold/10 text-sandstone px-1.5 py-0.5 rounded self-start">
               {token.grammar}
             </span>
@@ -92,11 +94,123 @@ function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void
   );
 }
 
+/** Small icon shown between wrapped rows to indicate continuation. */
+function WrapBreakIndicator() {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const enter = () => setVisible(true);
+    const leave = () => setVisible(false);
+    el.addEventListener("mouseenter", enter);
+    el.addEventListener("mouseleave", leave);
+    return () => {
+      el.removeEventListener("mouseenter", enter);
+      el.removeEventListener("mouseleave", leave);
+    };
+  }, []);
+
+  return (
+    <div ref={ref} className="relative flex items-center self-stretch my-1 select-none">
+      {/* Vertical dashed rule */}
+      <div className="w-px self-stretch border-l border-dashed border-gold/40 mx-2" />
+      {/* Icon */}
+      <div className="flex items-center justify-center w-5 h-5 rounded-full bg-papyrus border border-gold/40 text-sandstone/60 hover:text-sandstone hover:border-gold/70 transition-colors cursor-default text-[10px] font-semibold">
+        ↵
+      </div>
+      {/* Tooltip */}
+      {visible && (
+        <span
+          role="tooltip"
+          className="absolute left-full ml-2 top-1/2 -translate-y-1/2 z-50 px-3 py-1.5 bg-brown text-ivory text-xs rounded-lg shadow-lg whitespace-nowrap pointer-events-none"
+        >
+          Line continues on next row
+          <span className="absolute right-full top-1/2 -translate-y-1/2 border-4 border-transparent border-r-brown" />
+        </span>
+      )}
+    </div>
+  );
+}
+
+/** Dot connector rendered between two word boxes. */
+function DotConnector() {
+  return (
+    <div className="flex items-center self-stretch px-2">
+      <span className="text-gold/70 text-base select-none leading-none" aria-hidden>·</span>
+    </div>
+  );
+}
+
+/** A single word box: outline containing glyphs + transliteration + translation stacked. */
+function WordBox({
+  token,
+  tokenIndex,
+  lineIndex,
+  baseSize,
+  isActive,
+  isParallel,
+  onClick,
+}: {
+  token: TextToken;
+  tokenIndex: number;
+  lineIndex: number;
+  baseSize: number;
+  isActive: boolean;
+  isParallel: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={`Word: ${token.transliteration}`}
+      className={`
+        group relative flex flex-col items-center rounded-xl border transition-all duration-150 px-2 pt-2 pb-1.5
+        ${isActive
+          ? "bg-gold/10 border-gold/50 shadow-sm"
+          : "border-stone-300/50 hover:border-gold/40 hover:bg-gold/5"
+        }
+      `}
+    >
+      {/* Glyphs */}
+      <div className="flex items-end justify-center">
+        <Quadrat mdc={token.mdc} baseSize={baseSize} />
+      </div>
+
+      {isParallel && (
+        <>
+          {/* Divider */}
+          <div className="w-full border-t border-stone-300/50 mt-1.5 mb-1" />
+          {/* Transliteration */}
+          <span className="text-xs italic text-brown-light font-medium leading-tight text-center">
+            {token.transliteration}
+          </span>
+          {/* Translation */}
+          <span className="text-[10px] text-sandstone/70 leading-tight text-center mt-0.5">
+            {token.translation}
+          </span>
+        </>
+      )}
+    </button>
+  );
+}
+
+/** Split an array into chunks of at most `size`. */
+function chunkTokens<T>(arr: T[], size: number): T[][] {
+  const chunks: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+}
+
 export function TextReader({ text, compact = false }: TextReaderProps) {
   const [mode, setMode] = useState<DisplayMode>("parallel");
   const [activeToken, setActiveToken] = useState<ActiveToken | null>(null);
 
-  const glyphSize = compact ? "sm" : "md";
+  const baseSize = compact ? 28 : 36;
+  const isParallel = mode === "parallel";
 
   function handleTokenClick(lineIndex: number, tokenIndex: number, token: TextToken) {
     if (
@@ -139,184 +253,63 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
       <div className="space-y-6">
         {text.lines.map((line, lineIndex) => {
           const isActiveLine = activeToken?.lineIndex === lineIndex;
+          const chunks = chunkTokens(line.tokens, WRAP_AT);
 
           return (
             <div key={lineIndex}>
               <div className="flex gap-3 items-start">
                 {/* Line number */}
                 {line.number != null && !compact && (
-                  <span className="text-xs text-sandstone/60 font-mono mt-2 w-5 shrink-0 text-right select-none">
+                  <span className="text-xs text-sandstone/60 font-mono mt-3 w-5 shrink-0 text-right select-none">
                     {line.number}
                   </span>
                 )}
 
-                <div className="flex-1 min-w-0">
-                  {mode === "parallel" ? (
-                    /* ── Parallel mode ─────────────────────────────────────────
-                       Three horizontal rows per line:
-                         Row 1 — all glyphs
-                         Row 2 — all transliterations (word-level, italic)
-                         Row 3 — all translations (word-level)
-                       Words are aligned in a CSS grid so each column is the
-                       same width across all three rows.
-                    ─────────────────────────────────────────────────────────── */
-                    <div className="space-y-1 pb-3 border-b border-gold/15">
-                      {/* shared grid: one column per token */}
-                      {(["glyphs", "translit", "transl"] as const).map((row) => (
-                        <div
-                          key={row}
-                          className="flex flex-wrap gap-x-4 gap-y-1 items-end"
-                          style={{ minHeight: row === "glyphs" ? undefined : undefined }}
-                        >
-                          {line.tokens.map((token, tokenIndex) => {
+                <div className="flex-1 min-w-0 pb-3 border-b border-gold/15">
+                  {/* Chunked rows */}
+                  {chunks.map((chunk, chunkIndex) => {
+                    const tokenOffset = chunkIndex * WRAP_AT;
+                    return (
+                      <div key={chunkIndex}>
+                        {/* Wrap-break indicator between rows */}
+                        {chunkIndex > 0 && <WrapBreakIndicator />}
+
+                        {/* Token row */}
+                        <div className="flex items-end gap-0">
+                          {chunk.map((token, i) => {
+                            const tokenIndex = tokenOffset + i;
                             const isActive = isActiveLine && activeToken?.tokenIndex === tokenIndex;
-                            if (row === "glyphs") {
-                              return (
-                                <button
-                                  key={tokenIndex}
-                                  onClick={() => handleTokenClick(lineIndex, tokenIndex, token)}
-                                  className={`
-                                    flex items-end gap-0.5 rounded-lg px-1 pt-1 pb-0.5
-                                    transition-all duration-150
-                                    ${isActive ? "bg-gold/20 ring-1 ring-gold/50" : "hover:bg-papyrus/40"}
-                                  `}
-                                >
-                                  {token.codes.map((code, ci) => {
-                                    const glyph = getGlyphByCode(code);
-                                    const primaryMeaning = glyph?.meanings[0]?.text;
-                                    const phonetic = glyph?.transliteration[0];
-                                    const description = glyph?.description;
-                                    const sizeClass = glyphSize === "sm" ? "w-6 h-6" : "w-8 h-8";
-                                    return (
-                                      <Tooltip
-                                        key={`${code}-${ci}`}
-                                        content={
-                                          <GlyphTooltipContent
-                                            code={code}
-                                            transliteration={phonetic}
-                                            meaning={primaryMeaning || description}
-                                          />
-                                        }
-                                      >
-                                        <Link
-                                          href={glyphHref(code)}
-                                          onClick={(e) => e.stopPropagation()}
-                                          className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 inline-block"
-                                        >
-                                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                                          <img
-                                            src={`/glyphs/${code}.svg`}
-                                            alt={code}
-                                            className={`${sizeClass} object-contain`}
-                                          />
-                                        </Link>
-                                      </Tooltip>
-                                    );
-                                  })}
-                                </button>
-                              );
-                            }
-                            if (row === "translit") {
-                              return (
-                                <span
-                                  key={tokenIndex}
-                                  className="text-sm italic text-brown-light font-medium px-1 min-w-[2rem] text-center"
-                                >
-                                  {token.transliteration}
-                                </span>
-                              );
-                            }
+                            const isLast = i === chunk.length - 1;
                             return (
-                              <span
-                                key={tokenIndex}
-                                className="text-sm text-sandstone px-1 min-w-[2rem] text-center"
-                              >
-                                {token.translation}
-                              </span>
+                              <div key={tokenIndex} className="flex items-end">
+                                <WordBox
+                                  token={token}
+                                  tokenIndex={tokenIndex}
+                                  lineIndex={lineIndex}
+                                  baseSize={baseSize}
+                                  isActive={isActive}
+                                  isParallel={isParallel}
+                                  onClick={() => handleTokenClick(lineIndex, tokenIndex, token)}
+                                />
+                                {!isLast && <DotConnector />}
+                              </div>
                             );
                           })}
                         </div>
-                      ))}
-                      {line.lineTranslation && (
-                        <p className="text-xs text-sandstone/70 italic pt-1">
-                          {line.lineTranslation}
-                        </p>
-                      )}
-                    </div>
-                  ) : (
-                    /* ── Hieroglyphs / Interlinear mode ─────────────────────
-                       Each word is a vertical column button.
-                       Hieroglyphs: glyphs only.
-                    ──────────────────────────────────────────────────────── */
-                    <div className="flex flex-wrap gap-x-3 gap-y-4 items-start">
-                      {line.tokens.map((token, tokenIndex) => {
-                        const isActive = isActiveLine && activeToken?.tokenIndex === tokenIndex;
+                      </div>
+                    );
+                  })}
 
-                        return (
-                          <button
-                            key={tokenIndex}
-                            onClick={() => handleTokenClick(lineIndex, tokenIndex, token)}
-                            className={`
-                              flex flex-col items-center rounded-lg px-1.5 pt-1 pb-1.5
-                              transition-all duration-150 min-w-[2rem]
-                              ${isActive
-                                ? "bg-gold/20 ring-1 ring-gold/50"
-                                : "hover:bg-papyrus/40 cursor-pointer"
-                              }
-                            `}
-                          >
-                            {/* Per-glyph columns */}
-                            <div className="flex items-end gap-1">
-                              {token.codes.map((code, ci) => {
-                                const glyph = getGlyphByCode(code);
-                                const primaryMeaning = glyph?.meanings[0]?.text;
-                                const phonetic = glyph?.transliteration[0];
-                                const description = glyph?.description;
-                                const sizeClass = glyphSize === "sm" ? "w-6 h-6" : "w-8 h-8";
-                                return (
-                                  <div key={`${code}-${ci}`} className="flex flex-col items-center gap-0.5">
-                                    <Tooltip
-                                      content={
-                                        <GlyphTooltipContent
-                                          code={code}
-                                          transliteration={phonetic}
-                                          meaning={primaryMeaning || description}
-                                        />
-                                      }
-                                    >
-                                      <Link
-                                        href={glyphHref(code)}
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 inline-block"
-                                      >
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                          src={`/glyphs/${code}.svg`}
-                                          alt={code}
-                                          className={`${sizeClass} object-contain`}
-                                        />
-                                      </Link>
-                                    </Tooltip>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-
-                  {/* Line translation for hieroglyphs mode */}
-                  {mode === "hieroglyphs" && line.lineTranslation && (
-                    <p className="text-xs text-sandstone/70 italic border-t border-gold/15 pt-1.5 mt-2">
+                  {/* Line translation */}
+                  {line.lineTranslation && (
+                    <p className="text-xs text-sandstone/70 italic pt-2 mt-1">
                       {line.lineTranslation}
                     </p>
                   )}
                 </div>
               </div>
 
-              {/* Token detail panel — inline, directly below the active line */}
+              {/* Token detail panel */}
               {isActiveLine && activeToken && !compact && (
                 <div className={line.number != null ? "pl-8" : ""}>
                   <TokenDetail
