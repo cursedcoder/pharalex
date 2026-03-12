@@ -1,6 +1,8 @@
 # PharaLex Trademark Notice
 
-"**PharaLex**" and the PharaLex logotype (𓂀 + wordmark) are trademarks of cursedcoder.
+"**PharaLex**" and the PharaLex logotype (the combination of the 𓂀 symbol with the "PharaLex" wordmark as used at [pharalex.app](https://pharalex.app)) are trademarks of cursedcoder.
+
+The 𓂀 hieroglyph itself (Gardiner D4, Eye of Horus) is an ancient symbol in the public domain. The trademark applies to the specific combination of that symbol and the "PharaLex" name as a brand identifier, not to the glyph in isolation.
 
 ## What this means for forks
 
