@@ -19,56 +19,6 @@ interface ActiveToken {
   token: TextToken;
 }
 
-function GlyphRow({
-  codes,
-  size = "md",
-}: {
-  codes: string[];
-  size?: "sm" | "md" | "lg";
-}) {
-  const sizeClass = {
-    sm: "w-6 h-6",
-    md: "w-8 h-8",
-    lg: "w-10 h-10",
-  }[size];
-
-  return (
-    <div className="flex items-end justify-center gap-0.5">
-      {codes.map((code, i) => {
-        const glyph = getGlyphByCode(code);
-        const primaryMeaning = glyph?.meanings[0]?.text;
-        const transliteration = glyph?.transliteration[0];
-        const description = glyph?.description;
-
-        return (
-          <Tooltip
-            key={`${code}-${i}`}
-            content={
-              <GlyphTooltipContent
-                code={code}
-                transliteration={transliteration}
-                meaning={primaryMeaning || description}
-              />
-            }
-          >
-            <Link
-              href={glyphHref(code)}
-              onClick={(e) => e.stopPropagation()}
-              className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 inline-block"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`/glyphs/${code}.svg`}
-                alt={code}
-                className={`${sizeClass} object-contain`}
-              />
-            </Link>
-          </Tooltip>
-        );
-      })}
-    </div>
-  );
-}
 
 function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void }) {
   return (
@@ -213,24 +163,63 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
                               key={tokenIndex}
                               onClick={() => handleTokenClick(lineIndex, tokenIndex, token)}
                               className={`
-                                flex flex-col items-start gap-1 rounded-lg px-1.5 pt-1 pb-1.5
+                                flex flex-col items-center gap-1 rounded-lg px-1.5 pt-1 pb-1.5
                                 transition-all duration-150
                                 ${isActive ? "bg-gold/20 ring-1 ring-gold/50" : "hover:bg-papyrus/40"}
                               `}
                             >
-                              <GlyphRow codes={token.codes} size={glyphSize} />
-                              <span className="text-sm italic text-brown-light leading-tight">
+                              <div className="flex items-end gap-1">
+                                {token.codes.map((code, ci) => {
+                                  const glyph = getGlyphByCode(code);
+                                  const primaryMeaning = glyph?.meanings[0]?.text;
+                                  const phonetic = glyph?.transliteration[0];
+                                  const description = glyph?.description;
+                                  const sizeClass = glyphSize === "sm" ? "w-6 h-6" : "w-8 h-8";
+                                  return (
+                                    <div key={`${code}-${ci}`} className="flex flex-col items-center gap-0.5">
+                                      <Tooltip
+                                        content={
+                                          <GlyphTooltipContent
+                                            code={code}
+                                            transliteration={phonetic}
+                                            meaning={primaryMeaning || description}
+                                          />
+                                        }
+                                      >
+                                        <Link
+                                          href={glyphHref(code)}
+                                          onClick={(e) => e.stopPropagation()}
+                                          className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 inline-block"
+                                        >
+                                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                                          <img
+                                            src={`/glyphs/${code}.svg`}
+                                            alt={code}
+                                            className={`${sizeClass} object-contain`}
+                                          />
+                                        </Link>
+                                      </Tooltip>
+                                      {phonetic && (
+                                        <span className="text-[10px] italic text-brown-light/70 leading-none text-center">
+                                          {phonetic}
+                                        </span>
+                                      )}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                              <span className="text-sm italic text-brown-light leading-tight text-center mt-1">
                                 {token.transliteration}
                               </span>
-                              <span className="text-sm text-sandstone leading-tight">
+                              <span className="text-sm text-sandstone leading-tight text-center">
                                 {token.translation}
                               </span>
                             </button>
                           );
                         })}
                       </div>
-                      {/* Full-line prose translation */}
-                      {line.lineTranslation && (
+                      {/* Full-line prose translation — only shown when it adds context beyond the single token */}
+                      {line.lineTranslation && line.tokens.length > 1 && (
                         <p className="text-sm text-sandstone/70 italic mt-1">
                           {line.lineTranslation}
                         </p>
@@ -255,51 +244,52 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
                               }
                             `}
                           >
-                            {/* Glyphs — top-aligned so all tokens start on the same row */}
-                            <div className="flex items-center justify-center gap-0.5">
+                            {/* Per-glyph columns: each glyph above its own phonetic value */}
+                            <div className="flex items-end gap-1">
                               {token.codes.map((code, ci) => {
                                 const glyph = getGlyphByCode(code);
                                 const primaryMeaning = glyph?.meanings[0]?.text;
-                                const transliteration = glyph?.transliteration[0];
+                                const phonetic = glyph?.transliteration[0];
                                 const description = glyph?.description;
                                 const sizeClass = glyphSize === "sm" ? "w-6 h-6" : "w-8 h-8";
                                 return (
-                                  <Tooltip
-                                    key={`${code}-${ci}`}
-                                    content={
-                                      <GlyphTooltipContent
-                                        code={code}
-                                        transliteration={transliteration}
-                                        meaning={primaryMeaning || description}
-                                      />
-                                    }
-                                  >
-                                    <Link
-                                      href={glyphHref(code)}
-                                      onClick={(e) => e.stopPropagation()}
-                                      className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 inline-block"
+                                  <div key={`${code}-${ci}`} className="flex flex-col items-center gap-0.5">
+                                    <Tooltip
+                                      content={
+                                        <GlyphTooltipContent
+                                          code={code}
+                                          transliteration={phonetic}
+                                          meaning={primaryMeaning || description}
+                                        />
+                                      }
                                     >
-                                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img
-                                        src={`/glyphs/${code}.svg`}
-                                        alt={code}
-                                        className={`${sizeClass} object-contain`}
-                                      />
-                                    </Link>
-                                  </Tooltip>
+                                      <Link
+                                        href={glyphHref(code)}
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 inline-block"
+                                      >
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img
+                                          src={`/glyphs/${code}.svg`}
+                                          alt={code}
+                                          className={`${sizeClass} object-contain`}
+                                        />
+                                      </Link>
+                                    </Tooltip>
+                                    {mode === "interlinear" && phonetic && (
+                                      <span className="text-[10px] italic text-brown-light/70 leading-none text-center">
+                                        {phonetic}
+                                      </span>
+                                    )}
+                                  </div>
                                 );
                               })}
                             </div>
 
                             {mode === "interlinear" && (
-                              <>
-                                <span className="text-xs italic text-brown-light font-medium leading-tight text-center mt-1.5">
-                                  {token.transliteration}
-                                </span>
-                                <span className="text-[11px] text-sandstone leading-tight text-center max-w-[8rem] mt-0.5">
-                                  {token.translation}
-                                </span>
-                              </>
+                              <span className="text-[11px] text-sandstone leading-tight text-center mt-1">
+                                {token.translation}
+                              </span>
                             )}
                           </button>
                         );
