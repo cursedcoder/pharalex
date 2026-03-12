@@ -51,6 +51,8 @@ Glyph names, meanings, transliterations, phonetic values, and Gardiner categoris
 | **Aegyptus glyph list** | 3,900 entries | Additional Hieroglyphica sign codes (extended corpus beyond Unikemet) | Derived from Aegyptus font's character map; imported via `scripts/process-aegyptus.ts` | — |
 | **JSesh sign descriptions** (`signs_description.xml`) | 6,783 entries | Shape/visual tags (e.g. "seated", "holding something", "bird-headed"), additional phonetic transliterations with use/type metadata, composite part relationships | Cloned [`rosmord/jsesh`](https://github.com/rosmord/jsesh); extracted `jsesh/src/main/resources/jsesh/hieroglyphs/resources/signs_description.xml`; parsed with `scripts/process-jsesh.ts` | LGPL-3.0 |
 | **St Andrews Unicode Sign List** | 1,071 entries | English physical descriptions (e.g. "seated man", "owl"), semantic uses (logogram/phonogram/determinative) with transliterations and translations | Downloaded `signdescriptioneng.xml` and `signuse.xml` from [mjn.host.cs.st-andrews.ac.uk](https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/); parsed with `scripts/process-standrews.ts` | Academic open |
+| **TLA Earlier Egyptian corpus** (v18) | 12,773 sentences | Attested text examples: hieroglyphs + transliteration + German translation + date range, for Old/Middle Egyptian period (~3000–1550 BCE) | Downloaded `train.jsonl` from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-Earlier_Egyptian_original-v18-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
+| **TLA Late Egyptian corpus** (v19) | 3,606 sentences | Same as above for Late Egyptian period (~1550–700 BCE) | Downloaded `train.jsonl` from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-late_egyptian-v19-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
 | **Combined** | **8,282** | All of the above, deduplicated and merged by Gardiner code | Final output at `lib/data/glyphs.json` | — |
 
 ---
@@ -62,7 +64,8 @@ kaikki.org JSONL          → scripts/process-data.ts        ─┐
 Unicode Unikemet.txt      → scripts/process-unikemet.ts    ─┤
 Aegyptus font cmap        → scripts/process-aegyptus.ts    ─┼→ lib/data/glyphs.json
 JSesh signs_description   → scripts/process-jsesh.ts       ─┤
-St Andrews sign list XMLs → scripts/process-standrews.ts   ─┘
+St Andrews sign list XMLs → scripts/process-standrews.ts   ─┤
+TLA corpus JSONL (×2)     → scripts/process-tla.ts         ─┘
 
 JSesh SVGs (repo)         ─┐
 NewGardiner TTF extract   ─┤
@@ -79,6 +82,7 @@ Noto TTF extract          ─┘
 | JSesh glyphs | LGPL-3.0 | Yes (with attribution) |
 | JSesh sign descriptions | LGPL-3.0 | Yes (with attribution) |
 | St Andrews sign list | Academic open | Non-commercial |
+| TLA corpus (Earlier + Late Egyptian) | CC BY-SA 4.0 | Yes (with attribution) |
 | NewGardiner / hierojax font | GPL-3.0 | Yes (with attribution) |
 | Noto Sans Egyptian Hieroglyphs | OFL-1.1 | Yes |
 | Aegyptus 6.17 (free release) | Freeware (non-commercial) | No |
