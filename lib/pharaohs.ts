@@ -1,12 +1,41 @@
 import { PHARAOHS, DYNASTIES, PERIODS, DYNASTY_MAP, PERIOD_MAP } from "@/lib/data/pharaohs";
-import type { Pharaoh, Dynasty, PeriodInfo, PeriodId } from "@/lib/types";
+import { ROYAL_NAMES } from "@/lib/data/royal-names";
+import type { Pharaoh, Dynasty, PeriodInfo, PeriodId, RoyalNames } from "@/lib/types";
+
+function enrichWithRoyalNames(pharaoh: Pharaoh): Pharaoh {
+  const royalNames = ROYAL_NAMES[pharaoh.slug];
+  if (royalNames) {
+    return { ...pharaoh, royalNames };
+  }
+  return pharaoh;
+}
 
 export function getAllPharaohs(): Pharaoh[] {
-  return PHARAOHS;
+  return PHARAOHS.map(enrichWithRoyalNames);
 }
 
 export function getPharaohBySlug(slug: string): Pharaoh | undefined {
-  return PHARAOHS.find((p) => p.slug === slug);
+  const pharaoh = PHARAOHS.find((p) => p.slug === slug);
+  return pharaoh ? enrichWithRoyalNames(pharaoh) : undefined;
+}
+
+export function getRoyalNames(slug: string): RoyalNames | undefined {
+  return ROYAL_NAMES[slug];
+}
+
+export function getPharaohsUsingGlyph(glyphCode: string): Pharaoh[] {
+  return PHARAOHS.filter((p) => {
+    const names = ROYAL_NAMES[p.slug];
+    if (!names) return false;
+    const allCodes = [
+      ...(names.prenomen?.codes ?? []),
+      ...(names.nomen?.codes ?? []),
+      ...(names.horus?.codes ?? []),
+      ...(names.nebty?.codes ?? []),
+      ...(names.golden?.codes ?? []),
+    ];
+    return allCodes.includes(glyphCode);
+  }).map(enrichWithRoyalNames);
 }
 
 export function getAllDynasties(): Dynasty[] {

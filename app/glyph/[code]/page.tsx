@@ -14,6 +14,7 @@ import {
   getBaseCode,
   glyphHref,
 } from "@/lib/glyphs";
+import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -53,6 +54,7 @@ export default async function GlyphPage({ params }: PageProps) {
   const variants = getGlyphVariants(glyph.code);
   const baseCode = getBaseCode(glyph.code);
   const baseGlyph = baseCode ? getGlyphByCode(baseCode) : null;
+  const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
 
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
@@ -109,14 +111,9 @@ export default async function GlyphPage({ params }: PageProps) {
                       <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown">
                         {glyph.code}
                       </h1>
-                      {glyph.renderable !== false && (
-                        <span className="text-2xl text-sandstone/60">
-                          {glyph.unicode}
-                        </span>
-                      )}
-                      {glyph.renderable === false && (
-                        <Badge variant="outline">Unicode 16.0</Badge>
-                      )}
+                      <span className="text-2xl text-sandstone/60">
+                        {glyph.unicode}
+                      </span>
                     </div>
 
                     <Link
@@ -139,7 +136,7 @@ export default async function GlyphPage({ params }: PageProps) {
                           className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-gold/10 text-gold-dark hover:bg-gold/20 transition-colors font-medium"
                         >
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={`/glyphs/${baseGlyph.code}.svg`} alt={baseGlyph.code} className="w-5 h-5 object-contain" />
+                          <img src={`/glyphs/${encodeURIComponent(baseGlyph.code)}.svg`} alt={baseGlyph.code} className="w-5 h-5 object-contain" />
                           {baseGlyph.code}
                         </Link>
                       </div>
@@ -193,16 +190,19 @@ export default async function GlyphPage({ params }: PageProps) {
                         </h2>
                         <div className="flex flex-wrap gap-1.5">
                           {glyph.tags.map((tag) => (
-                            <span
+                            <Link
                               key={tag}
+                              href={`/browse?tag=${encodeURIComponent(tag)}`}
                               className="
                                 px-2 py-0.5 rounded-md
                                 bg-sandstone/10 border border-sandstone/20
                                 text-xs text-sandstone
+                                hover:bg-gold/15 hover:border-gold/40 hover:text-gold-dark
+                                transition-colors
                               "
                             >
                               {tag}
-                            </span>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -223,7 +223,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             >
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src={`/glyphs/${v.code}.svg`}
+                                src={`/glyphs/${encodeURIComponent(v.code)}.svg`}
                                 alt={v.code}
                                 className="w-10 h-10 object-contain"
                               />
@@ -457,6 +457,71 @@ export default async function GlyphPage({ params }: PageProps) {
                       />
                     ))}
                   </div>
+                </section>
+              )}
+
+              {pharaohsUsingGlyph.length > 0 && (
+                <section>
+                  <h3 className="font-display text-lg font-semibold text-brown mb-4">
+                    Royal Names Using This Glyph
+                  </h3>
+                  <div
+                    className="
+                      bg-ivory-dark/50 border border-sandstone/20 rounded-xl
+                      p-4 space-y-2
+                    "
+                  >
+                    {pharaohsUsingGlyph.map((pharaoh) => (
+                      <Link
+                        key={pharaoh.slug}
+                        href={`/pharaohs/${pharaoh.slug}`}
+                        className="
+                          flex items-center justify-between gap-2 p-2
+                          -mx-2 rounded-lg
+                          hover:bg-gold/10 transition-colors
+                          group
+                        "
+                      >
+                        <div className="flex items-center gap-2 min-w-0">
+                          <div
+                            className="
+                              w-8 h-8 shrink-0 rounded-md
+                              bg-gold/10 group-hover:bg-gold/20
+                              flex items-center justify-center
+                              overflow-hidden p-1.5
+                              transition-colors
+                            "
+                          >
+                            {pharaoh.royalNames?.nomen?.codes?.[0] ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img
+                                src={`/glyphs/${pharaoh.royalNames.nomen.codes[0]}.svg`}
+                                alt=""
+                                className="w-full h-full object-contain"
+                              />
+                            ) : (
+                              <span className="font-hieroglyph text-sm text-gold-dark">𓀭</span>
+                            )}
+                          </div>
+                          <div className="min-w-0">
+                            <span className="text-sm font-medium text-brown group-hover:text-gold-dark transition-colors block truncate">
+                              {pharaoh.name}
+                            </span>
+                            {pharaoh.notable && (
+                              <span className="text-[10px] text-gold-dark">★ Notable</span>
+                            )}
+                          </div>
+                        </div>
+                        <span className="text-xs text-sandstone tabular-nums shrink-0">
+                          {formatReign(pharaoh)}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                  <p className="mt-2 text-xs text-sandstone/70">
+                    This glyph appears in {pharaohsUsingGlyph.length} royal name
+                    {pharaohsUsingGlyph.length > 1 ? "s" : ""}.
+                  </p>
                 </section>
               )}
             </div>

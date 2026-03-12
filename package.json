@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "^3.13.21",
     "fast-xml-parser": "^5.5.3",
     "fuse.js": "^7.1.0",
     "next": "16.1.6",

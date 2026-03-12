@@ -13,9 +13,11 @@ export default function HomePage() {
 
   const featuredGlyphs = glyphs.slice(0, 6);
 
-  const renderableGlyphs = glyphs.filter(
-    (g) => g.unicode && g.renderable !== false && g.meanings.length > 0
-  );
+  const renderableGlyphs = glyphs.filter((g) => {
+    if (!g.unicode || g.meanings.length === 0) return false;
+    const cp = g.unicode.codePointAt(0) ?? 0;
+    return cp >= 0x13000 && cp <= 0x1342f;
+  });
 
   return (
     <div className="min-h-screen">

@@ -5,13 +5,6 @@
     <path
        d="M -0.25000000,9.8437500 L -0.25000000,18.343750 L 6.4062500,18.343750 L 6.4062500,17.343750 L 0.75000000,17.343750 L 0.75000000,10.843750 L 17.437500,10.843750 L 17.437500,17.343750 L 12.375000,17.343750 L 12.375000,18.343750 L 18.437500,18.343750 L 18.437500,9.8437500 L -0.25000000,9.8437500 z "
        style="opacity:0.99415207;fill:currentColor;fill-opacity:1.0000000;fill-rule:nonzero;stroke:none;stroke-width:1.0000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.0000000;stroke-opacity:1.0000000;display:inline" />
-    <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:red;stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       width="14.571725"
-       height="5.7535181"
-       x="1.8078876"
-       y="11.176732"
-       ry="0.066033319"
-       rx="0.066033319" />
+    
   </g>
 </svg>

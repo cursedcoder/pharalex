@@ -23,9 +23,6 @@ function extractAttr(svg: string, attr: string): string | null {
   return m ? m[1] : null;
 }
 
-function removeAttr(svg: string, attr: string): string {
-  return svg.replace(new RegExp(`\\s*\\b${attr}\\s*=\\s*['"][^'"]*['"]`, "gi"), "");
-}
 
 function setAttr(svg: string, attr: string, value: string): string {
   // Insert after the opening <svg tag if not present, or replace if present
@@ -41,6 +38,27 @@ function normalizeFill(svg: string): string {
   svg = svg.replace(/fill\s*:\s*black\b/gi, "fill:currentColor");
   // fill="#000000" or fill="#000" or fill="black" attributes
   svg = svg.replace(/\bfill\s*=\s*["'](?:#000000|#000|black)["']/gi, 'fill="currentColor"');
+  return svg;
+}
+
+function stripRedArtifacts(svg: string): string {
+  // Remove any element (rect, path, line, polyline, polygon, circle, ellipse)
+  // whose style contains a red stroke — these are Inkscape construction guides
+  // that were accidentally left in the exported SVG.
+  const redStrokeRe = /stroke\s*:\s*(?:#[Ff][Ff]0{4}|#[Ff]{2}0{4}|red\b)/;
+
+  // Self-closing tags: <tagName ... />
+  svg = svg.replace(
+    /<(rect|path|line|polyline|polygon|circle|ellipse|g)\b([^>]*?)\/>/gis,
+    (match, _tag, attrs) => (redStrokeRe.test(attrs) ? "" : match)
+  );
+
+  // Open+close pairs: <tagName ...>...</tagName>
+  svg = svg.replace(
+    /<(rect|path|line|polyline|polygon|circle|ellipse|g)\b([^>]*?)>([\s\S]*?)<\/\1>/gis,
+    (match, _tag, attrs) => (redStrokeRe.test(attrs) ? "" : match)
+  );
+
   return svg;
 }
 
@@ -75,6 +93,104 @@ function stripBloat(svg: string): string {
   svg = svg.replace(/\s+id="[^"]*"/g, "");
   return svg;
 }
+
+function stripHiddenGroups(svg: string): string {
+  // Remove <g style="display:none">...</g> blocks (Inkscape reference-image leftovers)
+  return svg.replace(/<g[^>]*?style="[^"]*display\s*:\s*none[^"]*"[\s\S]*?<\/g>\s*/gi, "");
+}
+
+// ── path bounds ──────────────────────────────────────────────────────────────
+
+function getPathBounds(d: string): { minX: number; minY: number; maxX: number; maxY: number } {
+  const re = /([MmCcSsLlHhVvQqTtZzAa])|(-?(?:[0-9]+\.?[0-9]*|\.?[0-9]+)(?:[eE][+-]?[0-9]+)?)/g;
+  const tokens: string[] = [];
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(d)) !== null) tokens.push(m[0]);
+
+  let x = 0, y = 0, sx = 0, sy = 0;
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  let i = 0, cmd = "";
+
+  const num = () => parseFloat(tokens[i++]);
+  const update = (px: number, py: number) => {
+    if (px < minX) minX = px; if (px > maxX) maxX = px;
+    if (py < minY) minY = py; if (py > maxY) maxY = py;
+  };
+
+  while (i < tokens.length) {
+    if (/^[A-Za-z]$/.test(tokens[i])) { cmd = tokens[i++]; continue; }
+    switch (cmd) {
+      case "M": x=num(); y=num(); sx=x; sy=y; update(x,y); cmd="L"; break;
+      case "m": x+=num(); y+=num(); sx=x; sy=y; update(x,y); cmd="l"; break;
+      case "L": x=num(); y=num(); update(x,y); break;
+      case "l": x+=num(); y+=num(); update(x,y); break;
+      case "H": x=num(); update(x,y); break;
+      case "h": x+=num(); update(x,y); break;
+      case "V": y=num(); update(x,y); break;
+      case "v": y+=num(); update(x,y); break;
+      case "C": { const x1=num(),y1=num(),x2=num(),y2=num(),ex=num(),ey=num(); update(x1,y1); update(x2,y2); update(ex,ey); x=ex; y=ey; break; }
+      case "c": { const dx1=num(),dy1=num(),dx2=num(),dy2=num(),dex=num(),dey=num(); update(x+dx1,y+dy1); update(x+dx2,y+dy2); x+=dex; y+=dey; update(x,y); break; }
+      case "S": { const x2=num(),y2=num(),ex=num(),ey=num(); update(x2,y2); update(ex,ey); x=ex; y=ey; break; }
+      case "s": { const dx2=num(),dy2=num(),dex=num(),dey=num(); update(x+dx2,y+dy2); x+=dex; y+=dey; update(x,y); break; }
+      case "Q": { const x1=num(),y1=num(),ex=num(),ey=num(); update(x1,y1); update(ex,ey); x=ex; y=ey; break; }
+      case "q": { const dx1=num(),dy1=num(),dex=num(),dey=num(); update(x+dx1,y+dy1); x+=dex; y+=dey; update(x,y); break; }
+      case "T": x=num(); y=num(); update(x,y); break;
+      case "t": x+=num(); y+=num(); update(x,y); break;
+      case "A": { num();num();num();num();num(); x=num(); y=num(); update(x,y); break; }
+      case "a": { num();num();num();num();num(); x+=num(); y+=num(); update(x,y); break; }
+      case "Z": case "z": x=sx; y=sy; break;
+      default: if (!/^[A-Za-z]$/.test(tokens[i])) i++; break;
+    }
+  }
+  return { minX, minY, maxX, maxY };
+}
+
+function fixViewBox(svg: string): string {
+  // Recompute the viewBox from actual path geometry to fix:
+  //  1. Clipping: content extends outside the declared viewBox
+  //  2. Oversized canvas: viewBox is much larger than the path content (glyph appears tiny)
+  const vb = extractAttr(svg, "viewBox");
+  if (!vb) return svg;
+  const [vbX, vbY, vbW, vbH] = vb.split(/\s+/).map(Number);
+
+  // Ignore display:none sections (Inkscape reference images etc.)
+  const working = svg.replace(/<g[^>]*?style="[^"]*display\s*:\s*none[^"]*"[\s\S]*?<\/g>/gi, "");
+
+  // Accumulate translate() transform if present on a wrapper group
+  const tMatch = working.match(/transform="translate\(([^,)]+)(?:,([^)]+))?\)"/);
+  const tx = tMatch ? (parseFloat(tMatch[1]) || 0) : 0;
+  const ty = tMatch ? (parseFloat(tMatch[2] ?? "0") || 0) : 0;
+
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  for (const m of working.matchAll(/\bd="([^"]+)"/gs)) {
+    const b = getPathBounds(m[1]);
+    const bx1=b.minX+tx, bx2=b.maxX+tx, by1=b.minY+ty, by2=b.maxY+ty;
+    if (bx1<minX) minX=bx1; if (bx2>maxX) maxX=bx2;
+    if (by1<minY) minY=by1; if (by2>maxY) maxY=by2;
+  }
+
+  if (!isFinite(minX)) return svg;
+
+  const contentW = maxX - minX;
+  const contentH = maxY - minY;
+  const vbRight = vbX + vbW;
+  const vbBottom = vbY + vbH;
+
+  const clipped =
+    minX < vbX - 0.5 || minY < vbY - 0.5 ||
+    maxX > vbRight + 0.5 || maxY > vbBottom + 0.5;
+  const oversized =
+    contentW < vbW * 0.05 || contentH < vbH * 0.05;
+
+  if (!clipped && !oversized) return svg;
+
+  const pad = Math.max(contentW, contentH) * 0.04;
+  const precision = Math.max(contentW, contentH) > 10 ? 1 : 4;
+  const fmt = (n: number) => Number(n.toFixed(precision));
+  const newViewBox = `${fmt(minX-pad)} ${fmt(minY-pad)} ${fmt(contentW+pad*2)} ${fmt(contentH+pad*2)}`;
+  return setAttr(svg, "viewBox", newViewBox);
+}
+
 
 function normalize(raw: string): string {
   let svg = raw;
@@ -113,7 +229,16 @@ function normalize(raw: string): string {
   // 5. Normalize fill colour
   svg = normalizeFill(svg);
 
-  // 6. Strip bloat
+  // 6. Strip red construction-guide artifacts (Inkscape leftovers)
+  svg = stripRedArtifacts(svg);
+
+  // 7. Strip hidden groups (display:none, e.g. Inkscape reference images)
+  svg = stripHiddenGroups(svg);
+
+  // 8. Fix viewBox: expand if content is clipped, shrink if viewBox is oversized
+  svg = fixViewBox(svg);
+
+  // 9. Strip bloat
   svg = stripBloat(svg);
 
   // 7. Collapse excessive whitespace/newlines

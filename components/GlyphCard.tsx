@@ -89,7 +89,7 @@ export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       key={v.code}
-                      src={`/glyphs/${v.code}.svg`}
+                      src={`/glyphs/${encodeURIComponent(v.code)}.svg`}
                       alt={v.code}
                       title={v.code}
                       className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity"

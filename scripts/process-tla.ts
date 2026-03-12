@@ -73,6 +73,12 @@ function stripNonUnicode(s: string): string {
   return s.replace(/<g>[^<]*<\/g>/g, "");
 }
 
+// Normalize legacy TLA yod encoding (i + U+032F combining inverted breve below)
+// to the canonical Egyptological Yod (U+A7BD ꞽ) assigned in Unicode 12.
+function normalizeYod(s: string): string {
+  return s.replace(/i\u032F/g, "\uA7BD");
+}
+
 function glyphCount(hieroglyphs: string): number {
   const stripped = stripNonUnicode(hieroglyphs).replace(/\s/g, "");
   return [...stripped].length;
@@ -176,7 +182,7 @@ async function main() {
 
       const ex: GlyphExample = {
         hieroglyphs: row.hieroglyphs,
-        transliteration: row.transliteration,
+        transliteration: normalizeYod(row.transliteration),
         translation: row.translation,
         corpus,
         ...(formatPeriod(row.dateNotBefore, row.dateNotAfter)

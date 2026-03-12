@@ -3,12 +3,5 @@
   <path
      style="fill:currentColor; stroke:none"
      d=" M 10.56 2.608731  L 2.590863 2.608731  L 2.590863 10.56  L 0 10.56  L 0 0  L 10.56 0  L 10.56 2.608731  Z  M 10.006092 2.054822  L 10.006092 0.553909  L 0.553909 0.553909  L 0.553909 10.006092  L 2.054822 10.006092  L 2.054822 2.054822  L 10.006092 2.054822  Z " />
-  <rect
-     style="opacity:1;fill:none;fill-opacity:1;stroke:red;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     width="13.968254"
-     height="15.141588"
-     x="3.0730159"
-     y="3.1288891"
-     rx="0.066033319"
-     ry="0.066033319" />
+  
 </svg>

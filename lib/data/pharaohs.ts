@@ -121,7 +121,7 @@ export const PHARAOHS: Pharaoh[] = [
   { slug: "neferefra",     name: "Neferefra Isi",        alternateNames: ["Neferefre", "Raneferef"],      dynastyId: "dynasty-5",   reignStart: -2403, reignEnd: -2403 },
   { slug: "niuserra",      name: "Niuserra Ini",         alternateNames: ["Niuserre"],                    dynastyId: "dynasty-5",   reignStart: -2402, reignEnd: -2374 },
   { slug: "menkauhor",     name: "Menkauhor Kaiu",       alternateNames: ["Horikau", "Ikauhor"],          dynastyId: "dynasty-5",   reignStart: -2373, reignEnd: -2366 },
-  { slug: "djedkara",      name: "Djedkara Isesi",       alternateNames: ["Djedkare Isesi"],              dynastyId: "dynasty-5",   reignStart: -2365, reignEnd: -2322 },
+  { slug: "djedkara",      name: "Djedkara Isesi",       alternateNames: ["Djedkare Isesi", "Issi", "Djedu", "Maatkara", "Tancheres"],  dynastyId: "dynasty-5",   reignStart: -2365, reignEnd: -2322 },
   { slug: "unas",          name: "Unas",                 alternateNames: ["Wenis", "Unis"],               dynastyId: "dynasty-5",   reignStart: -2321, reignEnd: -2306, notable: true, summary: "First pharaoh to inscribe the Pyramid Texts inside his pyramid, the oldest known religious corpus." },
 
   // ── Dynasty 6 ─────────────────────────────────────────────────────────────

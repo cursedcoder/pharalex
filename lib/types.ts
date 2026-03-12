@@ -24,7 +24,6 @@ export interface Glyph {
   tags?: string[];
   examples?: GlyphExample[];
   related: string[];
-  renderable?: boolean;
   source?: "wiktionary" | "unicode" | "both";
 }
 
@@ -59,6 +58,20 @@ export interface Dynasty {
   note?: string;
 }
 
+export interface RoyalName {
+  codes: string[];
+  transliteration: string;
+  translation?: string;
+}
+
+export interface RoyalNames {
+  prenomen?: RoyalName;
+  nomen?: RoyalName;
+  horus?: RoyalName;
+  nebty?: RoyalName;
+  golden?: RoyalName;
+}
+
 export interface Pharaoh {
   slug: string;
   name: string;
@@ -69,6 +82,7 @@ export interface Pharaoh {
   reignNote?: string;
   notable?: boolean;
   summary?: string;
+  royalNames?: RoyalNames;
 }
 
 export interface PeriodInfo {

@@ -1,20 +1,199 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
+import { useWindowVirtualizer } from "@tanstack/react-virtual";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
-import { SmartGlyph, GlyphChar } from "@/components/SmartGlyph";
+import { SmartGlyph } from "@/components/SmartGlyph";
 import { getAllGlyphs, getAllCategories, getBaseCode, glyphHref } from "@/lib/glyphs";
 import type { Glyph, MeaningType } from "@/lib/types";
 
+// Grid columns at each breakpoint (mirrors tailwind grid-cols-*)
+const GRID_COLS_BY_WIDTH = [
+  [1536, 12],
+  [1280, 10],
+  [1024, 8],
+  [768, 6],
+  [0, 4],
+] as const;
+
+// Tile is square: width = (containerWidth - gaps) / cols
+// We keep a fixed tile size for the virtualizer estimate
+const GRID_TILE_SIZE = 88; // px — square tile side length
+const GRID_GAP = 8; // px
+const LIST_ROW_HEIGHT = 64; // px
+const LIST_GAP = 8; // px
+
+function useContainerWidth(ref: React.RefObject<HTMLDivElement | null>) {
+  const [width, setWidth] = useState(1024);
+  useEffect(() => {
+    if (!ref.current) return;
+    const obs = new ResizeObserver(([entry]) => setWidth(entry.contentRect.width));
+    obs.observe(ref.current);
+    setWidth(ref.current.offsetWidth);
+    return () => obs.disconnect();
+  }, [ref]);
+  return width;
+}
+
+function getColCount(width: number) {
+  for (const [breakpoint, cols] of GRID_COLS_BY_WIDTH) {
+    if (width >= breakpoint) return cols;
+  }
+  return 4;
+}
+
+// --- Virtual Grid (window scroll) ---
+function VirtualGrid({
+  glyphs,
+  variantCounts,
+}: {
+  glyphs: Glyph[];
+  variantCounts: Record<string, number>;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scrollMargin, setScrollMargin] = useState(0);
+  const width = useContainerWidth(containerRef);
+  const cols = getColCount(width);
+  const tileSize = width > 0 ? Math.floor((width - GRID_GAP * (cols - 1)) / cols) : GRID_TILE_SIZE;
+  const rowHeight = tileSize + GRID_GAP;
+
+  useEffect(() => {
+    if (containerRef.current) {
+      setScrollMargin(containerRef.current.offsetTop);
+    }
+  });
+
+  const rows = useMemo(() => {
+    const result: Glyph[][] = [];
+    for (let i = 0; i < glyphs.length; i += cols) {
+      result.push(glyphs.slice(i, i + cols));
+    }
+    return result;
+  }, [glyphs, cols]);
+
+  const virtualizer = useWindowVirtualizer({
+    count: rows.length,
+    estimateSize: () => rowHeight,
+    overscan: 5,
+    scrollMargin,
+  });
+
+  return (
+    <div ref={containerRef}>
+      <div
+        style={{
+          height: virtualizer.getTotalSize(),
+          position: "relative",
+        }}
+      >
+        {virtualizer.getVirtualItems().map((virtualRow) => {
+          const row = rows[virtualRow.index];
+          return (
+            <div
+              key={virtualRow.key}
+              data-index={virtualRow.index}
+              ref={virtualizer.measureElement}
+              style={{
+                position: "absolute",
+                top: virtualRow.start - virtualizer.options.scrollMargin,
+                left: 0,
+                right: 0,
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: `repeat(${cols}, ${tileSize}px)`,
+                  gap: GRID_GAP,
+                  marginBottom: GRID_GAP,
+                }}
+              >
+                {row.map((glyph) => (
+                  <GlyphTile
+                    key={glyph.code}
+                    glyph={glyph}
+                    variantCount={variantCounts[glyph.code] || 0}
+                    size={tileSize}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// --- Virtual List (window scroll) ---
+function VirtualList({
+  glyphs,
+  variantCounts,
+}: {
+  glyphs: Glyph[];
+  variantCounts: Record<string, number>;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scrollMargin, setScrollMargin] = useState(0);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      setScrollMargin(containerRef.current.offsetTop);
+    }
+  });
+
+  const virtualizer = useWindowVirtualizer({
+    count: glyphs.length,
+    estimateSize: () => LIST_ROW_HEIGHT + LIST_GAP,
+    overscan: 8,
+    scrollMargin,
+  });
+
+  return (
+    <div ref={containerRef}>
+      <div style={{ height: virtualizer.getTotalSize(), position: "relative" }}>
+        {virtualizer.getVirtualItems().map((virtualRow) => {
+          const glyph = glyphs[virtualRow.index];
+          return (
+            <div
+              key={virtualRow.key}
+              data-index={virtualRow.index}
+              ref={virtualizer.measureElement}
+              style={{
+                position: "absolute",
+                top: virtualRow.start - virtualizer.options.scrollMargin,
+                left: 0,
+                right: 0,
+                paddingBottom: LIST_GAP,
+              }}
+            >
+              <GlyphRow
+                glyph={glyph}
+                variantCount={variantCounts[glyph.code] || 0}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// --- Page ---
 export default function BrowsePage() {
   const allGlyphs = getAllGlyphs();
   const categories = getAllCategories();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const initialTag = searchParams.get("tag") ?? null;
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<MeaningType | null>(null);
-  const [renderableOnly, setRenderableOnly] = useState(false);
+  const [selectedTag, setSelectedTag] = useState<string | null>(initialTag);
   const [viewMode, setViewMode] = useState<"grid" | "compact">("grid");
   const [groupVariants, setGroupVariants] = useState(true);
 
@@ -31,14 +210,13 @@ export default function BrowsePage() {
       );
     }
 
-    if (renderableOnly) {
-      result = result.filter((g) => g.renderable !== false);
+    if (selectedTag) {
+      result = result.filter((g) => g.tags?.includes(selectedTag));
     }
 
     return result;
-  }, [allGlyphs, selectedCategory, selectedType, renderableOnly]);
+  }, [allGlyphs, selectedCategory, selectedType, selectedTag]);
 
-  // When grouping, suppress variant glyphs (those whose base is already in the list)
   const displayGlyphs = useMemo(() => {
     if (!groupVariants) return filteredGlyphs;
     const inResult = new Set(filteredGlyphs.map((g) => g.code));
@@ -48,7 +226,6 @@ export default function BrowsePage() {
     });
   }, [filteredGlyphs, groupVariants]);
 
-  // Build a map of base code → variant count for tiles
   const variantCounts = useMemo(() => {
     if (!groupVariants) return {};
     const counts: Record<string, number> = {};
@@ -59,7 +236,12 @@ export default function BrowsePage() {
     return counts;
   }, [filteredGlyphs, groupVariants]);
 
-  const renderableCount = allGlyphs.filter((g) => g.renderable !== false).length;
+  const clearFilters = useCallback(() => {
+    setSelectedCategory(null);
+    setSelectedType(null);
+    setSelectedTag(null);
+    router.replace("/browse");
+  }, [router]);
 
   const meaningTypes: { value: MeaningType; label: string }[] = [
     { value: "logogram", label: "Logograms" },
@@ -135,24 +317,30 @@ export default function BrowsePage() {
             <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
-                checked={renderableOnly}
-                onChange={(e) => setRenderableOnly(e.target.checked)}
-                className="w-4 h-4 rounded border-sandstone/30 text-gold focus:ring-gold/50"
-              />
-              <span className="text-sm text-sandstone">
-                Renderable only ({renderableCount})
-              </span>
-            </label>
-
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
                 checked={groupVariants}
                 onChange={(e) => setGroupVariants(e.target.checked)}
                 className="w-4 h-4 rounded border-sandstone/30 text-gold focus:ring-gold/50"
               />
               <span className="text-sm text-sandstone">Group variants</span>
             </label>
+
+            {selectedTag && (
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gold/15 border border-gold/30">
+                <span className="text-xs font-medium text-gold-dark">Tag: {selectedTag}</span>
+                <button
+                  onClick={() => {
+                    setSelectedTag(null);
+                    router.replace("/browse");
+                  }}
+                  className="text-gold-dark hover:text-brown transition-colors ml-0.5"
+                  aria-label="Remove tag filter"
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            )}
 
             <div className="flex-1" />
 
@@ -203,33 +391,20 @@ export default function BrowsePage() {
             </div>
           </div>
 
-          {viewMode === "grid" ? (
-            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-2">
-              {displayGlyphs.map((glyph) => (
-                <GlyphTile key={glyph.code} glyph={glyph} variantCount={variantCounts[glyph.code] || 0} />
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {displayGlyphs.map((glyph) => (
-                <GlyphRow key={glyph.code} glyph={glyph} variantCount={variantCounts[glyph.code] || 0} />
-              ))}
-            </div>
-          )}
-
-          {displayGlyphs.length === 0 && (
+          {displayGlyphs.length === 0 ? (
             <div className="text-center py-12 text-sandstone">
               <p>No hieroglyphs match your filters.</p>
               <button
-                onClick={() => {
-                  setSelectedCategory(null);
-                  setSelectedType(null);
-                }}
+                onClick={clearFilters}
                 className="mt-2 text-gold hover:text-gold-dark"
               >
                 Clear filters
               </button>
             </div>
+          ) : viewMode === "grid" ? (
+            <VirtualGrid glyphs={displayGlyphs} variantCounts={variantCounts} />
+          ) : (
+            <VirtualList glyphs={displayGlyphs} variantCounts={variantCounts} />
           )}
         </Container>
       </main>
@@ -237,44 +412,27 @@ export default function BrowsePage() {
   );
 }
 
-function GlyphTile({ glyph, variantCount = 0 }: { glyph: Glyph; variantCount?: number }) {
-  const hasSvg = !glyph.code.startsWith("U+");
-  const isRenderable = glyph.renderable !== false;
-  const canDisplay = hasSvg || isRenderable;
-
+function GlyphTile({ glyph, variantCount = 0, size }: { glyph: Glyph; variantCount?: number; size?: number }) {
   return (
     <Link
       href={glyphHref(glyph.code)}
-      className={`
-        group relative aspect-square
+      className="
+        group relative
         rounded-lg
         hover:shadow-md
         flex items-center justify-center
-        transition-all
-        ${
-          canDisplay
-            ? "bg-papyrus/50 border border-sandstone/20 hover:border-gold/40"
-            : "bg-gradient-to-br from-sandstone/5 to-sandstone/15 border border-dashed border-sandstone/30 hover:border-gold/50"
-        }
-      `}
+        transition-all overflow-hidden
+        bg-papyrus/50 border border-sandstone/20 hover:border-gold/40
+      "
+      style={size ? { width: size, height: size } : undefined}
       title={`${glyph.code}: ${glyph.meanings[0]?.text || ""}`}
     >
-      {hasSvg ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={`/glyphs/${glyph.code}.svg`}
-          alt={glyph.code}
-          className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
-        />
-      ) : isRenderable ? (
-        <span className="font-hieroglyph text-3xl sm:text-4xl">
-          {glyph.unicode}
-        </span>
-      ) : (
-        <span className="font-display font-bold text-[10px] sm:text-xs text-sandstone">
-          {glyph.code.replace("U+", "").slice(0, 5)}
-        </span>
-      )}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`/glyphs/${encodeURIComponent(glyph.code)}.svg`}
+        alt={glyph.code}
+        className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+      />
       <span
         className="
           absolute bottom-0 left-0 right-0
@@ -301,7 +459,7 @@ function GlyphRow({ glyph, variantCount = 0 }: { glyph: Glyph; variantCount?: nu
     <Link
       href={glyphHref(glyph.code)}
       className="
-        flex items-center gap-3 p-3
+        flex items-center gap-3 p-3 h-full
         bg-ivory-dark/50 border border-sandstone/20 rounded-lg
         hover:border-gold/40 hover:shadow-md
         transition-all
@@ -312,11 +470,6 @@ function GlyphRow({ glyph, variantCount = 0 }: { glyph: Glyph; variantCount?: nu
         <div className="flex items-center gap-2">
           <span className="font-medium text-brown">{glyph.code}</span>
           <span className="text-xs text-sandstone">{glyph.category}</span>
-          {glyph.renderable === false && (
-            <span className="text-[10px] px-1.5 py-0.5 bg-sandstone/10 rounded text-sandstone">
-              Unicode 16
-            </span>
-          )}
           {variantCount > 0 && (
             <span className="text-[10px] px-1.5 py-0.5 bg-gold/10 rounded text-gold-dark font-medium">
               +{variantCount} variants

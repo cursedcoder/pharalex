@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
+import { RoyalNamesDisplay } from "@/components/Cartouche";
 import {
   getPharaohBySlug,
   getDynastyById,
@@ -85,10 +86,26 @@ export default async function PharaohPage({ params }: Props) {
                       w-16 h-16 shrink-0 rounded-xl
                       bg-gold/15 border border-gold/20
                       flex items-center justify-center
-                      font-hieroglyph text-4xl text-gold-dark
+                      overflow-hidden p-2
                     "
                   >
-                    𓀭
+                    {pharaoh.royalNames?.nomen?.codes?.[0] ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={`/glyphs/${pharaoh.royalNames.nomen.codes[0]}.svg`}
+                        alt={pharaoh.royalNames.nomen.codes[0]}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : pharaoh.royalNames?.prenomen?.codes?.[0] ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={`/glyphs/${pharaoh.royalNames.prenomen.codes[0]}.svg`}
+                        alt={pharaoh.royalNames.prenomen.codes[0]}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      <span className="font-hieroglyph text-4xl text-gold-dark">𓀭</span>
+                    )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
@@ -155,15 +172,35 @@ export default async function PharaohPage({ params }: Props) {
                 )}
               </div>
 
-              {/* Hieroglyph decorative quote */}
-              <div className="border border-sandstone/20 rounded-xl p-5 bg-ivory-dark/30 text-center">
-                <p className="font-hieroglyph text-4xl tracking-widest text-gold/60 mb-2">
-                  𓂀𓅱𓈖𓁹𓇌𓆑
-                </p>
-                <p className="text-xs text-sandstone italic">
-                  "The Eye of Horus" — a symbol of protection and royal power
-                </p>
-              </div>
+              {/* Royal Names / Cartouches */}
+              {pharaoh.royalNames && (
+                <section className="border border-sandstone/20 rounded-xl p-5 sm:p-6 bg-ivory-dark/30">
+                  <h2 className="font-display text-xl font-semibold text-brown mb-5">
+                    Royal Names in Hieroglyphs
+                  </h2>
+                  <RoyalNamesDisplay
+                    prenomen={pharaoh.royalNames.prenomen}
+                    nomen={pharaoh.royalNames.nomen}
+                    horus={pharaoh.royalNames.horus}
+                    nebty={pharaoh.royalNames.nebty}
+                    golden={pharaoh.royalNames.golden}
+                    size="lg"
+                  />
+                  <p className="text-xs text-sandstone mt-5 pt-4 border-t border-sandstone/15">
+                    Click any glyph to learn more about it. The cartouche (oval frame) 
+                    indicates a royal name.
+                  </p>
+                </section>
+              )}
+
+              {/* Fallback for pharaohs without cartouche data */}
+              {!pharaoh.royalNames && (
+                <div className="border border-dashed border-sandstone/30 rounded-xl p-5 bg-ivory-dark/20 text-center">
+                  <p className="text-sm text-sandstone">
+                    Royal name hieroglyphs not yet documented for this ruler.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -185,7 +222,7 @@ export default async function PharaohPage({ params }: Props) {
                   Learn More
                 </h2>
                 <a
-                  href={`https://pharaoh.se/ancient-egypt/pharaoh/${pharaoh.slug.split(" ").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join("-")}`}
+                  href={`https://pharaoh.se/ancient-egypt/pharaoh/${pharaoh.name.split(" ").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join("-")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="

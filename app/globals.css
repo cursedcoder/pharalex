@@ -181,15 +181,16 @@ body {
   pointer-events: none;
 }
 /* Dark-mode glyph visibility: SVGs loaded via <img> don't inherit CSS color,
-   so fill:currentColor defaults to black — invert on dark backgrounds. */
+   so fill:currentColor defaults to black — invert and warm-tint to match the
+   dark theme's cream foreground (#f5f3ef) rather than rendering stark white. */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) img[src*="/glyphs/"] {
-    filter: invert(1);
+    filter: invert(1) sepia(0.2) brightness(0.97);
   }
 }
 
 :root.dark img[src*="/glyphs/"] {
-  filter: invert(1);
+  filter: invert(1) sepia(0.2) brightness(0.97);
 }
 
 /* Paper texture overlay (optional) */

@@ -8,6 +8,7 @@ import {
   getCategoryById,
   getGlyphsByCategory,
   getAllCategories,
+  getBaseCode,
 } from "@/lib/glyphs";
 
 interface PageProps {
@@ -41,7 +42,9 @@ export default async function CategoryPage({ params }: PageProps) {
     notFound();
   }
 
-  const glyphs = getGlyphsByCategory(category.id);
+  const glyphs = getGlyphsByCategory(category.id).filter(
+    (g) => getBaseCode(g.code) === null
+  );
   const allCategories = getAllCategories();
 
   const categoryDescriptions: Record<string, string> = {
@@ -108,7 +111,7 @@ export default async function CategoryPage({ params }: PageProps) {
                   {category.name}
                 </h1>
                 <p className="text-sandstone">
-                  {category.glyphCount} hieroglyphs
+                  {glyphs.length} hieroglyphs
                 </p>
               </div>
             </div>
