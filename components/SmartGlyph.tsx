@@ -68,9 +68,8 @@ export function GlyphImage({
   className?: string;
 }) {
   const [error, setError] = useState(false);
-  const canUseSvg = hasSvg(glyph.code) && !error;
 
-  if (canUseSvg) {
+  if (!error) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img

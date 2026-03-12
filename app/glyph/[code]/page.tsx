@@ -377,8 +377,8 @@ export default async function GlyphPage({ params }: PageProps) {
             <div className="space-y-6">
               <div
                 className="
-                  bg-ivory-dark/50 border border-sandstone/20 rounded-xl
-                  p-4 sm:p-6 sticky top-24
+                  bg-ivory-dark border border-sandstone/20 rounded-xl
+                  p-4 sm:p-6 shadow-sm
                 "
               >
                 <h3 className="font-display text-lg font-semibold text-brown mb-4">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useRef, useCallback, useEffect } from "react";
+import { useState, useMemo, useRef, useCallback, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useWindowVirtualizer } from "@tanstack/react-virtual";
@@ -183,7 +183,7 @@ function VirtualList({
 }
 
 // --- Page ---
-export default function BrowsePage() {
+function BrowsePageInner() {
   const allGlyphs = getAllGlyphs();
   const categories = getAllCategories();
   const searchParams = useSearchParams();
@@ -409,6 +409,14 @@ export default function BrowsePage() {
         </Container>
       </main>
     </div>
+  );
+}
+
+export default function BrowsePage() {
+  return (
+    <Suspense>
+      <BrowsePageInner />
+    </Suspense>
   );
 }
 
