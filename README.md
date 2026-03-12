@@ -123,3 +123,5 @@ SOURCES.md            # Full data attribution
 The **application code** in this repository is released under the [MIT License](./LICENSE).
 
 The **glyph SVGs** and **dataset files** bundled in `public/glyphs/` and `lib/data/` retain the licenses of their original authors — see [`SOURCES.md`](./SOURCES.md) for the full breakdown. Several sources are non-commercial (Aegyptus 6.17, St Andrews sign list); please respect their terms.
+
+The **"PharaLex" name and logo** are trademarks of cursedcoder and are not covered by the MIT License. Forks must use a different name and domain. See [`TRADEMARK.md`](./TRADEMARK.md).
