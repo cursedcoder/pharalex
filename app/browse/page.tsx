@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
+import { SmartGlyph, GlyphChar } from "@/components/SmartGlyph";
 import { getAllGlyphs, getAllCategories } from "@/lib/glyphs";
 import type { Glyph, MeaningType } from "@/lib/types";
 
@@ -13,6 +14,7 @@ export default function BrowsePage() {
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<MeaningType | null>(null);
+  const [renderableOnly, setRenderableOnly] = useState(false);
   const [viewMode, setViewMode] = useState<"grid" | "compact">("grid");
 
   const filteredGlyphs = useMemo(() => {
@@ -28,8 +30,14 @@ export default function BrowsePage() {
       );
     }
 
+    if (renderableOnly) {
+      result = result.filter((g) => g.renderable !== false);
+    }
+
     return result;
-  }, [allGlyphs, selectedCategory, selectedType]);
+  }, [allGlyphs, selectedCategory, selectedType, renderableOnly]);
+
+  const renderableCount = allGlyphs.filter((g) => g.renderable !== false).length;
 
   const meaningTypes: { value: MeaningType; label: string }[] = [
     { value: "logogram", label: "Logograms" },
@@ -101,6 +109,18 @@ export default function BrowsePage() {
                 ))}
               </select>
             </div>
+
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={renderableOnly}
+                onChange={(e) => setRenderableOnly(e.target.checked)}
+                className="w-4 h-4 rounded border-sandstone/30 text-gold focus:ring-gold/50"
+              />
+              <span className="text-sm text-sandstone">
+                Renderable only ({renderableCount})
+              </span>
+            </label>
 
             <div className="flex-1" />
 
@@ -186,21 +206,43 @@ export default function BrowsePage() {
 }
 
 function GlyphTile({ glyph }: { glyph: Glyph }) {
+  const hasSvg = !glyph.code.startsWith("U+");
+  const isRenderable = glyph.renderable !== false;
+  const canDisplay = hasSvg || isRenderable;
+
   return (
     <Link
       href={`/glyph/${glyph.code}`}
-      className="
+      className={`
         group relative aspect-square
-        bg-papyrus/50 border border-sandstone/20 rounded-lg
-        hover:border-gold/40 hover:shadow-md
+        rounded-lg
+        hover:shadow-md
         flex items-center justify-center
         transition-all
-      "
+        ${
+          canDisplay
+            ? "bg-papyrus/50 border border-sandstone/20 hover:border-gold/40"
+            : "bg-gradient-to-br from-sandstone/5 to-sandstone/15 border border-dashed border-sandstone/30 hover:border-gold/50"
+        }
+      `}
       title={`${glyph.code}: ${glyph.meanings[0]?.text || ""}`}
     >
-      <span className="font-hieroglyph text-3xl sm:text-4xl">
-        {glyph.unicode}
-      </span>
+      {hasSvg ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`/glyphs/${glyph.code}.svg`}
+          alt={glyph.code}
+          className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+        />
+      ) : isRenderable ? (
+        <span className="font-hieroglyph text-3xl sm:text-4xl">
+          {glyph.unicode}
+        </span>
+      ) : (
+        <span className="font-display font-bold text-[10px] sm:text-xs text-sandstone">
+          {glyph.code.replace("U+", "").slice(0, 5)}
+        </span>
+      )}
       <span
         className="
           absolute bottom-0 left-0 right-0
@@ -228,19 +270,16 @@ function GlyphRow({ glyph }: { glyph: Glyph }) {
         transition-all
       "
     >
-      <span
-        className="
-          font-hieroglyph text-3xl
-          w-12 h-12 flex items-center justify-center
-          bg-papyrus/50 rounded-lg
-        "
-      >
-        {glyph.unicode}
-      </span>
+      <SmartGlyph glyph={glyph} size="sm" />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
           <span className="font-medium text-brown">{glyph.code}</span>
           <span className="text-xs text-sandstone">{glyph.category}</span>
+          {glyph.renderable === false && (
+            <span className="text-[10px] px-1.5 py-0.5 bg-sandstone/10 rounded text-sandstone">
+              Unicode 16
+            </span>
+          )}
         </div>
         <p className="text-sm text-brown-light truncate">
           {glyph.meanings[0]?.text || ""}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Glyph } from "@/lib/types";
 import { Badge } from "./ui/Badge";
+import { SmartGlyph } from "./SmartGlyph";
 
 interface GlyphCardProps {
   glyph: Glyph;
@@ -28,17 +29,8 @@ export function GlyphCard({ glyph, showDescription = true }: GlyphCardProps) {
         "
       >
         <div className="flex items-start gap-4">
-          <div
-            className="
-              font-hieroglyph text-5xl
-              bg-papyrus/50 rounded-lg
-              w-16 h-16 flex items-center justify-center
-              border border-sandstone/10
-              group-hover:border-gold/30
-              transition-colors
-            "
-          >
-            {glyph.unicode}
+          <div className="group-hover:scale-105 transition-transform">
+            <SmartGlyph glyph={glyph} size="md" />
           </div>
 
           <div className="flex-1 min-w-0">

@@ -14,6 +14,8 @@ export interface Glyph {
   transliteration: string[];
   etymology?: string;
   related: string[];
+  renderable?: boolean;
+  source?: "wiktionary" | "unicode" | "both";
 }
 
 export interface Category {

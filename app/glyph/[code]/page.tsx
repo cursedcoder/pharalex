@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { GlyphCard } from "@/components/GlyphCard";
+import { SmartGlyph } from "@/components/SmartGlyph";
 import { Badge } from "@/components/ui/Badge";
 import {
   getGlyphByCode,
@@ -95,27 +96,21 @@ export default async function GlyphPage({ params }: PageProps) {
                 "
               >
                 <div className="flex flex-col sm:flex-row items-start gap-6">
-                  <div
-                    className="
-                      font-hieroglyph text-8xl sm:text-9xl
-                      w-32 h-32 sm:w-40 sm:h-40
-                      bg-papyrus/50 rounded-2xl
-                      border border-sandstone/20
-                      flex items-center justify-center
-                      shrink-0
-                    "
-                  >
-                    {glyph.unicode}
-                  </div>
+                  <SmartGlyph glyph={glyph} size="xl" />
 
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown">
                         {glyph.code}
                       </h1>
-                      <span className="text-2xl text-sandstone/60">
-                        {glyph.unicode}
-                      </span>
+                      {glyph.renderable !== false && (
+                        <span className="text-2xl text-sandstone/60">
+                          {glyph.unicode}
+                        </span>
+                      )}
+                      {glyph.renderable === false && (
+                        <Badge variant="outline">Unicode 16.0</Badge>
+                      )}
                     </div>
 
                     <Link
