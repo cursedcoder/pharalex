@@ -20,6 +20,7 @@ function SearchContent() {
 
   useEffect(() => {
     const q = searchParams.get("q") || "";
+    if (q === query && results.length > 0) return;
     setQuery(q);
     if (q.trim()) {
       setIsSearching(true);
@@ -33,7 +34,7 @@ function SearchContent() {
       setResults([]);
       setIsSearching(false);
     }
-  }, [searchParams]);
+  }, [searchParams]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSearch = (newQuery: string) => {
     setQuery(newQuery);

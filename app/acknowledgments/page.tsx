@@ -266,7 +266,7 @@ export default function AcknowledgmentsPage() {
           {/* ── Glyph Visual Sources ─────────────────────────────────────────── */}
           <section className="mb-12">
             <SectionHeader
-              glyph="𓏤"
+              glyph="Y1"
               title="Glyph Visual Sources"
               subtitle={`${totalGlyphs.toLocaleString()} SVG glyphs drawn from four open-source collections`}
             />
@@ -312,7 +312,7 @@ export default function AcknowledgmentsPage() {
           {/* ── Dictionary & Metadata Sources ───────────────────────────────── */}
           <section className="mb-12">
             <SectionHeader
-              glyph="𓏛"
+              glyph="Aa1"
               title="Dictionary & Metadata"
               subtitle="Seven datasets merged into a single unified glyph index"
             />
@@ -327,7 +327,7 @@ export default function AcknowledgmentsPage() {
           {/* ── License Reference ───────────────────────────────────────────── */}
           <section className="mb-12">
             <SectionHeader
-              glyph="𓏞"
+              glyph="V28"
               title="License Reference"
               subtitle="Full text of every license used"
             />
@@ -394,7 +394,7 @@ export default function AcknowledgmentsPage() {
           {/* ── Open Source Thanks ──────────────────────────────────────────── */}
           <section className="mb-12">
             <SectionHeader
-              glyph="𓂀"
+              glyph="D36"
               title="Built With Open Source"
               subtitle="The frameworks and tools powering this site"
             />
@@ -522,7 +522,13 @@ function SectionHeader({
     <div className="flex items-center gap-4 mb-6">
       <div className="h-px flex-1 bg-sandstone/20" />
       <div className="flex items-center gap-3 px-1">
-        <span className="font-hieroglyph text-2xl text-gold-dark">{glyph}</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/glyphs/${encodeURIComponent(glyph)}.svg`}
+          alt={glyph}
+          className="w-7 h-7 object-contain text-gold-dark opacity-80"
+          style={{ filter: "invert(55%) sepia(30%) saturate(600%) hue-rotate(5deg) brightness(90%)" }}
+        />
         <div>
           <h2 className="font-display text-xl font-semibold text-brown leading-tight">
             {title}

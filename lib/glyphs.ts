@@ -91,6 +91,25 @@ export function getGlyphVariants(code: string): Glyph[] {
   return glyphs.filter((g) => re.test(g.code));
 }
 
+/**
+ * Returns an ordered sibling list for a variant glyph:
+ * [parent, variantA, variantB, …] and the index of `code` within that list.
+ * Returns null if `code` has no base (i.e. it's already a root glyph).
+ */
+export function getVariantSiblings(
+  code: string
+): { siblings: Glyph[]; currentIndex: number } | null {
+  const baseCode = getBaseCode(code);
+  if (!baseCode) return null;
+  const parent = getGlyphByCode(baseCode);
+  if (!parent) return null;
+  const variants = getGlyphVariants(baseCode);
+  const siblings = [parent, ...variants];
+  const currentIndex = siblings.findIndex((g) => g.code === code);
+  if (currentIndex === -1) return null;
+  return { siblings, currentIndex };
+}
+
 export function getRelatedGlyphs(code: string): Glyph[] {
   const glyph = getGlyphByCode(code);
   if (!glyph) return [];

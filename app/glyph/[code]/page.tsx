@@ -12,6 +12,7 @@ import {
   getCategoryById,
   getGlyphVariants,
   getBaseCode,
+  getVariantSiblings,
   glyphHref,
 } from "@/lib/glyphs";
 import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
@@ -66,6 +67,7 @@ export default async function GlyphPage({ params }: PageProps) {
   const variants = getGlyphVariants(glyph.code);
   const baseCode = getBaseCode(glyph.code);
   const baseGlyph = baseCode ? getGlyphByCode(baseCode) : null;
+  const variantSiblings = getVariantSiblings(glyph.code);
   const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
 
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
@@ -126,6 +128,9 @@ export default async function GlyphPage({ params }: PageProps) {
             <span className="text-brown">{glyph.code}</span>
           </nav>
 
+
+
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
               <div
@@ -159,19 +164,69 @@ export default async function GlyphPage({ params }: PageProps) {
                       <span>{glyph.categoryName}</span>
                     </Link>
 
-                    {baseGlyph && (
-                      <div className="mb-3 flex items-center gap-2 text-sm text-sandstone">
-                        <span>Variant of</span>
-                        <Link
-                          href={glyphHref(baseGlyph.code)}
-                          className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-gold/10 text-gold-dark hover:bg-gold/20 transition-colors font-medium"
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={`/glyphs/${encodeURIComponent(baseGlyph.code)}.svg`} alt={baseGlyph.code} className="w-5 h-5 object-contain" />
-                          {baseGlyph.code}
-                        </Link>
-                      </div>
-                    )}
+                    {baseGlyph && (() => {
+                      const otherVariants = variantSiblings
+                        ? variantSiblings.siblings.slice(1).filter(s => s.code !== glyph.code)
+                        : [];
+                      return (
+                        <div className="mt-4 pt-4 border-t border-sandstone/15">
+                          <p className="text-xs font-medium text-sandstone mb-2">Variant of</p>
+                          <Link
+                            href={glyphHref(baseGlyph.code)}
+                            className="inline-flex items-center gap-2.5 px-3 py-2 rounded-lg border border-gold/40 bg-gold/5 hover:border-gold/70 hover:bg-gold/10 transition-all group max-w-xs mb-3"
+                          >
+                            <div className="shrink-0 w-8 h-8 rounded-md bg-gold/10 flex items-center justify-center p-1 group-hover:bg-gold/20 transition-colors">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={`/glyphs/${encodeURIComponent(baseGlyph.code)}.svg`}
+                                alt={baseGlyph.code}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                            <div className="min-w-0">
+                              <p className="text-sm font-bold text-gold-dark leading-none">
+                                {baseGlyph.code}
+                              </p>
+                              {baseGlyph.meanings[0] && (
+                                <p className="text-xs text-sandstone mt-0.5 truncate max-w-[160px]">
+                                  {baseGlyph.meanings[0].text}
+                                </p>
+                              )}
+                            </div>
+                            <svg className="w-3.5 h-3.5 text-gold/40 group-hover:text-gold-dark shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                          {otherVariants.length > 0 && (
+                            <>
+                              <p className="text-xs font-medium text-sandstone mb-2">
+                                Other variants ({otherVariants.length})
+                              </p>
+                              <div className="flex flex-wrap gap-2">
+                                {otherVariants.map((v) => (
+                                  <Link
+                                    key={v.code}
+                                    href={glyphHref(v.code)}
+                                    className="group flex flex-col items-center gap-1 p-2 rounded-lg border border-sandstone/20 bg-papyrus/40 hover:border-gold/50 hover:bg-gold/5 transition-all"
+                                    title={v.meanings[0]?.text || v.code}
+                                  >
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                      src={`/glyphs/${encodeURIComponent(v.code)}.svg`}
+                                      alt={v.code}
+                                      className="w-10 h-10 object-contain"
+                                    />
+                                    <span className="text-[11px] font-medium text-sandstone group-hover:text-gold-dark transition-colors">
+                                      {v.code}
+                                    </span>
+                                  </Link>
+                                ))}
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      );
+                    })()}
 
                     {glyph.transliteration.length > 0 && (
                       <div className="mb-4">
