@@ -49,13 +49,14 @@ const GLYPH_SOURCES: GlyphSource[] = [
     name: "JSesh",
     glyphs: 6725,
     coverage: "Gardiner A–Z + Aa + extended variants",
-    author: "Serge Rosmorduc",
+    author: "Serge Jean Paul Thomas & Serge Rosmorduc",
     repo: "https://github.com/rosmord/jsesh",
-    license: "LGPL-3.0",
-    licenseVariant: "gold",
+    url: "https://jsesh.qenherkhopeshef.org/page/fonts_license",
+    license: "Custom font license",
+    licenseVariant: "sandstone",
     commercial: true,
     how:
-      "Cloned from GitHub; SVGs live in jseshGlyphs/src/main/resources/jseshGlyphs/",
+      "Cloned from GitHub; SVGs live in jseshGlyphs/src/main/resources/jseshGlyphs/. Glyphs by S.J.P. Thomas may be used freely in publications, databases, and websites. The few signs by Rosmorduc are OFL-1.1.",
   },
   {
     name: "NewGardiner (hierojax)",
@@ -124,8 +125,8 @@ const DATA_SOURCES: DataSource[] = [
       "Shape/visual tags, additional phonetic transliterations with use/type metadata, composite part relationships",
     author: "Serge Rosmorduc",
     url: "https://github.com/rosmord/jsesh",
-    license: "LGPL-3.0",
-    licenseVariant: "gold",
+    license: "LGPL-3.0 (code only)",
+    licenseVariant: "sandstone",
     commercial: true,
   },
   {
@@ -178,9 +179,9 @@ const DATA_SOURCES: DataSource[] = [
 
 const LICENSE_LEGEND = [
   {
-    license: "LGPL-3.0",
-    label: "GNU Lesser General Public License 3.0",
-    url: "https://www.gnu.org/licenses/lgpl-3.0.html",
+    license: "Custom (JSesh fonts)",
+    label: "JSesh Fonts License — free for publications, databases, websites",
+    url: "https://jsesh.qenherkhopeshef.org/page/fonts_license",
   },
   {
     license: "GPL-3.0",

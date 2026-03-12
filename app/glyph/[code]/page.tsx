@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export async function generateStaticParams() {
   const glyphs = getAllGlyphs();
-  return glyphs.map((g) => ({ code: g.code }));
+  return glyphs.map((g) => ({ code: g.code.replace(/\+/g, "%2B") }));
 }
 
 export default async function GlyphPage({ params }: PageProps) {
