@@ -30,8 +30,8 @@
   --color-sandstone-light: var(--sandstone-light);
   --color-papyrus: var(--papyrus);
 
-  --font-serif: var(--font-source-serif), Georgia, serif;
-  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-serif: var(--font-source-serif), "Gentium Plus", Georgia, serif;
+  --font-display: var(--font-cormorant), "Cormorant Garamond", "Gentium Plus", Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -70,6 +70,46 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-serif);
+}
+
+/*
+ * Egyptological transliteration fallback font (Gentium Plus, SIL Open Font License).
+ * Activated only for the specific codepoints our transliteration data uses that may
+ * be absent from Cormorant Garamond / Source Serif 4:
+ *   ꜣ ꜥ  — Egyptological aleph / ayin (Latin Extended-D)
+ *   ꞽ    — Egyptological yod, the canonical Unicode 12 assignment (U+A7BD)
+ *   ḳ ṱ ẖ ḫ ḥ ḏ ṯ š  — less-common diacritic forms
+ *   ̯    — combining inverted breve below (legacy i̯ yod form in TLA corpus)
+ *   ⸗    — double oblique hyphen (TLA corpus word-boundary marker)
+ */
+@font-face {
+  font-family: "Gentium Plus";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/GentiumPlus-Regular.woff2") format("woff2");
+  unicode-range:
+    U+0160-0161,
+    U+032F,
+    U+1E0F, U+1E25, U+1E2B, U+1E33, U+1E6F, U+1E71, U+1E96,
+    U+2E17,
+    U+A723, U+A725,
+    U+A7BC-A7BD;
+}
+
+@font-face {
+  font-family: "Gentium Plus";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/GentiumPlus-Italic.woff2") format("woff2");
+  unicode-range:
+    U+0160-0161,
+    U+032F,
+    U+1E0F, U+1E25, U+1E2B, U+1E33, U+1E6F, U+1E71, U+1E96,
+    U+2E17,
+    U+A723, U+A725,
+    U+A7BC-A7BD;
 }
 
 /* Hieroglyph font support — served via Google Fonts unicode-range subsets (v30+) */
@@ -120,7 +160,7 @@ body {
 
 /* Smooth transitions */
 * {
-  transition-property: color, background-color, border-color, opacity, transform;
+  transition-property: color, background-color, border-color, opacity, transform, filter;
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
 }
@@ -140,6 +180,18 @@ body {
   z-index: -1;
   pointer-events: none;
 }
+/* Dark-mode glyph visibility: SVGs loaded via <img> don't inherit CSS color,
+   so fill:currentColor defaults to black — invert on dark backgrounds. */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) img[src*="/glyphs/"] {
+    filter: invert(1);
+  }
+}
+
+:root.dark img[src*="/glyphs/"] {
+  filter: invert(1);
+}
+
 /* Paper texture overlay (optional) */
 .paper-texture {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");

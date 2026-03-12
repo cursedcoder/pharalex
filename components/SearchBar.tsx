@@ -20,6 +20,26 @@ const sizes = {
   lg: "py-4 px-6 text-lg",
 };
 
+function GlyphThumb({ glyph }: { glyph: Glyph }) {
+  const [error, setError] = useState(false);
+  if (!error) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={`/glyphs/${encodeURIComponent(glyph.code)}.svg`}
+        alt={glyph.code}
+        className="w-8 h-8 object-contain shrink-0"
+        onError={() => setError(true)}
+      />
+    );
+  }
+  return (
+    <span className="font-hieroglyph text-2xl w-8 text-center shrink-0">
+      {glyph.unicode}
+    </span>
+  );
+}
+
 export function SearchBar({
   size = "md",
   placeholder = "Search by meaning, code, or transliteration...",
@@ -153,9 +173,7 @@ export function SearchBar({
                 ${index !== results.length - 1 ? "border-b border-sandstone/10" : ""}
               `}
             >
-              <span className="font-hieroglyph text-2xl w-8 text-center">
-                {glyph.unicode}
-              </span>
+              <GlyphThumb glyph={glyph} />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <span className="font-medium text-brown">{glyph.code}</span>
