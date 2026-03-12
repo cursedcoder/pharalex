@@ -6,7 +6,7 @@ import type { EgyptianText, TextToken } from "@/lib/types";
 import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 
-type DisplayMode = "hieroglyphs" | "interlinear" | "parallel";
+type DisplayMode = "hieroglyphs" | "parallel";
 
 interface TextReaderProps {
   text: EgyptianText;
@@ -93,7 +93,7 @@ function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void
 }
 
 export function TextReader({ text, compact = false }: TextReaderProps) {
-  const [mode, setMode] = useState<DisplayMode>("interlinear");
+  const [mode, setMode] = useState<DisplayMode>("parallel");
   const [activeToken, setActiveToken] = useState<ActiveToken | null>(null);
 
   const glyphSize = compact ? "sm" : "md";
@@ -114,7 +114,7 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
       {/* Toolbar */}
       {!compact && (
         <div className="flex items-center gap-1 p-1 bg-ivory-dark/50 rounded-lg w-fit">
-          {(["hieroglyphs", "interlinear", "parallel"] as DisplayMode[]).map((m) => (
+          {(["hieroglyphs", "parallel"] as DisplayMode[]).map((m) => (
             <button
               key={m}
               onClick={() => {
@@ -136,7 +136,7 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
       )}
 
       {/* Text lines */}
-      <div className={mode === "parallel" ? "space-y-4" : "space-y-6"}>
+      <div className="space-y-6">
         {text.lines.map((line, lineIndex) => {
           const isActiveLine = activeToken?.lineIndex === lineIndex;
 
@@ -145,39 +145,51 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
               <div className="flex gap-3 items-start">
                 {/* Line number */}
                 {line.number != null && !compact && (
-                  <span className="text-xs text-sandstone/60 font-mono mt-3 w-5 shrink-0 text-right select-none">
+                  <span className="text-xs text-sandstone/60 font-mono mt-2 w-5 shrink-0 text-right select-none">
                     {line.number}
                   </span>
                 )}
 
                 <div className="flex-1 min-w-0">
                   {mode === "parallel" ? (
-                    /* ── Parallel mode ────────────────────────────────────── */
-                    /* Each token is a column: glyphs / transliteration / translation */
-                    <div className="pb-3 border-b border-gold/15">
-                      <div className="flex flex-wrap gap-x-6 gap-y-4 items-start mb-2">
-                        {line.tokens.map((token, tokenIndex) => {
-                          const isActive = isActiveLine && activeToken?.tokenIndex === tokenIndex;
-                          return (
-                            <button
-                              key={tokenIndex}
-                              onClick={() => handleTokenClick(lineIndex, tokenIndex, token)}
-                              className={`
-                                flex flex-col items-center gap-1 rounded-lg px-1.5 pt-1 pb-1.5
-                                transition-all duration-150
-                                ${isActive ? "bg-gold/20 ring-1 ring-gold/50" : "hover:bg-papyrus/40"}
-                              `}
-                            >
-                              <div className="flex items-end gap-1">
-                                {token.codes.map((code, ci) => {
-                                  const glyph = getGlyphByCode(code);
-                                  const primaryMeaning = glyph?.meanings[0]?.text;
-                                  const phonetic = glyph?.transliteration[0];
-                                  const description = glyph?.description;
-                                  const sizeClass = glyphSize === "sm" ? "w-6 h-6" : "w-8 h-8";
-                                  return (
-                                    <div key={`${code}-${ci}`} className="flex flex-col items-center gap-0.5">
+                    /* ── Parallel mode ─────────────────────────────────────────
+                       Three horizontal rows per line:
+                         Row 1 — all glyphs
+                         Row 2 — all transliterations (word-level, italic)
+                         Row 3 — all translations (word-level)
+                       Words are aligned in a CSS grid so each column is the
+                       same width across all three rows.
+                    ─────────────────────────────────────────────────────────── */
+                    <div className="space-y-1 pb-3 border-b border-gold/15">
+                      {/* shared grid: one column per token */}
+                      {(["glyphs", "translit", "transl"] as const).map((row) => (
+                        <div
+                          key={row}
+                          className="flex flex-wrap gap-x-4 gap-y-1 items-end"
+                          style={{ minHeight: row === "glyphs" ? undefined : undefined }}
+                        >
+                          {line.tokens.map((token, tokenIndex) => {
+                            const isActive = isActiveLine && activeToken?.tokenIndex === tokenIndex;
+                            if (row === "glyphs") {
+                              return (
+                                <button
+                                  key={tokenIndex}
+                                  onClick={() => handleTokenClick(lineIndex, tokenIndex, token)}
+                                  className={`
+                                    flex items-end gap-0.5 rounded-lg px-1 pt-1 pb-0.5
+                                    transition-all duration-150
+                                    ${isActive ? "bg-gold/20 ring-1 ring-gold/50" : "hover:bg-papyrus/40"}
+                                  `}
+                                >
+                                  {token.codes.map((code, ci) => {
+                                    const glyph = getGlyphByCode(code);
+                                    const primaryMeaning = glyph?.meanings[0]?.text;
+                                    const phonetic = glyph?.transliteration[0];
+                                    const description = glyph?.description;
+                                    const sizeClass = glyphSize === "sm" ? "w-6 h-6" : "w-8 h-8";
+                                    return (
                                       <Tooltip
+                                        key={`${code}-${ci}`}
                                         content={
                                           <GlyphTooltipContent
                                             code={code}
@@ -199,34 +211,43 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
                                           />
                                         </Link>
                                       </Tooltip>
-                                      {phonetic && (
-                                        <span className="text-[10px] italic text-brown-light/70 leading-none text-center">
-                                          {phonetic}
-                                        </span>
-                                      )}
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                              <span className="text-sm italic text-brown-light leading-tight text-center mt-1">
-                                {token.transliteration}
-                              </span>
-                              <span className="text-sm text-sandstone leading-tight text-center">
+                                    );
+                                  })}
+                                </button>
+                              );
+                            }
+                            if (row === "translit") {
+                              return (
+                                <span
+                                  key={tokenIndex}
+                                  className="text-sm italic text-brown-light font-medium px-1 min-w-[2rem] text-center"
+                                >
+                                  {token.transliteration}
+                                </span>
+                              );
+                            }
+                            return (
+                              <span
+                                key={tokenIndex}
+                                className="text-sm text-sandstone px-1 min-w-[2rem] text-center"
+                              >
                                 {token.translation}
                               </span>
-                            </button>
-                          );
-                        })}
-                      </div>
-                      {/* Full-line prose translation — only shown when it adds context beyond the single token */}
-                      {line.lineTranslation && line.tokens.length > 1 && (
-                        <p className="text-sm text-sandstone/70 italic mt-1">
+                            );
+                          })}
+                        </div>
+                      ))}
+                      {line.lineTranslation && (
+                        <p className="text-xs text-sandstone/70 italic pt-1">
                           {line.lineTranslation}
                         </p>
                       )}
                     </div>
                   ) : (
-                    /* ── Hieroglyphs / Interlinear mode ───────────────────── */
+                    /* ── Hieroglyphs / Interlinear mode ─────────────────────
+                       Each word is a vertical column button.
+                       Hieroglyphs: glyphs only.
+                    ──────────────────────────────────────────────────────── */
                     <div className="flex flex-wrap gap-x-3 gap-y-4 items-start">
                       {line.tokens.map((token, tokenIndex) => {
                         const isActive = isActiveLine && activeToken?.tokenIndex === tokenIndex;
@@ -244,7 +265,7 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
                               }
                             `}
                           >
-                            {/* Per-glyph columns: each glyph above its own phonetic value */}
+                            {/* Per-glyph columns */}
                             <div className="flex items-end gap-1">
                               {token.codes.map((code, ci) => {
                                 const glyph = getGlyphByCode(code);
@@ -276,29 +297,18 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
                                         />
                                       </Link>
                                     </Tooltip>
-                                    {mode === "interlinear" && phonetic && (
-                                      <span className="text-[10px] italic text-brown-light/70 leading-none text-center">
-                                        {phonetic}
-                                      </span>
-                                    )}
                                   </div>
                                 );
                               })}
                             </div>
-
-                            {mode === "interlinear" && (
-                              <span className="text-[11px] text-sandstone leading-tight text-center mt-1">
-                                {token.translation}
-                              </span>
-                            )}
                           </button>
                         );
                       })}
                     </div>
                   )}
 
-                  {/* Line translation (interlinear + hieroglyphs modes) */}
-                  {mode !== "parallel" && line.lineTranslation && (
+                  {/* Line translation for hieroglyphs mode */}
+                  {mode === "hieroglyphs" && line.lineTranslation && (
                     <p className="text-xs text-sandstone/70 italic border-t border-gold/15 pt-1.5 mt-2">
                       {line.lineTranslation}
                     </p>
