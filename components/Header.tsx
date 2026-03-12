@@ -32,6 +32,18 @@ export function Header() {
               Categories
             </Link>
             <Link
+              href="/pharaohs"
+              className="px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors"
+            >
+              Pharaohs
+            </Link>
+            <Link
+              href="/alphabet"
+              className="px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden sm:block"
+            >
+              Alphabet
+            </Link>
+            <Link
               href="/search"
               className="px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors md:hidden"
             >
