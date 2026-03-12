@@ -5,9 +5,26 @@ import { GlyphCard } from "@/components/GlyphCard";
 import { GlyphWatermark } from "@/components/GlyphWatermark";
 import { PharaohCard } from "@/components/PharaohCard";
 import { Container } from "@/components/ui/Container";
+import { Badge } from "@/components/ui/Badge";
 import { getAllGlyphs, getAllCategories, getGlyphStats } from "@/lib/glyphs";
 import { getNotablePharaohs } from "@/lib/pharaohs";
+import { getAllTexts } from "@/lib/texts";
 import { pickDaily } from "@/lib/daily";
+import type { PeriodId } from "@/lib/types";
+
+const PERIOD_LABELS: Record<PeriodId, string> = {
+  predynastic: "Predynastic",
+  "early-dynastic": "Early Dynastic",
+  "old-kingdom": "Old Kingdom",
+  "first-intermediate": "1st Intermediate",
+  "middle-kingdom": "Middle Kingdom",
+  "second-intermediate": "2nd Intermediate",
+  "new-kingdom": "New Kingdom",
+  "third-intermediate": "3rd Intermediate",
+  "late-period": "Late Period",
+  ptolemaic: "Ptolemaic",
+  roman: "Roman",
+};
 
 export default function HomePage() {
   const glyphs = getAllGlyphs();
@@ -20,6 +37,7 @@ export default function HomePage() {
   );
   const featuredGlyphs = pickDaily(richGlyphs, 4, 0);
   const featuredPharaohs = pickDaily(getNotablePharaohs(), 3, 1);
+  const featuredTexts = pickDaily(getAllTexts(), 3, 2);
 
   const renderableGlyphs = glyphs.filter((g) => {
     if (!g.unicode || g.meanings.length === 0) return false;
@@ -179,6 +197,73 @@ export default function HomePage() {
                 </div>
               </div>
 
+            </div>
+          </Container>
+        </section>
+
+        {/* Featured Texts */}
+        <section className="py-10">
+          <Container>
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h2 className="font-display text-xl sm:text-2xl font-semibold text-brown">
+                  Featured Texts
+                </h2>
+                <p className="text-xs text-sandstone mt-0.5">Refreshes daily</p>
+              </div>
+              <Link
+                href="/texts"
+                className="text-gold hover:text-gold-dark text-sm font-medium shrink-0"
+              >
+                All texts &rarr;
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {featuredTexts.map((text) => {
+                const previewCodes = text.lines[0]?.tokens
+                  .slice(0, 5)
+                  .flatMap((t) => t.codes)
+                  .slice(0, 8);
+                return (
+                  <Link
+                    key={text.slug}
+                    href={`/texts/${text.slug}`}
+                    className="group flex flex-col bg-papyrus/30 border border-gold/20 rounded-xl p-4 hover:border-gold/50 hover:bg-papyrus/50 transition-all duration-200"
+                  >
+                    {/* Glyph preview */}
+                    {previewCodes && previewCodes.length > 0 && (
+                      <div className="flex items-center gap-0.5 mb-3 opacity-70 group-hover:opacity-100 transition-opacity">
+                        {previewCodes.map((code, i) => (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            key={`${code}-${i}`}
+                            src={`/glyphs/${code}.svg`}
+                            alt={code}
+                            className="w-6 h-6 object-contain"
+                          />
+                        ))}
+                        <span className="text-sandstone/40 text-xs ml-0.5">…</span>
+                      </div>
+                    )}
+                    <div className="self-start mb-2">
+                      <Badge variant="gold" size="sm">
+                        {PERIOD_LABELS[text.period]}
+                      </Badge>
+                    </div>
+                    <h3 className="text-sm font-display font-semibold text-brown group-hover:text-gold-dark transition-colors leading-snug mb-1">
+                      {text.title}
+                    </h3>
+                    <p className="text-xs text-sandstone mb-3">{text.date}</p>
+                    <p className="text-xs text-brown-light leading-relaxed line-clamp-2 flex-1">
+                      {text.description}
+                    </p>
+                    <span className="mt-3 text-xs text-gold-dark group-hover:translate-x-0.5 transition-transform self-end">
+                      Read →
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </Container>
         </section>

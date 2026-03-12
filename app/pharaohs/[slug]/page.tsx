@@ -12,6 +12,7 @@ import {
   formatReign,
   formatYear,
 } from "@/lib/pharaohs";
+import { getTextsByPharaoh } from "@/lib/texts";
 import { PHARAOHS } from "@/lib/data/pharaohs";
 
 interface Props {
@@ -59,6 +60,8 @@ export default async function PharaohPage({ params }: Props) {
   const siblings = getPharaohsByDynasty(pharaoh.dynastyId).filter(
     (p) => p.slug !== pharaoh.slug
   );
+
+  const relatedTexts = getTextsByPharaoh(pharaoh.slug);
 
   const reignStr = formatReign(pharaoh);
   const startStr = pharaoh.reignStart !== null ? formatYear(pharaoh.reignStart) : null;
@@ -235,6 +238,54 @@ export default async function PharaohPage({ params }: Props) {
                     Royal name hieroglyphs not yet documented for this ruler.
                   </p>
                 </div>
+              )}
+
+              {/* Attested Texts */}
+              {relatedTexts.length > 0 && (
+                <section className="border border-sandstone/20 rounded-xl p-5 sm:p-6 bg-ivory-dark/30">
+                  <h2 className="font-display text-xl font-semibold text-brown mb-4">
+                    Attested Texts
+                  </h2>
+                  <div className="space-y-3">
+                    {relatedTexts.map((text) => {
+                      const previewCodes = text.lines[0]?.tokens
+                        .slice(0, 5)
+                        .flatMap((t) => t.codes)
+                        .slice(0, 8);
+                      return (
+                        <Link
+                          key={text.slug}
+                          href={`/texts/${text.slug}`}
+                          className="group flex items-center gap-4 p-3 rounded-lg hover:bg-papyrus/40 transition-colors"
+                        >
+                          {/* Glyph preview */}
+                          {previewCodes && previewCodes.length > 0 && (
+                            <div className="flex items-center gap-0.5 shrink-0 opacity-70 group-hover:opacity-100 transition-opacity">
+                              {previewCodes.map((code, i) => (
+                                // eslint-disable-next-line @next/next/no-img-element
+                                <img
+                                  key={`${code}-${i}`}
+                                  src={`/glyphs/${code}.svg`}
+                                  alt={code}
+                                  className="w-5 h-5 object-contain"
+                                />
+                              ))}
+                            </div>
+                          )}
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-medium text-brown-light group-hover:text-gold-dark transition-colors truncate">
+                              {text.title}
+                            </p>
+                            <p className="text-xs text-sandstone">{text.date}</p>
+                          </div>
+                          <span className="text-xs text-gold-dark shrink-0 group-hover:translate-x-0.5 transition-transform">
+                            Read →
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </section>
               )}
             </div>
 

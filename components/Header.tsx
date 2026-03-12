@@ -38,6 +38,12 @@ export function Header() {
               Pharaohs
             </Link>
             <Link
+              href="/texts"
+              className="px-2 sm:px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden sm:block"
+            >
+              Texts
+            </Link>
+            <Link
               href="/alphabet"
               className="px-2 sm:px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden lg:block"
             >

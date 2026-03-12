@@ -557,7 +557,7 @@ export default async function GlyphPage({ params }: PageProps) {
                       p-4 space-y-2
                     "
                   >
-                    {pharaohsUsingGlyph.map((pharaoh) => (
+                    {pharaohsUsingGlyph.slice(0, 10).map((pharaoh) => (
                       <Link
                         key={pharaoh.slug}
                         href={`/pharaohs/${pharaoh.slug}`}
@@ -604,10 +604,20 @@ export default async function GlyphPage({ params }: PageProps) {
                       </Link>
                     ))}
                   </div>
-                  <p className="mt-2 text-xs text-sandstone/70">
-                    This glyph appears in {pharaohsUsingGlyph.length} royal name
-                    {pharaohsUsingGlyph.length > 1 ? "s" : ""}.
-                  </p>
+                  <div className="mt-2 flex items-center justify-between gap-2">
+                    <p className="text-xs text-sandstone/70">
+                      This glyph appears in {pharaohsUsingGlyph.length} royal name
+                      {pharaohsUsingGlyph.length > 1 ? "s" : ""}.
+                    </p>
+                    {pharaohsUsingGlyph.length > 10 && (
+                      <Link
+                        href="/pharaohs"
+                        className="text-xs text-gold-dark hover:text-gold transition-colors shrink-0"
+                      >
+                        See all {pharaohsUsingGlyph.length} →
+                      </Link>
+                    )}
+                  </div>
                 </section>
               )}
             </div>
