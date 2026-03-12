@@ -3,15 +3,23 @@ import { Header } from "@/components/Header";
 import { SearchBar } from "@/components/SearchBar";
 import { GlyphCard } from "@/components/GlyphCard";
 import { GlyphWatermark } from "@/components/GlyphWatermark";
+import { PharaohCard } from "@/components/PharaohCard";
 import { Container } from "@/components/ui/Container";
 import { getAllGlyphs, getAllCategories, getGlyphStats } from "@/lib/glyphs";
+import { getNotablePharaohs } from "@/lib/pharaohs";
+import { pickDaily } from "@/lib/daily";
 
 export default function HomePage() {
   const glyphs = getAllGlyphs();
   const categories = getAllCategories();
   const stats = getGlyphStats();
 
-  const featuredGlyphs = glyphs.slice(0, 6);
+  // Only pick from glyphs with actual meaning data for a better showcase
+  const richGlyphs = glyphs.filter(
+    (g) => g.meanings.length > 0 && (g.source === "wiktionary" || g.source === "both")
+  );
+  const featuredGlyphs = pickDaily(richGlyphs, 4, 0);
+  const featuredPharaohs = pickDaily(getNotablePharaohs(), 3, 1);
 
   const renderableGlyphs = glyphs.filter((g) => {
     if (!g.unicode || g.meanings.length === 0) return false;
@@ -118,25 +126,59 @@ export default function HomePage() {
           </Container>
         </div>
 
-        {/* Featured glyphs */}
+        {/* Featured glyphs + pharaohs */}
         <section className="py-10 bg-ivory-dark/30">
           <Container>
-            <div className="flex items-center justify-between mb-5">
-              <h2 className="font-display text-xl sm:text-2xl font-semibold text-brown">
-                Featured Hieroglyphs
-              </h2>
-              <Link
-                href="/browse"
-                className="text-gold hover:text-gold-dark text-sm font-medium"
-              >
-                View all &rarr;
-              </Link>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {featuredGlyphs.map((glyph) => (
-                <GlyphCard key={glyph.code} glyph={glyph} />
-              ))}
+              {/* Featured Hieroglyphs */}
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <div>
+                    <h2 className="font-display text-xl sm:text-2xl font-semibold text-brown">
+                      Featured Hieroglyphs
+                    </h2>
+                    <p className="text-xs text-sandstone mt-0.5">Refreshes daily</p>
+                  </div>
+                  <Link
+                    href="/browse"
+                    className="text-gold hover:text-gold-dark text-sm font-medium shrink-0"
+                  >
+                    Browse all &rarr;
+                  </Link>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {featuredGlyphs.map((glyph) => (
+                    <GlyphCard key={glyph.code} glyph={glyph} />
+                  ))}
+                </div>
+              </div>
+
+              {/* Featured Pharaohs */}
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <div>
+                    <h2 className="font-display text-xl sm:text-2xl font-semibold text-brown">
+                      Notable Pharaohs
+                    </h2>
+                    <p className="text-xs text-sandstone mt-0.5">Refreshes daily</p>
+                  </div>
+                  <Link
+                    href="/pharaohs"
+                    className="text-gold hover:text-gold-dark text-sm font-medium shrink-0"
+                  >
+                    All pharaohs &rarr;
+                  </Link>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  {featuredPharaohs.map((pharaoh) => (
+                    <PharaohCard key={pharaoh.slug} pharaoh={pharaoh} />
+                  ))}
+                </div>
+              </div>
+
             </div>
           </Container>
         </section>
