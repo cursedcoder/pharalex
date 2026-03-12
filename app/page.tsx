@@ -19,8 +19,29 @@ export default function HomePage() {
     return cp >= 0x13000 && cp <= 0x1342f;
   });
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "PharaLex",
+    url: "https://pharalex.app",
+    description:
+      "An interactive dictionary of ancient Egyptian hieroglyphs. Explore, search, and learn about the writing system of the pharaohs.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://pharalex.app/search?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main>

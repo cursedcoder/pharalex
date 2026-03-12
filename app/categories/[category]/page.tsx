@@ -23,9 +23,22 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "Category Not Found - PharaLex" };
   }
 
+  const title = `${category.id}: ${category.name}`;
+  const description = `Browse ${category.glyphCount} Egyptian hieroglyphs in the ${category.name} (${category.id}) Gardiner category.`;
+
   return {
-    title: `${category.id}: ${category.name} - PharaLex`,
-    description: `Browse ${category.glyphCount} Egyptian hieroglyphs in the ${category.name} category`,
+    title,
+    description,
+    alternates: { canonical: `/categories/${category.id}` },
+    openGraph: {
+      title: `${title} - PharaLex`,
+      description,
+      url: `/categories/${category.id}`,
+    },
+    twitter: {
+      title: `${title} - PharaLex`,
+      description,
+    },
   };
 }
 

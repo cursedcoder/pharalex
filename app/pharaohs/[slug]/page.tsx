@@ -26,9 +26,24 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const pharaoh = getPharaohBySlug(slug);
   if (!pharaoh) return {};
+
+  const title = pharaoh.name;
+  const description =
+    pharaoh.summary ?? `${pharaoh.name}, pharaoh of ancient Egypt.`;
+
   return {
-    title: `${pharaoh.name} — PharaLex`,
-    description: pharaoh.summary ?? `${pharaoh.name}, pharaoh of ancient Egypt.`,
+    title,
+    description,
+    alternates: { canonical: `/pharaohs/${pharaoh.slug}` },
+    openGraph: {
+      title: `${pharaoh.name} — PharaLex`,
+      description,
+      url: `/pharaohs/${pharaoh.slug}`,
+    },
+    twitter: {
+      title: `${pharaoh.name} — PharaLex`,
+      description,
+    },
   };
 }
 
@@ -49,8 +64,28 @@ export default async function PharaohPage({ params }: Props) {
   const startStr = pharaoh.reignStart !== null ? formatYear(pharaoh.reignStart) : null;
   const endStr   = pharaoh.reignEnd   !== null ? formatYear(pharaoh.reignEnd)   : null;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: pharaoh.name,
+    alternateName: pharaoh.alternateNames,
+    description:
+      pharaoh.summary ?? `${pharaoh.name}, pharaoh of ancient Egypt.`,
+    url: `https://pharalex.app/pharaohs/${pharaoh.slug}`,
+    ...(dynasty && {
+      memberOf: {
+        "@type": "Organization",
+        name: dynasty.name,
+      },
+    }),
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="py-8 sm:py-12">

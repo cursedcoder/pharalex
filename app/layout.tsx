@@ -16,18 +16,46 @@ const sourceSerif = Source_Serif_4({
   display: "swap",
 });
 
+const SITE_URL = "https://pharalex.app";
+
 export const metadata: Metadata = {
-  title: "PharaLex - Egyptian Hieroglyph Dictionary",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "PharaLex - Egyptian Hieroglyph Dictionary",
+    template: "%s | PharaLex",
+  },
   description:
     "An interactive dictionary of ancient Egyptian hieroglyphs. Explore, search, and learn about the writing system of the pharaohs.",
   keywords: [
     "hieroglyphs",
-    "Egyptian",
+    "Egyptian hieroglyphs",
     "ancient Egypt",
-    "dictionary",
-    "Gardiner",
+    "hieroglyph dictionary",
+    "Gardiner sign list",
     "hieratic",
+    "Egyptian writing",
+    "pharaohs",
   ],
+  authors: [{ name: "PharaLex" }],
+  creator: "PharaLex",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: "PharaLex",
+    title: "PharaLex - Egyptian Hieroglyph Dictionary",
+    description:
+      "An interactive dictionary of ancient Egyptian hieroglyphs. Explore, search, and learn about the writing system of the pharaohs.",
+  },
+  twitter: {
+    card: "summary",
+    title: "PharaLex - Egyptian Hieroglyph Dictionary",
+    description:
+      "An interactive dictionary of ancient Egyptian hieroglyphs. Explore, search, and learn about the writing system of the pharaohs.",
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
 };
 
 export default function RootLayout({

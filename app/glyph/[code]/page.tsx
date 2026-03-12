@@ -29,10 +29,22 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   const primaryMeaning = glyph.meanings[0]?.text || "";
+  const title = `${glyph.code} ${glyph.unicode} — ${primaryMeaning || glyph.categoryName}`;
+  const description = `${glyph.code}: ${primaryMeaning} — Egyptian hieroglyph from the ${glyph.categoryName} (${glyph.category}) category.`;
 
   return {
-    title: `${glyph.code} ${glyph.unicode} - PharaLex`,
-    description: `${glyph.code}: ${primaryMeaning} - Egyptian hieroglyph from the ${glyph.categoryName} category`,
+    title,
+    description,
+    alternates: { canonical: `/glyph/${glyph.code}` },
+    openGraph: {
+      title: `${title} - PharaLex`,
+      description,
+      url: `/glyph/${glyph.code}`,
+    },
+    twitter: {
+      title: `${title} - PharaLex`,
+      description,
+    },
   };
 }
 
@@ -70,8 +82,27 @@ export default async function GlyphPage({ params }: PageProps) {
     other: "Has a specialized or contextual function",
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: glyph.code,
+    description: glyph.meanings[0]?.text
+      ? `${glyph.code}: ${glyph.meanings[0].text} — Egyptian hieroglyph from the ${glyph.categoryName} category`
+      : `Egyptian hieroglyph ${glyph.code} from the ${glyph.categoryName} category`,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "Gardiner Sign List",
+      url: "https://pharalex.app/categories",
+    },
+    url: `https://pharalex.app/glyph/${glyph.code}`,
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="py-8 sm:py-12">

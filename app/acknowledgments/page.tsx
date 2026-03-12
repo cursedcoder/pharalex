@@ -7,6 +7,13 @@ export const metadata = {
   title: "Acknowledgments - PharaLex",
   description:
     "The open-source projects, datasets, and authors whose work makes PharaLex possible.",
+  alternates: { canonical: "/acknowledgments" },
+  openGraph: {
+    title: "Acknowledgments - PharaLex",
+    description:
+      "The open-source projects, datasets, and authors whose work makes PharaLex possible.",
+    url: "/acknowledgments",
+  },
 };
 
 // ── Types ─────────────────────────────────────────────────────────────────────

@@ -5,7 +5,17 @@ import { getAllCategories, getGlyphsByCategory } from "@/lib/glyphs";
 
 export const metadata = {
   title: "Categories - PharaLex",
-  description: "Browse Egyptian hieroglyphs by Gardiner category",
+  description: "Browse Egyptian hieroglyphs by Gardiner category. Explore all 26 Gardiner categories from humans and animals to buildings and abstract signs.",
+  alternates: { canonical: "/categories" },
+  openGraph: {
+    title: "Hieroglyph Categories - PharaLex",
+    description: "Browse Egyptian hieroglyphs by Gardiner category. Explore all 26 Gardiner categories.",
+    url: "/categories",
+  },
+  twitter: {
+    title: "Hieroglyph Categories - PharaLex",
+    description: "Browse Egyptian hieroglyphs by Gardiner category. Explore all 26 Gardiner categories.",
+  },
 };
 
 export default function CategoriesPage() {
