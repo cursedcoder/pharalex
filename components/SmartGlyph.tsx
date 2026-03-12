@@ -38,7 +38,7 @@ export function SmartGlyph({
       <div
         className={`
           flex items-center justify-center
-          rounded-lg border
+          rounded-lg border overflow-hidden
           ${config.container}
           ${canUseSvg || isRenderable
             ? "bg-papyrus/50 border-sandstone/20"
@@ -52,7 +52,7 @@ export function SmartGlyph({
           <img
             src={`/glyphs/${glyph.code}.svg`}
             alt={glyph.code}
-            className="w-full h-full object-contain p-1"
+            className="w-full h-full object-contain p-2"
             onError={() => setSvgError(true)}
           />
         ) : isRenderable ? (

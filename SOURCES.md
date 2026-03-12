@@ -42,7 +42,7 @@ All extracted SVGs use `fill="currentColor"` so they respect the site's light/da
 
 ## Dictionary & Metadata Sources
 
-Glyph names, meanings, transliterations, phonetic values, and Gardiner categorisation come from four open datasets that were downloaded, parsed, and merged by the scripts in `scripts/`.
+Glyph names, meanings, transliterations, phonetic values, and Gardiner categorisation come from five open datasets that were downloaded, parsed, and merged by the scripts in `scripts/`.
 
 | Source | Records | What it provides | How obtained | License |
 |--------|--------:|------------------|--------------|---------|
@@ -50,6 +50,7 @@ Glyph names, meanings, transliterations, phonetic values, and Gardiner categoris
 | **Unicode Unikemet database** (Unicode 16.0) | 4,376 entries | Gardiner/Hieroglyphica codes, Unicode codepoints, phonetic values (`kEH_FVal`), descriptions (`kEH_Desc`), category (`kEH_Cat`), cross-references (`kEH_UniK`, `kEH_JSesh`) | Downloaded `Unikemet.txt` from [unicode.org](https://unicode.org/); parsed with `scripts/process-unikemet.ts` | Unicode License |
 | **Aegyptus glyph list** | 3,900 entries | Additional Hieroglyphica sign codes (extended corpus beyond Unikemet) | Derived from Aegyptus font's character map; imported via `scripts/process-aegyptus.ts` | — |
 | **JSesh sign descriptions** (`signs_description.xml`) | 6,783 entries | Shape/visual tags (e.g. "seated", "holding something", "bird-headed"), additional phonetic transliterations with use/type metadata, composite part relationships | Cloned [`rosmord/jsesh`](https://github.com/rosmord/jsesh); extracted `jsesh/src/main/resources/jsesh/hieroglyphs/resources/signs_description.xml`; parsed with `scripts/process-jsesh.ts` | LGPL-3.0 |
+| **St Andrews Unicode Sign List** | 1,071 entries | English physical descriptions (e.g. "seated man", "owl"), semantic uses (logogram/phonogram/determinative) with transliterations and translations | Downloaded `signdescriptioneng.xml` and `signuse.xml` from [mjn.host.cs.st-andrews.ac.uk](https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/); parsed with `scripts/process-standrews.ts` | Academic open |
 | **Combined** | **8,282** | All of the above, deduplicated and merged by Gardiner code | Final output at `lib/data/glyphs.json` | — |
 
 ---
@@ -57,10 +58,11 @@ Glyph names, meanings, transliterations, phonetic values, and Gardiner categoris
 ## Data Pipeline
 
 ```
-kaikki.org JSONL          → scripts/process-data.ts      ─┐
-Unicode Unikemet.txt      → scripts/process-unikemet.ts  ─┼→ lib/data/glyphs.json
-Aegyptus font cmap        → scripts/process-aegyptus.ts  ─┤
-JSesh signs_description   → scripts/process-jsesh.ts     ─┘
+kaikki.org JSONL          → scripts/process-data.ts        ─┐
+Unicode Unikemet.txt      → scripts/process-unikemet.ts    ─┤
+Aegyptus font cmap        → scripts/process-aegyptus.ts    ─┼→ lib/data/glyphs.json
+JSesh signs_description   → scripts/process-jsesh.ts       ─┤
+St Andrews sign list XMLs → scripts/process-standrews.ts   ─┘
 
 JSesh SVGs (repo)         ─┐
 NewGardiner TTF extract   ─┤
@@ -76,6 +78,7 @@ Noto TTF extract          ─┘
 |-------|---------|---------------|
 | JSesh glyphs | LGPL-3.0 | Yes (with attribution) |
 | JSesh sign descriptions | LGPL-3.0 | Yes (with attribution) |
+| St Andrews sign list | Academic open | Non-commercial |
 | NewGardiner / hierojax font | GPL-3.0 | Yes (with attribution) |
 | Noto Sans Egyptian Hieroglyphs | OFL-1.1 | Yes |
 | Aegyptus 6.17 (free release) | Freeware (non-commercial) | No |

@@ -72,11 +72,12 @@ body {
   font-family: var(--font-serif);
 }
 
-/* Hieroglyph font support */
+/* Hieroglyph font support — served via Google Fonts unicode-range subsets (v30+) */
 @font-face {
   font-family: "Noto Sans Egyptian Hieroglyphs";
-  src: url("https://fonts.gstatic.com/s/notosansegyptianhieroglyphs/v29/vEF42-tODB8RrNDvZSUmRhcQHzx1s7y_F9-j3qSzEcbEYindSVK8xRg7iw.woff2")
+  src: url("https://fonts.gstatic.com/s/notosansegyptianhieroglyphs/v30/vEF42-tODB8RrNDvZSUmRhcQHzx1s7y_F9-j3qSzEcbEYintdVi99Rg.woff2")
     format("woff2");
+  unicode-range: U+13000-13455, U+13460-143FA;
   font-weight: 400;
   font-style: normal;
   font-display: swap;

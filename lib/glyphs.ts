@@ -10,7 +10,7 @@ export function getAllGlyphs(): Glyph[] {
 }
 
 export function getGlyphByCode(code: string): Glyph | undefined {
-  const normalized = code.replace(/ /g, "+");
+  const normalized = decodeURIComponent(code).replace(/ /g, "+");
   return glyphs.find(
     (g) => g.code.toLowerCase() === normalized.toLowerCase()
   );
