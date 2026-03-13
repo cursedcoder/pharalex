@@ -44,3 +44,6 @@ next-env.d.ts
 # JSesh source files (used only to extract MdC at build time, not committed)
 *.gly
 scripts/source/
+
+# Local investigation reports
+/report/
