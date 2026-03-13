@@ -223,7 +223,16 @@ function SearchContent() {
             </div>
           )}
 
-          {results.length > 0 ? (
+          {isSearching ? (
+            <div className="flex flex-col items-center justify-center py-20 select-none">
+              <div className="relative flex items-center justify-center mb-6">
+                <span className="font-hieroglyph text-6xl text-gold/80 animate-[hierospin_1.8s_ease-in-out_infinite]">𓂀</span>
+                <span className="font-hieroglyph text-4xl text-sandstone/50 absolute -left-12 animate-[hierofade_1.8s_ease-in-out_infinite]" style={{ animationDelay: "0.3s" }}>𓃭</span>
+                <span className="font-hieroglyph text-4xl text-sandstone/50 absolute -right-12 animate-[hierofade_1.8s_ease-in-out_infinite]" style={{ animationDelay: "0.6s" }}>𓆣</span>
+              </div>
+              <p className="text-sandstone text-sm tracking-widest uppercase">Consulting the scrolls…</p>
+            </div>
+          ) : results.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {visible.map((r, i) =>
                 r.kind === "glyph" ? (
