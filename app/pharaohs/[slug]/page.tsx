@@ -1,5 +1,6 @@
 export const dynamic = "force-static";
 
+import { glyphSvgSrc } from "@/lib/glyph-utils";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
@@ -145,14 +146,14 @@ export default async function PharaohPage({ params }: Props) {
                     {pharaoh.royalNames?.nomen?.codes?.[0] ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
-                        src={`/glyphs/${pharaoh.royalNames.nomen.codes[0]}.svg`}
+                        src={glyphSvgSrc(pharaoh.royalNames.nomen.codes[0])}
                         alt={pharaoh.royalNames.nomen.codes[0]}
                         className="w-full h-full object-contain"
                       />
                     ) : pharaoh.royalNames?.prenomen?.codes?.[0] ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
-                        src={`/glyphs/${pharaoh.royalNames.prenomen.codes[0]}.svg`}
+                        src={glyphSvgSrc(pharaoh.royalNames.prenomen.codes[0])}
                         alt={pharaoh.royalNames.prenomen.codes[0]}
                         className="w-full h-full object-contain"
                       />
@@ -282,7 +283,7 @@ export default async function PharaohPage({ params }: Props) {
                                 // eslint-disable-next-line @next/next/no-img-element
                                 <img
                                   key={`${code}-${i}`}
-                                  src={`/glyphs/${code}.svg`}
+                                  src={glyphSvgSrc(code)}
                                   alt={code}
                                   className="w-5 h-5 object-contain"
                                 />

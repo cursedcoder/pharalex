@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Glyph } from "@/lib/types";
 import { Badge } from "./ui/Badge";
 import { SmartGlyph } from "./SmartGlyph";
-import { glyphHref } from "@/lib/glyph-utils";
+import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
 
 interface GlyphCardProps {
   glyph: Glyph;
@@ -97,7 +97,7 @@ export function GlyphCard({ glyph, showDescription = true, highlight = false, va
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       key={v.code}
-                      src={`/glyphs/${encodeURIComponent(v.code)}.svg`}
+                      src={glyphSvgSrc(v.code)}
                       alt={v.code}
                       title={v.code}
                       className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity"

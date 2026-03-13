@@ -1,5 +1,6 @@
 export const dynamic = "force-static";
 
+import { glyphSvgSrc } from "@/lib/glyph-utils";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
@@ -182,7 +183,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             <div className="shrink-0 w-8 h-8 rounded-md bg-gold/10 flex items-center justify-center p-1 group-hover:bg-gold/20 transition-colors">
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src={`/glyphs/${encodeURIComponent(baseGlyph.code)}.svg`}
+                                src={glyphSvgSrc(baseGlyph.code)}
                                 alt={baseGlyph.code}
                                 className="w-full h-full object-contain"
                               />
@@ -216,7 +217,7 @@ export default async function GlyphPage({ params }: PageProps) {
                                   >
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
-                                      src={`/glyphs/${encodeURIComponent(v.code)}.svg`}
+                                      src={glyphSvgSrc(v.code)}
                                       alt={v.code}
                                       className="w-10 h-10 object-contain"
                                     />
@@ -313,7 +314,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             >
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src={`/glyphs/${encodeURIComponent(v.code)}.svg`}
+                                src={glyphSvgSrc(v.code)}
                                 alt={v.code}
                                 className="w-10 h-10 object-contain"
                               />
@@ -617,7 +618,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             {pharaoh.royalNames?.nomen?.codes?.[0] ? (
                               // eslint-disable-next-line @next/next/no-img-element
                               <img
-                                src={`/glyphs/${pharaoh.royalNames.nomen.codes[0]}.svg`}
+                                src={glyphSvgSrc(pharaoh.royalNames.nomen.codes[0])}
                                 alt=""
                                 className="w-full h-full object-contain"
                               />

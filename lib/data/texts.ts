@@ -1171,34 +1171,46 @@ export const TEXTS: EgyptianText[] = [
       {
         tokens: [
           {
-            mdc: "M4*X1",
+            mdc: "M4-X1*N5-Z2D*Z4A",
             transliteration: "rnpt",
             translation: "year",
             grammar: "NOUN",
           },
           {
-            mdc: "N11",
-            transliteration: "Abd",
-            translation: "month 4",
+            mdc: "N11*(Z1:Z1:Z1)",
+            transliteration: "Abd 3",
+            translation: "month 3 (summer)",
             grammar: "NOUN",
           },
           {
-            mdc: "Z1:Z1:Z1",
-            transliteration: "3",
-            translation: "season 3 (summer)",
+            mdc: "N5-V20-V20-Z1*Z1*Z1*Z1-Z1*Z1*Z1",
+            transliteration: "hrw 27",
+            translation: "day 27",
             grammar: "NUM",
           },
           {
-            mdc: "N5",
-            transliteration: "hrw",
-            translation: "day",
+            mdc: "D36*N37-A2",
+            transliteration: "šꜥ",
+            translation: "to call / cry out",
+            grammar: "VERB",
+          },
+          {
+            mdc: "M17-N35-G47-G1",
+            transliteration: "inj.ꜣ",
+            translation: "brought",
+            grammar: "VERB",
+          },
+          {
+            mdc: "M17-M17-D51*D40",
+            transliteration: "ii",
+            translation: "coming",
+            grammar: "VERB",
+          },
+          {
+            mdc: "Y1*(X1:Z1)",
+            transliteration: "mḏꜣt",
+            translation: "document / list",
             grammar: "NOUN",
-          },
-          {
-            mdc: "V20*V20*Z1*Z1*Z1*Z1*Z1*Z1*Z1",
-            transliteration: "27",
-            translation: "27",
-            grammar: "NUM",
           },
           {
             mdc: "//",
@@ -1206,13 +1218,13 @@ export const TEXTS: EgyptianText[] = [
             translation: "[damaged]",
           },
           {
-            mdc: "N29-G1-N23*Z1-A1",
+            mdc: "N29-G1-M16-G1-N23*Z1-A1",
             transliteration: "Qꜣj",
             translation: "Qay (personal name)",
             grammar: "NOUN",
           },
         ],
-        lineTranslation: "Year [?], month 4 of summer, day 27. [Damaged] … Qay.",
+        lineTranslation: "Year [?], month 3 of summer, day 27. Called out, brought. Coming — document/list. [Damaged] … Qay.",
       },
       {
         tokens: [
@@ -1252,28 +1264,23 @@ export const TEXTS: EgyptianText[] = [
             translation: "[damaged]",
           },
           {
-            mdc: "F35",
+            mdc: "[F35]",
             transliteration: "nfr",
-            translation: "Nefer (personal name?)",
+            translation: "Nefer (damaged)",
             grammar: "NOUN",
           },
           {
-            mdc: "//",
+            mdc: "[G7]",
             transliteration: "...",
+            translation: "(damaged determinative)",
+          },
+          {
+            mdc: "[G17*D36]",
+            transliteration: "m...ꜥ...",
             translation: "[damaged]",
           },
           {
-            mdc: "G17-//",
-            transliteration: "m...",
-            translation: "[damaged]",
-          },
-          {
-            mdc: "D36-//",
-            transliteration: "ꜥ...",
-            translation: "[damaged]",
-          },
-          {
-            mdc: "M17-//-M17-//-D54-//-G41-//-G1-//",
+            mdc: "[M17]-[M17]-[D54]-[G41]-[G1]",
             transliteration: "...",
             translation: "[heavily damaged]",
           },
@@ -1307,13 +1314,19 @@ export const TEXTS: EgyptianText[] = [
             grammar: "VERB",
           },
           {
-            mdc: "W25*N35-Aa1*D21",
-            transliteration: "ini-ḫr",
+            mdc: "W25*N35",
+            transliteration: "ini",
             translation: "bringing",
             grammar: "VERB",
           },
           {
-            mdc: "Q3-//",
+            mdc: "[Aa1*D21]",
+            transliteration: "ḫr",
+            translation: "[under / with] (restored)",
+            grammar: "PREP",
+          },
+          {
+            mdc: "[Q3]",
             transliteration: "p...",
             translation: "[damaged]",
           },
@@ -1352,7 +1365,7 @@ export const TEXTS: EgyptianText[] = [
             translation: "[damaged]",
           },
           {
-            mdc: "[Z3A-X1]-//-[G1]-//-[T14]-//-[X1*O49]-//",
+            mdc: "[Z3A]-[X1]-[G1]-[T14]-[X1*O49]",
             transliteration: "...",
             translation: "[damaged / restored]",
           },
@@ -1391,7 +1404,7 @@ export const TEXTS: EgyptianText[] = [
             translation: "[damaged]",
           },
           {
-            mdc: "N35-//-A24-//-Ff1-//",
+            mdc: "[N35]-[A24]-[Ff1]",
             transliteration: "n...",
             translation: "[damaged]",
           },

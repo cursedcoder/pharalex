@@ -1,3 +1,4 @@
+import { glyphSvgSrc } from "@/lib/glyph-utils";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
@@ -378,7 +379,7 @@ export default async function AlphabetPage() {
                             >
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src={`/glyphs/${code}.svg`}
+                                src={glyphSvgSrc(code)}
                                 alt={code}
                                 className="w-full h-full object-contain"
                               />
@@ -458,7 +459,7 @@ export default async function AlphabetPage() {
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={`/glyphs/${code}.svg`}
+                          src={glyphSvgSrc(code)}
                           alt={code}
                           className="w-full h-full object-contain"
                         />

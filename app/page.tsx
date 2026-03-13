@@ -1,3 +1,4 @@
+import { glyphSvgSrc } from "@/lib/glyph-utils";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { SearchBar } from "@/components/SearchBar";
@@ -279,7 +280,7 @@ export default async function HomePage() {
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
                             key={`${code}-${i}`}
-                            src={`/glyphs/${code}.svg`}
+                            src={glyphSvgSrc(code)}
                             alt={code}
                             className="w-6 h-6 object-contain"
                           />

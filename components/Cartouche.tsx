@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { RoyalName } from "@/lib/types";
-import { glyphHref } from "@/lib/glyph-utils";
+import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
 import { useGlyphDetail } from "./GlyphDetailsContext";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 
@@ -182,7 +182,7 @@ function CartoucheGlyph({
   const glyphElement = (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`/glyphs/${code}.svg`}
+      src={glyphSvgSrc(code)}
       alt={code}
       className={`${glyphClassName} object-contain`}
     />

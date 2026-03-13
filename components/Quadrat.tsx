@@ -4,7 +4,7 @@ import Link from "next/link";
 import { createContext, useContext } from "react";
 import { parseMdc, extractCodes } from "@/lib/mdc";
 import type { MdcNode } from "@/lib/mdc";
-import { glyphHref } from "@/lib/glyph-utils";
+import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
 import { useGlyphDetail } from "./GlyphDetailsContext";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 import {
@@ -484,7 +484,7 @@ function SimpleLigNode({
         {behind.map((p) => (
           <image
             key={`bg-${p.code}`}
-            href={`/glyphs/${p.code}.svg`}
+            href={glyphSvgSrc(p.code)}
             x={p.x}
             y={p.y}
             width={p.w}
@@ -494,7 +494,7 @@ function SimpleLigNode({
         ))}
         {anchorCode && (
           <image
-            href={`/glyphs/${anchorCode}.svg`}
+            href={glyphSvgSrc(anchorCode)}
             x={0}
             y={0}
             width={anchorSize.w}
@@ -589,7 +589,7 @@ function LigatureNode({
         {behind.map((p) => (
           <image
             key={`bg-${p.code}`}
-            href={`/glyphs/${p.code}.svg`}
+            href={glyphSvgSrc(p.code)}
             x={p.x}
             y={p.y}
             width={p.w}
@@ -599,7 +599,7 @@ function LigatureNode({
         ))}
         {anchorCode && (
           <image
-            href={`/glyphs/${anchorCode}.svg`}
+            href={glyphSvgSrc(anchorCode)}
             x={0}
             y={0}
             width={anchorNat.w}
@@ -812,7 +812,7 @@ function SignCell({
   const img = (
     /* eslint-disable-next-line @next/next/no-img-element */
     <img
-      src={`/glyphs/${code}.svg`}
+      src={glyphSvgSrc(code)}
       alt={code}
       style={{ width, height }}
       className="object-contain"

@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import Link from "next/link";
 import type { EgyptianText, TextToken } from "@/lib/types";
 import { mdcToCodes } from "@/lib/mdc";
-import { glyphHref } from "@/lib/glyph-utils";
+import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
 import { useGlyphDetail } from "./GlyphDetailsContext";
 import { wordHref } from "@/lib/word-utils";
 import { Quadrat, getWordWidth } from "./Quadrat";
@@ -208,7 +208,7 @@ function TokenDetailGlyph({ code }: { code: string }) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`/glyphs/${code}.svg`}
+        src={glyphSvgSrc(code)}
         alt={code}
         className="w-10 h-10 object-contain"
       />

@@ -1,5 +1,6 @@
 "use client";
 
+import { glyphSvgSrc } from "@/lib/glyph-utils";
 import { useState } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
@@ -114,7 +115,7 @@ export default function TextsClient({ texts, availablePeriods }: TextsClientProp
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       key={`${code}-${i}`}
-                      src={`/glyphs/${code}.svg`}
+                      src={glyphSvgSrc(code)}
                       alt={code}
                       className="w-6 h-6 object-contain"
                     />

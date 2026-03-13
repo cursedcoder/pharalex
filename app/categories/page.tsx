@@ -1,3 +1,4 @@
+import { glyphSvgSrc } from "@/lib/glyph-utils";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
@@ -103,7 +104,7 @@ export default async function CategoriesPage() {
                         >
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src={`/glyphs/${encodeURIComponent(glyph.code)}.svg`}
+                            src={glyphSvgSrc(glyph.code)}
                             alt={glyph.code}
                             className="w-7 h-7 object-contain"
                           />

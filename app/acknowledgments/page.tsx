@@ -1,3 +1,4 @@
+import { glyphSvgSrc } from "@/lib/glyph-utils";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
@@ -527,7 +528,7 @@ function SectionHeader({
       <div className="flex items-center gap-3 px-1">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`/glyphs/${encodeURIComponent(glyph)}.svg`}
+          src={glyphSvgSrc(glyph)}
           alt={glyph}
           className="w-7 h-7 object-contain text-gold-dark opacity-80"
           style={{ filter: "invert(55%) sepia(30%) saturate(600%) hue-rotate(5deg) brightness(90%)" }}

@@ -7,7 +7,7 @@ import { useWindowVirtualizer } from "@tanstack/react-virtual";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { SmartGlyph } from "@/components/SmartGlyph";
-import { getBaseCode, glyphHref } from "@/lib/glyph-utils";
+import { getBaseCode, glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
 import type { Glyph, Category, MeaningType } from "@/lib/types";
 
 // Grid columns at each breakpoint (mirrors tailwind grid-cols-*)
@@ -435,7 +435,7 @@ function GlyphTile({ glyph, variantCount = 0, size }: { glyph: Glyph; variantCou
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`/glyphs/${encodeURIComponent(glyph.code)}.svg`}
+        src={glyphSvgSrc(glyph.code)}
         alt={glyph.code}
         className="object-contain"
         style={{ width: "72%", height: "72%" }}

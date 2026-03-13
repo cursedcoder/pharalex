@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { glyphHref } from "@/lib/glyph-utils";
+import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
 import { translitToUnicode } from "@/lib/word-utils";
 import { Quadrat } from "@/components/Quadrat";
 import type { SearchApiResult } from "@/app/api/search/route";
@@ -157,7 +157,7 @@ export function SearchBar({
                 <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-papyrus/60 border border-sandstone/20 overflow-hidden p-1">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={`/glyphs/${encodeURIComponent(item.code)}.svg`}
+                    src={glyphSvgSrc(item.code)}
                     alt={item.code}
                     className="w-8 h-8 object-contain"
                   />
