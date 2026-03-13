@@ -26,6 +26,9 @@ interface AlphabetEntry {
   transliteration: string;
   transName: string;
   signDescription: string;
+  pronunciation: string;
+  comments: string;
+  objectDepicted: string;
 }
 
 const ALPHABET: AlphabetEntry[] = [
@@ -34,150 +37,225 @@ const ALPHABET: AlphabetEntry[] = [
     transliteration: "ꜣ",
     transName: "Aleph",
     signDescription: "Vulture",
+    pronunciation: "a",
+    comments: "a glottal stop as in German words beginning with a vowel",
+    objectDepicted: "Egyptian vulture",
   },
   {
     codes: ["M17"],
     transliteration: "ꞽ",
     transName: "Yod",
     signDescription: "Reed leaf",
+    pronunciation: "y or i",
+    comments: "seems to have sometimes the value of y, sometimes (mainly at the beginning of words) that of ꜣ. Thus can be pronounced 'i' or 'ee' as in French 'i'. At the beginning of some divine names it is pronounced 'a', e.g. 'imn' = Amun.",
+    objectDepicted: "flowering reed leaf",
   },
   {
     codes: ["M17", "Z4"],
     transliteration: "y",
     transName: "Y",
     signDescription: "Double reed leaf / Dual strokes",
+    pronunciation: "y",
+    comments: "pronounced 'y'",
+    objectDepicted: "two reeds",
   },
   {
     codes: ["D36"],
     transliteration: "ꜥ",
     transName: "Ayin",
     signDescription: "Arm",
+    pronunciation: "a",
+    comments: "a gutteral sound unknown to English which can be pronounced as a long a",
+    objectDepicted: "forearm",
   },
   {
     codes: ["G43", "Z7"],
     transliteration: "w",
     transName: "W",
     signDescription: "Quail chick / Coil of rope",
+    pronunciation: "u",
+    comments: "'u' or 'oo' as in 'pool'",
+    objectDepicted: "(1) quail chick (2) coil of rope",
   },
   {
     codes: ["D58"],
     transliteration: "b",
     transName: "B",
     signDescription: "Foot",
+    pronunciation: "b",
+    comments: "same as in English",
+    objectDepicted: "leg and foot",
   },
   {
     codes: ["Q3"],
     transliteration: "p",
     transName: "P",
     signDescription: "Reed mat or stool",
+    pronunciation: "p",
+    comments: "same as in English",
+    objectDepicted: "stool",
   },
   {
     codes: ["I9"],
     transliteration: "f",
     transName: "F",
     signDescription: "Horned viper",
+    pronunciation: "f",
+    comments: "same as in English",
+    objectDepicted: "horned viper",
   },
   {
     codes: ["G17"],
     transliteration: "m",
     transName: "M",
     signDescription: "Owl",
+    pronunciation: "m",
+    comments: "same as in English",
+    objectDepicted: "(1) owl (2) unknown",
   },
   {
     codes: ["N35"],
     transliteration: "n",
     transName: "N",
     signDescription: "Water",
+    pronunciation: "n",
+    comments: "same as in English",
+    objectDepicted: "water line",
   },
   {
     codes: ["D21"],
     transliteration: "r",
     transName: "R",
     signDescription: "Mouth",
+    pronunciation: "r",
+    comments: "same as in English",
+    objectDepicted: "mouth",
   },
   {
     codes: ["O4"],
     transliteration: "h",
     transName: "H",
     signDescription: "Enclosure",
+    pronunciation: "h",
+    comments: "same as in English",
+    objectDepicted: "reed shelter in fields",
   },
   {
     codes: ["V28"],
     transliteration: "ḥ",
     transName: "Dotted H",
     signDescription: "Rope",
+    pronunciation: "h",
+    comments: "strongly aspirated or emphatic 'h' sound unknown to English",
+    objectDepicted: "wick of twisted flax",
   },
   {
     codes: ["Aa1"],
     transliteration: "ḫ",
     transName: "Third H",
     signDescription: "Placenta",
+    pronunciation: "kh",
+    comments: "a gutteral sound unknown to English. Like 'ch' in Scottish 'loch'.",
+    objectDepicted: "placenta(?)",
   },
   {
     codes: ["F32"],
     transliteration: "ẖ",
     transName: "Fourth H",
     signDescription: "Belly and udder",
+    pronunciation: "ch",
+    comments: "perhaps like 'ch' in German 'ich'",
+    objectDepicted: "animal belly",
   },
   {
     codes: ["O34"],
     transliteration: "z",
     transName: "S (or Z)",
     signDescription: "Door bolt",
+    pronunciation: "s",
+    comments: "same as in English",
+    objectDepicted: "(1) bolt (2) folded cloth",
   },
   {
     codes: ["S29"],
     transliteration: "s",
     transName: "Second S",
     signDescription: "Bolt of cloth",
+    pronunciation: "s",
+    comments: "same as in English",
+    objectDepicted: "(1) bolt (2) folded cloth",
   },
   {
     codes: ["N37"],
     transliteration: "š",
     transName: "Shin",
     signDescription: "Pool",
+    pronunciation: "sh",
+    comments: "same as in English",
+    objectDepicted: "pool",
   },
   {
     codes: ["N29"],
     transliteration: "q",
     transName: "Dotted K (or Q)",
     signDescription: "Hill slope",
+    pronunciation: "q",
+    comments: "Arabic glottal sound, best represented by the English 'k'",
+    objectDepicted: "hill-slope",
   },
   {
     codes: ["V31"],
     transliteration: "k",
     transName: "K",
     signDescription: "Basket",
+    pronunciation: "k",
+    comments: "same as in English",
+    objectDepicted: "basket with handle",
   },
   {
     codes: ["W12"],
     transliteration: "g",
     transName: "G",
     signDescription: "Jar stand",
+    pronunciation: "g",
+    comments: "same as in English",
+    objectDepicted: "stand for jar",
   },
   {
     codes: ["X1"],
     transliteration: "t",
     transName: "T",
     signDescription: "Loaf of bread",
+    pronunciation: "t",
+    comments: "same as in English",
+    objectDepicted: "loaf of bread",
   },
   {
     codes: ["V13"],
     transliteration: "ṯ",
     transName: "Second T",
     signDescription: "Hobble",
+    pronunciation: "tch",
+    comments: "combination of two letters in English, 'ch'",
+    objectDepicted: "tethering rope",
   },
   {
     codes: ["D46"],
     transliteration: "d",
     transName: "D",
     signDescription: "Hand",
+    pronunciation: "d",
+    comments: "same as in English",
+    objectDepicted: "hand",
   },
   {
     codes: ["I10"],
     transliteration: "ḏ",
     transName: "Second D",
     signDescription: "Cobra",
+    pronunciation: "dj",
+    comments: "same as 'j' in English",
+    objectDepicted: "snake",
   },
 ];
 
@@ -248,11 +326,14 @@ export default function AlphabetPage() {
                   <th className="text-left px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-sandstone w-28">
                     Transliteration
                   </th>
+                  <th className="text-left px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-sandstone w-32">
+                    Pronunciation
+                  </th>
                   <th className="text-left px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-sandstone w-40">
-                    Letter name
+                    Object Depicted
                   </th>
                   <th className="text-left px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-sandstone">
-                    Sign description
+                    Comments
                   </th>
                 </tr>
               </thead>
@@ -316,17 +397,24 @@ export default function AlphabetPage() {
                       )}
                     </td>
 
-                    {/* Letter name */}
+                    {/* Pronunciation */}
                     <td className="px-5 py-4">
                       <span className="text-sm font-medium text-brown-light">
-                        {entry.transName}
+                        {entry.pronunciation}
                       </span>
                     </td>
 
-                    {/* Sign description */}
+                    {/* Object Depicted */}
+                    <td className="px-5 py-4">
+                      <span className="text-sm text-brown-light">
+                        {entry.objectDepicted}
+                      </span>
+                    </td>
+
+                    {/* Comments */}
                     <td className="px-5 py-4">
                       <span className="text-sm text-sandstone">
-                        {entry.signDescription}
+                        {entry.comments}
                       </span>
                     </td>
                   </tr>
@@ -378,7 +466,7 @@ export default function AlphabetPage() {
 
                 {/* Text info */}
                 <div className="flex-1 min-w-0 pt-0.5">
-                  <div className="flex items-baseline gap-3 mb-0.5">
+                  <div className="flex items-baseline gap-3 mb-1">
                     <span className="font-display text-2xl font-semibold text-brown italic leading-none">
                       {entry.transliteration}
                     </span>
@@ -388,10 +476,15 @@ export default function AlphabetPage() {
                       </span>
                     )}
                     <span className="text-sm font-medium text-brown-light">
-                      {entry.transName}
+                      Pronunciation: {entry.pronunciation}
                     </span>
                   </div>
-                  <p className="text-sm text-sandstone">{entry.signDescription}</p>
+                  <p className="text-sm font-medium text-brown-light mb-1">
+                    {entry.objectDepicted}
+                  </p>
+                  <p className="text-xs text-sandstone leading-relaxed">
+                    {entry.comments}
+                  </p>
                 </div>
               </div>
             ))}

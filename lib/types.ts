@@ -111,7 +111,6 @@ export interface TextToken {
 }
 
 export interface TextLine {
-  number?: number;          // line/column number from the original source
   tokens: TextToken[];
   lineTranslation?: string; // whole-line translation for lines that can't be cleanly word-tokenized
 }

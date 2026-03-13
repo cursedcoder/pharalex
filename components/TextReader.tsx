@@ -255,9 +255,9 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
             <div key={lineIndex}>
               <div className="flex gap-3 items-start">
                 {/* Line number */}
-                {line.number != null && !compact && (
+                {!compact && (
                   <span className="text-xs text-sandstone/60 font-mono mt-3 w-5 shrink-0 text-right select-none">
-                    {line.number}
+                    {lineIndex + 1}
                   </span>
                 )}
 
@@ -306,7 +306,7 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
 
               {/* Token detail panel */}
               {isActiveLine && activeToken && !compact && (
-                <div className={line.number != null ? "pl-8" : ""}>
+                <div className="pl-8">
                   <TokenDetail
                     token={activeToken.token}
                     onClose={() => setActiveToken(null)}
