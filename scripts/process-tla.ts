@@ -122,7 +122,7 @@ async function readJSONL(filePath: string): Promise<TLASentence[]> {
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  const glyphsPath = path.join(__dirname, "../lib/data/glyphs.json");
+  const glyphsPath = path.join(__dirname, "../public/data/glyphs.json");
   const lateEgyptianPath = path.join(__dirname, "../lib/data/tla-late-egyptian.jsonl");
   const earlierEgyptianPath = path.join(__dirname, "../lib/data/tla-earlier-egyptian.jsonl");
 

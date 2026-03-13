@@ -24,7 +24,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { code } = await params;
-  const glyph = getGlyphByCode(code);
+  const glyph = await getGlyphByCode(code);
 
   if (!glyph) {
     return { title: "Glyph Not Found - PharaLex" };
@@ -51,26 +51,26 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  const glyphs = getAllGlyphs();
+  const glyphs = await getAllGlyphs();
   return glyphs.map((g) => ({ code: g.code.replace(/\+/g, "%2B") }));
 }
 
 export default async function GlyphPage({ params }: PageProps) {
   const { code } = await params;
-  const glyph = getGlyphByCode(code);
+  const glyph = await getGlyphByCode(code);
 
   if (!glyph) {
     notFound();
   }
 
-  const relatedGlyphs = getRelatedGlyphs(glyph.code);
-  const category = getCategoryById(glyph.category);
-  const variants = getGlyphVariants(glyph.code);
+  const relatedGlyphs = await getRelatedGlyphs(glyph.code);
+  const category = await getCategoryById(glyph.category);
+  const variants = await getGlyphVariants(glyph.code);
   const baseCode = getBaseCode(glyph.code);
-  const baseGlyph = baseCode ? getGlyphByCode(baseCode) : null;
-  const variantSiblings = getVariantSiblings(glyph.code);
+  const baseGlyph = baseCode ? await getGlyphByCode(baseCode) : null;
+  const variantSiblings = await getVariantSiblings(glyph.code);
   const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
-  const wordsUsingGlyph = getWordsByGardinerCode(glyph.code, 12);
+  const wordsUsingGlyph = await getWordsByGardinerCode(glyph.code, 12);
 
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",

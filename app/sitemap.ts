@@ -6,9 +6,9 @@ const BASE_URL = "https://pharalex.app";
 
 export const dynamic = "force-static";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const glyphs = getAllGlyphs();
-  const categories = getAllCategories();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const glyphs = await getAllGlyphs();
+  const categories = await getAllCategories();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

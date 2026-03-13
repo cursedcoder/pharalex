@@ -261,14 +261,18 @@ const ALPHABET: AlphabetEntry[] = [
   },
 ];
 
-export default function AlphabetPage() {
-  const entries = ALPHABET.map((entry) => ({
-    ...entry,
-    glyphs: entry.codes.map((code) => ({
-      code,
-      glyph: getGlyphByCode(code),
-    })),
-  }));
+export default async function AlphabetPage() {
+  const entries = await Promise.all(
+    ALPHABET.map(async (entry) => ({
+      ...entry,
+      glyphs: await Promise.all(
+        entry.codes.map(async (code) => ({
+          code,
+          glyph: await getGlyphByCode(code),
+        }))
+      ),
+    }))
+  );
 
   return (
     <div className="min-h-screen">

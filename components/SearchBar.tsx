@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { glyphHref } from "@/lib/glyphs";
-import { translitToUnicode } from "@/lib/words";
+import { glyphHref } from "@/lib/glyph-utils";
+import { translitToUnicode } from "@/lib/word-utils";
 import { Quadrat } from "@/components/Quadrat";
 import type { SearchApiResult } from "@/app/api/search/route";
 

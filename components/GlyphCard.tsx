@@ -4,17 +4,17 @@ import Link from "next/link";
 import type { Glyph } from "@/lib/types";
 import { Badge } from "./ui/Badge";
 import { SmartGlyph } from "./SmartGlyph";
-import { getGlyphVariants, glyphHref } from "@/lib/glyphs";
+import { glyphHref } from "@/lib/glyph-utils";
 
 interface GlyphCardProps {
   glyph: Glyph;
   showDescription?: boolean;
   highlight?: boolean;
+  variants?: Glyph[];
 }
 
-export function GlyphCard({ glyph, showDescription = true, highlight = false }: GlyphCardProps) {
+export function GlyphCard({ glyph, showDescription = true, highlight = false, variants }: GlyphCardProps) {
   const primaryMeaning = glyph.meanings[0];
-  const variants = getGlyphVariants(glyph.code);
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
     phonogram: "sandstone",
@@ -87,7 +87,7 @@ export function GlyphCard({ glyph, showDescription = true, highlight = false }: 
               </div>
             )}
 
-            {variants.length > 0 && (
+            {variants && variants.length > 0 && (
               <div className="mt-3 pt-2 border-t border-sandstone/10 flex items-center gap-1.5">
                 <span className="text-xs text-sandstone shrink-0">
                   {variants.length} variant{variants.length > 1 ? "s" : ""}:

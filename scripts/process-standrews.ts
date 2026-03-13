@@ -199,7 +199,7 @@ function parseSignUse(filePath: string): Map<string, SignUse> {
 async function main() {
   const descrPath = path.join(__dirname, "../lib/data/standrews-descriptions.xml");
   const usePath = path.join(__dirname, "../lib/data/standrews-signuse.xml");
-  const glyphsPath = path.join(__dirname, "../lib/data/glyphs.json");
+  const glyphsPath = path.join(__dirname, "../public/data/glyphs.json");
 
   console.log("Parsing St Andrews descriptions…");
   const descriptions = parseDescriptions(descrPath);

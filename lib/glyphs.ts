@@ -1,39 +1,54 @@
 import type { Glyph, Category } from "./types";
-import glyphsData from "./data/glyphs.json";
-import categoriesData from "./data/categories.json";
+import type { GlyphDetailsMap } from "@/components/GlyphDetailsContext";
+import { loadGlyphs, loadCategories } from "./data-loader";
+import { getBaseCode } from "./glyph-utils";
 
-const glyphs: Glyph[] = glyphsData as Glyph[];
-const categoryMap: Record<string, string> = categoriesData;
+export { glyphHref, getBaseCode } from "./glyph-utils";
 
-export function getAllGlyphs(): Glyph[] {
-  return glyphs;
+let _glyphIndex: Map<string, Glyph> | null = null;
+
+async function glyphIndex(): Promise<Map<string, Glyph>> {
+  if (!_glyphIndex) {
+    _glyphIndex = new Map();
+    for (const g of await loadGlyphs()) {
+      _glyphIndex.set(g.code.toLowerCase(), g);
+    }
+  }
+  return _glyphIndex;
 }
 
-export function getGlyphByCode(code: string): Glyph | undefined {
-  const normalized = decodeURIComponent(code).replace(/ /g, "+");
-  return glyphs.find(
-    (g) => g.code.toLowerCase() === normalized.toLowerCase()
-  );
+export async function getAllGlyphs(): Promise<Glyph[]> {
+  return loadGlyphs();
 }
 
-export function glyphHref(code: string): string {
-  return `/glyph/${code.replace(/\+/g, "%2B")}`;
+export async function getGlyphByCode(
+  code: string
+): Promise<Glyph | undefined> {
+  const normalized = decodeURIComponent(code).replace(/ /g, "+").toLowerCase();
+  return (await glyphIndex()).get(normalized);
 }
 
-export function getGlyphsByCategory(categoryId: string): Glyph[] {
-  return glyphs.filter(
+export async function getGlyphsByCategory(
+  categoryId: string
+): Promise<Glyph[]> {
+  return (await loadGlyphs()).filter(
     (g) => g.category.toLowerCase() === categoryId.toLowerCase()
   );
 }
 
-export function getAllCategories(): Category[] {
-  const categoryCounts: Record<string, number> = {};
+export async function getAllCategories(): Promise<Category[]> {
+  const [allGlyphs, catMap] = await Promise.all([
+    loadGlyphs(),
+    loadCategories(),
+  ]);
 
-  for (const glyph of glyphs) {
-    categoryCounts[glyph.category] = (categoryCounts[glyph.category] || 0) + 1;
+  const categoryCounts: Record<string, number> = {};
+  for (const glyph of allGlyphs) {
+    categoryCounts[glyph.category] =
+      (categoryCounts[glyph.category] || 0) + 1;
   }
 
-  return Object.entries(categoryMap)
+  return Object.entries(catMap)
     .filter(([id]) => categoryCounts[id] > 0)
     .map(([id, name]) => ({
       id,
@@ -42,23 +57,30 @@ export function getAllCategories(): Category[] {
     }));
 }
 
-export function getCategoryById(id: string): Category | undefined {
-  const normalizedId = Object.keys(categoryMap).find(
+export async function getCategoryById(
+  id: string
+): Promise<Category | undefined> {
+  const [allGlyphs, catMap] = await Promise.all([
+    loadGlyphs(),
+    loadCategories(),
+  ]);
+
+  const normalizedId = Object.keys(catMap).find(
     (k) => k.toLowerCase() === id.toLowerCase()
   );
   if (!normalizedId) return undefined;
-  const name = categoryMap[normalizedId];
+  const name = catMap[normalizedId];
   id = normalizedId;
 
-  const count = glyphs.filter((g) => g.category === id).length;
+  const count = allGlyphs.filter((g) => g.category === id).length;
   return { id, name, glyphCount: count };
 }
 
-export function searchGlyphs(query: string): Glyph[] {
+export async function searchGlyphs(query: string): Promise<Glyph[]> {
   const lowerQuery = query.toLowerCase().trim();
   if (!lowerQuery) return [];
 
-  return glyphs.filter((glyph) => {
+  return (await loadGlyphs()).filter((glyph) => {
     if (glyph.code.toLowerCase().includes(lowerQuery)) return true;
     if (glyph.unicode === query) return true;
     for (const meaning of glyph.meanings) {
@@ -68,65 +90,65 @@ export function searchGlyphs(query: string): Glyph[] {
       if (trans.toLowerCase().includes(lowerQuery)) return true;
     }
     if (glyph.categoryName.toLowerCase().includes(lowerQuery)) return true;
-
     return false;
   });
 }
 
-/**
- * Returns the base Gardiner code for a variant, e.g. "G127F" → "G127".
- * Returns null if the code is already a base or a U+ codepoint.
- */
-export function getBaseCode(code: string): string | null {
-  if (code.startsWith("U+")) return null;
-  const m = code.match(/^([A-Z][a-z]?\d+)[A-Z]/);
-  if (!m) return null;
-  const base = m[1];
-  return base !== code ? base : null;
-}
-
-/**
- * Returns all variant glyphs for a given base code,
- * e.g. "G127" → [G127A, G127B, G127C, G127D, G127E, G127F]
- */
-export function getGlyphVariants(code: string): Glyph[] {
+export async function getGlyphVariants(code: string): Promise<Glyph[]> {
   if (code.startsWith("U+")) return [];
   const re = new RegExp(`^${code}[A-Z]`);
-  return glyphs.filter((g) => re.test(g.code));
+  return (await loadGlyphs()).filter((g) => re.test(g.code));
 }
 
-/**
- * Returns an ordered sibling list for a variant glyph:
- * [parent, variantA, variantB, …] and the index of `code` within that list.
- * Returns null if `code` has no base (i.e. it's already a root glyph).
- */
-export function getVariantSiblings(
+export async function getVariantSiblings(
   code: string
-): { siblings: Glyph[]; currentIndex: number } | null {
+): Promise<{ siblings: Glyph[]; currentIndex: number } | null> {
   const baseCode = getBaseCode(code);
   if (!baseCode) return null;
-  const parent = getGlyphByCode(baseCode);
+  const parent = await getGlyphByCode(baseCode);
   if (!parent) return null;
-  const variants = getGlyphVariants(baseCode);
+  const variants = await getGlyphVariants(baseCode);
   const siblings = [parent, ...variants];
   const currentIndex = siblings.findIndex((g) => g.code === code);
   if (currentIndex === -1) return null;
   return { siblings, currentIndex };
 }
 
-export function getRelatedGlyphs(code: string): Glyph[] {
-  const glyph = getGlyphByCode(code);
+export async function getRelatedGlyphs(code: string): Promise<Glyph[]> {
+  const glyph = await getGlyphByCode(code);
   if (!glyph) return [];
 
-  return glyph.related
-    .map((relatedCode) => getGlyphByCode(relatedCode))
-    .filter((g): g is Glyph => g !== undefined);
+  const related = await Promise.all(
+    glyph.related.map((relatedCode) => getGlyphByCode(relatedCode))
+  );
+  return related.filter((g): g is Glyph => g !== undefined);
 }
 
-export function getGlyphStats() {
+export async function buildGlyphDetailsMap(
+  codes: string[]
+): Promise<GlyphDetailsMap> {
+  const map: GlyphDetailsMap = {};
+  for (const code of codes) {
+    const g = await getGlyphByCode(code);
+    if (g) {
+      map[code.toLowerCase()] = {
+        transliteration: g.transliteration[0],
+        meaning: g.meanings[0]?.text ?? g.description,
+      };
+    }
+  }
+  return map;
+}
+
+export async function getGlyphStats() {
+  const [allGlyphs, categories] = await Promise.all([
+    loadGlyphs(),
+    getAllCategories(),
+  ]);
+
   const stats = {
-    totalGlyphs: glyphs.length,
-    totalCategories: getAllCategories().length,
+    totalGlyphs: allGlyphs.length,
+    totalCategories: categories.length,
     byType: {
       logogram: 0,
       phonogram: 0,
@@ -135,7 +157,7 @@ export function getGlyphStats() {
     },
   };
 
-  for (const glyph of glyphs) {
+  for (const glyph of allGlyphs) {
     for (const meaning of glyph.meanings) {
       stats.byType[meaning.type]++;
     }

@@ -31,13 +31,13 @@ const GRAMMAR_BADGE_VARIANTS: Record<string, "gold" | "sandstone" | "outline" | 
 };
 
 export async function generateStaticParams() {
-  const translits = getAllTransliterations();
+  const translits = await getAllTransliterations();
   return translits.map((t) => ({ slug: wordSlug(t) }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const entries = getWordsBySlug(slug);
+  const entries = await getWordsBySlug(slug);
   if (entries.length === 0) return {};
 
   const w = entries[0];
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function WordPage({ params }: Props) {
   const { slug } = await params;
-  const entries = getWordsBySlug(slug);
+  const entries = await getWordsBySlug(slug);
   if (entries.length === 0) notFound();
 
   const w = entries[0];

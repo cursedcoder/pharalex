@@ -17,7 +17,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { category: categoryId } = await params;
-  const category = getCategoryById(categoryId);
+  const category = await getCategoryById(categoryId);
 
   if (!category) {
     return { title: "Category Not Found - PharaLex" };
@@ -43,22 +43,22 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  const categories = getAllCategories();
+  const categories = await getAllCategories();
   return categories.map((c) => ({ category: c.id }));
 }
 
 export default async function CategoryPage({ params }: PageProps) {
   const { category: categoryId } = await params;
-  const category = getCategoryById(categoryId);
+  const category = await getCategoryById(categoryId);
 
   if (!category) {
     notFound();
   }
 
-  const glyphs = getGlyphsByCategory(category.id).filter(
+  const glyphs = (await getGlyphsByCategory(category.id)).filter(
     (g) => getBaseCode(g.code) === null
   );
-  const allCategories = getAllCategories();
+  const allCategories = await getAllCategories();
 
   const categoryDescriptions: Record<string, string> = {
     A: "Hieroglyphs depicting men in various poses and occupations, from seated scribes to workers and officials.",

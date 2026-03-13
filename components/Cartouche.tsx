@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import type { RoyalName } from "@/lib/types";
-import { glyphHref, getGlyphByCode } from "@/lib/glyphs";
+import { glyphHref } from "@/lib/glyph-utils";
+import { useGlyphDetail } from "./GlyphDetailsContext";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 
 interface CartoucheProps {
@@ -44,50 +45,14 @@ export function Cartouche({
             rounded-full
           `}
         >
-          {royalName.codes.map((code, i) => {
-            const glyph = getGlyphByCode(code);
-            const primaryMeaning = glyph?.meanings[0]?.text;
-            const transliteration = glyph?.transliteration[0];
-            const description = glyph?.description;
-
-            const glyphElement = (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={`/glyphs/${code}.svg`}
-                alt={code}
-                className={`${config.glyph} object-contain`}
-              />
-            );
-
-            const wrappedGlyph = showLinks ? (
-              <Link
-                href={glyphHref(code)}
-                className="
-                  hover:scale-110 hover:drop-shadow-md
-                  transition-transform duration-150
-                "
-              >
-                {glyphElement}
-              </Link>
-            ) : (
-              glyphElement
-            );
-
-            return (
-              <Tooltip
-                key={`${code}-${i}`}
-                content={
-                  <GlyphTooltipContent
-                    code={code}
-                    transliteration={transliteration}
-                    meaning={primaryMeaning || description}
-                  />
-                }
-              >
-                {wrappedGlyph}
-              </Tooltip>
-            );
-          })}
+          {royalName.codes.map((code, i) => (
+            <CartoucheGlyph
+              key={`${code}-${i}`}
+              code={code}
+              showLinks={showLinks}
+              glyphClassName={config.glyph}
+            />
+          ))}
         </div>
         {/* Cartouche knot/line at the end */}
         <div 
@@ -163,50 +128,14 @@ export function Serekh({
             borderBottomStyle: "double",
           }}
         >
-          {royalName.codes.map((code, i) => {
-            const glyph = getGlyphByCode(code);
-            const primaryMeaning = glyph?.meanings[0]?.text;
-            const transliteration = glyph?.transliteration[0];
-            const description = glyph?.description;
-
-            const glyphElement = (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={`/glyphs/${code}.svg`}
-                alt={code}
-                className={`${config.glyph} object-contain`}
-              />
-            );
-
-            const wrappedGlyph = showLinks ? (
-              <Link
-                href={glyphHref(code)}
-                className="
-                  hover:scale-110 hover:drop-shadow-md
-                  transition-transform duration-150
-                "
-              >
-                {glyphElement}
-              </Link>
-            ) : (
-              glyphElement
-            );
-
-            return (
-              <Tooltip
-                key={`${code}-${i}`}
-                content={
-                  <GlyphTooltipContent
-                    code={code}
-                    transliteration={transliteration}
-                    meaning={primaryMeaning || description}
-                  />
-                }
-              >
-                {wrappedGlyph}
-              </Tooltip>
-            );
-          })}
+          {royalName.codes.map((code, i) => (
+            <CartoucheGlyph
+              key={`${code}-${i}`}
+              code={code}
+              showLinks={showLinks}
+              glyphClassName={config.glyph}
+            />
+          ))}
         </div>
         
         {/* Palace recessed panels (niched facade) */}
@@ -237,6 +166,51 @@ export function Serekh({
         </span>
       )}
     </div>
+  );
+}
+
+function CartoucheGlyph({
+  code,
+  showLinks,
+  glyphClassName,
+}: {
+  code: string;
+  showLinks: boolean;
+  glyphClassName: string;
+}) {
+  const detail = useGlyphDetail(code);
+  const glyphElement = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`/glyphs/${code}.svg`}
+      alt={code}
+      className={`${glyphClassName} object-contain`}
+    />
+  );
+
+  const wrappedGlyph = showLinks ? (
+    <Link
+      href={glyphHref(code)}
+      className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150"
+    >
+      {glyphElement}
+    </Link>
+  ) : (
+    glyphElement
+  );
+
+  return (
+    <Tooltip
+      content={
+        <GlyphTooltipContent
+          code={code}
+          transliteration={detail?.transliteration}
+          meaning={detail?.meaning}
+        />
+      }
+    >
+      {wrappedGlyph}
+    </Tooltip>
   );
 }
 

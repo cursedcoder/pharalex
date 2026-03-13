@@ -31,10 +31,10 @@ const PERIOD_LABELS: Record<PeriodId, string> = {
   roman: "Roman",
 };
 
-export default function HomePage() {
-  const glyphs = getAllGlyphs();
-  const categories = getAllCategories();
-  const stats = getGlyphStats();
+export default async function HomePage() {
+  const glyphs = await getAllGlyphs();
+  const categories = await getAllCategories();
+  const stats = await getGlyphStats();
 
   // Only pick from glyphs with actual meaning data for a better showcase
   const richGlyphs = glyphs.filter(
@@ -47,7 +47,7 @@ export default function HomePage() {
   const featuredTexts = pickDaily(getAllTexts(), 3, 2);
 
   // Featured words — deduplicated pool of short, recognisable core vocabulary
-  const allWords = getAllWords();
+  const allWords = await getAllWords();
   const seenTranslits = new Set<string>();
   const wordCandidates: DictionaryWord[] = [];
   for (const w of allWords) {

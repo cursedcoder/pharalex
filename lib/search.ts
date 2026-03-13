@@ -4,14 +4,13 @@ import { getAllGlyphs, getBaseCode } from "./glyphs";
 
 let fuseInstance: Fuse<Glyph> | null = null;
 
-/** Returns true if the glyph code is a non-main variant (e.g. "G127A", "N5B"). */
 function isVariant(code: string): boolean {
   return getBaseCode(code) !== null;
 }
 
-function getFuseInstance(): Fuse<Glyph> {
+async function getFuseInstance(): Promise<Fuse<Glyph>> {
   if (!fuseInstance) {
-    const glyphs = getAllGlyphs().filter((g) => !isVariant(g.code));
+    const glyphs = (await getAllGlyphs()).filter((g) => !isVariant(g.code));
     fuseInstance = new Fuse(glyphs, {
       keys: [
         { name: "code", weight: 3 },
@@ -38,10 +37,13 @@ export interface SearchResult {
   }[];
 }
 
-export function fuzzySearch(query: string, limit = 50): SearchResult[] {
+export async function fuzzySearch(
+  query: string,
+  limit = 50
+): Promise<SearchResult[]> {
   if (!query.trim()) return [];
 
-  const fuse = getFuseInstance();
+  const fuse = await getFuseInstance();
   const results = fuse.search(query, { limit });
 
   return results.map((result) => ({
@@ -54,11 +56,11 @@ export function fuzzySearch(query: string, limit = 50): SearchResult[] {
   }));
 }
 
-export function instantSearch(query: string): Glyph[] {
+export async function instantSearch(query: string): Promise<Glyph[]> {
   const trimmed = query.trim();
   if (!trimmed) return [];
 
-  const glyphs = getAllGlyphs().filter((g) => !isVariant(g.code));
+  const glyphs = (await getAllGlyphs()).filter((g) => !isVariant(g.code));
   const lowerQuery = trimmed.toLowerCase();
 
   const exactCodeMatch = glyphs.filter(
@@ -71,5 +73,5 @@ export function instantSearch(query: string): Glyph[] {
   );
   if (codeStartsWith.length > 0) return codeStartsWith.slice(0, 20);
 
-  return fuzzySearch(trimmed, 20).map((r) => r.glyph);
+  return (await fuzzySearch(trimmed, 20)).map((r) => r.glyph);
 }

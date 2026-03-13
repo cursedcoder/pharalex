@@ -7,8 +7,8 @@ import { useWindowVirtualizer } from "@tanstack/react-virtual";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { SmartGlyph } from "@/components/SmartGlyph";
-import { getAllGlyphs, getAllCategories, getBaseCode, glyphHref } from "@/lib/glyphs";
-import type { Glyph, MeaningType } from "@/lib/types";
+import { getBaseCode, glyphHref } from "@/lib/glyph-utils";
+import type { Glyph, Category, MeaningType } from "@/lib/types";
 
 // Grid columns at each breakpoint (mirrors tailwind grid-cols-*)
 const GRID_COLS_BY_WIDTH = [
@@ -183,9 +183,7 @@ function VirtualList({
 }
 
 // --- Page ---
-function BrowsePageInner() {
-  const allGlyphs = getAllGlyphs();
-  const categories = getAllCategories();
+function BrowsePageInner({ allGlyphs, categories }: { allGlyphs: Glyph[]; categories: Category[] }) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -412,10 +410,10 @@ function BrowsePageInner() {
   );
 }
 
-export default function BrowseClient() {
+export default function BrowseClient({ allGlyphs, categories }: { allGlyphs: Glyph[]; categories: Category[] }) {
   return (
     <Suspense>
-      <BrowsePageInner />
+      <BrowsePageInner allGlyphs={allGlyphs} categories={categories} />
     </Suspense>
   );
 }

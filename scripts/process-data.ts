@@ -240,11 +240,11 @@ async function main() {
     return numA - numB;
   });
 
-  const outputPath = path.join(__dirname, "../lib/data/glyphs.json");
+  const outputPath = path.join(__dirname, "../public/data/glyphs.json");
   fs.writeFileSync(outputPath, JSON.stringify(glyphArray, null, 2));
   console.log(`Wrote ${glyphArray.length} glyphs to ${outputPath}`);
 
-  const categoriesPath = path.join(__dirname, "../lib/data/categories.json");
+  const categoriesPath = path.join(__dirname, "../public/data/categories.json");
   fs.writeFileSync(
     categoriesPath,
     JSON.stringify(GARDINER_CATEGORIES, null, 2)

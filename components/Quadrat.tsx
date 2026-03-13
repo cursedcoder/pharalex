@@ -4,7 +4,8 @@ import Link from "next/link";
 import { createContext, useContext } from "react";
 import { parseMdc, extractCodes } from "@/lib/mdc";
 import type { MdcNode } from "@/lib/mdc";
-import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
+import { glyphHref } from "@/lib/glyph-utils";
+import { useGlyphDetail } from "./GlyphDetailsContext";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 import {
   glyphSize,
@@ -594,9 +595,9 @@ function LigatureHitArea({
   w: number;
   h: number;
 }) {
-  const glyph = getGlyphByCode(code);
-  const phonetic = glyph?.transliteration[0];
-  const meaning = glyph?.meanings[0]?.text ?? glyph?.description;
+  const detail = useGlyphDetail(code);
+  const phonetic = detail?.transliteration;
+  const meaning = detail?.meaning;
 
   if (!code) return null;
 
@@ -634,9 +635,9 @@ function SignCell({
   height: number;
 }) {
   const disableLinks = useContext(DisableLinksContext);
-  const glyph = getGlyphByCode(code);
-  const phonetic = glyph?.transliteration[0];
-  const meaning = glyph?.meanings[0]?.text ?? glyph?.description;
+  const detail = useGlyphDetail(code);
+  const phonetic = detail?.transliteration;
+  const meaning = detail?.meaning;
 
   if (!code || code === "?" || code === "") return null;
 

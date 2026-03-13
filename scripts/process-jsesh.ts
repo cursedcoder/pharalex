@@ -184,7 +184,7 @@ function parseSignsXml(filePath: string): Map<string, JseshSign> {
 
 async function main() {
   const xmlPath = path.join(__dirname, "../lib/data/signs_description.xml");
-  const glyphsPath = path.join(__dirname, "../lib/data/glyphs.json");
+  const glyphsPath = path.join(__dirname, "../public/data/glyphs.json");
 
   if (!fs.existsSync(xmlPath)) {
     console.error(`signs_description.xml not found at ${xmlPath}`);

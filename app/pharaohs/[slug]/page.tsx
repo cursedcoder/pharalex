@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { RoyalNamesDisplay } from "@/components/Cartouche";
+import { GlyphDetailsProvider } from "@/components/GlyphDetailsContext";
 import {
   getPharaohBySlug,
   getDynastyById,
@@ -12,6 +13,7 @@ import {
   formatReign,
   formatYear,
 } from "@/lib/pharaohs";
+import { buildGlyphDetailsMap } from "@/lib/glyphs";
 import { getTextsByPharaoh } from "@/lib/texts";
 import { mdcToCodes } from "@/lib/mdc";
 import { PHARAOHS } from "@/lib/data/pharaohs";
@@ -67,6 +69,16 @@ export default async function PharaohPage({ params }: Props) {
   const reignStr = formatReign(pharaoh);
   const startStr = pharaoh.reignStart !== null ? formatYear(pharaoh.reignStart) : null;
   const endStr   = pharaoh.reignEnd   !== null ? formatYear(pharaoh.reignEnd)   : null;
+
+  const allRoyalCodes: string[] = [];
+  if (pharaoh.royalNames) {
+    for (const rn of Object.values(pharaoh.royalNames)) {
+      if (rn && typeof rn === "object" && "codes" in rn) {
+        allRoyalCodes.push(...(rn as { codes: string[] }).codes);
+      }
+    }
+  }
+  const glyphDetails = await buildGlyphDetailsMap(allRoyalCodes);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -217,14 +229,16 @@ export default async function PharaohPage({ params }: Props) {
                   <h2 className="font-display text-xl font-semibold text-brown mb-5">
                     Royal Names in Hieroglyphs
                   </h2>
-                  <RoyalNamesDisplay
-                    prenomen={pharaoh.royalNames.prenomen}
-                    nomen={pharaoh.royalNames.nomen}
-                    horus={pharaoh.royalNames.horus}
-                    nebty={pharaoh.royalNames.nebty}
-                    golden={pharaoh.royalNames.golden}
-                    size="lg"
-                  />
+                  <GlyphDetailsProvider details={glyphDetails}>
+                    <RoyalNamesDisplay
+                      prenomen={pharaoh.royalNames.prenomen}
+                      nomen={pharaoh.royalNames.nomen}
+                      horus={pharaoh.royalNames.horus}
+                      nebty={pharaoh.royalNames.nebty}
+                      golden={pharaoh.royalNames.golden}
+                      size="lg"
+                    />
+                  </GlyphDetailsProvider>
                   <p className="text-xs text-sandstone mt-5 pt-4 border-t border-sandstone/15">
                     Click any glyph to learn more about it. The cartouche (oval frame) 
                     indicates a royal name.

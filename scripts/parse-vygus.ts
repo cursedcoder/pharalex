@@ -35,7 +35,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 const INPUT_TXT = "/tmp/vygus_full.txt";
-const OUTPUT_JSON = path.join(__dirname, "../lib/data/words.json");
+const OUTPUT_JSON = path.join(__dirname, "../public/data/words.json");
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

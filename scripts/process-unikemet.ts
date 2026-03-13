@@ -189,8 +189,8 @@ function convertToGlyph(entry: UniKemetEntry): ProcessedGlyph {
 
 async function main() {
   const unikemetPath = path.join(__dirname, "../lib/data/unikemet.txt");
-  const existingGlyphsPath = path.join(__dirname, "../lib/data/glyphs.json");
-  const outputPath = path.join(__dirname, "../lib/data/glyphs.json");
+  const existingGlyphsPath = path.join(__dirname, "../public/data/glyphs.json");
+  const outputPath = path.join(__dirname, "../public/data/glyphs.json");
 
   console.log("Parsing Unikemet data...");
   const unikemetEntries = parseUnikemet(unikemetPath);

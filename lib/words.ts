@@ -1,119 +1,58 @@
 import type { DictionaryWord } from "@/lib/types";
-import wordsJson from "@/lib/data/words.json";
+import { loadWords } from "./data-loader";
+import { wordSlug } from "./word-utils";
 
-const WORDS = wordsJson as DictionaryWord[];
-
-// ─── Transliteration display ──────────────────────────────────────────────────
-
-/**
- * Converts MdC ASCII transliteration to Egyptological Unicode.
- * Follows the Leyden Unified Transliteration standard as used on the /alphabet page:
- *   i → i͗  (yod/reed M17, i + U+0357 combining right half ring above)
- *   A → ꜣ   (aleph)        a → ꜥ  (ayin)
- *   y stays as y (double reed M17+M17, distinct from single i͗)
- *   H → ḥ   x → ḫ   X → ẖ   S → š   T → ṯ   D → ḏ
- *   q stays as q (plain, per modern convention)
- */
-const MdC_TO_UNICODE: [string, string][] = [
-  ["A", "ꜣ"],
-  ["a", "ꜥ"],
-  ["i", "i\u0357"],
-  ["H", "ḥ"],
-  ["x", "ḫ"],
-  ["X", "ẖ"],
-  ["S", "š"],
-  ["T", "ṯ"],
-  ["D", "ḏ"],
-];
-
-export function translitToUnicode(translit: string): string {
-  let s = translit;
-  for (const [from, to] of MdC_TO_UNICODE) {
-    s = s.split(from).join(to);
-  }
-  return s;
-}
-
-// ─── Slug ─────────────────────────────────────────────────────────────────────
-
-/**
- * Converts a Vygus transliteration string to a URL-safe, collision-free slug.
- *
- * Rules (preserving case since Egyptian is case-sensitive: H≠h, S≠s etc.):
- *   space  →  .
- *   /      →  --
- *   ?      →  q  (uncertain forms)
- *   [      →  L  (lacunae notation)
- *   ]      →  (removed)
- *   (      →  P  (parenthetical notation)
- *   )      →  (removed)
- *   ~      →  tld
- *   other non-alnum  →  (removed)
- */
-export function wordSlug(transliteration: string): string {
-  return transliteration
-    .trim()
-    .replace(/\s*\/\s*/g, "--")
-    .replace(/\?/g, "q")
-    .replace(/~/g, "tld")
-    .replace(/\[/g, "L")
-    .replace(/\]/g, "")
-    .replace(/\(/g, "P")
-    .replace(/\)/g, "")
-    .replace(/\s+/g, ".")
-    .replace(/[^a-zA-Z0-9\-\.]/g, "")
-    .replace(/\.{2,}/g, ".")
-    .replace(/^\.|\.$/, "");
-}
-
-export function wordHref(transliteration: string): string {
-  return `/words/${wordSlug(transliteration)}`;
-}
+export { translitToUnicode, wordSlug, wordHref } from "./word-utils";
 
 // ─── Accessors ────────────────────────────────────────────────────────────────
 
-/** Groups keyed by transliteration, built once at module load. */
-const WORD_GROUPS: Map<string, DictionaryWord[]> = new Map();
-for (const w of WORDS) {
-  const g = WORD_GROUPS.get(w.transliteration);
-  if (g) g.push(w);
-  else WORD_GROUPS.set(w.transliteration, [w]);
+let _wordGroups: Map<string, DictionaryWord[]> | null = null;
+
+async function wordGroups(): Promise<Map<string, DictionaryWord[]>> {
+  if (!_wordGroups) {
+    _wordGroups = new Map();
+    for (const w of await loadWords()) {
+      const g = _wordGroups.get(w.transliteration);
+      if (g) g.push(w);
+      else _wordGroups.set(w.transliteration, [w]);
+    }
+  }
+  return _wordGroups;
 }
 
-export function getAllWords(): DictionaryWord[] {
-  return WORDS;
+export async function getAllWords(): Promise<DictionaryWord[]> {
+  return loadWords();
 }
 
-/** All unique transliterations (one per word entry group). */
-export function getAllTransliterations(): string[] {
-  return [...WORD_GROUPS.keys()];
+export async function getAllTransliterations(): Promise<string[]> {
+  return [...(await wordGroups()).keys()];
 }
 
-/** All entries sharing the same transliteration. */
-export function getWordsByTransliteration(
+export async function getWordsByTransliteration(
   transliteration: string
-): DictionaryWord[] {
-  return WORD_GROUPS.get(transliteration) ?? [];
+): Promise<DictionaryWord[]> {
+  return (await wordGroups()).get(transliteration) ?? [];
 }
 
-/** Look up by slug — find the transliteration that produces this slug, then return all entries. */
-export function getWordsBySlug(slug: string): DictionaryWord[] {
-  // Find the transliteration whose slug matches
-  const translit = getAllTransliterations().find((t) => wordSlug(t) === slug);
-  if (!translit) return [];
-  return getWordsByTransliteration(translit);
+export async function getWordsBySlug(
+  slug: string
+): Promise<DictionaryWord[]> {
+  const groups = await wordGroups();
+  for (const [translit, entries] of groups) {
+    if (wordSlug(translit) === slug) return entries;
+  }
+  return [];
 }
 
-/** Simple substring search over transliteration + translation (for search UI). */
-export function searchWords(
+export async function searchWords(
   query: string,
   limit = 40
-): DictionaryWord[] {
+): Promise<DictionaryWord[]> {
   const q = query.trim().toLowerCase();
   if (!q) return [];
 
   const results: DictionaryWord[] = [];
-  for (const [, entries] of WORD_GROUPS) {
+  for (const [, entries] of await wordGroups()) {
     if (results.length >= limit) break;
     const matches = entries.some(
       (w) =>
@@ -125,17 +64,18 @@ export function searchWords(
   return results;
 }
 
-export function getWordsByGrammar(grammar: string): DictionaryWord[] {
-  return WORDS.filter((w) => w.grammar === grammar);
+export async function getWordsByGrammar(
+  grammar: string
+): Promise<DictionaryWord[]> {
+  return (await loadWords()).filter((w) => w.grammar === grammar);
 }
 
-/** All unique transliterations whose words contain this Gardiner code. */
-export function getWordsByGardinerCode(
+export async function getWordsByGardinerCode(
   code: string,
   limit = 20
-): DictionaryWord[] {
+): Promise<DictionaryWord[]> {
   const results: DictionaryWord[] = [];
-  for (const [, entries] of WORD_GROUPS) {
+  for (const [, entries] of await wordGroups()) {
     if (results.length >= limit) break;
     if (entries.some((w) => w.gardinerCodes.includes(code))) {
       results.push(entries[0]);

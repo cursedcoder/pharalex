@@ -3,7 +3,7 @@ import { fuzzySearch } from "@/lib/search";
 import { searchWords, wordHref, translitToUnicode } from "@/lib/words";
 import type { DictionaryWord } from "@/lib/types";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 export type GlyphResult = {
   kind: "glyph";
@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
 
   const ql = q.toLowerCase();
 
-  const glyphResults: GlyphResult[] = fuzzySearch(q, 60).map((r) => ({
+  const glyphResults: GlyphResult[] = (await fuzzySearch(q, 60)).map((r) => ({
     kind: "glyph",
     score: r.score ?? 1,
     code: r.glyph.code,
@@ -68,7 +68,7 @@ export async function GET(req: NextRequest) {
     href: `/glyph/${encodeURIComponent(r.glyph.code)}`,
   }));
 
-  const wordResults: WordResult[] = searchWords(q, 40).map((w) => ({
+  const wordResults: WordResult[] = (await searchWords(q, 40)).map((w) => ({
     kind: "word",
     score: wordScore(w, ql),
     transliteration: w.transliteration,

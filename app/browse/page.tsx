@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BrowseClient from "./BrowseClient";
+import { getAllGlyphs, getAllCategories } from "@/lib/glyphs";
 
 export const revalidate = 86400;
 
@@ -21,6 +22,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BrowsePage() {
-  return <BrowseClient />;
+export default async function BrowsePage() {
+  const [allGlyphs, categories] = await Promise.all([
+    getAllGlyphs(),
+    getAllCategories(),
+  ]);
+
+  return <BrowseClient allGlyphs={allGlyphs} categories={categories} />;
 }

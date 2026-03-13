@@ -4,8 +4,9 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import Link from "next/link";
 import type { EgyptianText, TextToken } from "@/lib/types";
 import { mdcToCodes } from "@/lib/mdc";
-import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
-import { wordHref } from "@/lib/words";
+import { glyphHref } from "@/lib/glyph-utils";
+import { useGlyphDetail } from "./GlyphDetailsContext";
+import { wordHref } from "@/lib/word-utils";
 import { Quadrat, getWordWidth } from "./Quadrat";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 
@@ -198,39 +199,42 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
   );
 }
 
+function TokenDetailGlyph({ code }: { code: string }) {
+  const detail = useGlyphDetail(code);
+  return (
+    <Link
+      href={glyphHref(code)}
+      className="group flex flex-col items-center gap-1 hover:opacity-80 transition-opacity"
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`/glyphs/${code}.svg`}
+        alt={code}
+        className="w-10 h-10 object-contain"
+      />
+      <span className="text-[10px] text-sandstone font-mono group-hover:text-gold transition-colors">
+        {code}
+      </span>
+      {detail?.meaning && (
+        <span className="text-[10px] text-sandstone/70 text-center leading-tight max-w-[5rem]">
+          {detail.meaning.length > 24
+            ? `${detail.meaning.slice(0, 24)}…`
+            : detail.meaning}
+        </span>
+      )}
+    </Link>
+  );
+}
+
 function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void }) {
   const codes = mdcToCodes(token.mdc);
   return (
     <div className="bg-papyrus/60 border border-gold/30 rounded-xl p-4 space-y-3 mt-3">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-end gap-4 flex-wrap">
-          {codes.map((code, i) => {
-            const glyph = getGlyphByCode(code);
-            return (
-              <Link
-                key={`${code}-${i}`}
-                href={glyphHref(code)}
-                className="group flex flex-col items-center gap-1 hover:opacity-80 transition-opacity"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`/glyphs/${code}.svg`}
-                  alt={code}
-                  className="w-10 h-10 object-contain"
-                />
-                <span className="text-[10px] text-sandstone font-mono group-hover:text-gold transition-colors">
-                  {code}
-                </span>
-                {glyph?.meanings[0] && (
-                  <span className="text-[10px] text-sandstone/70 text-center leading-tight max-w-[5rem]">
-                    {glyph.meanings[0].text.length > 24
-                      ? `${glyph.meanings[0].text.slice(0, 24)}…`
-                      : glyph.meanings[0].text}
-                  </span>
-                )}
-              </Link>
-            );
-          })}
+          {codes.map((code, i) => (
+            <TokenDetailGlyph key={`${code}-${i}`} code={code} />
+          ))}
         </div>
 
         <button

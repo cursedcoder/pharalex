@@ -20,8 +20,19 @@ export const metadata = {
   },
 };
 
-export default function CategoriesPage() {
-  const categories = getAllCategories();
+export default async function CategoriesPage() {
+  const categories = await getAllCategories();
+  const categoryGlyphs = await Promise.all(
+    categories.map(async (c) => ({
+      id: c.id,
+      mainGlyphs: (await getGlyphsByCategory(c.id)).filter(
+        (g) => /^[A-Z][a-z]?\d+$/.test(g.code)
+      ),
+    }))
+  );
+  const glyphsByCategory = Object.fromEntries(
+    categoryGlyphs.map((c) => [c.id, c.mainGlyphs])
+  );
 
   return (
     <div className="min-h-screen">
@@ -42,9 +53,7 @@ export default function CategoriesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {categories.map((category) => {
-              const mainGlyphs = getGlyphsByCategory(category.id).filter(
-                (g) => /^[A-Z][a-z]?\d+$/.test(g.code)
-              );
+              const mainGlyphs = glyphsByCategory[category.id] ?? [];
               const glyphs = mainGlyphs.slice(0, 8);
 
               return (

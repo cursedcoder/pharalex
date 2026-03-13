@@ -5,8 +5,11 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { TextReader } from "@/components/TextReader";
+import { GlyphDetailsProvider } from "@/components/GlyphDetailsContext";
 import { getTextBySlug, getAllTexts } from "@/lib/texts";
 import { getPharaohBySlug } from "@/lib/pharaohs";
+import { buildGlyphDetailsMap } from "@/lib/glyphs";
+import { mdcToCodes } from "@/lib/mdc";
 import type { PeriodId } from "@/lib/types";
 
 interface Props {
@@ -63,6 +66,14 @@ export default async function TextPage({ params }: Props) {
   const pharaoh = text.pharaohSlug ? getPharaohBySlug(text.pharaohSlug) : null;
   const totalWords = text.lines.reduce((n, l) => n + l.tokens.length, 0);
 
+  const allCodes = new Set<string>();
+  for (const line of text.lines) {
+    for (const token of line.tokens) {
+      for (const code of mdcToCodes(token.mdc)) allCodes.add(code);
+    }
+  }
+  const glyphDetails = await buildGlyphDetailsMap([...allCodes]);
+
   return (
     <>
       <Header />
@@ -112,7 +123,9 @@ export default async function TextPage({ params }: Props) {
                 <div className="border-t border-gold/20" />
 
                 {/* Reader */}
-                <TextReader text={text} />
+                <GlyphDetailsProvider details={glyphDetails}>
+                  <TextReader text={text} />
+                </GlyphDetailsProvider>
               </div>
 
               {/* Sidebar */}
