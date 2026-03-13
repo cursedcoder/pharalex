@@ -22,7 +22,7 @@ interface ActiveToken {
 }
 
 /** Maximum tokens per visual row before wrapping. */
-const WRAP_AT = 6;
+const WRAP_AT = 4;
 
 function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void }) {
   const codes = mdcToCodes(token.mdc);
@@ -94,7 +94,7 @@ function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void
   );
 }
 
-/** Small icon shown between wrapped rows to indicate continuation. */
+/** Small icon shown at the end of a wrapped row to indicate continuation. */
 function WrapBreakIndicator() {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -113,14 +113,10 @@ function WrapBreakIndicator() {
   }, []);
 
   return (
-    <div ref={ref} className="relative flex items-center self-stretch my-1 select-none">
-      {/* Vertical dashed rule */}
-      <div className="w-px self-stretch border-l border-dashed border-gold/40 mx-2" />
-      {/* Icon */}
-      <div className="flex items-center justify-center w-5 h-5 rounded-full bg-papyrus border border-gold/40 text-sandstone/60 hover:text-sandstone hover:border-gold/70 transition-colors cursor-default text-[10px] font-semibold">
+    <div ref={ref} className="relative flex items-center self-stretch pl-2 select-none">
+      <div className="flex items-center justify-center w-5 h-5 rounded-full bg-papyrus border border-stone-300/60 text-sandstone/50 hover:text-sandstone hover:border-gold/50 transition-colors cursor-default text-[10px] font-semibold">
         ↵
       </div>
-      {/* Tooltip */}
       {visible && (
         <span
           role="tooltip"
@@ -265,23 +261,21 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
                   </span>
                 )}
 
-                <div className="flex-1 min-w-0 pb-3 border-b border-gold/15">
+                <div className="flex-1 min-w-0 overflow-x-hidden pb-3 border-b border-gold/15">
                   {/* Chunked rows */}
                   {chunks.map((chunk, chunkIndex) => {
                     const tokenOffset = chunkIndex * WRAP_AT;
                     return (
-                      <div key={chunkIndex}>
-                        {/* Wrap-break indicator between rows */}
-                        {chunkIndex > 0 && <WrapBreakIndicator />}
-
+                      <div key={chunkIndex} className={chunkIndex > 0 ? "mt-3" : ""}>
                         {/* Token row */}
-                        <div className="flex items-end gap-0">
+                        <div className="flex flex-wrap items-start gap-y-2 gap-x-0">
                           {chunk.map((token, i) => {
                             const tokenIndex = tokenOffset + i;
                             const isActive = isActiveLine && activeToken?.tokenIndex === tokenIndex;
                             const isLast = i === chunk.length - 1;
+                            const isLastChunk = chunkIndex === chunks.length - 1;
                             return (
-                              <div key={tokenIndex} className="flex items-end">
+                              <div key={tokenIndex} className="flex items-stretch">
                                 <WordBox
                                   token={token}
                                   tokenIndex={tokenIndex}
@@ -292,6 +286,7 @@ export function TextReader({ text, compact = false }: TextReaderProps) {
                                   onClick={() => handleTokenClick(lineIndex, tokenIndex, token)}
                                 />
                                 {!isLast && <DotConnector />}
+                                {isLast && !isLastChunk && <WrapBreakIndicator />}
                               </div>
                             );
                           })}
