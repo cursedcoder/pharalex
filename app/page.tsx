@@ -15,7 +15,7 @@ import { mdcToCodes } from "@/lib/mdc";
 import { pickDaily } from "@/lib/daily";
 import type { PeriodId, DictionaryWord } from "@/lib/types";
 
-export const revalidate = 86400;
+export const dynamic = "force-static";
 
 const PERIOD_LABELS: Record<PeriodId, string> = {
   predynastic: "Predynastic",

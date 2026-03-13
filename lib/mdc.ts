@@ -23,7 +23,9 @@ export type MdcNode =
   | { type: "seq"; children: MdcNode[] }     // - — separate quadrats
   | { type: "ligature"; anchor: MdcNode; before?: MdcNode; after?: MdcNode } // &&& / ^^^
   | { type: "simpleLig"; children: MdcNode[] } // & — zone-based ligature
-  | { type: "enclosure"; enclosure: "cartouche" | "serekh"; children: MdcNode[] }; // <...>, |...|
+  | { type: "enclosure"; enclosure: "cartouche" | "serekh"; children: MdcNode[] } // <...>, |...|
+  | { type: "lacuna"; size: "full" | "half" } // // — full lacuna, .. — half lacuna
+  | { type: "restored"; children: MdcNode[] }; // [...] — scholarly restoration (signs on hatch)
 
 /** MdC transliteration aliases → canonical Gardiner codes. */
 const MDC_ALIASES: Record<string, string> = {
@@ -92,6 +94,8 @@ function resolveAlias(code: string): string {
 const LIGAFTER = "\x01"; // &&& → place after-group in anchor's bottom/after zone
 const LIGBEFORE = "\x02"; // ^^^ or ^^ → place before-group in anchor's before zone
 const SIMPLELAG = "\x03"; // & → simple zone-based ligature
+const FULL_LACUNA = "\x04"; // // → full-width damage box
+const HALF_LACUNA = "\x05"; // .. → half-width damage box
 
 /** Normalise MdC extras before parsing. */
 function normalise(mdc: string): string {
@@ -101,6 +105,11 @@ function normalise(mdc: string): string {
   // Order matters: &&& before && (which we ignore/treat as *)
   s = s.replace(/&&&/g, LIGAFTER);
   s = s.replace(/\^{2,3}/g, LIGBEFORE);
+
+  // Protect lacuna markers from the digit-to-Z1 replacement and dash-splitting
+  // // → full lacuna placeholder, .. → half lacuna placeholder
+  s = s.replace(/\/\//g, "\x04");
+  s = s.replace(/\.\./g, "\x05");
 
   // Map bare digit stroke counts to Z1
   s = s.replace(/(^|[-:*])\d+(?=$|[-:*])/g, (_, pre) => `${pre}Z1`);
@@ -132,6 +141,15 @@ export function parseMdc(mdc: string): MdcNode {
     return {
       type: "enclosure",
       enclosure: "cartouche",
+      children: splitAt(content, "-").map(parseVert),
+    };
+  }
+
+  // Handle scholarly restoration: [signs] — render signs on hatched background
+  if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
+    const content = trimmed.slice(1, -1);
+    return {
+      type: "restored",
       children: splitAt(content, "-").map(parseVert),
     };
   }
@@ -218,24 +236,36 @@ function splitAtStr(s: string, sep: string): [string, string] {
 }
 
 function parseAtom(s: string): MdcNode {
+  if (s === FULL_LACUNA) return { type: "lacuna", size: "full" };
+  if (s === HALF_LACUNA) return { type: "lacuna", size: "half" };
   if (s.startsWith("(") && s.endsWith(")")) {
     return parseMdc(s.slice(1, -1));
+  }
+  if (s.startsWith("[") && s.endsWith("]")) {
+    const content = s.slice(1, -1);
+    return {
+      type: "restored",
+      children: splitAt(content, "-").map(parseVert),
+    };
   }
   return { type: "sign", code: resolveAlias(s.trim()) };
 }
 
 /**
  * Split string on a separator character, but only at the top level
- * (i.e. not inside parentheses).
+ * (i.e. not inside parentheses or square brackets).
  */
 function splitAt(s: string, sep: string): string[] {
   const parts: string[] = [];
   let depth = 0;
+  let bracketDepth = 0;
   let start = 0;
   for (let i = 0; i < s.length; i++) {
     if (s[i] === "(") depth++;
     else if (s[i] === ")") depth--;
-    else if (s[i] === sep && depth === 0) {
+    else if (s[i] === "[") bracketDepth++;
+    else if (s[i] === "]") bracketDepth--;
+    else if (s[i] === sep && depth === 0 && bracketDepth === 0) {
       parts.push(s.slice(start, i));
       start = i + 1;
     }
@@ -249,6 +279,12 @@ export function extractCodes(node: MdcNode): string[] {
   if (node.type === "sign") {
     if (!node.code || node.code === "?" || node.code === "") return [];
     return [node.code];
+  }
+  if (node.type === "lacuna") {
+    return [];
+  }
+  if (node.type === "restored") {
+    return node.children.flatMap(extractCodes);
   }
   if (node.type === "ligature") {
     const codes: string[] = [];

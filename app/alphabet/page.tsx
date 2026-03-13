@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
 
-export const revalidate = 86400;
+export const dynamic = "force-static";
 
 export const metadata = {
   title: "Hieroglyphic Alphabet - PharaLex",

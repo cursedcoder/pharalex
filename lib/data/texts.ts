@@ -1158,4 +1158,291 @@ export const TEXTS: EgyptianText[] = [
       "Allen, T.G., The Book of the Dead or Going Forth by Day (Chicago, 1974)",
     ],
   },
+  {
+    slug: "ogardiner4",
+    title: "O. Gardiner 4: Work-Attendance Register",
+    period: "new-kingdom",
+    date: "c. 1186–1070 BCE (Ramesside, Dynasty XX)",
+    object: "Ostracon, limestone, Cairo Museum",
+    location: "Cairo Museum",
+    description:
+      "A work-attendance register from Deir el-Medina, the village of craftsmen who built the royal tombs in the Valley of the Kings. Six lines record dates and names of absent workmen. Lacunae (hatched boxes) mark physically destroyed sections; signs on a hatched background are scholarly restorations.",
+    lines: [
+      {
+        tokens: [
+          {
+            mdc: "M4*X1",
+            transliteration: "rnpt",
+            translation: "year",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "N11",
+            transliteration: "Abd",
+            translation: "month 4",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "Z1:Z1:Z1",
+            transliteration: "3",
+            translation: "season 3 (summer)",
+            grammar: "NUM",
+          },
+          {
+            mdc: "N5",
+            transliteration: "hrw",
+            translation: "day",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "V20*V20*Z1*Z1*Z1*Z1*Z1*Z1*Z1",
+            transliteration: "27",
+            translation: "27",
+            grammar: "NUM",
+          },
+          {
+            mdc: "//",
+            transliteration: "...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "N29-G1-N23*Z1-A1",
+            transliteration: "Qꜣj",
+            translation: "Qay (personal name)",
+            grammar: "NOUN",
+          },
+        ],
+        lineTranslation: "Year [?], month 4 of summer, day 27. [Damaged] … Qay.",
+      },
+      {
+        tokens: [
+          {
+            mdc: "N35",
+            transliteration: "n",
+            translation: "of",
+            grammar: "PREP",
+          },
+          {
+            mdc: "M23*X1-G7",
+            transliteration: "nswt",
+            translation: "the king",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "<-M17-Y5*N35-R4*X1-Z7-G7->",
+            transliteration: "Jmn-ḥtp",
+            translation: "Amenhotep (cartouche)",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "S34-D10-O34-N35-D58",
+            transliteration: "ꜥnḫ-wḏꜣ-snb",
+            translation: "life, prosperity, health",
+            grammar: "OTHER",
+          },
+          {
+            mdc: "G29-V31",
+            transliteration: "bꜣk",
+            translation: "workman / servant",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "//",
+            transliteration: "...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "F35",
+            transliteration: "nfr",
+            translation: "Nefer (personal name?)",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "//",
+            transliteration: "...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "G17-//",
+            transliteration: "m...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "D36-//",
+            transliteration: "ꜥ...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "M17-//-M17-//-D54-//-G41-//-G1-//",
+            transliteration: "...",
+            translation: "[heavily damaged]",
+          },
+        ],
+        lineTranslation: "Of the king Amenhotep, l.p.h. Workman [damaged] … Nefer [damaged] … [heavily damaged].",
+      },
+      {
+        tokens: [
+          {
+            mdc: "O4*Ff1*Ff1-N5*Z1",
+            transliteration: "ḥꜣt-sp",
+            translation: "year",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "M17-G43-M17-G47-G1",
+            transliteration: "iwj",
+            translation: "coming",
+            grammar: "VERB",
+          },
+          {
+            mdc: "V28-D58-S29-Z7",
+            transliteration: "ḥbs",
+            translation: "clothing",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "M17-Z7-I9",
+            transliteration: "iy.f",
+            translation: "his coming",
+            grammar: "VERB",
+          },
+          {
+            mdc: "W25*N35-Aa1*D21",
+            transliteration: "ini-ḫr",
+            translation: "bringing",
+            grammar: "VERB",
+          },
+          {
+            mdc: "Q3-//",
+            transliteration: "p...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "S42-D40",
+            transliteration: "xrp",
+            translation: "controller / director",
+            grammar: "NOUN",
+          },
+        ],
+        lineTranslation: "Year [?], coming, clothing. His coming, bringing [damaged] … controller.",
+      },
+      {
+        tokens: [
+          {
+            mdc: "S29-D21*N29-X1",
+            transliteration: "Srqt",
+            translation: "Serqet (scorpion goddess)",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "M17-Y5*N35-F31-S29-Z7-A1",
+            transliteration: "Mn-ms",
+            translation: "Menmose (personal name)",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "N35-O1",
+            transliteration: "n pr",
+            translation: "of the household",
+            grammar: "PREP",
+          },
+          {
+            mdc: "//",
+            transliteration: "...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "[Z3A-X1]-//-[G1]-//-[T14]-//-[X1*O49]-//",
+            transliteration: "...",
+            translation: "[damaged / restored]",
+          },
+        ],
+        lineTranslation: "Serqet, Menmose, of the household [damaged] … [partially restored — heavily damaged].",
+      },
+      {
+        tokens: [
+          {
+            mdc: "M17*Ff1*Ff1*Ff1",
+            transliteration: "i+i+i",
+            translation: "(tally strokes)",
+            grammar: "NUM",
+          },
+          {
+            mdc: "D36*N37-A2",
+            transliteration: "šꜥ",
+            translation: "writing / record",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "Aa1*D21",
+            transliteration: "ḫr",
+            translation: "under / by",
+            grammar: "PREP",
+          },
+          {
+            mdc: "D54-O1:Z1",
+            transliteration: "pr",
+            translation: "going out",
+            grammar: "VERB",
+          },
+          {
+            mdc: "//",
+            transliteration: "...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "N35-//-A24-//-Ff1-//",
+            transliteration: "n...",
+            translation: "[damaged]",
+          },
+        ],
+        lineTranslation: "Tally [i+i+i]. Record under [someone]. Going out [damaged] … [damaged].",
+      },
+      {
+        tokens: [
+          {
+            mdc: "M17-Z7-I9",
+            transliteration: "iy.f",
+            translation: "his coming",
+            grammar: "VERB",
+          },
+          {
+            mdc: "//",
+            transliteration: "...",
+            translation: "[damaged]",
+          },
+          {
+            mdc: "O4-G1-N35",
+            transliteration: "ḥꜣ n",
+            translation: "behind / after",
+            grammar: "PREP",
+          },
+          {
+            mdc: "D21-I10&D46-S29-X1",
+            transliteration: "rḏi s",
+            translation: "to send",
+            grammar: "VERB",
+          },
+          {
+            mdc: "G17-D37-X1*G1-M17*M17-I9",
+            transliteration: "m dit iy.f",
+            translation: "by causing him to come",
+            grammar: "VERB",
+          },
+          {
+            mdc: "G36*X1",
+            transliteration: "wr.t",
+            translation: "the great one (fem.)",
+            grammar: "NOUN",
+          },
+        ],
+        lineTranslation: "His coming [damaged] … after/behind [someone]. Sending, by causing him to come — the great one.",
+      },
+    ],
+    bibliography: [
+      "Černý, J., Ostraca Gardiner (Oxford, 1927)",
+      "McDowell, A.G., Village Life in Ancient Egypt (Oxford, 1999)",
+      "Rosmorduc, S. (transcription in JSesh, CC-BY); converted via HieroJax",
+    ],
+  },
 ];

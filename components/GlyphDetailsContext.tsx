@@ -1,13 +1,9 @@
 "use client";
 
 import { createContext, useContext } from "react";
+import type { GlyphDetail, GlyphDetailsMap } from "@/lib/glyphs";
 
-export type GlyphDetail = {
-  transliteration?: string;
-  meaning?: string;
-};
-
-export type GlyphDetailsMap = Record<string, GlyphDetail>;
+export type { GlyphDetail, GlyphDetailsMap };
 
 const GlyphDetailsContext = createContext<GlyphDetailsMap>({});
 

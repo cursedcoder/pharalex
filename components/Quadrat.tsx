@@ -14,6 +14,7 @@ import {
   SMALL_SKIP,
 } from "@/lib/glyph-metrics";
 import { getLigatureZones, type LigZone } from "@/lib/ligature-zones";
+import { getInsertionZone, type InsertionZone } from "@/lib/insertion-zones";
 
 const DisableLinksContext = createContext(false);
 
@@ -30,6 +31,21 @@ export function naturalSize(node: MdcNode): Dims {
   if (node.type === "sign") {
     const [w, h] = glyphSize(node.code);
     return { w, h };
+  }
+
+  if (node.type === "lacuna") {
+    return node.size === "half"
+      ? { w: CADRAT_WIDTH / 2, h: CADRAT_HEIGHT }
+      : { w: CADRAT_WIDTH, h: CADRAT_HEIGHT };
+  }
+
+  if (node.type === "restored") {
+    // Same sizing as horizontal layout of children, plus a small padding for the bracket
+    const sizes = node.children.map(naturalSize);
+    return {
+      w: sizes.reduce((s, d) => s + d.w, 0) + 4,
+      h: Math.max(...sizes.map((d) => d.h)) + 4,
+    };
   }
 
   if (node.type === "ligature") {
@@ -157,11 +173,12 @@ function placeInZone(
 
 /**
  * Simple ligature (&): the taller sign is the anchor, the shorter sign
- * is placed in the anchor's "after" or "before" zone depending on order.
+ * is placed in the anchor's insertion zone (if available), otherwise in its
+ * ligature zone, otherwise beside it.
  */
 function resolveSimpleLig(children: MdcNode[]): {
   anchorIdx: number;
-  placements: { idx: number; zone: NonNullable<LigZone> | null }[];
+  placements: { idx: number; zone: NonNullable<LigZone> | null; insertionZone: InsertionZone | null }[];
 } {
   if (children.length < 2) return { anchorIdx: 0, placements: [] };
 
@@ -173,13 +190,14 @@ function resolveSimpleLig(children: MdcNode[]): {
 
   const anchorNode = children[anchorIdx];
   const anchorCode = anchorNode.type === "sign" ? anchorNode.code : "";
-  const zones = anchorCode ? getLigatureZones(anchorCode) : null;
+  const insertionZone = anchorCode ? getInsertionZone(anchorCode) : null;
+  const ligZones = anchorCode ? getLigatureZones(anchorCode) : null;
 
-  const placements: { idx: number; zone: NonNullable<LigZone> | null }[] = [];
+  const placements: { idx: number; zone: NonNullable<LigZone> | null; insertionZone: InsertionZone | null }[] = [];
   for (let i = 0; i < children.length; i++) {
     if (i === anchorIdx) continue;
-    const zone = i < anchorIdx ? zones?.[0] ?? null : zones?.[1] ?? null;
-    placements.push({ idx: i, zone });
+    const ligZone = i < anchorIdx ? ligZones?.[0] ?? null : ligZones?.[1] ?? null;
+    placements.push({ idx: i, zone: ligZone, insertionZone });
   }
 
   return { anchorIdx, placements };
@@ -199,7 +217,10 @@ function simpleLigNaturalSize(
 
   for (const p of placements) {
     const childSize = sizes[p.idx];
-    if (p.zone) {
+    if (p.insertionZone) {
+      // Inserted inside anchor — bounding box doesn't grow
+      // (the insertion zone is fully contained within the anchor)
+    } else if (p.zone) {
       const placed = placeInZone(childSize, p.zone);
       minX = Math.min(minX, placed.x);
       minY = Math.min(minY, placed.y);
@@ -247,6 +268,14 @@ function QuadratNode({
 }) {
   if (node.type === "sign") {
     return <SignCell code={node.code} width={width} height={height} />;
+  }
+
+  if (node.type === "lacuna") {
+    return <LacunaCell size={node.size} width={width} height={height} />;
+  }
+
+  if (node.type === "restored") {
+    return <RestoredNode node={node} width={width} height={height} />;
   }
 
   if (node.type === "ligature") {
@@ -408,7 +437,20 @@ function SimpleLigNode({
     const child = node.children[p.idx];
     const code = child.type === "sign" ? child.code : "";
     const childSize = sizes[p.idx];
-    if (p.zone && code) {
+
+    if (p.insertionZone && code) {
+      // Scale child to fit inside the insertion zone, preserving aspect ratio
+      const iz = p.insertionZone;
+      const scaleW = iz.w / childSize.w;
+      const scaleH = iz.h / childSize.h;
+      const scale = Math.min(scaleW, scaleH);
+      const w = childSize.w * scale;
+      const h = childSize.h * scale;
+      // Centre within the zone
+      const x = iz.x + (iz.w - w) / 2;
+      const y = iz.y + (iz.h - h) / 2;
+      behind.push({ code, x, y, w, h });
+    } else if (p.zone && code) {
       const placed = placeInZone(childSize, p.zone);
       behind.push({ code, ...placed });
       minX = Math.min(minX, placed.x);
@@ -622,6 +664,132 @@ function LigatureHitArea({
         />
       </Tooltip>
     </div>
+  );
+}
+
+/** Scholarly restoration: signs rendered on a hatched background. */
+function RestoredNode({
+  node,
+  width,
+  height,
+}: {
+  node: Extract<MdcNode, { type: "restored" }>;
+  width: number;
+  height: number;
+}) {
+  const patternId = `restored-hatch-${width}-${height}`;
+  const sizes = node.children.map(naturalSize);
+  const totalW = sizes.reduce((s, d) => s + d.w, 0);
+  return (
+    <Tooltip content={<span className="text-xs italic text-sandstone/80">restored / reconstructed</span>}>
+      <span
+        className="inline-flex items-end relative"
+        style={{ width, height }}
+      >
+        {/* Hatched background */}
+        <svg
+          width={width}
+          height={height}
+          style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+          aria-hidden
+        >
+          <defs>
+            <pattern
+              id={patternId}
+              patternUnits="userSpaceOnUse"
+              width={6}
+              height={6}
+              patternTransform="rotate(45)"
+            >
+              <line
+                x1={0} y1={0} x2={0} y2={6}
+                stroke="currentColor"
+                strokeWidth={1}
+                strokeOpacity={0.18}
+              />
+            </pattern>
+          </defs>
+          <rect
+            x={1} y={1} width={width - 2} height={height - 2}
+            fill={`url(#${patternId})`}
+            stroke="currentColor"
+            strokeWidth={1}
+            strokeOpacity={0.35}
+            strokeDasharray="3 2"
+            rx={2}
+          />
+        </svg>
+        {/* Signs on top */}
+        <span className="inline-flex items-end" style={{ width, height, padding: 2 }}>
+          {node.children.map((child, i) => {
+            const cw = Math.max(1, Math.round((width - 4) * (sizes[i].w / totalW)));
+            return (
+              <QuadratNode key={i} node={child} width={cw} height={height - 4} />
+            );
+          })}
+        </span>
+      </span>
+    </Tooltip>
+  );
+}
+
+/** Hatched damage/lacuna placeholder box. */
+function LacunaCell({
+  size,
+  width,
+  height,
+}: {
+  size: "full" | "half";
+  width: number;
+  height: number;
+}) {
+  const w = size === "half" ? Math.round(width * 0.5) : width;
+  const patternId = `lacuna-hatch-${w}-${height}`;
+  return (
+    <Tooltip content={<span className="text-xs italic text-sandstone/80">damaged / missing</span>}>
+      <span
+        className="inline-flex items-center justify-center"
+        style={{ width: w, height }}
+      >
+        <svg
+          width={w}
+          height={height}
+          aria-label="lacuna"
+          style={{ display: "block" }}
+        >
+          <defs>
+            <pattern
+              id={patternId}
+              patternUnits="userSpaceOnUse"
+              width={6}
+              height={6}
+              patternTransform="rotate(45)"
+            >
+              <line
+                x1={0}
+                y1={0}
+                x2={0}
+                y2={6}
+                stroke="currentColor"
+                strokeWidth={1}
+                strokeOpacity={0.45}
+              />
+            </pattern>
+          </defs>
+          <rect
+            x={1}
+            y={1}
+            width={w - 2}
+            height={height - 2}
+            fill={`url(#${patternId})`}
+            stroke="currentColor"
+            strokeWidth={1}
+            strokeOpacity={0.5}
+            rx={2}
+          />
+        </svg>
+      </span>
+    </Tooltip>
   );
 }
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BrowseClient from "./BrowseClient";
 import { getAllGlyphs, getAllCategories } from "@/lib/glyphs";
 
-export const revalidate = 86400;
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Browse Hieroglyphs",

@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";

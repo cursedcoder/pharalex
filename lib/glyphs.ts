@@ -1,7 +1,12 @@
 import type { Glyph, Category } from "./types";
-import type { GlyphDetailsMap } from "@/components/GlyphDetailsContext";
 import { loadGlyphs, loadCategories } from "./data-loader";
 import { getBaseCode } from "./glyph-utils";
+
+export type GlyphDetail = {
+  transliteration?: string;
+  meaning?: string;
+};
+export type GlyphDetailsMap = Record<string, GlyphDetail>;
 
 export { glyphHref, getBaseCode } from "./glyph-utils";
 
