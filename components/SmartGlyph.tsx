@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Glyph } from "@/lib/types";
+import { glyphSvgSrc } from "@/lib/glyph-utils";
 
 interface SmartGlyphProps {
   glyph: Glyph;
@@ -42,7 +43,7 @@ export function SmartGlyph({
         {!svgError ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={`/glyphs/${encodeURIComponent(glyph.code)}.svg`}
+            src={glyphSvgSrc(glyph.code)}
             alt={glyph.code}
             className="w-full h-full object-contain p-2"
             onError={() => setSvgError(true)}
@@ -73,7 +74,7 @@ export function GlyphImage({
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={`/glyphs/${encodeURIComponent(glyph.code)}.svg`}
+        src={glyphSvgSrc(glyph.code)}
         alt={glyph.code}
         style={{ height: size, width: "auto", maxWidth: size * 2 }}
         className={`object-contain ${className}`}
