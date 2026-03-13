@@ -127,3 +127,22 @@ export interface EgyptianText {
   lines: TextLine[];
   bibliography: string[];
 }
+
+// ─── Words ───────────────────────────────────────────────────────────────────
+
+export interface DictionaryWord {
+  /** Egyptological transliteration, e.g. "nfr" or "tp nfr" (compound phrase) */
+  transliteration: string;
+  /** Primary English gloss(es) */
+  translation: string;
+  /** MdC string encoding the canonical hieroglyphic spelling, e.g. "F35-Z1" */
+  mdc: string;
+  /** Gardiner codes of constituent signs in order */
+  gardinerCodes: string[];
+  /** Normalised POS tag: "NOUN" | "VERB" | "ADJ" | "ADV" | "PREP" | "PRON" | "PART" | "CONJ" | "INTJ" | "INTG" | "IMPR" | "NUM" | "OTHER" */
+  grammar: string | null;
+  /** Original grammar label from Vygus, e.g. "noun - title", "collective noun", "causative verb" */
+  grammarRaw: string | null;
+  /** Contextual/domain notes from the source, e.g. ["late egyptian"], ["cryptic"], ["mathematics"] */
+  notes: string[];
+}
