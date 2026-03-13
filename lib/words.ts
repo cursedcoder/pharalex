@@ -6,18 +6,21 @@ export { translitToUnicode, wordSlug, wordHref } from "./word-utils";
 
 // ─── Accessors ────────────────────────────────────────────────────────────────
 
-let _wordGroups: Map<string, DictionaryWord[]> | null = null;
+let _wordGroupsP: Promise<Map<string, DictionaryWord[]>> | null = null;
 
-async function wordGroups(): Promise<Map<string, DictionaryWord[]>> {
-  if (!_wordGroups) {
-    _wordGroups = new Map();
-    for (const w of await loadWords()) {
-      const g = _wordGroups.get(w.transliteration);
+function wordGroups(): Promise<Map<string, DictionaryWord[]>> {
+  if (_wordGroupsP) return _wordGroupsP;
+  const p = loadWords().then((words) => {
+    const groups = new Map<string, DictionaryWord[]>();
+    for (const w of words) {
+      const g = groups.get(w.transliteration);
       if (g) g.push(w);
-      else _wordGroups.set(w.transliteration, [w]);
+      else groups.set(w.transliteration, [w]);
     }
-  }
-  return _wordGroups;
+    return groups;
+  }).catch((err) => { _wordGroupsP = null; throw err; });
+  _wordGroupsP = p;
+  return p;
 }
 
 export async function getAllWords(): Promise<DictionaryWord[]> {

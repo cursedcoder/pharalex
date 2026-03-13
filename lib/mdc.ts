@@ -108,8 +108,8 @@ function normalise(mdc: string): string {
 
   // Protect lacuna markers from the digit-to-Z1 replacement and dash-splitting
   // // → full lacuna placeholder, .. → half lacuna placeholder
-  s = s.replace(/\/\//g, "\x04");
-  s = s.replace(/\.\./g, "\x05");
+  s = s.replace(/\/\//g, FULL_LACUNA);
+  s = s.replace(/\.\./g, HALF_LACUNA);
 
   // Map bare digit stroke counts to Z1
   s = s.replace(/(^|[-:*])\d+(?=$|[-:*])/g, (_, pre) => `${pre}Z1`);

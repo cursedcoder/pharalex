@@ -2,16 +2,17 @@ import Fuse from "fuse.js";
 import type { Glyph } from "./types";
 import { getAllGlyphs, getBaseCode } from "./glyphs";
 
-let fuseInstance: Fuse<Glyph> | null = null;
+let _fuseP: Promise<Fuse<Glyph>> | null = null;
 
 function isVariant(code: string): boolean {
   return getBaseCode(code) !== null;
 }
 
-async function getFuseInstance(): Promise<Fuse<Glyph>> {
-  if (!fuseInstance) {
-    const glyphs = (await getAllGlyphs()).filter((g) => !isVariant(g.code));
-    fuseInstance = new Fuse(glyphs, {
+function getFuseInstance(): Promise<Fuse<Glyph>> {
+  if (_fuseP) return _fuseP;
+  const p = getAllGlyphs().then((glyphs) => {
+    const filtered = glyphs.filter((g) => !isVariant(g.code));
+    return new Fuse(filtered, {
       keys: [
         { name: "code", weight: 3 },
         { name: "unicode", weight: 2 },
@@ -24,8 +25,9 @@ async function getFuseInstance(): Promise<Fuse<Glyph>> {
       ignoreLocation: true,
       minMatchCharLength: 3,
     });
-  }
-  return fuseInstance;
+  }).catch((err) => { _fuseP = null; throw err; });
+  _fuseP = p;
+  return p;
 }
 
 export interface SearchResult {

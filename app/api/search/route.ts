@@ -45,8 +45,10 @@ function wordScore(word: DictionaryWord, q: string): number {
   return 0.35;
 }
 
+const MAX_QUERY_LENGTH = 100;
+
 export async function GET(req: NextRequest) {
-  const q = req.nextUrl.searchParams.get("q")?.trim() ?? "";
+  const q = (req.nextUrl.searchParams.get("q")?.trim() ?? "").slice(0, MAX_QUERY_LENGTH);
   if (!q || q.length < 2) {
     return NextResponse.json({ results: [] });
   }

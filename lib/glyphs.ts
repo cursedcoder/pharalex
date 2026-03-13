@@ -10,16 +10,19 @@ export type GlyphDetailsMap = Record<string, GlyphDetail>;
 
 export { glyphHref, getBaseCode } from "./glyph-utils";
 
-let _glyphIndex: Map<string, Glyph> | null = null;
+let _glyphIndexP: Promise<Map<string, Glyph>> | null = null;
 
-async function glyphIndex(): Promise<Map<string, Glyph>> {
-  if (!_glyphIndex) {
-    _glyphIndex = new Map();
-    for (const g of await loadGlyphs()) {
-      _glyphIndex.set(g.code.toLowerCase(), g);
+function glyphIndex(): Promise<Map<string, Glyph>> {
+  if (_glyphIndexP) return _glyphIndexP;
+  const p = loadGlyphs().then((glyphs) => {
+    const idx = new Map<string, Glyph>();
+    for (const g of glyphs) {
+      idx.set(g.code.toLowerCase(), g);
     }
-  }
-  return _glyphIndex;
+    return idx;
+  }).catch((err) => { _glyphIndexP = null; throw err; });
+  _glyphIndexP = p;
+  return p;
 }
 
 export async function getAllGlyphs(): Promise<Glyph[]> {
@@ -101,8 +104,9 @@ export async function searchGlyphs(query: string): Promise<Glyph[]> {
 
 export async function getGlyphVariants(code: string): Promise<Glyph[]> {
   if (code.startsWith("U+")) return [];
-  const re = new RegExp(`^${code}[A-Z]`);
-  return (await loadGlyphs()).filter((g) => re.test(g.code));
+  return (await loadGlyphs()).filter(
+    (g) => g.code.startsWith(code) && g.code.length > code.length && /^[A-Z]/.test(g.code.slice(code.length))
+  );
 }
 
 export async function getVariantSiblings(
@@ -132,9 +136,10 @@ export async function getRelatedGlyphs(code: string): Promise<Glyph[]> {
 export async function buildGlyphDetailsMap(
   codes: string[]
 ): Promise<GlyphDetailsMap> {
+  const idx = await glyphIndex();
   const map: GlyphDetailsMap = {};
   for (const code of codes) {
-    const g = await getGlyphByCode(code);
+    const g = idx.get(code.toLowerCase());
     if (g) {
       map[code.toLowerCase()] = {
         transliteration: g.transliteration[0],

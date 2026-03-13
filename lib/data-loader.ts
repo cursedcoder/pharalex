@@ -1,9 +1,9 @@
 import type { Glyph, DictionaryWord } from "./types";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 
-let _glyphs: Glyph[] | null = null;
-let _words: DictionaryWord[] | null = null;
-let _categories: Record<string, string> | null = null;
+let _glyphsP: Promise<Glyph[]> | null = null;
+let _wordsP: Promise<DictionaryWord[]> | null = null;
+let _categoriesP: Promise<Record<string, string>> | null = null;
 
 async function loadJson<T>(filename: string): Promise<T> {
   let cfContext: Awaited<ReturnType<typeof getCloudflareContext>> | null = null;
@@ -41,18 +41,29 @@ async function loadJson<T>(filename: string): Promise<T> {
   return JSON.parse(raw) as T;
 }
 
-export async function loadGlyphs(): Promise<Glyph[]> {
-  if (!_glyphs) _glyphs = await loadJson<Glyph[]>("glyphs.json");
-  return _glyphs;
+function cachedLoad<T>(
+  get: () => Promise<T> | null,
+  set: (p: Promise<T> | null) => void,
+  loader: () => Promise<T>,
+): Promise<T> {
+  const existing = get();
+  if (existing) return existing;
+  const p = loader().catch((err) => {
+    set(null); // clear so next call retries instead of caching a rejected promise
+    throw err;
+  });
+  set(p);
+  return p;
 }
 
-export async function loadWords(): Promise<DictionaryWord[]> {
-  if (!_words) _words = await loadJson<DictionaryWord[]>("words.json");
-  return _words;
+export function loadGlyphs(): Promise<Glyph[]> {
+  return cachedLoad(() => _glyphsP, (p) => { _glyphsP = p; }, () => loadJson<Glyph[]>("glyphs.json"));
 }
 
-export async function loadCategories(): Promise<Record<string, string>> {
-  if (!_categories)
-    _categories = await loadJson<Record<string, string>>("categories.json");
-  return _categories;
+export function loadWords(): Promise<DictionaryWord[]> {
+  return cachedLoad(() => _wordsP, (p) => { _wordsP = p; }, () => loadJson<DictionaryWord[]>("words.json"));
+}
+
+export function loadCategories(): Promise<Record<string, string>> {
+  return cachedLoad(() => _categoriesP, (p) => { _categoriesP = p; }, () => loadJson<Record<string, string>>("categories.json"));
 }
