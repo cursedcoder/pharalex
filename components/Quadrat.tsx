@@ -225,11 +225,10 @@ export function Quadrat({ mdc, baseSize = 40, disableLinks = false }: QuadratPro
               node={child}
               width={baseSize}
               height={baseSize}
-              disableLinks={disableLinks}
             />
           ))
         ) : (
-          <QuadratNode node={node} width={baseSize} height={baseSize} disableLinks={disableLinks} />
+          <QuadratNode node={node} width={baseSize} height={baseSize} />
         )}
       </div>
     </DisableLinksContext.Provider>
