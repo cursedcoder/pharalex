@@ -308,12 +308,17 @@ function parseLine(raw: string): VygusEntry | null {
 
   // Handle Vygus "word / altname translation" pattern — the slash introduces an
   // alternate transliteration or epithet, not a path separator.
-  // e.g. "Sw / psD to shine" → translit="Sw", translation="psD to shine"
-  // e.g. "bAgi / wrd weariness" → translit="bAgi", translation="wrd weariness"
+  // e.g. "Sw / psD to shine" → translit="Sw", translation="to shine"
+  // e.g. "Hr sA / Hrs bullocks" → translit="Hr sA", translation="bullocks"
+  // The alt token after "/" is always MdC; drop it rather than prepend to translation.
   const slashMatch = transliteration.match(/^(.+?)\s*\/\s*(\S+)$/);
   if (slashMatch) {
     transliteration = slashMatch[1].trim();
-    translation = slashMatch[2] + (translation ? " " + translation : "");
+    const altToken = slashMatch[2];
+    // Only keep the alt token in translation if it looks like English (rare edge case)
+    if (isEnglishStart(altToken)) {
+      translation = altToken + (translation ? " " + translation : "");
+    }
   }
   // Also strip bare trailing " /" with no altname token captured
   transliteration = transliteration.replace(/\s*\/$/, "").trim();
