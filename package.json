@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:workerd": "vitest run --config tests/workerd/vitest.config.ts"
   },
   "dependencies": {
     "@tanstack/react-virtual": "^3.13.21",
@@ -21,6 +22,8 @@
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
+    "@cloudflare/vitest-pool-workers": "^0.12.21",
+    "@cloudflare/workers-types": "^4.20260313.1",
     "@opennextjs/cloudflare": "^1.17.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
