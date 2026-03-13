@@ -181,7 +181,8 @@ body {
   :root:not(.light) img[src*="/glyphs/"] {
     filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
   }
-  :root:not(.light) .ligature-svg {
+  :root:not(.light) .ligature-svg,
+  :root:not(.light) .mdc-enclosure {
     filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
   }
 }
@@ -190,7 +191,8 @@ body {
   filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
 }
 
-:root.dark .ligature-svg {
+:root.dark .ligature-svg,
+:root.dark .mdc-enclosure {
   filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
 }
 

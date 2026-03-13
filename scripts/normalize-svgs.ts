@@ -180,7 +180,7 @@ function fixViewBox(svg: string): string {
     minX < vbX - 0.5 || minY < vbY - 0.5 ||
     maxX > vbRight + 0.5 || maxY > vbBottom + 0.5;
   const oversized =
-    contentW < vbW * 0.05 || contentH < vbH * 0.05;
+    contentW < vbW * 0.6 || contentH < vbH * 0.6;
 
   if (!clipped && !oversized) return svg;
 
@@ -255,6 +255,8 @@ let fixed = 0;
 let alreadyOk = 0;
 let errors = 0;
 
+const updatedMetrics: Record<string, [number, number]> = {};
+
 for (const file of files) {
   const filePath = path.join(GLYPHS_DIR, file);
   try {
@@ -263,12 +265,46 @@ for (const file of files) {
     if (normalized !== raw) {
       fs.writeFileSync(filePath, normalized, "utf-8");
       fixed++;
+      // Extract new viewBox dimensions for metrics update
+      const vbAttr = extractAttr(normalized, "viewBox");
+      if (vbAttr) {
+        const parts = vbAttr.trim().split(/\s+/).map(Number);
+        if (parts.length === 4) {
+          const [,, w, h] = parts;
+          const scale = h > 60 ? 0.01 : 1;
+          const code = file.replace(/\.svg$/, "");
+          updatedMetrics[code] = [
+            Math.round(w * scale * 10) / 10,
+            Math.round(h * scale * 10) / 10,
+          ];
+        }
+      }
     } else {
       alreadyOk++;
     }
   } catch (e) {
     console.error(`Error processing ${file}:`, e);
     errors++;
+  }
+}
+
+// Patch glyph-metrics.ts for updated glyphs
+if (Object.keys(updatedMetrics).length > 0) {
+  const METRICS_FILE = path.join(process.cwd(), "lib/glyph-metrics.ts");
+  let metrics = fs.readFileSync(METRICS_FILE, "utf-8");
+  let metricsChanged = 0;
+  for (const [code, [w, h]] of Object.entries(updatedMetrics)) {
+    const existing = new RegExp(`"${code}":\\[[^\\]]+\\]`);
+    const replacement = `"${code}":[${w},${h}]`;
+    if (existing.test(metrics)) {
+      metrics = metrics.replace(existing, replacement);
+      metricsChanged++;
+    }
+    // If not present, we don't add it here — it would need insertion in sorted order
+  }
+  if (metricsChanged > 0) {
+    fs.writeFileSync(METRICS_FILE, metrics, "utf-8");
+    console.log(`Updated ${metricsChanged} entries in glyph-metrics.ts`);
   }
 }
 

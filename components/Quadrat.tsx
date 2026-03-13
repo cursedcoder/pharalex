@@ -21,7 +21,7 @@ interface QuadratProps {
 type Dims = { w: number; h: number };
 
 /** Compute the natural dimensions of an MdcNode in normalized font units. */
-function naturalSize(node: MdcNode): Dims {
+export function naturalSize(node: MdcNode): Dims {
   if (node.type === "sign") {
     const [w, h] = glyphSize(node.code);
     return { w, h };
@@ -60,11 +60,27 @@ function naturalSize(node: MdcNode): Dims {
     };
   }
 
-  const sizes = node.children.map(naturalSize);
-  return {
-    w: sizes.reduce((s, d) => s + d.w, 0),
-    h: Math.max(...sizes.map((d) => d.h)),
-  };
+  if (node.type === "enclosure") {
+    const sizes = node.children.map(naturalSize);
+    const totalW = sizes.reduce((s, d) => s + d.w + 10, 0) - 10;
+    const maxH = Math.max(...sizes.map((d) => d.h));
+    return {
+      w: totalW + 40, // Add space for cartouche ends
+      h: maxH + 10,
+    };
+  }
+
+  return { w: 0, h: 0 };
+}
+
+export function getWordWidth(mdc: string, baseSize: number): number {
+  try {
+    const node = parseMdc(mdc);
+    const nat = naturalSize(node);
+    return (nat.w / CADRAT_WIDTH) * baseSize;
+  } catch (e) {
+    return baseSize; // Fallback
+  }
 }
 
 /** Compute the bounding box of a complex ligature after zone placement. */
@@ -107,7 +123,9 @@ function ligatureNaturalSize(node: Extract<MdcNode, { type: "ligature" }>): Dims
   return { w: maxX - minX, h: maxY - minY };
 }
 
-/** Scale a view to fit within a zone's dimensions, preserving aspect ratio. */
+/**
+ * Scale a view to fit within a zone's dimensions, preserving aspect ratio.
+ */
 function placeInZone(
   viewSize: Dims,
   zone: NonNullable<LigZone>,
@@ -130,6 +148,7 @@ function placeInZone(
 
   return { x, y, w, h };
 }
+
 
 /**
  * Simple ligature (&): the taller sign is the anchor, the shorter sign
@@ -232,6 +251,26 @@ function QuadratNode({
   if (node.type === "simpleLig") {
     return (
       <SimpleLigNode node={node} width={width} height={height} />
+    );
+  }
+
+  if (node.type === "enclosure") {
+    return (
+      <div
+        className="inline-flex items-center px-4 py-3 border-2 border-brown-dark/40 rounded-full bg-papyrus/30 mdc-enclosure"
+        style={{ height }}
+      >
+        <div className="flex items-end gap-1">
+          {node.children.map((child, i) => (
+            <QuadratNode
+              key={i}
+              node={child}
+              width={Math.round(width * 0.8)} // Simple scaling for enclosure content
+              height={Math.round(height * 0.8)}
+            />
+          ))}
+        </div>
+      </div>
     );
   }
 

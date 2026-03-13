@@ -22,7 +22,8 @@ export type MdcNode =
   | { type: "vert"; children: MdcNode[] }    // : — top over bottom
   | { type: "seq"; children: MdcNode[] }     // - — separate quadrats
   | { type: "ligature"; anchor: MdcNode; before?: MdcNode; after?: MdcNode } // &&& / ^^^
-  | { type: "simpleLig"; children: MdcNode[] }; // & — zone-based ligature
+  | { type: "simpleLig"; children: MdcNode[] } // & — zone-based ligature
+  | { type: "enclosure"; enclosure: "cartouche" | "serekh"; children: MdcNode[] }; // <...>, |...|
 
 /** MdC transliteration aliases → canonical Gardiner codes. */
 const MDC_ALIASES: Record<string, string> = {
@@ -95,9 +96,6 @@ const SIMPLELAG = "\x03"; // & → simple zone-based ligature
 /** Normalise MdC extras before parsing. */
 function normalise(mdc: string): string {
   let s = mdc;
-  // Strip cartouche/serekh/enclosure markers
-  s = s.replace(/<-?(?:h\d|\d)?-?/g, "");
-  s = s.replace(/-?(?:h\d|\d)?-?>/g, "");
 
   // Replace multi-char ligature operators BEFORE any other processing
   // Order matters: &&& before && (which we ignore/treat as *)
@@ -112,10 +110,6 @@ function normalise(mdc: string): string {
   // Remaining & → simple ligature placeholder
   s = s.replace(/&/g, SIMPLELAG);
 
-  // Collapse consecutive separators left by removals
-  s = s.replace(/[-:*]{2,}/g, (m) => m[0]);
-  s = s.replace(/^[-:*]|[-:*]$/g, "");
-
   return s;
 }
 
@@ -123,6 +117,25 @@ function normalise(mdc: string): string {
 export function parseMdc(mdc: string): MdcNode {
   const trimmed = normalise(mdc.trim());
   if (!trimmed) return { type: "sign", code: "?" };
+
+  // Handle enclosures
+  if (trimmed.startsWith("<-") && trimmed.endsWith("->")) {
+    const content = trimmed.slice(2, -2);
+    return {
+      type: "enclosure",
+      enclosure: "cartouche",
+      children: splitAt(content, "-").map(parseVert),
+    };
+  }
+  if (trimmed.startsWith("<") && trimmed.endsWith(">")) {
+    const content = trimmed.slice(1, -1);
+    return {
+      type: "enclosure",
+      enclosure: "cartouche",
+      children: splitAt(content, "-").map(parseVert),
+    };
+  }
+
   const seq = splitAt(trimmed, "-");
   if (seq.length > 1) {
     return { type: "seq", children: seq.map(parseVert) };
@@ -243,6 +256,9 @@ export function extractCodes(node: MdcNode): string[] {
     codes.push(...extractCodes(node.anchor));
     if (node.after) codes.push(...extractCodes(node.after));
     return codes;
+  }
+  if (node.type === "enclosure") {
+    return node.children.flatMap(extractCodes);
   }
   // simpleLig + horiz + vert + seq all have children
   return node.children.flatMap(extractCodes);
