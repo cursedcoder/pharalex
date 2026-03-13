@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { createContext, useContext } from "react";
 import { parseMdc, extractCodes } from "@/lib/mdc";
 import type { MdcNode } from "@/lib/mdc";
 import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
@@ -13,9 +14,12 @@ import {
 } from "@/lib/glyph-metrics";
 import { getLigatureZones, type LigZone } from "@/lib/ligature-zones";
 
+const DisableLinksContext = createContext(false);
+
 interface QuadratProps {
   mdc: string;
   baseSize?: number;
+  disableLinks?: boolean;
 }
 
 type Dims = { w: number; h: number };
@@ -209,23 +213,26 @@ function simpleLigNaturalSize(
   return { w: maxX - minX, h: maxY - minY };
 }
 
-export function Quadrat({ mdc, baseSize = 40 }: QuadratProps) {
+export function Quadrat({ mdc, baseSize = 40, disableLinks = false }: QuadratProps) {
   const node = parseMdc(mdc);
   return (
-    <div className="inline-flex items-end gap-1">
-      {node.type === "seq" ? (
-        node.children.map((child, i) => (
-          <QuadratNode
-            key={i}
-            node={child}
-            width={baseSize}
-            height={baseSize}
-          />
-        ))
-      ) : (
-        <QuadratNode node={node} width={baseSize} height={baseSize} />
-      )}
-    </div>
+    <DisableLinksContext.Provider value={disableLinks}>
+      <div className="inline-flex items-end gap-1">
+        {node.type === "seq" ? (
+          node.children.map((child, i) => (
+            <QuadratNode
+              key={i}
+              node={child}
+              width={baseSize}
+              height={baseSize}
+              disableLinks={disableLinks}
+            />
+          ))
+        ) : (
+          <QuadratNode node={node} width={baseSize} height={baseSize} disableLinks={disableLinks} />
+        )}
+      </div>
+    </DisableLinksContext.Provider>
   );
 }
 
@@ -627,11 +634,43 @@ function SignCell({
   width: number;
   height: number;
 }) {
+  const disableLinks = useContext(DisableLinksContext);
   const glyph = getGlyphByCode(code);
   const phonetic = glyph?.transliteration[0];
   const meaning = glyph?.meanings[0]?.text ?? glyph?.description;
 
   if (!code || code === "?" || code === "") return null;
+
+  const img = (
+    /* eslint-disable-next-line @next/next/no-img-element */
+    <img
+      src={`/glyphs/${code}.svg`}
+      alt={code}
+      style={{ width, height }}
+      className="object-contain"
+      onError={(e) => {
+        (e.target as HTMLImageElement).style.display = "none";
+      }}
+    />
+  );
+
+  const inner = disableLinks ? (
+    <span
+      className="inline-flex items-center justify-center"
+      style={{ width, height }}
+    >
+      {img}
+    </span>
+  ) : (
+    <Link
+      href={glyphHref(code)}
+      onClick={(e) => e.stopPropagation()}
+      className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 inline-flex items-center justify-center"
+      style={{ width, height }}
+    >
+      {img}
+    </Link>
+  );
 
   return (
     <Tooltip
@@ -643,23 +682,7 @@ function SignCell({
         />
       }
     >
-      <Link
-        href={glyphHref(code)}
-        onClick={(e) => e.stopPropagation()}
-        className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 inline-flex items-center justify-center"
-        style={{ width, height }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`/glyphs/${code}.svg`}
-          alt={code}
-          style={{ width, height }}
-          className="object-contain"
-          onError={(e) => {
-            (e.target as HTMLImageElement).style.display = "none";
-          }}
-        />
-      </Link>
+      {inner}
     </Tooltip>
   );
 }

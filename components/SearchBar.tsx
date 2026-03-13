@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import type { Glyph } from "@/lib/types";
-import { instantSearch } from "@/lib/search";
+import type { Glyph, DictionaryWord } from "@/lib/types";
+import { fuzzySearch } from "@/lib/search";
 import { glyphHref } from "@/lib/glyphs";
+import { searchWords, wordHref, translitToUnicode } from "@/lib/words";
+import { Quadrat } from "@/components/Quadrat";
 
 interface SearchBarProps {
   size?: "sm" | "md" | "lg";
@@ -40,6 +42,22 @@ function GlyphThumb({ glyph }: { glyph: Glyph }) {
   );
 }
 
+type MergedItem =
+  | { kind: "glyph"; glyph: Glyph; score: number; href: string }
+  | { kind: "word"; word: DictionaryWord; score: number; href: string };
+
+function wordScore(word: DictionaryWord, q: string): number {
+  const tl = word.transliteration.toLowerCase();
+  const tr = word.translation.toLowerCase();
+  if (tl === q) return 0;
+  if (tl.startsWith(q)) return 0.05;
+  if (tr === q) return 0.08;
+  if (tr.startsWith(q)) return 0.12;
+  if (tl.includes(q)) return 0.2;
+  if (tr.includes(q)) return 0.25;
+  return 0.35;
+}
+
 export function SearchBar({
   size = "md",
   placeholder = "Search by meaning, code, or transliteration...",
@@ -47,35 +65,63 @@ export function SearchBar({
   showResults = true,
 }: SearchBarProps) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<Glyph[]>([]);
+  const [wordResults, setWordResults] = useState<DictionaryWord[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
+  // Merge and sort by relevance score
+  const merged = useMemo<MergedItem[]>(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    const glyphItems: MergedItem[] = fuzzySearch(q, 8).map((r) => ({
+      kind: "glyph",
+      glyph: r.glyph,
+      score: r.score ?? 1,
+      href: glyphHref(r.glyph.code),
+    }));
+    const wordItems: MergedItem[] = wordResults.map((w) => ({
+      kind: "word",
+      word: w,
+      score: wordScore(w, q),
+      href: wordHref(w.transliteration),
+    }));
+    return [...glyphItems, ...wordItems]
+      .sort((a, b) => a.score - b.score)
+      .slice(0, 8);
+  }, [wordResults, query]);
+
   const handleSearch = useCallback((value: string) => {
     setQuery(value);
     if (value.trim().length > 0) {
-      const searchResults = instantSearch(value);
-      setResults(searchResults);
       setIsOpen(true);
       setSelectedIndex(-1);
     } else {
-      setResults([]);
+      setWordResults([]);
       setIsOpen(false);
     }
   }, []);
 
+  // Debounced search execution — runs 150ms after typing stops
+  useEffect(() => {
+    const q = query.trim();
+    if (!q) return;
+    const timer = setTimeout(() => {
+      setWordResults(searchWords(q, 5));
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [query]);
+
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (!isOpen) return;
-
       switch (e.key) {
         case "ArrowDown":
           e.preventDefault();
           setSelectedIndex((prev) =>
-            prev < results.length - 1 ? prev + 1 : prev
+            prev < merged.length - 1 ? prev + 1 : prev,
           );
           break;
         case "ArrowUp":
@@ -84,8 +130,8 @@ export function SearchBar({
           break;
         case "Enter":
           e.preventDefault();
-          if (selectedIndex >= 0 && results[selectedIndex]) {
-            router.push(glyphHref(results[selectedIndex].code));
+          if (selectedIndex >= 0 && merged[selectedIndex]) {
+            router.push(merged[selectedIndex].href);
             setIsOpen(false);
           } else if (query.trim()) {
             router.push(`/search?q=${encodeURIComponent(query)}`);
@@ -98,7 +144,7 @@ export function SearchBar({
           break;
       }
     },
-    [isOpen, results, selectedIndex, query, router]
+    [isOpen, merged, selectedIndex, query, router],
   );
 
   useEffect(() => {
@@ -110,7 +156,6 @@ export function SearchBar({
         setIsOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -152,51 +197,67 @@ export function SearchBar({
         </div>
       </div>
 
-      {showResults && isOpen && results.length > 0 && (
-        <div
-          className="
-            absolute z-50 w-full mt-2
-            bg-ivory dark:bg-ivory-dark
-            border border-sandstone/30 rounded-lg
-            shadow-lg max-h-80 overflow-y-auto
-          "
-        >
-          {results.map((glyph, index) => (
-            <Link
-              key={glyph.code}
-            href={glyphHref(glyph.code)}
-              onClick={() => setIsOpen(false)}
-              className={`
-                flex items-center gap-3 px-4 py-3
-                hover:bg-gold/10 transition-colors
-                ${index === selectedIndex ? "bg-gold/10" : ""}
-                ${index !== results.length - 1 ? "border-b border-sandstone/10" : ""}
-              `}
-            >
-              <GlyphThumb glyph={glyph} />
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className="font-medium text-brown">{glyph.code}</span>
-                  <span className="text-xs text-sandstone">
-                    {glyph.categoryName}
-                  </span>
+      {showResults && isOpen && merged.length > 0 && (
+        <div className="absolute z-50 w-full mt-2 bg-ivory dark:bg-ivory-dark border border-sandstone/30 rounded-lg shadow-lg overflow-hidden">
+          {merged.map((item, index) =>
+            item.kind === "glyph" ? (
+              <Link
+                key={`g-${item.glyph.code}`}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={`flex items-start gap-3 px-4 py-2.5 hover:bg-gold/10 transition-colors ${index === selectedIndex ? "bg-gold/10" : ""} ${index !== merged.length - 1 ? "border-b border-sandstone/10" : ""}`}
+              >
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-papyrus/60 border border-sandstone/20 overflow-hidden p-1">
+                  <GlyphThumb glyph={item.glyph} />
                 </div>
-                <p className="text-sm text-brown-light truncate">
-                  {glyph.meanings[0]?.text || ""}
-                </p>
-              </div>
-            </Link>
-          ))}
+                <div className="flex-1 min-w-0 pt-0.5">
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-semibold text-sm text-brown">
+                      {item.glyph.code}
+                    </span>
+                    <span className="text-xs text-sandstone truncate">
+                      {item.glyph.categoryName}
+                    </span>
+                  </div>
+                  <p className="text-xs text-brown-light truncate">
+                    {item.glyph.meanings[0]?.text || ""}
+                  </p>
+                </div>
+              </Link>
+            ) : (
+              <Link
+                key={`w-${item.word.transliteration}`}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={`flex gap-3 px-4 py-2.5 hover:bg-gold/10 transition-colors ${index === selectedIndex ? "bg-gold/10" : ""} ${index !== merged.length - 1 ? "border-b border-sandstone/10" : ""}`}
+              >
+                <div className="self-start shrink-0 flex items-start justify-center rounded-lg bg-papyrus/60 border border-sandstone/20 px-2 py-1.5">
+                  <Quadrat mdc={item.word.mdc} baseSize={22} disableLinks />
+                </div>
+                <div className="self-start flex-1 min-w-0 flex flex-col justify-start">
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-semibold text-sm text-brown font-mono">
+                      {translitToUnicode(item.word.transliteration)}
+                    </span>
+                    {item.word.grammar && (
+                      <span className="text-xs text-sandstone">
+                        {item.word.grammar.toLowerCase()}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-brown-light truncate">
+                    {item.word.translation}
+                  </p>
+                </div>
+              </Link>
+            ),
+          )}
 
           {query.trim() && (
             <Link
               href={`/search?q=${encodeURIComponent(query)}`}
               onClick={() => setIsOpen(false)}
-              className="
-                block px-4 py-3 text-center text-sm
-                text-gold hover:bg-gold/10
-                border-t border-sandstone/20
-              "
+              className="block px-4 py-3 text-center text-sm text-gold hover:bg-gold/10 border-t border-sandstone/20"
             >
               See all results for &ldquo;{query}&rdquo;
             </Link>

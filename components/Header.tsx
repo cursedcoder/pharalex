@@ -44,12 +44,6 @@ export function Header() {
               Texts
             </Link>
             <Link
-              href="/words"
-              className="px-2 sm:px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden sm:block"
-            >
-              Words
-            </Link>
-            <Link
               href="/alphabet"
               className="px-2 sm:px-3 py-2 text-sm font-medium text-brown-light hover:text-gold transition-colors hidden lg:block"
             >

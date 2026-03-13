@@ -3,6 +3,37 @@ import wordsJson from "@/lib/data/words.json";
 
 const WORDS = wordsJson as DictionaryWord[];
 
+// ─── Transliteration display ──────────────────────────────────────────────────
+
+/**
+ * Converts MdC ASCII transliteration to Egyptological Unicode.
+ * Follows the Leyden Unified Transliteration standard as used on the /alphabet page:
+ *   i → i͗  (yod/reed M17, i + U+0357 combining right half ring above)
+ *   A → ꜣ   (aleph)        a → ꜥ  (ayin)
+ *   y stays as y (double reed M17+M17, distinct from single i͗)
+ *   H → ḥ   x → ḫ   X → ẖ   S → š   T → ṯ   D → ḏ
+ *   q stays as q (plain, per modern convention)
+ */
+const MdC_TO_UNICODE: [string, string][] = [
+  ["A", "ꜣ"],
+  ["a", "ꜥ"],
+  ["i", "i\u0357"],
+  ["H", "ḥ"],
+  ["x", "ḫ"],
+  ["X", "ẖ"],
+  ["S", "š"],
+  ["T", "ṯ"],
+  ["D", "ḏ"],
+];
+
+export function translitToUnicode(translit: string): string {
+  let s = translit;
+  for (const [from, to] of MdC_TO_UNICODE) {
+    s = s.split(from).join(to);
+  }
+  return s;
+}
+
 // ─── Slug ─────────────────────────────────────────────────────────────────────
 
 /**
@@ -41,20 +72,28 @@ export function wordHref(transliteration: string): string {
 
 // ─── Accessors ────────────────────────────────────────────────────────────────
 
+/** Groups keyed by transliteration, built once at module load. */
+const WORD_GROUPS: Map<string, DictionaryWord[]> = new Map();
+for (const w of WORDS) {
+  const g = WORD_GROUPS.get(w.transliteration);
+  if (g) g.push(w);
+  else WORD_GROUPS.set(w.transliteration, [w]);
+}
+
 export function getAllWords(): DictionaryWord[] {
   return WORDS;
 }
 
 /** All unique transliterations (one per word entry group). */
 export function getAllTransliterations(): string[] {
-  return [...new Set(WORDS.map((w) => w.transliteration))];
+  return [...WORD_GROUPS.keys()];
 }
 
 /** All entries sharing the same transliteration. */
 export function getWordsByTransliteration(
   transliteration: string
 ): DictionaryWord[] {
-  return WORDS.filter((w) => w.transliteration === transliteration);
+  return WORD_GROUPS.get(transliteration) ?? [];
 }
 
 /** Look up by slug — find the transliteration that produces this slug, then return all entries. */
@@ -74,18 +113,14 @@ export function searchWords(
   if (!q) return [];
 
   const results: DictionaryWord[] = [];
-  const seen = new Set<string>(); // deduplicate by transliteration
-
-  for (const w of WORDS) {
+  for (const [, entries] of WORD_GROUPS) {
     if (results.length >= limit) break;
-    if (seen.has(w.transliteration)) continue;
-    if (
-      w.transliteration.toLowerCase().includes(q) ||
-      w.translation.toLowerCase().includes(q)
-    ) {
-      seen.add(w.transliteration);
-      results.push(w);
-    }
+    const matches = entries.some(
+      (w) =>
+        w.transliteration.toLowerCase().includes(q) ||
+        w.translation.toLowerCase().includes(q)
+    );
+    if (matches) results.push(entries[0]);
   }
   return results;
 }
@@ -99,14 +134,11 @@ export function getWordsByGardinerCode(
   code: string,
   limit = 20
 ): DictionaryWord[] {
-  const seen = new Set<string>();
   const results: DictionaryWord[] = [];
-  for (const w of WORDS) {
+  for (const [, entries] of WORD_GROUPS) {
     if (results.length >= limit) break;
-    if (seen.has(w.transliteration)) continue;
-    if (w.gardinerCodes.includes(code)) {
-      seen.add(w.transliteration);
-      results.push(w);
+    if (entries.some((w) => w.gardinerCodes.includes(code))) {
+      results.push(entries[0]);
     }
   }
   return results;

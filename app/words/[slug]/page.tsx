@@ -4,14 +4,13 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import { Quadrat } from "@/components/Quadrat";
+import { WordGlyph } from "@/components/WordGlyph";
 import {
   getWordsBySlug,
   getAllTransliterations,
   wordSlug,
-  wordHref,
+  translitToUnicode,
 } from "@/lib/words";
-import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
 import { getAllTexts } from "@/lib/texts";
 import type { DictionaryWord } from "@/lib/types";
 
@@ -60,10 +59,32 @@ export default async function WordPage({ params }: Props) {
   if (entries.length === 0) notFound();
 
   const w = entries[0];
-  const grammar = w.grammar;
 
-  // Collect all unique Gardiner codes across all spelling variants
-  const allCodes = [...new Set(entries.flatMap((e) => e.gardinerCodes))];
+  // Group entries by meaning (translation + grammar). Each group is one "sense"
+  // of the word; entries within a group are alternate spellings of that sense.
+  const senseMap = new Map<string, DictionaryWord[]>();
+  for (const e of entries) {
+    const key = `${e.grammar ?? ""}||${e.translation.toLowerCase().trim()}`;
+    const g = senseMap.get(key);
+    if (g) g.push(e);
+    else senseMap.set(key, [e]);
+  }
+
+  // Drop "(unknown)" senses whose spellings are all already covered by other senses
+  const allMdcSet = new Set<string>();
+  for (const [key, group] of senseMap) {
+    if (!key.includes("(unknown)")) group.forEach((e) => allMdcSet.add(e.mdc));
+  }
+  const senses = [...senseMap.values()].filter((group) => {
+    const rep = group[0];
+    if (rep.translation.trim().toLowerCase() === "(unknown)") {
+      // Keep only if it has at least one spelling not seen in any named sense
+      return group.some((e) => !allMdcSet.has(e.mdc));
+    }
+    return true;
+  });
+  const primarySense = senses[0];
+  const primaryEntry = primarySense[0]; // canonical entry shown in the hero
 
   // Find texts that contain this transliteration as a token
   const texts = getAllTexts().filter((text) =>
@@ -84,9 +105,7 @@ export default async function WordPage({ params }: Props) {
           <nav className="flex items-center gap-2 text-sandstone text-sm mb-8">
             <Link href="/" className="hover:text-gold transition-colors">PharaLex</Link>
             <span>/</span>
-            <Link href="/words" className="hover:text-gold transition-colors">Words</Link>
-            <span>/</span>
-            <span className="text-brown font-mono">{w.transliteration}</span>
+            <span className="text-brown font-mono">{translitToUnicode(w.transliteration)}</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 items-start">
@@ -95,96 +114,85 @@ export default async function WordPage({ params }: Props) {
 
               {/* Header card */}
               <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-2xl p-6 sm:p-8">
-                <div className="flex flex-col sm:flex-row gap-6 items-start">
-                  {/* Primary glyph rendering */}
-                  <div className="flex-shrink-0 flex items-center justify-center bg-ivory/70 rounded-xl border border-gold/15 p-4 min-w-[80px] min-h-[80px]">
-                    <Quadrat mdc={w.mdc} baseSize={48} />
-                  </div>
+                <WordGlyph
+                  mdc={primaryEntry.mdc}
+                  baseSize={48}
+                  className="mb-5"
+                />
 
-                  <div className="flex-1 space-y-3">
-                    <div>
-                      <h1 className="font-mono text-3xl sm:text-4xl font-bold text-brown leading-tight">
-                        {w.transliteration}
-                      </h1>
-                      <p className="text-brown-light text-lg mt-1 leading-relaxed">
-                        {w.translation}
-                      </p>
-                    </div>
+                <h1 className="font-mono text-3xl sm:text-4xl font-bold text-brown leading-tight mb-1">
+                  {translitToUnicode(primaryEntry.transliteration)}
+                </h1>
+                <p className="text-brown-light text-lg leading-relaxed mb-3">
+                  {primaryEntry.translation}
+                </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {grammar && (
-                        <Badge
-                          variant={GRAMMAR_BADGE_VARIANTS[grammar] ?? "outline"}
-                          size="md"
-                        >
-                          {GRAMMAR_LABELS[grammar] ?? grammar}
-                        </Badge>
-                      )}
-                      {w.grammarRaw && w.grammarRaw !== grammar && (
-                        <Badge variant="outline" size="md">{w.grammarRaw}</Badge>
-                      )}
-                      {w.notes.map((note, i) => (
-                        <Badge key={i} variant="outline" size="md">{note}</Badge>
-                      ))}
-                    </div>
-                  </div>
+                <div className="flex flex-wrap gap-2">
+                  {primaryEntry.grammar && (
+                    <Badge
+                      variant={GRAMMAR_BADGE_VARIANTS[primaryEntry.grammar] ?? "outline"}
+                      size="md"
+                    >
+                      {GRAMMAR_LABELS[primaryEntry.grammar] ?? primaryEntry.grammar}
+                    </Badge>
+                  )}
+                  {primaryEntry.grammarRaw && primaryEntry.grammarRaw.toLowerCase() !== (GRAMMAR_LABELS[primaryEntry.grammar ?? ""] ?? "").toLowerCase() && (
+                    <Badge variant="outline" size="md">{primaryEntry.grammarRaw}</Badge>
+                  )}
+                  {primaryEntry.notes.map((note, i) => (
+                    <Badge key={i} variant="outline" size="md">{note}</Badge>
+                  ))}
                 </div>
               </div>
 
-              {/* Spelling variants */}
-              {entries.length > 1 && (
+              {/* Senses — each sense is a distinct meaning, with its own spellings */}
+              {senses.length > 0 && (
                 <section>
                   <h2 className="font-display text-2xl font-semibold text-brown mb-4">
-                    Hieroglyphic Spellings
+                    {senses.length === 1 ? "Hieroglyphic Spellings" : "Meanings & Spellings"}
                     <span className="ml-2 text-base font-normal text-sandstone">
-                      {entries.length} variants
+                      {senses.length === 1
+                        ? `${senses[0].length} spelling${senses[0].length !== 1 ? "s" : ""}`
+                        : `${senses.length} senses, ${entries.length} spellings`}
                     </span>
                   </h2>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {entries.map((entry, i) => (
-                      <SpellingCard key={i} entry={entry} index={i} />
-                    ))}
-                  </div>
-                </section>
-              )}
-
-              {/* Constituent signs */}
-              {allCodes.length > 0 && (
-                <section>
-                  <h2 className="font-display text-2xl font-semibold text-brown mb-4">
-                    Constituent Signs
-                  </h2>
-                  <div className="flex flex-wrap gap-3">
-                    {allCodes.map((code) => {
-                      const glyph = getGlyphByCode(code);
+                  <div className="space-y-6">
+                    {senses.map((spellings, si) => {
+                      const rep = spellings[0];
                       return (
-                        <Link
-                          key={code}
-                          href={glyphHref(code)}
-                          className="group flex flex-col items-center gap-1.5 p-3 rounded-xl bg-ivory-dark/50 border border-sandstone/20 hover:border-gold/50 hover:bg-papyrus/30 transition-all"
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={`/glyphs/${code}.svg`}
-                            alt={code}
-                            className="w-10 h-10 object-contain"
-                          />
-                          <span className="text-xs font-mono font-semibold text-sandstone group-hover:text-gold-dark transition-colors">
-                            {code}
-                          </span>
-                          {glyph?.meanings[0] && (
-                            <span className="text-[10px] text-sandstone/60 text-center leading-tight max-w-[70px]">
-                              {glyph.meanings[0].text.length > 20
-                                ? glyph.meanings[0].text.slice(0, 20) + "…"
-                                : glyph.meanings[0].text}
+                        <div key={si} className="rounded-xl border border-sandstone/20 overflow-hidden">
+                          {/* Sense header */}
+                          <div className="bg-papyrus/30 px-4 py-3 flex flex-wrap items-center gap-2 border-b border-sandstone/15">
+                            <span className="text-xs text-sandstone font-medium uppercase tracking-wider w-5">
+                              {si + 1}.
                             </span>
-                          )}
-                        </Link>
+                            <span className="text-brown font-medium">{rep.translation}</span>
+                            {rep.grammar && (
+                              <Badge variant={GRAMMAR_BADGE_VARIANTS[rep.grammar] ?? "outline"} size="sm">
+                                {GRAMMAR_LABELS[rep.grammar] ?? rep.grammar}
+                              </Badge>
+                            )}
+                            {rep.grammarRaw && rep.grammarRaw.toLowerCase() !== (GRAMMAR_LABELS[rep.grammar ?? ""] ?? "").toLowerCase() && (
+                              <span className="text-xs text-sandstone/60 italic">{rep.grammarRaw}</span>
+                            )}
+                            {rep.notes.map((n, i) => (
+                              <Badge key={i} variant="outline" size="sm">{n}</Badge>
+                            ))}
+                          </div>
+                          {/* Spellings for this sense */}
+                          <div className="flex flex-wrap gap-3 p-4">
+                            {spellings.map((entry, ei) => (
+                              <SpellingCard key={ei} entry={entry} />
+                            ))}
+                          </div>
+                        </div>
                       );
                     })}
                   </div>
                 </section>
               )}
+
+
 
               {/* Attested in texts */}
               {texts.length > 0 && (
@@ -217,24 +225,27 @@ export default async function WordPage({ params }: Props) {
 
             {/* Sidebar */}
             <aside className="lg:sticky lg:top-24 space-y-4">
-              {/* Quick info */}
               <div className="bg-papyrus/40 border border-gold/20 rounded-xl p-5 space-y-4">
                 <h3 className="font-display text-lg text-brown">Quick Info</h3>
                 <dl className="space-y-3 text-sm">
                   <div>
                     <dt className="text-xs text-sandstone uppercase tracking-wider font-medium mb-0.5">Transliteration</dt>
-                    <dd className="font-mono text-brown">{w.transliteration}</dd>
+                    <dd className="font-mono text-brown">{translitToUnicode(w.transliteration)}</dd>
                   </div>
                   <div>
                     <dt className="text-xs text-sandstone uppercase tracking-wider font-medium mb-0.5">Translation</dt>
-                    <dd className="text-brown-light">{w.translation}</dd>
+                    <dd className="text-brown-light">{primaryEntry.translation}</dd>
                   </div>
-                  {grammar && (
+                  {primaryEntry.grammar && (
                     <div>
                       <dt className="text-xs text-sandstone uppercase tracking-wider font-medium mb-0.5">Part of Speech</dt>
-                      <dd className="text-brown-light">{GRAMMAR_LABELS[grammar] ?? grammar}</dd>
+                      <dd className="text-brown-light">{GRAMMAR_LABELS[primaryEntry.grammar] ?? primaryEntry.grammar}</dd>
                     </div>
                   )}
+                  <div>
+                    <dt className="text-xs text-sandstone uppercase tracking-wider font-medium mb-0.5">Senses</dt>
+                    <dd className="text-brown-light">{senses.length}</dd>
+                  </div>
                   <div>
                     <dt className="text-xs text-sandstone uppercase tracking-wider font-medium mb-0.5">Spellings</dt>
                     <dd className="text-brown-light">{entries.length}</dd>
@@ -246,12 +257,11 @@ export default async function WordPage({ params }: Props) {
                 </dl>
               </div>
 
-              {/* Back link */}
               <Link
-                href="/words"
+                href="/"
                 className="flex items-center gap-2 text-sm text-sandstone hover:text-gold transition-colors"
               >
-                ← Search words
+                ← Back to search
               </Link>
             </aside>
           </div>
@@ -261,31 +271,12 @@ export default async function WordPage({ params }: Props) {
   );
 }
 
-function SpellingCard({
-  entry,
-  index,
-}: {
-  entry: DictionaryWord;
-  index: number;
-}) {
+function SpellingCard({ entry }: { entry: DictionaryWord }) {
   return (
-    <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 space-y-3">
-      {/* Glyph rendering */}
-      <div className="flex items-center justify-center min-h-[56px] bg-ivory/60 rounded-lg border border-gold/10 p-2">
-        <Quadrat mdc={entry.mdc} baseSize={36} />
-      </div>
-
-      {/* MdC */}
-      <p className="font-mono text-xs text-sandstone/70 text-center break-all">
-        {entry.mdc}
-      </p>
-
-      {/* Grammar/notes if different from primary */}
-      {entry.grammarRaw && (
-        <p className="text-xs text-sandstone/60 text-center italic">{entry.grammarRaw}</p>
-      )}
+    <div className="inline-flex flex-col items-start bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 space-y-3">
+      <WordGlyph mdc={entry.mdc} baseSize={36} />
       {entry.notes.length > 0 && (
-        <div className="flex flex-wrap justify-center gap-1">
+        <div className="flex flex-wrap gap-1">
           {entry.notes.map((n, i) => (
             <Badge key={i} variant="outline" size="sm">{n}</Badge>
           ))}

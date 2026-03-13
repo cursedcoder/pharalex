@@ -79,8 +79,8 @@ const GARDINER_RE = /\b([A-Z][a-z]?[0-9]+[A-Za-z0-9]*)\b/g;
 function extractGardinerCodes(raw: string): string[] {
   const matches = raw.match(GARDINER_RE);
   if (!matches) return [];
-  // Deduplicate while preserving order
-  return [...new Set(matches)];
+  // Preserve duplicates — repeated signs are meaningful in hieroglyphic spellings
+  return matches;
 }
 
 // Build MdC string from Gardiner codes using "-" as the sequential separator
@@ -221,10 +221,13 @@ function parseLine(raw: string): VygusEntry | null {
   // Known MdC transliteration tokens that start with lowercase — these are NOT English.
   // Egyptian consonants in Egyptological notation use lowercase too (n, r, s, w, t, etc.)
   const MdC_LOWERCASE_TOKENS = new Set([
+    // suffix pronouns — .f .s .k .t .n .w .sn .tn .fn etc.
+    ".f", ".s", ".k", ".t", ".n", ".w", ".sn", ".tn", ".fn", ".j", ".i",
+    // common words
     "nfr", "nb", "nTr", "nw", "nxt", "nn", "nA", "nHH", "nbt", "nbw", "nfrt",
     "sw", "sn", "st", "sb", "sk", "sd", "sA", "sAt", "sr", "sm", "sp",
     "wn", "wr", "wrt", "wAt", "wDA", "wAH", "wp", "wHm", "ws", "wsr", "wTs",
-    "tp", "tA", "tpy", "tpt", "tn", "tw", "ti", "tm",
+    "tp", "tpw", "tA", "tpy", "tpt", "tn", "tw", "ti", "tm",
     "rn", "ra", "rdi", "rmT", "rHw", "rxt",
     "hr", "hn", "hb", "ht", "hw", "hA", "hm",
     "mn", "ms", "mt", "mA", "mw", "mi", "mr", "mH",
@@ -293,6 +296,18 @@ function parseLine(raw: string): VygusEntry | null {
 
   transliteration = transliteration.trim();
   translation = translation.trim();
+
+  // Handle Vygus "word / altname translation" pattern — the slash introduces an
+  // alternate transliteration or epithet, not a path separator.
+  // e.g. "Sw / psD to shine" → translit="Sw", translation="psD to shine"
+  // e.g. "bAgi / wrd weariness" → translit="bAgi", translation="wrd weariness"
+  const slashMatch = transliteration.match(/^(.+?)\s*\/\s*(\S+)$/);
+  if (slashMatch) {
+    transliteration = slashMatch[1].trim();
+    translation = slashMatch[2] + (translation ? " " + translation : "");
+  }
+  // Also strip bare trailing " /" with no altname token captured
+  transliteration = transliteration.replace(/\s*\/$/, "").trim();
 
   // Skip entries with no meaningful transliteration or translation
   if (!transliteration || transliteration === "?" || transliteration === "??") return null;

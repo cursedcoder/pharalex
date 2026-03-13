@@ -1,25 +1,29 @@
 import Fuse from "fuse.js";
 import type { Glyph } from "./types";
-import { getAllGlyphs } from "./glyphs";
+import { getAllGlyphs, getBaseCode } from "./glyphs";
 
 let fuseInstance: Fuse<Glyph> | null = null;
 
+/** Returns true if the glyph code is a non-main variant (e.g. "G127A", "N5B"). */
+function isVariant(code: string): boolean {
+  return getBaseCode(code) !== null;
+}
+
 function getFuseInstance(): Fuse<Glyph> {
   if (!fuseInstance) {
-    const glyphs = getAllGlyphs();
+    const glyphs = getAllGlyphs().filter((g) => !isVariant(g.code));
     fuseInstance = new Fuse(glyphs, {
       keys: [
         { name: "code", weight: 3 },
         { name: "unicode", weight: 2 },
         { name: "transliteration", weight: 2 },
         { name: "meanings.text", weight: 1.5 },
-        { name: "categoryName", weight: 1 },
-        { name: "description", weight: 0.5 },
+        { name: "description", weight: 0.8 },
       ],
-      threshold: 0.4,
+      threshold: 0.25,
       includeScore: true,
       ignoreLocation: true,
-      minMatchCharLength: 1,
+      minMatchCharLength: 3,
     });
   }
   return fuseInstance;
@@ -54,7 +58,7 @@ export function instantSearch(query: string): Glyph[] {
   const trimmed = query.trim();
   if (!trimmed) return [];
 
-  const glyphs = getAllGlyphs();
+  const glyphs = getAllGlyphs().filter((g) => !isVariant(g.code));
   const lowerQuery = trimmed.toLowerCase();
 
   const exactCodeMatch = glyphs.filter(

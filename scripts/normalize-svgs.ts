@@ -156,15 +156,39 @@ function fixViewBox(svg: string): string {
   // Ignore display:none sections (Inkscape reference images etc.)
   const working = svg.replace(/<g[^>]*?style="[^"]*display\s*:\s*none[^"]*"[\s\S]*?<\/g>/gi, "");
 
-  // Accumulate translate() transform if present on a wrapper group
-  const tMatch = working.match(/transform="translate\(([^,)]+)(?:,([^)]+))?\)"/);
-  const tx = tMatch ? (parseFloat(tMatch[1]) || 0) : 0;
-  const ty = tMatch ? (parseFloat(tMatch[2] ?? "0") || 0) : 0;
+  // Parse the wrapper group transform, supporting:
+  //   translate(tx, ty)
+  //   scale(sx, sy)
+  //   scale(1,-1) translate(0,-N)  — flipped-y Egyptian hieroglyph convention
+  const transformAttr = working.match(/transform="([^"]+)"/)?.[1] ?? "";
+
+  // Extract all translate() calls in order
+  let tx = 0, ty = 0;
+  for (const tm of transformAttr.matchAll(/translate\(\s*([^,)]+)(?:,([^)]+))?\)/g)) {
+    tx += parseFloat(tm[1]) || 0;
+    ty += parseFloat(tm[2] ?? "0") || 0;
+  }
+
+  // Extract all scale() calls in order
+  let sx = 1, sy = 1;
+  for (const sm of transformAttr.matchAll(/scale\(\s*([^,)]+)(?:,([^)]+))?\)/g)) {
+    sx *= parseFloat(sm[1]) || 1;
+    sy *= parseFloat(sm[2] ?? sm[1]) || 1;
+  }
+
+  // Apply transform: for scale(1,-1) translate(0,-N), the mapping is:
+  //   screen_x = sx * (path_x + tx)
+  //   screen_y = sy * (path_y + ty)
+  const applyX = (px: number) => sx * (px + tx);
+  const applyY = (py: number) => sy * (py + ty);
 
   let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
   for (const m of working.matchAll(/\bd="([^"]+)"/gs)) {
     const b = getPathBounds(m[1]);
-    const bx1=b.minX+tx, bx2=b.maxX+tx, by1=b.minY+ty, by2=b.maxY+ty;
+    const xs = [applyX(b.minX), applyX(b.maxX)];
+    const ys = [applyY(b.minY), applyY(b.maxY)];
+    const bx1=Math.min(...xs), bx2=Math.max(...xs);
+    const by1=Math.min(...ys), by2=Math.max(...ys);
     if (bx1<minX) minX=bx1; if (bx2>maxX) maxX=bx2;
     if (by1<minY) minY=by1; if (by2>maxY) maxY=by2;
   }

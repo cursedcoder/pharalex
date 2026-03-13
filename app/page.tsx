@@ -4,14 +4,16 @@ import { SearchBar } from "@/components/SearchBar";
 import { GlyphCard } from "@/components/GlyphCard";
 import { GlyphWatermark } from "@/components/GlyphWatermark";
 import { PharaohCard } from "@/components/PharaohCard";
+import { WordGlyph } from "@/components/WordGlyph";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { getAllGlyphs, getAllCategories, getGlyphStats } from "@/lib/glyphs";
 import { getNotablePharaohs } from "@/lib/pharaohs";
 import { getAllTexts } from "@/lib/texts";
+import { getAllWords, wordHref, translitToUnicode } from "@/lib/words";
 import { mdcToCodes } from "@/lib/mdc";
 import { pickDaily } from "@/lib/daily";
-import type { PeriodId } from "@/lib/types";
+import type { PeriodId, DictionaryWord } from "@/lib/types";
 
 const PERIOD_LABELS: Record<PeriodId, string> = {
   predynastic: "Predynastic",
@@ -34,17 +36,48 @@ export default function HomePage() {
 
   // Only pick from glyphs with actual meaning data for a better showcase
   const richGlyphs = glyphs.filter(
-    (g) => g.meanings.length > 0 && (g.source === "wiktionary" || g.source === "both")
+    (g) =>
+      g.meanings.length > 0 &&
+      (g.source === "wiktionary" || g.source === "both"),
   );
   const featuredGlyphs = pickDaily(richGlyphs, 4, 0);
   const featuredPharaohs = pickDaily(getNotablePharaohs(), 3, 1);
   const featuredTexts = pickDaily(getAllTexts(), 3, 2);
+
+  // Featured words — deduplicated pool of short, recognisable core vocabulary
+  const allWords = getAllWords();
+  const seenTranslits = new Set<string>();
+  const wordCandidates: DictionaryWord[] = [];
+  for (const w of allWords) {
+    if (seenTranslits.has(w.transliteration)) continue;
+    if (
+      w.transliteration.length <= 6 &&
+      w.grammar &&
+      !["PRON", "PART", "CONJ", "INTJ", "INTG", "IMPR"].includes(w.grammar) &&
+      w.translation.length >= 4 &&
+      w.translation.length <= 45 &&
+      !w.translation.startsWith("(") &&
+      !w.notes.includes("cryptic") &&
+      !w.notes.includes("late egyptian") &&
+      w.gardinerCodes.length >= 1 &&
+      w.gardinerCodes.length <= 6
+    ) {
+      seenTranslits.add(w.transliteration);
+      wordCandidates.push(w);
+    }
+  }
+  const featuredWords = pickDaily(wordCandidates, 8, 99);
 
   const renderableGlyphs = glyphs.filter((g) => {
     if (!g.unicode || g.meanings.length === 0) return false;
     const cp = g.unicode.codePointAt(0) ?? 0;
     return cp >= 0x13000 && cp <= 0x1342f;
   });
+  const watermarkGlyphs = pickDaily(
+    renderableGlyphs,
+    16,
+    Math.floor(Date.now() / 1_800_000),
+  );
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -76,32 +109,33 @@ export default function HomePage() {
         <section className="relative py-12 sm:py-16">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute inset-0 bg-gradient-to-b from-papyrus/30 to-transparent" />
-            <GlyphWatermark glyphs={renderableGlyphs} />
+            <GlyphWatermark glyphs={watermarkGlyphs} />
           </div>
 
           <Container className="relative">
-            <div className="text-center max-w-2xl mx-auto">
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brown mb-4">
-                Explore Ancient Egyptian
-                <span className="block text-gold">Hieroglyphs</span>
+            <div className="max-w-3xl mx-auto">
+              <h1 className="text-center font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brown mb-4">
+                Explore Egyptian
+                <span className="block text-gold">Writing & Hieroglyphs</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-brown-light mb-6 max-w-xl mx-auto">
-                {stats.totalGlyphs.toLocaleString()} symbols across{" "}
-                {stats.totalCategories} Gardiner categories.
+              <p className="text-center text-base sm:text-lg text-brown-light mb-6">
+                {stats.totalGlyphs.toLocaleString()} hieroglyphs and{" "}
+                {allWords.length.toLocaleString()} dictionary words — search
+                everything at once.
               </p>
 
-              <div className="max-w-lg mx-auto mb-4">
+              <div className="max-w-2xl mx-auto mb-4">
                 <SearchBar
                   size="lg"
-                  placeholder="Search by meaning, Gardiner code, or transliteration..."
+                  placeholder="Search hieroglyphs, words, or meanings..."
                   autoFocus
                 />
               </div>
 
               <div className="flex flex-wrap justify-center gap-3 text-sm text-sandstone">
                 <span>Try:</span>
-                {["sun", "A1", "water", "bird"].map((q) => (
+                {["nfr", "sun", "A1", "beautiful", "bird"].map((q) => (
                   <Link
                     key={q}
                     href={`/search?q=${q}`}
@@ -127,18 +161,20 @@ export default function HomePage() {
               </div>
               <div className="px-4">
                 <div className="font-display text-2xl font-bold text-gold-dark">
-                  {stats.totalCategories}
-                </div>
-                <div className="text-xs text-sandstone mt-0.5">Categories</div>
-              </div>
-              <div className="px-4">
-                <div className="font-display text-2xl font-bold text-gold-dark">
                   {(
-                    stats.byType.logogram + stats.byType.phonogram
+                    stats.byType.phonogram + stats.byType.logogram
                   ).toLocaleString()}
                 </div>
                 <div className="text-xs text-sandstone mt-0.5">
                   Phonograms &amp; Logograms
+                </div>
+              </div>
+              <div className="px-4">
+                <div className="font-display text-2xl font-bold text-gold-dark">
+                  {allWords.length.toLocaleString()}
+                </div>
+                <div className="text-xs text-sandstone mt-0.5">
+                  Dictionary Words
                 </div>
               </div>
             </div>
@@ -149,7 +185,6 @@ export default function HomePage() {
         <section className="py-10 bg-ivory-dark/30">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
               {/* Featured Hieroglyphs */}
               <div>
                 <div className="flex items-center justify-between mb-5">
@@ -157,7 +192,9 @@ export default function HomePage() {
                     <h2 className="font-display text-xl sm:text-2xl font-semibold text-brown">
                       Featured Hieroglyphs
                     </h2>
-                    <p className="text-xs text-sandstone mt-0.5">Refreshes daily</p>
+                    <p className="text-xs text-sandstone mt-0.5">
+                      Refreshes daily
+                    </p>
                   </div>
                   <Link
                     href="/browse"
@@ -181,7 +218,9 @@ export default function HomePage() {
                     <h2 className="font-display text-xl sm:text-2xl font-semibold text-brown">
                       Notable Pharaohs
                     </h2>
-                    <p className="text-xs text-sandstone mt-0.5">Refreshes daily</p>
+                    <p className="text-xs text-sandstone mt-0.5">
+                      Refreshes daily
+                    </p>
                   </div>
                   <Link
                     href="/pharaohs"
@@ -197,7 +236,6 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-
             </div>
           </Container>
         </section>
@@ -244,7 +282,9 @@ export default function HomePage() {
                             className="w-6 h-6 object-contain"
                           />
                         ))}
-                        <span className="text-sandstone/40 text-xs ml-0.5">…</span>
+                        <span className="text-sandstone/40 text-xs ml-0.5">
+                          …
+                        </span>
                       </div>
                     )}
                     <div className="self-start mb-2">
@@ -265,6 +305,43 @@ export default function HomePage() {
                   </Link>
                 );
               })}
+            </div>
+          </Container>
+        </section>
+
+        {/* Featured Words */}
+        <section className="py-10 bg-ivory-dark/30">
+          <Container>
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h2 className="font-display text-xl sm:text-2xl font-semibold text-brown">
+                  Featured Words
+                </h2>
+                <p className="text-xs text-sandstone mt-0.5">Refreshes daily</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {featuredWords.map((word) => (
+                <Link
+                  key={word.transliteration}
+                  href={wordHref(word.transliteration)}
+                  className="group flex flex-col bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-4 h-full hover:shadow-md hover:border-gold/40 transition-all duration-200"
+                >
+                  <div className="flex items-center min-h-10 mb-3 group-hover:scale-105 transition-transform origin-left overflow-hidden">
+                    <WordGlyph mdc={word.mdc} baseSize={28} disableLinks />
+                  </div>
+                  <p className="text-sm text-brown-light line-clamp-2 mb-2 flex-1">
+                    {word.translation}
+                  </p>
+                  {word.grammar && (
+                    <span className="self-start text-xs px-2 py-0.5 rounded-full border border-sandstone/30 text-sandstone">
+                      {word.grammar.charAt(0) +
+                        word.grammar.slice(1).toLowerCase()}
+                    </span>
+                  )}
+                </Link>
+              ))}
             </div>
           </Container>
         </section>
@@ -329,7 +406,10 @@ export default function HomePage() {
               <span>PharaLex</span>
             </div>
             <p>Data sourced from Wiktionary and the Gardiner Sign List</p>
-            <Link href="/acknowledgments" className="hover:text-gold transition-colors">
+            <Link
+              href="/acknowledgments"
+              className="hover:text-gold transition-colors"
+            >
               Acknowledgments
             </Link>
           </div>
