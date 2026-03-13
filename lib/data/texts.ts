@@ -17,37 +17,42 @@ export const TEXTS: EgyptianText[] = [
       {
         tokens: [
           {
-            mdc: "i-Aa27-D&&&Y1",
-            transliteration: "j nḏ",
-            translation: "O, hail",
+            mdc: "i-Aa27-D&&&Y1-Hr*Z1:k",
+            transliteration: "j nḏ-ḥr=k",
+            translation: "O hail to you",
             grammar: "PART",
           },
           {
-            mdc: "Hr*Z1:k",
-            transliteration: "ḥr=k",
-            translation: "to you",
-            grammar: "PREP",
-          },
-          {
-            mdc: "nfr-Hr",
-            transliteration: "nfr-ḥr",
-            translation: "beautiful of face",
+            mdc: "nfr",
+            transliteration: "nfr",
+            translation: "beautiful",
             grammar: "ADJ",
           },
           {
-            mdc: "Hr*Z1:k-mA-A-G43&t",
-            transliteration: "nb",
-            translation: "lord (of radiance)",
+            mdc: "Hr",
+            transliteration: "ḥr",
+            translation: "of face",
             grammar: "NOUN",
           },
           {
-            mdc: "N8:Z2",
-            transliteration: "mꜣwt",
-            translation: "of radiance",
+            mdc: "nb",
+            transliteration: "nb",
+            translation: "lord",
             grammar: "NOUN",
           },
         ],
-        lineTranslation: "O, hail to you, beautiful of face, lord of radiance,",
+        lineTranslation: "O, hail to you, beautiful of face, lord",
+      },
+      {
+        tokens: [
+          {
+            mdc: "N8:Z2",
+            transliteration: "mꜣwt",
+            translation: "of radiance,",
+            grammar: "NOUN",
+          },
+        ],
+        lineTranslation: "of radiance,",
       },
       {
         tokens: [
@@ -100,10 +105,16 @@ export const TEXTS: EgyptianText[] = [
             grammar: "NOUN",
           },
           {
-            mdc: "nfr-f:r-Hr:Z1",
-            transliteration: "nfr-ḥr",
-            translation: "beautiful of face",
+            mdc: "nfr",
+            transliteration: "nfr",
+            translation: "beautiful",
             grammar: "ADJ",
+          },
+          {
+            mdc: "Hr",
+            transliteration: "ḥr",
+            translation: "of face",
+            grammar: "NOUN",
           },
           {
             mdc: "Z11-m&&&(Z1*Z1)-(Z1*Z1*Z1)^^^nTr-A40",
@@ -112,14 +123,26 @@ export const TEXTS: EgyptianText[] = [
             grammar: "PREP",
           },
           {
-            mdc: "ir:t*Z1:k-R14-M:t:D41-M:z",
-            transliteration: "jrt=k jmnt m",
-            translation: "your right eye is in",
+            mdc: "ir:t*Z1:k",
+            transliteration: "jrt=k",
+            translation: "your right eye",
             grammar: "NOUN",
+          },
+          {
+            mdc: "R14",
+            transliteration: "jmnt",
+            translation: "western",
+            grammar: "ADJ",
+          },
+          {
+            mdc: "M",
+            transliteration: "m",
+            translation: "in",
+            grammar: "PREP",
           },
         ],
         lineTranslation:
-          "him the supports of Thoth, beautiful of face, who is among the gods; your right eye is in",
+          "him, the supports of Thoth, beautiful of face, who is among the gods; your right eye is in",
       },
       {
         tokens: [
@@ -142,14 +165,26 @@ export const TEXTS: EgyptianText[] = [
             grammar: "ADJ",
           },
           {
-            mdc: "D41:M-V26:d-t*t:P3",
-            transliteration: "m mꜥnḏt",
-            translation: "in the morning bark",
+            mdc: "M",
+            transliteration: "m",
+            translation: "in",
             grammar: "PREP",
           },
           {
-            mdc: "i-w-i-K1:n-H-D13:D13:k",
-            transliteration: "jw jnḥ.wj=k",
+            mdc: "V26:d-t*t:P3",
+            transliteration: "mꜥnḏt",
+            translation: "the morning bark",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "i-w",
+            transliteration: "jw",
+            translation: "as for",
+            grammar: "PART",
+          },
+          {
+            mdc: "i-K1:n-H-D13:D13:k",
+            transliteration: "jnḥ.wj=k",
             translation: "your eyebrows",
             grammar: "NOUN",
           },
@@ -166,10 +201,22 @@ export const TEXTS: EgyptianText[] = [
             grammar: "NOUN",
           },
           {
-            mdc: "i-w-F13:t*Z1-k:M",
-            transliteration: "jw wpt=k m",
-            translation: "your brow is",
+            mdc: "i-w",
+            transliteration: "jw",
+            translation: "as for",
+            grammar: "PART",
+          },
+          {
+            mdc: "F13:t*Z1:k",
+            transliteration: "wpt=k",
+            translation: "your brow",
             grammar: "NOUN",
+          },
+          {
+            mdc: "M",
+            transliteration: "m",
+            translation: "is",
+            grammar: "PREP",
           },
           {
             mdc: "i-n:p*w",
@@ -178,9 +225,27 @@ export const TEXTS: EgyptianText[] = [
             grammar: "NOUN",
           },
           {
-            mdc: "i-w-F4:k-M16-A-tp:k",
-            transliteration: "jw mkḥꜣ=k ḥꜣt tp=k",
-            translation: "the back of your head upon your head",
+            mdc: "i-w",
+            transliteration: "jw",
+            translation: "as for",
+            grammar: "PART",
+          },
+          {
+            mdc: "F4:k",
+            transliteration: "mkḥꜣ=k",
+            translation: "the back of your head",
+            grammar: "NOUN",
+          },
+          {
+            mdc: "M16-A",
+            transliteration: "ḥꜣt",
+            translation: "upon",
+            grammar: "PREP",
+          },
+          {
+            mdc: "tp:k",
+            transliteration: "tp=k",
+            translation: "your head",
             grammar: "NOUN",
           },
         ],
@@ -192,19 +257,25 @@ export const TEXTS: EgyptianText[] = [
           {
             mdc: "M-G5",
             transliteration: "m Ḥr",
-            translation: "as Horus",
+            translation: "is that of Horus",
             grammar: "NOUN",
           },
           {
-            mdc: "i-w-H-U8:n:z-Y1:k",
-            transliteration: "jw ḥn=k",
+            mdc: "i-w",
+            transliteration: "jw",
+            translation: "as for",
+            grammar: "PART",
+          },
+          {
+            mdc: "H-U8:n:z-Y1:k",
+            transliteration: "ḥn=k",
             translation: "your locks",
             grammar: "NOUN",
           },
           {
             mdc: "M-p:t-H-z:k:r-t-A40",
             transliteration: "m Ptḥ-Skr",
-            translation: "are Ptah-Sokar",
+            translation: "are those of Ptah-Sokar",
             grammar: "NOUN",
           },
           {
@@ -219,21 +290,21 @@ export const TEXTS: EgyptianText[] = [
             translation: "Osiris",
             grammar: "NOUN",
           },
-          {
-            mdc: "mA",
-            transliteration: "mꜣ",
-            translation: "who sees",
-            grammar: "VERB",
-          },
         ],
         lineTranslation:
-          "as Horus; your locks are Ptah-Sokar; before Osiris, who sees",
+          "is that of Horus; your locks are those of Ptah-Sokar; before Osiris",
       },
       {
         tokens: [
           {
-            mdc: "ir:f-i-m-k",
-            transliteration: "=f jm=k",
+            mdc: "ir:f",
+            transliteration: "mꜣ=f",
+            translation: "who sees",
+            grammar: "VERB",
+          },
+          {
+            mdc: "Z11-m-k",
+            transliteration: "jm=k",
             translation: "through you",
             grammar: "PREP",
           },
@@ -262,14 +333,20 @@ export const TEXTS: EgyptianText[] = [
             grammar: "ADJ",
           },
           {
-            mdc: "H-A25-D40:k-n:f",
-            transliteration: "ḥw=k n=f",
-            translation: "may you smite for him",
+            mdc: "H-A25-D40:k",
+            transliteration: "ḥw=k",
+            translation: "may you smite",
             grammar: "VERB",
+          },
+          {
+            mdc: "n:f",
+            transliteration: "n=f",
+            translation: "for him",
+            grammar: "PREP",
           },
         ],
         lineTranslation:
-          "through you; may you guide him on smooth paths; may you smite for him",
+          "who sees through you; may you guide him on smooth paths; may you smite for him",
       },
       {
         tokens: [
