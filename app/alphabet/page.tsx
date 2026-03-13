@@ -43,7 +43,7 @@ const ALPHABET: AlphabetEntry[] = [
   },
   {
     codes: ["M17"],
-    transliteration: "ꞽ",
+    transliteration: "i͗",
     transName: "Yod",
     signDescription: "Reed leaf",
     pronunciation: "y or i",
@@ -308,8 +308,8 @@ export default function AlphabetPage() {
               follows the{" "}
               <span className="font-medium text-brown">Leyden Unified Transliteration</span>{" "}
               standard; the yod sign (M17) is shown as{" "}
-              <span className="font-display italic text-brown">ꞽ</span>{" "}
-              (U+A7BD), with the legacy notation{" "}
+              <span className="font-display italic text-brown">i͗</span>{" "}
+              (i with a stroke), with the legacy notation{" "}
               <span className="font-display italic text-brown">j</span>{" "}
               in parentheses.
             </p>
@@ -390,7 +390,7 @@ export default function AlphabetPage() {
                       <span className="font-display text-2xl font-semibold text-brown italic">
                         {entry.transliteration}
                       </span>
-                      {entry.transliteration === "ꞽ" && (
+                      {entry.transliteration === "i͗" && (
                         <span className="ml-1.5 text-xs text-sandstone font-sans not-italic align-top">
                           (j)
                         </span>
@@ -470,7 +470,7 @@ export default function AlphabetPage() {
                     <span className="font-display text-2xl font-semibold text-brown italic leading-none">
                       {entry.transliteration}
                     </span>
-                    {entry.transliteration === "ꞽ" && (
+                    {entry.transliteration === "i͗" && (
                       <span className="text-xs text-sandstone font-sans not-italic">
                         (j)
                       </span>
