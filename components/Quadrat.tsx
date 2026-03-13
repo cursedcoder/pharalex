@@ -256,20 +256,27 @@ function QuadratNode({
 
   if (node.type === "enclosure") {
     return (
-      <div
-        className="inline-flex items-center px-4 py-3 border-2 border-brown-dark/40 rounded-full bg-papyrus/30 mdc-enclosure"
-        style={{ height }}
-      >
-        <div className="flex items-end gap-1">
-          {node.children.map((child, i) => (
-            <QuadratNode
-              key={i}
-              node={child}
-              width={Math.round(width * 0.8)} // Simple scaling for enclosure content
-              height={Math.round(height * 0.8)}
-            />
-          ))}
+      <div className="relative inline-flex items-center">
+        <div
+          className="inline-flex items-center px-4 py-3 border-2 border-brown-dark/40 rounded-full bg-papyrus/30 mdc-enclosure"
+          style={{ height, overflow: "visible" }}
+        >
+          <div className="flex items-end gap-1">
+            {node.children.map((child, i) => (
+              <QuadratNode
+                key={i}
+                node={child}
+                width={Math.round(width * 0.8)} // Simple scaling for enclosure content
+                height={Math.round(height * 0.8)}
+              />
+            ))}
+          </div>
         </div>
+        {/* Cartouche knot/line at the end */}
+        <div 
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-1 border-r-2 border-brown-dark/40 mdc-enclosure z-20" 
+          style={{ height: '100%', display: 'block', minHeight: '10px', visibility: 'visible' }}
+        />
       </div>
     );
   }

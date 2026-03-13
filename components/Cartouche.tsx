@@ -35,58 +35,65 @@ export function Cartouche({
       )}
       
       {/* Cartouche oval */}
-      <div
-        className={`
-          inline-flex items-center ${config.gap} ${config.padding}
-          bg-papyrus/50
-          border-2 border-gold/40
-          rounded-full
-        `}
-      >
-        {royalName.codes.map((code, i) => {
-          const glyph = getGlyphByCode(code);
-          const primaryMeaning = glyph?.meanings[0]?.text;
-          const transliteration = glyph?.transliteration[0];
-          const description = glyph?.description;
+      <div className="relative inline-flex items-center">
+        <div
+          className={`
+            inline-flex items-center ${config.gap} ${config.padding}
+            bg-papyrus/50
+            border-2 border-gold/40
+            rounded-full
+          `}
+        >
+          {royalName.codes.map((code, i) => {
+            const glyph = getGlyphByCode(code);
+            const primaryMeaning = glyph?.meanings[0]?.text;
+            const transliteration = glyph?.transliteration[0];
+            const description = glyph?.description;
 
-          const glyphElement = (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={`/glyphs/${code}.svg`}
-              alt={code}
-              className={`${config.glyph} object-contain`}
-            />
-          );
+            const glyphElement = (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={`/glyphs/${code}.svg`}
+                alt={code}
+                className={`${config.glyph} object-contain`}
+              />
+            );
 
-          const wrappedGlyph = showLinks ? (
-            <Link
-              href={glyphHref(code)}
-              className="
-                hover:scale-110 hover:drop-shadow-md
-                transition-transform duration-150
-              "
-            >
-              {glyphElement}
-            </Link>
-          ) : (
-            glyphElement
-          );
+            const wrappedGlyph = showLinks ? (
+              <Link
+                href={glyphHref(code)}
+                className="
+                  hover:scale-110 hover:drop-shadow-md
+                  transition-transform duration-150
+                "
+              >
+                {glyphElement}
+              </Link>
+            ) : (
+              glyphElement
+            );
 
-          return (
-            <Tooltip
-              key={`${code}-${i}`}
-              content={
-                <GlyphTooltipContent
-                  code={code}
-                  transliteration={transliteration}
-                  meaning={primaryMeaning || description}
-                />
-              }
-            >
-              {wrappedGlyph}
-            </Tooltip>
-          );
-        })}
+            return (
+              <Tooltip
+                key={`${code}-${i}`}
+                content={
+                  <GlyphTooltipContent
+                    code={code}
+                    transliteration={transliteration}
+                    meaning={primaryMeaning || description}
+                  />
+                }
+              >
+                {wrappedGlyph}
+              </Tooltip>
+            );
+          })}
+        </div>
+        {/* Cartouche knot/line at the end */}
+        <div 
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-1 border-r-2 border-gold/40 z-20" 
+          style={{ height: '100%' }}
+        />
       </div>
       
       {/* Transliteration */}
