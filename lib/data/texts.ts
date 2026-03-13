@@ -1207,7 +1207,7 @@ export const TEXTS: EgyptianText[] = [
             grammar: "VERB",
           },
           {
-            mdc: "M17-M17-D52:D40",
+            mdc: "M17-M17-D53:D40",
             transliteration: "jj",
             translation: "coming",
             grammar: "VERB",
@@ -1231,7 +1231,8 @@ export const TEXTS: EgyptianText[] = [
             grammar: "NOUN",
           },
         ],
-        lineTranslation: "Year [x+1], month 3 of Šmw, day 27. Called out; brought. Coming — document. [Damaged.] Qay.",
+        lineTranslation:
+          "Year [x+1], month 3 of Šmw, day 27. Called out; brought. Coming — document. [Damaged.] Qay.",
       },
       {
         tokens: [
@@ -1292,7 +1293,8 @@ export const TEXTS: EgyptianText[] = [
             translation: "[heavily damaged]",
           },
         ],
-        lineTranslation: "Of the king Amenhotep, l.p.h. Workman [damaged] … Nefer [damaged] … [heavily damaged].",
+        lineTranslation:
+          "Of the king Amenhotep, l.p.h. Workman [damaged] … Nefer [damaged] … [heavily damaged].",
       },
       {
         tokens: [
@@ -1344,7 +1346,8 @@ export const TEXTS: EgyptianText[] = [
             grammar: "NOUN",
           },
         ],
-        lineTranslation: "Year [?], coming, clothing. His coming, bringing [damaged] … controller.",
+        lineTranslation:
+          "Year [?], coming, clothing. His coming, bringing [damaged] … controller.",
       },
       {
         tokens: [
@@ -1377,7 +1380,8 @@ export const TEXTS: EgyptianText[] = [
             translation: "[damaged / restored]",
           },
         ],
-        lineTranslation: "Serqet, Menmose, of the household [damaged] … [partially restored — heavily damaged].",
+        lineTranslation:
+          "Serqet, Menmose, of the household [damaged] … [partially restored — heavily damaged].",
       },
       {
         tokens: [
@@ -1416,7 +1420,8 @@ export const TEXTS: EgyptianText[] = [
             translation: "[damaged]",
           },
         ],
-        lineTranslation: "Tally [i+i+i]. Record under [someone]. Going out [damaged] … [damaged].",
+        lineTranslation:
+          "Tally [i+i+i]. Record under [someone]. Going out [damaged] … [damaged].",
       },
       {
         tokens: [
@@ -1456,7 +1461,8 @@ export const TEXTS: EgyptianText[] = [
             grammar: "NOUN",
           },
         ],
-        lineTranslation: "His coming [damaged] … after/behind [someone]. Sending, by causing him to come — the great one.",
+        lineTranslation:
+          "His coming [damaged] … after/behind [someone]. Sending, by causing him to come — the great one.",
       },
     ],
     bibliography: [

@@ -1,36 +1,29 @@
 /**
- * MdC → structured JSON pipeline using the Anthropic API.
+ * JSesh .gly line → structured JSON pipeline using the Anthropic API.
  *
- * Give it a raw MdC line (already split into per-token MdC strings) and an
- * optional known translation; get back a TextLine object ready to paste into
- * lib/data/texts.ts.
- *
- * Architecture (compiler-style, no hallucination-prone free generation):
+ * Architecture (compiler-style):
  *   1. Intent layer    — parse CLI input into a structured task
- *   2. Lexicon layer   — expose MDC_ALIASES as a reference (LLM reads, never invents)
- *   3. Planner         — Claude maps each MdC token → transliteration + translation + grammar
- *                        It NEVER changes the MdC strings; it only annotates them.
+ *   2. Split pass      — Claude segments a raw JSesh line into lexical MdC tokens
+ *                        (decides word boundaries; never invents or changes signs)
+ *   3. Annotate pass   — Claude maps each MdC token → transliteration + translation + grammar
  *   4. Validator       — check schema, grammar tags, non-empty fields
  *   5. Repair pass     — feed structured errors back (up to 3 rounds, temp 0)
- *   6. Output          — TypeScript snippet + raw JSON (stdout); diagnostics (stderr)
+ *   6. Output          — TypeScript snippet (stdout); diagnostics (stderr)
  *
- * Input modes:
- *   A) Pass individual MdC tokens directly:
- *      --mdc "i-Aa27-D&&&Y1-Hr*Z1:k" "nfr-f:r-Hr*Z1" "V30" "mA-A-G43&t-N8:Z2"
+ * Input:
+ *   --gly <file>         path to a JSesh .gly file
+ *   --line <n>           1-based line number within the .gly (text lines only, skipping headers)
+ *   --title <title>      text title for the output comment
+ *   --translation <str>  optional known whole-line translation
  *
- *   B) Pass a whole MdC line (space-separated quadrat groups) and let the
- *      script split it with --split:
- *      --mdc "i-Aa27-D&&&Y1-Hr*Z1:k nfr-f:r-Hr*Z1 V30 mA-A-G43&t-N8:Z2" --split
- *
- *   C) Provide a known translation to anchor the model:
- *      --translation "O, hail to you, beautiful of face, lord of radiance"
+ *   # Or pass MdC tokens directly (skip split pass):
+ *   --mdc "token1" "token2" ...
  *
  * Usage:
  *   npx tsx scripts/generate-text.ts \
- *     --title "Golden Mask of Tutankhamun" \
+ *     --gly "~/Downloads/O. Gardiner 4.gly" \
  *     --line 1 \
- *     --translation "O, hail to you, beautiful of face, lord of radiance," \
- *     --mdc "i-Aa27-D&&&Y1-Hr*Z1:k" "nfr-f:r-Hr*Z1" "V30" "mA-A-G43&t-N8:Z2"
+ *     --title "O. Gardiner 4: Work-Attendance Register"
  *
  * Env:
  *   ANTHROPIC_API_KEY  — required (or put it in .env.local)
@@ -60,8 +53,11 @@ if (fs.existsSync(envPath)) {
 interface Intent {
   title: string;
   line: number;
-  mdcTokens: string[];          // one MdC string per word/token
-  knownTranslation?: string;    // full-line translation if already known
+  /** Raw JSesh .gly line string — used when --gly is passed */
+  glyLine?: string;
+  /** Pre-split MdC tokens — used when --mdc is passed, or after split pass */
+  mdcTokens: string[];
+  knownTranslation?: string;
 }
 
 interface PlannedToken {
@@ -273,7 +269,137 @@ ${previousJson}
 Return ONLY corrected JSON.`;
 }
 
-// ─── Pipeline ────────────────────────────────────────────────────────────────
+// ─── Split pass (DP-first, LLM fallback for unknown spans) ───────────────────
+
+import { buildLexIndex, segment } from "./gly-segmenter";
+
+// Load lexicon once (lazy singleton)
+let _lexIndex: ReturnType<typeof buildLexIndex> | null = null;
+function getLexIndex(): ReturnType<typeof buildLexIndex> {
+  if (!_lexIndex) {
+    const wordsPath = path.join(__dirname, "../public/data/words.json");
+    _lexIndex = buildLexIndex(wordsPath);
+    console.error(`[segmenter] Lexicon loaded: ${_lexIndex.size} entries`);
+  }
+  return _lexIndex;
+}
+
+const SPLIT_SYSTEM_PROMPT = `You are an expert in JSesh hieroglyphic encoding and Manuel de Codage (MdC).
+
+Your task: given a contiguous MdC sign sequence that could not be segmented automatically,
+split it into lexical tokens — one token per Egyptian word or fixed phrase.
+
+Rules:
+- Return ONLY valid JSON — absolutely no prose, no explanation, no markdown fences.
+- Each token is a contiguous MdC string using the original sign codes and operators exactly as given.
+- Preserve ALL original notation: \\RNNN rotations, #b...#e damage markers, backtick half-cadrats, ligature operators (&, &&&, ^^^).
+- Do NOT resolve aliases, do NOT change any sign codes.
+- The concatenation of all tokens joined by "-" must equal the input span exactly.
+- Determinatives (A1 seated man, A2 man to mouth, A40 seated god, G7 falcon…) belong to the token they determine.
+- Number strokes that belong to the same numeral stay in one token.
+- Output format (nothing else): {"tokens":["token1","token2",...],"notes":"..."}`;
+
+function buildSplitFallbackMessage(span: string, title: string, lineNum: number): string {
+  return `Text: "${title}", line ${lineNum}
+
+Unknown MdC span (could not auto-segment):
+${span}
+
+Split this span into lexical MdC tokens.
+Return JSON: { "tokens": ["...", "..."], "notes": "..." }`;
+}
+
+async function runSplitPass(
+  client: Anthropic,
+  glyLine: string,
+  title: string,
+  lineNum: number,
+): Promise<string[]> {
+  console.error("[pipeline] DP segmentation…");
+  const lexIndex = getLexIndex();
+  const result = segment(glyLine, lexIndex);
+
+  console.error(`[segmenter] Coverage: ${(result.coverage * 100).toFixed(0)}%`);
+  if (result.unknownSpans.length > 0) {
+    console.error(`[segmenter] Unknown spans (→ LLM fallback): ${result.unknownSpans.join(", ")}`);
+  }
+
+  // If nothing unknown, we're done
+  if (result.unknownSpans.length === 0) {
+    console.error(`[segmenter] ${result.tokens.length} tokens (fully deterministic)`);
+    result.tokens.forEach((t, i) => console.error(`  [${i}] ${t}`));
+    return result.tokens;
+  }
+
+  // LLM fallback for unknown spans — replace each unknown span in result.tokens
+  // with LLM-produced sub-tokens
+  const finalTokens: string[] = [];
+  for (const tok of result.tokens) {
+    if (!result.unknownSpans.includes(tok)) {
+      finalTokens.push(tok);
+      continue;
+    }
+
+    console.error(`[pipeline] LLM fallback for span: ${tok}`);
+    let subTokens: string[];
+    try {
+      subTokens = await runLlmSplitSpan(client, tok, title, lineNum);
+    } catch (e) {
+      console.error(`[pipeline] LLM fallback failed for "${tok}", keeping as-is:`, e);
+      subTokens = [tok];
+    }
+    finalTokens.push(...subTokens);
+  }
+
+  console.error(`[segmenter] ${finalTokens.length} tokens (DP + LLM):`);
+  finalTokens.forEach((t, i) => console.error(`  [${i}] ${t}`));
+  return finalTokens;
+}
+
+async function runLlmSplitSpan(
+  client: Anthropic,
+  span: string,
+  title: string,
+  lineNum: number,
+): Promise<string[]> {
+  const response = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 1024,
+    temperature: 0,
+    system: SPLIT_SYSTEM_PROMPT,
+    messages: [{ role: "user", content: buildSplitFallbackMessage(span, title, lineNum) }],
+  });
+
+  const block = response.content.find((b) => b.type === "text");
+  const raw = block?.text?.trim() ?? "";
+
+  let parsed: { tokens: string[]; notes?: string };
+  try {
+    const stripped = raw.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+    parsed = JSON.parse(stripped);
+  } catch (e) {
+    const retry = await client.messages.create({
+      model: "claude-sonnet-4-6",
+      max_tokens: 1024,
+      temperature: 0,
+      system: SPLIT_SYSTEM_PROMPT,
+      messages: [
+        { role: "user", content: buildSplitFallbackMessage(span, title, lineNum) },
+        { role: "assistant", content: raw },
+        { role: "user", content: "Return ONLY valid JSON. No prose, no explanation." },
+      ],
+    });
+    const retryBlock = retry.content.find((b) => b.type === "text");
+    const retryRaw = retryBlock?.text?.trim() ?? "";
+    const stripped2 = retryRaw.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+    parsed = JSON.parse(stripped2);
+  }
+
+  if (parsed.notes) console.error("[split fallback notes]", parsed.notes);
+  return parsed.tokens ?? [span];
+}
+
+
 
 async function runPipeline(intent: Intent): Promise<void> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -287,6 +413,11 @@ async function runPipeline(intent: Intent): Promise<void> {
   }
 
   const client = new Anthropic({ apiKey });
+
+  // Split pass — only when a raw .gly line was provided
+  if (intent.glyLine) {
+    intent.mdcTokens = await runSplitPass(client, intent.glyLine, intent.title, intent.line);
+  }
 
   const MAX_ROUNDS = 3;
   let rawJson = "";
@@ -396,6 +527,29 @@ function formatAsTs(line: LineOutput, intent: Intent): string {
 
 // ─── CLI ──────────────────────────────────────────────────────────────────────
 
+/** Read a .gly file and extract the Nth text line (1-based, skipping JSesh headers and metadata). */
+function extractGlyLine(glyFile: string, lineNum: number): string {
+  const raw = fs.readFileSync(glyFile, "utf8");
+  const textLines = raw
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => {
+      // Skip JSesh header/metadata lines
+      if (l.startsWith("++")) return false; // settings
+      if (l.startsWith("+b") || l.startsWith("+i")) return false; // bold/italic labels
+      if (l === "") return false;
+      return true;
+    });
+
+  if (lineNum < 1 || lineNum > textLines.length) {
+    console.error(`Error: line ${lineNum} not found. File has ${textLines.length} text lines.`);
+    process.exit(1);
+  }
+
+  // Strip trailing "-!" line terminator
+  return textLines[lineNum - 1].replace(/-!$/, "");
+}
+
 function parseArgs(): Intent {
   const args = process.argv.slice(2);
 
@@ -408,39 +562,51 @@ function parseArgs(): Intent {
   const title       = flag("--title")       ?? "Unknown text";
   const lineStr     = flag("--line")        ?? "1";
   const translation = flag("--translation");
-  const splitMode   = args.includes("--split");
+  const glyFile     = flag("--gly");
 
-  // Collect --mdc values: everything after --mdc that doesn't start with --
+  // --gly mode: read file and extract line
+  if (glyFile) {
+    const resolvedPath = glyFile.replace(/^~/, process.env.HOME ?? "");
+    const glyLine = extractGlyLine(resolvedPath, parseInt(lineStr, 10));
+    console.error(`[pipeline] .gly line ${lineStr}: ${glyLine}`);
+    return {
+      title,
+      line: parseInt(lineStr, 10),
+      glyLine,
+      mdcTokens: [],
+      knownTranslation: translation,
+    };
+  }
+
+  // --mdc mode: tokens passed directly
   const mdcIdx = args.indexOf("--mdc");
   if (mdcIdx === -1) {
     console.error(
       "Usage:\n" +
+      "  # From a JSesh .gly file (recommended):\n" +
       "  npx tsx scripts/generate-text.ts \\\n" +
+      '    --gly "/path/to/file.gly" --line 1 \\\n' +
       '    --title "Text title" \\\n' +
-      "    --line 1 \\\n" +
-      '    [--translation "Full line translation"] \\\n' +
-      '    --mdc "token1-mdc" "token2-mdc" ...\n' +
+      '    [--translation "Full line translation"]\n' +
       "\n" +
-      '  # Or pass one space-separated string and let the script split it:\n' +
-      '    --mdc "token1-mdc token2-mdc ..." --split'
+      "  # Or pass MdC tokens directly:\n" +
+      "  npx tsx scripts/generate-text.ts \\\n" +
+      '    --title "Text title" --line 1 \\\n' +
+      '    --mdc "token1" "token2" ...'
     );
     process.exit(1);
   }
 
-  const rawMdcValues: string[] = [];
+  const mdcTokens: string[] = [];
   for (let i = mdcIdx + 1; i < args.length; i++) {
     if (args[i].startsWith("--")) break;
-    rawMdcValues.push(args[i]);
+    mdcTokens.push(args[i]);
   }
 
-  if (rawMdcValues.length === 0) {
+  if (mdcTokens.length === 0) {
     console.error("Error: --mdc requires at least one token.");
     process.exit(1);
   }
-
-  const mdcTokens = splitMode
-    ? rawMdcValues.join(" ").split(/\s+/).filter(Boolean)
-    : rawMdcValues;
 
   return {
     title,
