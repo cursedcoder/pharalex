@@ -3,6 +3,8 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { getAllCategories, getGlyphsByCategory } from "@/lib/glyphs";
 
+export const revalidate = 86400;
+
 export const metadata = {
   title: "Categories - PharaLex",
   description: "Browse Egyptian hieroglyphs by Gardiner category. Explore all 26 Gardiner categories from humans and animals to buildings and abstract signs.",

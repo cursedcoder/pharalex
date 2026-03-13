@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import BrowseClient from "./BrowseClient";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Browse Hieroglyphs",
   description:

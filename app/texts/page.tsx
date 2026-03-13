@@ -5,6 +5,8 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import TextsClient from "./TextsClient";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Hieroglyphic Texts",
   description:

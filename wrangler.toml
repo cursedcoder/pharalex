@@ -3,5 +3,9 @@ main = ".open-next/worker.js"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 
+routes = [
+  { pattern = "pharalex.app", custom_domain = true }
+]
+
 [assets]
 directory = ".open-next/assets"
