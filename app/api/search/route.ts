@@ -3,7 +3,7 @@ import { fuzzySearch } from "@/lib/search";
 import { searchWords, wordHref, translitToUnicode } from "@/lib/words";
 import type { DictionaryWord } from "@/lib/types";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export type GlyphResult = {
   kind: "glyph";
