@@ -30,10 +30,7 @@ const GRAMMAR_BADGE_VARIANTS: Record<string, "gold" | "sandstone" | "outline" | 
   PREP: "outline", PRON: "outline",
 };
 
-export async function generateStaticParams() {
-  const translits = getAllTransliterations();
-  return translits.map((t) => ({ slug: wordSlug(t) }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
