@@ -16,6 +16,7 @@ import {
   glyphHref,
 } from "@/lib/glyphs";
 import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
+import { getWordsByGardinerCode, wordHref } from "@/lib/words";
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -69,6 +70,7 @@ export default async function GlyphPage({ params }: PageProps) {
   const baseGlyph = baseCode ? getGlyphByCode(baseCode) : null;
   const variantSiblings = getVariantSiblings(glyph.code);
   const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
+  const wordsUsingGlyph = getWordsByGardinerCode(glyph.code, 12);
 
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
@@ -543,6 +545,38 @@ export default async function GlyphPage({ params }: PageProps) {
                       />
                     ))}
                   </div>
+                </section>
+              )}
+
+              {wordsUsingGlyph.length > 0 && (
+                <section>
+                  <h3 className="font-display text-lg font-semibold text-brown mb-3">
+                    Words Using This Glyph
+                  </h3>
+                  <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 space-y-1">
+                    {wordsUsingGlyph.map((word) => (
+                      <Link
+                        key={word.transliteration}
+                        href={wordHref(word.transliteration)}
+                        className="flex items-baseline justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-gold/10 transition-colors group"
+                      >
+                        <span className="font-mono text-sm font-medium text-brown group-hover:text-gold-dark transition-colors shrink-0">
+                          {word.transliteration}
+                        </span>
+                        <span className="text-xs text-sandstone/70 truncate text-right">
+                          {word.translation.length > 30
+                            ? word.translation.slice(0, 30) + "…"
+                            : word.translation}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                  <Link
+                    href={`/words?q=${encodeURIComponent(glyph.code)}`}
+                    className="mt-2 block text-xs text-gold-dark hover:text-gold transition-colors"
+                  >
+                    Search all words with {glyph.code} →
+                  </Link>
                 </section>
               )}
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { EgyptianText, TextToken } from "@/lib/types";
 import { mdcToCodes } from "@/lib/mdc";
 import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
+import { wordHref } from "@/lib/words";
 import { Quadrat, getWordWidth } from "./Quadrat";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 
@@ -262,6 +263,15 @@ function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void
             </span>
           </div>
         )}
+      </div>
+
+      <div className="pt-2">
+        <Link
+          href={wordHref(token.transliteration)}
+          className="inline-flex items-center gap-1.5 text-xs text-gold-dark hover:text-gold transition-colors font-medium"
+        >
+          Look up &ldquo;{token.transliteration}&rdquo; in dictionary →
+        </Link>
       </div>
     </div>
   );

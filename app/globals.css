@@ -110,7 +110,7 @@ body {
   font-family: "Noto Sans Egyptian Hieroglyphs";
   src: url("https://fonts.gstatic.com/s/notosansegyptianhieroglyphs/v30/vEF42-tODB8RrNDvZSUmRhcQHzx1s7y_F9-j3qSzEcbEYintdVi99Rg.woff2")
     format("woff2");
-  unicode-range: U+13000-13455, U+13460-143FA;
+  unicode-range: U+13000-1467F;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
