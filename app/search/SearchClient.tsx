@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef, Suspense } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
@@ -8,9 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { GlyphCard } from "@/components/GlyphCard";
 import { Quadrat } from "@/components/Quadrat";
-import { fuzzySearch } from "@/lib/search";
-import { searchWords, wordHref, translitToUnicode } from "@/lib/words";
-import type { Glyph, DictionaryWord } from "@/lib/types";
+import type { SearchApiResult } from "@/app/api/search/route";
 
 const GRAMMAR_LABELS: Record<string, string> = {
   NOUN: "Noun", VERB: "Verb", ADJ: "Adjective", ADV: "Adverb",
@@ -24,43 +22,25 @@ const GRAMMAR_BADGE_VARIANTS: Record<string, "gold" | "sandstone" | "outline" | 
   PREP: "outline", PRON: "outline",
 };
 
-type MergedResult =
-  | { kind: "glyph"; glyph: Glyph; score: number }
-  | { kind: "word"; word: DictionaryWord; score: number };
-
-/** Assign a 0–1 relevance score to a word result matching the query. */
-function wordScore(word: DictionaryWord, q: string): number {
-  const tl = word.transliteration.toLowerCase();
-  const tr = word.translation.toLowerCase();
-  if (tl === q) return 0;
-  if (tl.startsWith(q)) return 0.05;
-  if (tr === q) return 0.08;
-  if (tr.startsWith(q)) return 0.12;
-  if (tl.includes(q)) return 0.2;
-  if (tr.includes(q)) return 0.25;
-  return 0.35;
-}
-
-
-function WordCard({ word }: { word: DictionaryWord }) {
+function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" }> }) {
   return (
-    <Link href={wordHref(word.transliteration)} className="block group">
+    <Link href={result.href} className="block group">
       <div className="bg-ivory-dark/50 dark:bg-ivory-dark border border-sandstone/20 rounded-lg p-4 h-full hover:shadow-md hover:border-gold/40 transition-all duration-200">
         <div className="w-full rounded-lg bg-papyrus/50 border border-sandstone/20 flex items-center justify-center py-3 mb-4 overflow-hidden group-hover:scale-[1.02] transition-transform">
-          <Quadrat mdc={word.mdc} baseSize={36} disableLinks />
+          <Quadrat mdc={result.mdc} baseSize={36} disableLinks />
         </div>
         <div className="flex items-center gap-2 mb-1">
           <h3 className="font-display text-lg font-semibold text-brown">
-            {translitToUnicode(word.transliteration)}
+            {result.transliterationUnicode}
           </h3>
-          {word.grammar && (
-            <Badge variant={GRAMMAR_BADGE_VARIANTS[word.grammar] ?? "outline"}>
-              {GRAMMAR_LABELS[word.grammar] ?? word.grammar}
+          {result.grammar && (
+            <Badge variant={GRAMMAR_BADGE_VARIANTS[result.grammar] ?? "outline"}>
+              {GRAMMAR_LABELS[result.grammar] ?? result.grammar}
             </Badge>
           )}
         </div>
         <p className="text-sm text-sandstone mb-2">Middle Egyptian word</p>
-        <p className="text-sm text-brown-light line-clamp-2">{word.translation}</p>
+        <p className="text-sm text-brown-light line-clamp-2">{result.translation}</p>
       </div>
     </Link>
   );
@@ -72,55 +52,74 @@ function SearchContent() {
   const initialQuery = searchParams.get("q") || "";
 
   const [query, setQuery] = useState(initialQuery);
-  const [merged, setMerged] = useState<MergedResult[]>([]);
+  const [results, setResults] = useState<SearchApiResult[]>([]);
   const [isSearching, setIsSearching] = useState(!!initialQuery);
   const [filter, setFilter] = useState<"all" | "glyphs" | "words">("all");
 
+  const abortRef = useRef<AbortController | null>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const runSearch = useCallback(async (q: string) => {
+    if (abortRef.current) abortRef.current.abort();
+    if (!q.trim() || q.trim().length < 2) {
+      setResults([]);
+      setIsSearching(false);
+      return;
+    }
+
+    setIsSearching(true);
+    const controller = new AbortController();
+    abortRef.current = controller;
+
+    try {
+      const res = await fetch(`/api/search?q=${encodeURIComponent(q.trim())}`, {
+        signal: controller.signal,
+      });
+      const data = await res.json();
+      setResults(data.results ?? []);
+      setFilter("all");
+    } catch (e) {
+      if ((e as Error).name !== "AbortError") {
+        setResults([]);
+      }
+    } finally {
+      setIsSearching(false);
+    }
+  }, []);
+
+  // Run search on initial query from URL
   useEffect(() => {
     const q = searchParams.get("q") || "";
     setQuery(q);
-    if (q.trim()) {
-      setIsSearching(true);
-      const timer = setTimeout(() => {
-        const ql = q.trim().toLowerCase();
-        const glyphRes = fuzzySearch(q, 60).map<MergedResult>((r) => ({
-          kind: "glyph", glyph: r.glyph, score: r.score ?? 1,
-        }));
-        const wordRes = searchWords(q, 40).map<MergedResult>((w) => ({
-          kind: "word", word: w, score: wordScore(w, ql),
-        }));
-        const all = [...glyphRes, ...wordRes].sort((a, b) => a.score - b.score);
-        setMerged(all);
-        setIsSearching(false);
-        setFilter("all");
-      }, 1200);
-      return () => clearTimeout(timer);
-    } else {
-      setMerged([]);
-      setIsSearching(false);
-    }
-  }, [searchParams]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const pushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+    runSearch(q);
+  }, [searchParams, runSearch]);
 
   const handleSearch = (newQuery: string) => {
     setQuery(newQuery);
+
+    // Debounce the actual search
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => runSearch(newQuery), 150);
+
+    // Debounce URL update (longer, just for shareability)
     if (pushTimer.current) clearTimeout(pushTimer.current);
     pushTimer.current = setTimeout(() => {
       if (newQuery.trim()) {
-        router.push(`/search?q=${encodeURIComponent(newQuery)}`, { scroll: false });
+        router.replace(`/search?q=${encodeURIComponent(newQuery)}`, { scroll: false });
       } else {
-        router.push("/search", { scroll: false });
+        router.replace("/search", { scroll: false });
       }
-    }, 300);
+    }, 500);
   };
-  const glyphCount = useMemo(() => merged.filter((r) => r.kind === "glyph").length, [merged]);
-  const wordCount = useMemo(() => merged.filter((r) => r.kind === "word").length, [merged]);
+
+  const glyphCount = useMemo(() => results.filter((r) => r.kind === "glyph").length, [results]);
+  const wordCount = useMemo(() => results.filter((r) => r.kind === "word").length, [results]);
   const visible = useMemo(() => {
-    if (filter === "glyphs") return merged.filter((r) => r.kind === "glyph");
-    if (filter === "words") return merged.filter((r) => r.kind === "word");
-    return merged;
-  }, [merged, filter]);
+    if (filter === "glyphs") return results.filter((r) => r.kind === "glyph");
+    if (filter === "words") return results.filter((r) => r.kind === "word");
+    return results;
+  }, [results, filter]);
 
   return (
     <div className="min-h-screen">
@@ -151,9 +150,16 @@ function SearchContent() {
                   "
                 />
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 text-sandstone/50">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
+                  {isSearching ? (
+                    <svg className="w-6 h-6 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                    </svg>
+                  ) : (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  )}
                 </div>
               </div>
 
@@ -174,10 +180,10 @@ function SearchContent() {
             </div>
           </div>
 
-          {query && !isSearching && merged.length > 0 && (
+          {query && !isSearching && results.length > 0 && (
             <div className="mb-5 flex items-center gap-3 flex-wrap">
               <p className="text-sandstone text-sm">
-                {merged.length} result{merged.length !== 1 ? "s" : ""} for{" "}
+                {results.length} result{results.length !== 1 ? "s" : ""} for{" "}
                 <span className="text-brown font-medium">&ldquo;{query}&rdquo;</span>
               </p>
               <button
@@ -217,35 +223,44 @@ function SearchContent() {
             </div>
           )}
 
-          {isSearching ? (
-            <div className="flex flex-col items-center justify-center py-20 select-none">
-              <div className="relative flex items-center justify-center mb-6">
-                <span className="font-hieroglyph text-6xl text-gold/80 animate-[hierospin_1.8s_ease-in-out_infinite]">𓂀</span>
-                <span className="font-hieroglyph text-4xl text-sandstone/50 absolute -left-12 animate-[hierofade_1.8s_ease-in-out_infinite]" style={{ animationDelay: "0.3s" }}>𓃭</span>
-                <span className="font-hieroglyph text-4xl text-sandstone/50 absolute -right-12 animate-[hierofade_1.8s_ease-in-out_infinite]" style={{ animationDelay: "0.6s" }}>𓆣</span>
-              </div>
-              <p className="text-sandstone text-sm tracking-widest uppercase">Consulting the scrolls…</p>
-            </div>
-          ) : merged.length > 0 ? (
+          {results.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {visible.map((r, i) =>
-                r.kind === "glyph"
-                  ? <GlyphCard key={`g-${r.glyph.code}`} glyph={r.glyph} />
-                  : <WordCard key={`w-${r.word.transliteration}-${i}`} word={r.word} />
+                r.kind === "glyph" ? (
+                  <GlyphCard
+                    key={`g-${r.code}`}
+                    glyph={{
+                      code: r.code,
+                      unicode: r.unicode,
+                      category: r.category,
+                      categoryName: r.categoryName,
+                      description: r.description,
+                      transliteration: r.transliteration,
+                      meanings: r.meanings.map((m) => ({
+                        text: m.text,
+                        type: m.type as "logogram" | "phonogram" | "determinative" | "other",
+                      })),
+                      related: r.related,
+                      source: r.source as "wiktionary" | "unicode" | "both" | undefined,
+                    }}
+                  />
+                ) : (
+                  <WordCard key={`w-${r.transliteration}-${i}`} result={r} />
+                )
               )}
             </div>
-          ) : query ? (
+          ) : query && !isSearching ? (
             <div className="text-center py-12">
               <div className="font-hieroglyph text-6xl text-sandstone/30 mb-4">𓂝</div>
               <p className="text-sandstone mb-4">No results found for &ldquo;{query}&rdquo;</p>
               <p className="text-sm text-sandstone/70">Try a different term, Gardiner code (like &ldquo;A1&rdquo;), or English meaning.</p>
             </div>
-          ) : (
+          ) : !query ? (
             <div className="text-center py-12">
               <div className="font-hieroglyph text-6xl text-sandstone/30 mb-4">𓁹</div>
               <p className="text-sandstone">Enter a search term to find hieroglyphs and words</p>
             </div>
-          )}
+          ) : null}
         </Container>
       </main>
     </div>
