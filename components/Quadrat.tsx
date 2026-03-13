@@ -4,7 +4,7 @@ import Link from "next/link";
 import { createContext, useContext } from "react";
 import { parseMdc, extractCodes } from "@/lib/mdc";
 import type { MdcNode } from "@/lib/mdc";
-import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
+import { glyphHref } from "@/lib/glyph-utils";
 import { useGlyphDetail } from "./GlyphDetailsContext";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 import {
@@ -30,6 +30,8 @@ type Dims = { w: number; h: number };
 export function naturalSize(node: MdcNode): Dims {
   if (node.type === "sign") {
     const [w, h] = glyphSize(node.code);
+    // 90° and 270° rotations swap the bounding box dimensions
+    if (node.rotation === 90 || node.rotation === 270) return { w: h, h: w };
     return { w, h };
   }
 
@@ -267,7 +269,7 @@ function QuadratNode({
   height: number;
 }) {
   if (node.type === "sign") {
-    return <SignCell code={node.code} width={width} height={height} />;
+    return <SignCell code={node.code} width={width} height={height} rotation={node.rotation} />;
   }
 
   if (node.type === "lacuna") {
@@ -484,7 +486,7 @@ function SimpleLigNode({
         {behind.map((p) => (
           <image
             key={`bg-${p.code}`}
-            href={glyphSvgSrc(p.code)}
+            href={`/glyphs/${p.code}.svg`}
             x={p.x}
             y={p.y}
             width={p.w}
@@ -494,7 +496,7 @@ function SimpleLigNode({
         ))}
         {anchorCode && (
           <image
-            href={glyphSvgSrc(anchorCode)}
+            href={`/glyphs/${anchorCode}.svg`}
             x={0}
             y={0}
             width={anchorSize.w}
@@ -589,7 +591,7 @@ function LigatureNode({
         {behind.map((p) => (
           <image
             key={`bg-${p.code}`}
-            href={glyphSvgSrc(p.code)}
+            href={`/glyphs/${p.code}.svg`}
             x={p.x}
             y={p.y}
             width={p.w}
@@ -599,7 +601,7 @@ function LigatureNode({
         ))}
         {anchorCode && (
           <image
-            href={glyphSvgSrc(anchorCode)}
+            href={`/glyphs/${anchorCode}.svg`}
             x={0}
             y={0}
             width={anchorNat.w}
@@ -797,10 +799,12 @@ function SignCell({
   code,
   width,
   height,
+  rotation,
 }: {
   code: string;
   width: number;
   height: number;
+  rotation?: 90 | 180 | 270;
 }) {
   const disableLinks = useContext(DisableLinksContext);
   const detail = useGlyphDetail(code);
@@ -809,12 +813,20 @@ function SignCell({
 
   if (!code || code === "?" || code === "") return null;
 
+  // For rotated signs, the img is rendered at its natural (pre-rotation) size
+  // then CSS-rotated so it fits the swapped bounding box.
+  const imgW = rotation === 90 || rotation === 270 ? height : width;
+  const imgH = rotation === 90 || rotation === 270 ? width : height;
+  const rotateStyle: React.CSSProperties = rotation
+    ? { transform: `rotate(${rotation}deg)`, transformOrigin: "center" }
+    : {};
+
   const img = (
     /* eslint-disable-next-line @next/next/no-img-element */
     <img
-      src={glyphSvgSrc(code)}
+      src={`/glyphs/${code}.svg`}
       alt={code}
-      style={{ width, height }}
+      style={{ width: imgW, height: imgH, ...rotateStyle }}
       className="object-contain"
       onError={(e) => {
         (e.target as HTMLImageElement).style.display = "none";

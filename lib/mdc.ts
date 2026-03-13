@@ -17,7 +17,7 @@
  */
 
 export type MdcNode =
-  | { type: "sign"; code: string }
+  | { type: "sign"; code: string; rotation?: 90 | 180 | 270 }
   | { type: "horiz"; children: MdcNode[] }   // * — side by side
   | { type: "vert"; children: MdcNode[] }    // : — top over bottom
   | { type: "seq"; children: MdcNode[] }     // - — separate quadrats
@@ -248,6 +248,15 @@ function parseAtom(s: string): MdcNode {
       children: splitAt(content, "-").map(parseVert),
     };
   }
+
+  // Parse optional rotation suffix: CODE\R90, CODE\R180, CODE\R270
+  const rotMatch = s.match(/^(.+?)\\R(90|180|270)$/);
+  if (rotMatch) {
+    const code = resolveAlias(rotMatch[1].trim());
+    const rotation = parseInt(rotMatch[2], 10) as 90 | 180 | 270;
+    return { type: "sign", code, rotation };
+  }
+
   return { type: "sign", code: resolveAlias(s.trim()) };
 }
 

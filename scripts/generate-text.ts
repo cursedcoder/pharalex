@@ -204,10 +204,19 @@ Rules:
 - Return ONLY valid JSON — no prose, no markdown fences.
 - The output tokens array must have EXACTLY the same number of entries as the input mdc_tokens array.
 - The "mdc" field of each output token must be IDENTICAL to the corresponding input token — do not modify it.
-- Use standard Egyptological transliteration with proper diacritics (ꜣ ꜥ ḥ ḫ ẖ š ṯ ḏ ṯ).
+- Use standard Egyptological transliteration with proper diacritics (ꜣ ꜥ ḥ ḫ ẖ š ṯ ḏ).
+- Transliteration conventions (follow these exactly):
+    • Use "j" for the yod (M17, i-alias), not "i".
+    • Do NOT use "=" as a suffix connector. Write suffix pronouns with a space (e.g. "rḏj.n n", not "rḏj.n=n"; "jrt k", not "jrt=k").
+    • Use "-" as the infix separator within a compound token (e.g. jnḏ-ḥr k, nfr-ḥr).
+    • Do NOT split a single MdC token into multiple transliteration words — one mdc → one transliteration string.
+    • Verbal forms ending in .n use a dot (ṯs.n, sqꜣ.n), not a hyphen.
 - Grammar tags: NOUN VERB ADJ PREP PRON PART CONJ ADV DET INTJ NUM OTHER
+  • Tag the whole token, not just the stem. E.g. "jnḏ-ḥr k" is a VERB (greeting formula), not INTJ.
 - If the whole-line translation is already provided, use it as lineTranslation unchanged.
 - If lineTranslation is not provided, compose it from the per-token translations.
+- For translation, render the token's contextual English meaning including prepositions
+  (e.g. "of radiance", not just "radiance"; "hail to you", not "O, hail to you" when "O" belongs to the whole line).
 - Use the MdC alias table only as a reading aid — it tells you which Gardiner sign each alias refers to.`;
 
 function buildAliasReference(): string {
@@ -288,7 +297,7 @@ async function runPipeline(intent: Intent): Promise<void> {
     if (round === 0) {
       console.error(`[pipeline] Planning…`);
       const response = await client.messages.create({
-        model: "claude-opus-4-5",
+        model: "claude-sonnet-4-6",
         max_tokens: 4096,
         temperature: 0.1,
         system: SYSTEM_PROMPT,
@@ -299,7 +308,7 @@ async function runPipeline(intent: Intent): Promise<void> {
     } else {
       console.error(`[pipeline] Repair round ${round}…`);
       const response = await client.messages.create({
-        model: "claude-opus-4-5",
+        model: "claude-sonnet-4-6",
         max_tokens: 4096,
         temperature: 0,
         system: SYSTEM_PROMPT,
