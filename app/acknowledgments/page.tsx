@@ -144,28 +144,6 @@ const DATA_SOURCES: DataSource[] = [
     commercial: false,
   },
   {
-    name: "TLA Earlier Egyptian Corpus (v18)",
-    records: "12,773",
-    provides:
-      "Attested text examples: hieroglyphs + transliteration + German translation + date range, Old/Middle Egyptian (~3000–1550 BCE)",
-    author: "Thesaurus Linguae Aegyptiae (Berlin-Brandenburg Academy of Sciences)",
-    url: "https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-Earlier_Egyptian_original-v18-premium",
-    license: "CC BY-SA 4.0",
-    licenseVariant: "gold",
-    commercial: true,
-  },
-  {
-    name: "TLA Late Egyptian Corpus (v19)",
-    records: "3,606",
-    provides:
-      "Same as above for Late Egyptian period (~1550–700 BCE)",
-    author: "Thesaurus Linguae Aegyptiae (Berlin-Brandenburg Academy of Sciences)",
-    url: "https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-late_egyptian-v19-premium",
-    license: "CC BY-SA 4.0",
-    licenseVariant: "gold",
-    commercial: true,
-  },
-  {
     name: "Aegyptus Glyph List",
     records: "3,900",
     provides:

@@ -4,14 +4,6 @@ export interface GlyphMeaning {
   period?: string;
 }
 
-export interface GlyphExample {
-  hieroglyphs: string;
-  transliteration: string;
-  translation: string;
-  period?: string;
-  corpus: "earlier" | "late";
-}
-
 export interface Glyph {
   code: string;
   unicode: string;
@@ -22,7 +14,6 @@ export interface Glyph {
   transliteration: string[];
   etymology?: string;
   tags?: string[];
-  examples?: GlyphExample[];
   related: string[];
   source?: "wiktionary" | "unicode" | "both";
 }

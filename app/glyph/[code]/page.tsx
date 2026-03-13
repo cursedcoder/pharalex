@@ -1,6 +1,5 @@
 export const dynamic = "force-static";
 
-import { glyphSvgSrc } from "@/lib/glyph-utils";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
@@ -183,7 +182,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             <div className="shrink-0 w-8 h-8 rounded-md bg-gold/10 flex items-center justify-center p-1 group-hover:bg-gold/20 transition-colors">
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src={glyphSvgSrc(baseGlyph.code)}
+                                src={`/glyphs/${encodeURIComponent(baseGlyph.code)}.svg`}
                                 alt={baseGlyph.code}
                                 className="w-full h-full object-contain"
                               />
@@ -217,7 +216,7 @@ export default async function GlyphPage({ params }: PageProps) {
                                   >
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
-                                      src={glyphSvgSrc(v.code)}
+                                      src={`/glyphs/${encodeURIComponent(v.code)}.svg`}
                                       alt={v.code}
                                       className="w-10 h-10 object-contain"
                                     />
@@ -314,7 +313,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             >
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img
-                                src={glyphSvgSrc(v.code)}
+                                src={`/glyphs/${encodeURIComponent(v.code)}.svg`}
                                 alt={v.code}
                                 className="w-10 h-10 object-contain"
                               />
@@ -419,50 +418,6 @@ export default async function GlyphPage({ params }: PageProps) {
                 </section>
               )}
 
-              {glyph.examples && glyph.examples.length > 0 && (
-                <section>
-                  <h2 className="font-display text-2xl font-semibold text-brown mb-4">
-                    Attested Examples
-                    <span className="ml-2 text-base font-normal text-sandstone">
-                      from the TLA corpus
-                    </span>
-                  </h2>
-                  <div className="space-y-4">
-                    {glyph.examples.map((ex, index) => (
-                      <div
-                        key={index}
-                        className="
-                          bg-ivory-dark/50 border border-sandstone/20 rounded-xl
-                          p-4 sm:p-6
-                        "
-                      >
-                        <p className="font-hieroglyph text-3xl leading-loose mb-3 text-brown">
-                          {ex.hieroglyphs.replace(/<g>[^<]*<\/g>/g, "")}
-                        </p>
-                        <p className="text-sm italic text-brown-light mb-1">
-                          {ex.transliteration}
-                        </p>
-                        <p className="text-sm text-sandstone">
-                          {ex.translation}
-                        </p>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          {ex.period && (
-                            <span className="text-xs px-2 py-0.5 rounded bg-sandstone/10 text-sandstone">
-                              {ex.period}
-                            </span>
-                          )}
-                          <span className="text-xs px-2 py-0.5 rounded bg-sandstone/10 text-sandstone capitalize">
-                            {ex.corpus} Egyptian
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mt-3 text-xs text-sandstone/60">
-                    Source: Thesaurus Linguae Aegyptiae corpus (CC BY-SA 4.0) — translations in German.
-                  </p>
-                </section>
-              )}
             </div>
 
             <div className="space-y-6">
@@ -507,12 +462,6 @@ export default async function GlyphPage({ params }: PageProps) {
                     <div className="flex justify-between">
                       <dt className="text-sandstone">Source</dt>
                       <dd className="text-brown capitalize">{glyph.source}</dd>
-                    </div>
-                  )}
-                  {glyph.examples && glyph.examples.length > 0 && (
-                    <div className="flex justify-between">
-                      <dt className="text-sandstone">Text examples</dt>
-                      <dd className="text-brown">{glyph.examples.length}</dd>
                     </div>
                   )}
                 </dl>
@@ -618,7 +567,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             {pharaoh.royalNames?.nomen?.codes?.[0] ? (
                               // eslint-disable-next-line @next/next/no-img-element
                               <img
-                                src={glyphSvgSrc(pharaoh.royalNames.nomen.codes[0])}
+                                src={`/glyphs/${pharaoh.royalNames.nomen.codes[0]}.svg`}
                                 alt=""
                                 className="w-full h-full object-contain"
                               />

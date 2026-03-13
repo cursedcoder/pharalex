@@ -143,14 +143,18 @@ function parseSignUse(filePath: string): Map<string, SignUse> {
         const tr = item.tr
           ? typeof item.tr === "string"
             ? item.tr
-            : String(item.tr)
+            : typeof item.tr === "object" && "#text" in (item.tr as object)
+              ? String((item.tr as Record<string, unknown>)["#text"])
+              : String(item.tr)
           : null;
 
         // `describe` field (used in <det> when no specific word, just a range)
         const describe = item.describe
           ? typeof item.describe === "string"
             ? item.describe
-            : String(item.describe)
+            : typeof item.describe === "object" && "#text" in (item.describe as object)
+              ? String((item.describe as Record<string, unknown>)["#text"])
+              : String(item.describe)
           : null;
 
         // Build a human-readable meaning text

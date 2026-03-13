@@ -254,6 +254,15 @@ function parseLine(raw: string): VygusEntry | null {
     if (MdC_LOWERCASE_TOKENS.has(tok)) return false;
     // Starts with lowercase
     if (ch >= "a" && ch <= "z") {
+      // Egyptian MdC transliteration embeds uppercase for special consonants (H=ḥ, D=ḏ,
+      // T=ṯ, A=ʿ, X=ẖ, S=š …) anywhere inside the token, even when it starts lowercase.
+      // e.g. "nTrw", "mDw", "pHwy", "kAp", "mabA-snw" — never English.
+      if (/[A-Z]/.test(tok.slice(1))) return false;
+      // Hyphenated compound tokens (e.g. "sr-fdw", "ir-n-Hr") are MdC transliterations.
+      // English translations in this dictionary never begin with a hyphenated word.
+      if (tok.includes("-")) return false;
+      // Known MdC lowercase tokens → NOT English
+      if (MdC_LOWERCASE_TOKENS.has(tok)) return false;
       // Single-char lowercase that is a common English article/particle
       if (tok.length === 1 && (tok === "a" || tok === "o")) return true;
       return tok.length >= 2; // any lowercase word ≥2 chars is English ("to", "be", "do", "go"...)
@@ -294,7 +303,7 @@ function parseLine(raw: string): VygusEntry | null {
   transliteration = tokens.slice(0, splitIdx).join(" ").trim();
   translation = tokens.slice(splitIdx).join(" ").trim();
 
-  transliteration = transliteration.trim();
+  transliteration = transliteration.replace(/\s*\?+$/, "").trim();
   translation = translation.trim();
 
   // Handle Vygus "word / altname translation" pattern — the slash introduces an
