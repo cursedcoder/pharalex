@@ -14,13 +14,19 @@ async function loadJson<T>(filename: string): Promise<T> {
   }
 
   if (cfContext?.env?.ASSETS) {
-    const res = await cfContext.env.ASSETS.fetch(
-      new Request(`http://assets.local/data/${filename}`)
-    );
-    if (!res.ok) {
-      throw new Error(`CF Assets fetch failed for /data/${filename}: ${res.status}`);
+    try {
+      const res = await cfContext.env.ASSETS.fetch(
+        new Request(`http://assets.local/data/${filename}`)
+      );
+      if (!res.ok) {
+        throw new Error(`CF Assets fetch failed for /data/${filename}: ${res.status}`);
+      }
+      return res.json() as Promise<T>;
+    } catch (e) {
+      // env.ASSETS exists but doesn't work (e.g. wrangler dev without real assets)
+      // fall through to filesystem fallback
+      if (process.env.NODE_ENV === "production") throw e;
     }
-    return res.json() as Promise<T>;
   }
 
   // Filesystem fallback — only runs during `next build` SSG and `next dev` (Node.js, not CF Worker)
