@@ -8,7 +8,9 @@
     "build:worker": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare preview",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@tanstack/react-virtual": "^3.13.21",
@@ -31,6 +33,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5",
+    "vitest": "^3.2.4",
     "wrangler": "^4.73.0"
   }
 }
