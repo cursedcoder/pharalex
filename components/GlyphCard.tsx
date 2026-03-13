@@ -100,6 +100,8 @@ export function GlyphCard({ glyph, showDescription = true, highlight = false, va
                       src={glyphSvgSrc(v.code)}
                       alt={v.code}
                       title={v.code}
+                      loading="lazy"
+                      decoding="async"
                       className="w-6 h-6 object-contain opacity-60 hover:opacity-100 transition-opacity"
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).style.display = "none";

@@ -826,6 +826,8 @@ function SignCell({
     <img
       src={`/glyphs/${code}.svg`}
       alt={code}
+      loading="lazy"
+      decoding="async"
       style={{ width: imgW, height: imgH, ...rotateStyle }}
       className="object-contain"
       onError={(e) => {

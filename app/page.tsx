@@ -282,6 +282,8 @@ export default async function HomePage() {
                             key={`${code}-${i}`}
                             src={glyphSvgSrc(code)}
                             alt={code}
+                            loading="lazy"
+                            decoding="async"
                             className="w-6 h-6 object-contain"
                           />
                         ))}

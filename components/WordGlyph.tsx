@@ -1,6 +1,11 @@
 "use client";
 
-import { Quadrat } from "@/components/Quadrat";
+import dynamic from "next/dynamic";
+
+const Quadrat = dynamic(
+  () => import("@/components/Quadrat").then((m) => m.Quadrat),
+  { ssr: false },
+);
 
 interface WordGlyphProps {
   mdc: string;

@@ -45,6 +45,8 @@ export function SmartGlyph({
           <img
             src={glyphSvgSrc(glyph.code)}
             alt={glyph.code}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-contain p-2"
             onError={() => setSvgError(true)}
           />
@@ -76,6 +78,8 @@ export function GlyphImage({
       <img
         src={glyphSvgSrc(glyph.code)}
         alt={glyph.code}
+        loading="lazy"
+        decoding="async"
         style={{ height: size, width: "auto", maxWidth: size * 2 }}
         className={`object-contain ${className}`}
         onError={() => setError(true)}

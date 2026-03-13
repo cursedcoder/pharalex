@@ -77,7 +77,7 @@ function VirtualGrid({
   const virtualizer = useWindowVirtualizer({
     count: rows.length,
     estimateSize: () => rowHeight,
-    overscan: 5,
+    overscan: 3,
     scrollMargin,
   });
 
@@ -148,7 +148,7 @@ function VirtualList({
   const virtualizer = useWindowVirtualizer({
     count: glyphs.length,
     estimateSize: () => LIST_ROW_HEIGHT + LIST_GAP,
-    overscan: 8,
+    overscan: 4,
     scrollMargin,
   });
 
@@ -437,6 +437,8 @@ function GlyphTile({ glyph, variantCount = 0, size }: { glyph: Glyph; variantCou
       <img
         src={glyphSvgSrc(glyph.code)}
         alt={glyph.code}
+        loading="lazy"
+        decoding="async"
         className="object-contain"
         style={{ width: "72%", height: "72%" }}
       />

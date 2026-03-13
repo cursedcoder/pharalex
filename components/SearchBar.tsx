@@ -5,7 +5,12 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
 import { translitToUnicode } from "@/lib/word-utils";
-import { Quadrat } from "@/components/Quadrat";
+import dynamic from "next/dynamic";
+
+const Quadrat = dynamic(
+  () => import("@/components/Quadrat").then((m) => m.Quadrat),
+  { ssr: false },
+);
 import type { SearchApiResult } from "@/app/api/search/route";
 
 interface SearchBarProps {
