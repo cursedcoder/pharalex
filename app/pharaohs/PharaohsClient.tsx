@@ -5,15 +5,8 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import {
-  getAllPharaohs,
-  getAllDynasties,
-  getAllPeriods,
-  getDynastyById,
-  formatReign,
-  getPharaohStats,
-} from "@/lib/pharaohs";
-import type { Pharaoh, PeriodId } from "@/lib/types";
+import { formatReign } from "@/lib/pharaoh-utils";
+import type { Pharaoh, Dynasty, PeriodInfo, PeriodId } from "@/lib/types";
 
 const PERIOD_LABELS: Record<PeriodId, string> = {
   predynastic:          "Predynastic",
@@ -29,12 +22,21 @@ const PERIOD_LABELS: Record<PeriodId, string> = {
   roman:                "Roman",
 };
 
-export default function PharaohsClient() {
-  const allPharaohs = getAllPharaohs();
-  const dynasties   = getAllDynasties();
-  const periods     = getAllPeriods();
-  const stats       = getPharaohStats();
+interface PharaohsClientProps {
+  allPharaohs: Pharaoh[];
+  dynasties: Dynasty[];
+  periods: PeriodInfo[];
+  stats: { total: number; notable: number; dynasties: number; periods: number; withDates: number };
+  dynastyMap: Record<string, Dynasty>;
+}
 
+export default function PharaohsClient({
+  allPharaohs,
+  dynasties,
+  periods,
+  stats,
+  dynastyMap,
+}: PharaohsClientProps) {
   const [search,          setSearch]          = useState("");
   const [selectedPeriod,  setSelectedPeriod]  = useState<PeriodId | "">("");
   const [notableOnly,     setNotableOnly]     = useState(false);
@@ -68,7 +70,7 @@ export default function PharaohsClient() {
       map.set(p.dynastyId, arr);
     }
     // Preserve dynasty order
-    const ordered: { dynasty: ReturnType<typeof getDynastyById>; pharaohs: Pharaoh[] }[] = [];
+    const ordered: { dynasty: Dynasty; pharaohs: Pharaoh[] }[] = [];
     for (const d of dynasties) {
       if (map.has(d.id)) {
         ordered.push({ dynasty: d, pharaohs: map.get(d.id)! });
@@ -200,7 +202,7 @@ export default function PharaohsClient() {
           ) : viewMode === "timeline" ? (
             <TimelineView groups={groupedByDynasty} />
           ) : (
-            <ListView pharaohs={filtered} />
+            <ListView pharaohs={filtered} dynastyMap={dynastyMap} />
           )}
         </Container>
       </main>
@@ -225,7 +227,7 @@ export default function PharaohsClient() {
 function TimelineView({
   groups,
 }: {
-  groups: { dynasty: ReturnType<typeof getDynastyById>; pharaohs: Pharaoh[] }[];
+  groups: { dynasty: Dynasty; pharaohs: Pharaoh[] }[];
 }) {
   return (
     <div className="space-y-10">
@@ -258,7 +260,7 @@ function TimelineView({
 
 // ── List View ─────────────────────────────────────────────────────────────────
 
-function ListView({ pharaohs }: { pharaohs: Pharaoh[] }) {
+function ListView({ pharaohs, dynastyMap }: { pharaohs: Pharaoh[]; dynastyMap: Record<string, Dynasty> }) {
   return (
     <div className="overflow-x-auto rounded-xl border border-sandstone/20">
       <table className="w-full text-sm">
@@ -272,7 +274,7 @@ function ListView({ pharaohs }: { pharaohs: Pharaoh[] }) {
         </thead>
         <tbody>
           {pharaohs.map((p, i) => {
-            const dynasty = getDynastyById(p.dynastyId);
+            const dynasty = dynastyMap[p.dynastyId];
             return (
               <tr
                 key={p.slug}

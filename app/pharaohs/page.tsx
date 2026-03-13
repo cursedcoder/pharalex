@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import PharaohsClient from "./PharaohsClient";
+import {
+  getAllPharaohs,
+  getAllDynasties,
+  getAllPeriods,
+  getPharaohStats,
+} from "@/lib/pharaohs";
+import type { Dynasty } from "@/lib/types";
 
 export const dynamic = "force-static";
 
@@ -22,5 +29,23 @@ export const metadata: Metadata = {
 };
 
 export default function PharaohsPage() {
-  return <PharaohsClient />;
+  const allPharaohs = getAllPharaohs();
+  const dynasties = getAllDynasties();
+  const periods = getAllPeriods();
+  const stats = getPharaohStats();
+
+  const dynastyMap: Record<string, Dynasty> = {};
+  for (const d of dynasties) {
+    dynastyMap[d.id] = d;
+  }
+
+  return (
+    <PharaohsClient
+      allPharaohs={allPharaohs}
+      dynasties={dynasties}
+      periods={periods}
+      stats={stats}
+      dynastyMap={dynastyMap}
+    />
+  );
 }
