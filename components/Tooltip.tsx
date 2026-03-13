@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 interface TooltipProps {
   content: React.ReactNode;
@@ -10,7 +11,7 @@ interface TooltipProps {
 
 export function Tooltip({ content, children, delay = 50 }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const [position, setPosition] = useState<"top" | "bottom">("top");
+  const [coords, setCoords] = useState<{ x: number; y: number; above: boolean } | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const triggerRef = useRef<HTMLSpanElement>(null);
 
@@ -18,28 +19,53 @@ export function Tooltip({ content, children, delay = 50 }: TooltipProps) {
     timeoutRef.current = setTimeout(() => {
       if (triggerRef.current) {
         const rect = triggerRef.current.getBoundingClientRect();
-        const spaceAbove = rect.top;
-        const spaceBelow = window.innerHeight - rect.bottom;
-        setPosition(spaceAbove > 100 || spaceAbove > spaceBelow ? "top" : "bottom");
+        const above = rect.top > 100 || rect.top > window.innerHeight - rect.bottom;
+        setCoords({
+          x: rect.left + rect.width / 2,
+          y: above ? rect.top + window.scrollY : rect.bottom + window.scrollY,
+          above,
+        });
       }
       setIsVisible(true);
     }, delay);
   };
 
   const hideTooltip = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setIsVisible(false);
   };
 
   useEffect(() => {
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
+
+  const tooltip =
+    isVisible && content && coords
+      ? createPortal(
+          <span
+            role="tooltip"
+            style={{
+              position: "absolute",
+              left: coords.x,
+              top: coords.above ? coords.y - 8 : coords.y + 8,
+              transform: coords.above
+                ? "translate(-50%, -100%)"
+                : "translate(-50%, 0)",
+            }}
+            className="z-[9999] px-3 py-2 bg-brown text-ivory text-xs rounded-lg shadow-lg whitespace-nowrap pointer-events-none animate-in fade-in duration-150"
+          >
+            {content}
+            <span
+              className={`absolute left-1/2 -translate-x-1/2 border-4 border-transparent ${
+                coords.above ? "top-full border-t-brown" : "bottom-full border-b-brown"
+              }`}
+            />
+          </span>,
+          document.body,
+        )
+      : null;
 
   return (
     <span
@@ -51,37 +77,7 @@ export function Tooltip({ content, children, delay = 50 }: TooltipProps) {
       onBlur={hideTooltip}
     >
       {children}
-      
-      {isVisible && content && (
-        <span
-          role="tooltip"
-          className={`
-            absolute z-50 px-3 py-2
-            bg-brown text-ivory text-xs
-            rounded-lg shadow-lg
-            whitespace-nowrap
-            pointer-events-none
-            animate-in fade-in duration-150
-            ${position === "top" 
-              ? "bottom-full left-1/2 -translate-x-1/2 mb-2" 
-              : "top-full left-1/2 -translate-x-1/2 mt-2"
-            }
-          `}
-        >
-          {content}
-          {/* Arrow */}
-          <span
-            className={`
-              absolute left-1/2 -translate-x-1/2
-              border-4 border-transparent
-              ${position === "top"
-                ? "top-full border-t-brown"
-                : "bottom-full border-b-brown"
-              }
-            `}
-          />
-        </span>
-      )}
+      {tooltip}
     </span>
   );
 }

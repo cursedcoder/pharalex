@@ -317,6 +317,7 @@ function QuadratNode({
 }
 
 /** Render a simple ligature (&) via SVG compositing + DOM hit overlays. */
+/** Render a simple ligature (&) via SVG compositing + DOM hit overlays. */
 function SimpleLigNode({
   node,
   width,
@@ -383,6 +384,7 @@ function SimpleLigNode({
         height={height}
         viewBox={`${minX} ${minY} ${natSize.w} ${natSize.h}`}
         style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+        className="ligature-svg"
       >
         {behind.map((p) => (
           <image
@@ -487,6 +489,7 @@ function LigatureNode({
         height={height}
         viewBox={`${minX} ${minY} ${natSize.w} ${natSize.h}`}
         style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+        className="ligature-svg"
       >
         {behind.map((p) => (
           <image

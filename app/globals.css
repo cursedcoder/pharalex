@@ -181,9 +181,16 @@ body {
   :root:not(.light) img[src*="/glyphs/"] {
     filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
   }
+  :root:not(.light) .ligature-svg {
+    filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
+  }
 }
 
 :root.dark img[src*="/glyphs/"] {
+  filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
+}
+
+:root.dark .ligature-svg {
   filter: invert(1) sepia(1) saturate(0.5) brightness(0.7);
 }
 

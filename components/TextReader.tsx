@@ -22,7 +22,7 @@ interface ActiveToken {
 }
 
 /** Maximum tokens per visual row before wrapping. */
-const WRAP_AT = 4;
+const WRAP_AT = 8;
 
 function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void }) {
   const codes = mdcToCodes(token.mdc);
