@@ -194,6 +194,25 @@ for (const g of glyphs) {
 }
 console.log(`  Converted MdC in meanings: ${mdcInMeanings}`);
 
+// ── 4b. Fix ẖ/ḫ mismatch in Phonogram labels ──────────────────────────────
+// St Andrews cap() turned x→X, then MdC converted X→ẖ, but the sign's
+// actual value is ḫ (from x). Fix by checking against transliteration.
+let voicedFixed = 0;
+for (const g of glyphs) {
+  const hasKh = g.transliteration.some((t: string) => t.includes("ḫ"));
+  if (!hasKh) continue;
+  for (const m of g.meanings) {
+    if (m.text.includes("ẖ")) {
+      const fixed = m.text.replace(/ẖ/g, "ḫ");
+      if (fixed !== m.text) {
+        m.text = fixed;
+        voicedFixed++;
+      }
+    }
+  }
+}
+console.log(`  Fixed ẖ→ḫ mismatch: ${voicedFixed}`);
+
 // ── 5. Fix MdC corruption in English words within meanings ──────────────────
 // MdC conversion can corrupt English: "determinative" → "determinꜥtive",
 // "stairway" → "stꜥirwꜥy". Fix known corrupted English words.

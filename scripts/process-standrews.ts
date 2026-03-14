@@ -52,8 +52,15 @@ function stripMarkup(text: unknown): string {
 }
 
 // Capitalise first letter
+// MdC characters that should NOT be capitalized (they change meaning)
+const MDC_NO_CAP = new Set(["a", "x"]);
+
 function cap(s: string): string {
-  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+  if (!s) return s;
+  // Don't capitalize if first char is an MdC special that changes meaning when uppercased
+  // e.g. x (ḫ) → X (H̱) are different signs
+  if (MDC_NO_CAP.has(s.charAt(0))) return s;
+  return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
 // ─── Parse signdescriptioneng.xml ───────────────────────────────────────────
