@@ -641,14 +641,6 @@ export default async function GlyphPage({ params }: PageProps) {
                       This glyph appears in {pharaohsUsingGlyph.length} royal name
                       {pharaohsUsingGlyph.length > 1 ? "s" : ""}.
                     </p>
-                    {pharaohsUsingGlyph.length > 10 && (
-                      <Link
-                        href="/pharaohs"
-                        className="text-xs text-gold-dark hover:text-gold transition-colors shrink-0"
-                      >
-                        See all {pharaohsUsingGlyph.length} →
-                      </Link>
-                    )}
                   </div>
                 </section>
               )}
