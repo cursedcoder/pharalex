@@ -48381,7 +48381,7 @@
     ],
     "signName": "head in profile",
     "transliterationCounts": {
-      "tp": 59
+      "tp": 61
     }
   },
   {
@@ -48606,7 +48606,7 @@
     ],
     "signName": "eye",
     "transliterationCounts": {
-      "ir": 30,
+      "ir": 31,
       "irt": 46
     }
   },
@@ -49597,7 +49597,7 @@
     ],
     "signName": "mouth",
     "transliterationCounts": {
-      "r": 150
+      "r": 171
     }
   },
   {
@@ -75503,7 +75503,7 @@
     ],
     "signName": "three skins tied together",
     "transliterationCounts": {
-      "ms": 23,
+      "ms": 24,
       "mst": 34,
       "msi": 13
     }
@@ -82413,7 +82413,7 @@
     "signName": "vulture",
     "transliterationCounts": {
       "mwt": 30,
-      "nr": 1,
+      "nr": 2,
       "nrt": 1
     }
   },
@@ -82598,7 +82598,7 @@
     ],
     "signName": "owl",
     "transliterationCounts": {
-      "m": 114
+      "m": 120
     }
   },
   {
@@ -83478,7 +83478,7 @@
     ],
     "signName": "saddle-billed stork",
     "transliterationCounts": {
-      "ba": 29
+      "ba": 32
     }
   },
   {
@@ -105142,7 +105142,7 @@
     ],
     "signName": "reeds with root",
     "transliterationCounts": {
-      "sm": 4
+      "sm": 5
     }
   },
   {
@@ -116563,9 +116563,9 @@
     ],
     "signName": "ripple of water",
     "transliterationCounts": {
-      "n": 19,
+      "n": 22,
       "m": 31,
-      "nt": 18
+      "nt": 22
     }
   },
   {
@@ -120506,7 +120506,7 @@
     ],
     "signName": "house",
     "transliterationCounts": {
-      "pr": 75,
+      "pr": 83,
       "p": 1
     }
   },
@@ -137848,7 +137848,7 @@
     ],
     "signName": "seat",
     "transliterationCounts": {
-      "st": 41
+      "st": 44
     }
   },
   {
@@ -141347,7 +141347,7 @@
     ],
     "signName": "reed column",
     "transliterationCounts": {
-      "dd": 14
+      "dd": 15
     }
   },
   {
@@ -176237,7 +176237,7 @@
     ],
     "signName": "flat loaf",
     "transliterationCounts": {
-      "t": 9
+      "t": 11
     }
   },
   {
@@ -176298,7 +176298,7 @@
     ],
     "signName": "tall loaf",
     "transliterationCounts": {
-      "t": 7,
+      "t": 9,
       "it": 2
     }
   },
@@ -178722,7 +178722,7 @@
     "source": "both",
     "signName": "curved diagonal stroke",
     "transliterationCounts": {
-      "ms": 15
+      "ms": 16
     }
   },
   {
