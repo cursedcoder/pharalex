@@ -19,6 +19,7 @@ import {
 } from "@/lib/glyphs";
 import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
 import { getWordsByGardinerCode, wordHref } from "@/lib/words";
+import { translitToUnicode } from "@/lib/word-utils";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
 import type { ReactNode } from "react";
 
@@ -554,21 +555,40 @@ export default async function GlyphPage({ params }: PageProps) {
                   <h3 className="font-display text-lg font-semibold text-brown mb-3">
                     Words Using This Glyph
                   </h3>
-                  <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 space-y-1">
+                  <div className="space-y-2">
                     {wordsUsingGlyph.map((word) => (
                       <Link
                         key={word.transliteration}
                         href={wordHref(word.transliteration)}
-                        className="flex items-baseline justify-between gap-2 p-2 -mx-2 rounded-lg hover:bg-gold/10 transition-colors group"
+                        className="block bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-3 hover:border-gold/40 hover:shadow-sm transition-all group"
                       >
-                        <span className="font-mono text-sm font-medium text-brown group-hover:text-gold-dark transition-colors shrink-0">
-                          {word.transliteration}
-                        </span>
-                        <span className="text-xs text-sandstone/70 truncate text-right">
-                          {word.translation.length > 30
-                            ? word.translation.slice(0, 30) + "…"
-                            : word.translation}
-                        </span>
+                        <div className="flex gap-2 mb-2 overflow-hidden">
+                          {word.gardinerCodes.slice(0, 8).map((code, i) => (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              key={`${code}-${i}`}
+                              src={glyphSvgSrc(code)}
+                              alt={code}
+                              className="w-6 h-6 object-contain shrink-0"
+                            />
+                          ))}
+                          {word.gardinerCodes.length > 8 && (
+                            <span className="text-xs text-sandstone self-center">…</span>
+                          )}
+                        </div>
+                        <div className="flex items-baseline justify-between gap-2">
+                          <span className="text-sm font-medium text-brown group-hover:text-gold-dark transition-colors italic">
+                            {translitToUnicode(word.transliteration)}
+                          </span>
+                          {word.grammar && (
+                            <Badge variant="outline" size="sm">
+                              {word.grammar}
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-xs text-sandstone/70 mt-1 line-clamp-1">
+                          {word.translation}
+                        </p>
                       </Link>
                     ))}
                   </div>
