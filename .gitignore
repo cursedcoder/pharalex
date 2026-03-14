@@ -50,3 +50,6 @@ public/data/search-*.json
 
 # Local investigation reports
 /report/
+
+# Playwright MCP
+.playwright-mcp/
