@@ -19,6 +19,42 @@ import {
 } from "@/lib/glyphs";
 import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
 import { getWordsByGardinerCode, wordHref } from "@/lib/words";
+import { glyphSvgSrc } from "@/lib/glyph-utils";
+import type { ReactNode } from "react";
+
+/** Gardiner code pattern: A1, Aa15, D53B, etc. */
+const GARDINER_RE = /\b([A-Z][a-z]?\d+[A-Za-z]?)\b/g;
+
+/** Turn Gardiner codes in text into linked glyph pills. */
+function linkifyCodes(text: string): ReactNode {
+  const parts: ReactNode[] = [];
+  let last = 0;
+  for (const match of text.matchAll(GARDINER_RE)) {
+    const code = match[1];
+    const start = match.index!;
+    if (start > last) parts.push(text.slice(last, start));
+    parts.push(
+      <Link
+        key={start}
+        href={glyphHref(code)}
+        className="inline-flex items-center gap-1 px-1.5 py-0.5 -my-0.5 rounded-md bg-gold/10 border border-gold/30 hover:bg-gold/20 hover:border-gold/50 transition-colors group"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={glyphSvgSrc(code)}
+          alt={code}
+          className="w-4 h-4 object-contain"
+        />
+        <span className="text-sm font-medium text-gold-dark group-hover:text-brown transition-colors">
+          {code}
+        </span>
+      </Link>
+    );
+    last = start + match[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts.length > 0 ? parts : text;
+}
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -347,7 +383,7 @@ export default async function GlyphPage({ params }: PageProps) {
                     "
                   >
                     <p className="text-brown-light leading-relaxed">
-                      {glyph.description}
+                      {linkifyCodes(glyph.description)}
                     </p>
                   </div>
                 </section>
@@ -361,7 +397,7 @@ export default async function GlyphPage({ params }: PageProps) {
 
                   {glyph.description && (
                     <p className="text-sm text-brown-light/70 italic mb-4 leading-relaxed">
-                      {glyph.description}
+                      {linkifyCodes(glyph.description)}
                     </p>
                   )}
 
@@ -395,7 +431,7 @@ export default async function GlyphPage({ params }: PageProps) {
                               )}
                             </div>
                             <p className="text-brown-light leading-relaxed">
-                              {meaning.text}
+                              {linkifyCodes(meaning.text)}
                             </p>
                             <p className="text-xs text-sandstone mt-2">
                               {typeDescriptions[meaning.type]}
