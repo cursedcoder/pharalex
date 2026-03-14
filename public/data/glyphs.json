@@ -4230,12 +4230,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^qjs — Qus",
+        "text": "Logogram: Qjs — Qus",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^qjs",
+      "Qjs",
       "qis",
       "ḳꞽs",
       "qiz"
@@ -4717,13 +4717,13 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ^wsjr — Osiris",
+        "text": "Determinative: Wsjr — Osiris",
         "type": "determinative"
       }
     ],
     "transliteration": [
       "nsw",
-      "^wsjr",
+      "Wsjr",
       "wsir"
     ],
     "related": [
@@ -30104,7 +30104,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^ra — Re",
+        "text": "Logogram: Ra — Re",
         "type": "logogram"
       },
       {
@@ -30117,7 +30117,7 @@
       }
     ],
     "transliteration": [
-      "^ra",
+      "Ra",
       "ra",
       "rꜥ"
     ],
@@ -30513,7 +30513,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^DHwtj — Thoth",
+        "text": "Logogram: DHwtj — Thoth",
         "type": "logogram"
       },
       {
@@ -30529,7 +30529,7 @@
       "ḏḥwtj",
       "ḏhwty",
       "ḏḥwty",
-      "^ḏḥwtj"
+      "Ḏḥwtj"
     ],
     "etymology": "Representing a god with the head of an ibis, 𓅝 (G26) or 𓅞 (G26A).",
     "related": [
@@ -30636,7 +30636,7 @@
     "description": "Representing a god with the head of a ram, 𓃝 (E10).",
     "meanings": [
       {
-        "text": "Logogram: ^Xnmw — Khnum",
+        "text": "Logogram: Xnmw — Khnum",
         "type": "logogram"
       },
       {
@@ -30654,7 +30654,7 @@
     ],
     "transliteration": [
       "ẖnmw",
-      "^ẖnmw"
+      "H̱nmw"
     ],
     "etymology": "Representing a god with the head of a ram, 𓃝 (E10).",
     "related": [
@@ -30964,7 +30964,7 @@
     "description": "Representing a god with the head of a dog 𓃢 (E15).",
     "meanings": [
       {
-        "text": "Logogram: ^jnpw — Anubis",
+        "text": "Logogram: Jnpw — Anubis",
         "type": "logogram"
       },
       {
@@ -30976,7 +30976,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ^wpj-wAwt — Upwawet",
+        "text": "Determinative: Wpj-wAwt — Upwawet",
         "type": "determinative"
       },
       {
@@ -30985,11 +30985,11 @@
       }
     ],
     "transliteration": [
-      "^jnpw",
+      "Jnpw",
       "inpw",
       "jnpw",
       "wp-wꜣwt",
-      "^wpj-wꜣwt"
+      "Wpj-wꜣwt"
     ],
     "etymology": "Representing a god with the head of a dog 𓃢 (E15).",
     "related": [
@@ -31181,7 +31181,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^stx — Seth",
+        "text": "Logogram: Stx — Seth",
         "type": "logogram"
       },
       {
@@ -31196,7 +31196,7 @@
     "transliteration": [
       "stẖ",
       "stš/stẖ",
-      "^stḫ"
+      "Stḫ"
     ],
     "etymology": "Representing a god with the head of a Seth-animal 𓃩 (E20).",
     "related": [
@@ -31351,7 +31351,7 @@
     "description": "Representing ithyphallic god with feathers, uplifted arm, and flagellum S45.",
     "meanings": [
       {
-        "text": "Logogram: ^mnw — Min",
+        "text": "Logogram: Mnw — Min",
         "type": "logogram"
       },
       {
@@ -31368,7 +31368,7 @@
       }
     ],
     "transliteration": [
-      "^mnw",
+      "Mnw",
       "mnw",
       "gbtyw"
     ],
@@ -31417,7 +31417,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hwt-^Hr — Hathor",
+        "text": "Logogram: Hwt-Hr — Hathor",
         "type": "logogram"
       },
       {
@@ -31439,7 +31439,7 @@
     ],
     "transliteration": [
       "ḥwt-ḥr",
-      "^ḥwt-^ḥr"
+      "Ḥwt-Ḥr"
     ],
     "etymology": "Representing a goddess with sun and horns.",
     "related": [
@@ -31824,7 +31824,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^mAat — Maat",
+        "text": "Logogram: MAat — Maat",
         "type": "logogram"
       },
       {
@@ -31838,7 +31838,7 @@
     ],
     "transliteration": [
       "mꜣꜥt",
-      "^mꜣꜥt"
+      "Mꜣꜥt"
     ],
     "etymology": "Goddess with feather on head",
     "related": [
@@ -32092,7 +32092,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^HHw — Heh",
+        "text": "Logogram: HHw — Heh",
         "type": "logogram"
       },
       {
@@ -32102,7 +32102,7 @@
     ],
     "transliteration": [
       "ḥḥ",
-      "^ḥḥw"
+      "Ḥḥw"
     ],
     "related": [
       "C1",
@@ -32365,12 +32365,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jmn — Amun",
+        "text": "Logogram: Jmn — Amun",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^jmn",
+      "Jmn",
       "ꞽmn",
       "imn"
     ],
@@ -32744,7 +32744,7 @@
     "description": "Variant of C12 (god with)",
     "meanings": [
       {
-        "text": "Logogram: ^jmn-Hr-xpS=f — Amun-her-khepeshef",
+        "text": "Logogram: Jmn-Hr-xpS=f — Amun-her-khepeshef",
         "type": "logogram"
       }
     ],
@@ -32791,7 +32791,7 @@
     "description": "Variant of A304",
     "meanings": [
       {
-        "text": "Logogram: ^jtm — Atum",
+        "text": "Logogram: Jtm — Atum",
         "type": "logogram"
       },
       {
@@ -32800,7 +32800,7 @@
       }
     ],
     "transliteration": [
-      "^jtm",
+      "Jtm",
       "ꞽtmw"
     ],
     "related": [],
@@ -32821,7 +32821,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of a falcon, wearing a headdress consisting of two plumes with a sun disk (S63A/S70), holding a tie or strap, used with sandals (ankh sign, S34), angling forward. ",
     "meanings": [
       {
-        "text": "Logogram: ^mnTw — Month",
+        "text": "Logogram: MnTw — Month",
         "type": "logogram"
       },
       {
@@ -32831,7 +32831,7 @@
     ],
     "transliteration": [
       "mnṯw",
-      "^mnṯw"
+      "Mnṯw"
     ],
     "related": [
       "C1",
@@ -33103,7 +33103,7 @@
     "description": "Squatting god",
     "meanings": [
       {
-        "text": "Logogram: ^tA-tnn — Tatenen",
+        "text": "Logogram: TA-tnn — Tatenen",
         "type": "logogram"
       },
       {
@@ -33113,7 +33113,7 @@
     ],
     "transliteration": [
       "ṯꜣ-tnn",
-      "^tꜣ-tnn",
+      "Tꜣ-tnn",
       "tꜣ-ṯnn"
     ],
     "related": [],
@@ -33163,7 +33163,7 @@
     "description": "God, in mummy form, standing upright on a platform, with a long straight beard, wearing a cap, both arms forward, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40) of the same size as the god, vertically.",
     "meanings": [
       {
-        "text": "Logogram: ^ptH — Ptah",
+        "text": "Logogram: PtH — Ptah",
         "type": "logogram"
       },
       {
@@ -33173,7 +33173,7 @@
     ],
     "transliteration": [
       "ptḥ",
-      "^ptḥ"
+      "Ptḥ"
     ],
     "related": [
       "C1",
@@ -33371,7 +33371,7 @@
     "description": "God, seated on heel, right knee raised, with the head of a jackal, right arm angled in front of the body, left arm raised, hand held vertically, hand palm inwards (hnw gesture).",
     "meanings": [
       {
-        "text": "Logogram: ^bs — Bes",
+        "text": "Logogram: Bs — Bes",
         "type": "logogram"
       },
       {
@@ -33380,7 +33380,7 @@
       }
     ],
     "transliteration": [
-      "^bs",
+      "Bs",
       "hnw",
       "bꜣ-nḫn",
       "bꜣw-nḫn"
@@ -33558,13 +33558,13 @@
     "description": "God with head of falcon and moon disk",
     "meanings": [
       {
-        "text": "Logogram: ^xnsw — Khons",
+        "text": "Logogram: Xnsw — Khons",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "sḥr",
-      "^ḫnsw"
+      "Ḫnsw"
     ],
     "related": [],
     "source": "aegyptus",
@@ -33680,7 +33680,7 @@
     "description": "God, seated on nothing, with the head of a jackal and tail, right arm forwards, hand at the height of the shoulder, holding a stick vertically, running from the hand to the knee, left arm raised at the back, forearm vertical, holding a stick.",
     "meanings": [
       {
-        "text": "Logogram: ^bAstt — Bastet",
+        "text": "Logogram: BAstt — Bastet",
         "type": "logogram"
       },
       {
@@ -33690,7 +33690,7 @@
     ],
     "transliteration": [
       "sḥrꞽ",
-      "^bꜣstt"
+      "Bꜣstt"
     ],
     "related": [
       "C1",
@@ -33731,12 +33731,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^njt — Neith",
+        "text": "Logogram: Njt — Neith",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^njt",
+      "Njt",
       "dwꜣ-mwt=f",
       "dwꜣ-mwtf"
     ],
@@ -48786,7 +48786,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Determinative: ^anw — Ainu",
+        "text": "Determinative: Anw — Ainu",
         "type": "determinative"
       },
       {
@@ -48797,7 +48797,7 @@
     "transliteration": [
       "an",
       "anw",
-      "^anw",
+      "Anw",
       "ꜥn"
     ],
     "related": [
@@ -50046,13 +50046,13 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ^nHb-kAw — Nehebkau",
+        "text": "Determinative: NHb-kAw — Nehebkau",
         "type": "determinative"
       }
     ],
     "transliteration": [
       "nḥb-kꜣw",
-      "^nḥb-kꜣw"
+      "Nḥb-kꜣw"
     ],
     "related": [
       "D1",
@@ -62491,7 +62491,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Xnmw — Khnum",
+        "text": "Logogram: Xnmw — Khnum",
         "type": "logogram"
       },
       {
@@ -62506,7 +62506,7 @@
     "transliteration": [
       "bꜣ",
       "ẖnmw",
-      "^ẖnmw"
+      "H̱nmw"
     ],
     "related": [
       "E1",
@@ -62949,12 +62949,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jnpw — Anubis",
+        "text": "Logogram: Jnpw — Anubis",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^jnpw",
+      "Jnpw",
       "inpw",
       "ꞽnpw",
       "ḥry-sštꜣ",
@@ -63236,13 +63236,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^wpj-wAwt — Wepwawet",
+        "text": "Logogram: Wpj-wAwt — Wepwawet",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "wp-wꜣwt",
-      "^wpj-wꜣwt"
+      "Wpj-wꜣwt"
     ],
     "related": [
       "E1",
@@ -63297,7 +63297,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^stx — Seth",
+        "text": "Logogram: Stx — Seth",
         "type": "logogram"
       },
       {
@@ -63322,7 +63322,7 @@
       "stẖ",
       "stš/stẖ",
       "ꜣš",
-      "^stḫ"
+      "Stḫ"
     ],
     "etymology": "A depiction of an unidentified animal associated with Set, the Set animal: a slender canid resembling a greyhound, Saluki or jackal, with a distinctive stiff tail (often forked in later depictions) which stands erect whether the animal is sitting, standing, or walking. Its erect ears are usually depicted as squarish or triangular, narrowest at the base and widest at the squarish(perhaps cropped) tops, and its long nose often has a slight downward curve. It may or may not have been a real animal. It is usually depicted at rest, either sitting like this, or lying down: 𓃫 (E21).",
     "related": [
@@ -64383,7 +64383,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^DHwtj — Thoth",
+        "text": "Logogram: DHwtj — Thoth",
         "type": "logogram"
       },
       {
@@ -64401,7 +64401,7 @@
       "imn",
       "in-ḥrt",
       "nsw",
-      "^ḏḥwtj",
+      "Ḏḥwtj",
       "ḏd"
     ],
     "related": [
@@ -75349,14 +75349,14 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ^msxtjw — Great Bear",
+        "text": "Determinative: Msxtjw — Great Bear",
         "type": "determinative"
       }
     ],
     "transliteration": [
       "ḫpš",
       "msḫtiw",
-      "^msḫtjw"
+      "Msḫtjw"
     ],
     "related": [
       "F1",
@@ -82260,7 +82260,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hr — Horus",
+        "text": "Logogram: Hr — Horus",
         "type": "logogram"
       },
       {
@@ -82275,7 +82275,7 @@
     "transliteration": [
       "ḥr",
       "𓅆",
-      "^ḥr"
+      "Ḥr"
     ],
     "etymology": "Representing a falcon, variously identified as a lanner falcon or peregrine falcon.",
     "related": [
@@ -82372,7 +82372,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ^Hr — Horus",
+        "text": "Determinative: Hr — Horus",
         "type": "determinative",
         "period": "OK"
       },
@@ -82390,7 +82390,7 @@
       "nsw",
       "ḥr",
       "nṯr",
-      "^ḥr"
+      "Ḥr"
     ],
     "related": [
       "G1",
@@ -82421,12 +82421,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nmtj — Nemti",
+        "text": "Logogram: Nmtj — Nemti",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^nmtj",
+      "Nmtj",
       "nmty",
       "anty"
     ],
@@ -82568,13 +82568,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hr-nbw — Gold Horus",
+        "text": "Logogram: Hr-nbw — Gold Horus",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḥr-nbw",
-      "^ḥr-nbw"
+      "Ḥr-nbw"
     ],
     "related": [
       "G1",
@@ -82658,14 +82658,14 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^ra-^Hr-Axtj — Re-Harakhti",
+        "text": "Logogram: Ra-Hr-Axtj — Re-Harakhti",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ra",
       "rꜥ-ḥr",
-      "^rꜥ-^ḥr-ꜣḫtj"
+      "Rꜥ-Ḥr-ꜣḫtj"
     ],
     "related": [
       "G1",
@@ -82716,7 +82716,7 @@
     "description": "A falcon (G5), on top of a moon-sickle shaped boat with a higher prow than stern, with a rudder, with the head of an antelope (F81) on top of the prow, facing inwards, with a downward line with multiple horizontal lines written over it coming from the head, on top of a sledge (P60B).",
     "meanings": [
       {
-        "text": "Logogram: ^skr — Sokar",
+        "text": "Logogram: Skr — Sokar",
         "type": "logogram"
       },
       {
@@ -82729,7 +82729,7 @@
       }
     ],
     "transliteration": [
-      "^skr",
+      "Skr",
       "skr",
       "ḥnw"
     ],
@@ -82854,7 +82854,7 @@
     "description": "An archaic image of a falcon/cult image of a falcon, wearing a headdress consisting of two plumes (S9).",
     "meanings": [
       {
-        "text": "Logogram: ^Hr — Horus",
+        "text": "Logogram: Hr — Horus",
         "type": "logogram"
       },
       {
@@ -82862,17 +82862,17 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ^spdw — Sopdu",
+        "text": "Determinative: Spdw — Sopdu",
         "type": "determinative"
       }
     ],
     "transliteration": [
       "spdw",
-      "^spdw",
+      "Spdw",
       "spd(w)",
       "ḥr",
       "nḫny",
-      "^ḥr"
+      "Ḥr"
     ],
     "related": [
       "G1",
@@ -83148,12 +83148,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^mwt — Mut",
+        "text": "Logogram: Mwt — Mut",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^mwt",
+      "Mwt",
       "mwt"
     ],
     "related": [
@@ -83968,7 +83968,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^DHwtj — Thoth",
+        "text": "Logogram: DHwtj — Thoth",
         "type": "logogram"
       }
     ],
@@ -83976,7 +83976,7 @@
       "hb",
       "ḏḥwty",
       "ḥḥwti",
-      "^ḏḥwtj"
+      "Ḏḥwtj"
     ],
     "related": [
       "G1",
@@ -96136,7 +96136,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^sbk — Sobek",
+        "text": "Logogram: Sbk — Sobek",
         "type": "logogram"
       },
       {
@@ -96154,7 +96154,7 @@
     ],
     "transliteration": [
       "sbk",
-      "^sbk",
+      "Sbk",
       "šobek"
     ],
     "etymology": "Representing a crocodile on a shrine. Older variants lack the shrine and instead depict the crocodile as a cult image (fetish) or a mummified crocodile, with only its head emerging from a wrapping of bandages or a sudarium: 𓆍 (I5A).",
@@ -96704,12 +96704,12 @@
     "description": "Cobra with feather",
     "meanings": [
       {
-        "text": "Logogram: ^wADyt — Wadjit (tenth nome of Upper Egypt)",
+        "text": "Logogram: WADyt — Wadjit (tenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^wꜣḏyt"
+      "Wꜣḏyt"
     ],
     "related": [],
     "source": "aegyptus",
@@ -103116,7 +103116,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^srqt — Selkis",
+        "text": "Logogram: Srqt — Selkis",
         "type": "logogram"
       },
       {
@@ -103130,7 +103130,7 @@
     ],
     "transliteration": [
       "srqt",
-      "^srqt",
+      "Srqt",
       "šerqet",
       "srḳt"
     ],
@@ -104144,14 +104144,14 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ^nDft — Nedjfit",
+        "text": "Logogram: NDft — Nedjfit",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "m",
       "im",
-      "^nḏft"
+      "Nḏft"
     ],
     "related": [],
     "source": "aegyptus",
@@ -105910,7 +105910,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Ax-bjt — Chemmis",
+        "text": "Logogram: Ax-bjt — Chemmis",
         "type": "logogram"
       },
       {
@@ -105936,7 +105936,7 @@
       "mḥw",
       "ḏyt",
       "wꜣḫ",
-      "^ꜣḫ-bjt"
+      "Ꜣḫ-bjt"
     ],
     "etymology": "Representation of papyrus with buds.",
     "related": [
@@ -105961,7 +105961,7 @@
     "description": "A clump with one papyrus flower, with two buds bent down.",
     "meanings": [
       {
-        "text": "Logogram: ^Ax-bjt — Chemmis",
+        "text": "Logogram: Ax-bjt — Chemmis",
         "type": "logogram"
       },
       {
@@ -105971,7 +105971,7 @@
     ],
     "transliteration": [
       "mḥt",
-      "^ꜣḫ-bjt"
+      "Ꜣḫ-bjt"
     ],
     "related": [
       "M1",
@@ -106094,7 +106094,7 @@
     "description": "A rounded clump of three papyrus flowers.",
     "meanings": [
       {
-        "text": "Logogram: ^tA-mHw — Lower Egypt",
+        "text": "Logogram: TA-mHw — Lower Egypt",
         "type": "logogram"
       },
       {
@@ -106104,7 +106104,7 @@
     ],
     "transliteration": [
       "ḥꜣ",
-      "^tꜣ-mḥw"
+      "Tꜣ-mḥw"
     ],
     "related": [
       "M1",
@@ -106755,7 +106755,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Smaw — Upper Egypt",
+        "text": "Logogram: Smaw — Upper Egypt",
         "type": "logogram"
       },
       {
@@ -106770,7 +106770,7 @@
     "transliteration": [
       "šmꜥ",
       "šmꜥw",
-      "^šmꜥw"
+      "Šmꜥw"
     ],
     "etymology": "An image of a flowering sedge plant. Distinct from the non-flowering sign 𓇓.",
     "related": [
@@ -106827,13 +106827,13 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ^Smaw — Upper Egypt",
+        "text": "Logogram: Smaw — Upper Egypt",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "šmꜥ",
-      "^šmꜥw"
+      "Šmꜥw"
     ],
     "related": [],
     "source": "aegyptus",
@@ -106899,12 +106899,12 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ṯꜣ-^Smaw — Upper Egypt",
+        "text": "Logogram: ṯꜣ-Smaw — Upper Egypt",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "tꜣ-^šmꜥw"
+      "tꜣ-Šmꜥw"
     ],
     "related": [],
     "source": "aegyptus",
@@ -113695,7 +113695,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jnj-Hrt — Onuris",
+        "text": "Logogram: Jnj-Hrt — Onuris",
         "type": "logogram"
       },
       {
@@ -113714,7 +113714,7 @@
     "transliteration": [
       "pt",
       "ḥr",
-      "^jnj-ḥrt",
+      "Jnj-ḥrt",
       "ḥr,ḥrj,ḥrw"
     ],
     "related": [
@@ -113745,13 +113745,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jnbw-HD — Inbuhedi (first nome of Lower Egypt)",
+        "text": "Logogram: Jnbw-HD — Inbuhedi (first nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ꞽnb-ḥḏ",
-      "^jnbw-ḥḏ"
+      "Jnbw-ḥḏ"
     ],
     "related": [
       "N1",
@@ -113775,13 +113775,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^tA-stj — Taseti (first nome of Upper Egypt)",
+        "text": "Logogram: TA-stj — Taseti (first nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "tꜣ-sty",
-      "^tꜣ-stj"
+      "Tꜣ-stj"
     ],
     "related": [
       "N1",
@@ -113860,13 +113860,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^xpS — Khepesh (second nome of Lower Egypt)",
+        "text": "Logogram: XpS — Khepesh (second nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḫm/ḫpš/ꞽwꜥ",
-      "^ḫpš"
+      "Ḫpš"
     ],
     "related": [
       "N1",
@@ -113890,13 +113890,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^wTs-^Hr — Wetjes-Hor (second nome of Upper Egypt)",
+        "text": "Logogram: WTs-Hr — Wetjes-Hor (second nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "wṯs-ḥr",
-      "^wṯs-^ḥr"
+      "Wṯs-Ḥr"
     ],
     "related": [
       "N1",
@@ -113959,12 +113959,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jmntt — Imenti (third nome of Lower Egypt)",
+        "text": "Logogram: Jmntt — Imenti (third nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^jmntt",
+      "Jmntt",
       "ꞽmntt"
     ],
     "related": [
@@ -113989,13 +113989,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nxn — Nekhen (third nome of Upper Egypt)",
+        "text": "Logogram: Nxn — Nekhen (third nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "nḫn",
-      "^nḫn"
+      "Nḫn"
     ],
     "related": [
       "N1",
@@ -114130,12 +114130,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nrt-rst — southern Neret (fourth nome of Lower Egypt)",
+        "text": "Logogram: Nrt-rst — southern Neret (fourth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^nrt-rst",
+      "Nrt-rst",
       "nt-rsyt"
     ],
     "related": [
@@ -114160,13 +114160,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^wAst — Waset (fourth nome of Upper Egypt)",
+        "text": "Logogram: WAst — Waset (fourth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "wꜣst",
-      "^wꜣst"
+      "Wꜣst"
     ],
     "related": [
       "N1",
@@ -114419,13 +114419,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nrt-mHtt — northern Neret (fifth nome of Lower Egypt)",
+        "text": "Logogram: Nrt-mHtt — northern Neret (fifth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "nt-mḥyt",
-      "^nrt-mḥtt"
+      "Nrt-mḥtt"
     ],
     "related": [
       "N1",
@@ -114474,13 +114474,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nTrwj — Netjerui (fifth nome of Upper Egypt)",
+        "text": "Logogram: NTrwj — Netjerui (fifth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "nṯrwy",
-      "^nṯrwj"
+      "Nṯrwj"
     ],
     "related": [
       "N1",
@@ -114554,13 +114554,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^xAsww — Khasu (sixth nome of Lower Egypt)",
+        "text": "Logogram: XAsww — Khasu (sixth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḫꜣsww",
-      "^ḫꜣsww"
+      "Ḫꜣsww"
     ],
     "related": [
       "N1",
@@ -114584,12 +114584,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jqr — Iqer (sixth nome of Upper Egypt)",
+        "text": "Logogram: Jqr — Iqer (sixth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^jqr",
+      "Jqr",
       "ꞽḳr"
     ],
     "related": [
@@ -114760,13 +114760,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hwj-jmntj — Hui-imenti (seventh nome of Lower Egypt)",
+        "text": "Logogram: Hwj-jmntj — Hui-imenti (seventh nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "wꜥ-m-ḥww-ꞽmnty",
-      "^ḥwj-jmntj"
+      "Ḥwj-jmntj"
     ],
     "related": [
       "N1",
@@ -114790,13 +114790,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^bAt — Bat (seventh nome of Upper Egypt)",
+        "text": "Logogram: BAt — Bat (seventh nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "bꜣt",
-      "^bꜣt"
+      "Bꜣt"
     ],
     "related": [
       "N1",
@@ -114820,13 +114820,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hwj-jAbtj — Hui-jabtj (eighth nome of Lower Egypt)",
+        "text": "Logogram: Hwj-jAbtj — Hui-jabtj (eighth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "wꜥ-m-ḥww-ꞽꜣbty",
-      "^ḥwj-jꜣbtj"
+      "Ḥwj-jꜣbtj"
     ],
     "related": [
       "N1",
@@ -114850,13 +114850,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^tA-wr — Tawer (eighth nome of Upper Egypt)",
+        "text": "Logogram: TA-wr — Tawer (eighth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "tꜣ-wr",
-      "^tꜣ-wr"
+      "Tꜣ-wr"
     ],
     "related": [
       "N1",
@@ -115068,13 +115068,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^anDtj — Anedjiti (ninth nome of Lower Egypt)",
+        "text": "Logogram: AnDtj — Anedjiti (ninth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ꜥnḏty ",
-      "^ꜥnḏtj"
+      "Ꜥnḏtj"
     ],
     "related": [
       "N1",
@@ -115098,12 +115098,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^mnw — Menu (ninth nome of Upper Egypt)",
+        "text": "Logogram: Mnw — Menu (ninth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^mnw",
+      "Mnw",
       "mnw"
     ],
     "related": [
@@ -115171,12 +115171,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^km-wr — Kem-wer (tenth nome of Lower Egypt)",
+        "text": "Logogram: Km-wr — Kem-wer (tenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^km-wr",
+      "Km-wr",
       "km-wr"
     ],
     "related": [
@@ -115201,13 +115201,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^wADyt — Wadjit (tenth nome of Upper Egypt)",
+        "text": "Logogram: WADyt — Wadjit (tenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "wꜣḏt",
-      "^wꜣḏyt"
+      "Wꜣḏyt"
     ],
     "related": [
       "N1",
@@ -115314,13 +115314,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hsbw — Hesbu (eleventh nome of Lower Egypt)",
+        "text": "Logogram: Hsbw — Hesbu (eleventh nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḥsbw",
-      "^ḥsbw"
+      "Ḥsbw"
     ],
     "related": [
       "N1",
@@ -115344,13 +115344,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^SA — Sha (eleventh nome of Upper Egypt)",
+        "text": "Logogram: SA — Sha (eleventh nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "šꜣ/stẖ/stš",
-      "^šꜣ"
+      "Šꜣ"
     ],
     "related": [
       "N1",
@@ -115438,13 +115438,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Tb-nTr — Tjeb-netjer (twelfth nome of Lower Egypt)",
+        "text": "Logogram: Tb-nTr — Tjeb-netjer (twelfth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ṯb-nṯr",
-      "^ṯb-nṯr"
+      "Ṯb-nṯr"
     ],
     "related": [
       "N1",
@@ -115468,13 +115468,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Atft — Atfet (twelfth nome of Upper Egypt)",
+        "text": "Logogram: Atft — Atfet (twelfth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ꜣtft",
-      "^ꜣtft"
+      "Ꜣtft"
     ],
     "related": [
       "N1",
@@ -115543,13 +115543,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^HqA-anDw — Heqa-ondju (thirteenth nome of Lower Egypt)",
+        "text": "Logogram: HqA-anDw — Heqa-ondju (thirteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḥḳꜣ-ꜥnḏw",
-      "^ḥqꜣ-ꜥnḏw"
+      "Ḥqꜣ-ꜥnḏw"
     ],
     "related": [
       "N1",
@@ -115573,13 +115573,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nDft-xntt — southern Nedjfit (thirteenth nome of Upper Egypt)",
+        "text": "Logogram: NDft-xntt — southern Nedjfit (thirteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "nḏft-ḫntt",
-      "^nḏft-ḫntt"
+      "Nḏft-ḫntt"
     ],
     "related": [
       "N1",
@@ -115783,13 +115783,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^xntj-jAbtj — Khenti-abt (fourteenth nome of Lower Egypt)",
+        "text": "Logogram: Xntj-jAbtj — Khenti-abt (fourteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḫnty-ꞽꜣbty",
-      "^ḫntj-jꜣbtj"
+      "Ḫntj-jꜣbtj"
     ],
     "related": [
       "N1",
@@ -115813,13 +115813,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nDft-pHt — northern Nedjfit (fourteenth nome of Upper Egypt)",
+        "text": "Logogram: NDft-pHt — northern Nedjfit (fourteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "nḏft-pḥt",
-      "^nḏft-pḥt"
+      "Nḏft-pḥt"
     ],
     "related": [
       "N1",
@@ -115876,13 +115876,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^DHwtj — Djehuti (fifteenth nome of Lower Egypt)",
+        "text": "Logogram: DHwtj — Djehuti (fifteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḏhwty",
-      "^ḏḥwtj"
+      "Ḏḥwtj"
     ],
     "related": [
       "N1",
@@ -115955,13 +115955,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^HAt-mHjt — Hat-mehit (sixteenth nome of Lower Egypt)",
+        "text": "Logogram: HAt-mHjt — Hat-mehit (sixteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḥꜣt-mḥyt",
-      "^ḥꜣt-mḥjt"
+      "Ḥꜣt-mḥjt"
     ],
     "related": [
       "N1",
@@ -115985,13 +115985,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^mA-HD — Ma-hedi (sixteenth nome of Upper Egypt)",
+        "text": "Logogram: MA-HD — Ma-hedi (sixteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "mꜣ-ḥḏ",
-      "^mꜣ-ḥḏ"
+      "Mꜣ-ḥḏ"
     ],
     "related": [
       "N1",
@@ -116125,13 +116125,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^smA-bHdt — Sema-Behdet (seventeenth nome of Lower Egypt)",
+        "text": "Logogram: SmA-bHdt — Sema-Behdet (seventeenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "bḥdt",
-      "^smꜣ-bḥdt"
+      "Smꜣ-bḥdt"
     ],
     "related": [
       "N1",
@@ -116180,12 +116180,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jnpwt — Input (seventeenth nome of Upper Egypt)",
+        "text": "Logogram: Jnpwt — Input (seventeenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^jnpwt",
+      "Jnpwt",
       "ꞽnpwt"
     ],
     "related": [
@@ -116226,7 +116226,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hr-Axtj — Harakhti",
+        "text": "Logogram: Hr-Axtj — Harakhti",
         "type": "logogram"
       },
       {
@@ -116267,7 +116267,7 @@
       "ꞽw",
       "ꜥḫt",
       "dꜣiw",
-      "^ḥr-ꜣḫtj"
+      "Ḥr-ꜣḫtj"
     ],
     "etymology": "This was originally three different glyphs: one representing a sandy tract of land (an island in the Nile or a sandy hill in the flood plain, N18), one representing a bolt of rolled-up linen (\n\n\n\n, variant\n\n\n\n), and one representing a roll of bread (\n\n\n\n, variant X4 (𓏒)). The land glyph is generally colored reddish yellow and sometimes speckled to indicate sand.",
     "related": [
@@ -116295,12 +116295,12 @@
     "description": "Sign of eighteenth nome of Lower Egypt",
     "meanings": [
       {
-        "text": "Logogram: ^jmt-xnt — southern Imet (eighteenth nome of Lower Egypt)",
+        "text": "Logogram: Jmt-xnt — southern Imet (eighteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^jmt-ḫnt"
+      "Jmt-ḫnt"
     ],
     "related": [
       "N1",
@@ -116324,12 +116324,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nmtj — Nemti (eighteenth nome of Upper Egypt)",
+        "text": "Logogram: Nmtj — Nemti (eighteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^nmtj",
+      "Nmtj",
       "dwn-ꜥnwy"
     ],
     "related": [
@@ -116372,7 +116372,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ^jmn — Amun",
+        "text": "Logogram: Jmn — Amun",
         "type": "logogram"
       },
       {
@@ -116382,7 +116382,7 @@
     ],
     "transliteration": [
       "n",
-      "^jmn",
+      "Jmn",
       "ṯḥn",
       "ꞽmn"
     ],
@@ -116461,12 +116461,12 @@
     "description": "Sign of nineteenth nome of Lower Egypt",
     "meanings": [
       {
-        "text": "Logogram: ^jmt-pH — northern Imet (nineteenth nome of Lower Egypt)",
+        "text": "Logogram: Jmt-pH — northern Imet (nineteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^jmt-pḥ"
+      "Jmt-pḥ"
     ],
     "related": [
       "N1",
@@ -116490,13 +116490,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^wAbwj — Wabui (nineteenth nome of Upper Egypt)",
+        "text": "Logogram: WAbwj — Wabui (nineteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "bw-ꞽgꜣꞽ",
-      "^wꜣbwj"
+      "Wꜣbwj"
     ],
     "related": [
       "N1",
@@ -116553,12 +116553,12 @@
     "description": "Sign of twentieth nome of Lower Egypt",
     "meanings": [
       {
-        "text": "Logogram: ^spd — Sopdu (twentieth nome of Lower Egypt)",
+        "text": "Logogram: Spd — Sopdu (twentieth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^spd"
+      "Spd"
     ],
     "related": [
       "N1",
@@ -116582,13 +116582,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nart-xntt — southern Noret (twentieth nome of Upper Egypt)",
+        "text": "Logogram: Nart-xntt — southern Noret (twentieth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "nꜥrt-ḫntt",
-      "^nꜥrt-ḫntt"
+      "Nꜥrt-ḫntt"
     ],
     "related": [
       "N1",
@@ -116669,13 +116669,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nart-pHt — northern Noret (twenty-first nome of Upper Egypt)",
+        "text": "Logogram: Nart-pHt — northern Noret (twenty-first nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "nꜥrt-pht",
-      "^nꜥrt-pḥt"
+      "Nꜥrt-pḥt"
     ],
     "related": [
       "N1",
@@ -116781,12 +116781,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^mdnjt — Medenit (twenty-second nome of Upper Egypt)",
+        "text": "Logogram: Mdnjt — Medenit (twenty-second nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^mdnjt",
+      "Mdnjt",
       "mdnꞽt"
     ],
     "related": [
@@ -117100,7 +117100,7 @@
     "description": "The hill country over the edge of the cultivated areas.",
     "meanings": [
       {
-        "text": "Logogram: ^HA — Ha",
+        "text": "Logogram: HA — Ha",
         "type": "logogram"
       },
       {
@@ -117118,7 +117118,7 @@
     ],
     "transliteration": [
       "ḫꜣst",
-      "^ḥꜣ"
+      "Ḥꜣ"
     ],
     "related": [
       "N1",
@@ -117460,7 +117460,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jnj-Hrt — Onuris",
+        "text": "Logogram: Jnj-Hrt — Onuris",
         "type": "logogram"
       },
       {
@@ -117472,7 +117472,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hr — Horus",
+        "text": "Logogram: Hr — Horus",
         "type": "logogram"
       },
       {
@@ -117499,9 +117499,9 @@
       "ḥr",
       "wꜣ",
       "mṯn",
-      "^jnj-ḥrt",
+      "Jnj-ḥrt",
       "ḥrw",
-      "^ḥr"
+      "Ḥr"
     ],
     "etymology": "Representing a road lined with shrubs. The depicted road tended to be curved in the early phases of the Old Kingdom, and such curved variants occasionally appeared even much later, when the most common form had become straight. The phonogrammatic value of ḥr is derived by the rebus principle from its use in ḥrt (“road”).",
     "related": [
@@ -122580,13 +122580,13 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ^nbt-Hwt — Nephthys",
+        "text": "Logogram: Nbt-Hwt — Nephthys",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "nbt-ḥwt",
-      "^nbt-ḥwt"
+      "Nbt-ḥwt"
     ],
     "related": [],
     "source": "aegyptus",
@@ -122659,14 +122659,14 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ^Hwt-^Hr — Hathor",
+        "text": "Logogram: Hwt-Hr — Hathor",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ḥwt-ḥr",
       "ḥwt_ḥr",
-      "^ḥwt-^ḥr"
+      "Ḥwt-Ḥr"
     ],
     "related": [],
     "source": "aegyptus",
@@ -126312,7 +126312,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^nxn — Hieraconpolis",
+        "text": "Logogram: Nxn — Hieraconpolis",
         "type": "logogram"
       },
       {
@@ -126326,7 +126326,7 @@
     ],
     "transliteration": [
       "nḫn",
-      "^nḫn"
+      "Nḫn"
     ],
     "related": [
       "O1",
@@ -143138,7 +143138,7 @@
     "description": "Sceptre with feathers",
     "meanings": [
       {
-        "text": "Logogram: ^nfr-tm — Nefertem",
+        "text": "Logogram: Nfr-tm — Nefertem",
         "type": "logogram"
       },
       {
@@ -143147,7 +143147,7 @@
       }
     ],
     "transliteration": [
-      "^nfr-tm",
+      "Nfr-tm",
       "nfr-tm"
     ],
     "related": [],
@@ -143471,14 +143471,14 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^wAst — Thebes",
+        "text": "Logogram: WAst — Thebes",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "wꜣst",
       "wꜣs",
-      "^wꜣst"
+      "Wꜣst"
     ],
     "related": [
       "R1",
@@ -143519,13 +143519,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^sSAt — Seshat",
+        "text": "Logogram: SSAt — Seshat",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "sšꜣt",
-      "^sšꜣt"
+      "Sšꜣt"
     ],
     "related": [
       "R1",
@@ -143618,11 +143618,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^mnw — Min",
+        "text": "Logogram: Mnw — Min",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^xm — Ausim",
+        "text": "Logogram: Xm — Ausim",
         "type": "logogram"
       },
       {
@@ -143635,10 +143635,10 @@
       }
     ],
     "transliteration": [
-      "^mnw",
+      "Mnw",
       "ḫm",
       "mnw",
-      "^ḫm"
+      "Ḫm"
     ],
     "etymology": "The emblem of the god Min",
     "related": [
@@ -143732,12 +143732,12 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^njt — Neith",
+        "text": "Logogram: Njt — Neith",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "^njt",
+      "Njt",
       "nt",
       "nit",
       "nrt"
@@ -143904,7 +143904,7 @@
     "description": "Two arrows crossed over a shield",
     "meanings": [
       {
-        "text": "Logogram: ^njt — Neith",
+        "text": "Logogram: Njt — Neith",
         "type": "logogram"
       },
       {
@@ -143913,7 +143913,7 @@
       }
     ],
     "transliteration": [
-      "^njt",
+      "Njt",
       "nt"
     ],
     "related": [],
@@ -148043,7 +148043,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ^Ssmtt — Shesmetet",
+        "text": "Logogram: Ssmtt — Shesmetet",
         "type": "logogram"
       },
       {
@@ -148054,7 +148054,7 @@
     "transliteration": [
       "šsm",
       "šsmtt",
-      "^šsmtt"
+      "Šsmtt"
     ],
     "related": [
       "S1",
@@ -149099,7 +149099,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^Hpwj — Hepui",
+        "text": "Logogram: Hpwj — Hepui",
         "type": "logogram"
       }
     ],
@@ -149107,7 +149107,7 @@
       "šwt",
       "ḥpwi",
       "ḥp",
-      "^ḥpwj"
+      "Ḥpwj"
     ],
     "related": [
       "S1",
@@ -156002,7 +156002,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^THnw — Libia",
+        "text": "Logogram: THnw — Libia",
         "type": "logogram"
       },
       {
@@ -156084,7 +156084,7 @@
       "sbj",
       "ḳmꜣ",
       "nḥsi",
-      "^ṯḥnw"
+      "Ṯḥnw"
     ],
     "etymology": "Representing a throwstick or, in its function representing foreignness, a club as a foreign weapon of war.",
     "related": [
@@ -174112,7 +174112,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ^Abw — Elephantine",
+        "text": "Determinative: Abw — Elephantine",
         "type": "determinative"
       }
     ],
@@ -174121,7 +174121,7 @@
       "ꜣb",
       "ꜣbw",
       "mꜣt",
-      "^ꜣbw"
+      "Ꜣbw"
     ],
     "related": [
       "W1",
@@ -175556,7 +175556,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ^nxbt — Nekhbet",
+        "text": "Determinative: Nxbt — Nekhbet",
         "type": "determinative"
       },
       {
@@ -175579,7 +175579,7 @@
       "𓏊",
       "𓏋",
       "m-ẖnw",
-      "^nḫbt"
+      "Nḫbt"
     ],
     "etymology": "Representing a bowl.",
     "related": [
@@ -178695,15 +178695,15 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^DHwtj — Thoth",
+        "text": "Logogram: DHwtj — Thoth",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^gb — Geb",
+        "text": "Logogram: Gb — Geb",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^jnpw — Anubis",
+        "text": "Logogram: Jnpw — Anubis",
         "type": "logogram"
       },
       {
@@ -178720,12 +178720,12 @@
       }
     ],
     "transliteration": [
-      "^gb",
-      "^jnpw",
+      "Gb",
+      "Jnpw",
       "t",
       "it",
       "ḏḥwty",
-      "^ḏḥwtj",
+      "Ḏḥwtj",
       "jt-nṯr"
     ],
     "related": [
@@ -183904,7 +183904,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ^stx — Seth",
+        "text": "Logogram: Stx — Seth",
         "type": "logogram",
         "period": "MK"
       },
@@ -183916,7 +183916,7 @@
     "transliteration": [
       "wḏꜥ",
       "sṯš",
-      "^stḫ"
+      "Stḫ"
     ],
     "related": [
       "Aa1",
