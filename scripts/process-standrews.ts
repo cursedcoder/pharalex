@@ -127,18 +127,29 @@ function parseSignUse(filePath: string): Map<string, SignUse> {
       if (!Array.isArray(items)) continue;
 
       for (const item of items) {
+        // Skip entries that belong to sign combinations (e.g. O50:Z4),
+        // not to the standalone sign. The <group> element specifies
+        // a composite sign context like "O50:.*Z1*Z1*.".
+        if (item.group) continue;
+
         const period: string | undefined = item["@_period"]
           ? String(item["@_period"])
           : undefined;
 
-        // Transliteration value
-        const al = item.al
-          ? typeof item.al === "string"
-            ? item.al
-            : typeof item.al === "object" && "#text" in (item.al as object)
-              ? String((item.al as Record<string, unknown>)["#text"])
-              : String(item.al)
+        // Transliteration value — prefer @root (the sign's own phonetic value)
+        // over the inflected word form (e.g. root="sp" over "spt")
+        const alObj = item.al;
+        const alRoot = typeof alObj === "object" && alObj !== null && "@_root" in alObj
+          ? String((alObj as Record<string, unknown>)["@_root"])
           : null;
+        const alText = alObj
+          ? typeof alObj === "string"
+            ? alObj
+            : typeof alObj === "object" && "#text" in (alObj as object)
+              ? String((alObj as Record<string, unknown>)["#text"])
+              : String(alObj)
+          : null;
+        const al = alRoot ?? alText;
 
         // English translation
         const tr = item.tr
