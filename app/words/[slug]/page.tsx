@@ -260,7 +260,7 @@ export default async function WordPage({ params }: Props) {
               </div>
 
               <Link
-                href="/"
+                href="/search"
                 className="flex items-center gap-2 text-sm text-sandstone hover:text-gold transition-colors"
               >
                 ← Back to search

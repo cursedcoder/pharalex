@@ -42,8 +42,8 @@ interface RawWord {
   notes: string[];
 }
 
-// Variant codes have a trailing uppercase letter after the base number
-const VARIANT_RE = /^[A-Z][a-z]?\d+[A-Z]/;
+// Variant codes have a trailing letter (upper or lowercase) after the base number
+const VARIANT_RE = /^[A-Z][a-z]?\d+[A-Za-z]/;
 
 function main() {
   console.log("Building search indexes...");

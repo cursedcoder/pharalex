@@ -13,7 +13,7 @@ export function glyphHref(code: string): string {
  */
 export function getBaseCode(code: string): string | null {
   if (code.startsWith("U+")) return null;
-  const m = code.match(/^([A-Z][a-z]?\d+)[A-Z]/);
+  const m = code.match(/^([A-Z][a-z]?\d+)[A-Za-z]/);
   if (!m) return null;
   const base = m[1];
   return base !== code ? base : null;
