@@ -93,7 +93,6 @@ function SearchContent() {
       });
       const data = await res.json();
       setResults(data.results ?? []);
-      setFilter("all");
     } catch (e) {
       if ((e as Error).name !== "AbortError") {
         setResults([]);
