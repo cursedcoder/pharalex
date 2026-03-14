@@ -51,6 +51,8 @@ const TYPOS: [string, string][] = [
   ["Conquerer", "Conqueror"],
   ["KIngs", "Kings"],
   ["feedfood", "feed, food"],
+  ["complait", "complaint"],
+  ["totlaity", "totality"],
 ];
 
 /**
