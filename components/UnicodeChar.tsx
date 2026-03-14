@@ -7,11 +7,16 @@ import { useRef, useEffect, useState } from "react";
  * can't render it (tofu detection via canvas measurement).
  */
 export function UnicodeChar({ char, className = "" }: { char: string; className?: string }) {
-  const [visible, setVisible] = useState(true);
+  // Start as null to avoid hydration mismatch — canvas measurement
+  // is client-only, so we must not render until we've checked.
+  const [status, setStatus] = useState<"pending" | "visible" | "hidden">("pending");
   const measured = useRef(false);
 
   useEffect(() => {
-    if (measured.current || !char) return;
+    if (measured.current || !char) {
+      if (!char) setStatus("hidden");
+      return;
+    }
     measured.current = true;
 
     // Compare the character width against a known-missing codepoint.
@@ -19,7 +24,10 @@ export function UnicodeChar({ char, className = "" }: { char: string; className?
     try {
       const canvas = document.createElement("canvas");
       const ctx = canvas.getContext("2d");
-      if (!ctx) return;
+      if (!ctx) {
+        setStatus("visible");
+        return;
+      }
 
       const font = '48px "NewGardiner", "Noto Sans Egyptian Hieroglyphs", sans-serif';
       ctx.font = font;
@@ -29,15 +37,13 @@ export function UnicodeChar({ char, className = "" }: { char: string; className?
       const tofuWidth = ctx.measureText("\uFFFF").width;
 
       // If same width as tofu, the glyph is missing
-      if (charWidth === tofuWidth || charWidth === 0) {
-        setVisible(false);
-      }
+      setStatus(charWidth === tofuWidth || charWidth === 0 ? "hidden" : "visible");
     } catch {
-      // Canvas not available, keep visible
+      setStatus("visible");
     }
   }, [char]);
 
-  if (!visible || !char) return null;
+  if (status !== "visible") return null;
 
   return <span className={`font-hieroglyph ${className}`}>{char}</span>;
 }
