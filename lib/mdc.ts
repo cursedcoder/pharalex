@@ -146,12 +146,36 @@ export function parseMdc(mdc: string): MdcNode {
   }
 
   // Handle scholarly restoration: [signs] — render signs on hatched background
-  if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
+  // Must check for balanced brackets — [A]-[B] has multiple [...] blocks
+  // and should be parsed as a sequence, not a single restoration.
+  if (trimmed.startsWith("[") && trimmed.endsWith("]") && !/[\[\]]/.test(trimmed.slice(1, -1))) {
     const content = trimmed.slice(1, -1);
     return {
       type: "restored",
       children: splitAt(content, "-").map(parseVert),
     };
+  }
+
+  // Handle multiple adjacent restorations: [A]-[B]-[C] — each [...] is restored
+  if (trimmed.includes("[") && trimmed.includes("]")) {
+    // Split at "-" first, then wrap each [...] segment as restored
+    const seq = splitAt(trimmed, "-");
+    if (seq.length > 1) {
+      return {
+        type: "seq",
+        children: seq.map((seg) => {
+          const s = seg.trim();
+          if (s.startsWith("[") && s.endsWith("]")) {
+            const inner = s.slice(1, -1);
+            return {
+              type: "restored" as const,
+              children: [parseVert(inner)],
+            };
+          }
+          return parseVert(s);
+        }),
+      };
+    }
   }
 
   const seq = splitAt(trimmed, "-");
