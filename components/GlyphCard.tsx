@@ -35,7 +35,7 @@ export function GlyphCard({ glyph, showDescription = true, highlight = false, va
       >
         <div className="flex items-start gap-4">
           <div className="group-hover:scale-105 transition-transform">
-            <SmartGlyph glyph={glyph} size="md" />
+            <SmartGlyph glyph={glyph} size="lg" />
           </div>
 
           <div className="flex-1 min-w-0">
