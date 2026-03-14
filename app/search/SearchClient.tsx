@@ -55,11 +55,13 @@ function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialQuery = searchParams.get("q") || "";
+  const initialShow = searchParams.get("show");
+  const initialFilter = initialShow === "words" ? "words" : initialShow === "glyphs" ? "glyphs" : "all";
 
   const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState<SearchApiResult[]>([]);
   const [isSearching, setIsSearching] = useState(!!initialQuery);
-  const [filter, setFilter] = useState<"all" | "glyphs" | "words">("all");
+  const [filter, setFilter] = useState<"all" | "glyphs" | "words">(initialFilter);
 
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
