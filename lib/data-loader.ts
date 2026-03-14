@@ -1,9 +1,13 @@
 import type { Glyph, DictionaryWord } from "./types";
+import type { SearchGlyph, SearchWord } from "./search-types";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 let _glyphsP: Promise<Glyph[]> | null = null;
 let _wordsP: Promise<DictionaryWord[]> | null = null;
 let _categoriesP: Promise<Record<string, string>> | null = null;
+let _searchGlyphsP: Promise<SearchGlyph[]> | null = null;
+let _searchWordsP: Promise<SearchWord[]> | null = null;
+let _searchFuseIndexP: Promise<unknown> | null = null;
 
 async function loadJson<T>(filename: string): Promise<T> {
   let cfContext: Awaited<ReturnType<typeof getCloudflareContext>> | null = null;
@@ -66,4 +70,16 @@ export function loadWords(): Promise<DictionaryWord[]> {
 
 export function loadCategories(): Promise<Record<string, string>> {
   return cachedLoad(() => _categoriesP, (p) => { _categoriesP = p; }, () => loadJson<Record<string, string>>("categories.json"));
+}
+
+export function loadSearchGlyphs(): Promise<SearchGlyph[]> {
+  return cachedLoad(() => _searchGlyphsP, (p) => { _searchGlyphsP = p; }, () => loadJson<SearchGlyph[]>("search-glyphs.json"));
+}
+
+export function loadSearchWords(): Promise<SearchWord[]> {
+  return cachedLoad(() => _searchWordsP, (p) => { _searchWordsP = p; }, () => loadJson<SearchWord[]>("search-words.json"));
+}
+
+export function loadSearchFuseIndex(): Promise<unknown> {
+  return cachedLoad(() => _searchFuseIndexP, (p) => { _searchFuseIndexP = p; }, () => loadJson<unknown>("search-fuse-index.json"));
 }

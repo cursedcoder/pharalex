@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fuzzySearch } from "@/lib/search";
-import { searchWords, wordHref, translitToUnicode } from "@/lib/words";
-import type { DictionaryWord } from "@/lib/types";
+import { loadSearchWords } from "@/lib/data-loader";
+import { wordHref, translitToUnicode } from "@/lib/word-utils";
+import type { SearchWord } from "@/lib/search-types";
 
 export const runtime = "nodejs";
 
@@ -33,7 +34,7 @@ export type WordResult = {
 
 export type SearchApiResult = GlyphResult | WordResult;
 
-function wordScore(word: DictionaryWord, q: string): number {
+function wordScore(word: SearchWord, q: string): number {
   const tl = word.transliteration.toLowerCase();
   const tr = word.translation.toLowerCase();
   if (tl === q) return 0;
@@ -43,6 +44,24 @@ function wordScore(word: DictionaryWord, q: string): number {
   if (tl.includes(q)) return 0.2;
   if (tr.includes(q)) return 0.25;
   return 0.35;
+}
+
+async function searchWords(query: string, limit = 40): Promise<SearchWord[]> {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+
+  const words = await loadSearchWords();
+  const results: SearchWord[] = [];
+  for (const w of words) {
+    if (results.length >= limit) break;
+    if (
+      w.transliteration.toLowerCase().includes(q) ||
+      w.translation.toLowerCase().includes(q)
+    ) {
+      results.push(w);
+    }
+  }
+  return results;
 }
 
 const MAX_QUERY_LENGTH = 100;

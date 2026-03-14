@@ -45,5 +45,8 @@ next-env.d.ts
 *.gly
 scripts/source/
 
+# Build-time generated search indexes
+public/data/search-*.json
+
 # Local investigation reports
 /report/

@@ -1,37 +1,40 @@
 import Fuse from "fuse.js";
-import type { Glyph } from "./types";
-import { getAllGlyphs, getBaseCode } from "./glyphs";
+import type { SearchGlyph } from "./search-types";
+import { loadSearchGlyphs, loadSearchFuseIndex } from "./data-loader";
 
-let _fuseP: Promise<Fuse<Glyph>> | null = null;
+let _fuseP: Promise<Fuse<SearchGlyph>> | null = null;
 
-function isVariant(code: string): boolean {
-  return getBaseCode(code) !== null;
-}
+const FUSE_KEYS = [
+  { name: "code", weight: 3 },
+  { name: "unicode", weight: 2 },
+  { name: "transliteration", weight: 2 },
+  { name: "meanings.text", weight: 1.5 },
+  { name: "description", weight: 0.8 },
+];
 
-function getFuseInstance(): Promise<Fuse<Glyph>> {
+const FUSE_OPTIONS = {
+  keys: FUSE_KEYS,
+  threshold: 0.25,
+  includeScore: true,
+  ignoreLocation: true,
+  minMatchCharLength: 3,
+};
+
+function getFuseInstance(): Promise<Fuse<SearchGlyph>> {
   if (_fuseP) return _fuseP;
-  const p = getAllGlyphs().then((glyphs) => {
-    const filtered = glyphs.filter((g) => !isVariant(g.code));
-    return new Fuse(filtered, {
-      keys: [
-        { name: "code", weight: 3 },
-        { name: "unicode", weight: 2 },
-        { name: "transliteration", weight: 2 },
-        { name: "meanings.text", weight: 1.5 },
-        { name: "description", weight: 0.8 },
-      ],
-      threshold: 0.25,
-      includeScore: true,
-      ignoreLocation: true,
-      minMatchCharLength: 3,
-    });
-  }).catch((err) => { _fuseP = null; throw err; });
+  const p = Promise.all([loadSearchGlyphs(), loadSearchFuseIndex()]).then(
+    ([glyphs, rawIndex]) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const index = Fuse.parseIndex<SearchGlyph>(rawIndex as any);
+      return new Fuse(glyphs, FUSE_OPTIONS, index);
+    }
+  ).catch((err) => { _fuseP = null; throw err; });
   _fuseP = p;
   return p;
 }
 
 export interface SearchResult {
-  glyph: Glyph;
+  glyph: SearchGlyph;
   score: number;
   matches?: {
     key: string;
@@ -58,11 +61,11 @@ export async function fuzzySearch(
   }));
 }
 
-export async function instantSearch(query: string): Promise<Glyph[]> {
+export async function instantSearch(query: string): Promise<SearchGlyph[]> {
   const trimmed = query.trim();
   if (!trimmed) return [];
 
-  const glyphs = (await getAllGlyphs()).filter((g) => !isVariant(g.code));
+  const glyphs = await loadSearchGlyphs();
   const lowerQuery = trimmed.toLowerCase();
 
   const exactCodeMatch = glyphs.filter(
