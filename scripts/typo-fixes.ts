@@ -19,6 +19,7 @@ const TYPOS: [string, string][] = [
   ["enviroment", "environment"],
   ["excercise", "exercise"],
   ["existance", "existence"],
+  ["existant", "existent"],
   ["grammer", "grammar"],
   ["gaurd", "guard"],
   ["harrass", "harass"],
