@@ -410,7 +410,7 @@ export default async function HomePage() {
               <span className="font-hieroglyph text-lg">𓂀</span>
               <span>PharaLex</span>
             </div>
-            <p>Data sourced from Wiktionary and the Gardiner Sign List</p>
+            <p>Data from Wiktionary, Unicode, JSesh, St Andrews, and Vygus Dictionary</p>
             <Link
               href="/acknowledgments"
               className="hover:text-gold transition-colors"

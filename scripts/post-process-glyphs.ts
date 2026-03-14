@@ -58,6 +58,32 @@ console.log("Post-processing glyphs.json...");
 const glyphs: Glyph[] = JSON.parse(fs.readFileSync(GLYPHS_PATH, "utf-8"));
 console.log(`  Loaded ${glyphs.length} glyphs`);
 
+// ── 0. Normalize Ff/J code prefixes ─────────────────────────────────────────
+// Ff codes (JSesh font-specific) are variants of F codes: Ff4 → F4A (if F4A free)
+// J codes are JSesh alternatives for Aa: J1 → Aa1A (if Aa1A free)
+// We just add a variantOf-style description so they group properly
+const existingCodes = new Set(glyphs.map((g) => g.code));
+let codeNormalized = 0;
+for (const g of glyphs) {
+  if (g.code.startsWith("Ff") && !g.description) {
+    // Ff4 is a variant of F4 (same sign, different font rendering)
+    const base = g.code.replace(/^Ff/, "F");
+    if (existingCodes.has(base)) {
+      g.description = `Variant of ${base}`;
+      codeNormalized++;
+    }
+  }
+  if (/^J\d/.test(g.code) && !g.description) {
+    // J1 is a variant of Aa1
+    const base = g.code.replace(/^J/, "Aa");
+    if (existingCodes.has(base)) {
+      g.description = `Variant of ${base}`;
+      codeNormalized++;
+    }
+  }
+}
+console.log(`  Normalized Ff/J codes: ${codeNormalized}`);
+
 // ── 1. Sort meanings by type ────────────────────────────────────────────────
 let meaningsSorted = 0;
 for (const g of glyphs) {
@@ -125,6 +151,19 @@ for (const g of glyphs) {
   signNamesTruncLong++;
 }
 console.log(`  Truncated long signNames: ${signNamesTruncLong}`);
+
+// ── 3d. Clean broken var references in descriptions ─────────────────────────
+// Patterns like "(S53vara?)" from Unikemet source
+let varRefsCleaned = 0;
+for (const g of glyphs) {
+  if (!g.description) continue;
+  const cleaned = g.description.replace(/\([A-Z][a-z]?\d+var[a-z]\?\)/g, "").replace(/\s{2,}/g, " ").trim();
+  if (cleaned !== g.description) {
+    g.description = cleaned;
+    varRefsCleaned++;
+  }
+}
+console.log(`  Cleaned broken var references: ${varRefsCleaned}`);
 
 // ── 4. Convert MdC in meaning label transliterations ────────────────────────
 // Only convert the short token right after labels like "Logogram: KA"

@@ -40,7 +40,7 @@ export function GlyphCard({ glyph, showDescription = true, highlight = false, va
           </div>
 
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
               <h3 className="font-display text-lg font-semibold text-brown">
                 {glyph.code}
               </h3>
