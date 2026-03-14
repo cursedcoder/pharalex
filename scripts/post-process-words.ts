@@ -44,7 +44,31 @@ for (const w of words) {
 }
 console.log(`  Stripped leaked MdC prefixes: ${mdcStripped}`);
 
-// ── 4. Trim whitespace ──────────────────────────────────────────────────────
+// ── 4. Strip leading dot-prefix leaked suffixes (e.g. ".i I have proved") ──
+let dotStripped = 0;
+for (const w of words) {
+  if (w.translation.startsWith(".")) {
+    // Strip leading ".X " pattern (leaked grammatical suffix)
+    const fixed = w.translation.replace(/^\.[a-zA-Z]+ /, "");
+    if (fixed !== w.translation) {
+      w.translation = fixed;
+      dotStripped++;
+    }
+  }
+}
+if (dotStripped > 0) console.log(`  Stripped dot-prefix suffixes: ${dotStripped}`);
+
+// ── 5. Remove entries with translation "?" (unknown/empty) ─────────────────
+const beforeLen = words.length;
+for (let i = words.length - 1; i >= 0; i--) {
+  if (words[i].translation.trim() === "?" || words[i].translation.trim() === "") {
+    words.splice(i, 1);
+  }
+}
+const removed = beforeLen - words.length;
+if (removed > 0) console.log(`  Removed empty/unknown entries: ${removed}`);
+
+// ── 6. Trim whitespace ──────────────────────────────────────────────────────
 let trimmed = 0;
 for (const w of words) {
   const t = w.transliteration.trim();
