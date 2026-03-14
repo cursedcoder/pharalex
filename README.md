@@ -10,7 +10,7 @@
 
 - **8,132 hieroglyphs** with 100% SVG coverage — every glyph renders sharply at any size
 - **Unified data** — Gardiner codes, Unicode codepoints, phonetic values, physical descriptions, logogram/phonogram/determinative uses, and cross-references from five open datasets
-- **16,379 attested text examples** from the Thesaurus Linguae Aegyptiae corpus (Old, Middle, and Late Egyptian)
+- **45,591 dictionary words** from the Vygus Middle Egyptian dictionary
 - **Pharaohs database** — 300+ rulers across 30+ dynasties with timeline and list views
 - **Full-text fuzzy search** across meanings, transliterations, Gardiner codes, and descriptions
 - **Gardiner categories** — all 26 thematic groups (Men, Women, Birds, Reptiles, etc.)
@@ -68,8 +68,6 @@ All glyph SVGs and dictionary data come from open-source and open-data projects.
 | [Unicode Unikemet](https://unicode.org/) | 4,376 | Unicode License |
 | [JSesh sign descriptions](https://github.com/rosmord/jsesh) | 6,783 | LGPL-3.0 |
 | [St Andrews Unicode Sign List](https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/) | 1,071 | Academic open |
-| [TLA Earlier Egyptian corpus v18](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-Earlier_Egyptian_original-v18-premium) | 12,773 | CC BY-SA 4.0 |
-| [TLA Late Egyptian corpus v19](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-late_egyptian-v19-premium) | 3,606 | CC BY-SA 4.0 |
 | [Wiktionary Egyptian](https://kaikki.org/dictionary/Ancient%20Egyptian/) | ~260 | CC BY-SA 3.0 |
 
 ---

@@ -6,7 +6,7 @@ This document describes where every glyph shape and every piece of dictionary da
 
 ## Glyph Visual Sources
 
-PharaLex displays **8,282 glyphs** with **100% SVG coverage**, drawn from four open-source glyph collections.
+PharaLex displays **8,132 glyphs** with **100% SVG coverage**, drawn from four open-source glyph collections.
 
 | # | Source | Glyphs | Coverage | How obtained | License |
 |---|--------|-------:|----------|--------------|---------|
@@ -14,7 +14,7 @@ PharaLex displays **8,282 glyphs** with **100% SVG coverage**, drawn from four o
 | 2 | **NewGardiner** (hierojax) | 997 | Unicode 16.0 Extended-A block (U+13460–U+143FF) | Cloned [`nederhof/hierojax`](https://github.com/nederhof/hierojax); extracted per-glyph SVGs from `docs/NewGardiner.ttf` using `fontTools` + `SVGPathPen` | GPL-3.0 |
 | 3 | **Aegyptus 6.17** | 423 | Extended Hieroglyphica codes not present in JSesh | Downloaded Aegyptus 6.17 (last free release) from [dn-works.com/ufas](https://dn-works.com/ufas/); extracted SVGs from the TTF using `opentypesvg` | Free for personal/non-commercial use (older releases) |
 | 4 | **Noto Sans Egyptian Hieroglyphs** | 109 | Rare basic-block codepoints (U+13000–U+1342F) not in JSesh | Downloaded `NotoSansEgyptianHieroglyphs-Regular.ttf` from [notofonts/egyptian-hieroglyphs](https://github.com/notofonts/egyptian-hieroglyphs); extracted SVGs using `opentypesvg` | OFL-1.1 |
-| **Total** | | **8,282** | **100.0 %** | | |
+| **Total** | | **8,132** | **100.0 %** | | |
 
 ### How SVG extraction works
 
@@ -53,7 +53,7 @@ Glyph names, meanings, transliterations, phonetic values, and Gardiner categoris
 | **St Andrews Unicode Sign List** | 1,071 entries | English physical descriptions (e.g. "seated man", "owl"), semantic uses (logogram/phonogram/determinative) with transliterations and translations | Downloaded `signdescriptioneng.xml` and `signuse.xml` from [mjn.host.cs.st-andrews.ac.uk](https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/); parsed with `scripts/process-standrews.ts` | Academic open |
 | **TLA Earlier Egyptian corpus** (v18) | 12,773 sentences | Attested text examples: hieroglyphs + transliteration + German translation + date range, for Old/Middle Egyptian period (~3000–1550 BCE) | Downloaded `train.jsonl` from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-Earlier_Egyptian_original-v18-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
 | **TLA Late Egyptian corpus** (v19) | 3,606 sentences | Same as above for Late Egyptian period (~1550–700 BCE) | Downloaded `train.jsonl` from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-late_egyptian-v19-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
-| **Combined** | **8,282** | All of the above, deduplicated and merged by Gardiner code | Final output at `lib/data/glyphs.json` | — |
+| **Combined** | **8,132** | All of the above, deduplicated and merged by Gardiner code | Final output at `lib/data/glyphs.json` | — |
 
 ---
 
@@ -69,7 +69,7 @@ TLA corpus JSONL (×2)     → scripts/process-tla.ts         ─┘
 
 JSesh SVGs (repo)         ─┐
 NewGardiner TTF extract   ─┤
-Aegyptus TTF extract      ─┼→ public/glyphs/{code}.svg  (8,282 files)
+Aegyptus TTF extract      ─┼→ public/glyphs/{code}.svg  (8,132 files)
 Noto TTF extract          ─┘
 ```
 
