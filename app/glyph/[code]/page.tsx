@@ -573,7 +573,7 @@ export default async function GlyphPage({ params }: PageProps) {
                     ))}
                   </div>
                   <Link
-                    href={`/words?q=${encodeURIComponent(glyph.code)}`}
+                    href={`/search?q=${encodeURIComponent(glyph.code)}&show=words`}
                     className="mt-2 block text-xs text-gold-dark hover:text-gold transition-colors"
                   >
                     Search all words with {glyph.code} →
