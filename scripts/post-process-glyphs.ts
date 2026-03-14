@@ -194,24 +194,45 @@ for (const g of glyphs) {
 }
 console.log(`  Converted MdC in meanings: ${mdcInMeanings}`);
 
-// ── 4b. Fix ẖ/ḫ mismatch in Phonogram labels ──────────────────────────────
-// St Andrews cap() turned x→X, then MdC converted X→ẖ, but the sign's
-// actual value is ḫ (from x). Fix by checking against transliteration.
-let voicedFixed = 0;
+// ── 4b. Fix MdC case mismatches in meaning labels ──────────────────────────
+// St Andrews cap() turns lowercase MdC chars to uppercase, changing meaning:
+//   x (ḫ) → X (ẖ), s (s) → S (š), t (t) → T (ṯ), d (d) → D (ḏ), a (ꜥ) → A (ꜣ)
+// Fix by checking the glyph's actual transliteration and replacing the
+// wrong uppercase Unicode form with the correct lowercase one.
+const CASE_PAIRS: [string, string][] = [
+  // [uppercase MdC unicode, lowercase MdC unicode]
+  ["ẖ", "ḫ"],  // X vs x
+  ["š", "s"],   // S vs s (only fix if translit has plain s, not š)
+  ["ṯ", "t"],   // T vs t
+  ["ḏ", "d"],   // D vs d
+];
+let caseMismatchFixed = 0;
 for (const g of glyphs) {
-  const hasKh = g.transliteration.some((t: string) => t.includes("ḫ"));
-  if (!hasKh) continue;
+  const allTranslit = g.transliteration.join(" ");
   for (const m of g.meanings) {
-    if (m.text.includes("ẖ")) {
-      const fixed = m.text.replace(/ẖ/g, "ḫ");
-      if (fixed !== m.text) {
-        m.text = fixed;
-        voicedFixed++;
+    // Only fix in Phonogram/Logogram label context
+    if (!m.text.startsWith("Phonogram:") && !m.text.startsWith("Logogram:")) continue;
+    let text = m.text;
+    for (const [upper, lower] of CASE_PAIRS) {
+      if (!text.includes(upper)) continue;
+      // Extract the transliteration token from the label
+      const labelMatch = text.match(/(?:Phonogram|Logogram):\s+(\S+)/);
+      if (!labelMatch) continue;
+      const token = labelMatch[1];
+      if (!token.includes(upper)) continue;
+      // Check if the glyph's transliteration uses the lowercase form
+      const corrected = token.replace(new RegExp(upper, "g"), lower);
+      if (allTranslit.includes(corrected) || allTranslit.includes(lower)) {
+        text = text.replace(token, corrected);
       }
+    }
+    if (text !== m.text) {
+      m.text = text;
+      caseMismatchFixed++;
     }
   }
 }
-console.log(`  Fixed ẖ→ḫ mismatch: ${voicedFixed}`);
+console.log(`  Fixed MdC case mismatches: ${caseMismatchFixed}`);
 
 // ── 5. Fix MdC corruption in English words within meanings ──────────────────
 // MdC conversion can corrupt English: "determinative" → "determinꜥtive",
