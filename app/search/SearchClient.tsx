@@ -205,25 +205,27 @@ function SearchContent() {
                 </div>
               </div>
 
-              <div className="mt-3 flex items-center gap-4">
-                <label className="flex items-center gap-1.5 text-sm text-sandstone cursor-pointer select-none">
-                  <input
-                    type="checkbox"
-                    checked={exact}
-                    onChange={handleExactToggle}
-                    className="rounded border-sandstone/40 text-gold-dark focus:ring-gold/50"
-                  />
+              <div className="mt-3 flex items-center gap-2">
+                <button
+                  onClick={handleExactToggle}
+                  className={`px-3 py-1 text-xs rounded-full border transition-colors ${
+                    exact
+                      ? "bg-gold/15 border-gold/40 text-gold-dark"
+                      : "border-sandstone/20 text-sandstone hover:border-sandstone/40 hover:text-brown"
+                  }`}
+                >
                   Exact match
-                </label>
-                <label className="flex items-center gap-1.5 text-sm text-sandstone cursor-pointer select-none">
-                  <input
-                    type="checkbox"
-                    checked={gardiner}
-                    onChange={handleGardinerToggle}
-                    className="rounded border-sandstone/40 text-gold-dark focus:ring-gold/50"
-                  />
+                </button>
+                <button
+                  onClick={handleGardinerToggle}
+                  className={`px-3 py-1 text-xs rounded-full border transition-colors ${
+                    gardiner
+                      ? "bg-gold/15 border-gold/40 text-gold-dark"
+                      : "border-sandstone/20 text-sandstone hover:border-sandstone/40 hover:text-brown"
+                  }`}
+                >
                   By Gardiner code
-                </label>
+                </button>
               </div>
 
               {!query && (
