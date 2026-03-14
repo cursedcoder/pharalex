@@ -1263,7 +1263,7 @@
     "description": "Man, seated, right knee raised, right arm raised In front, holding a sceptre (S42), angled towards the head, left arm in front of the body, holding a stick, resting against the shoulder.",
     "meanings": [
       {
-        "text": "Logogram: ẖnms — friend",
+        "text": "Logogram: ḫnms — friend",
         "type": "logogram"
       }
     ],
@@ -2126,7 +2126,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖr — fall",
+        "text": "Logogram: ḫr — fall",
         "type": "logogram"
       }
     ],
@@ -3928,7 +3928,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative: ẖwsj — pound,build",
+        "text": "Determinative: ḫwsj — pound,build",
         "type": "determinative"
       }
     ],
@@ -31039,7 +31039,7 @@
         "type": "logogram"
       },
       {
-        "text": "Ideogram or determinative in ẖnmw (“Chnum”) (same as C4)",
+        "text": "Ideogram or determinative in ḫnmw (“Chnum”) (same as C4)",
         "type": "determinative"
       },
       {
@@ -31298,7 +31298,7 @@
         "type": "logogram"
       },
       {
-        "text": "Ideogram in stẖ (“Set”)",
+        "text": "Ideogram in stḫ (“Set”)",
         "type": "other"
       },
       {
@@ -49474,7 +49474,7 @@
     "description": "The nose, eye and cheek of a human.",
     "meanings": [
       {
-        "text": "Phonogram: ẖnt",
+        "text": "Phonogram: ḫnt",
         "type": "phonogram"
       },
       {
@@ -49482,7 +49482,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖnt — in front of",
+        "text": "Logogram: ḫnt — in front of",
         "type": "logogram"
       },
       {
@@ -50522,7 +50522,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ẖm",
+        "text": "Phonogram: ḫm",
         "type": "phonogram"
       },
       {
@@ -50832,7 +50832,7 @@
     "description": "A forearm with the hand holding a stick.",
     "meanings": [
       {
-        "text": "Logogram: ẖꜣj — examine",
+        "text": "Logogram: ḫꜣj — examine",
         "type": "logogram"
       },
       {
@@ -50842,8 +50842,8 @@
     ],
     "transliteration": [
       "nḫt",
-      "ḫꜣi",
-      "ḫꜣj"
+      "ḫꜣj",
+      "ḫꜣi"
     ],
     "related": [
       "D1",
@@ -50972,7 +50972,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ẖw",
+        "text": "Phonogram: ḫw",
         "type": "phonogram"
       },
       {
@@ -50980,7 +50980,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖwj — protect",
+        "text": "Logogram: ḫwj — protect",
         "type": "logogram"
       },
       {
@@ -50989,10 +50989,10 @@
       }
     ],
     "transliteration": [
-      "ḫwꞽ",
       "ḫw",
-      "ḫwi",
-      "ḫwj"
+      "ḫwj",
+      "ḫwꞽ",
+      "ḫwi"
     ],
     "etymology": "Representation of a forearm with a flail",
     "related": [
@@ -51016,7 +51016,7 @@
     "description": "Representation of a forearm with a scepter",
     "meanings": [
       {
-        "text": "Logogram: ẖrp — administer",
+        "text": "Logogram: ḫrp — administer",
         "type": "logogram"
       },
       {
@@ -63136,7 +63136,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative in e.g. ẖnnw (“turmoil”).",
+        "text": "Determinative in e.g. ḫnnw (“turmoil”).",
         "type": "determinative"
       },
       {
@@ -63144,7 +63144,7 @@
         "type": "determinative"
       },
       {
-        "text": "Ideogram in stẖ (“Set”)",
+        "text": "Ideogram in stḫ (“Set”)",
         "type": "other"
       },
       {
@@ -63555,7 +63555,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖꜣb — hippopotamus",
+        "text": "Logogram: ḫꜣb — hippopotamus",
         "type": "logogram"
       },
       {
@@ -74944,7 +74944,7 @@
     "description": "A foreleg of a bovid (ox), hoof orientated towards the reading direction.",
     "meanings": [
       {
-        "text": "Logogram: ẖpš — foreleg",
+        "text": "Logogram: ḫpš — foreleg",
         "type": "logogram"
       },
       {
@@ -84408,7 +84408,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ẖn",
+        "text": "Phonogram: ḫn",
         "type": "phonogram"
       },
       {
@@ -84428,7 +84428,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ẖnj — alight",
+        "text": "Determinative: ḫnj — alight",
         "type": "determinative"
       },
       {
@@ -84445,9 +84445,9 @@
       "p",
       "ṯn",
       "tn",
+      "ḫn",
       "qmꜣ",
       "qmj",
-      "ḫn",
       "qmyt",
       "ḫnj",
       "sḥwj",
@@ -94716,11 +94716,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖntj — crocodile",
+        "text": "Logogram: ḫntj — crocodile",
         "type": "logogram"
       },
       {
-        "text": "Determinative in words relating to crocodiles and their perceived qualities: ḥntj (“to be greedy”), skn (“greedy”), ꜥẖm (name of a demon, literally “Horrifier”), ꜣd (“to be angry or aggressive”), etc.",
+        "text": "Determinative in words relating to crocodiles and their perceived qualities: ḥntj (“to be greedy”), skn (“greedy”), ꜥḫm (name of a demon, literally “Horrifier”), ꜣd (“to be angry or aggressive”), etc.",
         "type": "determinative"
       },
       {
@@ -94743,12 +94743,12 @@
     "transliteration": [
       "msḥ",
       "jty",
+      "ḫntj",
       "ꜣd",
       "mzḥ",
       "skn",
       "it",
       "jt",
-      "ḫntj",
       "crocodile",
       "ḥntj",
       "ꜥẖm",
@@ -101604,7 +101604,7 @@
     "description": "A dung beetle, scarab (scarabaeus sacer).",
     "meanings": [
       {
-        "text": "Phonogram: ẖpr",
+        "text": "Phonogram: ḫpr",
         "type": "phonogram"
       },
       {
@@ -101612,7 +101612,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖprr — dung beetle",
+        "text": "Logogram: ḫprr — dung beetle",
         "type": "logogram"
       }
     ],
@@ -101866,7 +101866,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ẖꜣ",
+        "text": "Phonogram: ḫꜣ",
         "type": "phonogram"
       },
       {
@@ -103092,7 +103092,7 @@
     "description": "A branch, horizontally written.",
     "meanings": [
       {
-        "text": "Phonogram: ẖt",
+        "text": "Phonogram: ḫt",
         "type": "phonogram"
       },
       {
@@ -103100,7 +103100,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ẖt — wood",
+        "text": "Logogram: ḫt — wood",
         "type": "logogram"
       },
       {
@@ -103109,8 +103109,8 @@
       }
     ],
     "transliteration": [
-      "ḏꜥ",
-      "ḫt"
+      "ḫt",
+      "ḏꜥ"
     ],
     "related": [
       "M1",
@@ -104323,11 +104323,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ẖꜣ",
+        "text": "Phonogram: ḫꜣ",
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ẖ",
+        "text": "Phonogram: ḫ",
         "type": "phonogram"
       },
       {
@@ -104335,7 +104335,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖꜣ — 1000",
+        "text": "Logogram: ḫꜣ — 1000",
         "type": "logogram"
       },
       {
@@ -112456,7 +112456,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖpš — Khepesh (second nome of Lower Egypt)",
+        "text": "Logogram: ḫpš — Khepesh (second nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -113154,7 +113154,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖꜣsww — Khasu (sixth nome of Lower Egypt)",
+        "text": "Logogram: ḫꜣsww — Khasu (sixth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -114373,13 +114373,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖntj-jꜣbtj — Khenti-abt (fourteenth nome of Lower Egypt)",
+        "text": "Logogram: ḫntj-jꜣbtj — Khenti-abt (fourteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "ḫnty-ꞽꜣbty",
-      "Ḫntj-jꜣbtj"
+      "Ḫntj-jꜣbtj",
+      "ḫnty-ꞽꜣbty"
     ],
     "related": [
       "N1",
@@ -115699,7 +115699,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖꜣst — foreign land",
+        "text": "Logogram: ḫꜣst — foreign land",
         "type": "logogram"
       },
       {
@@ -115827,11 +115827,11 @@
     "description": "A hill with a halo of sun rays behind it.",
     "meanings": [
       {
-        "text": "Phonogram: ẖꜥ",
+        "text": "Phonogram: ḫꜥ",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ẖꜥ — hill",
+        "text": "Logogram: ḫꜥ — hill",
         "type": "logogram"
       }
     ],
@@ -124233,7 +124233,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖtjw — terrace",
+        "text": "Logogram: ḫtjw — terrace",
         "type": "logogram"
       },
       {
@@ -124251,8 +124251,8 @@
     ],
     "transliteration": [
       "rwd",
-      "ḫtw",
-      "ḫtjw"
+      "ḫtjw",
+      "ḫtw"
     ],
     "etymology": "Representing a stairway, conventionally with four steps.",
     "related": [
@@ -132714,7 +132714,7 @@
     "description": "Ship under sail",
     "meanings": [
       {
-        "text": "Determinative: ẖntj — sail upstream",
+        "text": "Determinative: ḫntj — sail upstream",
         "type": "determinative"
       }
     ],
@@ -133884,7 +133884,7 @@
     "description": "An oar, written vertically.",
     "meanings": [
       {
-        "text": "Phonogram: ẖrw",
+        "text": "Phonogram: ḫrw",
         "type": "phonogram"
       },
       {
@@ -133958,13 +133958,13 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ẖrwj=fj — he says",
+        "text": "Logogram: ḫrwj=fj — he says",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "ḫrwi-fi",
-      "ḫrwj=fj"
+      "ḫrwj=fj",
+      "ḫrwi-fi"
     ],
     "related": [],
     "source": "aegyptus",
@@ -139849,7 +139849,7 @@
     "description": "A loaf of bread (X3), a flat-bottom jar with handles (W23) and a round loaf of bread (X6), arranged horizontally on an one-legged table.",
     "meanings": [
       {
-        "text": "Logogram: ẖꜣwt — table of offerings",
+        "text": "Logogram: ḫꜣwt — table of offerings",
         "type": "logogram"
       },
       {
@@ -139858,9 +139858,9 @@
       }
     ],
     "transliteration": [
+      "ḫꜣwt",
       "ḫꜣ(w)t",
-      "ḫꜣt",
-      "ḫꜣwt"
+      "ḫꜣt"
     ],
     "related": [
       "R1G",
@@ -142204,7 +142204,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ẖm",
+        "text": "Phonogram: ḫm",
         "type": "phonogram"
       },
       {
@@ -142216,7 +142216,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖm — Ausim",
+        "text": "Logogram: ḫm — Ausim",
         "type": "logogram"
       },
       {
@@ -145915,7 +145915,7 @@
     "description": "The blue crown.",
     "meanings": [
       {
-        "text": "Logogram: ẖprš — blue crown",
+        "text": "Logogram: ḫprš — blue crown",
         "type": "logogram"
       },
       {
@@ -146785,13 +146785,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖtmw — treasurer",
+        "text": "Logogram: ḫtmw — treasurer",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "ḫtm",
       "ḫtmw",
+      "ḫtm",
       "ḫtmw/y",
       "sḏꜣw",
       "sḏꜣwty",
@@ -146822,7 +146822,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖtm — seal",
+        "text": "Logogram: ḫtm — seal",
         "type": "logogram"
       },
       {
@@ -146835,8 +146835,8 @@
       }
     ],
     "transliteration": [
-      "šnꜥtj",
       "ḫtm",
+      "šnꜥtj",
       "ḏbꜥt",
       "sḏꜣwty",
       "ḫtmty"
@@ -147801,7 +147801,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖw — fan",
+        "text": "Logogram: ḫw — fan",
         "type": "logogram"
       }
     ],
@@ -148098,7 +148098,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖrp — control",
+        "text": "Logogram: ḫrp — control",
         "type": "logogram"
       },
       {
@@ -154564,7 +154564,7 @@
     "description": "A scimitar (khopesh), written horizontally.",
     "meanings": [
       {
-        "text": "Logogram: ẖpš — scimitar",
+        "text": "Logogram: ḫpš — scimitar",
         "type": "logogram"
       },
       {
@@ -162122,7 +162122,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖnr — restrain",
+        "text": "Logogram: ḫnr — restrain",
         "type": "logogram"
       },
       {
@@ -162133,8 +162133,8 @@
     "transliteration": [
       "rtḥ",
       "jtḥ",
-      "rtḥtj",
       "ḫnr",
+      "rtḥtj",
       "itḥ",
       "rtḥti",
       "ḫni"
@@ -162385,11 +162385,11 @@
     "description": "A spindle.",
     "meanings": [
       {
-        "text": "Phonogram: ẖsf",
+        "text": "Phonogram: ḫsf",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ẖsf — spin",
+        "text": "Logogram: ḫsf — spin",
         "type": "logogram"
       }
     ],
@@ -168181,7 +168181,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ẖsr — ward off",
+        "text": "Determinative: ḫsr — ward off",
         "type": "determinative"
       },
       {
@@ -172558,7 +172558,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ẖnt",
+        "text": "Phonogram: ḫnt",
         "type": "phonogram"
       },
       {
@@ -172566,7 +172566,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖnt — rack",
+        "text": "Logogram: ḫnt — rack",
         "type": "logogram"
       },
       {
@@ -173147,11 +173147,11 @@
         "period": "ME"
       },
       {
-        "text": "Part of the combination nw:N35B, a logogram for m ẖnw (“in”).",
+        "text": "Part of the combination nw:N35B, a logogram for m ḫnw (“in”).",
         "type": "logogram"
       },
       {
-        "text": "Logogram: m-ẖnw — inside",
+        "text": "Logogram: m-ḫnw — inside",
         "type": "logogram"
       },
       {
@@ -177226,7 +177226,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative for writing and written things, as in zẖꜣ (“to write”), mdwt (“words”).",
+        "text": "Determinative for writing and written things, as in zḫꜣ (“to write”), mdwt (“words”).",
         "type": "determinative"
       },
       {
@@ -177301,7 +177301,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative for writing and written things, as in zẖꜣ (“to write”), mdwt (“words”).",
+        "text": "Determinative for writing and written things, as in zḫꜣ (“to write”), mdwt (“words”).",
         "type": "determinative"
       },
       {
@@ -179964,7 +179964,7 @@
     "description": "A human placenta (a circle with lines written horizontally).",
     "meanings": [
       {
-        "text": "Phonogram: ẖ",
+        "text": "Phonogram: ḫ",
         "type": "phonogram"
       }
     ],
@@ -180675,7 +180675,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ẖwd — rich",
+        "text": "Determinative: ḫwd — rich",
         "type": "determinative"
       }
     ],
