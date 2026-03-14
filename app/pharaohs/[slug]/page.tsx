@@ -188,12 +188,6 @@ export default async function PharaohPage({ params }: Props) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <InfoCard title="Reign">
                   <p className="text-brown font-medium">{reignStr}</p>
-                  {startStr && (
-                    <p className="text-sandstone text-sm mt-1">
-                      {startStr}
-                      {endStr ? ` – ${endStr}` : " – ?"}
-                    </p>
-                  )}
                 </InfoCard>
 
                 <InfoCard title="Dynasty">
