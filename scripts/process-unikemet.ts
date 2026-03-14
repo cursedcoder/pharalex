@@ -193,8 +193,8 @@ function convertToGlyph(entry: UniKemetEntry): ProcessedGlyph {
   }
 
   const transliteration: string[] = [];
-  if (entry.phonetic) {
-    transliteration.push(entry.phonetic);
+  if (entry.phonetic?.trim()) {
+    transliteration.push(entry.phonetic.trim());
   }
 
   return {

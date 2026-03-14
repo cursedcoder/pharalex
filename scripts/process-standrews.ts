@@ -195,9 +195,9 @@ function parseSignUse(filePath: string): Map<string, SignUse> {
           });
         }
 
-        // Collect transliteration
-        if (al && al.length <= 12) {
-          entry.transliterations.push(al);
+        // Collect transliteration (trim whitespace from source)
+        if (al && al.trim().length > 0 && al.trim().length <= 12) {
+          entry.transliterations.push(al.trim());
         }
       }
     }

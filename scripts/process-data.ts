@@ -131,19 +131,36 @@ function extractPeriod(tags?: string[]): string | undefined {
   return undefined;
 }
 
+// English words that leak from Wiktionary links — not transliterations
+const NOISE_WORDS = new Set([
+  "logogram", "phonogram", "determinative", "biliteral", "triliteral",
+  "uniliteral", "classifier", "ideogram", "abbreviation", "sign",
+  "phonetic", "phonemogram",
+]);
+
+// Gardiner code pattern — sign references, not transliterations
+const GARDINER_CODE_RE = /^[A-Z][a-z]?\d+[A-Z]?$/;
+
 function extractTransliterations(entry: WiktionaryEntry): string[] {
   const translits = new Set<string>();
   if (entry.head_templates) {
     for (const template of entry.head_templates) {
       if (template.args?.tr && template.args.tr !== "-") {
-        translits.add(template.args.tr);
+        translits.add(template.args.tr.trim());
       }
     }
   }
   for (const sense of entry.senses) {
     for (const link of sense.links || []) {
-      if (link[0] && !link[0].includes(" ") && link[0].length < 10) {
-        translits.add(link[0].replace(/[()]/g, ""));
+      const val = link[0]?.trim();
+      if (
+        val &&
+        !val.includes(" ") &&
+        val.length < 10 &&
+        !NOISE_WORDS.has(val.toLowerCase()) &&
+        !GARDINER_CODE_RE.test(val)
+      ) {
+        translits.add(val.replace(/[()]/g, ""));
       }
     }
   }
