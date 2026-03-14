@@ -14,7 +14,7 @@ const FUSE_KEYS = [
 
 const FUSE_OPTIONS = {
   keys: FUSE_KEYS,
-  threshold: 0.25,
+  threshold: 0.2,
   includeScore: true,
   ignoreLocation: true,
   minMatchCharLength: 3,

@@ -59,22 +59,26 @@ async function searchWords(query: string, limit = 40, opts: WordSearchOptions = 
   const words = await loadSearchWords();
   const results: SearchWord[] = [];
 
+  // For short queries, use word-boundary matching in translations
+  // to avoid "nfr" matching "infront" or "unfriendly"
+  const translationRe = ql.length < 4
+    ? new RegExp(`\\b${ql.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`, "i")
+    : null;
+
   for (const w of words) {
     if (results.length >= limit) break;
 
     if (opts.gardiner) {
-      // Match words containing this Gardiner code in their MdC spelling
-      // MdC uses hyphens: "D2-D21-O34-F27-D52", match whole code segments
       const codes = w.mdc.split("-");
       if (codes.includes(q)) results.push(w);
     } else if (opts.exact) {
-      // Compare Unicode forms so MdC "Spt" (špt) doesn't match query "spt"
       if (translitToUnicode(w.transliteration) === translitToUnicode(q)) results.push(w);
-    } else if (
-      w.transliteration.toLowerCase().includes(ql) ||
-      w.translation.toLowerCase().includes(ql)
-    ) {
-      results.push(w);
+    } else {
+      const tlMatch = w.transliteration.toLowerCase().includes(ql);
+      const trMatch = translationRe
+        ? translationRe.test(w.translation)
+        : w.translation.toLowerCase().includes(ql);
+      if (tlMatch || trMatch) results.push(w);
     }
   }
   return results;
