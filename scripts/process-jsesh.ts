@@ -214,7 +214,8 @@ async function main() {
     if (jsesh.tags.length > 0) {
       const existing = new Set<string>(glyph.tags || []);
       const before = existing.size;
-      for (const tag of jsesh.tags) existing.add(tag);
+      const TAG_TYPOS: Record<string, string> = { "olw": "owl" };
+      for (const tag of jsesh.tags) existing.add(TAG_TYPOS[tag] ?? tag);
       glyph.tags = Array.from(existing);
       tagsAdded += existing.size - before;
     }
