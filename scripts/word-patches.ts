@@ -49,6 +49,33 @@ export const WORD_PATCHES: WordPatch[] = [
     translationMatch: "nsw king's grace",
     newTranslation: "king's grace",
   },
+  // rpat: "pat Noble" / "pat Crown Prince" / "pat female Noble" — strip leaked pꜥt
+  {
+    transliteration: "rpat",
+    translationMatch: "pat Noble, Heir",
+    newTranslation: "Noble, Heir",
+  },
+  {
+    transliteration: "rpat",
+    translationMatch: "pat Crown Prince",
+    newTranslation: "Crown Prince",
+  },
+  {
+    transliteration: "rpat",
+    translationMatch: "pat female Noble",
+    newTranslation: "female Noble, Heiress",
+  },
+  // iry: "at Hallkeeper" — strip leaked ꜥt (hall)
+  {
+    transliteration: "iry",
+    translationMatch: "at Hallkeeper, Keeper of the Storeroom",
+    newTranslation: "Hallkeeper, Keeper of the Storeroom",
+  },
+  {
+    transliteration: "iry",
+    translationMatch: "at female Hallkeeper",
+    newTranslation: "female Hallkeeper, Keeper of the Storeroom",
+  },
 ];
 
 /**
