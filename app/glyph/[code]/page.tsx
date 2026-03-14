@@ -474,7 +474,7 @@ export default async function GlyphPage({ params }: PageProps) {
                               )}
                             </div>
                             <p className="text-brown-light leading-relaxed">
-                              {linkifyCodes(translitToUnicode(meaning.text))}
+                              {linkifyCodes(meaning.text)}
                             </p>
                             <p className="text-xs text-sandstone mt-2">
                               {typeDescriptions[meaning.type]}
