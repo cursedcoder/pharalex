@@ -27,6 +27,7 @@ export const metadata = {
 interface AlphabetEntry {
   codes: string[];
   transliteration: string;
+  mdc: string;
   transName: string;
   signDescription: string;
   pronunciation: string;
@@ -38,6 +39,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["G1"],
     transliteration: "ꜣ",
+    mdc: "A",
     transName: "Aleph",
     signDescription: "Vulture",
     pronunciation: "a",
@@ -47,6 +49,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["M17"],
     transliteration: "i͗",
+    mdc: "i",
     transName: "Yod",
     signDescription: "Reed leaf",
     pronunciation: "y or i",
@@ -56,6 +59,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["M17", "Z4"],
     transliteration: "y",
+    mdc: "y",
     transName: "Y",
     signDescription: "Double reed leaf / Dual strokes",
     pronunciation: "y",
@@ -65,6 +69,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["D36"],
     transliteration: "ꜥ",
+    mdc: "a",
     transName: "Ayin",
     signDescription: "Arm",
     pronunciation: "a",
@@ -74,6 +79,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["G43", "Z7"],
     transliteration: "w",
+    mdc: "w",
     transName: "W",
     signDescription: "Quail chick / Coil of rope",
     pronunciation: "u",
@@ -83,6 +89,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["D58"],
     transliteration: "b",
+    mdc: "b",
     transName: "B",
     signDescription: "Foot",
     pronunciation: "b",
@@ -92,6 +99,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["Q3"],
     transliteration: "p",
+    mdc: "p",
     transName: "P",
     signDescription: "Reed mat or stool",
     pronunciation: "p",
@@ -101,6 +109,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["I9"],
     transliteration: "f",
+    mdc: "f",
     transName: "F",
     signDescription: "Horned viper",
     pronunciation: "f",
@@ -110,6 +119,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["G17"],
     transliteration: "m",
+    mdc: "m",
     transName: "M",
     signDescription: "Owl",
     pronunciation: "m",
@@ -119,6 +129,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["N35"],
     transliteration: "n",
+    mdc: "n",
     transName: "N",
     signDescription: "Water",
     pronunciation: "n",
@@ -128,6 +139,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["D21"],
     transliteration: "r",
+    mdc: "r",
     transName: "R",
     signDescription: "Mouth",
     pronunciation: "r",
@@ -137,6 +149,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["O4"],
     transliteration: "h",
+    mdc: "h",
     transName: "H",
     signDescription: "Enclosure",
     pronunciation: "h",
@@ -146,6 +159,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["V28"],
     transliteration: "ḥ",
+    mdc: "H",
     transName: "Dotted H",
     signDescription: "Rope",
     pronunciation: "h",
@@ -155,6 +169,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["Aa1"],
     transliteration: "ḫ",
+    mdc: "x",
     transName: "Third H",
     signDescription: "Placenta",
     pronunciation: "kh",
@@ -164,6 +179,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["F32"],
     transliteration: "ẖ",
+    mdc: "X",
     transName: "Fourth H",
     signDescription: "Belly and udder",
     pronunciation: "ch",
@@ -173,6 +189,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["O34"],
     transliteration: "z",
+    mdc: "z",
     transName: "S (or Z)",
     signDescription: "Door bolt",
     pronunciation: "s",
@@ -182,6 +199,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["S29"],
     transliteration: "s",
+    mdc: "s",
     transName: "Second S",
     signDescription: "Bolt of cloth",
     pronunciation: "s",
@@ -191,6 +209,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["N37"],
     transliteration: "š",
+    mdc: "S",
     transName: "Shin",
     signDescription: "Pool",
     pronunciation: "sh",
@@ -200,6 +219,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["N29"],
     transliteration: "q",
+    mdc: "q",
     transName: "Dotted K (or Q)",
     signDescription: "Hill slope",
     pronunciation: "q",
@@ -209,6 +229,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["V31"],
     transliteration: "k",
+    mdc: "k",
     transName: "K",
     signDescription: "Basket",
     pronunciation: "k",
@@ -218,6 +239,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["W12"],
     transliteration: "g",
+    mdc: "g",
     transName: "G",
     signDescription: "Jar stand",
     pronunciation: "g",
@@ -227,6 +249,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["X1"],
     transliteration: "t",
+    mdc: "t",
     transName: "T",
     signDescription: "Loaf of bread",
     pronunciation: "t",
@@ -236,6 +259,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["V13"],
     transliteration: "ṯ",
+    mdc: "T",
     transName: "Second T",
     signDescription: "Hobble",
     pronunciation: "tch",
@@ -245,6 +269,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["D46"],
     transliteration: "d",
+    mdc: "d",
     transName: "D",
     signDescription: "Hand",
     pronunciation: "d",
@@ -254,6 +279,7 @@ const ALPHABET: AlphabetEntry[] = [
   {
     codes: ["I10"],
     transliteration: "ḏ",
+    mdc: "D",
     transName: "Second D",
     signDescription: "Cobra",
     pronunciation: "dj",
@@ -397,8 +423,8 @@ export default async function AlphabetPage() {
 
                     {/* MdC */}
                     <td className="px-5 py-4">
-                      <span className="font-mono text-sm text-brown-light">
-                        {entry.codes.join("-")}
+                      <span className="font-mono text-sm font-medium text-brown">
+                        {entry.mdc}
                       </span>
                     </td>
 
