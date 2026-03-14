@@ -75,7 +75,7 @@ function SearchContent() {
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const runSearch = useCallback(async (q: string) => {
+  const runSearch = useCallback(async (q: string, exact = false) => {
     if (abortRef.current) abortRef.current.abort();
     if (!q.trim() || q.trim().length < 2) {
       setResults([]);
@@ -88,7 +88,9 @@ function SearchContent() {
     abortRef.current = controller;
 
     try {
-      const res = await fetch(`/api/search?q=${encodeURIComponent(q.trim())}`, {
+      const params = new URLSearchParams({ q: q.trim() });
+      if (exact) params.set("exact", "true");
+      const res = await fetch(`/api/search?${params}`, {
         signal: controller.signal,
       });
       const data = await res.json();
@@ -105,8 +107,9 @@ function SearchContent() {
   // Run search on initial query from URL
   useEffect(() => {
     const q = searchParams.get("q") || "";
+    const exact = searchParams.get("exact") === "true";
     setQuery(q);
-    runSearch(q);
+    runSearch(q, exact);
   }, [searchParams, runSearch]);
 
   const handleSearch = (newQuery: string) => {
