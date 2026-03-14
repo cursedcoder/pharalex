@@ -192,9 +192,11 @@ export default async function GlyphPage({ params }: PageProps) {
                       <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown">
                         {glyph.code}
                       </h1>
-                      <span className="text-2xl text-sandstone/60">
-                        {glyph.unicode}
-                      </span>
+                      {glyph.unicode && (
+                        <span className="text-2xl text-sandstone/60 font-hieroglyph">
+                          {glyph.unicode}
+                        </span>
+                      )}
                       {glyph.signName && (
                         <span className="px-3 py-1 rounded-full bg-gold/15 text-gold-dark text-sm font-medium">
                           {glyph.signName}
