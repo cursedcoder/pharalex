@@ -179,6 +179,8 @@ for (const w of words) {
   t = t.replace(/ ,/g, ",");
   // Double commas
   t = t.replace(/,,/g, ",");
+  // Excessive dots (PDF parsing artifacts) → ellipsis
+  t = t.replace(/\.{3,}/g, "…");
   if (t !== w.translation) {
     w.translation = t;
     punctFixed++;
@@ -186,7 +188,41 @@ for (const w of words) {
 }
 if (punctFixed > 0) console.log(`  Fixed punctuation: ${punctFixed}`);
 
-// ── 8. Trim whitespace ──────────────────────────────────────────────────────
+// ── 8. Clean transliteration oddities ─────────────────────────────────────────
+let translitCleaned = 0;
+for (const w of words) {
+  let tr = w.transliteration;
+  // Remove trailing commas/punctuation
+  tr = tr.replace(/[,;]+$/, "").trim();
+  // Remove trailing "I" that leaked from English
+  tr = tr.replace(/ I$/, "");
+  // Clean excessive dots in transliteration
+  tr = tr.replace(/\.{3,}/g, "…");
+  if (tr !== w.transliteration) {
+    w.transliteration = tr;
+    translitCleaned++;
+  }
+}
+if (translitCleaned > 0) console.log(`  Cleaned transliterations: ${translitCleaned}`);
+
+// ── 9. Remove entries with garbage translations ──────────────────────────────
+const beforeGarbage = words.length;
+for (let i = words.length - 1; i >= 0; i--) {
+  const t = words[i].translation;
+  const tr = words[i].transliteration;
+  // Remove entries that are mostly dots (parsing garbage)
+  if (/^[a-zA-Z. ]*…+[a-zA-Z. ]*$/.test(t) && t.replace(/[….\s]/g, "").length < 5) {
+    words.splice(i, 1);
+  }
+  // Remove entries with excessive dots in transliteration
+  if (/…/.test(tr) || /\.{3,}/.test(tr)) {
+    words.splice(i, 1);
+  }
+}
+const garbageRemoved = beforeGarbage - words.length;
+if (garbageRemoved > 0) console.log(`  Removed garbage entries: ${garbageRemoved}`);
+
+// ── 10. Trim whitespace ──────────────────────────────────────────────────────
 let trimmed = 0;
 for (const w of words) {
   const t = w.transliteration.trim();
