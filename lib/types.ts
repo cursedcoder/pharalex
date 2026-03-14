@@ -10,6 +10,7 @@ export interface Glyph {
   category: string;
   categoryName: string;
   description: string;
+  signName?: string;
   meanings: GlyphMeaning[];
   transliteration: string[];
   etymology?: string;

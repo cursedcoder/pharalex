@@ -50,6 +50,8 @@ function cachedLoad<T>(
   set: (p: Promise<T> | null) => void,
   loader: () => Promise<T>,
 ): Promise<T> {
+  // Skip cache in dev so JSON changes are picked up without restart
+  if (process.env.NODE_ENV !== "production") return loader();
   const existing = get();
   if (existing) return existing;
   const p = loader().catch((err) => {

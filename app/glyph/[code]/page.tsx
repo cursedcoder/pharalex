@@ -33,7 +33,8 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   const primaryMeaning = glyph.meanings[0]?.text || "";
-  const title = `${glyph.code} ${glyph.unicode} — ${primaryMeaning || glyph.categoryName}`;
+  const displayName = glyph.signName || primaryMeaning || glyph.categoryName;
+  const title = `${glyph.code} ${glyph.unicode} — ${displayName}`;
   const description = `${glyph.code}: ${primaryMeaning} — Egyptian hieroglyph from the ${glyph.categoryName} (${glyph.category}) category.`;
 
   return {
@@ -147,13 +148,18 @@ export default async function GlyphPage({ params }: PageProps) {
                   <SmartGlyph glyph={glyph} size="xl" />
 
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
+                    <div className="flex items-center gap-3 mb-1">
                       <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown">
                         {glyph.code}
                       </h1>
                       <span className="text-2xl text-sandstone/60">
                         {glyph.unicode}
                       </span>
+                      {glyph.signName && (
+                        <span className="px-3 py-1 rounded-full bg-gold/15 text-gold-dark text-sm font-medium">
+                          {glyph.signName}
+                        </span>
+                      )}
                     </div>
 
                     <Link

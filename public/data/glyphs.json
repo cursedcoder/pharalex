@@ -102,7 +102,8 @@
     "tags": [
       "seated",
       "holding nothing"
-    ]
+    ],
+    "signName": "seated man"
   },
   {
     "code": "A1C",
@@ -223,7 +224,8 @@
     "tags": [
       "seated",
       "holding nothing"
-    ]
+    ],
+    "signName": "seated man with hand to mouth"
   },
   {
     "code": "A2A",
@@ -295,7 +297,8 @@
     "tags": [
       "seated",
       "holding nothing"
-    ]
+    ],
+    "signName": "man sitting on heel"
   },
   {
     "code": "A3A",
@@ -383,7 +386,8 @@
       "seated",
       "holding nothing",
       "praying"
-    ]
+    ],
+    "signName": "seated man with hands raised"
   },
   {
     "code": "A4C",
@@ -502,7 +506,8 @@
       "seated",
       "curled up",
       "hiding"
-    ]
+    ],
+    "signName": "crouching man hiding behind wall"
   },
   {
     "code": "A5B",
@@ -547,7 +552,8 @@
       "holding nothing",
       "seated",
       "hiding"
-    ]
+    ],
+    "signName": "seated man hiding behind wall"
   },
   {
     "code": "A6",
@@ -582,7 +588,8 @@
       "holding nothing",
       "pouring water",
       "drops"
-    ]
+    ],
+    "signName": "seated man under vase from which water flows"
   },
   {
     "code": "A6B",
@@ -617,7 +624,8 @@
       "pouring water",
       "holding something",
       "drops"
-    ]
+    ],
+    "signName": "seated man reaching down, under vase from which water flows"
   },
   {
     "code": "A6A",
@@ -652,7 +660,8 @@
       "holding something",
       "pouring water",
       "drops"
-    ]
+    ],
+    "signName": "seated man reaching for libation stone, under vase from which water flows"
   },
   {
     "code": "A6E",
@@ -906,7 +915,8 @@
     "tags": [
       "seated",
       "holding nothing"
-    ]
+    ],
+    "signName": "fatigued man"
   },
   {
     "code": "A7A",
@@ -974,7 +984,8 @@
       "kneeled",
       "henu-gesture",
       "with raised arms"
-    ]
+    ],
+    "signName": "man performing"
   },
   {
     "code": "A8A",
@@ -1037,7 +1048,8 @@
     "tags": [
       "seated",
       "carrying something"
-    ]
+    ],
+    "signName": "seated man with"
   },
   {
     "code": "A9C",
@@ -1143,7 +1155,8 @@
     "tags": [
       "seated",
       "holding something"
-    ]
+    ],
+    "signName": "seated man holding oar"
   },
   {
     "code": "A10A",
@@ -1205,7 +1218,8 @@
     "tags": [
       "holding something",
       "kneeled"
-    ]
+    ],
+    "signName": "seated man holding"
   },
   {
     "code": "A12",
@@ -1243,7 +1257,8 @@
       "holding something",
       "kneeled",
       "armed character"
-    ]
+    ],
+    "signName": "soldier with bow and quiver"
   },
   {
     "code": "A12C",
@@ -1383,7 +1398,8 @@
       "holding nothing",
       "ennemy",
       "kneeled"
-    ]
+    ],
+    "signName": "man with arms tied behind his back"
   },
   {
     "code": "A13A",
@@ -1772,7 +1788,8 @@
       "holding something",
       "ennemy",
       "wounded, killed"
-    ]
+    ],
+    "signName": "falling man with blood streaming from his head"
   },
   {
     "code": "A14A",
@@ -1805,7 +1822,8 @@
       "holding something",
       "ennemy",
       "wounded, killed"
-    ]
+    ],
+    "signName": "man whose head is hit with an axe"
   },
   {
     "code": "A14G",
@@ -2025,7 +2043,8 @@
     "tags": [
       "fallen",
       "holding nothing"
-    ]
+    ],
+    "signName": "man falling"
   },
   {
     "code": "A15A",
@@ -2110,7 +2129,8 @@
       "standing",
       "holding nothing",
       "bent"
-    ]
+    ],
+    "signName": "man bowing down"
   },
   {
     "code": "A16C",
@@ -2218,7 +2238,8 @@
       "holding nothing",
       "seated on nothing",
       "child"
-    ]
+    ],
+    "signName": "child sitting with hand to mouth"
   },
   {
     "code": "A17A",
@@ -2249,7 +2270,8 @@
       "seated on nothing",
       "holding nothing",
       "child"
-    ]
+    ],
+    "signName": "child sitting with arms hanging down"
   },
   {
     "code": "A17D",
@@ -2360,7 +2382,8 @@
       "child",
       "with crown",
       "king or god"
-    ]
+    ],
+    "signName": "child wearing"
   },
   {
     "code": "A19",
@@ -2440,7 +2463,8 @@
       "standing",
       "holding stick",
       "bent"
-    ]
+    ],
+    "signName": "bent man leaning on staff"
   },
   {
     "code": "A20",
@@ -2478,7 +2502,8 @@
       "standing",
       "holding stick",
       "bent"
-    ]
+    ],
+    "signName": "man leaning on forked staff"
   },
   {
     "code": "A21",
@@ -2511,7 +2536,8 @@
     "tags": [
       "standing",
       "holding stick"
-    ]
+    ],
+    "signName": "man holding staff with handkerchief"
   },
   {
     "code": "A21A",
@@ -2601,7 +2627,8 @@
       "standing",
       "holding stick",
       "statue"
-    ]
+    ],
+    "signName": "statue of man with staff and"
   },
   {
     "code": "A23",
@@ -2636,7 +2663,8 @@
       "standing",
       "holding stick",
       "king or god"
-    ]
+    ],
+    "signName": "king with staff and"
   },
   {
     "code": "A23F",
@@ -2838,7 +2866,8 @@
       "standing",
       "armed character",
       "bent"
-    ]
+    ],
+    "signName": "man striking with both hands"
   },
   {
     "code": "A25",
@@ -2873,7 +2902,8 @@
       "standing",
       "armed character",
       "bent"
-    ]
+    ],
+    "signName": "man striking, with left arm hanging behind back"
   },
   {
     "code": "A25A",
@@ -2948,7 +2978,8 @@
       "holding nothing",
       "standing",
       "with raised arms"
-    ]
+    ],
+    "signName": "man with one arm pointing forward"
   },
   {
     "code": "A27",
@@ -2984,7 +3015,8 @@
       "holding nothing",
       "standing",
       "moving, running"
-    ]
+    ],
+    "signName": "hastening man"
   },
   {
     "code": "A27A",
@@ -3075,7 +3107,8 @@
       "holding nothing",
       "standing",
       "with raised arms"
-    ]
+    ],
+    "signName": "man with hands raised on either side"
   },
   {
     "code": "A29",
@@ -3108,7 +3141,8 @@
     "tags": [
       "holding nothing",
       "fallen"
-    ]
+    ],
+    "signName": "man upside down"
   },
   {
     "code": "A30",
@@ -3144,7 +3178,8 @@
       "holding nothing",
       "standing",
       "praying"
-    ]
+    ],
+    "signName": "man with hands raised in front"
   },
   {
     "code": "A31",
@@ -3178,7 +3213,8 @@
       "holding nothing",
       "standing",
       "praying"
-    ]
+    ],
+    "signName": "man with hands raised behind him"
   },
   {
     "code": "A31A",
@@ -3297,7 +3333,8 @@
       "standing",
       "chanting, dancing, playing instrument",
       "with raised arms"
-    ]
+    ],
+    "signName": "man dancing with arms to the back"
   },
   {
     "code": "A32A",
@@ -3327,7 +3364,8 @@
       "standing",
       "chanting, dancing, playing instrument",
       "with raised arms"
-    ]
+    ],
+    "signName": "man dancing with arms to the front"
   },
   {
     "code": "A32h",
@@ -3572,7 +3610,8 @@
       "working",
       "bent",
       "holding stick"
-    ]
+    ],
+    "signName": "man with stick and bundle on shoulder"
   },
   {
     "code": "A33A",
@@ -3726,7 +3765,8 @@
       "holding something",
       "standing",
       "working"
-    ]
+    ],
+    "signName": "man pounding in a mortar"
   },
   {
     "code": "A34A",
@@ -3792,7 +3832,8 @@
       "holding something",
       "standing",
       "working"
-    ]
+    ],
+    "signName": "man building wall"
   },
   {
     "code": "A35E",
@@ -3954,7 +3995,8 @@
       "standing",
       "working",
       "bent"
-    ]
+    ],
+    "signName": "man kneading into vessel"
   },
   {
     "code": "A36C",
@@ -4061,7 +4103,8 @@
       "standing",
       "working",
       "holding something"
-    ]
+    ],
+    "signName": "man in vessel"
   },
   {
     "code": "A38",
@@ -4097,7 +4140,8 @@
       "holding something",
       "standing",
       "with animals"
-    ]
+    ],
+    "signName": "man holding necks of two emblematic animals with panther heads"
   },
   {
     "code": "A39",
@@ -4129,7 +4173,8 @@
       "holding something",
       "with animals",
       "group"
-    ]
+    ],
+    "signName": "man on two giraffes"
   },
   {
     "code": "A40",
@@ -4171,7 +4216,8 @@
       "seated",
       "holding nothing",
       "king or god"
-    ]
+    ],
+    "signName": "seated god"
   },
   {
     "code": "A40A",
@@ -4198,7 +4244,8 @@
       "seated",
       "king or god",
       "holding something"
-    ]
+    ],
+    "signName": "seated god with"
   },
   {
     "code": "A40B",
@@ -4399,7 +4446,8 @@
       "seated",
       "king or god",
       "holding nothing"
-    ]
+    ],
+    "signName": "king with uraeus"
   },
   {
     "code": "A42",
@@ -4430,7 +4478,8 @@
       "seated",
       "holding something",
       "king or god"
-    ]
+    ],
+    "signName": "king with uraeus and"
   },
   {
     "code": "A42B",
@@ -4492,7 +4541,8 @@
       "seated",
       "holding something",
       "king or god"
-    ]
+    ],
+    "signName": "king with uraeus and"
   },
   {
     "code": "A42C",
@@ -4561,7 +4611,8 @@
       "holding nothing",
       "king or god",
       "with crown"
-    ]
+    ],
+    "signName": "king wearing"
   },
   {
     "code": "A43M",
@@ -4623,7 +4674,8 @@
       "king or god",
       "with crown",
       "holding something"
-    ]
+    ],
+    "signName": "king wearing"
   },
   {
     "code": "A43B",
@@ -4953,7 +5005,8 @@
       "holding something",
       "king or god",
       "with crown"
-    ]
+    ],
+    "signName": "king wearing"
   },
   {
     "code": "A45",
@@ -4989,7 +5042,8 @@
       "king or god",
       "with crown",
       "holding nothing"
-    ]
+    ],
+    "signName": "king wearing"
   },
   {
     "code": "A45B",
@@ -5051,7 +5105,8 @@
       "king or god",
       "with crown",
       "holding something"
-    ]
+    ],
+    "signName": "king wearing"
   },
   {
     "code": "A45C",
@@ -5172,7 +5227,8 @@
       "king or god",
       "with crown",
       "holding something"
-    ]
+    ],
+    "signName": "king wearing"
   },
   {
     "code": "A47",
@@ -5211,7 +5267,8 @@
     "tags": [
       "seated",
       "holding something"
-    ]
+    ],
+    "signName": "shepherd seated and wrapped in mantle, holding stick"
   },
   {
     "code": "A47C",
@@ -5369,7 +5426,8 @@
     "tags": [
       "holding something",
       "seated"
-    ]
+    ],
+    "signName": "beardless man seated and holding knife"
   },
   {
     "code": "A48A",
@@ -5462,7 +5520,8 @@
     "tags": [
       "holding something",
       "seated"
-    ]
+    ],
+    "signName": "seated Syrian holding stick"
   },
   {
     "code": "A49A",
@@ -5525,7 +5584,8 @@
       "seated on chair",
       "holding nothing",
       "mummyform"
-    ]
+    ],
+    "signName": "noble on chair"
   },
   {
     "code": "A50B",
@@ -5698,7 +5758,8 @@
       "holding something",
       "seated on chair",
       "mummyform"
-    ]
+    ],
+    "signName": "noble on chair with"
   },
   {
     "code": "A51A",
@@ -5900,7 +5961,8 @@
     "tags": [
       "seated",
       "holding something"
-    ]
+    ],
+    "signName": "noble squatting with"
   },
   {
     "code": "A52A",
@@ -6140,7 +6202,8 @@
       "holding nothing",
       "mummyform",
       "statue"
-    ]
+    ],
+    "signName": "standing mummy"
   },
   {
     "code": "A53A",
@@ -6204,7 +6267,8 @@
       "mummyform",
       "lying down",
       "holding nothing"
-    ]
+    ],
+    "signName": "lying mummy"
   },
   {
     "code": "A55",
@@ -6242,7 +6306,8 @@
       "lying down",
       "holding nothing",
       "mummyform"
-    ]
+    ],
+    "signName": "mummy on bed"
   },
   {
     "code": "A55A",
@@ -6307,7 +6372,8 @@
       "kneeled",
       "armed character",
       "bent"
-    ]
+    ],
+    "signName": "seated man holding stick"
   },
   {
     "code": "A57",
@@ -6342,7 +6408,8 @@
       "standing",
       "king or god",
       "with crown"
-    ]
+    ],
+    "signName": "man holding"
   },
   {
     "code": "A57B",
@@ -6468,7 +6535,8 @@
       "holding something",
       "working",
       "bent"
-    ]
+    ],
+    "signName": "man applying hoe to ground"
   },
   {
     "code": "A58A",
@@ -6535,7 +6603,8 @@
       "standing",
       "holding something",
       "armed character"
-    ]
+    ],
+    "signName": "man threatening with stick"
   },
   {
     "code": "A59A",
@@ -6601,7 +6670,8 @@
       "standing",
       "working",
       "drops"
-    ]
+    ],
+    "signName": "man sowing seeds"
   },
   {
     "code": "A60A",
@@ -6666,7 +6736,8 @@
       "standing",
       "holding nothing",
       "looking backward"
-    ]
+    ],
+    "signName": "man looking over his shoulder"
   },
   {
     "code": "A62",
@@ -6689,7 +6760,8 @@
       "standing",
       "foreigner",
       "holding nothing"
-    ]
+    ],
+    "signName": "Asiatic"
   },
   {
     "code": "A62A",
@@ -6743,7 +6815,8 @@
       "seated on chair",
       "holding stick",
       "king or god"
-    ]
+    ],
+    "signName": "king on throne holding staff"
   },
   {
     "code": "A63B",
@@ -6798,7 +6871,8 @@
     ],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "man sitting on heels holding forward"
   },
   {
     "code": "A65",
@@ -6816,7 +6890,8 @@
       "jrj-nṯr"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "man wearing tunic with fringes and holding mace"
   },
   {
     "code": "A66",
@@ -6850,7 +6925,8 @@
       "statue",
       "mummyform",
       "group"
-    ]
+    ],
+    "signName": "man holding"
   },
   {
     "code": "A66A",
@@ -6888,7 +6964,8 @@
       "seated",
       "holding nothing",
       "praying"
-    ]
+    ],
+    "signName": "dwarf"
   },
   {
     "code": "A67A",
@@ -6931,7 +7008,8 @@
     "tags": [
       "kneeled",
       "holding nothing"
-    ]
+    ],
+    "signName": "man holding up knife"
   },
   {
     "code": "A68A",
@@ -6976,7 +7054,8 @@
       "holding nothing",
       "seated",
       "with raised arms"
-    ]
+    ],
+    "signName": "seated man with raised right arm and left arm hanging down"
   },
   {
     "code": "A70",
@@ -6987,7 +7066,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "seated man with raised arms"
   },
   {
     "code": "A71",
@@ -25434,7 +25514,8 @@
     "tags": [
       "seated",
       "holding nothing"
-    ]
+    ],
+    "signName": "seated woman"
   },
   {
     "code": "B1A",
@@ -25788,7 +25869,8 @@
       "holding nothing",
       "pregnant",
       "kneeled"
-    ]
+    ],
+    "signName": "pregnant woman"
   },
   {
     "code": "B2A",
@@ -25868,7 +25950,8 @@
       "pregnant",
       "kneeled",
       "child"
-    ]
+    ],
+    "signName": "woman giving birth"
   },
   {
     "code": "B3A",
@@ -25989,7 +26072,8 @@
       "holding nothing",
       "pregnant",
       "kneeled"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "B5",
@@ -26034,7 +26118,8 @@
       "kneeled",
       "child",
       "suckling"
-    ]
+    ],
+    "signName": "woman suckling child"
   },
   {
     "code": "B5D",
@@ -26140,7 +26225,8 @@
       "kneeled",
       "child",
       "suckling"
-    ]
+    ],
+    "signName": "woman suckling child (simplified)"
   },
   {
     "code": "B5E",
@@ -26207,7 +26293,8 @@
     "tags": [
       "child",
       "seated on chair"
-    ]
+    ],
+    "signName": "woman on chair with child on lap"
   },
   {
     "code": "B6A",
@@ -26320,7 +26407,8 @@
       "holding something",
       "with uraeus",
       "with crown"
-    ]
+    ],
+    "signName": "queen wearing diadem and holding flower"
   },
   {
     "code": "B7C",
@@ -26565,7 +26653,8 @@
     "tags": [
       "kneeled",
       "holding something"
-    ]
+    ],
+    "signName": "woman holding"
   },
   {
     "code": "B8A",
@@ -26755,7 +26844,8 @@
     "tags": [
       "seated",
       "holding something"
-    ]
+    ],
+    "signName": "woman holding"
   },
   {
     "code": "B10",
@@ -30129,7 +30219,8 @@
       "seated",
       "holding nothing",
       "male"
-    ]
+    ],
+    "signName": "god with"
   },
   {
     "code": "C1D",
@@ -30256,7 +30347,8 @@
       "hawk-headed",
       "holding something",
       "male"
-    ]
+    ],
+    "signName": "god with head of falcon with sun on head and holding"
   },
   {
     "code": "C2A",
@@ -30286,7 +30378,8 @@
       "hawk-headed",
       "holding nothing",
       "male"
-    ]
+    ],
+    "signName": "god with head of falcon with sun on head"
   },
   {
     "code": "C2B",
@@ -30536,7 +30629,8 @@
       "ibis-headed",
       "holding nothing",
       "male"
-    ]
+    ],
+    "signName": "god with head of ibis"
   },
   {
     "code": "C3A",
@@ -30660,7 +30754,8 @@
       "seated",
       "holding nothing",
       "male"
-    ]
+    ],
+    "signName": "god with head of ram"
   },
   {
     "code": "C4J",
@@ -30942,7 +31037,8 @@
       "seated",
       "holding something",
       "male"
-    ]
+    ],
+    "signName": "god with head of ram holding"
   },
   {
     "code": "C6",
@@ -30993,7 +31089,8 @@
       "seated",
       "holding nothing",
       "male"
-    ]
+    ],
+    "signName": "god with head of jackal"
   },
   {
     "code": "C6B",
@@ -31196,7 +31293,8 @@
       "seated",
       "holding nothing",
       "male"
-    ]
+    ],
+    "signName": "god with head of Seth-animal"
   },
   {
     "code": "C7A",
@@ -31369,7 +31467,8 @@
       "standing",
       "holding something",
       "male"
-    ]
+    ],
+    "signName": "ithyphallic god with"
   },
   {
     "code": "C8A",
@@ -31438,7 +31537,8 @@
       "female",
       "seated",
       "hathorian goddess"
-    ]
+    ],
+    "signName": "goddess with sun and horns"
   },
   {
     "code": "C9J",
@@ -31836,7 +31936,8 @@
       "seated",
       "holding nothing",
       "maat"
-    ]
+    ],
+    "signName": "goddess with feather on head"
   },
   {
     "code": "C10A",
@@ -31867,7 +31968,8 @@
       "seated",
       "holding something",
       "maat"
-    ]
+    ],
+    "signName": "goddess with feather on head holding"
   },
   {
     "code": "C10B",
@@ -32097,7 +32199,8 @@
       "kneeled",
       "holding nothing",
       "heh"
-    ]
+    ],
+    "signName": "god with arms supporting (the sky) and"
   },
   {
     "code": "C11L",
@@ -32358,7 +32461,8 @@
       "male",
       "seated",
       "holding something"
-    ]
+    ],
+    "signName": "god with"
   },
   {
     "code": "C12F",
@@ -32728,7 +32832,8 @@
       "male",
       "holding something",
       "seated"
-    ]
+    ],
+    "signName": "god with"
   },
   {
     "code": "C14A",
@@ -32774,7 +32879,8 @@
       "holding something",
       "seated",
       "human-headed"
-    ]
+    ],
+    "signName": "god wearing"
   },
   {
     "code": "C17",
@@ -32808,7 +32914,8 @@
       "hawk-headed",
       "holding something",
       "seated"
-    ]
+    ],
+    "signName": "god with head of falcon and"
   },
   {
     "code": "C17A",
@@ -33081,7 +33188,8 @@
       "seated",
       "mummyform",
       "holding nothing"
-    ]
+    ],
+    "signName": "squatting god"
   },
   {
     "code": "C18B",
@@ -33146,7 +33254,8 @@
       "holding something",
       "mummyform",
       "with ptah-cap"
-    ]
+    ],
+    "signName": "mummy-shaped god"
   },
   {
     "code": "C19A",
@@ -33263,7 +33372,8 @@
       "holding something",
       "mummyform",
       "with ptah-cap"
-    ]
+    ],
+    "signName": "mummy-shaped god in shrine"
   },
   {
     "code": "C20A",
@@ -33353,7 +33463,8 @@
       "male",
       "holding nothing",
       "henu-gesture"
-    ]
+    ],
+    "signName": "Bes"
   },
   {
     "code": "C21A",
@@ -33526,7 +33637,8 @@
       "male",
       "standing",
       "holding something"
-    ]
+    ],
+    "signName": "god with head of falcon and moon disk"
   },
   {
     "code": "C22D",
@@ -33657,7 +33769,8 @@
       "male",
       "standing",
       "holding something"
-    ]
+    ],
+    "signName": "goddess with head of feline and"
   },
   {
     "code": "C23A",
@@ -33705,7 +33818,8 @@
       "standing",
       "holding nothing",
       "mummyform"
-    ]
+    ],
+    "signName": "god wearing"
   },
   {
     "code": "C25",
@@ -48364,7 +48478,8 @@
     "source": "both",
     "tags": [
       "head"
-    ]
+    ],
+    "signName": "head in profile"
   },
   {
     "code": "D1A",
@@ -48413,7 +48528,8 @@
     "source": "both",
     "tags": [
       "head"
-    ]
+    ],
+    "signName": "face"
   },
   {
     "code": "D2A",
@@ -48478,7 +48594,8 @@
     "source": "both",
     "tags": [
       "hair"
-    ]
+    ],
+    "signName": "hair"
   },
   {
     "code": "D3A",
@@ -48587,7 +48704,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "eye"
   },
   {
     "code": "D5",
@@ -48618,7 +48736,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "eye touched up with paint"
   },
   {
     "code": "D6",
@@ -48649,7 +48768,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "eye with painted upper lid"
   },
   {
     "code": "D6A",
@@ -48704,7 +48824,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "eye with painted lower lid"
   },
   {
     "code": "D7A",
@@ -48839,7 +48960,8 @@
     "tags": [
       "eye(s)",
       "in-circle"
-    ]
+    ],
+    "signName": "eye enclosed in"
   },
   {
     "code": "D8A",
@@ -48867,7 +48989,8 @@
     "tags": [
       "eye(s)",
       "in-circle"
-    ]
+    ],
+    "signName": "eye with painted lower lid enclosed in"
   },
   {
     "code": "D8B",
@@ -48968,7 +49091,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "eye with flowing tears"
   },
   {
     "code": "D9A",
@@ -49123,7 +49247,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "left part of white of"
   },
   {
     "code": "D12",
@@ -49176,7 +49301,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "pupil of eye"
   },
   {
     "code": "D13",
@@ -49228,7 +49354,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "eye-brow"
   },
   {
     "code": "D14",
@@ -49270,7 +49397,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "right part of white of"
   },
   {
     "code": "D15",
@@ -49312,7 +49440,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "diagonal marking of"
   },
   {
     "code": "D16",
@@ -49359,7 +49488,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "vertical marking of"
   },
   {
     "code": "D17",
@@ -49393,7 +49523,8 @@
     "source": "both",
     "tags": [
       "eye(s)"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "D18",
@@ -49425,7 +49556,8 @@
     "source": "both",
     "tags": [
       "hear"
-    ]
+    ],
+    "signName": "ear"
   },
   {
     "code": "D19",
@@ -49487,7 +49619,8 @@
     "source": "both",
     "tags": [
       "nose"
-    ]
+    ],
+    "signName": "nose, eye and cheek"
   },
   {
     "code": "D20",
@@ -49516,7 +49649,8 @@
     "source": "both",
     "tags": [
       "nose"
-    ]
+    ],
+    "signName": "nose, eye and cheek in semi-cursive form"
   },
   {
     "code": "D21",
@@ -49552,7 +49686,8 @@
     "source": "both",
     "tags": [
       "mouth, lips..."
-    ]
+    ],
+    "signName": "mouth"
   },
   {
     "code": "D21A",
@@ -49600,7 +49735,8 @@
     "source": "both",
     "tags": [
       "mouth, lips..."
-    ]
+    ],
+    "signName": "mouth with two strokes"
   },
   {
     "code": "D22A",
@@ -49662,7 +49798,8 @@
     "source": "both",
     "tags": [
       "mouth, lips..."
-    ]
+    ],
+    "signName": "mouth with three strokes"
   },
   {
     "code": "D23A",
@@ -49721,7 +49858,8 @@
     "source": "both",
     "tags": [
       "mouth, lips..."
-    ]
+    ],
+    "signName": "upper lip with teeth"
   },
   {
     "code": "D25",
@@ -49753,7 +49891,8 @@
     "source": "both",
     "tags": [
       "mouth, lips..."
-    ]
+    ],
+    "signName": "lips with teeth"
   },
   {
     "code": "D26",
@@ -49787,7 +49926,8 @@
     "source": "both",
     "tags": [
       "mouth, lips..."
-    ]
+    ],
+    "signName": "liquid issuing from lips"
   },
   {
     "code": "D26B",
@@ -49893,7 +50033,8 @@
     "source": "both",
     "tags": [
       "breast"
-    ]
+    ],
+    "signName": "small breast"
   },
   {
     "code": "D27A",
@@ -49911,7 +50052,8 @@
     "source": "aegyptus",
     "tags": [
       "breast"
-    ]
+    ],
+    "signName": "large breast"
   },
   {
     "code": "D28",
@@ -49951,7 +50093,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "arms in"
   },
   {
     "code": "D28A",
@@ -50002,7 +50145,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "D30",
@@ -50065,7 +50209,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "D31A",
@@ -50079,7 +50224,8 @@
     "source": "aegyptus",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "D32",
@@ -50114,7 +50260,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "arms embracing"
   },
   {
     "code": "D32B",
@@ -50260,7 +50407,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "arms rowing"
   },
   {
     "code": "D33C",
@@ -50359,7 +50507,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "arms holding shield and battle-axe"
   },
   {
     "code": "D34A",
@@ -50386,7 +50535,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "arms holding shield and mace"
   },
   {
     "code": "D34C",
@@ -50518,7 +50668,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "arms in gesture of negation"
   },
   {
     "code": "D35A",
@@ -50583,7 +50734,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm"
   },
   {
     "code": "D37",
@@ -50652,7 +50804,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm with"
   },
   {
     "code": "D38",
@@ -50705,7 +50858,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm with rounded loaf"
   },
   {
     "code": "D39",
@@ -50742,7 +50896,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm with"
   },
   {
     "code": "D40",
@@ -50775,7 +50930,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm with stick"
   },
   {
     "code": "D41",
@@ -50831,7 +50987,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm with palm down and bent upper arm"
   },
   {
     "code": "D42",
@@ -50871,7 +51028,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm with palm down and straight upper arm"
   },
   {
     "code": "D43",
@@ -50918,7 +51076,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm with"
   },
   {
     "code": "D44",
@@ -50958,7 +51117,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "forearm with"
   },
   {
     "code": "D45",
@@ -50998,7 +51158,8 @@
     "source": "both",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "arm with"
   },
   {
     "code": "D46",
@@ -51034,7 +51195,8 @@
     "source": "both",
     "tags": [
       "hand"
-    ]
+    ],
+    "signName": "hand"
   },
   {
     "code": "D46C",
@@ -51130,7 +51292,8 @@
     "source": "unicode",
     "tags": [
       "hand"
-    ]
+    ],
+    "signName": "liquid falling from hand"
   },
   {
     "code": "D46B",
@@ -51179,7 +51342,8 @@
     "source": "both",
     "tags": [
       "hand"
-    ]
+    ],
+    "signName": "hand with palm up"
   },
   {
     "code": "D47A",
@@ -51241,7 +51405,8 @@
     "source": "both",
     "tags": [
       "hand"
-    ]
+    ],
+    "signName": "hand without thumb"
   },
   {
     "code": "D48A",
@@ -51273,7 +51438,8 @@
     "source": "both",
     "tags": [
       "hand"
-    ]
+    ],
+    "signName": "hand holding an egg"
   },
   {
     "code": "D49",
@@ -51307,7 +51473,8 @@
     "source": "both",
     "tags": [
       "hand"
-    ]
+    ],
+    "signName": "fist"
   },
   {
     "code": "D50",
@@ -51350,7 +51517,8 @@
     "source": "both",
     "tags": [
       "finger"
-    ]
+    ],
+    "signName": "finger vertically"
   },
   {
     "code": "D50A",
@@ -51526,7 +51694,8 @@
     "source": "both",
     "tags": [
       "finger"
-    ]
+    ],
+    "signName": "finger horizontally"
   },
   {
     "code": "D52",
@@ -51585,7 +51754,8 @@
     "source": "both",
     "tags": [
       "private parts"
-    ]
+    ],
+    "signName": "phallus"
   },
   {
     "code": "D52A",
@@ -51606,7 +51776,8 @@
     "source": "aegyptus",
     "tags": [
       "private parts"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "D53",
@@ -51647,7 +51818,8 @@
     "source": "both",
     "tags": [
       "private parts"
-    ]
+    ],
+    "signName": "liquid issuing from phallus"
   },
   {
     "code": "D53A",
@@ -51731,7 +51903,8 @@
     "source": "both",
     "tags": [
       "legs"
-    ]
+    ],
+    "signName": "legs walking"
   },
   {
     "code": "D54A",
@@ -51759,7 +51932,8 @@
     "source": "both",
     "tags": [
       "legs"
-    ]
+    ],
+    "signName": "hieratic legs walking"
   },
   {
     "code": "D55",
@@ -51791,7 +51965,8 @@
     "source": "both",
     "tags": [
       "legs"
-    ]
+    ],
+    "signName": "legs walking backwards"
   },
   {
     "code": "D56",
@@ -51842,7 +52017,8 @@
     "source": "both",
     "tags": [
       "legs"
-    ]
+    ],
+    "signName": "leg"
   },
   {
     "code": "D57",
@@ -51878,7 +52054,8 @@
     "source": "both",
     "tags": [
       "legs"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "D57C",
@@ -51996,7 +52173,8 @@
     "source": "both",
     "tags": [
       "legs"
-    ]
+    ],
+    "signName": "foot"
   },
   {
     "code": "D59",
@@ -52018,7 +52196,8 @@
     "tags": [
       "legs",
       "arms"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "D60",
@@ -52092,7 +52271,8 @@
     "tags": [
       "bones",
       "toe"
-    ]
+    ],
+    "signName": "three toes oriented leftward"
   },
   {
     "code": "D61A",
@@ -52144,7 +52324,8 @@
     "tags": [
       "bones",
       "toe"
-    ]
+    ],
+    "signName": "three toes oriented rightward"
   },
   {
     "code": "D63C",
@@ -52303,7 +52484,8 @@
     "tags": [
       "bones",
       "toe"
-    ]
+    ],
+    "signName": "two toes oriented leftward"
   },
   {
     "code": "D63G",
@@ -52338,7 +52520,8 @@
       "kp"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "hand with palm down"
   },
   {
     "code": "D65",
@@ -52381,7 +52564,8 @@
     "source": "unicode",
     "tags": [
       "head"
-    ]
+    ],
+    "signName": "lock of hair"
   },
   {
     "code": "D65A",
@@ -52437,7 +52621,8 @@
     "source": "aegyptus",
     "tags": [
       "arms"
-    ]
+    ],
+    "signName": "arm with reed pen"
   },
   {
     "code": "D67",
@@ -52470,7 +52655,8 @@
     "tags": [
       "head",
       "standard"
-    ]
+    ],
+    "signName": "dot"
   },
   {
     "code": "D67A",
@@ -61927,7 +62113,8 @@
     "source": "both",
     "tags": [
       "bovid"
-    ]
+    ],
+    "signName": "bull"
   },
   {
     "code": "E1C",
@@ -62070,7 +62257,8 @@
     "source": "both",
     "tags": [
       "bovid"
-    ]
+    ],
+    "signName": "bull charging"
   },
   {
     "code": "E3",
@@ -62117,7 +62305,8 @@
     "tags": [
       "bovid",
       "child"
-    ]
+    ],
+    "signName": "calf"
   },
   {
     "code": "E3A",
@@ -62164,7 +62353,8 @@
     "source": "both",
     "tags": [
       "bovid"
-    ]
+    ],
+    "signName": "sacred"
   },
   {
     "code": "E5",
@@ -62206,7 +62396,8 @@
       "bovid",
       "group",
       "child"
-    ]
+    ],
+    "signName": "cow suckling calf"
   },
   {
     "code": "E5B",
@@ -62302,7 +62493,8 @@
     "source": "both",
     "tags": [
       "horse"
-    ]
+    ],
+    "signName": "horse"
   },
   {
     "code": "E6C",
@@ -62436,7 +62628,8 @@
     "source": "both",
     "tags": [
       "ass"
-    ]
+    ],
+    "signName": "donkey"
   },
   {
     "code": "E8",
@@ -62488,7 +62681,8 @@
     "tags": [
       "goat",
       "child"
-    ]
+    ],
+    "signName": "kid"
   },
   {
     "code": "E8A",
@@ -62517,7 +62711,8 @@
     "tags": [
       "goat",
       "child"
-    ]
+    ],
+    "signName": "kid jumping"
   },
   {
     "code": "E8B",
@@ -62582,7 +62777,8 @@
     "source": "both",
     "tags": [
       "antelope"
-    ]
+    ],
+    "signName": "newborn bubalis or hartebeest"
   },
   {
     "code": "E9A",
@@ -62615,7 +62811,8 @@
     "source": "unicode",
     "tags": [
       "antelope"
-    ]
+    ],
+    "signName": "mature bovine lying down"
   },
   {
     "code": "E9C",
@@ -62708,7 +62905,8 @@
     "source": "both",
     "tags": [
       "ram"
-    ]
+    ],
+    "signName": "ram"
   },
   {
     "code": "E11",
@@ -62736,7 +62934,8 @@
     "source": "both",
     "tags": [
       "ram"
-    ]
+    ],
+    "signName": "ram"
   },
   {
     "code": "E11A",
@@ -62828,7 +63027,8 @@
     "source": "both",
     "tags": [
       "pig"
-    ]
+    ],
+    "signName": "pig"
   },
   {
     "code": "E13",
@@ -62867,7 +63067,8 @@
     "source": "both",
     "tags": [
       "cat"
-    ]
+    ],
+    "signName": "cat"
   },
   {
     "code": "E13A",
@@ -63052,7 +63253,8 @@
     "source": "both",
     "tags": [
       "canid"
-    ]
+    ],
+    "signName": "dog (saluki)"
   },
   {
     "code": "E14B",
@@ -63146,7 +63348,8 @@
     "source": "both",
     "tags": [
       "canid"
-    ]
+    ],
+    "signName": "lying canine"
   },
   {
     "code": "E15A",
@@ -63255,7 +63458,8 @@
     "source": "both",
     "tags": [
       "canid"
-    ]
+    ],
+    "signName": "lying canine on shrine"
   },
   {
     "code": "E16AEXTU",
@@ -63309,7 +63513,8 @@
     "source": "unicode",
     "tags": [
       "canid"
-    ]
+    ],
+    "signName": "lying canine on shrine with"
   },
   {
     "code": "E16B",
@@ -63366,7 +63571,8 @@
     "source": "both",
     "tags": [
       "canid"
-    ]
+    ],
+    "signName": "jackal"
   },
   {
     "code": "E17A",
@@ -63387,7 +63593,8 @@
     "source": "aegyptus",
     "tags": [
       "canid"
-    ]
+    ],
+    "signName": "jackal looking back"
   },
   {
     "code": "E18",
@@ -63419,7 +63626,8 @@
     "source": "both",
     "tags": [
       "canid"
-    ]
+    ],
+    "signName": "wolf on"
   },
   {
     "code": "E19",
@@ -63446,7 +63654,8 @@
     "source": "both",
     "tags": [
       "canid"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "E20",
@@ -63498,7 +63707,8 @@
     "source": "both",
     "tags": [
       "sethian animal"
-    ]
+    ],
+    "signName": "Seth-animal"
   },
   {
     "code": "E20A",
@@ -63531,7 +63741,8 @@
     "tags": [
       "ass",
       "sethian animal"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "E21",
@@ -63579,7 +63790,8 @@
     "source": "both",
     "tags": [
       "sethian animal"
-    ]
+    ],
+    "signName": "lying Seth-animal"
   },
   {
     "code": "E21E",
@@ -63708,7 +63920,8 @@
     "source": "both",
     "tags": [
       "lion, panthera"
-    ]
+    ],
+    "signName": "lion"
   },
   {
     "code": "E22A",
@@ -63777,7 +63990,8 @@
     "source": "both",
     "tags": [
       "lion, panthera"
-    ]
+    ],
+    "signName": "lying lion"
   },
   {
     "code": "E23A",
@@ -63837,7 +64051,8 @@
     "source": "both",
     "tags": [
       "lion, panthera"
-    ]
+    ],
+    "signName": "panther"
   },
   {
     "code": "E24A",
@@ -63901,7 +64116,8 @@
     "tags": [
       "large wild animal",
       "hippopotamus"
-    ]
+    ],
+    "signName": "hippopotamus"
   },
   {
     "code": "E25A",
@@ -63971,7 +64187,8 @@
     "source": "both",
     "tags": [
       "large wild animal"
-    ]
+    ],
+    "signName": "elephant"
   },
   {
     "code": "E26A",
@@ -64046,7 +64263,8 @@
     "source": "both",
     "tags": [
       "large wild animal"
-    ]
+    ],
+    "signName": "giraffe"
   },
   {
     "code": "E28",
@@ -64077,7 +64295,8 @@
     "source": "both",
     "tags": [
       "antelope"
-    ]
+    ],
+    "signName": "oryx"
   },
   {
     "code": "E28A",
@@ -64088,7 +64307,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "E29",
@@ -64128,7 +64348,8 @@
     "source": "both",
     "tags": [
       "antelope"
-    ]
+    ],
+    "signName": "gazelle"
   },
   {
     "code": "E30",
@@ -64161,7 +64382,8 @@
     "source": "both",
     "tags": [
       "goat"
-    ]
+    ],
+    "signName": "ibex"
   },
   {
     "code": "E30A",
@@ -64226,7 +64448,8 @@
     "source": "aegyptus",
     "tags": [
       "goat"
-    ]
+    ],
+    "signName": "goat with collar"
   },
   {
     "code": "E31A",
@@ -64295,7 +64518,8 @@
     "source": "both",
     "tags": [
       "ape, monkey"
-    ]
+    ],
+    "signName": "baboon"
   },
   {
     "code": "E33",
@@ -64337,7 +64561,8 @@
     "source": "both",
     "tags": [
       "ape, monkey"
-    ]
+    ],
+    "signName": "monkey"
   },
   {
     "code": "E34",
@@ -64385,7 +64610,8 @@
     "source": "both",
     "tags": [
       "hare"
-    ]
+    ],
+    "signName": "hare"
   },
   {
     "code": "E34B",
@@ -64440,7 +64666,8 @@
     "source": "unicode",
     "tags": [
       "hare"
-    ]
+    ],
+    "signName": "hare (low)"
   },
   {
     "code": "E34C",
@@ -64535,7 +64762,8 @@
     "source": "unicode",
     "tags": [
       "ape, monkey"
-    ]
+    ],
+    "signName": "baboon"
   },
   {
     "code": "E36A",
@@ -64581,7 +64809,8 @@
     "source": "unicode",
     "tags": [
       "ape, monkey"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "E37A",
@@ -64647,7 +64876,8 @@
     "source": "unicode",
     "tags": [
       "ape, monkey"
-    ]
+    ],
+    "signName": "long-horned bull"
   },
   {
     "code": "E39",
@@ -73696,7 +73926,8 @@
     "tags": [
       "bovid",
       "head"
-    ]
+    ],
+    "signName": "head of ox"
   },
   {
     "code": "F1A",
@@ -73732,7 +73963,8 @@
     "tags": [
       "bovid",
       "head"
-    ]
+    ],
+    "signName": "head of bovine"
   },
   {
     "code": "F1B",
@@ -73786,7 +74018,8 @@
     "tags": [
       "bovid",
       "head"
-    ]
+    ],
+    "signName": "head of charging ox"
   },
   {
     "code": "F2A",
@@ -73872,7 +74105,8 @@
     "tags": [
       "hippopotamus",
       "head"
-    ]
+    ],
+    "signName": "head of hippopotamus"
   },
   {
     "code": "F3A",
@@ -73938,7 +74172,8 @@
       "lion, panthera",
       "head",
       "foreleg"
-    ]
+    ],
+    "signName": "forepart of lion"
   },
   {
     "code": "Ff4",
@@ -74031,7 +74266,8 @@
     "tags": [
       "antelope",
       "head"
-    ]
+    ],
+    "signName": "head of bubalis or hartebeest"
   },
   {
     "code": "F6",
@@ -74060,7 +74296,8 @@
       "antelope",
       "head",
       "foreleg"
-    ]
+    ],
+    "signName": "forepart of bubalis or hartebeest"
   },
   {
     "code": "F7",
@@ -74102,7 +74339,8 @@
     "tags": [
       "ram",
       "head"
-    ]
+    ],
+    "signName": "head of ram"
   },
   {
     "code": "F7B",
@@ -74215,7 +74453,8 @@
       "ram",
       "head",
       "foreleg"
-    ]
+    ],
+    "signName": "forepart of ram"
   },
   {
     "code": "F8A",
@@ -74312,7 +74551,8 @@
     "tags": [
       "lion, panthera",
       "head"
-    ]
+    ],
+    "signName": "head of leopard"
   },
   {
     "code": "F10",
@@ -74361,7 +74601,8 @@
     "tags": [
       "bovid",
       "head"
-    ]
+    ],
+    "signName": "head and neck of animal"
   },
   {
     "code": "F11",
@@ -74392,7 +74633,8 @@
     "tags": [
       "bovid",
       "head"
-    ]
+    ],
+    "signName": "head and neck of animal"
   },
   {
     "code": "F11A",
@@ -74457,7 +74699,8 @@
     "tags": [
       "canid",
       "head"
-    ]
+    ],
+    "signName": "head and neck of canine"
   },
   {
     "code": "F12A",
@@ -74524,7 +74767,8 @@
     "tags": [
       "horn",
       "bovid"
-    ]
+    ],
+    "signName": "horns"
   },
   {
     "code": "U+13BAE",
@@ -74707,7 +74951,8 @@
     "tags": [
       "horn",
       "bovid"
-    ]
+    ],
+    "signName": "horns (low)"
   },
   {
     "code": "F13B",
@@ -74760,7 +75005,8 @@
     "tags": [
       "horn",
       "bovid"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "F14A",
@@ -74826,7 +75072,8 @@
     "tags": [
       "horn",
       "bovid"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "F16",
@@ -74887,7 +75134,8 @@
     "tags": [
       "horn",
       "bovid"
-    ]
+    ],
+    "signName": "horn"
   },
   {
     "code": "F16A",
@@ -74950,7 +75198,8 @@
     "tags": [
       "bovid",
       "horn"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "F18",
@@ -75007,7 +75256,8 @@
     "tags": [
       "elephant",
       "tusk"
-    ]
+    ],
+    "signName": "tusk"
   },
   {
     "code": "F18A",
@@ -75071,7 +75321,8 @@
     "source": "both",
     "tags": [
       "jaw"
-    ]
+    ],
+    "signName": "lower jaw-bone of ox"
   },
   {
     "code": "F19B",
@@ -75192,7 +75443,8 @@
     "source": "both",
     "tags": [
       "tongue"
-    ]
+    ],
+    "signName": "tongue"
   },
   {
     "code": "F20B",
@@ -75326,7 +75578,8 @@
     "tags": [
       "hear",
       "bovid"
-    ]
+    ],
+    "signName": "ear of bovine"
   },
   {
     "code": "F21A",
@@ -75352,7 +75605,8 @@
     "tags": [
       "hear",
       "bovid"
-    ]
+    ],
+    "signName": "hieratic ear of bovine"
   },
   {
     "code": "F21B",
@@ -75420,7 +75674,8 @@
     "tags": [
       "rear part",
       "lion, panthera"
-    ]
+    ],
+    "signName": "hind-quarters of lion"
   },
   {
     "code": "F23",
@@ -75458,7 +75713,8 @@
     "tags": [
       "foreleg",
       "bovid"
-    ]
+    ],
+    "signName": "foreleg of ox"
   },
   {
     "code": "F24",
@@ -75513,7 +75769,8 @@
     "tags": [
       "legs",
       "bovid"
-    ]
+    ],
+    "signName": "leg of ox"
   },
   {
     "code": "F25A",
@@ -75591,7 +75848,8 @@
     "tags": [
       "skin",
       "goat"
-    ]
+    ],
+    "signName": "skin of goat"
   },
   {
     "code": "F27",
@@ -75642,7 +75900,8 @@
       "skin",
       "bovid",
       "tail"
-    ]
+    ],
+    "signName": "skin of cow with bent tail"
   },
   {
     "code": "F27A",
@@ -75753,7 +76012,8 @@
       "skin",
       "bovid",
       "tail"
-    ]
+    ],
+    "signName": "skin of cow with straight tail"
   },
   {
     "code": "F29",
@@ -75806,7 +76066,8 @@
       "skin",
       "bovid",
       "tail"
-    ]
+    ],
+    "signName": "cow's skin pierced by arrow"
   },
   {
     "code": "F29C",
@@ -75912,7 +76173,8 @@
     "source": "both",
     "tags": [
       "skin"
-    ]
+    ],
+    "signName": "water-skin"
   },
   {
     "code": "F30A",
@@ -76012,7 +76274,8 @@
     "source": "both",
     "tags": [
       "skin"
-    ]
+    ],
+    "signName": "three skins tied together"
   },
   {
     "code": "F31A",
@@ -76026,7 +76289,8 @@
     "source": "aegyptus",
     "tags": [
       "skin"
-    ]
+    ],
+    "signName": "three skins tied together (simplified)"
   },
   {
     "code": "F31B",
@@ -76074,7 +76338,8 @@
     "tags": [
       "skin",
       "tail"
-    ]
+    ],
+    "signName": "animal's belly"
   },
   {
     "code": "F33",
@@ -76105,7 +76370,8 @@
     "source": "both",
     "tags": [
       "tail"
-    ]
+    ],
+    "signName": "tail"
   },
   {
     "code": "F33B",
@@ -76184,7 +76450,8 @@
     "source": "both",
     "tags": [
       "heart"
-    ]
+    ],
+    "signName": "heart"
   },
   {
     "code": "F34A",
@@ -76227,7 +76494,8 @@
     "tags": [
       "windpipe",
       "heart"
-    ]
+    ],
+    "signName": "heart and windpipe"
   },
   {
     "code": "F35A",
@@ -76288,7 +76556,8 @@
     "tags": [
       "windpipe",
       "lungs"
-    ]
+    ],
+    "signName": "lung and windpipe"
   },
   {
     "code": "F36A",
@@ -76376,7 +76645,8 @@
     "source": "both",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "backbone and ribs and spinal cord"
   },
   {
     "code": "F37B",
@@ -76474,7 +76744,8 @@
     "source": "aegyptus",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "backbone and ribs"
   },
   {
     "code": "F37C",
@@ -76638,7 +76909,8 @@
     "source": "both",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "backbone and ribs"
   },
   {
     "code": "F38C",
@@ -76699,7 +76971,8 @@
     "source": "aegyptus",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "backbone and ribs and spinal cord"
   },
   {
     "code": "F38D",
@@ -76748,7 +77021,8 @@
     "source": "both",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "backbone and spinal cord"
   },
   {
     "code": "F39A",
@@ -76832,7 +77106,8 @@
     "source": "both",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "backbone and spinal cords"
   },
   {
     "code": "F40E",
@@ -76961,7 +77236,8 @@
     "source": "both",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "vertebrae"
   },
   {
     "code": "F41C",
@@ -77077,7 +77353,8 @@
     "source": "both",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "rib"
   },
   {
     "code": "F42B",
@@ -77149,7 +77426,8 @@
     "source": "both",
     "tags": [
       "bones"
-    ]
+    ],
+    "signName": "ribs"
   },
   {
     "code": "F44",
@@ -77183,7 +77461,8 @@
     "tags": [
       "bones",
       "flesh"
-    ]
+    ],
+    "signName": "leg-bone with meat"
   },
   {
     "code": "F45",
@@ -77217,7 +77496,8 @@
     "source": "both",
     "tags": [
       "private parts"
-    ]
+    ],
+    "signName": "uterus"
   },
   {
     "code": "F45A",
@@ -77228,7 +77508,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "uterus (simplified)"
   },
   {
     "code": "F46",
@@ -77282,7 +77563,8 @@
     "source": "both",
     "tags": [
       "intestine"
-    ]
+    ],
+    "signName": "intestine"
   },
   {
     "code": "F46B",
@@ -77323,7 +77605,8 @@
     "source": "aegyptus",
     "tags": [
       "intestine"
-    ]
+    ],
+    "signName": "intestine"
   },
   {
     "code": "F46C",
@@ -77355,7 +77638,8 @@
     "source": "aegyptus",
     "tags": [
       "intestine"
-    ]
+    ],
+    "signName": "intestine"
   },
   {
     "code": "F47A",
@@ -77369,7 +77653,8 @@
     "source": "aegyptus",
     "tags": [
       "intestine"
-    ]
+    ],
+    "signName": "intestine"
   },
   {
     "code": "F48",
@@ -77398,7 +77683,8 @@
     "source": "both",
     "tags": [
       "intestine"
-    ]
+    ],
+    "signName": "intestine"
   },
   {
     "code": "F49",
@@ -77416,7 +77702,8 @@
     "source": "aegyptus",
     "tags": [
       "intestine"
-    ]
+    ],
+    "signName": "intestine"
   },
   {
     "code": "F50",
@@ -77437,7 +77724,8 @@
     "source": "aegyptus",
     "tags": [
       "intestine"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "F50A",
@@ -77498,7 +77786,8 @@
     "source": "both",
     "tags": [
       "flesh"
-    ]
+    ],
+    "signName": "piece of flesh"
   },
   {
     "code": "F51A",
@@ -77512,7 +77801,8 @@
     "source": "aegyptus",
     "tags": [
       "flesh"
-    ]
+    ],
+    "signName": "three pieces of flesh horizontally"
   },
   {
     "code": "F51B",
@@ -77528,7 +77818,8 @@
     "source": "aegyptus",
     "tags": [
       "flesh"
-    ]
+    ],
+    "signName": "three pieces of flesh vertically"
   },
   {
     "code": "F51C",
@@ -77630,7 +77921,8 @@
     "source": "both",
     "tags": [
       "excrement"
-    ]
+    ],
+    "signName": "excrement"
   },
   {
     "code": "F53",
@@ -77663,7 +77955,8 @@
     "tags": [
       "ass",
       "head"
-    ]
+    ],
+    "signName": "divine rod with"
   },
   {
     "code": "F54",
@@ -82121,7 +82414,8 @@
     "source": "both",
     "tags": [
       "percnopterus"
-    ]
+    ],
+    "signName": "Egyptian vulture"
   },
   {
     "code": "G1A",
@@ -82176,7 +82470,8 @@
     "tags": [
       "percnopterus",
       "group"
-    ]
+    ],
+    "signName": "two Egyptian vultures"
   },
   {
     "code": "G3",
@@ -82208,7 +82503,8 @@
     "source": "wiktionary",
     "tags": [
       "percnopterus"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G3A",
@@ -82282,7 +82578,8 @@
     "source": "both",
     "tags": [
       "buzzard"
-    ]
+    ],
+    "signName": "buzzard"
   },
   {
     "code": "G4A",
@@ -82350,7 +82647,8 @@
     "source": "both",
     "tags": [
       "falcon"
-    ]
+    ],
+    "signName": "falcon"
   },
   {
     "code": "G6",
@@ -82392,7 +82690,8 @@
     "source": "both",
     "tags": [
       "falcon"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G6A",
@@ -82410,7 +82709,8 @@
       "nbwj"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "falcon on"
   },
   {
     "code": "G7",
@@ -82459,7 +82759,8 @@
     "tags": [
       "falcon",
       "with standard"
-    ]
+    ],
+    "signName": "falcon on"
   },
   {
     "code": "G7A",
@@ -82493,7 +82794,8 @@
     "tags": [
       "falcon",
       "standing on something"
-    ]
+    ],
+    "signName": "falcon in boat"
   },
   {
     "code": "G7B",
@@ -82522,7 +82824,8 @@
     "tags": [
       "falcon",
       "standing on something"
-    ]
+    ],
+    "signName": "falcon in boat"
   },
   {
     "code": "G7C",
@@ -82637,7 +82940,8 @@
     "tags": [
       "falcon",
       "standing on something"
-    ]
+    ],
+    "signName": "falcon on"
   },
   {
     "code": "G8A",
@@ -82726,7 +83030,8 @@
     "source": "both",
     "tags": [
       "falcon"
-    ]
+    ],
+    "signName": "falcon with"
   },
   {
     "code": "G9A",
@@ -82792,7 +83097,8 @@
     "tags": [
       "falcon",
       "standing on something"
-    ]
+    ],
+    "signName": "falcon in Sokar barque"
   },
   {
     "code": "G11",
@@ -82832,7 +83138,8 @@
     "tags": [
       "falcon",
       "mummyform"
-    ]
+    ],
+    "signName": "image of falcon"
   },
   {
     "code": "G11A",
@@ -82856,7 +83163,8 @@
       "falcon",
       "mummyform",
       "with standard"
-    ]
+    ],
+    "signName": "image of falcon on"
   },
   {
     "code": "G12",
@@ -82888,7 +83196,8 @@
     "tags": [
       "mummyform",
       "falcon"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G13",
@@ -82929,7 +83238,8 @@
     "tags": [
       "falcon",
       "mummyform"
-    ]
+    ],
+    "signName": "image of falcon with"
   },
   {
     "code": "U+13CBA",
@@ -83141,7 +83451,8 @@
     "source": "both",
     "tags": [
       "vulture"
-    ]
+    ],
+    "signName": "vulture"
   },
   {
     "code": "G14A",
@@ -83200,7 +83511,8 @@
     "source": "both",
     "tags": [
       "vulture"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G15A",
@@ -83291,7 +83603,8 @@
     "tags": [
       "vulture",
       "group"
-    ]
+    ],
+    "signName": "vulture and cobra each on"
   },
   {
     "code": "G17",
@@ -83322,7 +83635,8 @@
     "source": "both",
     "tags": [
       "olw"
-    ]
+    ],
+    "signName": "owl"
   },
   {
     "code": "G17D",
@@ -83460,7 +83774,8 @@
     "tags": [
       "olw",
       "group"
-    ]
+    ],
+    "signName": "two owls"
   },
   {
     "code": "G19",
@@ -83487,7 +83802,8 @@
     "source": "aegyptus",
     "tags": [
       "olw"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G20",
@@ -83504,7 +83820,8 @@
     "source": "aegyptus",
     "tags": [
       "olw"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G20A",
@@ -83526,7 +83843,8 @@
     "tags": [
       "olw",
       "hieratic sign"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G20B",
@@ -83592,7 +83910,8 @@
     "source": "both",
     "tags": [
       "guinea-fowl"
-    ]
+    ],
+    "signName": "guinea-fowl"
   },
   {
     "code": "G21A",
@@ -83714,7 +84033,8 @@
     "source": "both",
     "tags": [
       "hoopoe"
-    ]
+    ],
+    "signName": "hoopoe"
   },
   {
     "code": "G22A",
@@ -83792,7 +84112,8 @@
     "source": "both",
     "tags": [
       "lapwing"
-    ]
+    ],
+    "signName": "lawping"
   },
   {
     "code": "G23A",
@@ -83830,7 +84151,8 @@
     "source": "both",
     "tags": [
       "lapwing"
-    ]
+    ],
+    "signName": "lawping with twisted wings"
   },
   {
     "code": "G24A",
@@ -83928,7 +84250,8 @@
     "source": "both",
     "tags": [
       "ibis"
-    ]
+    ],
+    "signName": "northern bald ibis"
   },
   {
     "code": "G25A",
@@ -83994,7 +84317,8 @@
     "tags": [
       "ibis",
       "with standard"
-    ]
+    ],
+    "signName": "sacred ibis on"
   },
   {
     "code": "G26A",
@@ -84023,7 +84347,8 @@
     "source": "both",
     "tags": [
       "ibis"
-    ]
+    ],
+    "signName": "sacred ibis"
   },
   {
     "code": "G26C",
@@ -84110,7 +84435,8 @@
     "source": "both",
     "tags": [
       "flamingo"
-    ]
+    ],
+    "signName": "flamingo"
   },
   {
     "code": "G28",
@@ -84150,7 +84476,8 @@
     "source": "both",
     "tags": [
       "ibis"
-    ]
+    ],
+    "signName": "glossy ibis"
   },
   {
     "code": "G28A",
@@ -84218,7 +84545,8 @@
     "source": "both",
     "tags": [
       "jabiru"
-    ]
+    ],
+    "signName": "saddle-billed stork"
   },
   {
     "code": "G29A",
@@ -84319,7 +84647,8 @@
     "tags": [
       "jabiru",
       "group"
-    ]
+    ],
+    "signName": "three saddle-billed storks"
   },
   {
     "code": "G30A",
@@ -84393,7 +84722,8 @@
     "source": "both",
     "tags": [
       "heron"
-    ]
+    ],
+    "signName": "heron"
   },
   {
     "code": "G31A",
@@ -84569,7 +84899,8 @@
     "source": "both",
     "tags": [
       "heron"
-    ]
+    ],
+    "signName": "heron on perch"
   },
   {
     "code": "G33",
@@ -84613,7 +84944,8 @@
     "source": "both",
     "tags": [
       "egret"
-    ]
+    ],
+    "signName": "cattle egret"
   },
   {
     "code": "G33A",
@@ -84682,7 +85014,8 @@
     "source": "both",
     "tags": [
       "ostrich"
-    ]
+    ],
+    "signName": "ostrich"
   },
   {
     "code": "G34A",
@@ -84751,7 +85084,8 @@
     "source": "both",
     "tags": [
       "cormorant"
-    ]
+    ],
+    "signName": "cormorant"
   },
   {
     "code": "G36",
@@ -84796,7 +85130,8 @@
     "source": "both",
     "tags": [
       "small bird"
-    ]
+    ],
+    "signName": "swallow"
   },
   {
     "code": "G36A",
@@ -84807,7 +85142,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "swallow (low)"
   },
   {
     "code": "G37",
@@ -84844,7 +85180,8 @@
     "source": "both",
     "tags": [
       "small bird"
-    ]
+    ],
+    "signName": "sparrow"
   },
   {
     "code": "G37A",
@@ -84855,7 +85192,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "sparrow (low)"
   },
   {
     "code": "G38",
@@ -84949,7 +85287,8 @@
     "source": "both",
     "tags": [
       "duck or goose"
-    ]
+    ],
+    "signName": "white-fronted goose"
   },
   {
     "code": "G39",
@@ -85004,7 +85343,8 @@
     "source": "both",
     "tags": [
       "duck or goose"
-    ]
+    ],
+    "signName": "pintail"
   },
   {
     "code": "G39A",
@@ -85082,7 +85422,8 @@
     "tags": [
       "duck or goose",
       "with outstretched wings"
-    ]
+    ],
+    "signName": "pintail flying"
   },
   {
     "code": "G40A",
@@ -85195,7 +85536,8 @@
     "tags": [
       "duck or goose",
       "with outstretched wings"
-    ]
+    ],
+    "signName": "pintail alighting"
   },
   {
     "code": "G41A",
@@ -85274,7 +85616,8 @@
     "source": "both",
     "tags": [
       "duck or goose"
-    ]
+    ],
+    "signName": "widgeon"
   },
   {
     "code": "G43",
@@ -85306,7 +85649,8 @@
     "tags": [
       "quail",
       "child"
-    ]
+    ],
+    "signName": "quail chick"
   },
   {
     "code": "G43A",
@@ -85333,7 +85677,8 @@
     "tags": [
       "quail",
       "child"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G43B",
@@ -85386,7 +85731,8 @@
       "quail",
       "child",
       "group"
-    ]
+    ],
+    "signName": "two quail chicks"
   },
   {
     "code": "G45",
@@ -85419,7 +85765,8 @@
     "tags": [
       "quail",
       "child"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G45A",
@@ -85442,7 +85789,8 @@
       "mj{w}"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "G46",
@@ -85475,7 +85823,8 @@
     "tags": [
       "quail",
       "child"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "G47",
@@ -85529,7 +85878,8 @@
     "tags": [
       "child",
       "duck or goose"
-    ]
+    ],
+    "signName": "duckling"
   },
   {
     "code": "G47A",
@@ -85604,7 +85954,8 @@
       "duck or goose",
       "group",
       "in nest"
-    ]
+    ],
+    "signName": "three ducklings in nest"
   },
   {
     "code": "G48A",
@@ -85670,7 +86021,8 @@
       "duck or goose",
       "group",
       "in nest"
-    ]
+    ],
+    "signName": "three ducklings in pool"
   },
   {
     "code": "G49C",
@@ -85821,7 +86173,8 @@
     "tags": [
       "duck or goose",
       "group"
-    ]
+    ],
+    "signName": "two plovers"
   },
   {
     "code": "G51",
@@ -85863,7 +86216,8 @@
     "tags": [
       "egret",
       "group"
-    ]
+    ],
+    "signName": "bird pecking at fish"
   },
   {
     "code": "G51A",
@@ -85931,7 +86285,8 @@
     "source": "both",
     "tags": [
       "duck or goose"
-    ]
+    ],
+    "signName": "goose picking up grain"
   },
   {
     "code": "G53",
@@ -85971,7 +86326,8 @@
     "source": "both",
     "tags": [
       "human-headed"
-    ]
+    ],
+    "signName": "human-headed bird with"
   },
   {
     "code": "G53A",
@@ -86087,7 +86443,8 @@
     "tags": [
       "duck or goose",
       "wounded, killed"
-    ]
+    ],
+    "signName": "plucked bird"
   },
   {
     "code": "G54A",
@@ -94235,7 +94592,8 @@
     "source": "both",
     "tags": [
       "head"
-    ]
+    ],
+    "signName": "head of pintail"
   },
   {
     "code": "H2",
@@ -94269,7 +94627,8 @@
     "source": "both",
     "tags": [
       "head"
-    ]
+    ],
+    "signName": "head of crested bird"
   },
   {
     "code": "H2A",
@@ -94325,7 +94684,8 @@
     "source": "both",
     "tags": [
       "head"
-    ]
+    ],
+    "signName": "head of spoonbill"
   },
   {
     "code": "H4",
@@ -94363,7 +94723,8 @@
     "source": "both",
     "tags": [
       "head"
-    ]
+    ],
+    "signName": "head of vulture"
   },
   {
     "code": "H5",
@@ -94404,7 +94765,8 @@
     "source": "both",
     "tags": [
       "wing"
-    ]
+    ],
+    "signName": "wing"
   },
   {
     "code": "H5A",
@@ -94473,7 +94835,8 @@
     "source": "both",
     "tags": [
       "feather"
-    ]
+    ],
+    "signName": "feather"
   },
   {
     "code": "H6A",
@@ -94501,7 +94864,8 @@
     "source": "both",
     "tags": [
       "feather"
-    ]
+    ],
+    "signName": "hieratic feather"
   },
   {
     "code": "H6B",
@@ -94581,7 +94945,8 @@
     "source": "both",
     "tags": [
       "talon"
-    ]
+    ],
+    "signName": "claw"
   },
   {
     "code": "H7A",
@@ -94661,7 +95026,8 @@
     "source": "both",
     "tags": [
       "egg"
-    ]
+    ],
+    "signName": "egg"
   },
   {
     "code": "H10",
@@ -95740,7 +96106,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "gecko"
   },
   {
     "code": "I2",
@@ -95785,7 +96152,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "turtle"
   },
   {
     "code": "I3",
@@ -95864,7 +96232,8 @@
     "source": "both",
     "tags": [
       "crocodile"
-    ]
+    ],
+    "signName": "crocodile"
   },
   {
     "code": "I3A",
@@ -96181,7 +96550,8 @@
     "source": "both",
     "tags": [
       "crocodile"
-    ]
+    ],
+    "signName": "crocodile on shrine"
   },
   {
     "code": "I4A",
@@ -96228,7 +96598,8 @@
     "source": "both",
     "tags": [
       "crocodile"
-    ]
+    ],
+    "signName": "crocodile with curved tail"
   },
   {
     "code": "I5A",
@@ -96257,7 +96628,8 @@
     "tags": [
       "crocodile",
       "mummyform"
-    ]
+    ],
+    "signName": "image of crocodile"
   },
   {
     "code": "I5B",
@@ -96315,7 +96687,8 @@
     "source": "both",
     "tags": [
       "crocodile"
-    ]
+    ],
+    "signName": "crocodile scales"
   },
   {
     "code": "I6D",
@@ -96450,7 +96823,8 @@
     "source": "both",
     "tags": [
       "frog"
-    ]
+    ],
+    "signName": "frog"
   },
   {
     "code": "I8",
@@ -96486,7 +96860,8 @@
     "source": "both",
     "tags": [
       "frog"
-    ]
+    ],
+    "signName": "tadpole"
   },
   {
     "code": "I8A",
@@ -96550,7 +96925,8 @@
     "source": "both",
     "tags": [
       "horned viper"
-    ]
+    ],
+    "signName": "horned viper"
   },
   {
     "code": "I9A",
@@ -96588,7 +96964,8 @@
     "tags": [
       "horned viper",
       "mutilated glyphs"
-    ]
+    ],
+    "signName": "horned viper crawling out of enclosure"
   },
   {
     "code": "I9C",
@@ -96683,7 +97060,8 @@
     "source": "both",
     "tags": [
       "cobra"
-    ]
+    ],
+    "signName": "cobra"
   },
   {
     "code": "I10A",
@@ -96705,7 +97083,8 @@
     "tags": [
       "cobra",
       "mutilated glyphs"
-    ]
+    ],
+    "signName": "cobra with feather"
   },
   {
     "code": "I10B",
@@ -96752,7 +97131,8 @@
     "tags": [
       "cobra",
       "group"
-    ]
+    ],
+    "signName": "two cobras"
   },
   {
     "code": "I11A",
@@ -96770,7 +97150,8 @@
       "ḏt"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "I12",
@@ -96823,7 +97204,8 @@
     "source": "both",
     "tags": [
       "uraeus"
-    ]
+    ],
+    "signName": "erect cobra"
   },
   {
     "code": "I13",
@@ -96865,7 +97247,8 @@
     "tags": [
       "uraeus",
       "standing on something"
-    ]
+    ],
+    "signName": "erect cobra on"
   },
   {
     "code": "I13A",
@@ -97080,7 +97463,8 @@
     "source": "both",
     "tags": [
       "cobra"
-    ]
+    ],
+    "signName": "snake"
   },
   {
     "code": "I14C",
@@ -97200,7 +97584,8 @@
     "source": "both",
     "tags": [
       "uraeus"
-    ]
+    ],
+    "signName": "snake"
   },
   {
     "code": "I15B",
@@ -101728,7 +102113,8 @@
     "source": "both",
     "tags": [
       "fish"
-    ]
+    ],
+    "signName": "tilapia"
   },
   {
     "code": "K2",
@@ -101769,7 +102155,8 @@
     "source": "both",
     "tags": [
       "fish"
-    ]
+    ],
+    "signName": "barbel"
   },
   {
     "code": "K3",
@@ -101822,7 +102209,8 @@
     "source": "both",
     "tags": [
       "fish"
-    ]
+    ],
+    "signName": "mullet"
   },
   {
     "code": "K4",
@@ -101858,7 +102246,8 @@
     "source": "both",
     "tags": [
       "fish"
-    ]
+    ],
+    "signName": "elephant-snout fish"
   },
   {
     "code": "K4A",
@@ -101965,7 +102354,8 @@
     "source": "both",
     "tags": [
       "fish"
-    ]
+    ],
+    "signName": "Petrocephalus bane"
   },
   {
     "code": "K6",
@@ -102009,7 +102399,8 @@
     "source": "both",
     "tags": [
       "part-of-fish"
-    ]
+    ],
+    "signName": "fish scale"
   },
   {
     "code": "K6A",
@@ -102063,7 +102454,8 @@
     "source": "both",
     "tags": [
       "fish"
-    ]
+    ],
+    "signName": "puffer"
   },
   {
     "code": "K8",
@@ -102085,7 +102477,8 @@
     "tags": [
       "fish",
       "group"
-    ]
+    ],
+    "signName": "catfish"
   },
   {
     "code": "K9",
@@ -102787,7 +103180,8 @@
     "source": "both",
     "tags": [
       "scarab"
-    ]
+    ],
+    "signName": "dung beetle"
   },
   {
     "code": "L2",
@@ -102825,7 +103219,8 @@
     "source": "both",
     "tags": [
       "bee"
-    ]
+    ],
+    "signName": "bee"
   },
   {
     "code": "L2A",
@@ -102843,7 +103238,8 @@
       "nsw-bjtj"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "L3",
@@ -102876,7 +103272,8 @@
     "source": "both",
     "tags": [
       "fly"
-    ]
+    ],
+    "signName": "fly"
   },
   {
     "code": "L3A",
@@ -102955,7 +103352,8 @@
     "source": "both",
     "tags": [
       "locust"
-    ]
+    ],
+    "signName": "locust"
   },
   {
     "code": "L5",
@@ -102996,7 +103394,8 @@
     "source": "both",
     "tags": [
       "centipede"
-    ]
+    ],
+    "signName": "centipede"
   },
   {
     "code": "L6",
@@ -103037,7 +103436,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "shell"
   },
   {
     "code": "L6A",
@@ -103095,7 +103495,8 @@
     "source": "both",
     "tags": [
       "scorpion"
-    ]
+    ],
+    "signName": "scorpion"
   },
   {
     "code": "L8",
@@ -103126,7 +103527,8 @@
     "source": "both",
     "tags": [
       "centipede"
-    ]
+    ],
+    "signName": "beetle"
   },
   {
     "code": "L9",
@@ -103994,7 +104396,8 @@
     "source": "both",
     "tags": [
       "tree"
-    ]
+    ],
+    "signName": "tree"
   },
   {
     "code": "M1C",
@@ -104069,7 +104472,8 @@
     "tags": [
       "tree",
       "branch"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M1B",
@@ -104092,7 +104496,8 @@
     "source": "aegyptus",
     "tags": [
       "tree"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M2",
@@ -104176,7 +104581,8 @@
     "source": "both",
     "tags": [
       "flower"
-    ]
+    ],
+    "signName": "plant"
   },
   {
     "code": "M2B",
@@ -104262,7 +104668,8 @@
     "source": "both",
     "tags": [
       "branch"
-    ]
+    ],
+    "signName": "branch"
   },
   {
     "code": "M3B",
@@ -104366,7 +104773,8 @@
     "tags": [
       "branch",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M3C",
@@ -104472,7 +104880,8 @@
     "tags": [
       "branch",
       "palm"
-    ]
+    ],
+    "signName": "palm branch"
   },
   {
     "code": "M4A",
@@ -104580,7 +104989,8 @@
     "tags": [
       "branch",
       "palm"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M5B",
@@ -104682,7 +105092,8 @@
       "branch",
       "palm",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M7",
@@ -104727,7 +105138,8 @@
       "branch",
       "palm",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M7A",
@@ -104856,7 +105268,8 @@
       "pool",
       "flower",
       "lotus"
-    ]
+    ],
+    "signName": "pool with lotus flowers"
   },
   {
     "code": "M8E",
@@ -105190,7 +105603,8 @@
     "tags": [
       "flower",
       "lotus"
-    ]
+    ],
+    "signName": "lotus flower"
   },
   {
     "code": "M9B",
@@ -105288,7 +105702,8 @@
       "flower",
       "lotus",
       "bud"
-    ]
+    ],
+    "signName": "lotus bud with straight stem"
   },
   {
     "code": "M10A",
@@ -105299,7 +105714,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "lotus bud with winding stem"
   },
   {
     "code": "M11",
@@ -105346,7 +105762,8 @@
     "tags": [
       "flower",
       "lotus"
-    ]
+    ],
+    "signName": "flower on long twisted stalk"
   },
   {
     "code": "M11A",
@@ -105483,7 +105900,8 @@
     "tags": [
       "lotus",
       "leaf"
-    ]
+    ],
+    "signName": "lotus plant"
   },
   {
     "code": "M12B",
@@ -105645,7 +106063,8 @@
     "source": "both",
     "tags": [
       "papyrus or lily"
-    ]
+    ],
+    "signName": "papyrus"
   },
   {
     "code": "U+13DFE",
@@ -105757,7 +106176,8 @@
     "tags": [
       "papyrus or lily",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M14A",
@@ -105834,7 +106254,8 @@
     "tags": [
       "bush",
       "papyrus or lily"
-    ]
+    ],
+    "signName": "clump of papyrus with buds"
   },
   {
     "code": "M15A",
@@ -105867,7 +106288,8 @@
     "tags": [
       "bush",
       "papyrus or lily"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M15B",
@@ -105965,7 +106387,8 @@
     "tags": [
       "bush",
       "papyrus or lily"
-    ]
+    ],
+    "signName": "clump of papyrus"
   },
   {
     "code": "M16A",
@@ -105998,7 +106421,8 @@
     "tags": [
       "bush",
       "papyrus or lily"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M16B",
@@ -106073,7 +106497,8 @@
     "source": "both",
     "tags": [
       "reed"
-    ]
+    ],
+    "signName": "reed"
   },
   {
     "code": "M17A",
@@ -106100,7 +106525,8 @@
     "source": "unicode",
     "tags": [
       "reed"
-    ]
+    ],
+    "signName": "two reeds"
   },
   {
     "code": "M18",
@@ -106134,7 +106560,8 @@
     "tags": [
       "reed",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M19",
@@ -106167,7 +106594,8 @@
     "tags": [
       "reed",
       "sign combination"
-    ]
+    ],
+    "signName": "heaped conical cakes between"
   },
   {
     "code": "M20",
@@ -106200,7 +106628,8 @@
     "tags": [
       "reed",
       "group of same sign"
-    ]
+    ],
+    "signName": "field of reeds"
   },
   {
     "code": "M20A",
@@ -106266,7 +106695,8 @@
     "tags": [
       "reed",
       "group of same sign"
-    ]
+    ],
+    "signName": "reeds with root"
   },
   {
     "code": "M22",
@@ -106313,7 +106743,8 @@
     "source": "both",
     "tags": [
       "rush"
-    ]
+    ],
+    "signName": "rush"
   },
   {
     "code": "M22A",
@@ -106340,7 +106771,8 @@
     "source": "unicode",
     "tags": [
       "rush"
-    ]
+    ],
+    "signName": "two rushes"
   },
   {
     "code": "M22B",
@@ -106423,7 +106855,8 @@
     "source": "both",
     "tags": [
       "rush"
-    ]
+    ],
+    "signName": "sedge"
   },
   {
     "code": "M23A",
@@ -106494,7 +106927,8 @@
     "tags": [
       "rush",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M24A",
@@ -106527,7 +106961,8 @@
     "tags": [
       "rush",
       "sign combination"
-    ]
+    ],
+    "signName": "lily"
   },
   {
     "code": "M24B",
@@ -106580,7 +107015,8 @@
       "rush",
       "flower",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M26",
@@ -106627,7 +107063,8 @@
     "tags": [
       "rush",
       "flower"
-    ]
+    ],
+    "signName": "flowering sedge"
   },
   {
     "code": "M26A",
@@ -106683,7 +107120,8 @@
       "rush",
       "flower",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M27A",
@@ -106729,7 +107167,8 @@
       "rush",
       "flower",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "M28A",
@@ -106747,7 +107186,8 @@
       "tꜣ-^šmꜥw"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "three lilies on"
   },
   {
     "code": "M28B",
@@ -106789,7 +107229,8 @@
     "source": "both",
     "tags": [
       "pod"
-    ]
+    ],
+    "signName": "pod"
   },
   {
     "code": "M30",
@@ -106821,7 +107262,8 @@
     "source": "both",
     "tags": [
       "pod"
-    ]
+    ],
+    "signName": "root"
   },
   {
     "code": "M31",
@@ -106853,7 +107295,8 @@
     "source": "both",
     "tags": [
       "root"
-    ]
+    ],
+    "signName": "rhizome"
   },
   {
     "code": "M31A",
@@ -106947,7 +107390,8 @@
     "source": "both",
     "tags": [
       "root"
-    ]
+    ],
+    "signName": "rhizome"
   },
   {
     "code": "M32A",
@@ -107012,7 +107456,8 @@
     "tags": [
       "grain",
       "group of same sign"
-    ]
+    ],
+    "signName": "3 grains horizontally"
   },
   {
     "code": "M33B",
@@ -107043,7 +107488,8 @@
     "source": "unicode",
     "tags": [
       "grain"
-    ]
+    ],
+    "signName": "3 grains in triangular arrangement"
   },
   {
     "code": "M33A",
@@ -107058,7 +107504,8 @@
     "tags": [
       "grain",
       "group of same sign"
-    ]
+    ],
+    "signName": "3 grains vertically"
   },
   {
     "code": "M33C",
@@ -107111,7 +107558,8 @@
     "source": "both",
     "tags": [
       "corn"
-    ]
+    ],
+    "signName": "ear of emmer"
   },
   {
     "code": "M34A",
@@ -107159,7 +107607,8 @@
     "tags": [
       "corn",
       "heap"
-    ]
+    ],
+    "signName": "heap of grain"
   },
   {
     "code": "M36",
@@ -107208,7 +107657,8 @@
     "source": "both",
     "tags": [
       "bundle"
-    ]
+    ],
+    "signName": "bundle of flax showing bolls"
   },
   {
     "code": "M36A",
@@ -107276,7 +107726,8 @@
     "source": "both",
     "tags": [
       "bundle"
-    ]
+    ],
+    "signName": "bundle of flax"
   },
   {
     "code": "M37C",
@@ -107381,7 +107832,8 @@
     "source": "both",
     "tags": [
       "bundle"
-    ]
+    ],
+    "signName": "wide bundle of flax"
   },
   {
     "code": "M38A",
@@ -107469,7 +107921,8 @@
       "grain",
       "basket",
       "group of same sign"
-    ]
+    ],
+    "signName": "basket of fruit or grain"
   },
   {
     "code": "M39B",
@@ -107586,7 +108039,8 @@
     "tags": [
       "bundle",
       "reed"
-    ]
+    ],
+    "signName": "bundle of reeds"
   },
   {
     "code": "M40A",
@@ -107614,7 +108068,8 @@
     "tags": [
       "bundle",
       "reed"
-    ]
+    ],
+    "signName": "bundle of reeds"
   },
   {
     "code": "M40C",
@@ -107700,7 +108155,8 @@
     "source": "both",
     "tags": [
       "log"
-    ]
+    ],
+    "signName": "piece of wood"
   },
   {
     "code": "M42",
@@ -107745,7 +108201,8 @@
     "source": "both",
     "tags": [
       "flower"
-    ]
+    ],
+    "signName": "flower"
   },
   {
     "code": "M43",
@@ -107779,7 +108236,8 @@
     "tags": [
       "vine",
       "pole"
-    ]
+    ],
+    "signName": "vine on trellis"
   },
   {
     "code": "M43A",
@@ -107858,7 +108316,8 @@
     "source": "both",
     "tags": [
       "thorn"
-    ]
+    ],
+    "signName": "thorn"
   },
   {
     "code": "M46",
@@ -113789,7 +114248,8 @@
     "source": "both",
     "tags": [
       "sky"
-    ]
+    ],
+    "signName": "sky"
   },
   {
     "code": "NL1",
@@ -113818,7 +114278,8 @@
       "NL2",
       "NU2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of first nome of Lower Egypt"
   },
   {
     "code": "NU1",
@@ -113847,7 +114308,8 @@
       "NL2",
       "NU2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of first nome of Upper Egypt"
   },
   {
     "code": "N2",
@@ -113898,7 +114360,8 @@
     "source": "both",
     "tags": [
       "sky"
-    ]
+    ],
+    "signName": "sky with sceptre"
   },
   {
     "code": "NL2",
@@ -113927,7 +114390,8 @@
       "N2",
       "NU2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of second nome of Lower Egypt"
   },
   {
     "code": "NU2",
@@ -113956,7 +114420,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of second nome of Upper Egypt"
   },
   {
     "code": "N3",
@@ -113994,7 +114459,8 @@
     "source": "both",
     "tags": [
       "sky"
-    ]
+    ],
+    "signName": "sky with sceptre"
   },
   {
     "code": "NL3",
@@ -114023,7 +114489,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of third nome of Lower Egypt"
   },
   {
     "code": "NU3",
@@ -114052,7 +114519,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of third nome of Upper Egypt"
   },
   {
     "code": "N3A",
@@ -114159,7 +114627,8 @@
     "source": "both",
     "tags": [
       "sky"
-    ]
+    ],
+    "signName": "sky with rain"
   },
   {
     "code": "NL4",
@@ -114188,7 +114657,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of fourth nome of Lower Egypt"
   },
   {
     "code": "NU4",
@@ -114217,7 +114687,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of fourth nome of Upper Egypt"
   },
   {
     "code": "N4G",
@@ -114439,7 +114910,8 @@
     "source": "both",
     "tags": [
       "sun"
-    ]
+    ],
+    "signName": "sun"
   },
   {
     "code": "NL5",
@@ -114468,7 +114940,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of fifth nome of Lower Egypt"
   },
   {
     "code": "NL5A",
@@ -114492,7 +114965,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of fifth nome of Lower Egypt"
   },
   {
     "code": "NU5",
@@ -114521,7 +114995,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of fifth nome of Upper Egypt"
   },
   {
     "code": "N6",
@@ -114567,7 +115042,8 @@
     "tags": [
       "sun",
       "with uraeus"
-    ]
+    ],
+    "signName": "sun with uraeus"
   },
   {
     "code": "NL6",
@@ -114596,7 +115072,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of sixth nome of Lower Egypt"
   },
   {
     "code": "NU6",
@@ -114625,7 +115102,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of sixth nome of Upper Egypt"
   },
   {
     "code": "N6A",
@@ -114770,7 +115248,8 @@
     "source": "both",
     "tags": [
       "sun"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "NL7",
@@ -114799,7 +115278,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of seventh nome of Lower Egypt"
   },
   {
     "code": "NU7",
@@ -114828,7 +115308,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of seventh nome of Upper Egypt"
   },
   {
     "code": "NL8",
@@ -114857,7 +115338,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of eighth nome of Lower Egypt"
   },
   {
     "code": "NU8",
@@ -114886,7 +115368,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of eighth nome of Upper Egypt"
   },
   {
     "code": "N8",
@@ -114937,7 +115420,8 @@
     "source": "unicode",
     "tags": [
       "sun"
-    ]
+    ],
+    "signName": "sunshine"
   },
   {
     "code": "N8D",
@@ -115069,7 +115553,8 @@
     "source": "both",
     "tags": [
       "moon"
-    ]
+    ],
+    "signName": "moon with lower half obscured"
   },
   {
     "code": "NL9",
@@ -115098,7 +115583,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of ninth nome of Lower Egypt"
   },
   {
     "code": "NU9",
@@ -115127,7 +115613,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of ninth nome of Upper Egypt"
   },
   {
     "code": "N9A",
@@ -115169,7 +115656,8 @@
     "source": "both",
     "tags": [
       "moon"
-    ]
+    ],
+    "signName": "moon with lower section obscured"
   },
   {
     "code": "NL10",
@@ -115198,7 +115686,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of tenth nome of Lower Egypt"
   },
   {
     "code": "NU10",
@@ -115227,7 +115716,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of tenth nome of Upper Egypt"
   },
   {
     "code": "NU10A",
@@ -115251,7 +115741,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of tenth nome of Upper Egypt"
   },
   {
     "code": "N10A",
@@ -115308,7 +115799,8 @@
     "source": "both",
     "tags": [
       "moon"
-    ]
+    ],
+    "signName": "crescent moon"
   },
   {
     "code": "NL11",
@@ -115337,7 +115829,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of eleventh nome of Lower Egypt"
   },
   {
     "code": "NU11",
@@ -115366,7 +115859,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of eleventh nome of Upper Egypt"
   },
   {
     "code": "NU11A",
@@ -115390,7 +115884,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of eleventh nome of Upper Egypt"
   },
   {
     "code": "N12",
@@ -115428,7 +115923,8 @@
     "source": "both",
     "tags": [
       "moon"
-    ]
+    ],
+    "signName": "crescent moon"
   },
   {
     "code": "NL12",
@@ -115457,7 +115953,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of twelfth nome of Lower Egypt"
   },
   {
     "code": "NU12",
@@ -115486,7 +115983,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of twelfth nome of Upper Egypt"
   },
   {
     "code": "N13",
@@ -115527,7 +116025,8 @@
     "tags": [
       "moon",
       "star"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "NL13",
@@ -115556,7 +116055,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of thirteenth nome of Lower Egypt"
   },
   {
     "code": "NU13",
@@ -115585,7 +116085,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of thirteenth nome of Upper Egypt"
   },
   {
     "code": "U+13ECB",
@@ -115761,7 +116262,8 @@
     "source": "both",
     "tags": [
       "star"
-    ]
+    ],
+    "signName": "star"
   },
   {
     "code": "NL14",
@@ -115790,7 +116292,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of fourteenth nome of Lower Egypt"
   },
   {
     "code": "NU14",
@@ -115819,7 +116322,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of fourteenth nome of Upper Egypt"
   },
   {
     "code": "N15",
@@ -115851,7 +116355,8 @@
     "source": "both",
     "tags": [
       "star"
-    ]
+    ],
+    "signName": "star in circle"
   },
   {
     "code": "NL15",
@@ -115880,7 +116385,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of fifteenth nome of Lower Egypt"
   },
   {
     "code": "N16",
@@ -115925,7 +116431,8 @@
     "source": "both",
     "tags": [
       "land"
-    ]
+    ],
+    "signName": "land with grains"
   },
   {
     "code": "NL16",
@@ -115954,7 +116461,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of sixteenth nome of Lower Egypt"
   },
   {
     "code": "NU16",
@@ -115983,7 +116491,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of sixteenth nome of Upper Egypt"
   },
   {
     "code": "N16A",
@@ -116092,7 +116601,8 @@
     "source": "both",
     "tags": [
       "land"
-    ]
+    ],
+    "signName": "land"
   },
   {
     "code": "NL17",
@@ -116121,7 +116631,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of seventeenth nome of Lower Egypt"
   },
   {
     "code": "NL17A",
@@ -116145,7 +116656,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of seventeenth nome of Lower Egypt"
   },
   {
     "code": "NU17",
@@ -116174,7 +116686,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of seventeenth nome of Upper Egypt"
   },
   {
     "code": "N18",
@@ -116258,7 +116771,8 @@
     "source": "both",
     "tags": [
       "land"
-    ]
+    ],
+    "signName": "sandy tract"
   },
   {
     "code": "NL18",
@@ -116282,7 +116796,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of eighteenth nome of Lower Egypt"
   },
   {
     "code": "NU18",
@@ -116311,7 +116826,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of eighteenth nome of Upper Egypt"
   },
   {
     "code": "NU18A",
@@ -116328,7 +116844,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of eighteenth nome of Upper Egypt"
   },
   {
     "code": "N18A",
@@ -116356,7 +116873,8 @@
     "tags": [
       "land",
       "sand"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "N18B",
@@ -116374,7 +116892,8 @@
       "šns"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "N18C",
@@ -116413,7 +116932,8 @@
     "tags": [
       "land",
       "group"
-    ]
+    ],
+    "signName": "two sandy tracts"
   },
   {
     "code": "NL19",
@@ -116437,7 +116957,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of nineteenth nome of Lower Egypt"
   },
   {
     "code": "NU19",
@@ -116466,7 +116987,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of nineteenth nome of Upper Egypt"
   },
   {
     "code": "N20",
@@ -116502,7 +117024,8 @@
     "source": "both",
     "tags": [
       "land"
-    ]
+    ],
+    "signName": "tongue of land"
   },
   {
     "code": "NL20",
@@ -116526,7 +117049,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of twentieth nome of Lower Egypt"
   },
   {
     "code": "NU20",
@@ -116555,7 +117079,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of twentieth nome of Upper Egypt"
   },
   {
     "code": "N21",
@@ -116608,7 +117133,8 @@
     "source": "both",
     "tags": [
       "land"
-    ]
+    ],
+    "signName": "short tongue of land"
   },
   {
     "code": "NU21",
@@ -116637,7 +117163,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of twenty-first nome of Upper Egypt"
   },
   {
     "code": "N21A",
@@ -116718,7 +117245,8 @@
     "source": "both",
     "tags": [
       "land"
-    ]
+    ],
+    "signName": "broad tongue of land"
   },
   {
     "code": "NU22",
@@ -116747,7 +117275,8 @@
       "N2",
       "NL2"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "sign of twenty-second nome of Upper Egypt"
   },
   {
     "code": "N23",
@@ -116803,7 +117332,8 @@
     "source": "both",
     "tags": [
       "flooded land"
-    ]
+    ],
+    "signName": "irrigation canal"
   },
   {
     "code": "N24",
@@ -116844,7 +117374,8 @@
     "source": "both",
     "tags": [
       "flooded land"
-    ]
+    ],
+    "signName": "irrigation canal system"
   },
   {
     "code": "N24B",
@@ -117075,7 +117606,8 @@
     "source": "both",
     "tags": [
       "mountain"
-    ]
+    ],
+    "signName": "three hills"
   },
   {
     "code": "N25A",
@@ -117086,7 +117618,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "three hills (low)"
   },
   {
     "code": "N26",
@@ -117121,7 +117654,8 @@
     "source": "both",
     "tags": [
       "mountain"
-    ]
+    ],
+    "signName": "two hills"
   },
   {
     "code": "N27",
@@ -117152,7 +117686,8 @@
     "source": "both",
     "tags": [
       "horizon"
-    ]
+    ],
+    "signName": "sun over mountain"
   },
   {
     "code": "N27A",
@@ -117202,7 +117737,8 @@
     "tags": [
       "sun",
       "mountain"
-    ]
+    ],
+    "signName": "rays of sun over hill"
   },
   {
     "code": "N28C",
@@ -117312,7 +117848,8 @@
     "source": "both",
     "tags": [
       "mountain"
-    ]
+    ],
+    "signName": "slope of hill"
   },
   {
     "code": "N30",
@@ -117345,7 +117882,8 @@
     "source": "both",
     "tags": [
       "hill"
-    ]
+    ],
+    "signName": "mound of earth"
   },
   {
     "code": "N30A",
@@ -117452,7 +117990,8 @@
     "source": "both",
     "tags": [
       "path"
-    ]
+    ],
+    "signName": "road with shrubs"
   },
   {
     "code": "N31h",
@@ -117675,7 +118214,8 @@
     "source": "both",
     "tags": [
       "dirt"
-    ]
+    ],
+    "signName": "lump of clay"
   },
   {
     "code": "N33",
@@ -117709,7 +118249,8 @@
     "source": "both",
     "tags": [
       "sand"
-    ]
+    ],
+    "signName": "grain"
   },
   {
     "code": "N33A",
@@ -117740,7 +118281,8 @@
     "source": "both",
     "tags": [
       "sand"
-    ]
+    ],
+    "signName": "three grains"
   },
   {
     "code": "N33Av",
@@ -117790,7 +118332,8 @@
     "tags": [
       "ingot",
       "metal"
-    ]
+    ],
+    "signName": "ingot of metal"
   },
   {
     "code": "N34A",
@@ -117818,7 +118361,8 @@
     "tags": [
       "ingot",
       "metal"
-    ]
+    ],
+    "signName": "ingot of metal"
   },
   {
     "code": "N34B",
@@ -117893,7 +118437,8 @@
     "source": "both",
     "tags": [
       "water"
-    ]
+    ],
+    "signName": "ripple of water"
   },
   {
     "code": "N35A",
@@ -117921,7 +118466,8 @@
     "tags": [
       "water",
       "group"
-    ]
+    ],
+    "signName": "three ripples of water"
   },
   {
     "code": "N35B",
@@ -118023,7 +118569,8 @@
     "source": "both",
     "tags": [
       "canal"
-    ]
+    ],
+    "signName": "canal"
   },
   {
     "code": "N36D",
@@ -118157,7 +118704,8 @@
     "source": "both",
     "tags": [
       "pool"
-    ]
+    ],
+    "signName": "pool"
   },
   {
     "code": "N37A",
@@ -118189,7 +118737,8 @@
     "tags": [
       "canal",
       "pool"
-    ]
+    ],
+    "signName": "pool"
   },
   {
     "code": "N38",
@@ -118227,7 +118776,8 @@
     "source": "both",
     "tags": [
       "pool"
-    ]
+    ],
+    "signName": "deep pool"
   },
   {
     "code": "N39",
@@ -118265,7 +118815,8 @@
     "source": "both",
     "tags": [
       "pool"
-    ]
+    ],
+    "signName": "pool with water"
   },
   {
     "code": "N40",
@@ -118297,7 +118848,8 @@
     "tags": [
       "pool",
       "legs"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "N40A",
@@ -118382,7 +118934,8 @@
     "source": "both",
     "tags": [
       "well"
-    ]
+    ],
+    "signName": "well with ripple of water"
   },
   {
     "code": "N42",
@@ -118418,7 +118971,8 @@
     "source": "both",
     "tags": [
       "well"
-    ]
+    ],
+    "signName": "well with line of water"
   },
   {
     "code": "N44",
@@ -121928,7 +122482,8 @@
     "source": "both",
     "tags": [
       "house"
-    ]
+    ],
+    "signName": "house"
   },
   {
     "code": "O1B",
@@ -121973,7 +122528,8 @@
       "pr-ꜥnḫ"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "O2",
@@ -121995,7 +122551,8 @@
     "tags": [
       "house",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "O2A",
@@ -122043,7 +122600,8 @@
     "tags": [
       "house",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "O3A",
@@ -122093,7 +122651,8 @@
     "source": "both",
     "tags": [
       "plan"
-    ]
+    ],
+    "signName": "shelter"
   },
   {
     "code": "O4B",
@@ -122180,7 +122739,8 @@
     "source": "both",
     "tags": [
       "plan"
-    ]
+    ],
+    "signName": "winding wall from upper-left corner"
   },
   {
     "code": "O5U",
@@ -122230,7 +122790,8 @@
     "source": "both",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "enclosure"
   },
   {
     "code": "O6A",
@@ -122261,7 +122822,8 @@
     "source": "unicode",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "opening of"
   },
   {
     "code": "O6B",
@@ -122280,7 +122842,8 @@
     "source": "aegyptus",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "opening of"
   },
   {
     "code": "O6C",
@@ -122299,7 +122862,8 @@
     "source": "aegyptus",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "opening of"
   },
   {
     "code": "O6D",
@@ -122318,7 +122882,8 @@
     "source": "aegyptus",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "closing of"
   },
   {
     "code": "O6E",
@@ -122334,7 +122899,8 @@
     ],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "closing of"
   },
   {
     "code": "O6F",
@@ -122350,7 +122916,8 @@
     ],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "closing of"
   },
   {
     "code": "O6G",
@@ -122410,7 +122977,8 @@
     "source": "aegyptus",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "Ff8A",
@@ -122456,7 +123024,8 @@
     "source": "aegyptus",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "O9B",
@@ -122532,7 +123101,8 @@
     "source": "aegyptus",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "O9A",
@@ -122611,7 +123181,8 @@
     "source": "aegyptus",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "O10A",
@@ -122632,7 +123203,8 @@
     "source": "aegyptus",
     "tags": [
       "castle"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "O10B",
@@ -122650,7 +123222,8 @@
       "ḥwt-bjtj"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "O10C",
@@ -122668,7 +123241,8 @@
       "ḥwt-ḥr"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "O10D",
@@ -122710,7 +123284,8 @@
     "source": "both",
     "tags": [
       "palace"
-    ]
+    ],
+    "signName": "palace"
   },
   {
     "code": "O11A",
@@ -122753,7 +123328,8 @@
     "source": "aegyptus",
     "tags": [
       "palace"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "O13",
@@ -122794,7 +123370,8 @@
     "source": "both",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "battlemented enclosure"
   },
   {
     "code": "U+13FAD",
@@ -122990,7 +123567,8 @@
     "source": "both",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "part of battlemented enclosure"
   },
   {
     "code": "O14C",
@@ -123076,7 +123654,8 @@
     "source": "both",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "enclosure with"
   },
   {
     "code": "O16A",
@@ -123160,7 +123739,8 @@
     "tags": [
       "door",
       "with uraeus"
-    ]
+    ],
+    "signName": "gateway with serpents"
   },
   {
     "code": "O16C",
@@ -123204,7 +123784,8 @@
     "tags": [
       "door",
       "with uraeus"
-    ]
+    ],
+    "signName": "open gateway with serpents"
   },
   {
     "code": "O18",
@@ -123235,7 +123816,8 @@
     "source": "both",
     "tags": [
       "shrine"
-    ]
+    ],
+    "signName": "shrine in profile"
   },
   {
     "code": "O18D",
@@ -123379,7 +123961,8 @@
     "source": "both",
     "tags": [
       "shrine"
-    ]
+    ],
+    "signName": "shrine with fence"
   },
   {
     "code": "O19A",
@@ -123406,7 +123989,8 @@
     "source": "both",
     "tags": [
       "shrine"
-    ]
+    ],
+    "signName": "shrine"
   },
   {
     "code": "O19C",
@@ -123491,7 +124075,8 @@
     "source": "both",
     "tags": [
       "shrine"
-    ]
+    ],
+    "signName": "shrine"
   },
   {
     "code": "O20A",
@@ -123518,7 +124103,8 @@
     "source": "unicode",
     "tags": [
       "shrine"
-    ]
+    ],
+    "signName": "shrine"
   },
   {
     "code": "O20B",
@@ -123576,7 +124162,8 @@
     "source": "both",
     "tags": [
       "shrine"
-    ]
+    ],
+    "signName": "façade of shrine"
   },
   {
     "code": "O21B",
@@ -123713,7 +124300,8 @@
     "source": "both",
     "tags": [
       "tent or kiosk"
-    ]
+    ],
+    "signName": "booth with pole"
   },
   {
     "code": "O22A",
@@ -123841,7 +124429,8 @@
     "source": "both",
     "tags": [
       "tent or kiosk"
-    ]
+    ],
+    "signName": "double platform"
   },
   {
     "code": "O23L",
@@ -124232,7 +124821,8 @@
     "source": "both",
     "tags": [
       "pyramid"
-    ]
+    ],
+    "signName": "pyramid"
   },
   {
     "code": "O24A",
@@ -124263,7 +124853,8 @@
     "source": "unicode",
     "tags": [
       "pyramid"
-    ]
+    ],
+    "signName": "pedestal of sun temple"
   },
   {
     "code": "O25",
@@ -124295,7 +124886,8 @@
     "source": "both",
     "tags": [
       "obelisk"
-    ]
+    ],
+    "signName": "obelisk"
   },
   {
     "code": "O25A",
@@ -124306,7 +124898,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "obelisk and pedestal of sun temple"
   },
   {
     "code": "O26",
@@ -124342,7 +124935,8 @@
     "source": "both",
     "tags": [
       "stela"
-    ]
+    ],
+    "signName": "stela"
   },
   {
     "code": "O26A",
@@ -124387,7 +124981,8 @@
     "source": "both",
     "tags": [
       "hypostyle hall"
-    ]
+    ],
+    "signName": "hall of columns"
   },
   {
     "code": "O28",
@@ -124432,7 +125027,8 @@
     "source": "both",
     "tags": [
       "column, post, etc."
-    ]
+    ],
+    "signName": "column"
   },
   {
     "code": "O28B",
@@ -124533,7 +125129,8 @@
     "source": "both",
     "tags": [
       "column, post, etc."
-    ]
+    ],
+    "signName": "horizontal wooden column"
   },
   {
     "code": "O29v",
@@ -124587,7 +125184,8 @@
     "tags": [
       "column, post, etc.",
       "pole"
-    ]
+    ],
+    "signName": "support"
   },
   {
     "code": "O30A",
@@ -124598,7 +125196,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "four supports"
   },
   {
     "code": "O30u",
@@ -124667,7 +125266,8 @@
     "source": "both",
     "tags": [
       "door"
-    ]
+    ],
+    "signName": "door"
   },
   {
     "code": "O32",
@@ -124702,7 +125302,8 @@
     "source": "both",
     "tags": [
       "door"
-    ]
+    ],
+    "signName": "gateway"
   },
   {
     "code": "O32B",
@@ -124847,7 +125448,8 @@
     "tags": [
       "palace",
       "serekh"
-    ]
+    ],
+    "signName": "façade of palace"
   },
   {
     "code": "O33A",
@@ -124879,7 +125481,8 @@
     "tags": [
       "palace",
       "serekh"
-    ]
+    ],
+    "signName": "closing of"
   },
   {
     "code": "O33C",
@@ -124980,7 +125583,8 @@
     "source": "both",
     "tags": [
       "lock"
-    ]
+    ],
+    "signName": "bolt"
   },
   {
     "code": "O35",
@@ -125036,7 +125640,8 @@
     "tags": [
       "lock",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "O35A",
@@ -125103,7 +125708,8 @@
     "source": "both",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "wall"
   },
   {
     "code": "O36C",
@@ -125134,7 +125740,8 @@
     "source": "unicode",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "opening of square fortified wall enclosure"
   },
   {
     "code": "O36D",
@@ -125166,7 +125773,8 @@
     "source": "unicode",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "closure of square fortified wall enclosure"
   },
   {
     "code": "O36A",
@@ -125185,7 +125793,8 @@
     "source": "aegyptus",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "opening of oval fortified wall enclosure"
   },
   {
     "code": "O36B",
@@ -125204,7 +125813,8 @@
     "source": "aegyptus",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "closing of oval fortified wall enclosure"
   },
   {
     "code": "O36E",
@@ -125310,7 +125920,8 @@
     "source": "both",
     "tags": [
       "enclosure"
-    ]
+    ],
+    "signName": "falling wall"
   },
   {
     "code": "O37A",
@@ -125379,7 +125990,8 @@
     "source": "both",
     "tags": [
       "corner"
-    ]
+    ],
+    "signName": "corner of wall"
   },
   {
     "code": "O38A",
@@ -125457,7 +126069,8 @@
     "source": "both",
     "tags": [
       "stone"
-    ]
+    ],
+    "signName": "stone"
   },
   {
     "code": "O40",
@@ -125515,7 +126128,8 @@
     "source": "both",
     "tags": [
       "stair"
-    ]
+    ],
+    "signName": "stairway"
   },
   {
     "code": "O40A",
@@ -125572,7 +126186,8 @@
     "source": "both",
     "tags": [
       "stair"
-    ]
+    ],
+    "signName": "double stairway"
   },
   {
     "code": "O42",
@@ -125614,7 +126229,8 @@
     "source": "both",
     "tags": [
       "fence"
-    ]
+    ],
+    "signName": "fence"
   },
   {
     "code": "O42A",
@@ -125872,7 +126488,8 @@
     "source": "both",
     "tags": [
       "fence"
-    ]
+    ],
+    "signName": "low fence"
   },
   {
     "code": "O43A",
@@ -125960,7 +126577,8 @@
     "tags": [
       "column, post, etc.",
       "papyrus or lily"
-    ]
+    ],
+    "signName": "emblem of Min"
   },
   {
     "code": "O44C",
@@ -126073,7 +126691,8 @@
     "source": "both",
     "tags": [
       "domed building"
-    ]
+    ],
+    "signName": "domed building"
   },
   {
     "code": "O46",
@@ -126102,7 +126721,8 @@
     "source": "both",
     "tags": [
       "domed building"
-    ]
+    ],
+    "signName": "domed building"
   },
   {
     "code": "O46B",
@@ -126156,7 +126776,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "enclosed mound"
   },
   {
     "code": "O48",
@@ -126184,7 +126805,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "enclosed mound"
   },
   {
     "code": "O48A",
@@ -126266,7 +126888,8 @@
     "source": "both",
     "tags": [
       "plan"
-    ]
+    ],
+    "signName": "village"
   },
   {
     "code": "O49A",
@@ -126326,7 +126949,8 @@
     "source": "both",
     "tags": [
       "plan"
-    ]
+    ],
+    "signName": "threshing floor"
   },
   {
     "code": "O50A",
@@ -126337,7 +126961,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "hieratic threshing floor"
   },
   {
     "code": "O50B",
@@ -126379,7 +127004,8 @@
     "source": "both",
     "tags": [
       "granary"
-    ]
+    ],
+    "signName": "pile of grain"
   },
   {
     "code": "O51B",
@@ -134118,7 +134744,8 @@
       "ship",
       "without sail",
       "with oar"
-    ]
+    ],
+    "signName": "boat"
   },
   {
     "code": "P1A",
@@ -134152,7 +134779,8 @@
       "ship",
       "without sail",
       "with oar"
-    ]
+    ],
+    "signName": "boat upside down"
   },
   {
     "code": "P1B",
@@ -134228,7 +134856,8 @@
       "ship",
       "with sail",
       "with oar"
-    ]
+    ],
+    "signName": "ship under sail"
   },
   {
     "code": "P2h",
@@ -134517,7 +135146,8 @@
       "ship",
       "with oar",
       "without sail"
-    ]
+    ],
+    "signName": "sacred barque"
   },
   {
     "code": "P3A",
@@ -134546,7 +135176,8 @@
       "ship",
       "with oar",
       "without sail"
-    ]
+    ],
+    "signName": "sacred barque without steering oar"
   },
   {
     "code": "P3B",
@@ -134590,7 +135221,8 @@
       "ship",
       "without oar",
       "without sail"
-    ]
+    ],
+    "signName": "boat with net"
   },
   {
     "code": "P4A",
@@ -134750,7 +135382,8 @@
     "tags": [
       "mast",
       "with sail"
-    ]
+    ],
+    "signName": "sail"
   },
   {
     "code": "P5S",
@@ -135239,7 +135872,8 @@
     "tags": [
       "mast",
       "without sail"
-    ]
+    ],
+    "signName": "mast"
   },
   {
     "code": "P6A",
@@ -135287,7 +135921,8 @@
       "mast",
       "without sail",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "P7A",
@@ -135364,7 +135999,8 @@
     "source": "both",
     "tags": [
       "oar"
-    ]
+    ],
+    "signName": "oar"
   },
   {
     "code": "P8A",
@@ -135415,7 +136051,8 @@
     "tags": [
       "oar",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "P10",
@@ -135446,7 +136083,8 @@
     "source": "both",
     "tags": [
       "oar"
-    ]
+    ],
+    "signName": "steering oar"
   },
   {
     "code": "P10A",
@@ -135510,7 +136148,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "mooring post"
   },
   {
     "code": "P11A",
@@ -139358,7 +139997,8 @@
     "source": "both",
     "tags": [
       "seat"
-    ]
+    ],
+    "signName": "seat"
   },
   {
     "code": "Q1B",
@@ -139436,7 +140076,8 @@
     "source": "both",
     "tags": [
       "portable seat"
-    ]
+    ],
+    "signName": "portable seat"
   },
   {
     "code": "Q2C",
@@ -139539,7 +140180,8 @@
     "source": "both",
     "tags": [
       "mat"
-    ]
+    ],
+    "signName": "stool"
   },
   {
     "code": "Q4",
@@ -139570,7 +140212,8 @@
     "source": "both",
     "tags": [
       "headrest"
-    ]
+    ],
+    "signName": "head-rest"
   },
   {
     "code": "Q4A",
@@ -139629,7 +140272,8 @@
     "source": "both",
     "tags": [
       "chest"
-    ]
+    ],
+    "signName": "chest"
   },
   {
     "code": "Q6",
@@ -139666,7 +140310,8 @@
     "source": "both",
     "tags": [
       "coffin"
-    ]
+    ],
+    "signName": "coffin"
   },
   {
     "code": "Q6I",
@@ -139913,7 +140558,8 @@
     "source": "both",
     "tags": [
       "brazier"
-    ]
+    ],
+    "signName": "brazier"
   },
   {
     "code": "Q7A",
@@ -141348,7 +141994,8 @@
     "source": "both",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "high table with offerings"
   },
   {
     "code": "R1G",
@@ -141564,7 +142211,8 @@
     "source": "both",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "table with slices of bread"
   },
   {
     "code": "R2A",
@@ -141578,7 +142226,8 @@
     "source": "aegyptus",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "high table with offerings"
   },
   {
     "code": "R2B",
@@ -141625,7 +142274,8 @@
     "source": "both",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "low table with offerings"
   },
   {
     "code": "R3P",
@@ -141848,7 +142498,8 @@
     "source": "aegyptus",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "low table"
   },
   {
     "code": "R3AA",
@@ -141901,7 +142552,8 @@
     "source": "aegyptus",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "low table with offerings (simplified)"
   },
   {
     "code": "R3C",
@@ -142185,7 +142837,8 @@
     "source": "both",
     "tags": [
       "bread on mat"
-    ]
+    ],
+    "signName": "loaf on mat"
   },
   {
     "code": "R5",
@@ -142239,7 +142892,8 @@
     "source": "both",
     "tags": [
       "censer"
-    ]
+    ],
+    "signName": "narrow censer"
   },
   {
     "code": "R6",
@@ -142267,7 +142921,8 @@
     "source": "both",
     "tags": [
       "censer"
-    ]
+    ],
+    "signName": "broad censer"
   },
   {
     "code": "R7",
@@ -142300,7 +142955,8 @@
     "tags": [
       "fire",
       "censer"
-    ]
+    ],
+    "signName": "bowl with smoke"
   },
   {
     "code": "R7C",
@@ -142454,7 +143110,8 @@
     "source": "both",
     "tags": [
       "netjer-sign"
-    ]
+    ],
+    "signName": "cloth on pole"
   },
   {
     "code": "R8A",
@@ -142514,7 +143171,8 @@
     "source": "both",
     "tags": [
       "netjer-sign"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "R10",
@@ -142546,7 +143204,8 @@
     "tags": [
       "netjer-sign",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "R10D",
@@ -142617,7 +143276,8 @@
     "tags": [
       "netjer-sign",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "R10B",
@@ -142740,7 +143400,8 @@
     "source": "both",
     "tags": [
       "djed-pillar"
-    ]
+    ],
+    "signName": "reed column"
   },
   {
     "code": "R12",
@@ -142777,7 +143438,8 @@
     "source": "both",
     "tags": [
       "standard"
-    ]
+    ],
+    "signName": "standard"
   },
   {
     "code": "R12A",
@@ -142852,7 +143514,8 @@
     "tags": [
       "imenet-sign",
       "sign combination"
-    ]
+    ],
+    "signName": "falcon and feather on standard"
   },
   {
     "code": "R13A",
@@ -142906,7 +143569,8 @@
     "source": "both",
     "tags": [
       "imenet-sign"
-    ]
+    ],
+    "signName": "feather on standard"
   },
   {
     "code": "R14A",
@@ -142997,7 +143661,8 @@
     "source": "both",
     "tags": [
       "iabet-sign"
-    ]
+    ],
+    "signName": "spear emblem"
   },
   {
     "code": "R15A",
@@ -143093,7 +143758,8 @@
     "tags": [
       "emblem",
       "wekh-sign"
-    ]
+    ],
+    "signName": "sceptre with feathers and string"
   },
   {
     "code": "R16A",
@@ -143116,7 +143782,8 @@
       "emblem",
       "with uraeus",
       "wekh-sign"
-    ]
+    ],
+    "signName": "sceptre with feathers"
   },
   {
     "code": "R16B",
@@ -143172,7 +143839,8 @@
     "tags": [
       "emblem",
       "osiris relic"
-    ]
+    ],
+    "signName": "wig on pole"
   },
   {
     "code": "R17A",
@@ -143262,7 +143930,8 @@
       "emblem",
       "osiris relic",
       "standing on something"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "R18A",
@@ -143495,7 +144164,8 @@
     "tags": [
       "emblem",
       "seshat"
-    ]
+    ],
+    "signName": "flower with horns"
   },
   {
     "code": "R20A",
@@ -143551,7 +144221,8 @@
     "tags": [
       "emblem",
       "seshat"
-    ]
+    ],
+    "signName": "flower with horns"
   },
   {
     "code": "R22",
@@ -143607,7 +144278,8 @@
     "tags": [
       "min",
       "emblem"
-    ]
+    ],
+    "signName": "two narrow belemnites"
   },
   {
     "code": "R23",
@@ -143641,7 +144313,8 @@
     "tags": [
       "min",
       "emblem"
-    ]
+    ],
+    "signName": "two broad belemnites"
   },
   {
     "code": "R23A",
@@ -143706,7 +144379,8 @@
     "tags": [
       "emblem",
       "neith"
-    ]
+    ],
+    "signName": "two bows tied horizontally"
   },
   {
     "code": "R24v",
@@ -143751,7 +144425,8 @@
     "tags": [
       "emblem",
       "neith"
-    ]
+    ],
+    "signName": "two bows tied vertically"
   },
   {
     "code": "R26A",
@@ -143810,7 +144485,8 @@
     "source": "unicode",
     "tags": [
       "sema-tawy"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "R26B",
@@ -143858,7 +144534,8 @@
     "source": "aegyptus",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "two arrows crossed over a shield"
   },
   {
     "code": "R27A",
@@ -143890,7 +144567,8 @@
     "source": "aegyptus",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "Bat"
   },
   {
     "code": "R29",
@@ -143911,7 +144589,8 @@
     "source": "aegyptus",
     "tags": [
       "offering table"
-    ]
+    ],
+    "signName": "niche with serpent"
   },
   {
     "code": "R29A",
@@ -147056,7 +147735,8 @@
     "source": "both",
     "tags": [
       "crown"
-    ]
+    ],
+    "signName": "white crown"
   },
   {
     "code": "S1A",
@@ -147112,7 +147792,8 @@
     "tags": [
       "crown",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S2A",
@@ -147145,7 +147826,8 @@
     "tags": [
       "crown",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S2B",
@@ -147197,7 +147879,8 @@
     "source": "both",
     "tags": [
       "crown"
-    ]
+    ],
+    "signName": "red crown"
   },
   {
     "code": "S4",
@@ -147238,7 +147921,8 @@
     "tags": [
       "crown",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S5",
@@ -147271,7 +147955,8 @@
     "tags": [
       "crown",
       "group"
-    ]
+    ],
+    "signName": "double crown"
   },
   {
     "code": "S6",
@@ -147304,7 +147989,8 @@
     "tags": [
       "crown",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S6A",
@@ -147322,7 +148008,8 @@
       "mḥw=s"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "combination of"
   },
   {
     "code": "S7",
@@ -147353,7 +148040,8 @@
     "source": "both",
     "tags": [
       "crown"
-    ]
+    ],
+    "signName": "blue crown"
   },
   {
     "code": "S8",
@@ -147444,7 +148132,8 @@
     "tags": [
       "crown",
       "feather"
-    ]
+    ],
+    "signName": "two plumes"
   },
   {
     "code": "S9A",
@@ -147500,7 +148189,8 @@
     "source": "both",
     "tags": [
       "headress"
-    ]
+    ],
+    "signName": "headband"
   },
   {
     "code": "S10A",
@@ -147572,7 +148262,8 @@
     "source": "both",
     "tags": [
       "necklace"
-    ]
+    ],
+    "signName": "broad collar"
   },
   {
     "code": "S11B",
@@ -147704,7 +148395,8 @@
     "source": "both",
     "tags": [
       "necklace"
-    ]
+    ],
+    "signName": "collar of beads"
   },
   {
     "code": "S12A",
@@ -147756,7 +148448,8 @@
       "necklace",
       "foot",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S13A",
@@ -147794,7 +148487,8 @@
     "tags": [
       "necklace",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S14A",
@@ -147816,7 +148510,8 @@
     "tags": [
       "necklace",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S14B",
@@ -147833,7 +148528,8 @@
     "tags": [
       "necklace",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S14C",
@@ -147894,7 +148590,8 @@
     "source": "both",
     "tags": [
       "jewel"
-    ]
+    ],
+    "signName": "pectoral"
   },
   {
     "code": "S15A",
@@ -147970,7 +148667,8 @@
     "source": "both",
     "tags": [
       "jewel"
-    ]
+    ],
+    "signName": "pectoral"
   },
   {
     "code": "S17",
@@ -148000,7 +148698,8 @@
     "tags": [
       "jewel",
       "girdle"
-    ]
+    ],
+    "signName": "pectoral"
   },
   {
     "code": "S17A",
@@ -148038,7 +148737,8 @@
     "tags": [
       "jewel",
       "girdle"
-    ]
+    ],
+    "signName": "girdle"
   },
   {
     "code": "S17B",
@@ -148111,7 +148811,8 @@
     "source": "both",
     "tags": [
       "necklace"
-    ]
+    ],
+    "signName": "necklace with counterpoise"
   },
   {
     "code": "S18A",
@@ -148188,7 +148889,8 @@
     "source": "both",
     "tags": [
       "jewel"
-    ]
+    ],
+    "signName": "necklace with seal from side"
   },
   {
     "code": "S20",
@@ -148231,7 +148933,8 @@
     "source": "both",
     "tags": [
       "jewel"
-    ]
+    ],
+    "signName": "necklace with seal from front"
   },
   {
     "code": "S20A",
@@ -148290,7 +148993,8 @@
     "source": "both",
     "tags": [
       "jewel"
-    ]
+    ],
+    "signName": "ring"
   },
   {
     "code": "S21A",
@@ -148360,7 +149064,8 @@
     "source": "both",
     "tags": [
       "dress"
-    ]
+    ],
+    "signName": "shoulder-knot"
   },
   {
     "code": "S22A",
@@ -148424,7 +149129,8 @@
     "tags": [
       "scepter",
       "group of same sign"
-    ]
+    ],
+    "signName": "knotted cloth"
   },
   {
     "code": "S24",
@@ -148465,7 +149171,8 @@
     "source": "both",
     "tags": [
       "dress"
-    ]
+    ],
+    "signName": "girdle knot"
   },
   {
     "code": "S25",
@@ -148503,7 +149210,8 @@
     "source": "both",
     "tags": [
       "dress"
-    ]
+    ],
+    "signName": "garment with ties"
   },
   {
     "code": "S26",
@@ -148536,7 +149244,8 @@
     "tags": [
       "dress",
       "apron"
-    ]
+    ],
+    "signName": "apron"
   },
   {
     "code": "S26A",
@@ -148554,7 +149263,8 @@
       "dꜣjw"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "apron"
   },
   {
     "code": "S26B",
@@ -148565,7 +149275,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "apron"
   },
   {
     "code": "S27",
@@ -148596,7 +149307,8 @@
     "source": "both",
     "tags": [
       "dress"
-    ]
+    ],
+    "signName": "cloth with two strands"
   },
   {
     "code": "S27A",
@@ -148643,7 +149355,8 @@
     "source": "both",
     "tags": [
       "dress"
-    ]
+    ],
+    "signName": "cloth with fringe on top and"
   },
   {
     "code": "S28A",
@@ -148711,7 +149424,8 @@
     "source": "both",
     "tags": [
       "dress"
-    ]
+    ],
+    "signName": "folded cloth"
   },
   {
     "code": "S29A",
@@ -148762,7 +149476,8 @@
       "dress",
       "group",
       "horned viper"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S30A",
@@ -148802,7 +149517,8 @@
     "tags": [
       "dress",
       "group"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "S32",
@@ -148841,7 +149557,8 @@
     "source": "both",
     "tags": [
       "dress"
-    ]
+    ],
+    "signName": "cloth with fringe on the side"
   },
   {
     "code": "S32A",
@@ -148903,7 +149620,8 @@
       "dress",
       "foot",
       "sandal"
-    ]
+    ],
+    "signName": "sandle"
   },
   {
     "code": "S34",
@@ -148947,7 +149665,8 @@
     "source": "both",
     "tags": [
       "dress"
-    ]
+    ],
+    "signName": "sandle-strap"
   },
   {
     "code": "S34A",
@@ -148999,7 +149718,8 @@
     "tags": [
       "staff",
       "sunshade"
-    ]
+    ],
+    "signName": "sunshade"
   },
   {
     "code": "S35A",
@@ -149010,7 +149730,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "sunshade"
   },
   {
     "code": "S36",
@@ -149045,7 +149766,8 @@
     "tags": [
       "staff",
       "sunshade"
-    ]
+    ],
+    "signName": "sunshade"
   },
   {
     "code": "S36B",
@@ -149176,7 +149898,8 @@
     "tags": [
       "scepter",
       "fan"
-    ]
+    ],
+    "signName": "fan"
   },
   {
     "code": "S37C",
@@ -149317,7 +150040,8 @@
     "source": "both",
     "tags": [
       "scepter"
-    ]
+    ],
+    "signName": "crook"
   },
   {
     "code": "S38A",
@@ -149365,7 +150089,8 @@
     "source": "both",
     "tags": [
       "staff"
-    ]
+    ],
+    "signName": "shepherd's crook"
   },
   {
     "code": "S40",
@@ -149407,7 +150132,8 @@
     "source": "both",
     "tags": [
       "scepter"
-    ]
+    ],
+    "signName": "sceptre"
   },
   {
     "code": "S41",
@@ -149439,7 +150165,8 @@
     "source": "both",
     "tags": [
       "scepter"
-    ]
+    ],
+    "signName": "sceptre with spiral shaft"
   },
   {
     "code": "S42",
@@ -149488,7 +150215,8 @@
     "source": "both",
     "tags": [
       "scepter"
-    ]
+    ],
+    "signName": "sceptre of authority"
   },
   {
     "code": "S42A",
@@ -149552,7 +150280,8 @@
     "source": "both",
     "tags": [
       "staff"
-    ]
+    ],
+    "signName": "walking stick"
   },
   {
     "code": "S43A",
@@ -149703,7 +150432,8 @@
       "staff",
       "group",
       "scepter"
-    ]
+    ],
+    "signName": "walking stick with"
   },
   {
     "code": "S44B",
@@ -149746,7 +150476,8 @@
     "source": "both",
     "tags": [
       "scepter"
-    ]
+    ],
+    "signName": "flagellum"
   },
   {
     "code": "S46",
@@ -149785,7 +150516,8 @@
     "tags": [
       "crown",
       "group"
-    ]
+    ],
+    "signName": "covering for head and neck"
   },
   {
     "code": "S46A",
@@ -154958,7 +155690,8 @@
     "source": "both",
     "tags": [
       "mace"
-    ]
+    ],
+    "signName": "mace with flat head"
   },
   {
     "code": "T1A",
@@ -155004,7 +155737,8 @@
     "source": "both",
     "tags": [
       "mace"
-    ]
+    ],
+    "signName": "mace with round head diagonally"
   },
   {
     "code": "T3",
@@ -155052,7 +155786,8 @@
     "source": "both",
     "tags": [
       "mace"
-    ]
+    ],
+    "signName": "mace with round head vertically"
   },
   {
     "code": "T3C",
@@ -155127,7 +155862,8 @@
     "source": "aegyptus",
     "tags": [
       "mace"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "T3B",
@@ -155217,7 +155953,8 @@
     "source": "both",
     "tags": [
       "mace"
-    ]
+    ],
+    "signName": "mace with strap"
   },
   {
     "code": "T5",
@@ -155246,7 +155983,8 @@
     "tags": [
       "mace",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "T5A",
@@ -155294,7 +156032,8 @@
     "tags": [
       "sign combination",
       "group of same sign"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "T7",
@@ -155331,7 +156070,8 @@
     "source": "both",
     "tags": [
       "axe"
-    ]
+    ],
+    "signName": "axe"
   },
   {
     "code": "T7A",
@@ -155364,7 +156104,8 @@
     "source": "both",
     "tags": [
       "axe"
-    ]
+    ],
+    "signName": "axe"
   },
   {
     "code": "T7B",
@@ -155436,7 +156177,8 @@
     "source": "both",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "signName": "dagger"
   },
   {
     "code": "T8A",
@@ -155468,7 +156210,8 @@
     "source": "both",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "signName": "dagger"
   },
   {
     "code": "T9",
@@ -155518,7 +156261,8 @@
     "source": "both",
     "tags": [
       "bow"
-    ]
+    ],
+    "signName": "bow"
   },
   {
     "code": "T9A",
@@ -155547,7 +156291,8 @@
     "source": "both",
     "tags": [
       "bow"
-    ]
+    ],
+    "signName": "bow"
   },
   {
     "code": "T9D",
@@ -155662,7 +156407,8 @@
     "source": "both",
     "tags": [
       "bow"
-    ]
+    ],
+    "signName": "composite bow"
   },
   {
     "code": "T11",
@@ -155712,7 +156458,8 @@
     "source": "both",
     "tags": [
       "arrow"
-    ]
+    ],
+    "signName": "arrow"
   },
   {
     "code": "T11B",
@@ -155758,7 +156505,8 @@
     "source": "aegyptus",
     "tags": [
       "arrow"
-    ]
+    ],
+    "signName": "two crossed arrows"
   },
   {
     "code": "T11C",
@@ -155826,7 +156574,8 @@
     "source": "both",
     "tags": [
       "bow string"
-    ]
+    ],
+    "signName": "bow-string"
   },
   {
     "code": "T12A",
@@ -155916,7 +156665,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "joined pieces of wood"
   },
   {
     "code": "T13A",
@@ -156056,7 +156806,8 @@
     "source": "both",
     "tags": [
       "throwing-stick"
-    ]
+    ],
+    "signName": "throw stick vertically"
   },
   {
     "code": "T14A",
@@ -156128,7 +156879,8 @@
     "source": "both",
     "tags": [
       "throwing-stick"
-    ]
+    ],
+    "signName": "throw stick slanted"
   },
   {
     "code": "T16",
@@ -156159,7 +156911,8 @@
     "source": "both",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "signName": "scimitar"
   },
   {
     "code": "T16A",
@@ -156186,7 +156939,8 @@
     "source": "both",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "signName": "scimitar"
   },
   {
     "code": "T17",
@@ -156227,7 +156981,8 @@
     "source": "both",
     "tags": [
       "chariot"
-    ]
+    ],
+    "signName": "chariot"
   },
   {
     "code": "T18",
@@ -156268,7 +157023,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "crook with package attached"
   },
   {
     "code": "T18A",
@@ -156377,7 +157133,8 @@
     "source": "both",
     "tags": [
       "harpoon"
-    ]
+    ],
+    "signName": "harpoon head"
   },
   {
     "code": "T19A",
@@ -156475,7 +157232,8 @@
     "source": "both",
     "tags": [
       "harpoon"
-    ]
+    ],
+    "signName": "harpoon head"
   },
   {
     "code": "T21",
@@ -156516,7 +157274,8 @@
     "source": "both",
     "tags": [
       "harpoon"
-    ]
+    ],
+    "signName": "harpoon"
   },
   {
     "code": "T21A",
@@ -156708,7 +157467,8 @@
     "source": "both",
     "tags": [
       "arrow"
-    ]
+    ],
+    "signName": "arrowhead"
   },
   {
     "code": "T22A",
@@ -156845,7 +157605,8 @@
     "source": "both",
     "tags": [
       "arrow"
-    ]
+    ],
+    "signName": "arrowhead"
   },
   {
     "code": "T24",
@@ -156882,7 +157643,8 @@
     "source": "both",
     "tags": [
       "net or trap"
-    ]
+    ],
+    "signName": "fishing-net"
   },
   {
     "code": "T24B",
@@ -156999,7 +157761,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "floats"
   },
   {
     "code": "T25E",
@@ -157140,7 +157903,8 @@
     "source": "both",
     "tags": [
       "net or trap"
-    ]
+    ],
+    "signName": "bird-trap"
   },
   {
     "code": "T26F",
@@ -157355,7 +158119,8 @@
     "source": "both",
     "tags": [
       "net or trap"
-    ]
+    ],
+    "signName": "bird-trap"
   },
   {
     "code": "T28",
@@ -157399,7 +158164,8 @@
     "source": "both",
     "tags": [
       "butcher's block"
-    ]
+    ],
+    "signName": "butcher's block"
   },
   {
     "code": "T28A",
@@ -157445,7 +158211,8 @@
     "tags": [
       "knife, dagger, sword",
       "butcher's block"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "T29C",
@@ -157555,7 +158322,8 @@
     "source": "both",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "signName": "knife"
   },
   {
     "code": "T30A",
@@ -157629,7 +158397,8 @@
     "source": "both",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "signName": "knife-sharpener"
   },
   {
     "code": "T31A",
@@ -157671,7 +158440,8 @@
     "tags": [
       "knife, dagger, sword",
       "legs"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "T32A",
@@ -157686,7 +158456,8 @@
     "tags": [
       "knife, dagger, sword",
       "legs"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "T32B",
@@ -157743,7 +158514,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "knife-sharpener of butcher"
   },
   {
     "code": "T33A",
@@ -157757,7 +158529,8 @@
     "source": "aegyptus",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "T33B",
@@ -157816,7 +158589,8 @@
     "source": "both",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "signName": "butcher's knife"
   },
   {
     "code": "T35",
@@ -157848,7 +158622,8 @@
     "source": "both",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "signName": "butcher's knife"
   },
   {
     "code": "T36",
@@ -157880,7 +158655,8 @@
     "source": "unicode",
     "tags": [
       "shield"
-    ]
+    ],
+    "signName": "shield"
   },
   {
     "code": "T36A",
@@ -161729,7 +162505,8 @@
     "source": "both",
     "tags": [
       "sickle"
-    ]
+    ],
+    "signName": "sickle"
   },
   {
     "code": "U2",
@@ -161756,7 +162533,8 @@
     "source": "both",
     "tags": [
       "sickle"
-    ]
+    ],
+    "signName": "sickle (low)"
   },
   {
     "code": "U3",
@@ -161779,7 +162557,8 @@
     "tags": [
       "sickle",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "U4",
@@ -161802,7 +162581,8 @@
     "tags": [
       "sickle",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "U5",
@@ -161819,7 +162599,8 @@
     "tags": [
       "sickle",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "U6",
@@ -161868,7 +162649,8 @@
     "source": "both",
     "tags": [
       "hoe"
-    ]
+    ],
+    "signName": "diagonal hoe"
   },
   {
     "code": "U6A",
@@ -161879,7 +162661,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "vertical hoe"
   },
   {
     "code": "U6B",
@@ -161928,7 +162711,8 @@
     "source": "both",
     "tags": [
       "hoe"
-    ]
+    ],
+    "signName": "horizontal hoe"
   },
   {
     "code": "U7B",
@@ -162066,7 +162850,8 @@
     "source": "aegyptus",
     "tags": [
       "hoe"
-    ]
+    ],
+    "signName": "hoe without connecting rope"
   },
   {
     "code": "U9",
@@ -162104,7 +162889,8 @@
     "source": "both",
     "tags": [
       "corn measure"
-    ]
+    ],
+    "signName": "grain-measure with grain"
   },
   {
     "code": "U10",
@@ -162185,7 +162971,8 @@
     "source": "both",
     "tags": [
       "corn measure"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "U12",
@@ -162213,7 +163000,8 @@
     "source": "both",
     "tags": [
       "corn measure"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "U13",
@@ -162281,7 +163069,8 @@
     "source": "both",
     "tags": [
       "plough"
-    ]
+    ],
+    "signName": "plough"
   },
   {
     "code": "U13A",
@@ -162417,7 +163206,8 @@
     "tags": [
       "varia",
       "plough"
-    ]
+    ],
+    "signName": "two joined branches"
   },
   {
     "code": "U14A",
@@ -162463,7 +163253,8 @@
     "source": "both",
     "tags": [
       "sledge"
-    ]
+    ],
+    "signName": "sledge"
   },
   {
     "code": "U15A",
@@ -162548,7 +163339,8 @@
     "tags": [
       "sledge",
       "canine-headed"
-    ]
+    ],
+    "signName": "sledge with head of jackal"
   },
   {
     "code": "U16D",
@@ -162661,7 +163453,8 @@
     "source": "both",
     "tags": [
       "pick in earth"
-    ]
+    ],
+    "signName": "pick in ground"
   },
   {
     "code": "U18",
@@ -162693,7 +163486,8 @@
     "source": "both",
     "tags": [
       "pick in earth"
-    ]
+    ],
+    "signName": "pick in basin"
   },
   {
     "code": "U19",
@@ -162743,7 +163537,8 @@
     "source": "both",
     "tags": [
       "adze"
-    ]
+    ],
+    "signName": "adze"
   },
   {
     "code": "U19A",
@@ -162802,7 +163597,8 @@
     "source": "both",
     "tags": [
       "adze"
-    ]
+    ],
+    "signName": "adze"
   },
   {
     "code": "U21",
@@ -162847,7 +163643,8 @@
     "source": "both",
     "tags": [
       "adze"
-    ]
+    ],
+    "signName": "adze on wood"
   },
   {
     "code": "U21A",
@@ -162909,7 +163706,8 @@
     "source": "both",
     "tags": [
       "chisel"
-    ]
+    ],
+    "signName": "chisel"
   },
   {
     "code": "U22A",
@@ -162997,7 +163795,8 @@
     "source": "both",
     "tags": [
       "chisel"
-    ]
+    ],
+    "signName": "chisel"
   },
   {
     "code": "U23A",
@@ -163024,7 +163823,8 @@
     "source": "both",
     "tags": [
       "chisel"
-    ]
+    ],
+    "signName": "chisel"
   },
   {
     "code": "U23B",
@@ -163140,7 +163940,8 @@
     "source": "both",
     "tags": [
       "drill"
-    ]
+    ],
+    "signName": "drill for stone"
   },
   {
     "code": "U24E",
@@ -163494,7 +164295,8 @@
     "source": "both",
     "tags": [
       "drill"
-    ]
+    ],
+    "signName": "drill for stone"
   },
   {
     "code": "U25C",
@@ -163606,7 +164408,8 @@
     "source": "both",
     "tags": [
       "drill"
-    ]
+    ],
+    "signName": "drill for beads"
   },
   {
     "code": "U26A",
@@ -163660,7 +164463,8 @@
     "source": "both",
     "tags": [
       "drill"
-    ]
+    ],
+    "signName": "drill for beads"
   },
   {
     "code": "U27B",
@@ -163760,7 +164564,8 @@
     "source": "both",
     "tags": [
       "fire-drill"
-    ]
+    ],
+    "signName": "fire-drill"
   },
   {
     "code": "U29",
@@ -163797,7 +164602,8 @@
     "source": "both",
     "tags": [
       "fire-drill"
-    ]
+    ],
+    "signName": "fire-drill"
   },
   {
     "code": "U29A",
@@ -163813,7 +164619,8 @@
     "source": "aegyptus",
     "tags": [
       "fire-drill"
-    ]
+    ],
+    "signName": "fire-drill with string"
   },
   {
     "code": "U30",
@@ -163848,7 +164655,8 @@
     "source": "both",
     "tags": [
       "kiln"
-    ]
+    ],
+    "signName": "kiln"
   },
   {
     "code": "U30A",
@@ -163938,7 +164746,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "baker's rake"
   },
   {
     "code": "U32",
@@ -163987,7 +164796,8 @@
     "source": "both",
     "tags": [
       "pestle"
-    ]
+    ],
+    "signName": "pestle and mortar"
   },
   {
     "code": "U32A",
@@ -164014,7 +164824,8 @@
     "source": "unicode",
     "tags": [
       "pestle"
-    ]
+    ],
+    "signName": "hieratic pestle and mortar"
   },
   {
     "code": "U32B",
@@ -164123,7 +164934,8 @@
     "source": "both",
     "tags": [
       "pestle"
-    ]
+    ],
+    "signName": "pestle"
   },
   {
     "code": "U33A",
@@ -164199,7 +165011,8 @@
     "source": "both",
     "tags": [
       "spindle"
-    ]
+    ],
+    "signName": "spindle"
   },
   {
     "code": "U34A",
@@ -164243,7 +165056,8 @@
     "tags": [
       "spindle",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "U35A",
@@ -164303,7 +165117,8 @@
     "source": "both",
     "tags": [
       "club"
-    ]
+    ],
+    "signName": "club"
   },
   {
     "code": "U36A",
@@ -164372,7 +165187,8 @@
     "source": "both",
     "tags": [
       "razor"
-    ]
+    ],
+    "signName": "razor"
   },
   {
     "code": "U37A",
@@ -164417,7 +165233,8 @@
     "source": "both",
     "tags": [
       "measuring instrument"
-    ]
+    ],
+    "signName": "balance"
   },
   {
     "code": "U38A",
@@ -164524,7 +165341,8 @@
     "source": "both",
     "tags": [
       "measuring instrument"
-    ]
+    ],
+    "signName": "post of balance"
   },
   {
     "code": "U39A",
@@ -164950,7 +165768,8 @@
     "tags": [
       "measuring instrument",
       "hieratic sign"
-    ]
+    ],
+    "signName": "hieratic post of balance"
   },
   {
     "code": "U41",
@@ -164981,7 +165800,8 @@
     "source": "both",
     "tags": [
       "measuring instrument"
-    ]
+    ],
+    "signName": "plummet"
   },
   {
     "code": "U43",
@@ -168206,7 +169026,8 @@
     "source": "both",
     "tags": [
       "rope"
-    ]
+    ],
+    "signName": "coil of rope"
   },
   {
     "code": "V1A",
@@ -168345,7 +169166,8 @@
     "source": "both",
     "tags": [
       "rope"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "V2A",
@@ -168359,7 +169181,8 @@
     "source": "aegyptus",
     "tags": [
       "rope"
-    ]
+    ],
+    "signName": "hieratic form of"
   },
   {
     "code": "V2B",
@@ -168428,7 +169251,8 @@
     "tags": [
       "rope",
       "group of same sign"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "V4",
@@ -168469,7 +169293,8 @@
     "tags": [
       "rope",
       "loop"
-    ]
+    ],
+    "signName": "lasso"
   },
   {
     "code": "V5",
@@ -168511,7 +169336,8 @@
     "tags": [
       "rope",
       "loop"
-    ]
+    ],
+    "signName": "looped rope"
   },
   {
     "code": "V5A",
@@ -168582,7 +169408,8 @@
     "tags": [
       "rope",
       "loop"
-    ]
+    ],
+    "signName": "cord with ends upward"
   },
   {
     "code": "Ff6",
@@ -168671,7 +169498,8 @@
     "tags": [
       "rope",
       "loop"
-    ]
+    ],
+    "signName": "cord with ends downward"
   },
   {
     "code": "V7A",
@@ -168682,7 +169510,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "cord with ends downward"
   },
   {
     "code": "V7B",
@@ -168693,7 +169522,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "hieratic cord with ends downward"
   },
   {
     "code": "V8",
@@ -168722,7 +169552,8 @@
       "rope",
       "loop",
       "cartouche"
-    ]
+    ],
+    "signName": "cord downward"
   },
   {
     "code": "V9",
@@ -168755,7 +169586,8 @@
     "tags": [
       "loop",
       "cartouche"
-    ]
+    ],
+    "signName": "round cartouche"
   },
   {
     "code": "V10",
@@ -168805,7 +169637,8 @@
     "tags": [
       "loop",
       "cartouche"
-    ]
+    ],
+    "signName": "oval cartouche"
   },
   {
     "code": "V11",
@@ -168844,7 +169677,8 @@
     "tags": [
       "loop",
       "cartouche"
-    ]
+    ],
+    "signName": "end of cartouche"
   },
   {
     "code": "V11A",
@@ -168869,7 +169703,8 @@
     "source": "both",
     "tags": [
       "cartouche"
-    ]
+    ],
+    "signName": "opening of cartouche"
   },
   {
     "code": "V11B",
@@ -168885,7 +169720,8 @@
     ],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "closing of cartouche"
   },
   {
     "code": "V11C",
@@ -168901,7 +169737,8 @@
     ],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "closing of knotless cartouche"
   },
   {
     "code": "V12",
@@ -168939,7 +169776,8 @@
     "source": "both",
     "tags": [
       "band"
-    ]
+    ],
+    "signName": "string"
   },
   {
     "code": "V12A",
@@ -168950,7 +169788,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "string"
   },
   {
     "code": "V12B",
@@ -168961,7 +169800,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "string"
   },
   {
     "code": "V13",
@@ -168993,7 +169833,8 @@
     "tags": [
       "fetters",
       "rope"
-    ]
+    ],
+    "signName": "rope"
   },
   {
     "code": "V14",
@@ -169025,7 +169866,8 @@
     "tags": [
       "fetters",
       "rope"
-    ]
+    ],
+    "signName": "rope with tick"
   },
   {
     "code": "V15",
@@ -169070,7 +169912,8 @@
       "fetters",
       "rope",
       "sign combination"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "V16",
@@ -169117,7 +169960,8 @@
       "fetters",
       "loop",
       "rope"
-    ]
+    ],
+    "signName": "looped cord"
   },
   {
     "code": "V16A",
@@ -169216,7 +170060,8 @@
     "source": "both",
     "tags": [
       "papyrus shelter"
-    ]
+    ],
+    "signName": "shelter of papyrus"
   },
   {
     "code": "V17B",
@@ -169284,7 +170129,8 @@
     "source": "both",
     "tags": [
       "papyrus shelter"
-    ]
+    ],
+    "signName": "shelter of papyrus"
   },
   {
     "code": "V19",
@@ -169326,7 +170172,8 @@
     "source": "both",
     "tags": [
       "fetters"
-    ]
+    ],
+    "signName": "hobble with cross-bar"
   },
   {
     "code": "V20",
@@ -169363,7 +170210,8 @@
     "source": "both",
     "tags": [
       "fetters"
-    ]
+    ],
+    "signName": "hobble"
   },
   {
     "code": "V20h",
@@ -169581,7 +170429,8 @@
       "cobra",
       "sign combination",
       "feather"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "V21A",
@@ -169641,7 +170490,8 @@
     "source": "both",
     "tags": [
       "whip"
-    ]
+    ],
+    "signName": "whip"
   },
   {
     "code": "V23",
@@ -169668,7 +170518,8 @@
     "source": "both",
     "tags": [
       "whip"
-    ]
+    ],
+    "signName": "whip"
   },
   {
     "code": "V23A",
@@ -169695,7 +170546,8 @@
     "source": "both",
     "tags": [
       "whip"
-    ]
+    ],
+    "signName": "whip"
   },
   {
     "code": "V23B",
@@ -169755,7 +170607,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "cord on stick"
   },
   {
     "code": "V25",
@@ -169784,7 +170637,8 @@
     "source": "both",
     "tags": [
       "varia"
-    ]
+    ],
+    "signName": "cord on stick with tick"
   },
   {
     "code": "V26",
@@ -169830,7 +170684,8 @@
     "source": "both",
     "tags": [
       "shuttle"
-    ]
+    ],
+    "signName": "netting needle"
   },
   {
     "code": "V27",
@@ -169858,7 +170713,8 @@
     "source": "both",
     "tags": [
       "shuttle"
-    ]
+    ],
+    "signName": "netting needle"
   },
   {
     "code": "V27A",
@@ -169918,7 +170774,8 @@
     "tags": [
       "rope",
       "wick"
-    ]
+    ],
+    "signName": "wick"
   },
   {
     "code": "V28A",
@@ -169951,7 +170808,8 @@
     "tags": [
       "rope",
       "wick"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "V28B",
@@ -170117,7 +170975,8 @@
     "source": "both",
     "tags": [
       "broom"
-    ]
+    ],
+    "signName": "swab"
   },
   {
     "code": "V29A",
@@ -170149,7 +171008,8 @@
     "source": "unicode",
     "tags": [
       "broom"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "V29B",
@@ -170196,7 +171056,8 @@
     "source": "both",
     "tags": [
       "basket"
-    ]
+    ],
+    "signName": "basket"
   },
   {
     "code": "V30A",
@@ -170207,7 +171068,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "basket (low)"
   },
   {
     "code": "V31",
@@ -170238,7 +171100,8 @@
     "source": "both",
     "tags": [
       "basket"
-    ]
+    ],
+    "signName": "basket with right handle"
   },
   {
     "code": "V31B",
@@ -170278,7 +171141,8 @@
     "source": "aegyptus",
     "tags": [
       "basket"
-    ]
+    ],
+    "signName": "basket with left handle"
   },
   {
     "code": "V32",
@@ -170325,7 +171189,8 @@
     "source": "both",
     "tags": [
       "net or trap"
-    ]
+    ],
+    "signName": "frail"
   },
   {
     "code": "V32E",
@@ -170466,7 +171331,8 @@
     "source": "both",
     "tags": [
       "bag"
-    ]
+    ],
+    "signName": "bag"
   },
   {
     "code": "V33A",
@@ -170484,7 +171350,8 @@
       "qꜣr"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "bundle"
   },
   {
     "code": "V34",
@@ -170514,7 +171381,8 @@
     "source": "both",
     "tags": [
       "bag"
-    ]
+    ],
+    "signName": "bag"
   },
   {
     "code": "V35",
@@ -170543,7 +171411,8 @@
     "source": "both",
     "tags": [
       "bag"
-    ]
+    ],
+    "signName": "bag"
   },
   {
     "code": "V36",
@@ -170588,7 +171457,8 @@
     "source": "both",
     "tags": [
       "receptacle"
-    ]
+    ],
+    "signName": "receptacle"
   },
   {
     "code": "V36G",
@@ -170783,7 +171653,8 @@
     "source": "both",
     "tags": [
       "bandage"
-    ]
+    ],
+    "signName": "bandage"
   },
   {
     "code": "V37A",
@@ -170794,7 +171665,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "bandage"
   },
   {
     "code": "V38",
@@ -170825,7 +171697,8 @@
     "source": "both",
     "tags": [
       "bandage"
-    ]
+    ],
+    "signName": "bandage"
   },
   {
     "code": "V39",
@@ -170858,7 +171731,8 @@
     "source": "both",
     "tags": [
       "rope"
-    ]
+    ],
+    "signName": "knot-amulet"
   },
   {
     "code": "V39A",
@@ -170897,7 +171771,8 @@
       "rope",
       "sign combination",
       "arms"
-    ]
+    ],
+    "signName": "hobble on its side"
   },
   {
     "code": "V40A",
@@ -170908,7 +171783,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "two hobbles on their side"
   },
   {
     "code": "V40B",
@@ -173869,7 +174745,8 @@
       "without handle",
       "perfume jar",
       "vessel"
-    ]
+    ],
+    "signName": "oil jar with ties"
   },
   {
     "code": "W1B",
@@ -173968,7 +174845,8 @@
       "without handle",
       "perfume jar",
       "vessel"
-    ]
+    ],
+    "signName": "oil jar"
   },
   {
     "code": "W2B",
@@ -174068,7 +174946,8 @@
       "without lid",
       "without handle",
       "vessel"
-    ]
+    ],
+    "signName": "alabaster basin"
   },
   {
     "code": "W3A",
@@ -174098,7 +174977,8 @@
       "without lid",
       "without handle",
       "vessel"
-    ]
+    ],
+    "signName": "alabaster basin (low)"
   },
   {
     "code": "W3B",
@@ -174150,7 +175030,8 @@
       "group",
       "column, post, etc.",
       "vessel"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "W4A",
@@ -174220,7 +175101,8 @@
       "group",
       "butcher's block",
       "vessel"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "W5A",
@@ -174273,7 +175155,8 @@
       "without lid",
       "with handle",
       "vessel"
-    ]
+    ],
+    "signName": "metal vessel"
   },
   {
     "code": "W6A",
@@ -174338,7 +175221,8 @@
       "without lid",
       "with handle",
       "vessel"
-    ]
+    ],
+    "signName": "granite bowl"
   },
   {
     "code": "W7A",
@@ -174401,7 +175285,8 @@
       "with handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "signName": "deformed granite bowl"
   },
   {
     "code": "W9",
@@ -174439,7 +175324,8 @@
       "with handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "signName": "jug with left handle"
   },
   {
     "code": "W9B",
@@ -174497,7 +175383,8 @@
       "with handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "signName": "jug with right handle"
   },
   {
     "code": "W9C",
@@ -174570,7 +175457,8 @@
       "without handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "signName": "cup"
   },
   {
     "code": "W10A",
@@ -174604,7 +175492,8 @@
       "without handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "signName": "pot with tick"
   },
   {
     "code": "W10B",
@@ -174672,7 +175561,8 @@
       "stand",
       "without handle",
       "vessel"
-    ]
+    ],
+    "signName": "round ring stand"
   },
   {
     "code": "W11A",
@@ -174741,7 +175631,8 @@
       "stand",
       "without handle",
       "vessel"
-    ]
+    ],
+    "signName": "square ring stand"
   },
   {
     "code": "W13",
@@ -174783,7 +175674,8 @@
       "stand",
       "without handle",
       "vessel"
-    ]
+    ],
+    "signName": "earthenware pot"
   },
   {
     "code": "W14",
@@ -174844,7 +175736,8 @@
     "tags": [
       "water pot",
       "vessel"
-    ]
+    ],
+    "signName": "water jar"
   },
   {
     "code": "W14A",
@@ -174878,7 +175771,8 @@
       "water pot",
       "with spout",
       "vessel"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "W14B",
@@ -174928,7 +175822,8 @@
       "water pot",
       "pouring water",
       "vessel"
-    ]
+    ],
+    "signName": "water jar with water"
   },
   {
     "code": "W15A",
@@ -175030,7 +175925,8 @@
       "butcher's block",
       "group",
       "vessel"
-    ]
+    ],
+    "signName": "water jar with water in ring stand"
   },
   {
     "code": "W16A",
@@ -175113,7 +176009,8 @@
       "water pot",
       "group of same sign",
       "vessel"
-    ]
+    ],
+    "signName": "three water jars in rack"
   },
   {
     "code": "W17B",
@@ -175229,7 +176126,8 @@
       "water pot",
       "group of same sign",
       "vessel"
-    ]
+    ],
+    "signName": "three water jars in rack (simplified)"
   },
   {
     "code": "W17E",
@@ -175282,7 +176180,8 @@
       "water pot",
       "group of same sign",
       "vessel"
-    ]
+    ],
+    "signName": "four water jars in rack"
   },
   {
     "code": "W18B",
@@ -175327,7 +176226,8 @@
       "water pot",
       "group of same sign",
       "vessel"
-    ]
+    ],
+    "signName": "four water jars in rack (simplified)"
   },
   {
     "code": "W18C",
@@ -175392,7 +176292,8 @@
       "without handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "signName": "milk jug in net"
   },
   {
     "code": "W20",
@@ -175428,7 +176329,8 @@
       "without handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "signName": "milk jug with leaf"
   },
   {
     "code": "W21",
@@ -175464,7 +176366,8 @@
       "without lid",
       "group of same sign",
       "vessel"
-    ]
+    ],
+    "signName": "twin wine jars"
   },
   {
     "code": "W21D",
@@ -175609,7 +176512,8 @@
       "without handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "signName": "beer jug"
   },
   {
     "code": "W23",
@@ -175640,7 +176544,8 @@
       "without lid",
       "with handle",
       "vessel"
-    ]
+    ],
+    "signName": "jar with handles"
   },
   {
     "code": "W24",
@@ -175740,7 +176645,8 @@
     "tags": [
       "nw-vase",
       "vessel"
-    ]
+    ],
+    "signName": "bowl"
   },
   {
     "code": "W24A",
@@ -175751,7 +176657,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "three bowls"
   },
   {
     "code": "W25",
@@ -175787,7 +176694,8 @@
       "nw-vase",
       "with long legs",
       "vessel"
-    ]
+    ],
+    "signName": "combination of"
   },
   {
     "code": "W25A",
@@ -178802,7 +179710,8 @@
     "source": "both",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "flat loaf"
   },
   {
     "code": "X2",
@@ -178859,7 +179768,8 @@
     "source": "both",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "tall loaf"
   },
   {
     "code": "X2D",
@@ -178971,7 +179881,8 @@
     "source": "both",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "tall loaf"
   },
   {
     "code": "X3A",
@@ -179100,7 +180011,8 @@
     "source": "both",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "roll of bread"
   },
   {
     "code": "X4",
@@ -179147,7 +180059,8 @@
     "source": "unicode",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "roll of bread"
   },
   {
     "code": "X4E",
@@ -179215,7 +180128,8 @@
     "source": "aegyptus",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "roll of bread"
   },
   {
     "code": "X4D",
@@ -179293,7 +180207,8 @@
     "source": "both",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "hieratic roll of bread"
   },
   {
     "code": "X5A",
@@ -179357,7 +180272,8 @@
     "source": "both",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "round loaf"
   },
   {
     "code": "X6A",
@@ -179384,7 +180300,8 @@
     "source": "unicode",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "round loaf"
   },
   {
     "code": "X6B",
@@ -179492,7 +180409,8 @@
     "source": "both",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "half-loaf"
   },
   {
     "code": "X8",
@@ -179556,7 +180474,8 @@
     "source": "both",
     "tags": [
       "bread"
-    ]
+    ],
+    "signName": "conical loaf"
   },
   {
     "code": "X8A",
@@ -179567,7 +180486,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "hieratic conical loaf"
   },
   {
     "code": "X10",
@@ -179830,7 +180750,8 @@
     "source": "both",
     "tags": [
       "writing implement"
-    ]
+    ],
+    "signName": "scroll with ties"
   },
   {
     "code": "Y1v",
@@ -179900,7 +180821,8 @@
     "source": "both",
     "tags": [
       "writing implement"
-    ]
+    ],
+    "signName": "scroll"
   },
   {
     "code": "Y2v",
@@ -179971,7 +180893,8 @@
     "source": "both",
     "tags": [
       "writing implement"
-    ]
+    ],
+    "signName": "scribe's outfit with palette on left"
   },
   {
     "code": "Y3B",
@@ -180059,7 +180982,8 @@
     "source": "aegyptus",
     "tags": [
       "writing implement"
-    ]
+    ],
+    "signName": "scribe's outfit with palette on right"
   },
   {
     "code": "Y4A",
@@ -180113,7 +181037,8 @@
     "source": "both",
     "tags": [
       "gaming"
-    ]
+    ],
+    "signName": "game board"
   },
   {
     "code": "Y5A",
@@ -180160,7 +181085,8 @@
     "source": "both",
     "tags": [
       "gaming"
-    ]
+    ],
+    "signName": "game piece"
   },
   {
     "code": "Y7",
@@ -180191,7 +181117,8 @@
     "source": "both",
     "tags": [
       "music"
-    ]
+    ],
+    "signName": "harp"
   },
   {
     "code": "Y7A",
@@ -180257,7 +181184,8 @@
     "source": "both",
     "tags": [
       "music"
-    ]
+    ],
+    "signName": "sistrum"
   },
   {
     "code": "Y8A",
@@ -180959,7 +181887,8 @@
       "Z2A",
       "Z2C"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "stroke"
   },
   {
     "code": "Ff1",
@@ -181016,7 +181945,8 @@
       "Z2A",
       "Z2C"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "three"
   },
   {
     "code": "Z2D",
@@ -181033,7 +181963,8 @@
       "Z2A",
       "Z2C"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "three"
   },
   {
     "code": "Z2A",
@@ -181055,7 +181986,8 @@
       "Z2D",
       "Z2C"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "three"
   },
   {
     "code": "Z2C",
@@ -181077,7 +182009,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "unicode"
+    "source": "unicode",
+    "signName": "three"
   },
   {
     "code": "Z2B",
@@ -181088,7 +182021,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "three"
   },
   {
     "code": "Z2E",
@@ -181123,7 +182057,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "three"
   },
   {
     "code": "Z3A",
@@ -181136,7 +182071,8 @@
       "3"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "three lying"
   },
   {
     "code": "Z3B",
@@ -181147,7 +182083,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "three"
   },
   {
     "code": "Z4",
@@ -181184,7 +182121,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "two diagonal strokes"
   },
   {
     "code": "Z4A",
@@ -181209,7 +182147,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "two"
   },
   {
     "code": "Z4B",
@@ -181248,7 +182187,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "curved diagonal stroke"
   },
   {
     "code": "Z5A",
@@ -181270,7 +182210,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "diagonal stroke"
   },
   {
     "code": "Z6",
@@ -181295,7 +182236,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "hieratic substitute for"
   },
   {
     "code": "Z6A",
@@ -181343,7 +182285,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "hieratic quail chick"
   },
   {
     "code": "Z8",
@@ -181372,7 +182315,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "oval"
   },
   {
     "code": "Z9",
@@ -181432,7 +182376,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "diagonal cross"
   },
   {
     "code": "Z10",
@@ -181472,7 +182417,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "wide diagonal cross"
   },
   {
     "code": "Z11",
@@ -181519,7 +182465,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "cross"
   },
   {
     "code": "Z11A",
@@ -181595,7 +182542,8 @@
       "Z2D",
       "Z2A"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "hieratic striking man"
   },
   {
     "code": "Z13",
@@ -181617,7 +182565,8 @@
       "qd"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "circle"
   },
   {
     "code": "Z13Z",
@@ -181639,7 +182588,8 @@
     "meanings": [],
     "transliteration": [],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "indeterminable hieratic tick"
   },
   {
     "code": "Z14A",
@@ -181668,7 +182618,8 @@
       "wa"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "long vertical stroke"
   },
   {
     "code": "Z15A",
@@ -181796,7 +182747,8 @@
       "wa"
     ],
     "related": [],
-    "source": "aegyptus"
+    "source": "aegyptus",
+    "signName": "long horizontal stroke"
   },
   {
     "code": "Z16A",
@@ -182834,7 +183786,8 @@
     "source": "both",
     "tags": [
       "body-part"
-    ]
+    ],
+    "signName": "basket from above"
   },
   {
     "code": "J1",
@@ -182902,7 +183855,8 @@
     "source": "both",
     "tags": [
       "body-part"
-    ]
+    ],
+    "signName": "pustule"
   },
   {
     "code": "J2",
@@ -182946,7 +183900,8 @@
     "tags": [
       "body-part",
       "drops"
-    ]
+    ],
+    "signName": "pustule with liquid"
   },
   {
     "code": "Aa3A",
@@ -183082,7 +184037,8 @@
     "source": "both",
     "tags": [
       "vessel"
-    ]
+    ],
+    "signName": "pot with two ticks"
   },
   {
     "code": "J4",
@@ -183152,7 +184108,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "navigation instrument"
   },
   {
     "code": "Aa5A",
@@ -183288,7 +184245,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "instrument"
   },
   {
     "code": "J6",
@@ -183328,7 +184286,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "instrument"
   },
   {
     "code": "Aa7B",
@@ -183350,7 +184309,8 @@
     "source": "both",
     "tags": [
       "legs"
-    ]
+    ],
+    "signName": "later equivalent of"
   },
   {
     "code": "J7",
@@ -183461,7 +184421,8 @@
     "source": "both",
     "tags": [
       "canal"
-    ]
+    ],
+    "signName": "irrigation canal"
   },
   {
     "code": "Aa8A",
@@ -183550,7 +184511,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "instrument"
   },
   {
     "code": "J9",
@@ -183589,7 +184551,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "unknown"
   },
   {
     "code": "J10",
@@ -183641,7 +184604,8 @@
     "source": "both",
     "tags": [
       "measuring instrument"
-    ]
+    ],
+    "signName": "platform"
   },
   {
     "code": "J11",
@@ -183690,7 +184654,8 @@
     "source": "both",
     "tags": [
       "measuring instrument"
-    ]
+    ],
+    "signName": "platform"
   },
   {
     "code": "J12",
@@ -183758,7 +184723,8 @@
     "tags": [
       "bones",
       "body-part"
-    ]
+    ],
+    "signName": "sharp half"
   },
   {
     "code": "J13",
@@ -183799,7 +184765,8 @@
     "tags": [
       "bones",
       "body-part"
-    ]
+    ],
+    "signName": "bent half"
   },
   {
     "code": "J14",
@@ -183840,7 +184807,8 @@
     "tags": [
       "bones",
       "body-part"
-    ]
+    ],
+    "signName": "blunt half"
   },
   {
     "code": "J15",
@@ -183905,7 +184873,8 @@
     "tags": [
       "body-part",
       "bones"
-    ]
+    ],
+    "signName": "short half"
   },
   {
     "code": "J16",
@@ -183962,7 +184931,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "lid"
   },
   {
     "code": "J17",
@@ -184020,7 +184990,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "square lid"
   },
   {
     "code": "Aa18a",
@@ -184099,7 +185070,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "instrument"
   },
   {
     "code": "J19",
@@ -184147,7 +185119,8 @@
     "source": "both",
     "tags": [
       "bag"
-    ]
+    ],
+    "signName": "bag"
   },
   {
     "code": "Aa20B",
@@ -184310,7 +185283,8 @@
     "source": "both",
     "tags": [
       "tool"
-    ]
+    ],
+    "signName": "instrument"
   },
   {
     "code": "Aa21A",
@@ -184424,7 +185398,8 @@
     "source": "both",
     "tags": [
       "tool"
-    ]
+    ],
+    "signName": "high warp between stakes"
   },
   {
     "code": "Aa23R",
@@ -184848,7 +185823,8 @@
     "source": "both",
     "tags": [
       "tool"
-    ]
+    ],
+    "signName": "low warp between stakes"
   },
   {
     "code": "Aa24A",
@@ -184937,7 +185913,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "unknown"
   },
   {
     "code": "J25",
@@ -184989,7 +185966,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "unknown"
   },
   {
     "code": "J26",
@@ -185028,7 +186006,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "spindle"
   },
   {
     "code": "Aa27D",
@@ -185199,7 +186178,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "level"
   },
   {
     "code": "J28",
@@ -185239,7 +186219,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "instrument"
   },
   {
     "code": "J29",
@@ -185278,7 +186259,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "frieze"
   },
   {
     "code": "J30",
@@ -185356,7 +186338,8 @@
       "Aa3A",
       "Aa3B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "archaic bow"
   },
   {
     "code": "J32",
