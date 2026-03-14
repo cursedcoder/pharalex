@@ -652,7 +652,7 @@
       "holding something",
       "drops"
     ],
-    "signName": "seated man reaching down, under vase from which water flows"
+    "signName": "seated man reaching down"
   },
   {
     "code": "A6A",
@@ -693,7 +693,7 @@
       "pouring water",
       "drops"
     ],
-    "signName": "seated man reaching for libation stone, under vase from which water flows"
+    "signName": "seated man reaching for libation stone"
   },
   {
     "code": "A6E",
@@ -2866,7 +2866,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "King, standing, with a long wig or headcloth, with uraeus"
+    "signName": "King, standing, with a long wig or headcloth"
   },
   {
     "code": "A23A",
@@ -4346,7 +4346,7 @@
       "standing",
       "with animals"
     ],
-    "signName": "man holding necks of two emblematic animals with panther heads",
+    "signName": "man holding necks of two emblematic animals with panthe",
     "transliterationCounts": {
       "qis": 2
     }
@@ -7387,7 +7387,7 @@
       "seated",
       "with raised arms"
     ],
-    "signName": "seated man with raised right arm and left arm hanging down"
+    "signName": "seated man with raised right arm and left arm hanging d"
   },
   {
     "code": "A70",
@@ -18340,12 +18340,7 @@
     "category": "A",
     "categoryName": "Man and his occupations",
     "description": "Man, standing, back slightly bent forward, both arms forward, holding a herb, with three flowers or leaves, curving upwards, with the middle flower/leaf higher than the other two (M2).",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "fd"
     ],
@@ -50249,12 +50244,7 @@
     "category": "D",
     "categoryName": "Parts of the human body",
     "description": "Two arms, lowered, arms straight, hand palm oriented outwards.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ḫm"
     ],
@@ -51358,10 +51348,6 @@
       {
         "text": "Logogram: ḥnt — basin",
         "type": "logogram"
-      },
-      {
-        "text": "Phono-repeater",
-        "type": "other"
       }
     ],
     "transliteration": [
@@ -51466,12 +51452,7 @@
     "category": "D",
     "categoryName": "Parts of the human body",
     "description": "A distal and intermediate phalanges of a finger, written horizontally.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "fꜥg"
     ],
@@ -52214,10 +52195,6 @@
       },
       {
         "text": "Phonetic sꜣḥ",
-        "type": "other"
-      },
-      {
-        "text": "Phono-repeater",
         "type": "other"
       },
       {
@@ -54808,12 +54785,7 @@
     "category": "D",
     "categoryName": "Parts of the human body",
     "description": "A human hand, holding an oval, with the fingers and the thumb being the same length.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ḥnt"
     ],
@@ -62204,12 +62176,7 @@
     "category": "E",
     "categoryName": "Mammals",
     "description": "A immature goat (kid), rearing.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ꞽb",
       "ib"
@@ -63238,7 +63205,7 @@
       "ass",
       "sethian animal"
     ],
-    "signName": "A donkey/ass, seated as a Sethian animal, ears in a V shape"
+    "signName": "A donkey/ass, seated as a Sethian animal"
   },
   {
     "code": "E21",
@@ -63254,10 +63221,6 @@
       {
         "text": "Determinative: ṯurmoil",
         "type": "determinative"
-      },
-      {
-        "text": "alternative form of 𓃩",
-        "type": "other"
       },
       {
         "text": "alternative form of 𓃩",
@@ -74206,12 +74169,7 @@
     "category": "F",
     "categoryName": "Parts of mammals",
     "description": "A spine with six ribs, written at an angle.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "mḥ"
     ],
@@ -75656,12 +75614,7 @@
     "category": "F",
     "categoryName": "Parts of mammals",
     "description": "A simplified form of the tail of an animal.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "sd"
     ],
@@ -75965,12 +75918,7 @@
     "category": "F",
     "categoryName": "Parts of mammals",
     "description": "A spine with four ribs, written at an angle, with a circle at either end of the spine.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "mḥ"
     ],
@@ -76741,10 +76689,6 @@
       {
         "text": "Determinative: bone and meat",
         "type": "determinative"
-      },
-      {
-        "text": "Phono-repeater",
-        "type": "other"
       }
     ],
     "transliteration": [
@@ -78241,7 +78185,7 @@
     "description": "The head of an oryx.",
     "meanings": [
       {
-        "text": "Logogram (antilope)",
+        "text": "Logogram (antelope)",
         "type": "logogram"
       }
     ],
@@ -78641,12 +78585,7 @@
     "category": "F",
     "categoryName": "Parts of mammals",
     "description": "A sledge with the head of a horse, with the vertical lines of the sledge extending beyond the top line.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ḫntš"
     ],
@@ -80057,12 +79996,7 @@
     "category": "F",
     "categoryName": "Parts of mammals",
     "description": "A leg-bone with meat, with sections of meat missing at the back.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ꞽwꜥ"
     ],
@@ -89323,12 +89257,7 @@
     "category": "G",
     "categoryName": "Birds",
     "description": "A greater white-fronted goose (Anser albifrons), head angled downwards, with open beak.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ḥtm"
     ],
@@ -92844,12 +92773,7 @@
     "category": "G",
     "categoryName": "Birds",
     "description": "A pintail duck (Anas acuta), with the beak open.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ḥtm"
     ],
@@ -93291,10 +93215,6 @@
       {
         "text": "Phonogram: mꜣꜥ",
         "type": "phonogram"
-      },
-      {
-        "text": "Phono-repeater",
-        "type": "other"
       }
     ],
     "transliteration": [
@@ -93924,12 +93844,7 @@
     "category": "H",
     "categoryName": "Parts of birds",
     "description": "The markings of the head of a falcon, without the eye / a very schematic representation of a spine, with the spinal cord hanging out at the backside.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ꞽmꜣḫ"
     ],
@@ -94541,12 +94456,7 @@
     "category": "H",
     "categoryName": "Parts of birds",
     "description": "The head of a griffon vulture (Gyps fulvus), with a straight neck.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "nr"
     ],
@@ -98354,12 +98264,7 @@
     "category": "I",
     "categoryName": "Amphibious animals, reptiles, etc.",
     "description": "A cobra with the head of a female, with a coiled tail.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "n rḫ"
     ],
@@ -100698,10 +100603,6 @@
         "type": "determinative"
       },
       {
-        "text": "Phono-repeater",
-        "type": "other"
-      },
-      {
         "text": "A fish (Labeobarbus bynni)",
         "type": "other"
       }
@@ -100887,10 +100788,6 @@
       {
         "text": "Determinative: fish",
         "type": "determinative"
-      },
-      {
-        "text": "Phono-repeater",
-        "type": "other"
       },
       {
         "text": "A fish with a long broad fin on its back, and two small fins on its belly.",
@@ -103234,12 +103131,7 @@
     "category": "M",
     "categoryName": "Trees and plants",
     "description": "A branch, vertically written.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ḫt",
       "ḏꜥ"
@@ -103585,7 +103477,7 @@
       "branch",
       "palm"
     ],
-    "signName": "A palm branch, stripped of leaves and notched with a sharp n"
+    "signName": "A palm branch, stripped of leaves and notched with a sh"
   },
   {
     "code": "M5A",
@@ -103661,7 +103553,7 @@
       "palm",
       "sign combination"
     ],
-    "signName": "A palm branch, stripped of leaves and notched with a round n",
+    "signName": "A palm branch, stripped of leaves and notched with a ro",
     "transliterationCounts": {
       "tr": 13,
       "ti": 3
@@ -103749,7 +103641,7 @@
     "transliterationCounts": {
       "rnp": 7
     },
-    "signName": "A palm branch, stripped of leaves and notched with a sharp n"
+    "signName": "A palm branch, stripped of leaves and notched with a sh"
   },
   {
     "code": "M7B",
@@ -106918,12 +106810,7 @@
     "category": "M",
     "categoryName": "Trees and plants",
     "description": "A coniferous tree.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "bꜣḳ"
     ],
@@ -109071,12 +108958,7 @@
     "category": "M",
     "categoryName": "Trees and plants",
     "description": "A palm branch, stripped of leaves and notched with a sharp notch, with additional perpendicular lines over the section above the notch.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "tr"
     ],
@@ -154454,10 +154336,6 @@
         "type": "phonogram"
       },
       {
-        "text": "Phono-repeater",
-        "type": "other"
-      },
-      {
         "text": "Pieces of wood, lashed together with the top piece at an angle, with a loop and tie at the back.",
         "type": "other"
       }
@@ -154577,10 +154455,6 @@
         "type": "other"
       },
       {
-        "text": "Phono-repeater",
-        "type": "other"
-      },
-      {
         "text": "A throwing-stick, or a club used by foreign people.",
         "type": "other"
       }
@@ -154623,12 +154497,7 @@
     "category": "T",
     "categoryName": "Warfare, hunting, butchery",
     "description": "A throwing-stick, or a club used by foreign people, on top of a horizontal line.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "rs"
     ],
@@ -154899,10 +154768,6 @@
       },
       {
         "text": "A harpoon-head with two horizontal strokes on top and an angled stroke below a curl as point. ",
-        "type": "other"
-      },
-      {
-        "text": "Phono-repeater",
         "type": "other"
       },
       {
@@ -155777,12 +155642,7 @@
     "category": "T",
     "categoryName": "Warfare, hunting, butchery",
     "description": "A bird trap, with two vertical poles at the back, with a line running from the front to the vertical poles, with two upward ticks at the front of the line.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "sḫt"
     ],
@@ -157572,12 +157432,7 @@
     "category": "T",
     "categoryName": "Warfare, hunting, butchery",
     "description": "A harpoon-head with two horizontal strokes on top, and triangular point.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "twr"
     ],
@@ -159114,12 +158969,7 @@
     "category": "T",
     "categoryName": "Warfare, hunting, butchery",
     "description": "An arrow or dart, with the tip slowly tapering out towards the back.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "swn"
     ],
@@ -159784,12 +159634,7 @@
     "category": "T",
     "categoryName": "Warfare, hunting, butchery",
     "description": "A bowstring, coiled up, with both ends angling downwards, with cone-shaped loops at the ends.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "rd"
     ],
@@ -160768,12 +160613,7 @@
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
     "description": "A plough, with a crossbar and two vertical lines on the long beam, with the long beam curving upwards at the front.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "hb"
     ],
@@ -160796,12 +160636,7 @@
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
     "description": "A plough with a crossbar, with two vertical lines on the tip of the top beam.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "hb"
     ],
@@ -160852,12 +160687,7 @@
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
     "description": "Two branches of wood, joined at one end.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "šnꜥ"
     ],
@@ -161314,10 +161144,6 @@
       {
         "text": "Logogram: mnḫ — carve",
         "type": "logogram"
-      },
-      {
-        "text": "Phono-repeater",
-        "type": "other"
       }
     ],
     "transliteration": [
@@ -162386,12 +162212,7 @@
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
     "description": "A pestle, inside a square-bottomed mortar.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "smn"
     ],
@@ -169025,10 +168846,6 @@
       {
         "text": "Logogram: jdr — bandage",
         "type": "logogram"
-      },
-      {
-        "text": "Phono-repeater",
-        "type": "other"
       }
     ],
     "transliteration": [
@@ -169304,12 +169121,7 @@
     "category": "V",
     "categoryName": "Rope, fibre, baskets, bags, etc.",
     "description": "A rope, resembling a plan of a courtyard or reed shelter (O4).",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "šn"
     ],
@@ -171380,12 +171192,7 @@
     "category": "V",
     "categoryName": "Rope, fibre, baskets, bags, etc.",
     "description": "A sheath or receptacle with V shaped indentation at the top, on top of a base, with a rectangle written inside it.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ḥn"
     ],
@@ -171452,12 +171259,7 @@
     "category": "V",
     "categoryName": "Rope, fibre, baskets, bags, etc.",
     "description": "A sheath or receptacle with V shaped indentation at the top, on top of a base, with a forward curved line coming from the indentation.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ḥn"
     ],
@@ -172062,12 +171864,7 @@
     "category": "W",
     "categoryName": "Vessels of stone and earthenware",
     "description": "A low broad oval, with a triangular shape at both short ends of the oval.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "ꜣbw",
       "ꜣb",
@@ -176941,12 +176738,7 @@
     "category": "X",
     "categoryName": "Loaves and cakes",
     "description": "An horizontal oval shape, with two upward curving strokes added at the front short side.",
-    "meanings": [
-      {
-        "text": "Phono-repeater",
-        "type": "other"
-      }
-    ],
+    "meanings": [],
     "transliteration": [
       "sn",
       "sni"
@@ -180621,10 +180413,6 @@
       {
         "text": "Determinative: ṯmꜣ — mat",
         "type": "determinative"
-      },
-      {
-        "text": "Phono-repeater",
-        "type": "other"
       }
     ],
     "transliteration": [

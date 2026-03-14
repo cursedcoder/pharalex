@@ -100,13 +100,29 @@ describe("glyphs.json data integrity", () => {
     expect(bad.map((g: any) => `${g.code}: ${g.description.slice(0, 40)}`)).toEqual([]);
   });
 
-  it("no Phonemogram noise in meanings", () => {
+  it("no noise meanings (Phonemogram, Phono-repeater)", () => {
+    const NOISE = new Set(["Phonemogram", "Phono-repeater", "Phonorepeater"]);
     const bad: string[] = [];
     for (const g of glyphs) {
       for (const m of (g as any).meanings) {
-        if (m.text === "Phonemogram") {
-          bad.push((g as any).code);
+        if (NOISE.has(m.text.trim())) {
+          bad.push(`${(g as any).code}: ${m.text}`);
         }
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it("no duplicate meanings per glyph", () => {
+    const bad: string[] = [];
+    for (const g of glyphs) {
+      const seen = new Set<string>();
+      for (const m of (g as any).meanings) {
+        const key = m.text.trim().toLowerCase();
+        if (seen.has(key)) {
+          bad.push(`${(g as any).code}: "${m.text.slice(0, 40)}"`);
+        }
+        seen.add(key);
       }
     }
     expect(bad).toEqual([]);

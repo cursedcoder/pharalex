@@ -84,14 +84,47 @@ for (const g of glyphs) {
 }
 console.log(`  Removed description-duplicate meanings: ${descDeduped}`);
 
-// ── 3. Remove backslash catalog references ──────────────────────────────────
-let backslashRemoved = 0;
+// ── 3. Remove noise and backslash meanings ──────────────────────────────────
+const NOISE_MEANINGS = new Set(["Phonemogram", "Phono-repeater", "Phonorepeater"]);
+let noiseRemoved = 0;
 for (const g of glyphs) {
   const before = g.meanings.length;
-  g.meanings = g.meanings.filter((m) => !m.text.startsWith("\\"));
-  if (g.meanings.length < before) backslashRemoved++;
+  g.meanings = g.meanings.filter(
+    (m) => !m.text.startsWith("\\") && !NOISE_MEANINGS.has(m.text.trim())
+  );
+  if (g.meanings.length < before) noiseRemoved++;
 }
-console.log(`  Removed backslash meanings: ${backslashRemoved}`);
+console.log(`  Removed noise/backslash meanings: ${noiseRemoved}`);
+
+// ── 3b. Remove duplicate meanings ───────────────────────────────────────────
+let dupeMeanings = 0;
+for (const g of glyphs) {
+  const seen = new Set<string>();
+  const before = g.meanings.length;
+  g.meanings = g.meanings.filter((m) => {
+    const key = m.text.trim().toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  if (g.meanings.length < before) dupeMeanings++;
+}
+console.log(`  Removed duplicate meanings: ${dupeMeanings}`);
+
+// ── 3c. Truncate long signNames ─────────────────────────────────────────────
+let signNamesTruncLong = 0;
+for (const g of glyphs) {
+  const sn = g.signName ?? "";
+  if (sn.length <= 55) continue;
+  let cut = sn.slice(0, 55);
+  for (const sep of [", ", " — ", "; "]) {
+    const idx = cut.lastIndexOf(sep);
+    if (idx > 15) { cut = cut.slice(0, idx); break; }
+  }
+  g.signName = cut.trim();
+  signNamesTruncLong++;
+}
+console.log(`  Truncated long signNames: ${signNamesTruncLong}`);
 
 // ── 4. Convert MdC in meaning label transliterations ────────────────────────
 // Only convert the short token right after labels like "Logogram: KA"
