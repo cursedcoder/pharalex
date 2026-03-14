@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (entries.length === 0) return {};
 
   const w = entries[0];
-  const title = `${w.transliteration} — Middle Egyptian`;
+  const title = `${translitToUnicode(w.transliteration)} — Middle Egyptian`;
   const description = `${w.transliteration}: ${w.translation}${w.grammar ? ` (${GRAMMAR_LABELS[w.grammar] ?? w.grammar})` : ""}. ${entries.length} hieroglyphic spelling${entries.length !== 1 ? "s" : ""} in the Middle Egyptian dictionary.`;
 
   return {
