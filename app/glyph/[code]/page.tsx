@@ -202,17 +202,35 @@ export default async function GlyphPage({ params }: PageProps) {
                       )}
                     </div>
 
-                    <Link
-                      href={`/categories/${glyph.category}`}
-                      className="
-                        inline-flex items-center gap-2 mb-4
-                        text-gold hover:text-gold-dark transition-colors
-                      "
-                    >
-                      <span className="font-medium">{glyph.category}</span>
-                      <span className="text-sandstone">·</span>
-                      <span>{glyph.categoryName}</span>
-                    </Link>
+                    <div className="flex items-center gap-2 flex-wrap mb-4">
+                      <Link
+                        href={`/categories/${glyph.category}`}
+                        className="
+                          inline-flex items-center gap-2
+                          text-gold hover:text-gold-dark transition-colors
+                        "
+                      >
+                        <span className="font-medium">{glyph.category}</span>
+                        <span className="text-sandstone">·</span>
+                        <span>{glyph.categoryName}</span>
+                      </Link>
+                      {glyph.unicode && (
+                        <>
+                          <span className="text-sandstone/40">·</span>
+                          <span className="text-xs font-mono text-sandstone">
+                            U+{glyph.unicode.codePointAt(0)?.toString(16).toUpperCase()}
+                          </span>
+                        </>
+                      )}
+                      {glyph.source && (
+                        <>
+                          <span className="text-sandstone/40">·</span>
+                          <span className="text-xs text-sandstone capitalize">
+                            {glyph.source}
+                          </span>
+                        </>
+                      )}
+                    </div>
 
                     {baseGlyph && (() => {
                       const otherVariants = variantSiblings
@@ -488,68 +506,6 @@ export default async function GlyphPage({ params }: PageProps) {
             </div>
 
             <div className="space-y-6">
-              <div
-                className="
-                  bg-ivory-dark border border-sandstone/20 rounded-xl
-                  p-4 sm:p-6 shadow-sm
-                "
-              >
-                <h3 className="font-display text-lg font-semibold text-brown mb-4">
-                  Quick Info
-                </h3>
-
-                <dl className="space-y-3 text-sm">
-                  <div className="flex justify-between">
-                    <dt className="text-sandstone">Gardiner Code</dt>
-                    <dd className="font-medium text-brown">{glyph.code}</dd>
-                  </div>
-                  <div className="flex justify-between">
-                    <dt className="text-sandstone">Unicode</dt>
-                    <dd className="font-mono text-brown">
-                      U+{glyph.unicode.codePointAt(0)?.toString(16).toUpperCase()}
-                    </dd>
-                  </div>
-                  <div className="flex justify-between">
-                    <dt className="text-sandstone">Category</dt>
-                    <dd className="text-brown">{glyph.category}</dd>
-                  </div>
-                  {glyph.meanings.length > 0 && (
-                    <div className="flex justify-between">
-                      <dt className="text-sandstone">Meanings</dt>
-                      <dd className="text-brown">{glyph.meanings.length}</dd>
-                    </div>
-                  )}
-                  {glyph.transliteration.length > 0 && (
-                    <div className="flex justify-between">
-                      <dt className="text-sandstone">Transliterations</dt>
-                      <dd className="text-brown">{glyph.transliteration.length}</dd>
-                    </div>
-                  )}
-                  {glyph.source && (
-                    <div className="flex justify-between">
-                      <dt className="text-sandstone">Source</dt>
-                      <dd className="text-brown capitalize">{glyph.source}</dd>
-                    </div>
-                  )}
-                </dl>
-
-                {category && (
-                  <div className="mt-6 pt-4 border-t border-sandstone/20">
-                    <Link
-                      href={`/categories/${glyph.category}`}
-                      className="
-                        block text-center py-2 px-4
-                        bg-gold/10 text-gold-dark rounded-lg
-                        hover:bg-gold/20 transition-colors
-                        font-medium text-sm
-                      "
-                    >
-                      View all {category.glyphCount} glyphs in {glyph.category}
-                    </Link>
-                  </div>
-                )}
-              </div>
-
               {wordsUsingGlyph.length > 0 && (
                 <section>
                   <h3 className="font-display text-lg font-semibold text-brown mb-3">
