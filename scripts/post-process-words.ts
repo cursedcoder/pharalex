@@ -76,7 +76,32 @@ for (const w of words) {
 }
 if (englishMoved > 0) console.log(`  Moved English from transliteration: ${englishMoved}`);
 
-// ── 5. Strip leading dot-prefix leaked suffixes (e.g. ".i I have proved") ──
+// ── 5. Move quoted English glosses and possessives from transliteration ──────
+// Entries like: translit "bik 'falcon'" translation "ship (of the king)"
+//   → should be: "bik" / "'falcon' ship (of the king)"
+// Also: "it nTr God's" / "Father" → "it nTr" / "God's Father"
+let quotedMoved = 0;
+for (const w of words) {
+  const tr = w.transliteration;
+  // Handle trailing possessive English (e.g. "God's")
+  const possMatch = tr.match(/^(.+?)\s+((?:[A-Z][a-z]*'s))$/);
+  if (possMatch) {
+    w.transliteration = possMatch[1];
+    w.translation = possMatch[2] + " " + w.translation;
+    quotedMoved++;
+    continue;
+  }
+  // Handle trailing single-quoted gloss (e.g. "'falcon'")
+  const quoteMatch = tr.match(/^(.+?)\s+'([^']+)'?$/);
+  if (quoteMatch) {
+    w.transliteration = quoteMatch[1].trim();
+    w.translation = "'" + quoteMatch[2] + "' " + w.translation;
+    quotedMoved++;
+  }
+}
+if (quotedMoved > 0) console.log(`  Moved quoted/possessive from transliteration: ${quotedMoved}`);
+
+// ── 6. Strip leading dot-prefix leaked suffixes (e.g. ".i I have proved") ──
 let dotStripped = 0;
 for (const w of words) {
   if (w.translation.startsWith(".")) {
@@ -112,6 +137,14 @@ for (const w of words) {
   }
   // Mismatched {...)
   t = t.replace(/\{([^}]*)\)/g, "($1)");
+  // Trailing comma
+  t = t.replace(/,\s*$/, "");
+  // Missing space after comma (but not in scientific names like "nycticorax,nycticorax")
+  t = t.replace(/,([a-zA-Z])/g, ", $1");
+  // Space before comma
+  t = t.replace(/ ,/g, ",");
+  // Double commas
+  t = t.replace(/,,/g, ",");
   if (t !== w.translation) {
     w.translation = t;
     punctFixed++;
