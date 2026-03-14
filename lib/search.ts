@@ -21,7 +21,7 @@ const FUSE_OPTIONS = {
 };
 
 function getFuseInstance(): Promise<Fuse<SearchGlyph>> {
-  if (_fuseP) return _fuseP;
+  if (_fuseP && process.env.NODE_ENV === "production") return _fuseP;
   const p = Promise.all([loadSearchGlyphs(), loadSearchFuseIndex()]).then(
     ([glyphs, rawIndex]) => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -9,7 +9,7 @@ export { translitToUnicode, wordSlug, wordHref } from "./word-utils";
 let _wordGroupsP: Promise<Map<string, DictionaryWord[]>> | null = null;
 
 function wordGroups(): Promise<Map<string, DictionaryWord[]>> {
-  if (_wordGroupsP) return _wordGroupsP;
+  if (_wordGroupsP && process.env.NODE_ENV === "production") return _wordGroupsP;
   const p = loadWords().then((words) => {
     const groups = new Map<string, DictionaryWord[]>();
     for (const w of words) {

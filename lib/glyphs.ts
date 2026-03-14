@@ -13,7 +13,7 @@ export { glyphHref, getBaseCode } from "./glyph-utils";
 let _glyphIndexP: Promise<Map<string, Glyph>> | null = null;
 
 function glyphIndex(): Promise<Map<string, Glyph>> {
-  if (_glyphIndexP) return _glyphIndexP;
+  if (_glyphIndexP && process.env.NODE_ENV === "production") return _glyphIndexP;
   const p = loadGlyphs().then((glyphs) => {
     const idx = new Map<string, Glyph>();
     for (const g of glyphs) {
