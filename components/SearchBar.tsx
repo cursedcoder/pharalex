@@ -37,6 +37,7 @@ export function SearchBar({
   const [query, setQuery] = useState("");
   const [items, setItems] = useState<MergedItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -53,10 +54,12 @@ export function SearchBar({
     if (!value.trim() || value.trim().length < 2) {
       setItems([]);
       setIsOpen(false);
+      setIsLoading(false);
       return;
     }
 
     setIsOpen(true);
+    setIsLoading(true);
     debounceRef.current = setTimeout(async () => {
       if (abortRef.current) abortRef.current.abort();
       const controller = new AbortController();
@@ -75,8 +78,10 @@ export function SearchBar({
           })
         );
         setItems(results);
+        setIsLoading(false);
       } catch {
-        // aborted or failed — ignore
+        // aborted — ignore; don't clear loading for aborted requests
+        if (!controller.signal.aborted) setIsLoading(false);
       }
     }, 150);
   }, []);
@@ -148,6 +153,18 @@ export function SearchBar({
           </svg>
         </div>
       </div>
+
+      {showResults && isOpen && isLoading && items.length === 0 && (
+        <div className="absolute z-50 w-full mt-2 bg-ivory dark:bg-ivory-dark border border-sandstone/30 rounded-lg shadow-lg overflow-hidden">
+          <div className="flex items-center justify-center gap-3 px-4 py-6">
+            <svg className="w-5 h-5 text-gold animate-spin" viewBox="0 0 24 24" fill="none">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+            </svg>
+            <span className="text-sm text-sandstone">Searching...</span>
+          </div>
+        </div>
+      )}
 
       {showResults && isOpen && items.length > 0 && (
         <div className="absolute z-50 w-full mt-2 bg-ivory dark:bg-ivory-dark border border-sandstone/30 rounded-lg shadow-lg overflow-hidden">
