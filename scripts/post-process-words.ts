@@ -57,7 +57,9 @@ for (const w of words) {
   let splitIdx = parts.length;
   for (let i = parts.length - 1; i >= 1; i--) {
     const p = parts[i];
-    const isEnglish = /^[A-Z][a-z]{2,}$/.test(p) && /[aeiouy]/i.test(p);
+    // Must contain unambiguous English vowels (e, o, u) — not just 'a'/'i'/'y'
+    // which are also MdC semivowels. "Elder" has 'e', "Tbti" does not.
+    const isEnglish = /^[A-Z][a-z]{2,}$/.test(p) && /[eou]/i.test(p);
     const isBracketed = /^\[/.test(p);
     if (isEnglish || isBracketed) {
       splitIdx = i;
@@ -75,6 +77,29 @@ for (const w of words) {
   }
 }
 if (englishMoved > 0) console.log(`  Moved English from transliteration: ${englishMoved}`);
+
+// ── 4b. Move incorrectly placed MdC tokens back from translation to translit ─
+// Words like "Tbti" (ṯbtj) were incorrectly moved to translation because they
+// contain 'i' (ambiguous vowel). Move them back if they look like MdC.
+let mdcMovedBack = 0;
+for (const w of words) {
+  const parts = w.translation.split(" ");
+  if (parts.length < 2) continue;
+  const first = parts[0];
+  // MdC token: starts with MdC-special uppercase, short, no e/o/u
+  if (first.length < 2 || first.length > 8) continue;
+  if (!/^[A-Z][a-z]*$/.test(first)) continue;
+  if (/[eou]/i.test(first)) continue;
+  if (!"AHSTDX".includes(first[0])) continue;
+  // Next word should look like English (not another MdC token)
+  const second = parts[1];
+  if (!second) continue;
+  // Move back
+  w.transliteration = w.transliteration + " " + first;
+  w.translation = parts.slice(1).join(" ");
+  mdcMovedBack++;
+}
+if (mdcMovedBack > 0) console.log(`  Moved MdC back to transliteration: ${mdcMovedBack}`);
 
 // ── 5. Move quoted English glosses and possessives from transliteration ──────
 // Entries like: translit "bik 'falcon'" translation "ship (of the king)"
