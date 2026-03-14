@@ -31,15 +31,16 @@ const MDC_SPECIALS = new Set(Object.keys(MDC_TO_UNICODE));
 /**
  * Returns true when the string contains at least one MdC special letter
  * that has NOT already been converted to its Unicode equivalent.
- * Plain lowercase letters that happen to coincide (like 'a' in 'jmn')
- * are only treated as MdC if the string also lacks any Unicode
- * Egyptological characters — i.e. it looks like a pure-ASCII MdC string.
+ *
+ * Uppercase A, H, S, T, D, X are unambiguous MdC specials.
+ * Lowercase x (ḫ) is also MdC-only — it never appears in proper
+ * Unicode Egyptological transliteration.
  */
 function looksLikeMdC(s: string): boolean {
   // If it already contains Unicode Egyptological characters, it's not MdC
   if (/[ꜣꜥḥḫẖšṯḏ]/.test(s)) return false;
-  // Check for uppercase MdC specials (unambiguous: A, H, S, T, D, X)
-  return /[AHSTDX]/.test(s);
+  // Check for MdC specials: uppercase A H S T D X, plus lowercase x
+  return /[AHSTDXx]/.test(s);
 }
 
 /**
@@ -57,10 +58,10 @@ export function mdcToUnicode(s: string): string {
 
 /**
  * Normalise a transliteration to a canonical comparison key.
- * Converts MdC to Unicode and lowercases for comparison.
+ * Converts MdC to Unicode, strips morpheme-boundary dots, and lowercases.
  */
 export function translitKey(s: string): string {
-  return mdcToUnicode(s).toLowerCase();
+  return mdcToUnicode(s).replace(/\./g, "").toLowerCase();
 }
 
 /**
@@ -90,4 +91,35 @@ export function deduplicateTransliterations(arr: string[]): string[] {
 export function hasTransliteration(arr: string[], value: string): boolean {
   const key = translitKey(value);
   return arr.some((t) => translitKey(t) === key);
+}
+
+const UNICODE_TO_MDC: Record<string, string> = Object.fromEntries(
+  Object.entries(MDC_TO_UNICODE).map(([k, v]) => [v, k])
+);
+
+/**
+ * Convert a Unicode Egyptological transliteration back to MdC ASCII.
+ * Returns the original string unchanged if it contains no Unicode specials.
+ */
+export function unicodeToMdc(s: string): string {
+  let result = "";
+  for (const ch of s) {
+    result += UNICODE_TO_MDC[ch] ?? ch;
+  }
+  return result;
+}
+
+/**
+ * Expand a Unicode transliteration array to include MdC ASCII aliases
+ * for search purposes. Only adds an MdC form if it differs from the Unicode.
+ */
+export function expandForSearch(arr: string[]): string[] {
+  const result = [...arr];
+  for (const t of arr) {
+    const mdc = unicodeToMdc(t);
+    if (mdc !== t) {
+      result.push(mdc);
+    }
+  }
+  return result;
 }

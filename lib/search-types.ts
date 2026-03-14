@@ -3,6 +3,8 @@ export interface SearchGlyph {
   code: string;
   unicode: string;
   transliteration: string[];
+  /** Unicode + MdC ASCII aliases for search matching (not displayed). */
+  searchTransliteration: string[];
   meanings: { text: string; type: string }[];
   description: string;
   category: string;

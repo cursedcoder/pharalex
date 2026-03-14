@@ -14,6 +14,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import Fuse from "fuse.js";
+import { expandForSearch } from "./translit-utils";
 
 const DATA_DIR = join(process.cwd(), "public", "data");
 
@@ -59,6 +60,8 @@ function main() {
       code,
       unicode,
       transliteration,
+      // Include MdC ASCII aliases so users can search "bAH" and find "bꜣḥ"
+      searchTransliteration: expandForSearch(transliteration),
       meanings: meanings.map((m) => ({ text: m.text, type: m.type })),
       description,
       category,
@@ -77,7 +80,7 @@ function main() {
   const fuseKeys = [
     { name: "code", weight: 3 },
     { name: "unicode", weight: 2 },
-    { name: "transliteration", weight: 2 },
+    { name: "searchTransliteration", weight: 2 },
     { name: "meanings.text", weight: 1.5 },
     { name: "description", weight: 0.8 },
   ];

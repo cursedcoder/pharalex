@@ -7,7 +7,7 @@ let _fuseP: Promise<Fuse<SearchGlyph>> | null = null;
 const FUSE_KEYS = [
   { name: "code", weight: 3 },
   { name: "unicode", weight: 2 },
-  { name: "transliteration", weight: 2 },
+  { name: "searchTransliteration", weight: 2 },
   { name: "meanings.text", weight: 1.5 },
   { name: "description", weight: 0.8 },
 ];
