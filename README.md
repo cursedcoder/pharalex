@@ -1,6 +1,6 @@
 # PharaLex
 
-**An open Egyptian hieroglyph dictionary** — 8,282 symbols with full SVG coverage, meanings, transliterations, phonetic values, and attested text examples from ancient corpora.
+**An open Egyptian hieroglyph dictionary** — 8,132 symbols with full SVG coverage, meanings, transliterations, phonetic values, and attested text examples from ancient corpora.
 
 **[pharalex.app](https://pharalex.app)**
 
@@ -8,7 +8,7 @@
 
 ## Features
 
-- **8,282 hieroglyphs** with 100% SVG coverage — every glyph renders sharply at any size
+- **8,132 hieroglyphs** with 100% SVG coverage — every glyph renders sharply at any size
 - **Unified data** — Gardiner codes, Unicode codepoints, phonetic values, physical descriptions, logogram/phonogram/determinative uses, and cross-references from five open datasets
 - **16,379 attested text examples** from the Thesaurus Linguae Aegyptiae corpus (Old, Middle, and Late Egyptian)
 - **Pharaohs database** — 300+ rulers across 30+ dynasties with timeline and list views
@@ -24,7 +24,7 @@
 | Route | Description |
 |---|---|
 | `/` | Home — search, featured glyphs, category grid |
-| `/browse` | Virtualized grid of all 8,282 glyphs |
+| `/browse` | Virtualized grid of all 8,132 glyphs |
 | `/glyph/[code]` | Glyph detail — SVG, meanings, phonetics, examples |
 | `/search` | Full-text search with live results |
 | `/categories` | All 26 Gardiner categories |
@@ -52,7 +52,7 @@
 
 All glyph SVGs and dictionary data come from open-source and open-data projects. Full attribution is at [pharalex.app/acknowledgments](https://pharalex.app/acknowledgments) and in [`SOURCES.md`](./SOURCES.md).
 
-**Glyph SVGs (8,282 total):**
+**Glyph SVGs (8,132 total):**
 
 | Source | Glyphs | License |
 |---|---:|---|
@@ -111,7 +111,7 @@ components/           # Shared UI components
   └── ui/             # Badge, Card, Container
 lib/                  # Data loaders and types
   └── data/           # glyphs.json, pharaohs.json
-public/glyphs/        # 8,282 SVG files ({code}.svg)
+public/glyphs/        # 8,132 SVG files ({code}.svg)
 scripts/              # Data processing scripts
 SOURCES.md            # Full data attribution
 ```

@@ -156,24 +156,18 @@ function fixViewBox(svg: string): string {
   // Ignore display:none sections (Inkscape reference images etc.)
   const working = svg.replace(/<g[^>]*?style="[^"]*display\s*:\s*none[^"]*"[\s\S]*?<\/g>/gi, "");
 
-  // Parse the wrapper group transform, supporting:
-  //   translate(tx, ty)
-  //   scale(sx, sy)
-  //   scale(1,-1) translate(0,-N)  — flipped-y Egyptian hieroglyph convention
-  const transformAttr = working.match(/transform="([^"]+)"/)?.[1] ?? "";
-
-  // Extract all translate() calls in order
-  let tx = 0, ty = 0;
-  for (const tm of transformAttr.matchAll(/translate\(\s*([^,)]+)(?:,([^)]+))?\)/g)) {
-    tx += parseFloat(tm[1]) || 0;
-    ty += parseFloat(tm[2] ?? "0") || 0;
-  }
-
-  // Extract all scale() calls in order
-  let sx = 1, sy = 1;
-  for (const sm of transformAttr.matchAll(/scale\(\s*([^,)]+)(?:,([^)]+))?\)/g)) {
-    sx *= parseFloat(sm[1]) || 1;
-    sy *= parseFloat(sm[2] ?? sm[1]) || 1;
+  // Accumulate ALL translate/scale transforms across all elements
+  let tx = 0, ty = 0, sx = 1, sy = 1;
+  for (const tm of working.matchAll(/transform="([^"]+)"/g)) {
+    const attr = tm[1];
+    for (const t of attr.matchAll(/translate\(\s*([^,)]+)(?:,([^)]+))?\)/g)) {
+      tx += parseFloat(t[1]) || 0;
+      ty += parseFloat(t[2] ?? "0") || 0;
+    }
+    for (const s of attr.matchAll(/scale\(\s*([^,)]+)(?:,([^)]+))?\)/g)) {
+      sx *= parseFloat(s[1]) || 1;
+      sy *= parseFloat(s[2] ?? s[1]) || 1;
+    }
   }
 
   // Apply transform: for scale(1,-1) translate(0,-N), the mapping is:
