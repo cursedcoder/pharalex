@@ -2588,8 +2588,8 @@
     ],
     "signName": "bent man leaning on staff",
     "transliterationCounts": {
-      "smsw": 13,
       "wr": 7,
+      "smsw": 13,
       "tni": 11,
       "ikw": 3
     }
@@ -2670,8 +2670,8 @@
     ],
     "signName": "man holding staff with handkerchief",
     "transliterationCounts": {
-      "sr": 8,
-      "smr": 2
+      "smr": 2,
+      "sr": 8
     }
   },
   {
@@ -2977,7 +2977,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "The king, standing"
   },
   {
     "code": "A24",
@@ -4324,7 +4324,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Qjs — Qus",
+        "text": "Logogram: qjs — Qus",
         "type": "logogram"
       }
     ],
@@ -6393,7 +6393,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "Man, seated, both knees down, with short straight "
   },
   {
     "code": "A52I",
@@ -25998,8 +25998,8 @@
     ],
     "signName": "woman giving birth",
     "transliterationCounts": {
-      "msi": 4,
-      "ms": 1
+      "ms": 1,
+      "msi": 4
     }
   },
   {
@@ -26172,8 +26172,7 @@
     ],
     "signName": "woman suckling child",
     "transliterationCounts": {
-      "rnn": 3,
-      "mnat": 1
+      "rnn": 3
     }
   },
   {
@@ -30207,7 +30206,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Rꜥ — Re",
+        "text": "Logogram: rꜥ — Re",
         "type": "logogram"
       },
       {
@@ -31085,7 +31084,7 @@
     "description": "Representing a god with the head of a dog 𓃢 (E15).",
     "meanings": [
       {
-        "text": "Logogram: Jnpw — Anubis",
+        "text": "Logogram: jnpw — Anubis",
         "type": "logogram"
       },
       {
@@ -31479,7 +31478,7 @@
     "description": "Representing ithyphallic god with feathers, uplifted arm, and flagellum S45.",
     "meanings": [
       {
-        "text": "Logogram: Mnw — Min",
+        "text": "Logogram: mnw — Min",
         "type": "logogram"
       },
       {
@@ -31964,7 +31963,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Mꜣꜥt — Maat",
+        "text": "Logogram: mꜣꜥt — Maat",
         "type": "logogram"
       },
       {
@@ -32461,7 +32460,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "God, seated on heel, right knee raised, with long-"
   },
   {
     "code": "C11I",
@@ -32520,7 +32519,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jmn — Amun",
+        "text": "Logogram: jmn — Amun",
         "type": "logogram"
       }
     ],
@@ -32854,7 +32853,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12J",
@@ -32891,7 +32890,7 @@
       "seated",
       "holding something"
     ],
-    "signName": ""
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C13",
@@ -32912,7 +32911,7 @@
     "description": "Variant of C12 (god with)",
     "meanings": [
       {
-        "text": "Logogram: Jmn-ḥr-ḫpš=f — Amun-her-khepeshef",
+        "text": "Logogram: jmn-ḥr-ḫpš=f — Amun-her-khepeshef",
         "type": "logogram"
       }
     ],
@@ -32939,7 +32938,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "Variant of C12 (god with)"
   },
   {
     "code": "C15",
@@ -32960,7 +32959,7 @@
     "description": "Variant of A304",
     "meanings": [
       {
-        "text": "Logogram: Jtm — Atum",
+        "text": "Logogram: jtm — Atum",
         "type": "logogram"
       },
       {
@@ -32990,7 +32989,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of a falcon, wearing a headdress consisting of two plumes with a sun disk (S63A/S70), holding a tie or strap, used with sandals (ankh sign, S34), angling forward. ",
     "meanings": [
       {
-        "text": "Logogram: Mnṯw — Month",
+        "text": "Logogram: mnṯw — Month",
         "type": "logogram"
       },
       {
@@ -33336,7 +33335,7 @@
     "description": "God, in mummy form, standing upright on a platform, with a long straight beard, wearing a cap, both arms forward, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40) of the same size as the god, vertically.",
     "meanings": [
       {
-        "text": "Logogram: Ptḥ — Ptah",
+        "text": "Logogram: ptḥ — Ptah",
         "type": "logogram"
       },
       {
@@ -33548,7 +33547,7 @@
     "description": "God, seated on heel, right knee raised, with the head of a jackal, right arm angled in front of the body, left arm raised, hand held vertically, hand palm inwards (hnw gesture).",
     "meanings": [
       {
-        "text": "Logogram: Bs — Bes",
+        "text": "Logogram: bs — Bes",
         "type": "logogram"
       },
       {
@@ -33868,7 +33867,7 @@
     "description": "God, seated on nothing, with the head of a jackal and tail, right arm forwards, hand at the height of the shoulder, holding a stick vertically, running from the hand to the knee, left arm raised at the back, forearm vertical, holding a stick.",
     "meanings": [
       {
-        "text": "Logogram: Bꜣstt — Bastet",
+        "text": "Logogram: bꜣstt — Bastet",
         "type": "logogram"
       },
       {
@@ -33906,7 +33905,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "God, seated on nothing, with the head of a jackal "
   },
   {
     "code": "C24",
@@ -33920,7 +33919,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Njt — Neith",
+        "text": "Logogram: njt — Neith",
         "type": "logogram"
       }
     ],
@@ -39821,7 +39820,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with the head of a snake, holding a stem of papyrus with a bud (M13).",
     "meanings": [
       {
-        "text": "Classifier Renenutet",
+        "text": "Classifier renenutet",
         "type": "determinative"
       }
     ],
@@ -48651,8 +48650,8 @@
     ],
     "signName": "eye touched up with paint",
     "transliterationCounts": {
-      "dgi": 2,
-      "ptr": 1
+      "ptr": 1,
+      "dgi": 2
     }
   },
   {
@@ -48743,8 +48742,8 @@
     ],
     "signName": "eye with painted lower lid",
     "transliterationCounts": {
-      "an": 1,
-      "ptr": 1
+      "ptr": 1,
+      "an": 1
     }
   },
   {
@@ -48877,8 +48876,8 @@
     ],
     "signName": "An eye, written inside an oval",
     "transliterationCounts": {
-      "an": 4,
-      "anw": 1
+      "anw": 1,
+      "Anw": 1
     }
   },
   {
@@ -49385,8 +49384,8 @@
       }
     ],
     "transliteration": [
-      "qd",
       "1/64",
+      "qd",
       "hieratic",
       "grain"
     ],
@@ -49538,8 +49537,8 @@
     ],
     "signName": "nose, eye and cheek",
     "transliterationCounts": {
-      "fnd": 21,
       "sn": 12,
+      "fnd": 21,
       "btn": 12
     }
   },
@@ -49860,8 +49859,8 @@
     ],
     "signName": "liquid issuing from lips",
     "transliterationCounts": {
-      "psg": 7,
-      "snf": 7
+      "snf": 7,
+      "psg": 7
     }
   },
   {
@@ -50668,7 +50667,6 @@
     ],
     "signName": "forearm",
     "transliterationCounts": {
-      "a": 54,
       "di": 2
     }
   },
@@ -50738,9 +50736,9 @@
     ],
     "signName": "Combination of 𓏙 and 𓂝",
     "transliterationCounts": {
+      "m": 3,
       "rdi": 32,
       "di": 13,
-      "m": 3,
       "imi": 1
     }
   },
@@ -50835,8 +50833,8 @@
     ],
     "signName": "A forearm with the hand holding a round vessel wit",
     "transliterationCounts": {
-      "mwt": 4,
-      "m": 1
+      "m": 1,
+      "mwt": 4
     }
   },
   {
@@ -62822,7 +62820,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jnpw — Anubis",
+        "text": "Logogram: jnpw — Anubis",
         "type": "logogram"
       }
     ],
@@ -63111,7 +63109,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Wpj-wꜣwt — Wepwawet",
+        "text": "Logogram: wpj-wꜣwt — Wepwawet",
         "type": "logogram"
       }
     ],
@@ -63498,9 +63496,9 @@
     ],
     "signName": "lying lion",
     "transliterationCounts": {
-      "rw": 8,
       "r": 2,
-      "nb": 1
+      "nb": 1,
+      "rw": 8
     }
   },
   {
@@ -64381,7 +64379,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A hamadryas baboon (Papio hamadryas), seated, arms"
   },
   {
     "code": "E38",
@@ -74433,7 +74431,6 @@
     ],
     "signName": "horn",
     "transliterationCounts": {
-      "ab": 33,
       "db": 5
     }
   },
@@ -76309,8 +76306,8 @@
       }
     ],
     "transliteration": [
-      "ꞽmꜣḫ",
       "jmꜣḫ",
+      "ꞽmꜣḫ",
       "psḏ",
       "imꜣḫ"
     ],
@@ -81734,7 +81731,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "Representing a falcon with a flagellum"
   },
   {
     "code": "G7",
@@ -81800,7 +81797,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nmtj — Nemti",
+        "text": "Logogram: nmtj — Nemti",
         "type": "logogram"
       }
     ],
@@ -82041,7 +82038,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Rꜥ-ḥr-ꜣḫtj — Re-Harakhti",
+        "text": "Logogram: rꜥ-ḥr-ꜣḫtj — Re-Harakhti",
         "type": "logogram"
       }
     ],
@@ -82271,7 +82268,8 @@
     ],
     "signName": "An archaic image of a falcon/cult image of a falco",
     "transliterationCounts": {
-      "spdw": 2
+      "spdw": 2,
+      "Spdw": 2
     }
   },
   {
@@ -82529,7 +82527,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Mwt — Mut",
+        "text": "Logogram: mwt — Mut",
         "type": "logogram"
       }
     ],
@@ -82848,8 +82846,8 @@
     ],
     "signName": "Variant of G17 (owl)",
     "transliterationCounts": {
-      "mi": 2,
-      "m": 2
+      "m": 2,
+      "mi": 2
     }
   },
   {
@@ -84297,9 +84295,9 @@
     ],
     "signName": "white-fronted goose",
     "transliterationCounts": {
+      "gbb": 1,
       "gb": 8,
-      "wdf": 1,
-      "gbb": 1
+      "wdf": 1
     }
   },
   {
@@ -84798,7 +84796,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A combination of 𓂝 (“ꜥ”) and 𓅱 (“w”)"
   },
   {
     "code": "G46",
@@ -85356,7 +85354,7 @@
     "tags": [
       "human-headed"
     ],
-    "signName": ""
+    "signName": "Representation of a bird with a human head beside "
   },
   {
     "code": "G53C",
@@ -95721,7 +95719,7 @@
     "description": "Cobra with feather",
     "meanings": [
       {
-        "text": "Logogram: Wꜣḏyt — Wadjit (tenth nome of Upper Egypt)",
+        "text": "Logogram: wꜣḏyt — Wadjit (tenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -95798,7 +95796,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "two cobras"
   },
   {
     "code": "I12",
@@ -102070,7 +102068,8 @@
     ],
     "signName": "scorpion",
     "transliterationCounts": {
-      "srqt": 3
+      "srqt": 3,
+      "Srqt": 3
     }
   },
   {
@@ -102971,8 +102970,8 @@
     ],
     "signName": "tree",
     "transliterationCounts": {
-      "nht": 3,
       "nbs": 2,
+      "nht": 3,
       "im": 1
     }
   },
@@ -103047,7 +103046,7 @@
       "tree",
       "branch"
     ],
-    "signName": ""
+    "signName": "tree"
   },
   {
     "code": "M1B",
@@ -103057,7 +103056,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: Nḏft — Nedjfit",
+        "text": "Logogram: nḏft — Nedjfit",
         "type": "logogram"
       }
     ],
@@ -103071,7 +103070,7 @@
     "tags": [
       "tree"
     ],
-    "signName": ""
+    "signName": "tree"
   },
   {
     "code": "M2",
@@ -103154,9 +103153,9 @@
     ],
     "signName": "plant",
     "transliterationCounts": {
+      "s": 1,
       "is": 12,
-      "i": 3,
-      "s": 1
+      "i": 3
     }
   },
   {
@@ -103340,7 +103339,7 @@
       "branch",
       "sign combination"
     ],
-    "signName": ""
+    "signName": "branch"
   },
   {
     "code": "M3C",
@@ -103454,10 +103453,10 @@
     ],
     "signName": "palm branch",
     "transliterationCounts": {
-      "rnp": 27,
+      "tr": 2,
       "snf": 2,
-      "rnpt": 7,
-      "tr": 2
+      "rnp": 27,
+      "rnpt": 7
     }
   },
   {
@@ -103842,8 +103841,8 @@
       }
     ],
     "transliteration": [
-      "š",
       "šꜣ",
+      "š",
       "ꜣḫt",
       "𓈙",
       "ꜣkhet"
@@ -104771,7 +104770,7 @@
       "papyrus or lily",
       "sign combination"
     ],
-    "signName": ""
+    "signName": "Graphical combination of 𓇅 (M13), representing pap"
   },
   {
     "code": "M15",
@@ -105054,8 +105053,8 @@
     ],
     "transliteration": [
       "ꞽ",
-      "y",
       "j",
+      "y",
       "i"
     ],
     "related": [
@@ -105430,9 +105429,9 @@
     "signName": "sedge",
     "transliterationCounts": {
       "sw": 8,
+      "nswt": 2,
       "swt": 17,
-      "nsw": 11,
-      "nswt": 2
+      "nsw": 11
     }
   },
   {
@@ -105548,7 +105547,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "Combination of the signs 𓇓 (sw) and 𓂋 (r)"
   },
   {
     "code": "M25",
@@ -105708,7 +105707,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "Variant of M26 (flowering sedge)"
   },
   {
     "code": "M28",
@@ -105763,7 +105762,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A desert plant, with four branches, with flowers o"
   },
   {
     "code": "M28B",
@@ -105775,7 +105774,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A desert plant, with four branches, with flowers o"
   },
   {
     "code": "M29",
@@ -110453,7 +110452,7 @@
     "description": "A root, with the point curving backwards, with a loop horizontally at the front.",
     "meanings": [
       {
-        "text": "Classifier succesful, fortunate",
+        "text": "Classifier successful, fortunate",
         "type": "determinative"
       }
     ],
@@ -110480,7 +110479,7 @@
     "description": "A root, with the point curving backwards, with a loop vertically at the top.",
     "meanings": [
       {
-        "text": "Logogram (succesful, fortunate)",
+        "text": "Logogram (successful, fortunate)",
         "type": "logogram"
       }
     ],
@@ -112432,7 +112431,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jnj-ḥrt — Onuris",
+        "text": "Logogram: jnj-ḥrt — Onuris",
         "type": "logogram"
       },
       {
@@ -112482,7 +112481,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jnbw-ḥḏ — Inbuhedi (first nome of Lower Egypt)",
+        "text": "Logogram: jnbw-ḥḏ — Inbuhedi (first nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -112627,7 +112626,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Wṯs-ḥr — Wetjes-Hor (second nome of Upper Egypt)",
+        "text": "Logogram: wṯs-ḥr — Wetjes-Hor (second nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -112695,7 +112694,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jmntt — Imenti (third nome of Lower Egypt)",
+        "text": "Logogram: jmntt — Imenti (third nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -112725,7 +112724,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nḫn — Nekhen (third nome of Upper Egypt)",
+        "text": "Logogram: nḫn — Nekhen (third nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -112868,7 +112867,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nrt-rst — southern Neret (fourth nome of Lower Egypt)",
+        "text": "Logogram: nrt-rst — southern Neret (fourth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -112898,7 +112897,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Wꜣst — Waset (fourth nome of Upper Egypt)",
+        "text": "Logogram: wꜣst — Waset (fourth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113145,9 +113144,8 @@
     ],
     "signName": "sun",
     "transliterationCounts": {
-      "hrw": 22,
       "sw": 14,
-      "ra": 7,
+      "hrw": 22,
       "wnwt": 20
     }
   },
@@ -113163,7 +113161,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nrt-mḥtt — northern Neret (fifth nome of Lower Egypt)",
+        "text": "Logogram: nrt-mḥtt — northern Neret (fifth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -113218,7 +113216,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nṯrwj — Netjerui (fifth nome of Upper Egypt)",
+        "text": "Logogram: nṯrwj — Netjerui (fifth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113326,7 +113324,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jqr — Iqer (sixth nome of Upper Egypt)",
+        "text": "Logogram: jqr — Iqer (sixth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113536,7 +113534,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Bꜣt — Bat (seventh nome of Upper Egypt)",
+        "text": "Logogram: bꜣt — Bat (seventh nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113600,8 +113598,7 @@
       }
     ],
     "transliteration": [
-      "tꜣ-wr",
-      "Tꜣ-wr"
+      "tꜣ-wr"
     ],
     "related": [
       "N1",
@@ -113843,7 +113840,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Mnw — Menu (ninth nome of Upper Egypt)",
+        "text": "Logogram: mnw — Menu (ninth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113911,7 +113908,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Km-wr — Kem-wer (tenth nome of Lower Egypt)",
+        "text": "Logogram: km-wr — Kem-wer (tenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -113940,7 +113937,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Wꜣḏyt — Wadjit (tenth nome of Upper Egypt)",
+        "text": "Logogram: wꜣḏyt — Wadjit (tenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -114310,7 +114307,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nḏft-ḫntt — southern Nedjfit (thirteenth nome of Upper Egypt)",
+        "text": "Logogram: nḏft-ḫntt — southern Nedjfit (thirteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -114455,7 +114452,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A combination of 𓇼 (sbA) with the right half of 𓇹 "
   },
   {
     "code": "N14",
@@ -114548,7 +114545,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nḏft-pḥt — northern Nedjfit (fourteenth nome of Upper Egypt)",
+        "text": "Logogram: nḏft-pḥt — northern Nedjfit (fourteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -114719,7 +114716,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Mꜣ-ḥḏ — Ma-hedi (sixteenth nome of Upper Egypt)",
+        "text": "Logogram: mꜣ-ḥḏ — Ma-hedi (sixteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -114916,7 +114913,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jnpwt — Input (seventeenth nome of Upper Egypt)",
+        "text": "Logogram: jnpwt — Input (seventeenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -115019,8 +115016,8 @@
     ],
     "signName": "sandy tract",
     "transliterationCounts": {
-      "iw": 7,
-      "stt": 1
+      "stt": 1,
+      "iw": 7
     }
   },
   {
@@ -115031,7 +115028,7 @@
     "description": "Sign of eighteenth nome of Lower Egypt",
     "meanings": [
       {
-        "text": "Logogram: Jmt-ḫnt — southern Imet (eighteenth nome of Lower Egypt)",
+        "text": "Logogram: jmt-ḫnt — southern Imet (eighteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -115060,7 +115057,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nmtj — Nemti (eighteenth nome of Upper Egypt)",
+        "text": "Logogram: nmtj — Nemti (eighteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -115108,7 +115105,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: Jmn — Amun",
+        "text": "Logogram: jmn — Amun",
         "type": "logogram"
       }
     ],
@@ -115143,7 +115140,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "sandy tract"
   },
   {
     "code": "N18C",
@@ -115194,7 +115191,7 @@
     "description": "Sign of nineteenth nome of Lower Egypt",
     "meanings": [
       {
-        "text": "Logogram: Jmt-pḥ — northern Imet (nineteenth nome of Lower Egypt)",
+        "text": "Logogram: jmt-pḥ — northern Imet (nineteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -115223,7 +115220,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Wꜣbwj — Wabui (nineteenth nome of Upper Egypt)",
+        "text": "Logogram: wꜣbwj — Wabui (nineteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -115315,7 +115312,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nꜥrt-ḫntt — southern Noret (twentieth nome of Upper Egypt)",
+        "text": "Logogram: nꜥrt-ḫntt — southern Noret (twentieth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -115401,7 +115398,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nꜥrt-pḥt — northern Noret (twenty-first nome of Upper Egypt)",
+        "text": "Logogram: nꜥrt-pḥt — northern Noret (twenty-first nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -115515,7 +115512,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Mdnjt — Medenit (twenty-second nome of Upper Egypt)",
+        "text": "Logogram: mdnjt — Medenit (twenty-second nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -116191,7 +116188,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jnj-ḥrt — Onuris",
+        "text": "Logogram: jnj-ḥrt — Onuris",
         "type": "logogram"
       },
       {
@@ -116516,8 +116513,8 @@
     ],
     "signName": "grain",
     "transliterationCounts": {
-      "msdmt": 5,
-      "nbw": 3
+      "nbw": 3,
+      "msdmt": 5
     }
   },
   {
@@ -116552,8 +116549,8 @@
     ],
     "signName": "three grains",
     "transliterationCounts": {
-      "msdmt": 1,
-      "nbw": 1
+      "nbw": 1,
+      "msdmt": 1
     }
   },
   {
@@ -116710,8 +116707,8 @@
     ],
     "signName": "ripple of water",
     "transliterationCounts": {
-      "m": 31,
       "n": 19,
+      "m": 31,
       "nt": 18
     }
   },
@@ -120705,7 +120702,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "house"
   },
   {
     "code": "O2",
@@ -120794,7 +120791,7 @@
       "house",
       "sign combination"
     ],
-    "signName": ""
+    "signName": "An oar, written vertically (P8), intruding with th"
   },
   {
     "code": "O4",
@@ -121274,7 +121271,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: Nbt-ḥwt — Nephthys",
+        "text": "Logogram: nbt-ḥwt — Nephthys",
         "type": "logogram"
       }
     ],
@@ -123920,7 +123917,7 @@
       "lock",
       "sign combination"
     ],
-    "signName": ""
+    "signName": "A door bolt (O034) placed above legs in a walking "
   },
   {
     "code": "O36",
@@ -123975,8 +123972,8 @@
     ],
     "signName": "wall",
     "transliterationCounts": {
-      "inb": 27,
       "snb": 2,
+      "inb": 27,
       "wmtt": 1
     }
   },
@@ -124355,8 +124352,8 @@
     ],
     "signName": "stone",
     "transliterationCounts": {
-      "inr": 24,
-      "dbn": 7
+      "dbn": 7,
+      "inr": 24
     }
   },
   {
@@ -125027,7 +125024,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Nḫn — Hieraconpolis",
+        "text": "Logogram: nḫn — Hieraconpolis",
         "type": "logogram"
       },
       {
@@ -132171,7 +132168,8 @@
       "O4",
       "O4B"
     ],
-    "source": "both"
+    "source": "both",
+    "signName": "frieze"
   },
   {
     "code": "O72B",
@@ -138581,8 +138579,8 @@
     "transliterationCounts": {
       "srf": 9,
       "nsrsr": 3,
-      "psi": 9,
       "nsr": 12,
+      "psi": 9,
       "ps": 4
     }
   },
@@ -141378,7 +141376,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": ""
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10C",
@@ -141394,7 +141392,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": ""
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10F",
@@ -141410,7 +141408,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": ""
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10H",
@@ -141422,7 +141420,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10I",
@@ -141870,7 +141868,7 @@
     "description": "Sceptre with feathers",
     "meanings": [
       {
-        "text": "Logogram: Nfr-tm — Nefertem",
+        "text": "Logogram: nfr-tm — Nefertem",
         "type": "logogram"
       },
       {
@@ -142201,7 +142199,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A wig, with a fillet, with a headdress consisting "
   },
   {
     "code": "R19",
@@ -142215,7 +142213,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Wꜣst — Thebes",
+        "text": "Logogram: wꜣst — Thebes",
         "type": "logogram"
       }
     ],
@@ -142267,8 +142265,7 @@
       }
     ],
     "transliteration": [
-      "sšꜣt",
-      "Sšꜣt"
+      "sšꜣt"
     ],
     "related": [
       "R1",
@@ -142362,7 +142359,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Mnw — Min",
+        "text": "Logogram: mnw — Min",
         "type": "logogram"
       },
       {
@@ -142476,7 +142473,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Njt — Neith",
+        "text": "Logogram: njt — Neith",
         "type": "logogram"
       }
     ],
@@ -142641,7 +142638,7 @@
     "description": "Two arrows crossed over a shield",
     "meanings": [
       {
-        "text": "Logogram: Njt — Neith",
+        "text": "Logogram: njt — Neith",
         "type": "logogram"
       },
       {
@@ -145874,7 +145871,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "The white crown (S1), on top of a wickerwork baske"
   },
   {
     "code": "S3",
@@ -146626,7 +146623,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "Variant of S12 (collar of beads)"
   },
   {
     "code": "S15",
@@ -147493,8 +147490,8 @@
     ],
     "signName": "folded cloth",
     "transliterationCounts": {
-      "s": 3,
-      "snb": 30
+      "snb": 30,
+      "s": 3
     }
   },
   {
@@ -148492,7 +148489,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A staff, which widens towards the bottom (S43) wit"
   },
   {
     "code": "S45",
@@ -153714,7 +153711,7 @@
     "tags": [
       "mace"
     ],
-    "signName": ""
+    "signName": "mace with round head vertically"
   },
   {
     "code": "T3B",
@@ -153851,7 +153848,7 @@
       "mace",
       "sign combination"
     ],
-    "signName": ""
+    "signName": "Combination 𓆓 (I10) and 𓌉 (T4)"
   },
   {
     "code": "T6",
@@ -154977,11 +154974,11 @@
     ],
     "signName": "harpoon head",
     "transliterationCounts": {
-      "twr": 9,
       "qs": 9,
-      "gnwt": 19,
       "qrs": 8,
+      "twr": 9,
       "gn": 2,
+      "gnwt": 19,
       "msn": 1
     }
   },
@@ -155320,8 +155317,8 @@
     ],
     "signName": "arrowhead",
     "transliterationCounts": {
-      "snw": 66,
-      "sn": 17
+      "sn": 17,
+      "snw": 66
     }
   },
   {
@@ -156086,7 +156083,7 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": ""
+    "signName": "A knife with a rounded blade and rounded handle (T"
   },
   {
     "code": "T29B",
@@ -156102,7 +156099,7 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": ""
+    "signName": "A knife with a rounded blade and rounded handle (T"
   },
   {
     "code": "T30",
@@ -156157,9 +156154,9 @@
     ],
     "signName": "knife",
     "transliterationCounts": {
-      "dmt": 12,
+      "ds": 8,
       "dm": 12,
-      "ds": 8
+      "dmt": 12
     }
   },
   {
@@ -156319,7 +156316,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A knife sharpener with a rounded body and a loop a"
   },
   {
     "code": "T33",
@@ -156366,7 +156363,7 @@
     "tags": [
       "varia"
     ],
-    "signName": ""
+    "signName": "knife-sharpener of butcher"
   },
   {
     "code": "T33B",
@@ -160772,8 +160769,8 @@
     ],
     "signName": "plough",
     "transliterationCounts": {
-      "hb": 11,
-      "prt": 10
+      "prt": 10,
+      "hb": 11
     }
   },
   {
@@ -166653,7 +166650,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A horizontal line, intersected in the middle by a "
   },
   {
     "code": "V2D",
@@ -166665,7 +166662,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": ""
+    "signName": "A horizontal line, intersected in the middle by a "
   },
   {
     "code": "V3",
@@ -168436,8 +168433,7 @@
     ],
     "signName": "swab",
     "transliterationCounts": {
-      "sk": 19,
-      "mar": 1
+      "sk": 19
     }
   },
   {
@@ -171964,7 +171960,7 @@
       "butcher's block",
       "vessel"
     ],
-    "signName": ""
+    "signName": "A butcher's block (T28), on top of an alabaster ba"
   },
   {
     "code": "W6",
@@ -172047,8 +172043,8 @@
       }
     ],
     "transliteration": [
-      "ꜣb",
       "mꜣṯ",
+      "ꜣb",
       "ꜣbw",
       "mꜣt"
     ],
@@ -172288,7 +172284,6 @@
     "signName": "cup",
     "transliterationCounts": {
       "iab": 11,
-      "a": 6,
       "ab": 6
     }
   },
@@ -173528,7 +173523,7 @@
       "with long legs",
       "vessel"
     ],
-    "signName": ""
+    "signName": "A round vessel with an upstanding rim (W24), on to"
   },
   {
     "code": "W27B",
@@ -176505,11 +176500,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: Gb — Geb",
+        "text": "Logogram: gb — Geb",
         "type": "logogram"
       },
       {
-        "text": "Logogram: Jnpw — Anubis",
+        "text": "Logogram: jnpw — Anubis",
         "type": "logogram"
       },
       {
@@ -177010,8 +177005,8 @@
     ],
     "signName": "hieratic roll of bread",
     "transliterationCounts": {
-      "sni": 8,
-      "sn": 2
+      "sn": 2,
+      "sni": 8
     }
   },
   {
@@ -179167,8 +179162,8 @@
     "source": "both",
     "signName": "diagonal cross",
     "transliterationCounts": {
-      "wp": 11,
-      "wr": 3
+      "wr": 3,
+      "wp": 11
     }
   },
   {

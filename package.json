@@ -11,7 +11,9 @@
     "preview": "opennextjs-cloudflare preview",
     "start": "next start",
     "lint": "eslint",
+    "pipeline": "tsx scripts/post-process-glyphs.ts && tsx scripts/build-search-index.ts",
     "test": "vitest run",
+    "test:pipeline": "tsx scripts/post-process-glyphs.ts && vitest run tests/data-integrity.test.ts",
     "test:watch": "vitest",
     "test:workerd": "vitest run --config tests/workerd/vitest.config.ts"
   },
