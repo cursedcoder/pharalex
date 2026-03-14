@@ -30,12 +30,17 @@ const GARDINER_RE = /\b([A-Z][a-z]?\d+[A-Za-z]?)\b/g;
 /** Strip inline Unicode hieroglyph characters (U+13000–U+143FF) — they duplicate our SVG pills. */
 const HIERO_UNICODE_RE = /[\u{13000}-\u{143FF}]\s*/gu;
 
+/** Strip leading zeros from Gardiner code numbers: S040 → S40, R011 → R11 */
+function normalizeGardinerCode(code: string): string {
+  return code.replace(/^([A-Z][a-z]?)0+(\d)/, "$1$2");
+}
+
 /** Turn Gardiner codes in text into linked glyph pills. */
 function linkifyCodes(text: string): ReactNode {
   const parts: ReactNode[] = [];
   let last = 0;
   for (const match of text.matchAll(GARDINER_RE)) {
-    const code = match[1];
+    const code = normalizeGardinerCode(match[1]);
     const start = match.index!;
     if (start > last) parts.push(text.slice(last, start).replace(HIERO_UNICODE_RE, ""));
     parts.push(
