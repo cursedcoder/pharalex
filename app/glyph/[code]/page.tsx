@@ -285,7 +285,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             return count ? (
                               <Link
                                 key={t}
-                                href={`/search?q=${encodeURIComponent(t)}`}
+                                href={`/search?q=${encodeURIComponent(t)}&show=words`}
                                 className="
                                   inline-flex items-baseline gap-1
                                   px-3 py-1.5
