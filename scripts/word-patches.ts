@@ -76,6 +76,12 @@ export const WORD_PATCHES: WordPatch[] = [
     translationMatch: "at female Hallkeeper",
     newTranslation: "female Hallkeeper, Keeper of the Storeroom",
   },
+  // sApty: "xnwy Decan" — strip leaked ḫnwy
+  {
+    transliteration: "sApty",
+    translationMatch: "xnwy Decan",
+    newTranslation: "Decan",
+  },
 ];
 
 /**
