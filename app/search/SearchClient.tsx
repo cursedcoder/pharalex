@@ -82,7 +82,8 @@ function SearchContent() {
 
   const runSearch = useCallback(async (q: string, opts: { exact?: boolean; gardiner?: boolean } = {}) => {
     if (abortRef.current) abortRef.current.abort();
-    if (!q.trim() || q.trim().length < 2) {
+    const minLen = (opts.exact || opts.gardiner) ? 1 : 2;
+    if (!q.trim() || q.trim().length < minLen) {
       setResults([]);
       setIsSearching(false);
       return;
