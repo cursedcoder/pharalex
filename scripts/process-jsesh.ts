@@ -12,6 +12,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { XMLParser } from "fast-xml-parser";
+import { mdcToUnicode, hasTransliteration } from "./translit-utils";
 
 interface JseshSign {
   code: string;
@@ -225,8 +226,9 @@ async function main() {
       .map((t) => t.value);
 
     for (const t of newTranslits) {
-      if (!glyph.transliteration.includes(t)) {
-        glyph.transliteration.push(t);
+      const unicode = mdcToUnicode(t);
+      if (!hasTransliteration(glyph.transliteration, unicode)) {
+        glyph.transliteration.push(unicode);
         translitsAdded++;
       }
     }

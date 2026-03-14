@@ -105,19 +105,21 @@ body {
     U+2E17, U+A723, U+A725, U+A7BC-A7BD;
 }
 
-/* Hieroglyph font support — served via Google Fonts unicode-range subsets (v30+) */
+/* Hieroglyph font — NewGardiner by Mark-Jan Nederhof (SIL OFL 1.1)
+ * Covers all 1071 basic signs (Unicode 5.2) + most of the 3995 Extended-A
+ * signs (Unicode 16). Self-hosted WOFF2 for reliable rendering.
+ * https://github.com/nederhof/newgardiner */
 @font-face {
-  font-family: "Noto Sans Egyptian Hieroglyphs";
-  src: url("https://fonts.gstatic.com/s/notosansegyptianhieroglyphs/v30/vEF42-tODB8RrNDvZSUmRhcQHzx1s7y_F9-j3qSzEcbEYintdVi99Rg.woff2")
-    format("woff2");
-  unicode-range: U+13000-1467F;
+  font-family: "NewGardiner";
+  src: url("/fonts/NewGardiner.woff2") format("woff2");
+  unicode-range: U+13000-143FF;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 .font-hieroglyph {
-  font-family: "Noto Sans Egyptian Hieroglyphs", sans-serif;
+  font-family: "NewGardiner", "Noto Sans Egyptian Hieroglyphs", sans-serif;
 }
 
 /* Custom scrollbar */

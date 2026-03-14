@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+import { mdcToUnicode, hasTransliteration } from "./translit-utils";
 
 interface UniKemetEntry {
   codepoint: string;
@@ -240,8 +241,9 @@ async function main() {
       }
 
       for (const trans of newGlyph.transliteration) {
-        if (!existing.transliteration.includes(trans)) {
-          existing.transliteration.push(trans);
+        const unicode = mdcToUnicode(trans);
+        if (!hasTransliteration(existing.transliteration, unicode)) {
+          existing.transliteration.push(unicode);
         }
       }
 

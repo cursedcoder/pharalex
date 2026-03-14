@@ -19,6 +19,7 @@
 
 import * as fs from "fs";
 import * as path from "path";
+import { mdcToUnicode, hasTransliteration } from "./translit-utils";
 import { XMLParser } from "fast-xml-parser";
 
 interface GlyphEntry {
@@ -257,8 +258,9 @@ async function main() {
       }
 
       for (const t of saUse.transliterations) {
-        if (!glyph.transliteration.includes(t)) {
-          glyph.transliteration.push(t);
+        const unicode = mdcToUnicode(t);
+        if (!hasTransliteration(glyph.transliteration, unicode)) {
+          glyph.transliteration.push(unicode);
           translitsAdded++;
           enriched = true;
         }

@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as readline from "readline";
+import { deduplicateTransliterations } from "./translit-utils";
 
 interface WiktionarySense {
   glosses?: string[];
@@ -188,7 +189,7 @@ async function processWiktionaryData(): Promise<Map<string, ProcessedGlyph>> {
         categoryName: category.name,
         description: entry.etymology_text || "",
         meanings,
-        transliteration: extractTransliterations(entry),
+        transliteration: deduplicateTransliterations(extractTransliterations(entry)),
         etymology: entry.etymology_text,
         related: [],
       };
