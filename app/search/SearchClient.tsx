@@ -63,6 +63,14 @@ function SearchContent() {
   const [isSearching, setIsSearching] = useState(!!initialQuery);
   const [filter, setFilter] = useState<"all" | "glyphs" | "words">(initialFilter);
 
+  // Sync ?show= param on mount (useSearchParams may be empty on first render)
+  useEffect(() => {
+    const show = searchParams.get("show");
+    if (show === "words" || show === "glyphs") {
+      setFilter(show);
+    }
+  }, [searchParams]);
+
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
