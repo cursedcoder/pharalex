@@ -330,6 +330,9 @@ export default async function AlphabetPage() {
                   <th className="text-left px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-sandstone w-48">
                     Sign(s)
                   </th>
+                  <th className="text-left px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-sandstone w-24">
+                    MdC
+                  </th>
                   <th className="text-left px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-sandstone w-28">
                     Transliteration
                   </th>
@@ -390,6 +393,13 @@ export default async function AlphabetPage() {
                           </Link>
                         ))}
                       </div>
+                    </td>
+
+                    {/* MdC */}
+                    <td className="px-5 py-4">
+                      <span className="font-mono text-sm text-brown-light">
+                        {entry.codes.join("-")}
+                      </span>
                     </td>
 
                     {/* Transliteration */}
