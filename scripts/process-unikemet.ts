@@ -12,6 +12,7 @@ interface UniKemetEntry {
   phonetic?: string;
   jsesh?: string;
   hieroglyphica?: string;
+  unikemet?: string;
   ifao?: string;
 }
 
@@ -108,6 +109,9 @@ function parseUnikemet(filePath: string): Map<string, UniKemetEntry> {
       case "kEH_HG":
         entry.hieroglyphica = value;
         break;
+      case "kEH_UniK":
+        entry.unikemet = value;
+        break;
       case "kEH_IFAO":
         entry.ifao = value;
         break;
@@ -150,9 +154,23 @@ function extractMeaningType(
   return "other";
 }
 
+/**
+ * Normalize a UniK code to standard Gardiner format:
+ *   - Strip "HJ " prefix
+ *   - Strip leading zeros: A001F → A1F, R003AJ → R3AJ
+ */
+function normalizeUniKCode(raw: string): string {
+  let code = raw.replace(/^HJ\s+/, "");
+  const m = code.match(/^([A-Z][a-z]?)0*(\d+)(.*)$/);
+  return m ? `${m[1]}${m[2]}${m[3]}` : code;
+}
+
 function convertToGlyph(entry: UniKemetEntry): ProcessedGlyph {
   const category = extractCategory(entry.jsesh, entry.catalog);
-  const code = entry.jsesh || entry.hieroglyphica || entry.codepoint;
+  const code = entry.jsesh
+    || entry.hieroglyphica
+    || (entry.unikemet ? normalizeUniKCode(entry.unikemet) : null)
+    || entry.codepoint;
 
   const meanings: ProcessedGlyph["meanings"] = [];
 
