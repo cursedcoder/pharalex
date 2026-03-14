@@ -147,6 +147,19 @@ describe("glyphs.json data integrity", () => {
     expect(unsorted).toEqual([]);
   });
 
+  it("no Gardiner codes leaked into transliteration arrays", () => {
+    const GARDINER_RE = /^[A-Z][a-z]?\d+[A-Z]?$/;
+    const bad: string[] = [];
+    for (const g of glyphs) {
+      for (const t of (g as any).transliteration) {
+        if (GARDINER_RE.test(t)) {
+          bad.push(`${(g as any).code}: "${t}"`);
+        }
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
   it("tag 'olw' typo does not exist (should be 'owl')", () => {
     const bad = glyphs.filter(
       (g: any) => g.tags && g.tags.includes("olw")
