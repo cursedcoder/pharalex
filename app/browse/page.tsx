@@ -10,13 +10,13 @@ export const metadata: Metadata = {
     "Browse all ancient Egyptian hieroglyphs in the collection. Filter by Gardiner category, type (logogram, phonogram, determinative), or shape tag.",
   alternates: { canonical: "/browse" },
   openGraph: {
-    title: "Browse Hieroglyphs - PharaLex",
+    title: "Browse Hieroglyphs",
     description:
       "Browse all ancient Egyptian hieroglyphs in the collection. Filter by Gardiner category, type, or shape tag.",
     url: "/browse",
   },
   twitter: {
-    title: "Browse Hieroglyphs - PharaLex",
+    title: "Browse Hieroglyphs",
     description:
       "Browse all ancient Egyptian hieroglyphs in the collection. Filter by Gardiner category, type, or shape tag.",
   },

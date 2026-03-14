@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps) {
   const category = await getCategoryById(categoryId);
 
   if (!category) {
-    return { title: "Category Not Found - PharaLex" };
+    return { title: "Category Not Found" };
   }
 
   const title = `${category.id}: ${category.name}`;

@@ -7,13 +7,13 @@ export const metadata: Metadata = {
     "Search ancient Egyptian hieroglyphs by meaning, Gardiner code, transliteration, or category. Find any of the 8,000+ signs in seconds.",
   alternates: { canonical: "/search" },
   openGraph: {
-    title: "Search Hieroglyphs - PharaLex",
+    title: "Search Hieroglyphs",
     description:
       "Search ancient Egyptian hieroglyphs by meaning, Gardiner code, transliteration, or category.",
     url: "/search",
   },
   twitter: {
-    title: "Search Hieroglyphs - PharaLex",
+    title: "Search Hieroglyphs",
     description:
       "Search ancient Egyptian hieroglyphs by meaning, Gardiner code, transliteration, or category.",
   },

@@ -7,12 +7,12 @@ import { Badge } from "@/components/ui/Badge";
 export const dynamic = "force-static";
 
 export const metadata = {
-  title: "Acknowledgments - PharaLex",
+  title: "Acknowledgments",
   description:
     "The open-source projects, datasets, and authors whose work makes PharaLex possible.",
   alternates: { canonical: "/acknowledgments" },
   openGraph: {
-    title: "Acknowledgments - PharaLex",
+    title: "Acknowledgments",
     description:
       "The open-source projects, datasets, and authors whose work makes PharaLex possible.",
     url: "/acknowledgments",
