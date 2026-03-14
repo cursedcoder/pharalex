@@ -57,29 +57,19 @@ export function mdcToUnicode(s: string): string {
 }
 
 /**
- * Strip common Egyptian grammatical suffixes that appear after a dot
- * (morpheme boundary): .t (feminine), .w (plural), .y (nisbe),
- * .ty (dual/agent), .tyw (plural agent).
- * These are word-level morphology, not part of a sign's phonetic value.
- */
-function stripGrammaticalSuffix(s: string): string {
-  return s.replace(/\.(tyw|ty|t|w|y)$/i, "");
-}
-
-/**
  * Normalise a transliteration to a canonical comparison key.
- * Converts MdC to Unicode, strips grammatical suffixes, and lowercases.
+ * Converts MdC to Unicode, strips dots (morpheme boundaries), and lowercases.
  */
 export function translitKey(s: string): string {
-  return stripGrammaticalSuffix(mdcToUnicode(s)).toLowerCase();
+  return mdcToUnicode(s).replace(/\./g, "").toLowerCase();
 }
 
 /**
  * Deduplicate a transliteration array, keeping only Unicode forms.
  * When an MdC duplicate exists alongside its Unicode equivalent,
  * the Unicode form is kept and the ASCII one is dropped.
- * When a dotted word form (e.g. "sp.t") duplicates a root form ("sp"),
- * the root form is kept.
+ * Dotted and undotted forms (sp.t vs spt) are treated as the same key;
+ * the undotted form is preferred for display.
  */
 export function deduplicateTransliterations(arr: string[]): string[] {
   const seen = new Map<string, number>(); // key → index in result
@@ -93,8 +83,8 @@ export function deduplicateTransliterations(arr: string[]): string[] {
       seen.set(key, result.length);
       result.push(unicode);
     } else {
-      // Keep the shorter (root) form over the dotted word form
-      if (unicode.length < result[existingIdx].length) {
+      // Prefer undotted form (spt) over dotted (sp.t) for cleaner display
+      if (!unicode.includes(".") && result[existingIdx].includes(".")) {
         result[existingIdx] = unicode;
       }
     }
@@ -105,14 +95,15 @@ export function deduplicateTransliterations(arr: string[]): string[] {
 
 /**
  * Check if a transliteration already exists in an array (MdC-aware).
- * If it exists and the new value is a shorter root form, replaces in-place.
+ * If a dotted form exists and the new value is undotted (or vice versa),
+ * keeps the undotted form for cleaner display.
  */
 export function hasTransliteration(arr: string[], value: string): boolean {
   const key = translitKey(value);
   for (let i = 0; i < arr.length; i++) {
     if (translitKey(arr[i]) === key) {
-      // Prefer shorter (root) form over dotted word form
-      if (value.length < arr[i].length) {
+      // Prefer undotted over dotted
+      if (!value.includes(".") && arr[i].includes(".")) {
         arr[i] = value;
       }
       return true;
