@@ -149,7 +149,13 @@ export function stripLeakedMdC(
   translation: string,
   knownTranslits: Set<string>,
 ): { cleaned: string; stripped: string | null } {
-  const parts = translation.split(" ");
+  // Handle "/ MdC ..." prefix — slash separates alternate compound readings
+  let text = translation;
+  if (text.startsWith("/ ")) {
+    text = text.slice(2);
+  }
+
+  const parts = text.split(" ");
   if (parts.length < 2) return { cleaned: translation, stripped: null };
 
   // Try stripping 1-3 leading tokens
@@ -189,6 +195,12 @@ export function stripLeakedMdC(
     if (n === 1 && restIsAlsoMdC) continue;
 
     return { cleaned: rest, stripped: candidateTokens.join(" ") };
+  }
+
+  // If we stripped the leading "/ " but couldn't strip MdC tokens,
+  // still return cleaned text without the slash prefix
+  if (text !== translation) {
+    return { cleaned: text, stripped: "/" };
   }
 
   return { cleaned: translation, stripped: null };
