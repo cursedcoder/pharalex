@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { mdcToUnicode, hasTransliteration } from "./translit-utils";
+import { fixTypos } from "./typo-fixes";
 
 interface UniKemetEntry {
   codepoint: string;
@@ -179,14 +180,14 @@ function convertToGlyph(entry: UniKemetEntry): ProcessedGlyph {
 
   if (entry.function && !NOISE_FUNCTIONS.has(entry.function)) {
     meanings.push({
-      text: entry.function,
+      text: fixTypos(entry.function),
       type: extractMeaningType(entry.function),
     });
   }
 
   if (entry.description && entry.description !== entry.function) {
     meanings.push({
-      text: entry.description,
+      text: fixTypos(entry.description),
       type: "other",
     });
   }
