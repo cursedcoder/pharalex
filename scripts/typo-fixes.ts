@@ -6,6 +6,7 @@
 const TYPOS: [string, string][] = [
   ["disater", "disaster"],
   ["treshing", "threshing"],
+  ["antilope", "antelope"],
   ["occured", "occurred"],
   ["adress", "address"],
   ["aquire", "acquire"],

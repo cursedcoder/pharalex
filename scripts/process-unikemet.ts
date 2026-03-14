@@ -176,7 +176,7 @@ function convertToGlyph(entry: UniKemetEntry): ProcessedGlyph {
   const meanings: ProcessedGlyph["meanings"] = [];
 
   // Filter noise meanings from Unikemet kEH_Func
-  const NOISE_FUNCTIONS = new Set(["Phonemogram"]);
+  const NOISE_FUNCTIONS = new Set(["Phonemogram", "Phono-repeater"]);
 
   if (entry.function && !NOISE_FUNCTIONS.has(entry.function)) {
     meanings.push({
