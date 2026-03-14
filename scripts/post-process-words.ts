@@ -61,8 +61,12 @@ for (const w of words) {
     // which are also MdC semivowels. "Elder" has 'e', "Tbti" does not.
     // Exception: known English words that only have a/i vowels.
     // Also match hyphenated English compounds like "four-sided", "lion-headed".
-    const KNOWN_ENGLISH_AI = new Set(["Day", "Dill", "Half", "District", "High", "Main", "King", "Clan"]);
-    const isShortEnglish = new Set(["He", "She"]);
+    const KNOWN_ENGLISH_AI = new Set([
+      "Day", "Dill", "Half", "District", "High", "Main", "King", "Clan", "Standard",
+      "Tamarisk", "Sandal", "Syrian", "Acacia", "Strain", "Scribal", "Asiatic",
+      "Attack", "Daily", "Thighs",
+    ]);
+    const isShortEnglish = new Set(["He", "She", "His"]);
     const isPlainEnglish = (/^[A-Z][a-z]{2,}$/.test(p) && (/[eou]/i.test(p) || KNOWN_ENGLISH_AI.has(p))) || isShortEnglish.has(p);
     const isHyphenated = /^[a-z]+-[a-z]+$/i.test(p) && /[eou]/i.test(p);
     const isEnglish = isPlainEnglish || isHyphenated;
@@ -98,7 +102,11 @@ for (const w of words) {
   if (/[eou]/i.test(first)) continue;
   if (!"AHSTDX".includes(first[0])) continue;
   // Skip known English words that only have a/i vowels
-  const KNOWN_ENG = new Set(["Day", "Dill", "Half", "District", "High", "Main", "King", "Clan"]);
+  const KNOWN_ENG = new Set([
+    "Day", "Dill", "Half", "District", "High", "Main", "King", "Clan", "Standard",
+    "His", "Tamarisk", "Sandal", "Syrian", "Acacia", "Strain", "Scribal",
+    "Asiatic", "Attack", "Daily", "Thighs",
+  ]);
   if (KNOWN_ENG.has(first)) continue;
   // Next word should look like English (not another MdC token)
   const second = parts[1];
@@ -169,8 +177,10 @@ for (const w of words) {
   if (t.endsWith(")") && !t.includes("(")) {
     t = t.slice(0, -1);
   }
-  // Mismatched {...)
+  // Mismatched {...)  and  [...}
   t = t.replace(/\{([^}]*)\)/g, "($1)");
+  t = t.replace(/\[([^\]]*)\}/g, "[$1]");
+  t = t.replace(/\{([^}]*)\]/g, "[$1]");
   // Trailing comma
   t = t.replace(/,\s*$/, "");
   // Missing space after comma (but not in scientific names like "nycticorax,nycticorax")
@@ -181,6 +191,8 @@ for (const w of words) {
   t = t.replace(/,,/g, ",");
   // Excessive dots (PDF parsing artifacts) → ellipsis
   t = t.replace(/\.{3,}/g, "…");
+  // "badly of" at end → "badly off" (word-boundary aware)
+  t = t.replace(/badly of$/g, "badly off");
   if (t !== w.translation) {
     w.translation = t;
     punctFixed++;

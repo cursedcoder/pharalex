@@ -53,6 +53,7 @@ const TYPOS: [string, string][] = [
   ["feedfood", "feed, food"],
   ["complait", "complaint"],
   ["totlaity", "totality"],
+  [" gosd", " god"],
 ];
 
 /**
