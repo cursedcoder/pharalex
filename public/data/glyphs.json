@@ -597,8 +597,7 @@
       }
     ],
     "transliteration": [
-      "wꜥb",
-      "wab"
+      "wꜥb"
     ],
     "related": [
       "A1",
@@ -1109,7 +1108,7 @@
       "seated",
       "carrying something"
     ],
-    "signName": "seated man with"
+    "signName": "Man, seated, right knee raised, a vessel on his he"
   },
   {
     "code": "A9C",
@@ -1138,7 +1137,7 @@
       "carrying something",
       "seated"
     ],
-    "signName": "seated man with"
+    "signName": "Man, seated, right knee raised, a vessel on his he"
   },
   {
     "code": "A9B",
@@ -1167,7 +1166,7 @@
       "carrying something",
       "standing"
     ],
-    "signName": "seated man with"
+    "signName": "Man, standing, a vessel (W10) on his head, right a"
   },
   {
     "code": "A9A",
@@ -1184,7 +1183,7 @@
       "carrying something",
       "mummyform"
     ],
-    "signName": "seated man with"
+    "signName": "Variant of A9 (seated man with)"
   },
   {
     "code": "A10",
@@ -2766,7 +2765,7 @@
       "holding stick",
       "statue"
     ],
-    "signName": "statue of man with staff and",
+    "signName": "Man, standing on a base (statue), right arm forwar",
     "transliterationCounts": {
       "twt": 1
     }
@@ -2805,7 +2804,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "king with staff and",
+    "signName": "The king, standing, with a long straight beard and",
     "transliterationCounts": {
       "ity": 3
     }
@@ -2838,7 +2837,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "king with staff and"
+    "signName": "Man, standing, wearing a fillet with uraeus on its"
   },
   {
     "code": "A23C",
@@ -2868,7 +2867,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "king with staff and"
+    "signName": "King, standing, with a long wig or headcloth, with"
   },
   {
     "code": "A23A",
@@ -2898,7 +2897,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "king with staff and"
+    "signName": "The king, standing, with a long wig and uraeus, ri"
   },
   {
     "code": "A23B",
@@ -2915,7 +2914,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "king with staff and"
+    "signName": "Variant of A23 (king with staff and)"
   },
   {
     "code": "A23D",
@@ -2932,7 +2931,7 @@
       "king or god",
       "holding something"
     ],
-    "signName": "king with staff and"
+    "signName": "Variant of A23 (king with staff and)"
   },
   {
     "code": "A23E",
@@ -2949,7 +2948,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "king with staff and"
+    "signName": "Variant of A23 (king with staff and)"
   },
   {
     "code": "A23G",
@@ -2966,7 +2965,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "king with staff and"
+    "signName": "Variant of A23 (king with staff and)"
   },
   {
     "code": "A23H",
@@ -2978,7 +2977,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "king with staff and"
+    "signName": ""
   },
   {
     "code": "A24",
@@ -4177,7 +4176,6 @@
     ],
     "transliteration": [
       "aftj",
-      "afty",
       "ꜥfty",
       "afti"
     ],
@@ -4243,7 +4241,6 @@
       }
     ],
     "transliteration": [
-      "afty",
       "ꜥfty"
     ],
     "related": [
@@ -4294,7 +4291,6 @@
       }
     ],
     "transliteration": [
-      "afty",
       "ꜥfty",
       "afti"
     ],
@@ -4461,7 +4457,7 @@
       "king or god",
       "holding something"
     ],
-    "signName": "seated god with"
+    "signName": "God, seated, both knees up, with covered legs and "
   },
   {
     "code": "A40B",
@@ -4713,7 +4709,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "king with uraeus and"
+    "signName": "King, seated, both knees up, with covered legs and"
   },
   {
     "code": "A42B",
@@ -4745,7 +4741,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "king with uraeus and"
+    "signName": "King, seated, both knees up, with covered legs and"
   },
   {
     "code": "A42A",
@@ -4777,7 +4773,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "king with uraeus and"
+    "signName": "King, seated, both knees up, with covered legs and"
   },
   {
     "code": "A42C",
@@ -4807,7 +4803,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "king with uraeus and"
+    "signName": "King, seated, both knees up, with covered legs and"
   },
   {
     "code": "A43",
@@ -6036,7 +6032,7 @@
       "seated on chair",
       "mummyform"
     ],
-    "signName": "noble on chair with"
+    "signName": "Man, with a short straight beard, seated on a chai"
   },
   {
     "code": "A51A",
@@ -6065,7 +6061,7 @@
       "holding something",
       "seated on chair"
     ],
-    "signName": "noble on chair with"
+    "signName": "God, with long-curved beard and long wig, seated o"
   },
   {
     "code": "A51B",
@@ -6094,7 +6090,7 @@
       "mummyform",
       "king or god"
     ],
-    "signName": "noble on chair with"
+    "signName": "Man, with short straight beard, seated on a block "
   },
   {
     "code": "A51C",
@@ -6124,7 +6120,7 @@
       "seated on chair",
       "king or god"
     ],
-    "signName": "noble on chair with"
+    "signName": "Man, with short straight beard, seated on a chair,"
   },
   {
     "code": "A51D",
@@ -6154,7 +6150,7 @@
       "seated on chair",
       "king or god"
     ],
-    "signName": "noble on chair with"
+    "signName": "God, with long-curved beard and long wig, seated o"
   },
   {
     "code": "A51G",
@@ -6183,7 +6179,7 @@
       "holding something",
       "seated on nothing"
     ],
-    "signName": "noble on chair with"
+    "signName": "Man, with a short straight beard, seated on nothin"
   },
   {
     "code": "A51E",
@@ -6199,7 +6195,7 @@
       "holding something",
       "seated on chair"
     ],
-    "signName": "noble on chair with"
+    "signName": "Variant of A51 (noble on chair with)"
   },
   {
     "code": "A51F",
@@ -6215,7 +6211,7 @@
       "holding something",
       "seated on chair"
     ],
-    "signName": "noble on chair with"
+    "signName": "Variant of A51 (noble on chair with)"
   },
   {
     "code": "A52",
@@ -6246,7 +6242,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "noble squatting with"
+    "signName": "Man, seated, both knees down, with short straight "
   },
   {
     "code": "A52A",
@@ -6273,7 +6269,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "noble squatting with"
+    "signName": "Man, seated, both knees down, with short straight "
   },
   {
     "code": "A52B",
@@ -6300,7 +6296,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "noble squatting with"
+    "signName": "Man, seated, both knees down, with short straight "
   },
   {
     "code": "A52C",
@@ -6317,7 +6313,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "noble squatting with"
+    "signName": "Variant of A52 (noble squatting with)"
   },
   {
     "code": "A52D",
@@ -6334,7 +6330,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "noble squatting with"
+    "signName": "Variant of A52 (noble squatting with)"
   },
   {
     "code": "A52E",
@@ -6351,7 +6347,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "noble squatting with"
+    "signName": "Variant of A52 (noble squatting with)"
   },
   {
     "code": "A52F",
@@ -6368,7 +6364,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "noble squatting with"
+    "signName": "Variant of A52 (noble squatting with)"
   },
   {
     "code": "A52G",
@@ -6385,7 +6381,7 @@
       "seated",
       "holding nothing"
     ],
-    "signName": "noble squatting with"
+    "signName": "Variant of A52 (noble squatting with)"
   },
   {
     "code": "A52H",
@@ -6397,7 +6393,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "noble squatting with"
+    "signName": ""
   },
   {
     "code": "A52I",
@@ -6414,7 +6410,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "noble squatting with"
+    "signName": "Variant of A52 (noble squatting with)"
   },
   {
     "code": "A52J",
@@ -6432,7 +6428,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "noble squatting with"
+    "signName": "Variant of A52 (noble squatting with)"
   },
   {
     "code": "A53",
@@ -9140,7 +9136,6 @@
       }
     ],
     "transliteration": [
-      "pat",
       "pꜥt"
     ],
     "related": [
@@ -14389,8 +14384,7 @@
     "description": "Child, seated on top of a horn, forelegs spread, right arm extended forwards, forearm horizontal, holding the tip of the horn, left arm hanging beside the body.",
     "meanings": [],
     "transliteration": [
-      "ꜥb",
-      "ab"
+      "ꜥb"
     ],
     "related": [
       "A1",
@@ -21042,7 +21036,7 @@
       "A3"
     ],
     "source": "unicode",
-    "signName": "seated man with"
+    "signName": "Man, seated, right knee raised, a basket with mult"
   },
   {
     "code": "A3D",
@@ -21257,7 +21251,7 @@
       "A3"
     ],
     "source": "unicode",
-    "signName": "seated man with"
+    "signName": "Man, seated, both knees raised, foot horizontal, a"
   },
   {
     "code": "A512A",
@@ -23189,7 +23183,7 @@
       "A3"
     ],
     "source": "unicode",
-    "signName": "king with staff and"
+    "signName": "A statue of the king, standing on a base, with a l"
   },
   {
     "code": "A1D",
@@ -24888,7 +24882,7 @@
       "A3"
     ],
     "source": "unicode",
-    "signName": "noble on chair with"
+    "signName": "God, with long-curved beard and long wig, seated o"
   },
   {
     "code": "A51H",
@@ -24913,7 +24907,7 @@
       "A3"
     ],
     "source": "unicode",
-    "signName": "noble on chair with"
+    "signName": "God, with a long-curved beard and long wig, seated"
   },
   {
     "code": "A51R",
@@ -24938,7 +24932,7 @@
       "A3"
     ],
     "source": "unicode",
-    "signName": "noble on chair with"
+    "signName": "God, with a long-curved beard and long wig, seated"
   },
   {
     "code": "A50I",
@@ -26131,7 +26125,7 @@
       "pregnant",
       "kneeled"
     ],
-    "signName": "combination of"
+    "signName": "Representing a woman giving birth, with the depict"
   },
   {
     "code": "B5",
@@ -26159,9 +26153,8 @@
     ],
     "transliteration": [
       "rnn",
-      "mnat",
-      "mnꜥ",
-      "mnꜥt"
+      "mnꜥt",
+      "mnꜥ"
     ],
     "etymology": "Representing a woman breastfeeding a child in the usual posture (seated on the ground). Simplified version: 𓁕 (\n\n\n\n).",
     "related": [
@@ -30227,9 +30220,7 @@
       }
     ],
     "transliteration": [
-      "rꜥ",
-      "Ra",
-      "ra"
+      "rꜥ"
     ],
     "etymology": "Representing a god with sun and uraeus on its head.",
     "related": [
@@ -30246,7 +30237,7 @@
       "holding nothing",
       "male"
     ],
-    "signName": "god with"
+    "signName": "Representing a god with sun and uraeus on its head"
   },
   {
     "code": "C1D",
@@ -30276,7 +30267,7 @@
       "human-headed",
       "male"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C1A",
@@ -30306,7 +30297,7 @@
       "seated",
       "male"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C1B",
@@ -30336,7 +30327,7 @@
       "seated",
       "male"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C2",
@@ -30359,8 +30350,7 @@
       }
     ],
     "transliteration": [
-      "rꜥ",
-      "ra"
+      "rꜥ"
     ],
     "etymology": "Representing a god with the head of a falcon bearing sun on head G9 and holding S34",
     "related": [
@@ -30650,7 +30640,6 @@
     ],
     "transliteration": [
       "ḏḥwtj",
-      "Ḏḥwtj",
       "ḏhwty",
       "ḏḥwty"
     ],
@@ -31118,7 +31107,6 @@
     ],
     "transliteration": [
       "Jnpw",
-      "jnpw",
       "inpw",
       "wp-wꜣwt",
       "Wpj-wꜣwt"
@@ -31509,7 +31497,6 @@
     ],
     "transliteration": [
       "mnw",
-      "Mnw",
       "gbtyw"
     ],
     "etymology": "Representing ithyphallic god with feathers, uplifted arm, and flagellum S45.",
@@ -31527,7 +31514,7 @@
       "holding something",
       "male"
     ],
-    "signName": "ithyphallic god with"
+    "signName": "Representing ithyphallic god with feathers, uplift"
   },
   {
     "code": "C8A",
@@ -31544,7 +31531,7 @@
       "standing",
       "holding something"
     ],
-    "signName": "ithyphallic god with"
+    "signName": "Variant of C8 (ithyphallic god with)"
   },
   {
     "code": "C9",
@@ -31579,8 +31566,7 @@
       }
     ],
     "transliteration": [
-      "ḥwt-ḥr",
-      "Ḥwt-Ḥr"
+      "ḥwt-ḥr"
     ],
     "etymology": "Representing a goddess with sun and horns.",
     "related": [
@@ -31991,8 +31977,7 @@
       }
     ],
     "transliteration": [
-      "mꜣꜥt",
-      "Mꜣꜥt"
+      "mꜣꜥt"
     ],
     "etymology": "Goddess with feather on head",
     "related": [
@@ -32279,7 +32264,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "God, seated on heel, right knee raised, with long-"
   },
   {
     "code": "C11L",
@@ -32311,7 +32296,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Man/god, seated on heel, both knees down, with coi"
   },
   {
     "code": "C11B",
@@ -32343,7 +32328,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Man/god, seated on heel, right knee raised, with c"
   },
   {
     "code": "C11E",
@@ -32375,7 +32360,7 @@
       "heh",
       "holding something"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Man, seated on heel, right knee raised, with coif/"
   },
   {
     "code": "C11J",
@@ -32407,7 +32392,7 @@
       "heh",
       "holding something"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Man/god, seated on heel, right knee raised, with c"
   },
   {
     "code": "C11C",
@@ -32426,7 +32411,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Variant of C11 (god with arms supporting (the sky)"
   },
   {
     "code": "C11D",
@@ -32445,7 +32430,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Variant of C11 (god with arms supporting (the sky)"
   },
   {
     "code": "C11G",
@@ -32464,7 +32449,7 @@
       "heh",
       "holding something"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Variant of C11 (god with arms supporting (the sky)"
   },
   {
     "code": "C11H",
@@ -32476,7 +32461,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "god with arms supporting (the sky) and"
+    "signName": ""
   },
   {
     "code": "C11I",
@@ -32502,7 +32487,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Variant of C11 (god with arms supporting (the sky)"
   },
   {
     "code": "C11K",
@@ -32521,7 +32506,7 @@
       "heh",
       "holding nothing"
     ],
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Variant of C11 (god with arms supporting (the sky)"
   },
   {
     "code": "C12",
@@ -32558,7 +32543,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12F",
@@ -32590,7 +32575,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12A",
@@ -32621,7 +32606,7 @@
       "seated",
       "holding nothing"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12K",
@@ -32652,7 +32637,7 @@
       "seated",
       "holding nothing"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12B",
@@ -32683,7 +32668,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12C",
@@ -32714,7 +32699,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12L",
@@ -32745,7 +32730,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12D",
@@ -32776,7 +32761,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12E",
@@ -32807,7 +32792,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C12I",
@@ -32839,7 +32824,7 @@
       "standing",
       "with scepter"
     ],
-    "signName": "god with"
+    "signName": "God, standing, with a long-curved beard, wearing t"
   },
   {
     "code": "C12G",
@@ -32857,7 +32842,7 @@
       "holding something",
       "seated on chair"
     ],
-    "signName": "god with"
+    "signName": "Variant of C12 (god with)"
   },
   {
     "code": "C12H",
@@ -32869,7 +32854,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "god with"
+    "signName": ""
   },
   {
     "code": "C12J",
@@ -32888,7 +32873,7 @@
       "seated",
       "with scepter"
     ],
-    "signName": "god with"
+    "signName": "Variant of C12 (god with)"
   },
   {
     "code": "C12M",
@@ -32906,7 +32891,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with"
+    "signName": ""
   },
   {
     "code": "C13",
@@ -32942,7 +32927,7 @@
       "holding something",
       "seated"
     ],
-    "signName": "god with"
+    "signName": "Variant of C12 (god with)"
   },
   {
     "code": "C14A",
@@ -32954,7 +32939,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "god with"
+    "signName": ""
   },
   {
     "code": "C15",
@@ -33014,8 +32999,7 @@
       }
     ],
     "transliteration": [
-      "mnṯw",
-      "Mnṯw"
+      "mnṯw"
     ],
     "related": [
       "C1",
@@ -33030,7 +33014,7 @@
       "holding something",
       "seated"
     ],
-    "signName": "god with head of falcon and"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C17A",
@@ -33061,7 +33045,7 @@
       "seated",
       "holding nothing"
     ],
-    "signName": "god with head of falcon and"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C17B",
@@ -33093,7 +33077,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with head of falcon and"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C17C",
@@ -33110,7 +33094,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with head of falcon and"
+    "signName": "Variant of C17 (god with head of falcon and)"
   },
   {
     "code": "C17D",
@@ -33127,7 +33111,7 @@
       "seated",
       "holding something"
     ],
-    "signName": "god with head of falcon and"
+    "signName": "Variant of C17 (god with head of falcon and)"
   },
   {
     "code": "C18F",
@@ -33301,7 +33285,6 @@
     ],
     "transliteration": [
       "ṯꜣ-tnn",
-      "Tꜣ-tnn",
       "tꜣ-ṯnn"
     ],
     "related": [],
@@ -33362,8 +33345,7 @@
       }
     ],
     "transliteration": [
-      "ptḥ",
-      "Ptḥ"
+      "ptḥ"
     ],
     "related": [
       "C1",
@@ -33912,7 +33894,7 @@
       "standing",
       "holding something"
     ],
-    "signName": "goddess with head of feline and"
+    "signName": "God, seated on nothing, with the head of a jackal "
   },
   {
     "code": "C23A",
@@ -33924,7 +33906,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "goddess with head of feline and"
+    "signName": ""
   },
   {
     "code": "C24",
@@ -39089,7 +39071,7 @@
       "C2"
     ],
     "source": "unicode",
-    "signName": "god with head of falcon and"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C337",
@@ -39181,7 +39163,7 @@
       "C2"
     ],
     "source": "unicode",
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "God, seated, right knee raised, with long-curved b"
   },
   {
     "code": "C78H",
@@ -45453,7 +45435,7 @@
       "C2"
     ],
     "source": "unicode",
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Man/god, seated on heel, right knee raised, with c"
   },
   {
     "code": "C43I",
@@ -45734,7 +45716,7 @@
       "C2"
     ],
     "source": "unicode",
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "Man/god, seated, right knee raised, with coif/shor"
   },
   {
     "code": "C25B",
@@ -46024,7 +46006,7 @@
       "C2"
     ],
     "source": "unicode",
-    "signName": "god with arms supporting (the sky) and"
+    "signName": "God, seated, right knee raised, with long-curved b"
   },
   {
     "code": "C4K",
@@ -46163,7 +46145,7 @@
       "C2"
     ],
     "source": "unicode",
-    "signName": "ithyphallic god with"
+    "signName": "An ithyphallic god, with long, curved beard, stand"
   },
   {
     "code": "C171B",
@@ -47779,7 +47761,7 @@
       "C2"
     ],
     "source": "unicode",
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C1G",
@@ -47804,7 +47786,7 @@
       "C2"
     ],
     "source": "unicode",
-    "signName": "god with"
+    "signName": "God, seated, knees up, with covered legs and arms,"
   },
   {
     "code": "C107B",
@@ -48878,7 +48860,6 @@
     ],
     "transliteration": [
       "ꜥn",
-      "an",
       "anw",
       "Anw"
     ],
@@ -48894,7 +48875,7 @@
       "eye(s)",
       "in-circle"
     ],
-    "signName": "eye enclosed in",
+    "signName": "An eye, written inside an oval",
     "transliterationCounts": {
       "an": 4,
       "anw": 1
@@ -48922,7 +48903,7 @@
       "eye(s)",
       "in-circle"
     ],
-    "signName": "eye with painted lower lid enclosed in"
+    "signName": "An eye with a painted lower lid inside an oval"
   },
   {
     "code": "D8B",
@@ -48946,7 +48927,7 @@
       "eye(s)",
       "in-circle"
     ],
-    "signName": "eye enclosed in"
+    "signName": "An eye, with a wavy line of eye-paint above the ey"
   },
   {
     "code": "D8C",
@@ -48970,7 +48951,7 @@
       "eye(s)",
       "in-circle"
     ],
-    "signName": "eye enclosed in"
+    "signName": "An eye with an eyebrow above it, upside-down, insi"
   },
   {
     "code": "D8D",
@@ -48986,7 +48967,7 @@
       "eye(s)",
       "in-circle"
     ],
-    "signName": "eye enclosed in"
+    "signName": "Variant of D8 (eye enclosed in)"
   },
   {
     "code": "D9",
@@ -49177,7 +49158,7 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "left part of white of"
+    "signName": "Traditionally considered to represent a piece of t"
   },
   {
     "code": "D12",
@@ -49330,7 +49311,7 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "right part of white of"
+    "signName": "Traditionally considered to represent a piece of t"
   },
   {
     "code": "D15",
@@ -49373,7 +49354,7 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "diagonal marking of"
+    "signName": "Traditionally considered to represent a piece of t"
   },
   {
     "code": "D16",
@@ -49421,7 +49402,7 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "vertical marking of"
+    "signName": "Traditionally considered to represent a piece of t"
   },
   {
     "code": "D17",
@@ -49456,7 +49437,7 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "combination of",
+    "signName": "The left and right lower marking of an udjat eye",
     "transliterationCounts": {
       "tit": 10
     }
@@ -50044,7 +50025,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "arms in"
+    "signName": "Two arms, raised upwards, with the forearms and ha"
   },
   {
     "code": "D28A",
@@ -50065,7 +50046,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "arms in"
+    "signName": "Two arms, unconnected, raised upwards, with the fo"
   },
   {
     "code": "D29",
@@ -50097,7 +50078,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "combination of"
+    "signName": "Two arms, raised upwards, with the forearms and ha"
   },
   {
     "code": "D30",
@@ -50116,8 +50097,7 @@
       }
     ],
     "transliteration": [
-      "nḥb-kꜣw",
-      "Nḥb-kꜣw"
+      "nḥb-kꜣw"
     ],
     "related": [
       "D1",
@@ -50161,7 +50141,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "combination of"
+    "signName": "Two arms, lowered, with the elbows bent outwards, "
   },
   {
     "code": "D31A",
@@ -50176,7 +50156,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "combination of"
+    "signName": "Variant of D28 (arms in)"
   },
   {
     "code": "D32",
@@ -50673,7 +50653,6 @@
     "transliteration": [
       "ꜥ",
       "mḥ",
-      "a",
       "di"
     ],
     "related": [
@@ -50757,7 +50736,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm with",
+    "signName": "Combination of 𓏙 and 𓂝",
     "transliterationCounts": {
       "rdi": 32,
       "di": 13,
@@ -50854,7 +50833,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm with",
+    "signName": "A forearm with the hand holding a round vessel wit",
     "transliterationCounts": {
       "mwt": 4,
       "m": 1
@@ -51042,7 +51021,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm with"
+    "signName": "Representation of a forearm with a flail"
   },
   {
     "code": "D44",
@@ -51083,7 +51062,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm with"
+    "signName": "Representation of a forearm with a scepter"
   },
   {
     "code": "D45",
@@ -51124,7 +51103,7 @@
     "tags": [
       "arms"
     ],
-    "signName": "arm with"
+    "signName": "Representation of a forearm with a brush"
   },
   {
     "code": "D46",
@@ -51751,7 +51730,7 @@
     "tags": [
       "private parts"
     ],
-    "signName": "combination of"
+    "signName": "Variant of D52 (phallus)"
   },
   {
     "code": "D53",
@@ -52041,7 +52020,7 @@
     "tags": [
       "legs"
     ],
-    "signName": "combination of",
+    "signName": "A leg with a bent knee (D56), with a knife with a ",
     "transliterationCounts": {
       "nkn": 2
     }
@@ -52072,7 +52051,7 @@
     "tags": [
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "A leg with a bent knee (D56), written with the upp"
   },
   {
     "code": "D57D",
@@ -52100,7 +52079,7 @@
     "tags": [
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "A leg with a bent knee (D56), written with the upp"
   },
   {
     "code": "D57A",
@@ -52115,7 +52094,7 @@
     "tags": [
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "Variant of D57 (combination of)"
   },
   {
     "code": "D57B",
@@ -52130,7 +52109,7 @@
     "tags": [
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "Variant of D57 (combination of)"
   },
   {
     "code": "D58",
@@ -52189,7 +52168,7 @@
       "legs",
       "arms"
     ],
-    "signName": "combination of",
+    "signName": "",
     "transliterationCounts": {
       "ab": 9
     }
@@ -52207,8 +52186,7 @@
       }
     ],
     "transliteration": [
-      "wꜥb",
-      "wab"
+      "wꜥb"
     ],
     "related": [
       "D1",
@@ -54367,7 +54345,7 @@
       "D4"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A leg with a bent knee (D56), with a knife with a "
   },
   {
     "code": "D300A",
@@ -54715,7 +54693,7 @@
       "D4"
     ],
     "source": "unicode",
-    "signName": "forearm with"
+    "signName": "A forearm, with the hand held like a fist, and the"
   },
   {
     "code": "D219A",
@@ -60572,7 +60550,7 @@
       "D4"
     ],
     "source": "unicode",
-    "signName": "arms in"
+    "signName": "Two arms, raised upwards, with the forearms and ha"
   },
   {
     "code": "D421",
@@ -60924,7 +60902,7 @@
       "D4"
     ],
     "source": "unicode",
-    "signName": "forearm with"
+    "signName": "Two forearms with the hands holding a conical loaf"
   },
   {
     "code": "D212B",
@@ -63041,7 +63019,7 @@
     "tags": [
       "canid"
     ],
-    "signName": "lying canine on shrine with"
+    "signName": "A jackal, lying down, tail downwards, on top of a "
   },
   {
     "code": "E16B",
@@ -63152,7 +63130,7 @@
     "tags": [
       "canid"
     ],
-    "signName": "wolf on"
+    "signName": "A jackal, standing, tail down (E17), on top of a s"
   },
   {
     "code": "E19",
@@ -63180,7 +63158,7 @@
     "tags": [
       "canid"
     ],
-    "signName": "combination of"
+    "signName": "A jackal, standing, tail down (E17), on top of a s"
   },
   {
     "code": "E20",
@@ -63267,7 +63245,7 @@
       "ass",
       "sethian animal"
     ],
-    "signName": "combination of"
+    "signName": "A donkey/ass, seated as a Sethian animal, ears in "
   },
   {
     "code": "E21",
@@ -63854,7 +63832,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": "Combination of , and some type of jar"
   },
   {
     "code": "E29",
@@ -64051,7 +64029,6 @@
       "ky",
       "jꜥn",
       "qnd",
-      "jan",
       "gjf",
       "furious",
       "ḳnd",
@@ -64369,7 +64346,7 @@
     "tags": [
       "ape, monkey"
     ],
-    "signName": "combination of"
+    "signName": "A hamadryas baboon (Papio hamadryas), seated, arms"
   },
   {
     "code": "E37A",
@@ -64392,7 +64369,7 @@
     "tags": [
       "ape, monkey"
     ],
-    "signName": "combination of"
+    "signName": "A hamadryas baboon (Papio hamadryas), seated, arms"
   },
   {
     "code": "E37B",
@@ -64404,7 +64381,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "E38",
@@ -65371,8 +65348,7 @@
     ],
     "transliteration": [
       "ꜥwt",
-      "iwa",
-      "awt"
+      "iwa"
     ],
     "related": [
       "E1",
@@ -68994,8 +68970,7 @@
       }
     ],
     "transliteration": [
-      "nb-wꜥ",
-      "nb-wa"
+      "nb-wꜥ"
     ],
     "related": [
       "E1",
@@ -69786,7 +69761,6 @@
     ],
     "transliteration": [
       "ꜥwt",
-      "awt",
       "ar"
     ],
     "related": [
@@ -73139,7 +73113,7 @@
       "E3"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A jackal, standing, tail down (E17), on top of a s"
   },
   {
     "code": "E145C",
@@ -73212,7 +73186,7 @@
       "E3"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A jackal, lying down, tail downwards (E15), on top"
   },
   {
     "code": "E13C",
@@ -74329,7 +74303,7 @@
       "horn",
       "bovid"
     ],
-    "signName": "combination of"
+    "signName": "A ligature of rnp (𓆳) and wp (𓄋)"
   },
   {
     "code": "F14A",
@@ -74358,7 +74332,7 @@
       "horn",
       "bovid"
     ],
-    "signName": "combination of"
+    "signName": "A palm branch, stripped of leaves, with multiple s"
   },
   {
     "code": "F15",
@@ -74397,7 +74371,7 @@
       "horn",
       "bovid"
     ],
-    "signName": "combination of"
+    "signName": "A ligature of rnp (𓆳), ra (𓇳), and wp (𓄋), or equi"
   },
   {
     "code": "F16",
@@ -74443,8 +74417,7 @@
       "horn",
       "dp",
       "ꜥb",
-      "db",
-      "ab"
+      "db"
     ],
     "etymology": "Representation of a horn.",
     "related": [
@@ -74514,7 +74487,6 @@
       }
     ],
     "transliteration": [
-      "abw",
       "ꜥbw"
     ],
     "related": [
@@ -74529,7 +74501,7 @@
       "bovid",
       "horn"
     ],
-    "signName": "combination of",
+    "signName": "A vase on its side, with liquid issuing from it (W",
     "transliterationCounts": {
       "abw": 18
     }
@@ -74642,8 +74614,7 @@
     "transliteration": [
       "ꜥr",
       "artj",
-      "art",
-      "ar"
+      "art"
     ],
     "related": [
       "F1",
@@ -77075,7 +77046,7 @@
     "tags": [
       "intestine"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "F50A",
@@ -77090,7 +77061,7 @@
     "tags": [
       "intestine"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "F51",
@@ -77311,7 +77282,7 @@
       "ass",
       "head"
     ],
-    "signName": "divine rod with"
+    "signName": "The head of a donkey/ass, with the ears in a v sha"
   },
   {
     "code": "F54",
@@ -79794,7 +79765,7 @@
       "F2B"
     ],
     "source": "unicode",
-    "signName": "divine rod with"
+    "signName": "The head of a donkey/ass, with the ears angled bac"
   },
   {
     "code": "F32A",
@@ -81557,7 +81528,7 @@
     "tags": [
       "percnopterus"
     ],
-    "signName": "combination of"
+    "signName": "A combination of 𓌳 (mꜣ) and 𓄿 (ꜣ)"
   },
   {
     "code": "G3A",
@@ -81574,7 +81545,7 @@
     "tags": [
       "percnopterus"
     ],
-    "signName": "combination of"
+    "signName": "Variant of G1 (Egyptian vulture)"
   },
   {
     "code": "G3B",
@@ -81591,7 +81562,7 @@
     "tags": [
       "percnopterus"
     ],
-    "signName": "combination of"
+    "signName": "Variant of G3 (combination of)"
   },
   {
     "code": "G4",
@@ -81685,7 +81656,6 @@
     ],
     "transliteration": [
       "ḥr",
-      "Ḥr",
       "𓅆"
     ],
     "etymology": "Representing a falcon, variously identified as a lanner falcon or peregrine falcon.",
@@ -81743,7 +81713,7 @@
     "tags": [
       "falcon"
     ],
-    "signName": "combination of",
+    "signName": "Representing a falcon with a flagellum",
     "transliterationCounts": {
       "bik": 3
     }
@@ -81765,7 +81735,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "falcon on"
+    "signName": ""
   },
   {
     "code": "G7",
@@ -81798,7 +81768,6 @@
     ],
     "transliteration": [
       "ḥr",
-      "Ḥr",
       "nṯr",
       "nsw",
       "=j"
@@ -81815,7 +81784,7 @@
       "falcon",
       "with standard"
     ],
-    "signName": "falcon on",
+    "signName": "A falcon (G5), on top of a standard used for carry",
     "transliterationCounts": {
       "nsw": 2
     }
@@ -81912,7 +81881,7 @@
       "falcon",
       "with standard"
     ],
-    "signName": "falcon on"
+    "signName": "A falcon (G5), on top of a standard used for the c"
   },
   {
     "code": "G7D",
@@ -81939,7 +81908,7 @@
       "falcon",
       "with standard"
     ],
-    "signName": "falcon on"
+    "signName": "A falcon (G5) with a flagellum (S45) on its should"
   },
   {
     "code": "G7E",
@@ -81968,7 +81937,7 @@
       "falcon",
       "standing on something"
     ],
-    "signName": "falcon on"
+    "signName": "A falcon (G5), on top of a moon sickle shaped boat"
   },
   {
     "code": "G8",
@@ -81987,8 +81956,7 @@
       }
     ],
     "transliteration": [
-      "ḥr-nbw",
-      "Ḥr-nbw"
+      "ḥr-nbw"
     ],
     "related": [
       "G1",
@@ -82002,7 +81970,7 @@
       "falcon",
       "standing on something"
     ],
-    "signName": "falcon on"
+    "signName": "A falcon (G5), on top of a collar of beads (S12)"
   },
   {
     "code": "G8A",
@@ -82031,7 +81999,7 @@
       "falcon",
       "standing on something"
     ],
-    "signName": "falcon on"
+    "signName": "A falcon (G5), on top of a collar of beads, withou"
   },
   {
     "code": "G8B",
@@ -82060,7 +82028,7 @@
       "falcon",
       "standing on something"
     ],
-    "signName": "falcon on"
+    "signName": "A falcon (G5), with a flagellum (S45) on its shoul"
   },
   {
     "code": "G9",
@@ -82094,7 +82062,7 @@
     "tags": [
       "falcon"
     ],
-    "signName": "falcon with"
+    "signName": "A falcon (G5) with a sun disk (N5) on its head"
   },
   {
     "code": "G9A",
@@ -82123,7 +82091,7 @@
     "tags": [
       "falcon"
     ],
-    "signName": "falcon with"
+    "signName": "A falcon (G5) with the sun, encircled by a cobra ("
   },
   {
     "code": "G10",
@@ -82228,7 +82196,7 @@
       "mummyform",
       "with standard"
     ],
-    "signName": "image of falcon on"
+    "signName": "Variant of G11 (image of falcon)"
   },
   {
     "code": "G12",
@@ -82261,7 +82229,7 @@
       "mummyform",
       "falcon"
     ],
-    "signName": "combination of"
+    "signName": "An archaic image of a falcon/cult image of a falco"
   },
   {
     "code": "G13",
@@ -82285,7 +82253,6 @@
     ],
     "transliteration": [
       "ḥr",
-      "Ḥr",
       "spdw",
       "Spdw",
       "spd(w)",
@@ -82303,7 +82270,7 @@
       "falcon",
       "mummyform"
     ],
-    "signName": "image of falcon with",
+    "signName": "An archaic image of a falcon/cult image of a falco",
     "transliterationCounts": {
       "spdw": 2
     }
@@ -82359,7 +82326,7 @@
       "falcon",
       "mummyform"
     ],
-    "signName": "image of falcon with"
+    "signName": "An archaic image of a falcon/cult image of a falco"
   },
   {
     "code": "G164A",
@@ -82568,8 +82535,7 @@
       }
     ],
     "transliteration": [
-      "mwt",
-      "Mwt"
+      "mwt"
     ],
     "related": [
       "G1",
@@ -82582,7 +82548,7 @@
     "tags": [
       "vulture"
     ],
-    "signName": "combination of"
+    "signName": "A griffon vulture (Gyps fulvus), with a flagellum "
   },
   {
     "code": "G15A",
@@ -82597,7 +82563,7 @@
     "tags": [
       "vulture"
     ],
-    "signName": "combination of"
+    "signName": "Variant of G15 (combination of)"
   },
   {
     "code": "G16A",
@@ -82625,7 +82591,7 @@
     "tags": [
       "vulture"
     ],
-    "signName": "vulture and cobra each on"
+    "signName": "A griffon vulture (Gyps fulvus), on top of a wicke"
   },
   {
     "code": "G16B",
@@ -82653,7 +82619,7 @@
     "tags": [
       "vulture"
     ],
-    "signName": "vulture and cobra each on"
+    "signName": "A griffon vulture (Gyps fulvus), with a flagellum "
   },
   {
     "code": "G16",
@@ -82677,7 +82643,7 @@
       "vulture",
       "group"
     ],
-    "signName": "vulture and cobra each on",
+    "signName": "Variant of I12 (erect cobra)",
     "transliterationCounts": {
       "nbty": 3
     }
@@ -82863,7 +82829,7 @@
     "tags": [
       "owl"
     ],
-    "signName": "combination of"
+    "signName": "Variant of G17 (owl)"
   },
   {
     "code": "G20",
@@ -82881,7 +82847,7 @@
     "tags": [
       "owl"
     ],
-    "signName": "combination of",
+    "signName": "Variant of G17 (owl)",
     "transliterationCounts": {
       "mi": 2,
       "m": 2
@@ -82908,7 +82874,7 @@
       "owl",
       "hieratic sign"
     ],
-    "signName": "combination of"
+    "signName": "Variant of G20 (combination of)"
   },
   {
     "code": "G20B",
@@ -82927,7 +82893,7 @@
       "owl",
       "hieratic sign"
     ],
-    "signName": "combination of"
+    "signName": "Variant of G20 (combination of)"
   },
   {
     "code": "G21",
@@ -83362,7 +83328,7 @@
       "ibis",
       "with standard"
     ],
-    "signName": "sacred ibis on"
+    "signName": "An African sacred ibis (Threskiornis aethiopicus) "
   },
   {
     "code": "G26A",
@@ -83421,7 +83387,7 @@
       "ibis",
       "with standard"
     ],
-    "signName": "sacred ibis on"
+    "signName": "An African sacred ibis (Threskiornis aethiopicus) "
   },
   {
     "code": "G26B",
@@ -83437,7 +83403,7 @@
       "ibis",
       "with standard"
     ],
-    "signName": "sacred ibis on"
+    "signName": "Variant of G26 (sacred ibis on)"
   },
   {
     "code": "G27",
@@ -84111,7 +84077,6 @@
     ],
     "transliteration": [
       "ꜥq",
-      "aq",
       "ꜥḳ"
     ],
     "etymology": "Representation of a cormorant.",
@@ -84723,7 +84688,7 @@
       "quail",
       "child"
     ],
-    "signName": "combination of"
+    "signName": "Variant of G43 (quail chick)"
   },
   {
     "code": "G43B",
@@ -84811,7 +84776,7 @@
       "quail",
       "child"
     ],
-    "signName": "combination of"
+    "signName": "A combination of 𓂝 (“ꜥ”) and 𓅱 (“w”)"
   },
   {
     "code": "G45A",
@@ -84835,7 +84800,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "G46",
@@ -84869,7 +84834,7 @@
       "quail",
       "child"
     ],
-    "signName": "combination of"
+    "signName": "A combination of 𓌳 (“mꜣ”) and 𓅱 (“w”)"
   },
   {
     "code": "G47",
@@ -85365,7 +85330,7 @@
     "tags": [
       "human-headed"
     ],
-    "signName": "human-headed bird with"
+    "signName": "Representation of a bird with a human head beside "
   },
   {
     "code": "G53A",
@@ -85393,7 +85358,7 @@
     "tags": [
       "human-headed"
     ],
-    "signName": "human-headed bird with"
+    "signName": ""
   },
   {
     "code": "G53C",
@@ -85421,7 +85386,7 @@
     "tags": [
       "human-headed"
     ],
-    "signName": "human-headed bird with"
+    "signName": "A human headed bird, with a flagellum (S45) on its"
   },
   {
     "code": "G53B",
@@ -85437,7 +85402,7 @@
       "human-headed",
       "praying"
     ],
-    "signName": "human-headed bird with"
+    "signName": "Variant of G53 (human-headed bird with)"
   },
   {
     "code": "G54",
@@ -88026,7 +87991,7 @@
       "G4A"
     ],
     "source": "unicode",
-    "signName": "sacred ibis on"
+    "signName": "An African sacred ibis (Threskiornis aethiopicus) "
   },
   {
     "code": "G135",
@@ -93740,10 +93705,9 @@
     "transliteration": [
       "zꜣ",
       "sꜣ",
-      "pat",
+      "pꜥt",
       "𓅭",
       "swḥt",
-      "pꜥt",
       "mrwt"
     ],
     "etymology": "Representing an egg. Compare the Chinese character 卵. As a determinative in pꜥt (“patricians”), it may have originally been a different glyph, a clod of earth. This glyph was conventionally colored white or yellow, reflecting the creamy color of ostrich or goose eggs.",
@@ -95836,7 +95800,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "I12",
@@ -95875,8 +95839,7 @@
       "nbwt",
       "nsrt",
       "jꜥrt",
-      "nṯrt",
-      "jart"
+      "nṯrt"
     ],
     "etymology": "Representing an erect cobra (uraeus).",
     "related": [
@@ -95938,7 +95901,7 @@
       "uraeus",
       "standing on something"
     ],
-    "signName": "erect cobra on"
+    "signName": "Ligature of 𓆗 and 𓎠"
   },
   {
     "code": "I13A",
@@ -95967,7 +95930,7 @@
       "uraeus",
       "standing on something"
     ],
-    "signName": "erect cobra on"
+    "signName": "A cobra (Naja haje), standing up, with expanded ho"
   },
   {
     "code": "I152",
@@ -101170,7 +101133,6 @@
       }
     ],
     "transliteration": [
-      "nar",
       "nꜥr"
     ],
     "related": [
@@ -101850,7 +101812,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": "Combination of , and two"
   },
   {
     "code": "L3",
@@ -101869,7 +101831,6 @@
       }
     ],
     "transliteration": [
-      "aff",
       "ꜥff"
     ],
     "etymology": "Representing a fly. Compare Phaistos Disc 𐇱.",
@@ -103088,7 +103049,7 @@
       "tree",
       "branch"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "M1B",
@@ -103112,7 +103073,7 @@
     "tags": [
       "tree"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "M2",
@@ -103381,7 +103342,7 @@
       "branch",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "M3C",
@@ -103610,7 +103571,7 @@
       "branch",
       "palm"
     ],
-    "signName": "combination of",
+    "signName": "A variant of 𓆵, formed from the signs 𓆳 and 𓏏",
     "transliterationCounts": {
       "tr": 1
     }
@@ -103642,7 +103603,7 @@
       "branch",
       "palm"
     ],
-    "signName": "combination of"
+    "signName": "A palm branch, stripped of leaves and notched with"
   },
   {
     "code": "M5A",
@@ -103671,7 +103632,7 @@
       "branch",
       "palm"
     ],
-    "signName": "combination of"
+    "signName": "A palm branch, stripped of leaves, with multiple s"
   },
   {
     "code": "M6",
@@ -103718,7 +103679,7 @@
       "palm",
       "sign combination"
     ],
-    "signName": "combination of",
+    "signName": "A palm branch, stripped of leaves and notched with",
     "transliterationCounts": {
       "tr": 13,
       "ti": 3
@@ -103768,7 +103729,7 @@
       "palm",
       "sign combination"
     ],
-    "signName": "combination of",
+    "signName": "A combination of the signs 𓆳 and 𓊪",
     "transliterationCounts": {
       "rnp": 11,
       "rnpi": 3
@@ -103806,7 +103767,7 @@
     "transliterationCounts": {
       "rnp": 7
     },
-    "signName": "combination of"
+    "signName": "A palm branch, stripped of leaves and notched with"
   },
   {
     "code": "M7B",
@@ -103836,7 +103797,7 @@
       "palm",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "A palm branch, stripped of leaves, with multiple s"
   },
   {
     "code": "M8",
@@ -104796,7 +104757,7 @@
       "papyrus or lily",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "Graphical combination of 𓇅 (M13), representing pap"
   },
   {
     "code": "M14A",
@@ -104812,7 +104773,7 @@
       "papyrus or lily",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "M15",
@@ -104859,7 +104820,6 @@
       "wꜣḫ",
       "mḥw",
       "ꜣḫ-bjt",
-      "Ꜣḫ-bjt",
       "ḏyt"
     ],
     "etymology": "Representation of papyrus with buds.",
@@ -104909,7 +104869,7 @@
       "bush",
       "papyrus or lily"
     ],
-    "signName": "combination of"
+    "signName": "A clump with one papyrus flower, with two buds ben"
   },
   {
     "code": "M15B",
@@ -105037,7 +104997,7 @@
       "bush",
       "papyrus or lily"
     ],
-    "signName": "combination of"
+    "signName": "A rounded clump of three papyrus flowers"
   },
   {
     "code": "M16B",
@@ -105174,7 +105134,7 @@
       "reed",
       "sign combination"
     ],
-    "signName": "combination of",
+    "signName": "A flowering reed (M17), on top of legs in a walkin",
     "transliterationCounts": {
       "ii": 15
     }
@@ -105544,7 +105504,7 @@
       "rush",
       "sign combination"
     ],
-    "signName": "combination of",
+    "signName": "Combination of the signs 𓇓 (sw) and 𓂋 (r)",
     "transliterationCounts": {
       "rs": 1,
       "rsw": 4
@@ -105590,7 +105550,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "M25",
@@ -105633,7 +105593,7 @@
       "flower",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "A flowering version of the sign 𓇔"
   },
   {
     "code": "M26",
@@ -105665,7 +105625,6 @@
     ],
     "transliteration": [
       "šmꜥw",
-      "Šmꜥw",
       "šmꜥ"
     ],
     "etymology": "An image of a flowering sedge plant. Distinct from the non-flowering sign 𓇓.",
@@ -105739,7 +105698,7 @@
       "flower",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "Variant of M26 (flowering sedge)"
   },
   {
     "code": "M27A",
@@ -105751,7 +105710,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "M28",
@@ -105787,7 +105746,7 @@
       "flower",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "A desert plant, with four branches, with flowers o"
   },
   {
     "code": "M28A",
@@ -105806,7 +105765,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "three lilies on"
+    "signName": ""
   },
   {
     "code": "M28B",
@@ -105818,7 +105777,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "M29",
@@ -109179,7 +109138,7 @@
       "M2B"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A palm branch, stripped of leaves, with multiple s"
   },
   {
     "code": "M39E",
@@ -110528,8 +110487,7 @@
       }
     ],
     "transliteration": [
-      "mꜥr",
-      "mar"
+      "mꜥr"
     ],
     "related": [
       "M1",
@@ -112676,8 +112634,7 @@
       }
     ],
     "transliteration": [
-      "wṯs-ḥr",
-      "Wṯs-Ḥr"
+      "wṯs-ḥr"
     ],
     "related": [
       "N1",
@@ -112775,8 +112732,7 @@
       }
     ],
     "transliteration": [
-      "nḫn",
-      "Nḫn"
+      "nḫn"
     ],
     "related": [
       "N1",
@@ -112949,8 +112905,7 @@
       }
     ],
     "transliteration": [
-      "wꜣst",
-      "Wꜣst"
+      "wꜣst"
     ],
     "related": [
       "N1",
@@ -113176,7 +113131,6 @@
       "sw",
       "hrw",
       "rꜥ",
-      "ra",
       "wnwt",
       "zw"
     ],
@@ -113313,8 +113267,7 @@
       }
     ],
     "transliteration": [
-      "rꜥ",
-      "ra"
+      "rꜥ"
     ],
     "etymology": "Representing the sun with a uraeus. From the 18th Dynasty.",
     "related": [
@@ -113351,8 +113304,7 @@
       }
     ],
     "transliteration": [
-      "ḫꜣsww",
-      "Ḫꜣsww"
+      "ḫꜣsww"
     ],
     "related": [
       "N1",
@@ -113542,7 +113494,7 @@
     "tags": [
       "sun"
     ],
-    "signName": "combination of"
+    "signName": "The sun disk upon a butcher's block"
   },
   {
     "code": "NL7",
@@ -113591,8 +113543,7 @@
       }
     ],
     "transliteration": [
-      "bꜣt",
-      "Bꜣt"
+      "bꜣt"
     ],
     "related": [
       "N1",
@@ -113899,8 +113850,7 @@
       }
     ],
     "transliteration": [
-      "mnw",
-      "Mnw"
+      "mnw"
     ],
     "related": [
       "N1",
@@ -113968,8 +113918,7 @@
       }
     ],
     "transliteration": [
-      "km-wr",
-      "Km-wr"
+      "km-wr"
     ],
     "related": [
       "N1",
@@ -114112,8 +114061,7 @@
       }
     ],
     "transliteration": [
-      "ḥsbw",
-      "Ḥsbw"
+      "ḥsbw"
     ],
     "related": [
       "N1",
@@ -114236,8 +114184,7 @@
       }
     ],
     "transliteration": [
-      "ṯb-nṯr",
-      "Ṯb-nṯr"
+      "ṯb-nṯr"
     ],
     "related": [
       "N1",
@@ -114266,8 +114213,7 @@
       }
     ],
     "transliteration": [
-      "ꜣtft",
-      "Ꜣtft"
+      "ꜣtft"
     ],
     "related": [
       "N1",
@@ -114319,7 +114265,7 @@
       "moon",
       "star"
     ],
-    "signName": "combination of",
+    "signName": "A combination of 𓇼 (sbA) with the right half of 𓇹 ",
     "transliterationCounts": {
       "smdt": 2
     }
@@ -114371,8 +114317,7 @@
       }
     ],
     "transliteration": [
-      "nḏft-ḫntt",
-      "Nḏft-ḫntt"
+      "nḏft-ḫntt"
     ],
     "related": [
       "N1",
@@ -114512,7 +114457,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "N14",
@@ -114610,8 +114555,7 @@
       }
     ],
     "transliteration": [
-      "nḏft-pḥt",
-      "Nḏft-pḥt"
+      "nḏft-pḥt"
     ],
     "related": [
       "N1",
@@ -114782,8 +114726,7 @@
       }
     ],
     "transliteration": [
-      "mꜣ-ḥḏ",
-      "Mꜣ-ḥḏ"
+      "mꜣ-ḥḏ"
     ],
     "related": [
       "N1",
@@ -115183,7 +115126,7 @@
       "land",
       "sand"
     ],
-    "signName": "combination of"
+    "signName": "Variant of N18 (sandy tract)"
   },
   {
     "code": "N18B",
@@ -115202,7 +115145,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "N18C",
@@ -115379,8 +115322,7 @@
       }
     ],
     "transliteration": [
-      "nꜥrt-ḫntt",
-      "Nꜥrt-ḫntt"
+      "nꜥrt-ḫntt"
     ],
     "related": [
       "N1",
@@ -116285,7 +116227,6 @@
     ],
     "transliteration": [
       "ḥr",
-      "Ḥr",
       "wꜣ",
       "wꜣt",
       "Jnj-ḥrt",
@@ -117176,7 +117117,7 @@
       "pool",
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "A rectangular pool (N37), on top of legs in a walk"
   },
   {
     "code": "N40A",
@@ -117209,7 +117150,7 @@
       "pool",
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "A rectangular pool, with three diagonal strokes wr"
   },
   {
     "code": "N41",
@@ -119941,7 +119882,6 @@
     "transliteration": [
       "wbn",
       "ꜥpy",
-      "apy",
       "mꜣwt",
       "nsw-bity"
     ],
@@ -120767,7 +120707,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O2",
@@ -120790,7 +120730,7 @@
       "house",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O2A",
@@ -120806,7 +120746,7 @@
       "house",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O3",
@@ -120840,7 +120780,7 @@
       "house",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "An oar, written vertically (P8), intruding with th"
   },
   {
     "code": "O3A",
@@ -120856,7 +120796,7 @@
       "house",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O4",
@@ -121064,7 +121004,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "opening of"
+    "signName": "A plan of a rectangular enclosure, with an interna"
   },
   {
     "code": "O6B",
@@ -121084,7 +121024,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "opening of"
+    "signName": "Opening of Hwt-enclosure"
   },
   {
     "code": "O6C",
@@ -121104,7 +121044,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "opening of"
+    "signName": "Opening of Hwt-enclosure"
   },
   {
     "code": "O6D",
@@ -121124,7 +121064,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "closing of"
+    "signName": "Closing of Hwt-enclosure"
   },
   {
     "code": "O6E",
@@ -121141,7 +121081,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "closing of"
+    "signName": "Closing of Hwt-enclosure"
   },
   {
     "code": "O6F",
@@ -121158,7 +121098,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "closing of"
+    "signName": "Closing of Hwt-enclosure"
   },
   {
     "code": "O6G",
@@ -121223,7 +121163,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "Ff8A",
@@ -121270,7 +121210,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O9B",
@@ -121298,7 +121238,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": "A wickerwork basket (V30), on top of a plan of a r"
   },
   {
     "code": "O9C",
@@ -121326,7 +121266,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": "A wickerwork basket (V30), on a small vertical rec"
   },
   {
     "code": "O9",
@@ -121341,15 +121281,14 @@
       }
     ],
     "transliteration": [
-      "nbt-ḥwt",
-      "Nbt-ḥwt"
+      "nbt-ḥwt"
     ],
     "related": [],
     "source": "aegyptus",
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O9A",
@@ -121364,7 +121303,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O9D",
@@ -121379,7 +121318,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O9E",
@@ -121394,7 +121333,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O9F",
@@ -121409,7 +121348,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O10",
@@ -121425,7 +121364,6 @@
     ],
     "transliteration": [
       "ḥwt-ḥr",
-      "Ḥwt-Ḥr",
       "ḥwt_ḥr"
     ],
     "related": [],
@@ -121433,7 +121371,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O10A",
@@ -121455,7 +121393,7 @@
     "tags": [
       "castle"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O10B",
@@ -121474,7 +121412,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O10C",
@@ -121493,7 +121431,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O10D",
@@ -121505,7 +121443,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O11",
@@ -121582,7 +121520,7 @@
     "tags": [
       "palace"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O13",
@@ -121913,7 +121851,7 @@
     "tags": [
       "enclosure"
     ],
-    "signName": "enclosure with"
+    "signName": "A wide cup (W10) above a half round loaf of bread "
   },
   {
     "code": "O16A",
@@ -123798,7 +123736,7 @@
       "palace",
       "serekh"
     ],
-    "signName": "closing of"
+    "signName": "A façade of a palace or tomb, with a doorway"
   },
   {
     "code": "O33C",
@@ -123963,7 +123901,7 @@
       "lock",
       "sign combination"
     ],
-    "signName": "combination of",
+    "signName": "A door bolt (O034) placed above legs in a walking ",
     "transliterationCounts": {
       "ms": 23,
       "sb": 5,
@@ -123984,7 +123922,7 @@
       "lock",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "O36",
@@ -125100,8 +125038,7 @@
       }
     ],
     "transliteration": [
-      "nḫn",
-      "Nḫn"
+      "nḫn"
     ],
     "related": [
       "O1",
@@ -132285,7 +132222,7 @@
       "O4B"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A wall of the palace, with ornamental chevaux de f"
   },
   {
     "code": "O383",
@@ -132327,7 +132264,7 @@
       "O4B"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A wall of the palace, without the ornamental cheva"
   },
   {
     "code": "O11B",
@@ -132853,8 +132790,7 @@
       }
     ],
     "transliteration": [
-      "pnꜥ",
-      "pna"
+      "pnꜥ"
     ],
     "related": [
       "P1",
@@ -134055,7 +133991,7 @@
       "without sail",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "P7A",
@@ -134072,7 +134008,7 @@
       "sign combination",
       "with sail"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "P7B",
@@ -134089,7 +134025,7 @@
       "sign combination",
       "without sail"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "P8",
@@ -134187,7 +134123,7 @@
       "oar",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "P10",
@@ -141311,7 +141247,7 @@
     "tags": [
       "netjer-sign"
     ],
-    "signName": "combination of",
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8",
     "transliterationCounts": {
       "bd": 7
     }
@@ -141347,7 +141283,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10D",
@@ -141376,7 +141312,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10G",
@@ -141405,7 +141341,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10A",
@@ -141428,7 +141364,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10B",
@@ -141444,7 +141380,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "R10C",
@@ -141460,7 +141396,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "R10F",
@@ -141476,7 +141412,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "R10H",
@@ -141488,7 +141424,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "R10I",
@@ -141507,7 +141443,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R11",
@@ -141945,8 +141881,7 @@
       }
     ],
     "transliteration": [
-      "nfr-tm",
-      "Nfr-tm"
+      "nfr-tm"
     ],
     "related": [],
     "source": "aegyptus",
@@ -142109,7 +142044,7 @@
       "osiris relic",
       "standing on something"
     ],
-    "signName": "combination of"
+    "signName": "A wig, with a fillet, with a headdress consisting "
   },
   {
     "code": "R18A",
@@ -142140,7 +142075,7 @@
       "sign combination",
       "with uraeus"
     ],
-    "signName": "combination of"
+    "signName": "A wig without a fillet, with a headdress consistin"
   },
   {
     "code": "R18B",
@@ -142172,7 +142107,7 @@
       "sign combination",
       "with uraeus"
     ],
-    "signName": "combination of"
+    "signName": "A wig without a fillet, with a headdress consistin"
   },
   {
     "code": "R18D",
@@ -142204,7 +142139,7 @@
       "sign combination",
       "with uraeus"
     ],
-    "signName": "combination of"
+    "signName": "A wig without a fillet, with a headdress consistin"
   },
   {
     "code": "R18C",
@@ -142223,7 +142158,7 @@
       "sign combination",
       "with uraeus"
     ],
-    "signName": "combination of"
+    "signName": "Variant of R18 (combination of)"
   },
   {
     "code": "R18E",
@@ -142241,7 +142176,7 @@
       "standing on something",
       "with uraeus"
     ],
-    "signName": "combination of"
+    "signName": "Variant of R18 (combination of)"
   },
   {
     "code": "R18F",
@@ -142256,7 +142191,7 @@
     "tags": [
       "emblem"
     ],
-    "signName": "combination of"
+    "signName": "Variant of R18 (combination of)"
   },
   {
     "code": "R18G",
@@ -142268,7 +142203,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "R19",
@@ -142288,8 +142223,7 @@
     ],
     "transliteration": [
       "wꜣs",
-      "wꜣst",
-      "Wꜣst"
+      "wꜣst"
     ],
     "related": [
       "R1",
@@ -142448,9 +142382,7 @@
     ],
     "transliteration": [
       "ḫm",
-      "mnw",
-      "Mnw",
-      "Ḫm"
+      "mnw"
     ],
     "etymology": "The emblem of the god Min",
     "related": [
@@ -142644,7 +142576,7 @@
     "tags": [
       "sema-tawy"
     ],
-    "signName": "combination of"
+    "signName": "A windpipe and lungs (F36), with a flower written "
   },
   {
     "code": "R26",
@@ -142673,7 +142605,7 @@
     "tags": [
       "sema-tawy"
     ],
-    "signName": "combination of"
+    "signName": "A windpipe and lungs (F36), with a wide cup on eac"
   },
   {
     "code": "R26B",
@@ -142701,7 +142633,7 @@
     "tags": [
       "sema-tawy"
     ],
-    "signName": "combination of"
+    "signName": "A windpipe and lungs (F36), with a stem of papyrus"
   },
   {
     "code": "R27",
@@ -145461,7 +145393,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10K",
@@ -145486,7 +145418,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10L",
@@ -145511,7 +145443,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10M",
@@ -145536,7 +145468,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R15C",
@@ -145586,7 +145518,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A wig without a fillet, with a headdress consistin"
   },
   {
     "code": "R9A",
@@ -145611,7 +145543,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
   },
   {
     "code": "R10E",
@@ -145636,7 +145568,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A feather (H6), angled forwards on top of a butche"
   },
   {
     "code": "R140",
@@ -145890,7 +145822,7 @@
       "crown",
       "group"
     ],
-    "signName": "combination of",
+    "signName": "The white crown (S1), on top of a wickerwork baske",
     "transliterationCounts": {
       "wrrt": 1
     }
@@ -145932,7 +145864,7 @@
       "crown",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "The white crown (S1), with the curl of the red cro"
   },
   {
     "code": "S2B",
@@ -145944,7 +145876,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "S3",
@@ -146027,7 +145959,7 @@
       "crown",
       "group"
     ],
-    "signName": "combination of",
+    "signName": "The red crown (S3), on top of a wickerwork basket ",
     "transliterationCounts": {
       "nt": 1
     }
@@ -146098,7 +146030,7 @@
       "crown",
       "group"
     ],
-    "signName": "combination of",
+    "signName": "The union of the red crown of Lower Egypt and the ",
     "transliterationCounts": {
       "wrrt": 1
     }
@@ -146125,7 +146057,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": "The red crown (S3), on top of a plan of a crossroa"
   },
   {
     "code": "S7",
@@ -146582,7 +146514,7 @@
       "foot",
       "group"
     ],
-    "signName": "combination of",
+    "signName": "Variant of S12 (collar of beads)",
     "transliterationCounts": {
       "nbi": 2
     }
@@ -146602,7 +146534,7 @@
       "foot",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "Variant of S13 (combination of)"
   },
   {
     "code": "S14",
@@ -146625,7 +146557,7 @@
       "necklace",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "Variant of S12 (collar of beads)"
   },
   {
     "code": "S14A",
@@ -146648,7 +146580,7 @@
       "necklace",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "Variant of S12 (collar of beads)"
   },
   {
     "code": "S14B",
@@ -146666,7 +146598,7 @@
       "necklace",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "Variant of S14 (combination of)"
   },
   {
     "code": "S14C",
@@ -146684,7 +146616,7 @@
       "necklace",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "Variant of S14A (combination of)"
   },
   {
     "code": "S14D",
@@ -146696,7 +146628,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "S15",
@@ -146860,8 +146792,7 @@
     ],
     "transliteration": [
       "šsm",
-      "šsmtt",
-      "Šsmtt"
+      "šsmtt"
     ],
     "related": [
       "S1",
@@ -147496,7 +147427,7 @@
     "tags": [
       "dress"
     ],
-    "signName": "cloth with fringe on top and"
+    "signName": "A horizontal strip of cloth with fringes, combined"
   },
   {
     "code": "S28A",
@@ -147511,7 +147442,7 @@
     "tags": [
       "dress"
     ],
-    "signName": "cloth with fringe on top and"
+    "signName": "Variant of S28 (cloth with fringe on top and)"
   },
   {
     "code": "S29",
@@ -147620,7 +147551,7 @@
       "group",
       "horned viper"
     ],
-    "signName": "combination of",
+    "signName": "Variant of S29 (folded cloth)",
     "transliterationCounts": {
       "sf": 1
     }
@@ -147642,7 +147573,7 @@
       "group",
       "horned viper"
     ],
-    "signName": "combination of"
+    "signName": "Variant of S30 (combination of)"
   },
   {
     "code": "S31",
@@ -147665,7 +147596,7 @@
       "dress",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "Variant of S29 (folded cloth)"
   },
   {
     "code": "S32",
@@ -148209,7 +148140,6 @@
       }
     ],
     "transliteration": [
-      "awt",
       "ꜥwt"
     ],
     "related": [
@@ -148509,7 +148439,7 @@
       "scepter",
       "group"
     ],
-    "signName": "walking stick with"
+    "signName": "A sceptre (S42), with a flagellum (S45) at the bac"
   },
   {
     "code": "S44",
@@ -148552,7 +148482,7 @@
       "group",
       "scepter"
     ],
-    "signName": "walking stick with"
+    "signName": "A staff, which widens towards the bottom (S43) wit"
   },
   {
     "code": "S44B",
@@ -148564,7 +148494,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "walking stick with"
+    "signName": ""
   },
   {
     "code": "S45",
@@ -153244,7 +153174,7 @@
       "S3"
     ],
     "source": "unicode",
-    "signName": "cloth with fringe on top and"
+    "signName": "A horizontal strip of cloth with fringes, written "
   },
   {
     "code": "S220",
@@ -153318,7 +153248,7 @@
       "S3"
     ],
     "source": "unicode",
-    "signName": "cloth with fringe on top and"
+    "signName": "A horizontal strip of cloth with fringes, above a "
   },
   {
     "code": "S176A",
@@ -153391,7 +153321,7 @@
       "S3"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "The red crown, without the curl, on top of a wicke"
   },
   {
     "code": "S82A",
@@ -153786,7 +153716,7 @@
     "tags": [
       "mace"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "T3B",
@@ -153907,7 +153837,7 @@
       "mace",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "Combination 𓆓 (I10) and 𓌉 (T4)"
   },
   {
     "code": "T5A",
@@ -153923,7 +153853,7 @@
       "mace",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "T6",
@@ -153957,7 +153887,7 @@
       "sign combination",
       "group of same sign"
     ],
-    "signName": "combination of"
+    "signName": "Combination 𓌉 (T4) and a duplication of 𓆓 (I10)"
   },
   {
     "code": "T7",
@@ -154693,7 +154623,6 @@
       "ṯn",
       "qmꜣ",
       "ṯḥnw",
-      "Ṯḥnw",
       "nḥsj",
       "ḏꜥr",
       "ꜥꜣm",
@@ -155180,8 +155109,7 @@
       }
     ],
     "transliteration": [
-      "wꜥ",
-      "wa"
+      "wꜥ"
     ],
     "etymology": "Representing a one-barbed harpoon.",
     "related": [
@@ -156109,7 +156037,7 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": "combination of",
+    "signName": "A knife with a rounded blade and rounded handle (T",
     "transliterationCounts": {
       "nmt": 3
     }
@@ -156144,7 +156072,7 @@
     "transliterationCounts": {
       "nmt": 1
     },
-    "signName": "combination of"
+    "signName": "A knife with a rounded blade and rounded handle (T"
   },
   {
     "code": "T29A",
@@ -156160,7 +156088,7 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "T29B",
@@ -156176,7 +156104,7 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "T30",
@@ -156349,7 +156277,7 @@
       "knife, dagger, sword",
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "A knife sharpener with a rounded body and a loop a"
   },
   {
     "code": "T32A",
@@ -156365,7 +156293,7 @@
       "knife, dagger, sword",
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "Variant of T32 (combination of)"
   },
   {
     "code": "T32B",
@@ -156381,7 +156309,7 @@
       "knife, dagger, sword",
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "Variant of T32 (combination of)"
   },
   {
     "code": "T32C",
@@ -156393,7 +156321,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "T33",
@@ -156440,7 +156368,7 @@
     "tags": [
       "varia"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "T33B",
@@ -159479,7 +159407,7 @@
       "T3F"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "A mace with a pear-shaped head, written vertically"
   },
   {
     "code": "NU022A",
@@ -160328,7 +160256,7 @@
       "sickle",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "U4",
@@ -160352,7 +160280,7 @@
       "sickle",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "U5",
@@ -160370,7 +160298,7 @@
       "sickle",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "U6",
@@ -160746,7 +160674,7 @@
     "tags": [
       "corn measure"
     ],
-    "signName": "combination of"
+    "signName": "A grain measure, with a forward and downward line "
   },
   {
     "code": "U12",
@@ -160775,7 +160703,7 @@
     "tags": [
       "corn measure"
     ],
-    "signName": "combination of"
+    "signName": "A grain measure, with a forward and downward line "
   },
   {
     "code": "U13",
@@ -162740,7 +162668,7 @@
       "spindle",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "U35A",
@@ -162756,7 +162684,7 @@
       "spindle",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "Variant of U35 (combination of)"
   },
   {
     "code": "U36",
@@ -165323,7 +165251,7 @@
       "vessel",
       "prostrating"
     ],
-    "signName": "statue of man with staff and"
+    "signName": "The king, wearing the blue crown, prostrating on a"
   },
   {
     "code": "U122",
@@ -165812,7 +165740,7 @@
       "U7B"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "The pole of a balance, represented as a vertical l"
   },
   {
     "code": "U26B",
@@ -166685,7 +166613,7 @@
     "tags": [
       "rope"
     ],
-    "signName": "combination of"
+    "signName": "A horizontal line, intersected in the middle by a "
   },
   {
     "code": "V2A",
@@ -166700,7 +166628,7 @@
     "tags": [
       "rope"
     ],
-    "signName": "hieratic form of"
+    "signName": "Variant of V2 (combination of)"
   },
   {
     "code": "V2B",
@@ -166715,7 +166643,7 @@
     "tags": [
       "rope"
     ],
-    "signName": "combination of"
+    "signName": "Variant of V2 (combination of)"
   },
   {
     "code": "V2C",
@@ -166727,7 +166655,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "V2D",
@@ -166739,7 +166667,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "V3",
@@ -166769,7 +166697,7 @@
       "rope",
       "group of same sign"
     ],
-    "signName": "combination of"
+    "signName": "A horizontal line, intersected in the middle by th"
   },
   {
     "code": "V4",
@@ -167414,7 +167342,7 @@
       "rope",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "Combination of the hieroglyphs 𓍿 and 𓂻"
   },
   {
     "code": "V16",
@@ -167995,7 +167923,7 @@
       "sign combination",
       "feather"
     ],
-    "signName": "combination of"
+    "signName": "A cobra in repose (Naja haje) (I10), written over "
   },
   {
     "code": "V21A",
@@ -168020,7 +167948,7 @@
       "cobra",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "A cobra in repose (Naja haje) (I10), written over "
   },
   {
     "code": "V22",
@@ -168341,7 +168269,7 @@
       "rope",
       "wick"
     ],
-    "signName": "combination of"
+    "signName": "A wick of twisted flax, consisting of a singular l"
   },
   {
     "code": "V28B",
@@ -168493,9 +168421,8 @@
       "wꜣḥ",
       "sk",
       "ḫsr",
-      "mar",
-      "𓆭",
-      "mꜥr"
+      "mꜥr",
+      "𓆭"
     ],
     "etymology": "Representation of a swab.",
     "related": [
@@ -168542,7 +168469,7 @@
     "tags": [
       "broom"
     ],
-    "signName": "combination of"
+    "signName": "A swab made from a hank of fiber with two loops, w"
   },
   {
     "code": "V29B",
@@ -171947,7 +171874,7 @@
       "column, post, etc.",
       "vessel"
     ],
-    "signName": "combination of"
+    "signName": "An open booth supported by a pole (O22), on top of"
   },
   {
     "code": "W4A",
@@ -171980,7 +171907,7 @@
       "column, post, etc.",
       "vessel"
     ],
-    "signName": "combination of"
+    "signName": "An open booth supported by a forked pole for suppo"
   },
   {
     "code": "W5",
@@ -172019,7 +171946,7 @@
       "butcher's block",
       "vessel"
     ],
-    "signName": "combination of"
+    "signName": "A butcher's block (T28), on top of an alabaster ba"
   },
   {
     "code": "W5A",
@@ -172039,7 +171966,7 @@
       "butcher's block",
       "vessel"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "W6",
@@ -172125,7 +172052,6 @@
       "ꜣb",
       "mꜣṯ",
       "ꜣbw",
-      "Ꜣbw",
       "mꜣt"
     ],
     "related": [
@@ -172345,7 +172271,6 @@
       "ḥnwt",
       "jab",
       "iab",
-      "a",
       "ab",
       "sḫw"
     ],
@@ -172671,7 +172596,7 @@
       "with spout",
       "vessel"
     ],
-    "signName": "combination of"
+    "signName": "A tall water pot with a spout"
   },
   {
     "code": "W14B",
@@ -173521,8 +173446,7 @@
       "ḏꜣḏꜣt",
       "nḫbt",
       "𓏊",
-      "𓏋",
-      "Nḫbt"
+      "𓏋"
     ],
     "etymology": "Representing a bowl.",
     "related": [
@@ -173586,7 +173510,7 @@
       "with long legs",
       "vessel"
     ],
-    "signName": "combination of",
+    "signName": "A round vessel with an upstanding rim (W24), on to",
     "transliterationCounts": {
       "ini": 19
     }
@@ -173606,7 +173530,7 @@
       "with long legs",
       "vessel"
     ],
-    "signName": "combination of"
+    "signName": ""
   },
   {
     "code": "W27B",
@@ -174567,8 +174491,7 @@
       }
     ],
     "transliteration": [
-      "wꜥb",
-      "wab"
+      "wꜥb"
     ],
     "related": [
       "W1",
@@ -176380,7 +176303,7 @@
       "W3"
     ],
     "source": "unicode",
-    "signName": "combination of"
+    "signName": "An alabaster basin with a diamond shaped inner mar"
   },
   {
     "code": "W15D",
@@ -178496,8 +178419,7 @@
       }
     ],
     "transliteration": [
-      "ꜥn",
-      "an"
+      "ꜥn"
     ],
     "related": [
       "Y1",
@@ -179481,8 +179403,7 @@
       }
     ],
     "transliteration": [
-      "wꜥ",
-      "wa"
+      "wꜥ"
     ],
     "related": [],
     "source": "aegyptus",
@@ -179681,8 +179602,7 @@
       }
     ],
     "transliteration": [
-      "wꜥ",
-      "wa"
+      "wꜥ"
     ],
     "related": [],
     "source": "aegyptus",
@@ -180833,7 +180753,7 @@
     "tags": [
       "legs"
     ],
-    "signName": "later equivalent of"
+    "signName": "Variant of Aa7 (instrument)"
   },
   {
     "code": "J7",
@@ -181594,8 +181514,7 @@
       }
     ],
     "transliteration": [
-      "ꜥpr",
-      "apr"
+      "ꜥpr"
     ],
     "etymology": "Representing perhaps a kind of sack.",
     "related": [
