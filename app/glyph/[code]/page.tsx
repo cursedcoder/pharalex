@@ -113,7 +113,7 @@ export default async function GlyphPage({ params }: PageProps) {
   const baseGlyph = baseCode ? await getGlyphByCode(baseCode) : null;
   const variantSiblings = await getVariantSiblings(glyph.code);
   const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
-  const wordsUsingGlyph = await getWordsByGardinerCode(glyph.code, 12);
+  const wordsUsingGlyph = await getWordsByGardinerCode(glyph.code, 6);
 
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
@@ -474,7 +474,7 @@ export default async function GlyphPage({ params }: PageProps) {
                               )}
                             </div>
                             <p className="text-brown-light leading-relaxed">
-                              {linkifyCodes(meaning.text)}
+                              {linkifyCodes(translitToUnicode(meaning.text))}
                             </p>
                             <p className="text-xs text-sandstone mt-2">
                               {typeDescriptions[meaning.type]}
@@ -512,7 +512,7 @@ export default async function GlyphPage({ params }: PageProps) {
                     Words Using This Glyph
                   </h3>
                   <div className="space-y-2">
-                    {wordsUsingGlyph.map((word) => (
+                    {wordsUsingGlyph.slice(0, 5).map((word) => (
                       <Link
                         key={word.transliteration}
                         href={wordHref(word.transliteration)}
@@ -548,6 +548,14 @@ export default async function GlyphPage({ params }: PageProps) {
                       </Link>
                     ))}
                   </div>
+                  {wordsUsingGlyph.length > 5 && (
+                    <Link
+                      href={`/search?q=${encodeURIComponent(glyph.code)}`}
+                      className="mt-3 block text-center py-2 px-4 bg-gold/10 text-gold-dark rounded-lg hover:bg-gold/20 transition-colors font-medium text-sm"
+                    >
+                      See all words using {glyph.code} →
+                    </Link>
+                  )}
                 </section>
               )}
 
