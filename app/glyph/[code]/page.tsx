@@ -25,6 +25,9 @@ import type { ReactNode } from "react";
 /** Gardiner code pattern: A1, Aa15, D53B, etc. */
 const GARDINER_RE = /\b([A-Z][a-z]?\d+[A-Za-z]?)\b/g;
 
+/** Strip inline Unicode hieroglyph characters (U+13000–U+143FF) — they duplicate our SVG pills. */
+const HIERO_UNICODE_RE = /[\u{13000}-\u{143FF}]\s*/gu;
+
 /** Turn Gardiner codes in text into linked glyph pills. */
 function linkifyCodes(text: string): ReactNode {
   const parts: ReactNode[] = [];
@@ -32,7 +35,7 @@ function linkifyCodes(text: string): ReactNode {
   for (const match of text.matchAll(GARDINER_RE)) {
     const code = match[1];
     const start = match.index!;
-    if (start > last) parts.push(text.slice(last, start));
+    if (start > last) parts.push(text.slice(last, start).replace(HIERO_UNICODE_RE, ""));
     parts.push(
       <Link
         key={start}
@@ -52,8 +55,8 @@ function linkifyCodes(text: string): ReactNode {
     );
     last = start + match[0].length;
   }
-  if (last < text.length) parts.push(text.slice(last));
-  return parts.length > 0 ? parts : text;
+  if (last < text.length) parts.push(text.slice(last).replace(HIERO_UNICODE_RE, ""));
+  return parts.length > 0 ? parts : text.replace(HIERO_UNICODE_RE, "");
 }
 
 interface PageProps {
