@@ -143,9 +143,16 @@ for (const g of glyphs) {
   const sn = g.signName ?? "";
   if (sn.length <= 55) continue;
   let cut = sn.slice(0, 55);
+  // Try to cut at a natural separator first
+  let found = false;
   for (const sep of [", ", " — ", "; "]) {
     const idx = cut.lastIndexOf(sep);
-    if (idx > 15) { cut = cut.slice(0, idx); break; }
+    if (idx > 15) { cut = cut.slice(0, idx); found = true; break; }
+  }
+  // If no separator, cut at last space to avoid mid-word truncation
+  if (!found) {
+    const spaceIdx = cut.lastIndexOf(" ");
+    if (spaceIdx > 15) cut = cut.slice(0, spaceIdx);
   }
   g.signName = cut.trim();
   signNamesTruncLong++;
@@ -255,21 +262,48 @@ const ENGLISH_FIXES: [string, string][] = [
   ["eꜥting", "eating"],
 ];
 let englishFixed = 0;
+// Reverse MdC map for fixing corrupted English
+const REVERSE_MDC: Record<string, string> = {
+  "ꜥ": "a", "ḥ": "h", "ḫ": "x", "š": "s", "ṯ": "t", "ḏ": "d",
+};
+const MDC_CHAR_RE = /[ꜥḥḫšṯḏ]/;
+// Fix corrupted English in meaning descriptions.
+// Strategy: after the label prefix (Determinative/Logogram/etc.),
+// reverse MdC chars that appear inside English words.
+// English words contain regular vowels (e,i,o,u) mixed with MdC chars.
+function fixCorruptedEnglish(text: string): string {
+  let result = text;
+  // First apply known explicit fixes
+  for (const [bad, good] of ENGLISH_FIXES) {
+    if (result.includes(bad)) {
+      result = result.split(bad).join(good);
+    }
+  }
+  // Then fix any remaining MdC chars in English-looking words.
+  // An "English word" is a sequence of letters that contains both
+  // regular Latin vowels AND MdC Unicode chars — pure MdC transliterations
+  // don't mix with English vowels like 'e','o','u'.
+  // Split on spaces/punctuation, fix each token that looks like corrupted English
+  result = result.split(/(\s+|[,;:()""''".\-—/])/).map((token) => {
+    if (!MDC_CHAR_RE.test(token)) return token; // no MdC chars, skip
+    if (token.length < 2) return token;
+    // If token contains English vowels (e,o,u), it's a corrupted English word
+    if (/[eou]/i.test(token)) {
+      let fixed = token;
+      for (const [uni, ascii] of Object.entries(REVERSE_MDC)) {
+        fixed = fixed.split(uni).join(ascii);
+      }
+      return fixed;
+    }
+    return token;
+  }).join("");
+  return result;
+}
 for (const g of glyphs) {
   for (const m of g.meanings) {
-    let text = m.text;
-    for (const [bad, good] of ENGLISH_FIXES) {
-      if (text.includes(bad)) {
-        text = text.split(bad).join(good);
-      }
-    }
-    // Also fix Classifier prefix meanings generically
-    if (m.text.startsWith("Classifier")) {
-      const REVERSE_MDC: Record<string, string> = { "ꜥ": "a", "ḥ": "h", "ḫ": "kh", "š": "sh", "ṯ": "tj", "ḏ": "dj" };
-      for (const [uni, ascii] of Object.entries(REVERSE_MDC)) {
-        text = text.split(uni).join(ascii);
-      }
-    }
+    let text = fixCorruptedEnglish(m.text);
+    // Fix missing space after commas
+    text = text.replace(/,([a-zA-Z])/g, ", $1");
     if (text !== m.text) {
       m.text = text;
       englishFixed++;
@@ -420,6 +454,20 @@ if (fs.existsSync(JSESH_XML)) {
   }
 }
 console.log(`  Added variant descriptions: ${variantDescs}`);
+
+// ── 12b. Fix truncated variant descriptions ──────────────────────────────────
+// Descriptions like "Variant of A23 (king with staff and)" have a dangling preposition
+// because the parent signName was truncated. Drop the truncated parenthetical.
+let varDescFixed = 0;
+for (const g of glyphs) {
+  if (!g.description) continue;
+  const m = g.description.match(/^(Variant of [A-Za-z0-9]+) \([^)]*\b(with|on|of|and|from|in)\)$/);
+  if (m) {
+    g.description = m[1];
+    varDescFixed++;
+  }
+}
+if (varDescFixed > 0) console.log(`  Fixed truncated variant descriptions: ${varDescFixed}`);
 
 // ── 13. Transliteration frequency ranking (TLA corpus) ──────────────────────
 let ranked = 0;
