@@ -2804,7 +2804,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "The king, standing, with a long straight beard and",
+    "signName": "The king, standing",
     "transliterationCounts": {
       "ity": 3
     }
@@ -2867,7 +2867,7 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "King, standing, with a long wig or headcloth, with"
+    "signName": "King, standing, with a long wig or headcloth, with uraeus"
   },
   {
     "code": "A23A",
@@ -4457,7 +4457,7 @@
       "king or god",
       "holding something"
     ],
-    "signName": "God, seated, both knees up, with covered legs and "
+    "signName": "God, seated, both knees up, with covered legs and arms"
   },
   {
     "code": "A40B",
@@ -4709,7 +4709,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "King, seated, both knees up, with covered legs and"
+    "signName": "King, seated, both knees up, with covered legs and arms"
   },
   {
     "code": "A42B",
@@ -4741,7 +4741,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "King, seated, both knees up, with covered legs and"
+    "signName": "King, seated, both knees up, with covered legs and arms"
   },
   {
     "code": "A42A",
@@ -4773,7 +4773,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "King, seated, both knees up, with covered legs and"
+    "signName": "King, seated, both knees up, with covered legs and arms"
   },
   {
     "code": "A42C",
@@ -4803,7 +4803,7 @@
       "holding something",
       "king or god"
     ],
-    "signName": "King, seated, both knees up, with covered legs and"
+    "signName": "King, seated, both knees up, with covered legs and arms"
   },
   {
     "code": "A43",
@@ -63245,7 +63245,7 @@
       "ass",
       "sethian animal"
     ],
-    "signName": "A donkey/ass, seated as a Sethian animal, ears in "
+    "signName": "A donkey/ass, seated as a Sethian animal, ears in a V shape"
   },
   {
     "code": "E21",
@@ -103603,7 +103603,7 @@
       "branch",
       "palm"
     ],
-    "signName": "A palm branch, stripped of leaves and notched with"
+    "signName": "A palm branch, stripped of leaves and notched with a sharp n"
   },
   {
     "code": "M5A",
@@ -103679,7 +103679,7 @@
       "palm",
       "sign combination"
     ],
-    "signName": "A palm branch, stripped of leaves and notched with",
+    "signName": "A palm branch, stripped of leaves and notched with a round n",
     "transliterationCounts": {
       "tr": 13,
       "ti": 3
@@ -103767,7 +103767,7 @@
     "transliterationCounts": {
       "rnp": 7
     },
-    "signName": "A palm branch, stripped of leaves and notched with"
+    "signName": "A palm branch, stripped of leaves and notched with a sharp n"
   },
   {
     "code": "M7B",
@@ -133162,12 +133162,12 @@
         "type": "determinative"
       },
       {
-        "text": "A boat/ship with a prow and stern resembling the handle of a sickle (U1), on top of a rectangle resembling water, with a vertical pole and an oval with rounded corners inside the boat/ship, with an oar/rudder at the back.",
-        "type": "other"
-      },
-      {
         "text": "Classifier bark/boat",
         "type": "determinative"
+      },
+      {
+        "text": "A boat/ship with a prow and stern resembling the handle of a sickle (U1), on top of a rectangle resembling water, with a vertical pole and an oval with rounded corners inside the boat/ship, with an oar/rudder at the back.",
+        "type": "other"
       }
     ],
     "transliteration": [
@@ -145839,12 +145839,12 @@
         "type": "logogram"
       },
       {
-        "text": "Classifier crown",
-        "type": "determinative"
-      },
-      {
         "text": "Logogram (Upper Egypt)",
         "type": "logogram"
+      },
+      {
+        "text": "Classifier crown",
+        "type": "determinative"
       }
     ],
     "transliteration": [
@@ -171874,7 +171874,7 @@
       "column, post, etc.",
       "vessel"
     ],
-    "signName": "An open booth supported by a pole (O22), on top of"
+    "signName": "An open booth supported by a pole (O22)"
   },
   {
     "code": "W4A",
