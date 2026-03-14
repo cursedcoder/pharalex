@@ -60,8 +60,11 @@ for (const w of words) {
     // Must contain unambiguous English vowels (e, o, u) — not just 'a'/'i'/'y'
     // which are also MdC semivowels. "Elder" has 'e', "Tbti" does not.
     // Exception: known English words that only have a/i vowels.
+    // Also match hyphenated English compounds like "four-sided", "lion-headed".
     const KNOWN_ENGLISH_AI = new Set(["Day", "Dill", "Half", "District", "High", "Main", "King", "Clan"]);
-    const isEnglish = /^[A-Z][a-z]{2,}$/.test(p) && (/[eou]/i.test(p) || KNOWN_ENGLISH_AI.has(p));
+    const isPlainEnglish = /^[A-Z][a-z]{2,}$/.test(p) && (/[eou]/i.test(p) || KNOWN_ENGLISH_AI.has(p));
+    const isHyphenated = /^[a-z]+-[a-z]+$/i.test(p) && /[eou]/i.test(p);
+    const isEnglish = isPlainEnglish || isHyphenated;
     const isBracketed = /^\[/.test(p);
     if (isEnglish || isBracketed) {
       splitIdx = i;
