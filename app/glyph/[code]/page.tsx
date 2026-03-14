@@ -549,23 +549,6 @@ export default async function GlyphPage({ params }: PageProps) {
                 )}
               </div>
 
-              {relatedGlyphs.length > 0 && (
-                <section>
-                  <h3 className="font-display text-lg font-semibold text-brown mb-4">
-                    Related Glyphs
-                  </h3>
-                  <div className="space-y-3">
-                    {relatedGlyphs.map((related) => (
-                      <GlyphCard
-                        key={related.code}
-                        glyph={related}
-                        showDescription={false}
-                      />
-                    ))}
-                  </div>
-                </section>
-              )}
-
               {wordsUsingGlyph.length > 0 && (
                 <section>
                   <h3 className="font-display text-lg font-semibold text-brown mb-3">
@@ -595,6 +578,23 @@ export default async function GlyphPage({ params }: PageProps) {
                   >
                     Search all words with {glyph.code} →
                   </Link>
+                </section>
+              )}
+
+              {relatedGlyphs.length > 0 && (
+                <section>
+                  <h3 className="font-display text-lg font-semibold text-brown mb-4">
+                    Related Glyphs
+                  </h3>
+                  <div className="space-y-3">
+                    {relatedGlyphs.map((related) => (
+                      <GlyphCard
+                        key={related.code}
+                        glyph={related}
+                        showDescription={false}
+                      />
+                    ))}
+                  </div>
                 </section>
               )}
 
