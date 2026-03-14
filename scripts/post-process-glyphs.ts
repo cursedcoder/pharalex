@@ -94,13 +94,23 @@ for (const g of glyphs) {
 console.log(`  Removed backslash meanings: ${backslashRemoved}`);
 
 // ── 4. Convert MdC in meaning label transliterations ────────────────────────
+// Only convert the short token right after labels like "Logogram: KA"
 let mdcInMeanings = 0;
-const LABEL_RE = /^((?:Logogram|Phonogram|Phonetic|Classifier)[:\s]+)([A-Za-z.\-=]+)/;
+const LABEL_RE = /^((?:Logogram|Phonogram|Phonetic|Determinative)[:\s]+)([A-Za-z.\-=]{1,12})\b/;
 for (const g of glyphs) {
   for (const m of g.meanings) {
     const match = m.text.match(LABEL_RE);
     if (match) {
       const [, label, token] = match;
+      // Skip if token looks like an English word (all lowercase, common words)
+      const ENGLISH_WORDS = new Set([
+        "male", "female", "penis", "man", "woman", "sun", "moon", "time",
+        "day", "boat", "house", "field", "water", "fire", "meat", "bread",
+        "foreign", "peoples", "countries", "in", "council",
+      ]);
+      if (ENGLISH_WORDS.has(token.toLowerCase())) continue;
+      // Only convert if token contains MdC uppercase (A,H,S,T,D,X) or is short
+      if (!/[AHSTDX]/.test(token) && token === token.toLowerCase()) continue;
       const converted = mdcToUnicode(token).toLowerCase();
       const newText = m.text.replace(LABEL_RE, label + converted);
       if (newText !== m.text) {
@@ -112,23 +122,49 @@ for (const g of glyphs) {
 }
 console.log(`  Converted MdC in meanings: ${mdcInMeanings}`);
 
-// ── 5. Reverse MdC corruption in Classifier meanings ────────────────────────
-const REVERSE_MDC: Record<string, string> = { "ꜥ": "a", "ḥ": "h", "ḫ": "kh", "š": "sh", "ṯ": "tj", "ḏ": "dj" };
-let classifierFixed = 0;
+// ── 5. Fix MdC corruption in English words within meanings ──────────────────
+// MdC conversion can corrupt English: "determinative" → "determinꜥtive",
+// "stairway" → "stꜥirwꜥy". Fix known corrupted English words.
+const ENGLISH_FIXES: [string, string][] = [
+  ["determinꜥtive", "determinative"],
+  ["purificꜥtion", "purification"],
+  ["stꜥirwꜥy", "stairway"],
+  ["weꜥver", "weaver"],
+  ["collꜥr", "collar"],
+  ["humꜥn", "human"],
+  ["dꜥncing", "dancing"],
+  ["dꜥnce", "dance"],
+  ["sꜥiling", "sailing"],
+  ["supplicꜥtion", "supplication"],
+  ["ꜥrmy", "army"],
+  ["deꜥth", "death"],
+  ["stꜥtue", "statue"],
+  ["ꜥdorꜥtion", "adoration"],
+  ["eꜥting", "eating"],
+];
+let englishFixed = 0;
 for (const g of glyphs) {
   for (const m of g.meanings) {
-    if (!m.text.startsWith("Classifier")) continue;
-    let fixed = m.text;
-    for (const [uni, ascii] of Object.entries(REVERSE_MDC)) {
-      fixed = fixed.split(uni).join(ascii);
+    let text = m.text;
+    for (const [bad, good] of ENGLISH_FIXES) {
+      if (text.includes(bad)) {
+        text = text.split(bad).join(good);
+      }
     }
-    if (fixed !== m.text) {
-      m.text = fixed;
-      classifierFixed++;
+    // Also fix Classifier prefix meanings generically
+    if (m.text.startsWith("Classifier")) {
+      const REVERSE_MDC: Record<string, string> = { "ꜥ": "a", "ḥ": "h", "ḫ": "kh", "š": "sh", "ṯ": "tj", "ḏ": "dj" };
+      for (const [uni, ascii] of Object.entries(REVERSE_MDC)) {
+        text = text.split(uni).join(ascii);
+      }
+    }
+    if (text !== m.text) {
+      m.text = text;
+      englishFixed++;
     }
   }
 }
-console.log(`  Fixed Classifier corruption: ${classifierFixed}`);
+console.log(`  Fixed English corruption: ${englishFixed}`);
 
 // ── 6. Convert ^ name markers ───────────────────────────────────────────────
 let caretFixed = 0;
