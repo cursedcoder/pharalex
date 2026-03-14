@@ -65,6 +65,19 @@ describe("glyphs.json data integrity", () => {
     expect(dupes).toEqual([]);
   });
 
+  it("no Unicode hieroglyph characters in transliterations", () => {
+    const HIERO_RE = /[\u{13000}-\u{143FF}]/u;
+    const bad: string[] = [];
+    for (const g of glyphs) {
+      for (const t of (g as any).transliteration) {
+        if (HIERO_RE.test(t)) {
+          bad.push(`${(g as any).code}: "${t}"`);
+        }
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
   it("no English noise words in transliterations", () => {
     const NOISE = new Set([
       "logogram", "phonogram", "determinative", "biliteral", "triliteral",

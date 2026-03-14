@@ -141,6 +141,9 @@ const NOISE_WORDS = new Set([
 // Gardiner code pattern — sign references, not transliterations
 const GARDINER_CODE_RE = /^[A-Z][a-z]?\d+[A-Z]?$/;
 
+// Unicode hieroglyphs (U+13000–U+143FF) — sign references, not transliterations
+const HIERO_UNICODE_RE = /[\u{13000}-\u{143FF}]/u;
+
 function extractTransliterations(entry: WiktionaryEntry): string[] {
   const translits = new Set<string>();
   if (entry.head_templates) {
@@ -158,7 +161,8 @@ function extractTransliterations(entry: WiktionaryEntry): string[] {
         !val.includes(" ") &&
         val.length < 10 &&
         !NOISE_WORDS.has(val.toLowerCase()) &&
-        !GARDINER_CODE_RE.test(val)
+        !GARDINER_CODE_RE.test(val) &&
+        !HIERO_UNICODE_RE.test(val)
       ) {
         translits.add(val.replace(/[()]/g, ""));
       }
