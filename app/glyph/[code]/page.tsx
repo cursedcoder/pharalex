@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: PageProps) {
   const glyph = await getGlyphByCode(code);
 
   if (!glyph) {
-    return { title: "Glyph Not Found - PharaLex" };
+    return { title: "Glyph Not Found" };
   }
 
   const primaryMeaning = glyph.meanings[0]?.text || "";

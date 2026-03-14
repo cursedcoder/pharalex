@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     "Read ancient Egyptian hieroglyphic inscriptions with interactive sign-level transliteration and translation. Study royal inscriptions, pyramid texts, and canonical literature.",
   alternates: { canonical: "/texts" },
   openGraph: {
-    title: "Hieroglyphic Texts - PharaLex",
+    title: "Hieroglyphic Texts",
     description:
       "Read ancient Egyptian hieroglyphic inscriptions with interactive sign-level transliteration and translation.",
     url: "/texts",
   },
   twitter: {
-    title: "Hieroglyphic Texts - PharaLex",
+    title: "Hieroglyphic Texts",
     description:
       "Read ancient Egyptian hieroglyphic inscriptions with interactive sign-level transliteration and translation.",
   },

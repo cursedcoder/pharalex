@@ -7,18 +7,18 @@ import { getGlyphByCode, glyphHref } from "@/lib/glyphs";
 export const dynamic = "force-static";
 
 export const metadata = {
-  title: "Hieroglyphic Alphabet - PharaLex",
+  title: "Hieroglyphic Alphabet",
   description:
     "The 24 ancient Egyptian uniliteral hieroglyphs — signs that each represent a single consonant sound, forming the backbone of the hieroglyphic writing system.",
   alternates: { canonical: "/alphabet" },
   openGraph: {
-    title: "Hieroglyphic Alphabet - PharaLex",
+    title: "Hieroglyphic Alphabet",
     description:
       "The 24 ancient Egyptian uniliteral hieroglyphs — signs that each represent a single consonant sound.",
     url: "/alphabet",
   },
   twitter: {
-    title: "Hieroglyphic Alphabet - PharaLex",
+    title: "Hieroglyphic Alphabet",
     description:
       "The 24 ancient Egyptian uniliteral hieroglyphs — signs that each represent a single consonant sound.",
   },
