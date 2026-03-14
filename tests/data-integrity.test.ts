@@ -99,6 +99,18 @@ describe("glyphs.json data integrity", () => {
     expect(bad).toEqual([]);
   });
 
+  it("no whitespace in transliterations", () => {
+    const bad: string[] = [];
+    for (const g of glyphs) {
+      for (const t of (g as any).transliteration) {
+        if (t !== t.trim() || t === "") {
+          bad.push(`${(g as any).code}: "${t}"`);
+        }
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
   it("no MdC-corrupted English words in Classifier meanings", () => {
     const bad: string[] = [];
     for (const g of glyphs) {
