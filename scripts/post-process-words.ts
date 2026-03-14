@@ -59,7 +59,9 @@ for (const w of words) {
     const p = parts[i];
     // Must contain unambiguous English vowels (e, o, u) — not just 'a'/'i'/'y'
     // which are also MdC semivowels. "Elder" has 'e', "Tbti" does not.
-    const isEnglish = /^[A-Z][a-z]{2,}$/.test(p) && /[eou]/i.test(p);
+    // Exception: known English words that only have a/i vowels.
+    const KNOWN_ENGLISH_AI = new Set(["Day", "Dill", "Half", "District", "High", "Main", "King", "Clan"]);
+    const isEnglish = /^[A-Z][a-z]{2,}$/.test(p) && (/[eou]/i.test(p) || KNOWN_ENGLISH_AI.has(p));
     const isBracketed = /^\[/.test(p);
     if (isEnglish || isBracketed) {
       splitIdx = i;
@@ -91,6 +93,9 @@ for (const w of words) {
   if (!/^[A-Z][a-z]*$/.test(first)) continue;
   if (/[eou]/i.test(first)) continue;
   if (!"AHSTDX".includes(first[0])) continue;
+  // Skip known English words that only have a/i vowels
+  const KNOWN_ENG = new Set(["Day", "Dill", "Half", "District", "High", "Main", "King", "Clan"]);
+  if (KNOWN_ENG.has(first)) continue;
   // Next word should look like English (not another MdC token)
   const second = parts[1];
   if (!second) continue;
