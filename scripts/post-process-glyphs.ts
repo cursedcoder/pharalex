@@ -461,7 +461,7 @@ console.log(`  Added variant descriptions: ${variantDescs}`);
 let varDescFixed = 0;
 for (const g of glyphs) {
   if (!g.description) continue;
-  const m = g.description.match(/^(Variant of [A-Za-z0-9]+) \([^)]*\b(with|on|of|and|from|in)\)$/);
+  const m = g.description.match(/^(Variant of [A-Za-z0-9]+) \(.*\b(with|on|of|and|from|in)\)$/);
   if (m) {
     g.description = m[1];
     varDescFixed++;

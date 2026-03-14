@@ -45,6 +45,7 @@ const TYPOS: [string, string][] = [
   ["truely", "truly"],
   ["untill", "until"],
   ["wierd", "weird"],
+  ["diginity", "dignity"],
 ];
 
 /**
