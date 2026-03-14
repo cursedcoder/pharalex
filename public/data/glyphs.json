@@ -103,7 +103,11 @@
       "seated",
       "holding nothing"
     ],
-    "signName": "seated man"
+    "signName": "seated man",
+    "transliterationCounts": {
+      "s": 4,
+      "i": 2
+    }
   },
   {
     "code": "A1C",
@@ -225,7 +229,11 @@
       "seated",
       "holding nothing"
     ],
-    "signName": "seated man with hand to mouth"
+    "signName": "seated man with hand to mouth",
+    "transliterationCounts": {
+      "wnm": 28,
+      "gr": 11
+    }
   },
   {
     "code": "A2A",
@@ -387,7 +395,10 @@
       "holding nothing",
       "praying"
     ],
-    "signName": "seated man with hands raised"
+    "signName": "seated man with hands raised",
+    "transliterationCounts": {
+      "imn": 7
+    }
   },
   {
     "code": "A4C",
@@ -507,7 +518,10 @@
       "curled up",
       "hiding"
     ],
-    "signName": "crouching man hiding behind wall"
+    "signName": "crouching man hiding behind wall",
+    "transliterationCounts": {
+      "imn": 3
+    }
   },
   {
     "code": "A5B",
@@ -589,7 +603,10 @@
       "pouring water",
       "drops"
     ],
-    "signName": "seated man under vase from which water flows"
+    "signName": "seated man under vase from which water flows",
+    "transliterationCounts": {
+      "wab": 13
+    }
   },
   {
     "code": "A6B",
@@ -916,7 +933,10 @@
       "seated",
       "holding nothing"
     ],
-    "signName": "fatigued man"
+    "signName": "fatigued man",
+    "transliterationCounts": {
+      "wrd": 20
+    }
   },
   {
     "code": "A7A",
@@ -985,7 +1005,10 @@
       "henu-gesture",
       "with raised arms"
     ],
-    "signName": "man performing"
+    "signName": "man performing",
+    "transliterationCounts": {
+      "hnw": 8
+    }
   },
   {
     "code": "A8A",
@@ -1156,7 +1179,10 @@
       "seated",
       "holding something"
     ],
-    "signName": "seated man holding oar"
+    "signName": "seated man holding oar",
+    "transliterationCounts": {
+      "sqd": 2
+    }
   },
   {
     "code": "A10A",
@@ -1399,7 +1425,10 @@
       "ennemy",
       "kneeled"
     ],
-    "signName": "man with arms tied behind his back"
+    "signName": "man with arms tied behind his back",
+    "transliterationCounts": {
+      "sbi": 1
+    }
   },
   {
     "code": "A13A",
@@ -1789,7 +1818,10 @@
       "ennemy",
       "wounded, killed"
     ],
-    "signName": "falling man with blood streaming from his head"
+    "signName": "falling man with blood streaming from his head",
+    "transliterationCounts": {
+      "sbi": 5
+    }
   },
   {
     "code": "A14A",
@@ -1823,7 +1855,11 @@
       "ennemy",
       "wounded, killed"
     ],
-    "signName": "man whose head is hit with an axe"
+    "signName": "man whose head is hit with an axe",
+    "transliterationCounts": {
+      "mt": 2,
+      "sbi": 1
+    }
   },
   {
     "code": "A14G",
@@ -2130,7 +2166,11 @@
       "holding nothing",
       "bent"
     ],
-    "signName": "man bowing down"
+    "signName": "man bowing down",
+    "transliterationCounts": {
+      "ksw": 5,
+      "ksi": 3
+    }
   },
   {
     "code": "A16C",
@@ -2239,7 +2279,11 @@
       "seated on nothing",
       "child"
     ],
-    "signName": "child sitting with hand to mouth"
+    "signName": "child sitting with hand to mouth",
+    "transliterationCounts": {
+      "ms": 4,
+      "nni": 6
+    }
   },
   {
     "code": "A17A",
@@ -2383,7 +2427,10 @@
       "with crown",
       "king or god"
     ],
-    "signName": "child wearing"
+    "signName": "child wearing",
+    "transliterationCounts": {
+      "inp": 1
+    }
   },
   {
     "code": "A19",
@@ -2464,7 +2511,13 @@
       "holding stick",
       "bent"
     ],
-    "signName": "bent man leaning on staff"
+    "signName": "bent man leaning on staff",
+    "transliterationCounts": {
+      "smsw": 13,
+      "wr": 7,
+      "tni": 11,
+      "ikw": 3
+    }
   },
   {
     "code": "A20",
@@ -2503,7 +2556,10 @@
       "holding stick",
       "bent"
     ],
-    "signName": "man leaning on forked staff"
+    "signName": "man leaning on forked staff",
+    "transliterationCounts": {
+      "smsw": 1
+    }
   },
   {
     "code": "A21",
@@ -2537,7 +2593,11 @@
       "standing",
       "holding stick"
     ],
-    "signName": "man holding staff with handkerchief"
+    "signName": "man holding staff with handkerchief",
+    "transliterationCounts": {
+      "sr": 8,
+      "smr": 2
+    }
   },
   {
     "code": "A21A",
@@ -2628,7 +2688,10 @@
       "holding stick",
       "statue"
     ],
-    "signName": "statue of man with staff and"
+    "signName": "statue of man with staff and",
+    "transliterationCounts": {
+      "twt": 1
+    }
   },
   {
     "code": "A23",
@@ -2664,7 +2727,10 @@
       "holding stick",
       "king or god"
     ],
-    "signName": "king with staff and"
+    "signName": "king with staff and",
+    "transliterationCounts": {
+      "ity": 3
+    }
   },
   {
     "code": "A23F",
@@ -2979,7 +3045,10 @@
       "standing",
       "with raised arms"
     ],
-    "signName": "man with one arm pointing forward"
+    "signName": "man with one arm pointing forward",
+    "transliterationCounts": {
+      "nis": 6
+    }
   },
   {
     "code": "A27",
@@ -3016,7 +3085,10 @@
       "standing",
       "moving, running"
     ],
-    "signName": "hastening man"
+    "signName": "hastening man",
+    "transliterationCounts": {
+      "in": 1
+    }
   },
   {
     "code": "A27A",
@@ -3179,7 +3251,10 @@
       "standing",
       "praying"
     ],
-    "signName": "man with hands raised in front"
+    "signName": "man with hands raised in front",
+    "transliterationCounts": {
+      "tr": 5
+    }
   },
   {
     "code": "A31",
@@ -3214,7 +3289,10 @@
       "standing",
       "praying"
     ],
-    "signName": "man with hands raised behind him"
+    "signName": "man with hands raised behind him",
+    "transliterationCounts": {
+      "anw": 1
+    }
   },
   {
     "code": "A31A",
@@ -3611,7 +3689,10 @@
       "bent",
       "holding stick"
     ],
-    "signName": "man with stick and bundle on shoulder"
+    "signName": "man with stick and bundle on shoulder",
+    "transliterationCounts": {
+      "mniw": 10
+    }
   },
   {
     "code": "A33A",
@@ -3833,7 +3914,10 @@
       "standing",
       "working"
     ],
-    "signName": "man building wall"
+    "signName": "man building wall",
+    "transliterationCounts": {
+      "qd": 11
+    }
   },
   {
     "code": "A35E",
@@ -3996,7 +4080,10 @@
       "working",
       "bent"
     ],
-    "signName": "man kneading into vessel"
+    "signName": "man kneading into vessel",
+    "transliterationCounts": {
+      "afty": 3
+    }
   },
   {
     "code": "A36C",
@@ -4055,7 +4142,10 @@
     "tags": [
       "standing",
       "working"
-    ]
+    ],
+    "transliterationCounts": {
+      "afty": 1
+    }
   },
   {
     "code": "A36B",
@@ -4104,7 +4194,10 @@
       "working",
       "holding something"
     ],
-    "signName": "man in vessel"
+    "signName": "man in vessel",
+    "transliterationCounts": {
+      "afty": 1
+    }
   },
   {
     "code": "A38",
@@ -4141,7 +4234,10 @@
       "standing",
       "with animals"
     ],
-    "signName": "man holding necks of two emblematic animals with panther heads"
+    "signName": "man holding necks of two emblematic animals with panther heads",
+    "transliterationCounts": {
+      "qis": 2
+    }
   },
   {
     "code": "A39",
@@ -4174,7 +4270,10 @@
       "with animals",
       "group"
     ],
-    "signName": "man on two giraffes"
+    "signName": "man on two giraffes",
+    "transliterationCounts": {
+      "qis": 1
+    }
   },
   {
     "code": "A40",
@@ -4447,7 +4546,10 @@
       "king or god",
       "holding nothing"
     ],
-    "signName": "king with uraeus"
+    "signName": "king with uraeus",
+    "transliterationCounts": {
+      "nsw": 1
+    }
   },
   {
     "code": "A42",
@@ -5043,7 +5145,10 @@
       "with crown",
       "holding nothing"
     ],
-    "signName": "king wearing"
+    "signName": "king wearing",
+    "transliterationCounts": {
+      "bity": 3
+    }
   },
   {
     "code": "A45B",
@@ -5268,7 +5373,11 @@
       "seated",
       "holding something"
     ],
-    "signName": "shepherd seated and wrapped in mantle, holding stick"
+    "signName": "shepherd seated and wrapped in mantle, holding stick",
+    "transliterationCounts": {
+      "iry": 72,
+      "mniw": 3
+    }
   },
   {
     "code": "A47C",
@@ -5427,7 +5536,10 @@
       "holding something",
       "seated"
     ],
-    "signName": "beardless man seated and holding knife"
+    "signName": "beardless man seated and holding knife",
+    "transliterationCounts": {
+      "iry": 2
+    }
   },
   {
     "code": "A48A",
@@ -6203,7 +6315,12 @@
       "mummyform",
       "statue"
     ],
-    "signName": "standing mummy"
+    "signName": "standing mummy",
+    "transliterationCounts": {
+      "twt": 38,
+      "qi": 9,
+      "wi": 1
+    }
   },
   {
     "code": "A53A",
@@ -6268,7 +6385,10 @@
       "lying down",
       "holding nothing"
     ],
-    "signName": "lying mummy"
+    "signName": "lying mummy",
+    "transliterationCounts": {
+      "mni": 2
+    }
   },
   {
     "code": "A55",
@@ -6671,7 +6791,10 @@
       "working",
       "drops"
     ],
-    "signName": "man sowing seeds"
+    "signName": "man sowing seeds",
+    "transliterationCounts": {
+      "sti": 1
+    }
   },
   {
     "code": "A60A",
@@ -7494,7 +7617,10 @@
     "tags": [
       "standing",
       "holding nothing"
-    ]
+    ],
+    "transliterationCounts": {
+      "fgn": 2
+    }
   },
   {
     "code": "A81A",
@@ -8921,7 +9047,10 @@
     "tags": [
       "holding something",
       "seated"
-    ]
+    ],
+    "transliterationCounts": {
+      "swr": 1
+    }
   },
   {
     "code": "A116A",
@@ -10806,7 +10935,10 @@
       "king or god",
       "kneeled",
       "holding nothing"
-    ]
+    ],
+    "transliterationCounts": {
+      "snn": 1
+    }
   },
   {
     "code": "A153A",
@@ -13525,7 +13657,10 @@
       "standing",
       "with animals",
       "canid"
-    ]
+    ],
+    "transliterationCounts": {
+      "nw": 1
+    }
   },
   {
     "code": "A248B",
@@ -13555,7 +13690,10 @@
       "holding stick",
       "seated",
       "canid"
-    ]
+    ],
+    "transliterationCounts": {
+      "nw": 1
+    }
   },
   {
     "code": "A248A",
@@ -14492,7 +14630,10 @@
       "standing",
       "holding nothing",
       "dwarf"
-    ]
+    ],
+    "transliterationCounts": {
+      "dng": 2
+    }
   },
   {
     "code": "A283",
@@ -15912,7 +16053,10 @@
       "with crown",
       "standing",
       "holding stick"
-    ]
+    ],
+    "transliterationCounts": {
+      "ity": 1
+    }
   },
   {
     "code": "A311A",
@@ -16096,7 +16240,10 @@
     "tags": [
       "statue",
       "seated"
-    ]
+    ],
+    "transliterationCounts": {
+      "twt": 1
+    }
   },
   {
     "code": "A313A",
@@ -18017,7 +18164,10 @@
     "tags": [
       "seated",
       "holding something"
-    ]
+    ],
+    "transliterationCounts": {
+      "swr": 3
+    }
   },
   {
     "code": "A411",
@@ -25515,7 +25665,10 @@
       "seated",
       "holding nothing"
     ],
-    "signName": "seated woman"
+    "signName": "seated woman",
+    "transliterationCounts": {
+      "st": 2
+    }
   },
   {
     "code": "B1A",
@@ -25870,7 +26023,10 @@
       "pregnant",
       "kneeled"
     ],
-    "signName": "pregnant woman"
+    "signName": "pregnant woman",
+    "transliterationCounts": {
+      "iwr": 5
+    }
   },
   {
     "code": "B2A",
@@ -25951,7 +26107,11 @@
       "kneeled",
       "child"
     ],
-    "signName": "woman giving birth"
+    "signName": "woman giving birth",
+    "transliterationCounts": {
+      "msi": 4,
+      "ms": 1
+    }
   },
   {
     "code": "B3A",
@@ -26119,7 +26279,11 @@
       "child",
       "suckling"
     ],
-    "signName": "woman suckling child"
+    "signName": "woman suckling child",
+    "transliterationCounts": {
+      "rnn": 3,
+      "mnat": 1
+    }
   },
   {
     "code": "B5D",
@@ -26294,7 +26458,10 @@
       "child",
       "seated on chair"
     ],
-    "signName": "woman on chair with child on lap"
+    "signName": "woman on chair with child on lap",
+    "transliterationCounts": {
+      "rnn": 1
+    }
   },
   {
     "code": "B6A",
@@ -31090,7 +31257,10 @@
       "holding nothing",
       "male"
     ],
-    "signName": "god with head of jackal"
+    "signName": "god with head of jackal",
+    "transliterationCounts": {
+      "inpw": 1
+    }
   },
   {
     "code": "C6B",
@@ -37135,7 +37305,10 @@
       "holding nothing",
       "male",
       "osiris"
-    ]
+    ],
+    "transliterationCounts": {
+      "wsir": 1
+    }
   },
   {
     "code": "C98",
@@ -48479,7 +48652,10 @@
     "tags": [
       "head"
     ],
-    "signName": "head in profile"
+    "signName": "head in profile",
+    "transliterationCounts": {
+      "tp": 59
+    }
   },
   {
     "code": "D1A",
@@ -48705,7 +48881,11 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "eye"
+    "signName": "eye",
+    "transliterationCounts": {
+      "ir": 30,
+      "irt": 46
+    }
   },
   {
     "code": "D5",
@@ -48737,7 +48917,11 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "eye touched up with paint"
+    "signName": "eye touched up with paint",
+    "transliterationCounts": {
+      "dgi": 2,
+      "ptr": 1
+    }
   },
   {
     "code": "D6",
@@ -48769,7 +48953,10 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "eye with painted upper lid"
+    "signName": "eye with painted upper lid",
+    "transliterationCounts": {
+      "ptr": 41
+    }
   },
   {
     "code": "D6A",
@@ -48825,7 +49012,11 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "eye with painted lower lid"
+    "signName": "eye with painted lower lid",
+    "transliterationCounts": {
+      "an": 1,
+      "ptr": 1
+    }
   },
   {
     "code": "D7A",
@@ -48961,7 +49152,11 @@
       "eye(s)",
       "in-circle"
     ],
-    "signName": "eye enclosed in"
+    "signName": "eye enclosed in",
+    "transliterationCounts": {
+      "an": 4,
+      "anw": 1
+    }
   },
   {
     "code": "D8A",
@@ -49092,7 +49287,10 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "eye with flowing tears"
+    "signName": "eye with flowing tears",
+    "transliterationCounts": {
+      "rmi": 2
+    }
   },
   {
     "code": "D9A",
@@ -49302,7 +49500,10 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "pupil of eye"
+    "signName": "pupil of eye",
+    "transliterationCounts": {
+      "ir": 2
+    }
   },
   {
     "code": "D13",
@@ -49524,7 +49725,10 @@
     "tags": [
       "eye(s)"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "tit": 10
+    }
   },
   {
     "code": "D18",
@@ -49620,7 +49824,12 @@
     "tags": [
       "nose"
     ],
-    "signName": "nose, eye and cheek"
+    "signName": "nose, eye and cheek",
+    "transliterationCounts": {
+      "fnd": 21,
+      "sn": 12,
+      "btn": 12
+    }
   },
   {
     "code": "D20",
@@ -49687,7 +49896,10 @@
     "tags": [
       "mouth, lips..."
     ],
-    "signName": "mouth"
+    "signName": "mouth",
+    "transliterationCounts": {
+      "r": 150
+    }
   },
   {
     "code": "D21A",
@@ -49859,7 +50071,10 @@
     "tags": [
       "mouth, lips..."
     ],
-    "signName": "upper lip with teeth"
+    "signName": "upper lip with teeth",
+    "transliterationCounts": {
+      "spt": 16
+    }
   },
   {
     "code": "D25",
@@ -49892,7 +50107,10 @@
     "tags": [
       "mouth, lips..."
     ],
-    "signName": "lips with teeth"
+    "signName": "lips with teeth",
+    "transliterationCounts": {
+      "spty": 2
+    }
   },
   {
     "code": "D26",
@@ -49927,7 +50145,11 @@
     "tags": [
       "mouth, lips..."
     ],
-    "signName": "liquid issuing from lips"
+    "signName": "liquid issuing from lips",
+    "transliterationCounts": {
+      "psg": 7,
+      "snf": 7
+    }
   },
   {
     "code": "D26B",
@@ -50034,7 +50256,11 @@
     "tags": [
       "breast"
     ],
-    "signName": "small breast"
+    "signName": "small breast",
+    "transliterationCounts": {
+      "snq": 3,
+      "mna": 6
+    }
   },
   {
     "code": "D27A",
@@ -50669,7 +50895,11 @@
     "tags": [
       "arms"
     ],
-    "signName": "arms in gesture of negation"
+    "signName": "arms in gesture of negation",
+    "transliterationCounts": {
+      "n": 6,
+      "nn": 5
+    }
   },
   {
     "code": "D35A",
@@ -50735,7 +50965,11 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm"
+    "signName": "forearm",
+    "transliterationCounts": {
+      "a": 54,
+      "di": 2
+    }
   },
   {
     "code": "D37",
@@ -50805,7 +51039,13 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm with"
+    "signName": "forearm with",
+    "transliterationCounts": {
+      "rdi": 32,
+      "di": 13,
+      "m": 3,
+      "imi": 1
+    }
   },
   {
     "code": "D38",
@@ -50859,7 +51099,10 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm with rounded loaf"
+    "signName": "forearm with rounded loaf",
+    "transliterationCounts": {
+      "m": 4
+    }
   },
   {
     "code": "D39",
@@ -50897,7 +51140,11 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm with"
+    "signName": "forearm with",
+    "transliterationCounts": {
+      "mwt": 4,
+      "m": 1
+    }
   },
   {
     "code": "D40",
@@ -50988,7 +51235,11 @@
     "tags": [
       "arms"
     ],
-    "signName": "forearm with palm down and bent upper arm"
+    "signName": "forearm with palm down and bent upper arm",
+    "transliterationCounts": {
+      "rmn": 35,
+      "ni": 7
+    }
   },
   {
     "code": "D42",
@@ -51196,7 +51447,10 @@
     "tags": [
       "hand"
     ],
-    "signName": "hand"
+    "signName": "hand",
+    "transliterationCounts": {
+      "d": 2
+    }
   },
   {
     "code": "D46C",
@@ -51293,7 +51547,10 @@
     "tags": [
       "hand"
     ],
-    "signName": "liquid falling from hand"
+    "signName": "liquid falling from hand",
+    "transliterationCounts": {
+      "idt": 7
+    }
   },
   {
     "code": "D46B",
@@ -51695,7 +51952,11 @@
     "tags": [
       "finger"
     ],
-    "signName": "finger horizontally"
+    "signName": "finger horizontally",
+    "transliterationCounts": {
+      "dqr": 11,
+      "ant": 7
+    }
   },
   {
     "code": "D52",
@@ -51755,7 +52016,11 @@
     "tags": [
       "private parts"
     ],
-    "signName": "phallus"
+    "signName": "phallus",
+    "transliterationCounts": {
+      "mt": 12,
+      "mtwt": 3
+    }
   },
   {
     "code": "D52A",
@@ -51819,7 +52084,10 @@
     "tags": [
       "private parts"
     ],
-    "signName": "liquid issuing from phallus"
+    "signName": "liquid issuing from phallus",
+    "transliterationCounts": {
+      "mt": 2
+    }
   },
   {
     "code": "D53A",
@@ -51904,7 +52172,11 @@
     "tags": [
       "legs"
     ],
-    "signName": "legs walking"
+    "signName": "legs walking",
+    "transliterationCounts": {
+      "nmtt": 12,
+      "iw": 13
+    }
   },
   {
     "code": "D54A",
@@ -51966,7 +52238,11 @@
     "tags": [
       "legs"
     ],
-    "signName": "legs walking backwards"
+    "signName": "legs walking backwards",
+    "transliterationCounts": {
+      "ann": 9,
+      "an": 5
+    }
   },
   {
     "code": "D56",
@@ -52018,7 +52294,11 @@
     "tags": [
       "legs"
     ],
-    "signName": "leg"
+    "signName": "leg",
+    "transliterationCounts": {
+      "rd": 7,
+      "sbq": 5
+    }
   },
   {
     "code": "D57",
@@ -52055,7 +52335,10 @@
     "tags": [
       "legs"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "nkn": 2
+    }
   },
   {
     "code": "D57C",
@@ -52174,7 +52457,10 @@
     "tags": [
       "legs"
     ],
-    "signName": "foot"
+    "signName": "foot",
+    "transliterationCounts": {
+      "bw": 24
+    }
   },
   {
     "code": "D59",
@@ -52197,7 +52483,10 @@
       "legs",
       "arms"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "ab": 9
+    }
   },
   {
     "code": "D60",
@@ -52225,7 +52514,10 @@
     "source": "both",
     "tags": [
       "legs"
-    ]
+    ],
+    "transliterationCounts": {
+      "wab": 61
+    }
   },
   {
     "code": "D61",
@@ -52951,7 +53243,10 @@
     "tags": [
       "mutilated glyphs",
       "head-and-arms"
-    ]
+    ],
+    "transliterationCounts": {
+      "tmyw": 3
+    }
   },
   {
     "code": "D78",
@@ -53319,7 +53614,10 @@
     "tags": [
       "mutilated glyphs",
       "head-and-arms"
-    ]
+    ],
+    "transliterationCounts": {
+      "rwt": 1
+    }
   },
   {
     "code": "D93",
@@ -53977,7 +54275,10 @@
     "tags": [
       "mutilated glyphs",
       "head-and-arms"
-    ]
+    ],
+    "transliterationCounts": {
+      "swr": 1
+    }
   },
   {
     "code": "D119",
@@ -56603,7 +56904,10 @@
     "source": "unicode",
     "tags": [
       "arms"
-    ]
+    ],
+    "transliterationCounts": {
+      "rmn": 6
+    }
   },
   {
     "code": "D211",
@@ -56742,7 +57046,10 @@
     "source": "unicode",
     "tags": [
       "arms"
-    ]
+    ],
+    "transliterationCounts": {
+      "mk": 1
+    }
   },
   {
     "code": "D218",
@@ -57818,7 +58125,10 @@
     "source": "unicode",
     "tags": [
       "hand"
-    ]
+    ],
+    "transliterationCounts": {
+      "kp": 1
+    }
   },
   {
     "code": "D267",
@@ -58138,7 +58448,10 @@
     "source": "unicode",
     "tags": [
       "private parts"
-    ]
+    ],
+    "transliterationCounts": {
+      "nk": 1
+    }
   },
   {
     "code": "D281",
@@ -62494,7 +62807,10 @@
     "tags": [
       "horse"
     ],
-    "signName": "horse"
+    "signName": "horse",
+    "transliterationCounts": {
+      "ssmt": 2
+    }
   },
   {
     "code": "E6C",
@@ -62550,7 +62866,10 @@
     "source": "unicode",
     "tags": [
       "horse"
-    ]
+    ],
+    "transliterationCounts": {
+      "ssmt": 3
+    }
   },
   {
     "code": "E6B",
@@ -62682,7 +63001,10 @@
       "goat",
       "child"
     ],
-    "signName": "kid"
+    "signName": "kid",
+    "transliterationCounts": {
+      "ib": 12
+    }
   },
   {
     "code": "E8A",
@@ -62712,7 +63034,10 @@
       "goat",
       "child"
     ],
-    "signName": "kid jumping"
+    "signName": "kid jumping",
+    "transliterationCounts": {
+      "ib": 7
+    }
   },
   {
     "code": "E8B",
@@ -62778,7 +63103,10 @@
     "tags": [
       "antelope"
     ],
-    "signName": "newborn bubalis or hartebeest"
+    "signName": "newborn bubalis or hartebeest",
+    "transliterationCounts": {
+      "iw": 21
+    }
   },
   {
     "code": "E9A",
@@ -63028,7 +63356,10 @@
     "tags": [
       "pig"
     ],
-    "signName": "pig"
+    "signName": "pig",
+    "transliterationCounts": {
+      "rri": 2
+    }
   },
   {
     "code": "E13",
@@ -63068,7 +63399,10 @@
     "tags": [
       "cat"
     ],
-    "signName": "cat"
+    "signName": "cat",
+    "transliterationCounts": {
+      "miw": 2
+    }
   },
   {
     "code": "E13A",
@@ -63254,7 +63588,10 @@
     "tags": [
       "canid"
     ],
-    "signName": "dog (saluki)"
+    "signName": "dog (saluki)",
+    "transliterationCounts": {
+      "iw": 1
+    }
   },
   {
     "code": "E14B",
@@ -63349,7 +63686,10 @@
     "tags": [
       "canid"
     ],
-    "signName": "lying canine"
+    "signName": "lying canine",
+    "transliterationCounts": {
+      "inpw": 6
+    }
   },
   {
     "code": "E15A",
@@ -63459,7 +63799,10 @@
     "tags": [
       "canid"
     ],
-    "signName": "lying canine on shrine"
+    "signName": "lying canine on shrine",
+    "transliterationCounts": {
+      "inpw": 2
+    }
   },
   {
     "code": "E16AEXTU",
@@ -63991,7 +64334,12 @@
     "tags": [
       "lion, panthera"
     ],
-    "signName": "lying lion"
+    "signName": "lying lion",
+    "transliterationCounts": {
+      "rw": 8,
+      "r": 2,
+      "nb": 1
+    }
   },
   {
     "code": "E23A",
@@ -64117,7 +64465,10 @@
       "large wild animal",
       "hippopotamus"
     ],
-    "signName": "hippopotamus"
+    "signName": "hippopotamus",
+    "transliterationCounts": {
+      "db": 3
+    }
   },
   {
     "code": "E25A",
@@ -64264,7 +64615,10 @@
     "tags": [
       "large wild animal"
     ],
-    "signName": "giraffe"
+    "signName": "giraffe",
+    "transliterationCounts": {
+      "sr": 7
+    }
   },
   {
     "code": "E28",
@@ -64519,7 +64873,11 @@
     "tags": [
       "ape, monkey"
     ],
-    "signName": "baboon"
+    "signName": "baboon",
+    "transliterationCounts": {
+      "ky": 2,
+      "qnd": 2
+    }
   },
   {
     "code": "E33",
@@ -64562,7 +64920,10 @@
     "tags": [
       "ape, monkey"
     ],
-    "signName": "monkey"
+    "signName": "monkey",
+    "transliterationCounts": {
+      "gf": 1
+    }
   },
   {
     "code": "E34",
@@ -64611,7 +64972,10 @@
     "tags": [
       "hare"
     ],
-    "signName": "hare"
+    "signName": "hare",
+    "transliterationCounts": {
+      "wn": 29
+    }
   },
   {
     "code": "E34B",
@@ -64639,7 +65003,10 @@
     "source": "both",
     "tags": [
       "hare"
-    ]
+    ],
+    "transliterationCounts": {
+      "wnt": 1
+    }
   },
   {
     "code": "E34A",
@@ -68842,7 +69209,10 @@
     "source": "aegyptus",
     "tags": [
       "canid"
-    ]
+    ],
+    "transliterationCounts": {
+      "bqnqn": 3
+    }
   },
   {
     "code": "E145A",
@@ -70348,7 +70718,10 @@
     "source": "unicode",
     "tags": [
       "ram"
-    ]
+    ],
+    "transliterationCounts": {
+      "bt": 1
+    }
   },
   {
     "code": "E185",
@@ -74700,7 +75073,11 @@
       "canid",
       "head"
     ],
-    "signName": "head and neck of canine"
+    "signName": "head and neck of canine",
+    "transliterationCounts": {
+      "wsr": 64,
+      "wsrt": 10
+    }
   },
   {
     "code": "F12A",
@@ -74768,7 +75145,11 @@
       "horn",
       "bovid"
     ],
-    "signName": "horns"
+    "signName": "horns",
+    "transliterationCounts": {
+      "wpt": 33,
+      "wp": 31
+    }
   },
   {
     "code": "U+13BAE",
@@ -75135,7 +75516,11 @@
       "horn",
       "bovid"
     ],
-    "signName": "horn"
+    "signName": "horn",
+    "transliterationCounts": {
+      "ab": 33,
+      "db": 5
+    }
   },
   {
     "code": "F16A",
@@ -75199,7 +75584,10 @@
       "bovid",
       "horn"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "abw": 18
+    }
   },
   {
     "code": "F18",
@@ -75257,7 +75645,10 @@
       "elephant",
       "tusk"
     ],
-    "signName": "tusk"
+    "signName": "tusk",
+    "transliterationCounts": {
+      "bi": 1
+    }
   },
   {
     "code": "F18A",
@@ -75322,7 +75713,10 @@
     "tags": [
       "jaw"
     ],
-    "signName": "lower jaw-bone of ox"
+    "signName": "lower jaw-bone of ox",
+    "transliterationCounts": {
+      "art": 4
+    }
   },
   {
     "code": "F19B",
@@ -75444,7 +75838,11 @@
     "tags": [
       "tongue"
     ],
-    "signName": "tongue"
+    "signName": "tongue",
+    "transliterationCounts": {
+      "ns": 12,
+      "dp": 4
+    }
   },
   {
     "code": "F20B",
@@ -75471,7 +75869,10 @@
     "source": "unicode",
     "tags": [
       "tongue"
-    ]
+    ],
+    "transliterationCounts": {
+      "ns": 1
+    }
   },
   {
     "code": "F20A",
@@ -75579,7 +75980,11 @@
       "hear",
       "bovid"
     ],
-    "signName": "ear of bovine"
+    "signName": "ear of bovine",
+    "transliterationCounts": {
+      "sdm": 66,
+      "idn": 27
+    }
   },
   {
     "code": "F21A",
@@ -75901,7 +76306,10 @@
       "bovid",
       "tail"
     ],
-    "signName": "skin of cow with bent tail"
+    "signName": "skin of cow with bent tail",
+    "transliterationCounts": {
+      "pnw": 2
+    }
   },
   {
     "code": "F27A",
@@ -76067,7 +76475,10 @@
       "bovid",
       "tail"
     ],
-    "signName": "cow's skin pierced by arrow"
+    "signName": "cow's skin pierced by arrow",
+    "transliterationCounts": {
+      "sti": 32
+    }
   },
   {
     "code": "F29C",
@@ -76275,7 +76686,12 @@
     "tags": [
       "skin"
     ],
-    "signName": "three skins tied together"
+    "signName": "three skins tied together",
+    "transliterationCounts": {
+      "ms": 23,
+      "mst": 34,
+      "msi": 13
+    }
   },
   {
     "code": "F31A",
@@ -76371,7 +76787,10 @@
     "tags": [
       "tail"
     ],
-    "signName": "tail"
+    "signName": "tail",
+    "transliterationCounts": {
+      "sd": 8
+    }
   },
   {
     "code": "F33B",
@@ -76451,7 +76870,10 @@
     "tags": [
       "heart"
     ],
-    "signName": "heart"
+    "signName": "heart",
+    "transliterationCounts": {
+      "ib": 9
+    }
   },
   {
     "code": "F34A",
@@ -76495,7 +76917,10 @@
       "windpipe",
       "heart"
     ],
-    "signName": "heart and windpipe"
+    "signName": "heart and windpipe",
+    "transliterationCounts": {
+      "nfr": 134
+    }
   },
   {
     "code": "F35A",
@@ -76676,7 +77101,10 @@
     "source": "both",
     "tags": [
       "bones"
-    ]
+    ],
+    "transliterationCounts": {
+      "sm": 14
+    }
   },
   {
     "code": "F37M",
@@ -77354,7 +77782,10 @@
     "tags": [
       "bones"
     ],
-    "signName": "rib"
+    "signName": "rib",
+    "transliterationCounts": {
+      "spr": 32
+    }
   },
   {
     "code": "F42B",
@@ -77462,7 +77893,11 @@
       "bones",
       "flesh"
     ],
-    "signName": "leg-bone with meat"
+    "signName": "leg-bone with meat",
+    "transliterationCounts": {
+      "iwa": 45,
+      "isw": 10
+    }
   },
   {
     "code": "F45",
@@ -77497,7 +77932,10 @@
     "tags": [
       "private parts"
     ],
-    "signName": "uterus"
+    "signName": "uterus",
+    "transliterationCounts": {
+      "idt": 7
+    }
   },
   {
     "code": "F45A",
@@ -77564,7 +78002,10 @@
     "tags": [
       "intestine"
     ],
-    "signName": "intestine"
+    "signName": "intestine",
+    "transliterationCounts": {
+      "dbn": 25
+    }
   },
   {
     "code": "F46B",
@@ -77787,7 +78228,11 @@
     "tags": [
       "flesh"
     ],
-    "signName": "piece of flesh"
+    "signName": "piece of flesh",
+    "transliterationCounts": {
+      "iwf": 15,
+      "at": 13
+    }
   },
   {
     "code": "F51A",
@@ -77819,7 +78264,10 @@
     "tags": [
       "flesh"
     ],
-    "signName": "three pieces of flesh vertically"
+    "signName": "three pieces of flesh vertically",
+    "transliterationCounts": {
+      "iwf": 15
+    }
   },
   {
     "code": "F51C",
@@ -82691,7 +83139,10 @@
     "tags": [
       "falcon"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "bik": 3
+    }
   },
   {
     "code": "G6A",
@@ -82760,7 +83211,10 @@
       "falcon",
       "with standard"
     ],
-    "signName": "falcon on"
+    "signName": "falcon on",
+    "transliterationCounts": {
+      "nsw": 2
+    }
   },
   {
     "code": "G7A",
@@ -83239,7 +83693,10 @@
       "falcon",
       "mummyform"
     ],
-    "signName": "image of falcon with"
+    "signName": "image of falcon with",
+    "transliterationCounts": {
+      "spdw": 2
+    }
   },
   {
     "code": "U+13CBA",
@@ -83452,7 +83909,12 @@
     "tags": [
       "vulture"
     ],
-    "signName": "vulture"
+    "signName": "vulture",
+    "transliterationCounts": {
+      "mwt": 30,
+      "nr": 1,
+      "nrt": 1
+    }
   },
   {
     "code": "G14A",
@@ -83604,7 +84066,10 @@
       "vulture",
       "group"
     ],
-    "signName": "vulture and cobra each on"
+    "signName": "vulture and cobra each on",
+    "transliterationCounts": {
+      "nbty": 3
+    }
   },
   {
     "code": "G17",
@@ -83636,7 +84101,10 @@
     "tags": [
       "olw"
     ],
-    "signName": "owl"
+    "signName": "owl",
+    "transliterationCounts": {
+      "m": 114
+    }
   },
   {
     "code": "G17D",
@@ -83821,7 +84289,11 @@
     "tags": [
       "olw"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "mi": 2,
+      "m": 2
+    }
   },
   {
     "code": "G20A",
@@ -84477,7 +84949,10 @@
     "tags": [
       "ibis"
     ],
-    "signName": "glossy ibis"
+    "signName": "glossy ibis",
+    "transliterationCounts": {
+      "gm": 2
+    }
   },
   {
     "code": "G28A",
@@ -84546,7 +85021,10 @@
     "tags": [
       "jabiru"
     ],
-    "signName": "saddle-billed stork"
+    "signName": "saddle-billed stork",
+    "transliterationCounts": {
+      "ba": 29
+    }
   },
   {
     "code": "G29A",
@@ -84723,7 +85201,10 @@
     "tags": [
       "heron"
     ],
-    "signName": "heron"
+    "signName": "heron",
+    "transliterationCounts": {
+      "bnw": 1
+    }
   },
   {
     "code": "G31A",
@@ -85015,7 +85496,10 @@
     "tags": [
       "ostrich"
     ],
-    "signName": "ostrich"
+    "signName": "ostrich",
+    "transliterationCounts": {
+      "niw": 2
+    }
   },
   {
     "code": "G34A",
@@ -85085,7 +85569,10 @@
     "tags": [
       "cormorant"
     ],
-    "signName": "cormorant"
+    "signName": "cormorant",
+    "transliterationCounts": {
+      "aq": 17
+    }
   },
   {
     "code": "G36",
@@ -85131,7 +85618,11 @@
     "tags": [
       "small bird"
     ],
-    "signName": "swallow"
+    "signName": "swallow",
+    "transliterationCounts": {
+      "wr": 34,
+      "mnt": 1
+    }
   },
   {
     "code": "G36A",
@@ -85181,7 +85672,10 @@
     "tags": [
       "small bird"
     ],
-    "signName": "sparrow"
+    "signName": "sparrow",
+    "transliterationCounts": {
+      "bin": 14
+    }
   },
   {
     "code": "G37A",
@@ -85288,7 +85782,12 @@
     "tags": [
       "duck or goose"
     ],
-    "signName": "white-fronted goose"
+    "signName": "white-fronted goose",
+    "transliterationCounts": {
+      "gb": 8,
+      "wdf": 1,
+      "gbb": 1
+    }
   },
   {
     "code": "G39",
@@ -85344,7 +85843,10 @@
     "tags": [
       "duck or goose"
     ],
-    "signName": "pintail"
+    "signName": "pintail",
+    "transliterationCounts": {
+      "st": 1
+    }
   },
   {
     "code": "G39A",
@@ -85537,7 +86039,11 @@
       "duck or goose",
       "with outstretched wings"
     ],
-    "signName": "pintail alighting"
+    "signName": "pintail alighting",
+    "transliterationCounts": {
+      "tn": 5,
+      "qmyt": 3
+    }
   },
   {
     "code": "G41A",
@@ -85650,7 +86156,10 @@
       "quail",
       "child"
     ],
-    "signName": "quail chick"
+    "signName": "quail chick",
+    "transliterationCounts": {
+      "w": 23
+    }
   },
   {
     "code": "G43A",
@@ -85732,7 +86241,10 @@
       "child",
       "group"
     ],
-    "signName": "two quail chicks"
+    "signName": "two quail chicks",
+    "transliterationCounts": {
+      "ww": 1
+    }
   },
   {
     "code": "G45",
@@ -86286,7 +86798,10 @@
     "tags": [
       "duck or goose"
     ],
-    "signName": "goose picking up grain"
+    "signName": "goose picking up grain",
+    "transliterationCounts": {
+      "snm": 4
+    }
   },
   {
     "code": "G53",
@@ -86444,7 +86959,10 @@
       "duck or goose",
       "wounded, killed"
     ],
-    "signName": "plucked bird"
+    "signName": "plucked bird",
+    "transliterationCounts": {
+      "snd": 22
+    }
   },
   {
     "code": "G54A",
@@ -94724,7 +95242,10 @@
     "tags": [
       "head"
     ],
-    "signName": "head of vulture"
+    "signName": "head of vulture",
+    "transliterationCounts": {
+      "nr": 1
+    }
   },
   {
     "code": "H5",
@@ -95027,7 +95548,10 @@
     "tags": [
       "egg"
     ],
-    "signName": "egg"
+    "signName": "egg",
+    "transliterationCounts": {
+      "pat": 4
+    }
   },
   {
     "code": "H10",
@@ -96233,7 +96757,10 @@
     "tags": [
       "crocodile"
     ],
-    "signName": "crocodile"
+    "signName": "crocodile",
+    "transliterationCounts": {
+      "skn": 1
+    }
   },
   {
     "code": "I3A",
@@ -96599,7 +97126,10 @@
     "tags": [
       "crocodile"
     ],
-    "signName": "crocodile with curved tail"
+    "signName": "crocodile with curved tail",
+    "transliterationCounts": {
+      "sbk": 1
+    }
   },
   {
     "code": "I5A",
@@ -96629,7 +97159,10 @@
       "crocodile",
       "mummyform"
     ],
-    "signName": "image of crocodile"
+    "signName": "image of crocodile",
+    "transliterationCounts": {
+      "sbk": 1
+    }
   },
   {
     "code": "I5B",
@@ -96688,7 +97221,10 @@
     "tags": [
       "crocodile"
     ],
-    "signName": "crocodile scales"
+    "signName": "crocodile scales",
+    "transliterationCounts": {
+      "km": 20
+    }
   },
   {
     "code": "I6D",
@@ -96824,7 +97360,10 @@
     "tags": [
       "frog"
     ],
-    "signName": "frog"
+    "signName": "frog",
+    "transliterationCounts": {
+      "qrr": 1
+    }
   },
   {
     "code": "I8",
@@ -96926,7 +97465,10 @@
     "tags": [
       "horned viper"
     ],
-    "signName": "horned viper"
+    "signName": "horned viper",
+    "transliterationCounts": {
+      "it": 19
+    }
   },
   {
     "code": "I9A",
@@ -97205,7 +97747,12 @@
     "tags": [
       "uraeus"
     ],
-    "signName": "erect cobra"
+    "signName": "erect cobra",
+    "transliterationCounts": {
+      "iart": 9,
+      "nbwt": 1,
+      "nsrt": 1
+    }
   },
   {
     "code": "I13",
@@ -97464,7 +98011,10 @@
     "tags": [
       "cobra"
     ],
-    "signName": "snake"
+    "signName": "snake",
+    "transliterationCounts": {
+      "r": 1
+    }
   },
   {
     "code": "I14C",
@@ -102114,7 +102664,10 @@
     "tags": [
       "fish"
     ],
-    "signName": "tilapia"
+    "signName": "tilapia",
+    "transliterationCounts": {
+      "in": 12
+    }
   },
   {
     "code": "K2",
@@ -102156,7 +102709,11 @@
     "tags": [
       "fish"
     ],
-    "signName": "barbel"
+    "signName": "barbel",
+    "transliterationCounts": {
+      "bw": 1,
+      "bwt": 8
+    }
   },
   {
     "code": "K3",
@@ -102210,7 +102767,10 @@
     "tags": [
       "fish"
     ],
-    "signName": "mullet"
+    "signName": "mullet",
+    "transliterationCounts": {
+      "adw": 1
+    }
   },
   {
     "code": "K4",
@@ -102355,7 +102915,11 @@
     "tags": [
       "fish"
     ],
-    "signName": "Petrocephalus bane"
+    "signName": "Petrocephalus bane",
+    "transliterationCounts": {
+      "bs": 16,
+      "rmw": 1
+    }
   },
   {
     "code": "K6",
@@ -102563,7 +103127,10 @@
     "source": "both",
     "tags": [
       "fish"
-    ]
+    ],
+    "transliterationCounts": {
+      "nar": 1
+    }
   },
   {
     "code": "U+13DCC",
@@ -102836,7 +103403,10 @@
     "tags": [
       "fish",
       "legs"
-    ]
+    ],
+    "transliterationCounts": {
+      "bs": 2
+    }
   },
   {
     "code": "K18B",
@@ -103220,7 +103790,10 @@
     "tags": [
       "bee"
     ],
-    "signName": "bee"
+    "signName": "bee",
+    "transliterationCounts": {
+      "bit": 33
+    }
   },
   {
     "code": "L2A",
@@ -103273,7 +103846,10 @@
     "tags": [
       "fly"
     ],
-    "signName": "fly"
+    "signName": "fly",
+    "transliterationCounts": {
+      "aff": 1
+    }
   },
   {
     "code": "L3A",
@@ -103496,7 +104072,10 @@
     "tags": [
       "scorpion"
     ],
-    "signName": "scorpion"
+    "signName": "scorpion",
+    "transliterationCounts": {
+      "srqt": 3
+    }
   },
   {
     "code": "L8",
@@ -103838,7 +104417,10 @@
     "source": "unicode",
     "tags": [
       "scorpion"
-    ]
+    ],
+    "transliterationCounts": {
+      "srqt": 1
+    }
   },
   {
     "code": "L20",
@@ -104397,7 +104979,12 @@
     "tags": [
       "tree"
     ],
-    "signName": "tree"
+    "signName": "tree",
+    "transliterationCounts": {
+      "nht": 3,
+      "nbs": 2,
+      "im": 1
+    }
   },
   {
     "code": "M1C",
@@ -104582,7 +105169,12 @@
     "tags": [
       "flower"
     ],
-    "signName": "plant"
+    "signName": "plant",
+    "transliterationCounts": {
+      "is": 12,
+      "i": 3,
+      "s": 1
+    }
   },
   {
     "code": "M2B",
@@ -104881,7 +105473,13 @@
       "branch",
       "palm"
     ],
-    "signName": "palm branch"
+    "signName": "palm branch",
+    "transliterationCounts": {
+      "rnp": 27,
+      "snf": 2,
+      "rnpt": 7,
+      "tr": 2
+    }
   },
   {
     "code": "M4A",
@@ -104990,7 +105588,10 @@
       "branch",
       "palm"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "tr": 1
+    }
   },
   {
     "code": "M5B",
@@ -105093,7 +105694,11 @@
       "palm",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "tr": 13,
+      "ti": 3
+    }
   },
   {
     "code": "M7",
@@ -105139,7 +105744,11 @@
       "palm",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "rnp": 11,
+      "rnpi": 3
+    }
   },
   {
     "code": "M7A",
@@ -105169,7 +105778,10 @@
       "branch",
       "palm",
       "sign combination"
-    ]
+    ],
+    "transliterationCounts": {
+      "rnp": 7
+    }
   },
   {
     "code": "M7B",
@@ -105763,7 +106375,10 @@
       "flower",
       "lotus"
     ],
-    "signName": "flower on long twisted stalk"
+    "signName": "flower on long twisted stalk",
+    "transliterationCounts": {
+      "wdn": 11
+    }
   },
   {
     "code": "M11A",
@@ -106498,7 +107113,11 @@
     "tags": [
       "reed"
     ],
-    "signName": "reed"
+    "signName": "reed",
+    "transliterationCounts": {
+      "y": 4,
+      "i": 11
+    }
   },
   {
     "code": "M17A",
@@ -106561,7 +107180,10 @@
       "reed",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "ii": 15
+    }
   },
   {
     "code": "M19",
@@ -106696,7 +107318,10 @@
       "reed",
       "group of same sign"
     ],
-    "signName": "reeds with root"
+    "signName": "reeds with root",
+    "transliterationCounts": {
+      "sm": 4
+    }
   },
   {
     "code": "M22",
@@ -106744,7 +107369,10 @@
     "tags": [
       "rush"
     ],
-    "signName": "rush"
+    "signName": "rush",
+    "transliterationCounts": {
+      "nn": 18
+    }
   },
   {
     "code": "M22A",
@@ -106856,7 +107484,13 @@
     "tags": [
       "rush"
     ],
-    "signName": "sedge"
+    "signName": "sedge",
+    "transliterationCounts": {
+      "sw": 8,
+      "swt": 17,
+      "nsw": 11,
+      "nswt": 2
+    }
   },
   {
     "code": "M23A",
@@ -106928,7 +107562,11 @@
       "rush",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "rs": 1,
+      "rsw": 4
+    }
   },
   {
     "code": "M24A",
@@ -107263,7 +107901,10 @@
     "tags": [
       "pod"
     ],
-    "signName": "root"
+    "signName": "root",
+    "transliterationCounts": {
+      "bnr": 55
+    }
   },
   {
     "code": "M31",
@@ -107296,7 +107937,10 @@
     "tags": [
       "root"
     ],
-    "signName": "rhizome"
+    "signName": "rhizome",
+    "transliterationCounts": {
+      "srd": 3
+    }
   },
   {
     "code": "M31A",
@@ -107391,7 +108035,10 @@
     "tags": [
       "root"
     ],
-    "signName": "rhizome"
+    "signName": "rhizome",
+    "transliterationCounts": {
+      "rd": 4
+    }
   },
   {
     "code": "M32A",
@@ -107457,7 +108104,10 @@
       "grain",
       "group of same sign"
     ],
-    "signName": "3 grains horizontally"
+    "signName": "3 grains horizontally",
+    "transliterationCounts": {
+      "it": 2
+    }
   },
   {
     "code": "M33B",
@@ -107489,7 +108139,10 @@
     "tags": [
       "grain"
     ],
-    "signName": "3 grains in triangular arrangement"
+    "signName": "3 grains in triangular arrangement",
+    "transliterationCounts": {
+      "swt": 3
+    }
   },
   {
     "code": "M33A",
@@ -107559,7 +108212,10 @@
     "tags": [
       "corn"
     ],
-    "signName": "ear of emmer"
+    "signName": "ear of emmer",
+    "transliterationCounts": {
+      "bdt": 11
+    }
   },
   {
     "code": "M34A",
@@ -108040,7 +108696,10 @@
       "bundle",
       "reed"
     ],
-    "signName": "bundle of reeds"
+    "signName": "bundle of reeds",
+    "transliterationCounts": {
+      "is": 19
+    }
   },
   {
     "code": "M40A",
@@ -108156,7 +108815,10 @@
     "tags": [
       "log"
     ],
-    "signName": "piece of wood"
+    "signName": "piece of wood",
+    "transliterationCounts": {
+      "wan": 1
+    }
   },
   {
     "code": "M42",
@@ -108202,7 +108864,11 @@
     "tags": [
       "flower"
     ],
-    "signName": "flower"
+    "signName": "flower",
+    "transliterationCounts": {
+      "wn": 4,
+      "wnm": 11
+    }
   },
   {
     "code": "M43",
@@ -108237,7 +108903,10 @@
       "vine",
       "pole"
     ],
-    "signName": "vine on trellis"
+    "signName": "vine on trellis",
+    "transliterationCounts": {
+      "irp": 2
+    }
   },
   {
     "code": "M43A",
@@ -108317,7 +108986,11 @@
     "tags": [
       "thorn"
     ],
-    "signName": "thorn"
+    "signName": "thorn",
+    "transliterationCounts": {
+      "spd": 44,
+      "srt": 1
+    }
   },
   {
     "code": "M46",
@@ -114249,7 +114922,10 @@
     "tags": [
       "sky"
     ],
-    "signName": "sky"
+    "signName": "sky",
+    "transliterationCounts": {
+      "pt": 7
+    }
   },
   {
     "code": "NL1",
@@ -114361,7 +115037,10 @@
     "tags": [
       "sky"
     ],
-    "signName": "sky with sceptre"
+    "signName": "sky with sceptre",
+    "transliterationCounts": {
+      "kkw": 10
+    }
   },
   {
     "code": "NL2",
@@ -114628,7 +115307,10 @@
     "tags": [
       "sky"
     ],
-    "signName": "sky with rain"
+    "signName": "sky with rain",
+    "transliterationCounts": {
+      "idt": 1
+    }
   },
   {
     "code": "NL4",
@@ -114911,7 +115593,13 @@
     "tags": [
       "sun"
     ],
-    "signName": "sun"
+    "signName": "sun",
+    "transliterationCounts": {
+      "hrw": 22,
+      "sw": 14,
+      "ra": 7,
+      "wnwt": 20
+    }
   },
   {
     "code": "NL5",
@@ -115043,7 +115731,10 @@
       "sun",
       "with uraeus"
     ],
-    "signName": "sun with uraeus"
+    "signName": "sun with uraeus",
+    "transliterationCounts": {
+      "ra": 1
+    }
   },
   {
     "code": "NL6",
@@ -115421,7 +116112,10 @@
     "tags": [
       "sun"
     ],
-    "signName": "sunshine"
+    "signName": "sunshine",
+    "transliterationCounts": {
+      "wbn": 21
+    }
   },
   {
     "code": "N8D",
@@ -116026,7 +116720,10 @@
       "moon",
       "star"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "smdt": 2
+    }
   },
   {
     "code": "NL13",
@@ -116263,7 +116960,10 @@
     "tags": [
       "star"
     ],
-    "signName": "star"
+    "signName": "star",
+    "transliterationCounts": {
+      "wnwt": 39
+    }
   },
   {
     "code": "NL14",
@@ -116432,7 +117132,10 @@
     "tags": [
       "land"
     ],
-    "signName": "land with grains"
+    "signName": "land with grains",
+    "transliterationCounts": {
+      "t": 1
+    }
   },
   {
     "code": "NL16",
@@ -116772,7 +117475,11 @@
     "tags": [
       "land"
     ],
-    "signName": "sandy tract"
+    "signName": "sandy tract",
+    "transliterationCounts": {
+      "iw": 7,
+      "stt": 1
+    }
   },
   {
     "code": "NL18",
@@ -117134,7 +117841,10 @@
     "tags": [
       "land"
     ],
-    "signName": "short tongue of land"
+    "signName": "short tongue of land",
+    "transliterationCounts": {
+      "idb": 43
+    }
   },
   {
     "code": "NU21",
@@ -117333,7 +118043,10 @@
     "tags": [
       "flooded land"
     ],
-    "signName": "irrigation canal"
+    "signName": "irrigation canal",
+    "transliterationCounts": {
+      "rk": 1
+    }
   },
   {
     "code": "N24",
@@ -117991,7 +118704,10 @@
     "tags": [
       "path"
     ],
-    "signName": "road with shrubs"
+    "signName": "road with shrubs",
+    "transliterationCounts": {
+      "wa": 19
+    }
   },
   {
     "code": "N31h",
@@ -118215,7 +118931,10 @@
     "tags": [
       "dirt"
     ],
-    "signName": "lump of clay"
+    "signName": "lump of clay",
+    "transliterationCounts": {
+      "sin": 1
+    }
   },
   {
     "code": "N33",
@@ -118250,7 +118969,11 @@
     "tags": [
       "sand"
     ],
-    "signName": "grain"
+    "signName": "grain",
+    "transliterationCounts": {
+      "msdmt": 5,
+      "nbw": 3
+    }
   },
   {
     "code": "N33A",
@@ -118282,7 +119005,11 @@
     "tags": [
       "sand"
     ],
-    "signName": "three grains"
+    "signName": "three grains",
+    "transliterationCounts": {
+      "msdmt": 1,
+      "nbw": 1
+    }
   },
   {
     "code": "N33Av",
@@ -118438,7 +119165,12 @@
     "tags": [
       "water"
     ],
-    "signName": "ripple of water"
+    "signName": "ripple of water",
+    "transliterationCounts": {
+      "m": 31,
+      "n": 19,
+      "nt": 18
+    }
   },
   {
     "code": "N35A",
@@ -118467,7 +119199,10 @@
       "water",
       "group"
     ],
-    "signName": "three ripples of water"
+    "signName": "three ripples of water",
+    "transliterationCounts": {
+      "mw": 8
+    }
   },
   {
     "code": "N35B",
@@ -118570,7 +119305,10 @@
     "tags": [
       "canal"
     ],
-    "signName": "canal"
+    "signName": "canal",
+    "transliterationCounts": {
+      "mr": 20
+    }
   },
   {
     "code": "N36D",
@@ -118705,7 +119443,10 @@
     "tags": [
       "pool"
     ],
-    "signName": "pool"
+    "signName": "pool",
+    "transliterationCounts": {
+      "sn": 12
+    }
   },
   {
     "code": "N37A",
@@ -118935,7 +119676,10 @@
     "tags": [
       "well"
     ],
-    "signName": "well with ripple of water"
+    "signName": "well with ripple of water",
+    "transliterationCounts": {
+      "idt": 8
+    }
   },
   {
     "code": "N42",
@@ -119000,7 +119744,10 @@
     "source": "unicode",
     "tags": [
       "sky"
-    ]
+    ],
+    "transliterationCounts": {
+      "qrrt": 1
+    }
   },
   {
     "code": "N45",
@@ -119028,7 +119775,10 @@
     "source": "unicode",
     "tags": [
       "sky"
-    ]
+    ],
+    "transliterationCounts": {
+      "nwn": 4
+    }
   },
   {
     "code": "N46",
@@ -119192,7 +119942,10 @@
     "source": "unicode",
     "tags": [
       "sky"
-    ]
+    ],
+    "transliterationCounts": {
+      "nnt": 4
+    }
   },
   {
     "code": "N51",
@@ -119480,7 +120233,10 @@
     "tags": [
       "sun",
       "with outstretched wings"
-    ]
+    ],
+    "transliterationCounts": {
+      "apy": 1
+    }
   },
   {
     "code": "N58A",
@@ -120273,7 +121029,10 @@
     "tags": [
       "group",
       "mountain"
-    ]
+    ],
+    "transliterationCounts": {
+      "ty": 1
+    }
   },
   {
     "code": "N83",
@@ -120868,7 +121627,10 @@
     "source": "unicode",
     "tags": [
       "well"
-    ]
+    ],
+    "transliterationCounts": {
+      "wrr": 6
+    }
   },
   {
     "code": "N107",
@@ -122483,7 +123245,11 @@
     "tags": [
       "house"
     ],
-    "signName": "house"
+    "signName": "house",
+    "transliterationCounts": {
+      "pr": 75,
+      "p": 1
+    }
   },
   {
     "code": "O1B",
@@ -122652,7 +123418,10 @@
     "tags": [
       "plan"
     ],
-    "signName": "shelter"
+    "signName": "shelter",
+    "transliterationCounts": {
+      "h": 8
+    }
   },
   {
     "code": "O4B",
@@ -122740,7 +123509,10 @@
     "tags": [
       "plan"
     ],
-    "signName": "winding wall from upper-left corner"
+    "signName": "winding wall from upper-left corner",
+    "transliterationCounts": {
+      "mrrt": 1
+    }
   },
   {
     "code": "O5U",
@@ -124076,7 +124848,10 @@
     "tags": [
       "shrine"
     ],
-    "signName": "shrine"
+    "signName": "shrine",
+    "transliterationCounts": {
+      "itrt": 3
+    }
   },
   {
     "code": "O20A",
@@ -124822,7 +125597,10 @@
     "tags": [
       "pyramid"
     ],
-    "signName": "pyramid"
+    "signName": "pyramid",
+    "transliterationCounts": {
+      "mr": 8
+    }
   },
   {
     "code": "O24A",
@@ -124887,7 +125665,10 @@
     "tags": [
       "obelisk"
     ],
-    "signName": "obelisk"
+    "signName": "obelisk",
+    "transliterationCounts": {
+      "mn": 3
+    }
   },
   {
     "code": "O25A",
@@ -125028,7 +125809,10 @@
     "tags": [
       "column, post, etc."
     ],
-    "signName": "column"
+    "signName": "column",
+    "transliterationCounts": {
+      "iwn": 109
+    }
   },
   {
     "code": "O28B",
@@ -125267,7 +126051,10 @@
     "tags": [
       "door"
     ],
-    "signName": "door"
+    "signName": "door",
+    "transliterationCounts": {
+      "wn": 18
+    }
   },
   {
     "code": "O32",
@@ -125584,7 +126371,10 @@
     "tags": [
       "lock"
     ],
-    "signName": "bolt"
+    "signName": "bolt",
+    "transliterationCounts": {
+      "s": 13
+    }
   },
   {
     "code": "O35",
@@ -125641,7 +126431,12 @@
       "lock",
       "sign combination"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "ms": 23,
+      "sb": 5,
+      "is": 5
+    }
   },
   {
     "code": "O35A",
@@ -125709,7 +126504,12 @@
     "tags": [
       "enclosure"
     ],
-    "signName": "wall"
+    "signName": "wall",
+    "transliterationCounts": {
+      "inb": 27,
+      "snb": 2,
+      "wmtt": 1
+    }
   },
   {
     "code": "O36C",
@@ -125921,7 +126721,10 @@
     "tags": [
       "enclosure"
     ],
-    "signName": "falling wall"
+    "signName": "falling wall",
+    "transliterationCounts": {
+      "whn": 4
+    }
   },
   {
     "code": "O37A",
@@ -125991,7 +126794,10 @@
     "tags": [
       "corner"
     ],
-    "signName": "corner of wall"
+    "signName": "corner of wall",
+    "transliterationCounts": {
+      "qnbt": 13
+    }
   },
   {
     "code": "O38A",
@@ -126070,7 +126876,11 @@
     "tags": [
       "stone"
     ],
-    "signName": "stone"
+    "signName": "stone",
+    "transliterationCounts": {
+      "inr": 24,
+      "dbn": 7
+    }
   },
   {
     "code": "O40",
@@ -126129,7 +126939,10 @@
     "tags": [
       "stair"
     ],
-    "signName": "stairway"
+    "signName": "stairway",
+    "transliterationCounts": {
+      "rwd": 4
+    }
   },
   {
     "code": "O40A",
@@ -126187,7 +127000,10 @@
     "tags": [
       "stair"
     ],
-    "signName": "double stairway"
+    "signName": "double stairway",
+    "transliterationCounts": {
+      "iar": 1
+    }
   },
   {
     "code": "O42",
@@ -126692,7 +127508,10 @@
     "tags": [
       "domed building"
     ],
-    "signName": "domed building"
+    "signName": "domed building",
+    "transliterationCounts": {
+      "ipt": 11
+    }
   },
   {
     "code": "O46",
@@ -126806,7 +127625,10 @@
     "tags": [
       "varia"
     ],
-    "signName": "enclosed mound"
+    "signName": "enclosed mound",
+    "transliterationCounts": {
+      "sp": 1
+    }
   },
   {
     "code": "O48A",
@@ -126889,7 +127711,11 @@
     "tags": [
       "plan"
     ],
-    "signName": "village"
+    "signName": "village",
+    "transliterationCounts": {
+      "niwt": 19,
+      "kmt": 3
+    }
   },
   {
     "code": "O49A",
@@ -126950,7 +127776,12 @@
     "tags": [
       "plan"
     ],
-    "signName": "threshing floor"
+    "signName": "threshing floor",
+    "transliterationCounts": {
+      "sp": 11,
+      "spt": 2,
+      "sp sn": 2
+    }
   },
   {
     "code": "O50A",
@@ -130225,7 +131056,10 @@
     "tags": [
       "tent or kiosk",
       "sign combination"
-    ]
+    ],
+    "transliterationCounts": {
+      "arqwr": 1
+    }
   },
   {
     "code": "O173",
@@ -130807,7 +131641,10 @@
       "stela",
       "sign combination",
       "cobra"
-    ]
+    ],
+    "transliterationCounts": {
+      "itrt": 5
+    }
   },
   {
     "code": "O196A",
@@ -131839,7 +132676,10 @@
     "source": "unicode",
     "tags": [
       "plan"
-    ]
+    ],
+    "transliterationCounts": {
+      "snsnt": 1
+    }
   },
   {
     "code": "O245",
@@ -134745,7 +135585,11 @@
       "without sail",
       "with oar"
     ],
-    "signName": "boat"
+    "signName": "boat",
+    "transliterationCounts": {
+      "dpt": 4,
+      "imw": 10
+    }
   },
   {
     "code": "P1A",
@@ -134780,7 +135624,10 @@
       "without sail",
       "with oar"
     ],
-    "signName": "boat upside down"
+    "signName": "boat upside down",
+    "transliterationCounts": {
+      "pna": 13
+    }
   },
   {
     "code": "P1B",
@@ -135383,7 +136230,10 @@
       "mast",
       "with sail"
     ],
-    "signName": "sail"
+    "signName": "sail",
+    "transliterationCounts": {
+      "nfw": 8
+    }
   },
   {
     "code": "P5S",
@@ -136000,7 +136850,10 @@
     "tags": [
       "oar"
     ],
-    "signName": "oar"
+    "signName": "oar",
+    "transliterationCounts": {
+      "wsr": 3
+    }
   },
   {
     "code": "P8A",
@@ -136149,7 +137002,10 @@
     "tags": [
       "varia"
     ],
-    "signName": "mooring post"
+    "signName": "mooring post",
+    "transliterationCounts": {
+      "mnit": 2
+    }
   },
   {
     "code": "P11A",
@@ -139998,7 +140854,10 @@
     "tags": [
       "seat"
     ],
-    "signName": "seat"
+    "signName": "seat",
+    "transliterationCounts": {
+      "st": 41
+    }
   },
   {
     "code": "Q1B",
@@ -140077,7 +140936,10 @@
     "tags": [
       "portable seat"
     ],
-    "signName": "portable seat"
+    "signName": "portable seat",
+    "transliterationCounts": {
+      "st": 1
+    }
   },
   {
     "code": "Q2C",
@@ -140181,7 +141043,10 @@
     "tags": [
       "mat"
     ],
-    "signName": "stool"
+    "signName": "stool",
+    "transliterationCounts": {
+      "p": 11
+    }
   },
   {
     "code": "Q4",
@@ -140213,7 +141078,10 @@
     "tags": [
       "headrest"
     ],
-    "signName": "head-rest"
+    "signName": "head-rest",
+    "transliterationCounts": {
+      "wrs": 3
+    }
   },
   {
     "code": "Q4A",
@@ -140273,7 +141141,10 @@
     "tags": [
       "chest"
     ],
-    "signName": "chest"
+    "signName": "chest",
+    "transliterationCounts": {
+      "hn": 1
+    }
   },
   {
     "code": "Q6",
@@ -140311,7 +141182,11 @@
     "tags": [
       "coffin"
     ],
-    "signName": "coffin"
+    "signName": "coffin",
+    "transliterationCounts": {
+      "qrsw": 3,
+      "qrs": 12
+    }
   },
   {
     "code": "Q6I",
@@ -140559,7 +141434,14 @@
     "tags": [
       "brazier"
     ],
-    "signName": "brazier"
+    "signName": "brazier",
+    "transliterationCounts": {
+      "srf": 9,
+      "nsrsr": 3,
+      "psi": 9,
+      "nsr": 12,
+      "ps": 4
+    }
   },
   {
     "code": "Q7A",
@@ -141299,7 +142181,10 @@
     "tags": [
       "chest",
       "sign combination"
-    ]
+    ],
+    "transliterationCounts": {
+      "mrt": 1
+    }
   },
   {
     "code": "Q29A",
@@ -143172,7 +144057,10 @@
     "tags": [
       "netjer-sign"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "bd": 7
+    }
   },
   {
     "code": "R10",
@@ -143401,7 +144289,10 @@
     "tags": [
       "djed-pillar"
     ],
-    "signName": "reed column"
+    "signName": "reed column",
+    "transliterationCounts": {
+      "dd": 14
+    }
   },
   {
     "code": "R12",
@@ -143515,7 +144406,10 @@
       "imenet-sign",
       "sign combination"
     ],
-    "signName": "falcon and feather on standard"
+    "signName": "falcon and feather on standard",
+    "transliterationCounts": {
+      "imnt": 6
+    }
   },
   {
     "code": "R13A",
@@ -143570,7 +144464,10 @@
     "tags": [
       "imenet-sign"
     ],
-    "signName": "feather on standard"
+    "signName": "feather on standard",
+    "transliterationCounts": {
+      "imnt": 24
+    }
   },
   {
     "code": "R14A",
@@ -144380,7 +145277,10 @@
       "emblem",
       "neith"
     ],
-    "signName": "two bows tied horizontally"
+    "signName": "two bows tied horizontally",
+    "transliterationCounts": {
+      "nt": 2
+    }
   },
   {
     "code": "R24v",
@@ -144426,7 +145326,11 @@
       "emblem",
       "neith"
     ],
-    "signName": "two bows tied vertically"
+    "signName": "two bows tied vertically",
+    "transliterationCounts": {
+      "nit": 1,
+      "nt": 1
+    }
   },
   {
     "code": "R26A",
@@ -146134,7 +147038,10 @@
     "source": "unicode",
     "tags": [
       "varia"
-    ]
+    ],
+    "transliterationCounts": {
+      "mks": 1
+    }
   },
   {
     "code": "R88A",
@@ -146150,7 +147057,10 @@
     "source": "aegyptus",
     "tags": [
       "varia"
-    ]
+    ],
+    "transliterationCounts": {
+      "mks": 1
+    }
   },
   {
     "code": "R89",
@@ -147793,7 +148703,10 @@
       "crown",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "wrrt": 1
+    }
   },
   {
     "code": "S2A",
@@ -147880,7 +148793,10 @@
     "tags": [
       "crown"
     ],
-    "signName": "red crown"
+    "signName": "red crown",
+    "transliterationCounts": {
+      "n": 1
+    }
   },
   {
     "code": "S4",
@@ -147922,7 +148838,10 @@
       "crown",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "nt": 1
+    }
   },
   {
     "code": "S5",
@@ -147990,7 +148909,10 @@
       "crown",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "wrrt": 1
+    }
   },
   {
     "code": "S6A",
@@ -148292,7 +149214,10 @@
     "source": "unicode",
     "tags": [
       "necklace"
-    ]
+    ],
+    "transliterationCounts": {
+      "bb": 2
+    }
   },
   {
     "code": "S11A",
@@ -148396,7 +149321,10 @@
     "tags": [
       "necklace"
     ],
-    "signName": "collar of beads"
+    "signName": "collar of beads",
+    "transliterationCounts": {
+      "nbw": 12
+    }
   },
   {
     "code": "S12A",
@@ -148424,7 +149352,10 @@
     "source": "unicode",
     "tags": [
       "necklace"
-    ]
+    ],
+    "transliterationCounts": {
+      "nb": 1
+    }
   },
   {
     "code": "S13",
@@ -148449,7 +149380,10 @@
       "foot",
       "group"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "nbi": 2
+    }
   },
   {
     "code": "S13A",
@@ -148812,7 +149746,10 @@
     "tags": [
       "necklace"
     ],
-    "signName": "necklace with counterpoise"
+    "signName": "necklace with counterpoise",
+    "transliterationCounts": {
+      "mnit": 4
+    }
   },
   {
     "code": "S18A",
@@ -148994,7 +149931,10 @@
     "tags": [
       "jewel"
     ],
-    "signName": "ring"
+    "signName": "ring",
+    "transliterationCounts": {
+      "iwaw": 4
+    }
   },
   {
     "code": "S21A",
@@ -149130,7 +150070,10 @@
       "scepter",
       "group of same sign"
     ],
-    "signName": "knotted cloth"
+    "signName": "knotted cloth",
+    "transliterationCounts": {
+      "dmd": 51
+    }
   },
   {
     "code": "S24",
@@ -149425,7 +150368,11 @@
     "tags": [
       "dress"
     ],
-    "signName": "folded cloth"
+    "signName": "folded cloth",
+    "transliterationCounts": {
+      "s": 3,
+      "snb": 30
+    }
   },
   {
     "code": "S29A",
@@ -149477,7 +150424,10 @@
       "group",
       "horned viper"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "sf": 1
+    }
   },
   {
     "code": "S30A",
@@ -149719,7 +150669,10 @@
       "staff",
       "sunshade"
     ],
-    "signName": "sunshade"
+    "signName": "sunshade",
+    "transliterationCounts": {
+      "sryt": 4
+    }
   },
   {
     "code": "S35A",
@@ -150090,7 +151043,10 @@
     "tags": [
       "staff"
     ],
-    "signName": "shepherd's crook"
+    "signName": "shepherd's crook",
+    "transliterationCounts": {
+      "awt": 8
+    }
   },
   {
     "code": "S40",
@@ -150281,7 +151237,10 @@
     "tags": [
       "staff"
     ],
-    "signName": "walking stick"
+    "signName": "walking stick",
+    "transliterationCounts": {
+      "mdw": 55
+    }
   },
   {
     "code": "S43A",
@@ -150915,7 +151874,10 @@
     "tags": [
       "headress",
       "with uraeus"
-    ]
+    ],
+    "transliterationCounts": {
+      "ibs": 3
+    }
   },
   {
     "code": "S57C",
@@ -151126,7 +152088,10 @@
     "tags": [
       "crown",
       "with uraeus"
-    ]
+    ],
+    "transliterationCounts": {
+      "hmhm": 2
+    }
   },
   {
     "code": "S61B",
@@ -152353,7 +153318,10 @@
     "source": "unicode",
     "tags": [
       "varia"
-    ]
+    ],
+    "transliterationCounts": {
+      "msktw": 2
+    }
   },
   {
     "code": "S108",
@@ -153034,7 +154002,10 @@
     "source": "unicode",
     "tags": [
       "dress"
-    ]
+    ],
+    "transliterationCounts": {
+      "npnpt": 1
+    }
   },
   {
     "code": "S131",
@@ -155691,7 +156662,10 @@
     "tags": [
       "mace"
     ],
-    "signName": "mace with flat head"
+    "signName": "mace with flat head",
+    "transliterationCounts": {
+      "mnw": 1
+    }
   },
   {
     "code": "T1A",
@@ -155738,7 +156712,10 @@
     "tags": [
       "mace"
     ],
-    "signName": "mace with round head diagonally"
+    "signName": "mace with round head diagonally",
+    "transliterationCounts": {
+      "sqr": 17
+    }
   },
   {
     "code": "T3",
@@ -156178,7 +157155,10 @@
     "tags": [
       "knife, dagger, sword"
     ],
-    "signName": "dagger"
+    "signName": "dagger",
+    "transliterationCounts": {
+      "tp": 2
+    }
   },
   {
     "code": "T8A",
@@ -156262,7 +157242,10 @@
     "tags": [
       "bow"
     ],
-    "signName": "bow"
+    "signName": "bow",
+    "transliterationCounts": {
+      "pd": 16
+    }
   },
   {
     "code": "T9A",
@@ -156292,7 +157275,10 @@
     "tags": [
       "bow"
     ],
-    "signName": "bow"
+    "signName": "bow",
+    "transliterationCounts": {
+      "pd": 5
+    }
   },
   {
     "code": "T9D",
@@ -156459,7 +157445,10 @@
     "tags": [
       "arrow"
     ],
-    "signName": "arrow"
+    "signName": "arrow",
+    "transliterationCounts": {
+      "swn": 35
+    }
   },
   {
     "code": "T11B",
@@ -156575,7 +157564,10 @@
     "tags": [
       "bow string"
     ],
-    "signName": "bow-string"
+    "signName": "bow-string",
+    "transliterationCounts": {
+      "rwd": 73
+    }
   },
   {
     "code": "T12A",
@@ -156666,7 +157658,10 @@
     "tags": [
       "varia"
     ],
-    "signName": "joined pieces of wood"
+    "signName": "joined pieces of wood",
+    "transliterationCounts": {
+      "rs": 12
+    }
   },
   {
     "code": "T13A",
@@ -156807,7 +157802,10 @@
     "tags": [
       "throwing-stick"
     ],
-    "signName": "throw stick vertically"
+    "signName": "throw stick vertically",
+    "transliterationCounts": {
+      "am": 1
+    }
   },
   {
     "code": "T14A",
@@ -156982,7 +157980,10 @@
     "tags": [
       "chariot"
     ],
-    "signName": "chariot"
+    "signName": "chariot",
+    "transliterationCounts": {
+      "wrryt": 5
+    }
   },
   {
     "code": "T18",
@@ -157134,7 +158135,15 @@
     "tags": [
       "harpoon"
     ],
-    "signName": "harpoon head"
+    "signName": "harpoon head",
+    "transliterationCounts": {
+      "twr": 9,
+      "qs": 9,
+      "gnwt": 19,
+      "qrs": 8,
+      "gn": 2,
+      "msn": 1
+    }
   },
   {
     "code": "T19A",
@@ -157275,7 +158284,10 @@
     "tags": [
       "harpoon"
     ],
-    "signName": "harpoon"
+    "signName": "harpoon",
+    "transliterationCounts": {
+      "wa": 27
+    }
   },
   {
     "code": "T21A",
@@ -157468,7 +158480,11 @@
     "tags": [
       "arrow"
     ],
-    "signName": "arrowhead"
+    "signName": "arrowhead",
+    "transliterationCounts": {
+      "snw": 66,
+      "sn": 17
+    }
   },
   {
     "code": "T22A",
@@ -158212,7 +159228,10 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "nmt": 3
+    }
   },
   {
     "code": "T29C",
@@ -158240,7 +159259,10 @@
     "tags": [
       "knife, dagger, sword",
       "butcher's block"
-    ]
+    ],
+    "transliterationCounts": {
+      "nmt": 1
+    }
   },
   {
     "code": "T29A",
@@ -158323,7 +159345,12 @@
     "tags": [
       "knife, dagger, sword"
     ],
-    "signName": "knife"
+    "signName": "knife",
+    "transliterationCounts": {
+      "dmt": 12,
+      "dm": 12,
+      "ds": 8
+    }
   },
   {
     "code": "T30A",
@@ -158352,7 +159379,10 @@
     "source": "unicode",
     "tags": [
       "knife, dagger, sword"
-    ]
+    ],
+    "transliterationCounts": {
+      "dm": 1
+    }
   },
   {
     "code": "T30B",
@@ -158590,7 +159620,10 @@
     "tags": [
       "knife, dagger, sword"
     ],
-    "signName": "butcher's knife"
+    "signName": "butcher's knife",
+    "transliterationCounts": {
+      "nm": 9
+    }
   },
   {
     "code": "T35",
@@ -159279,7 +160312,10 @@
       "group of same sign",
       "shield",
       "with standard"
-    ]
+    ],
+    "transliterationCounts": {
+      "nt": 2
+    }
   },
   {
     "code": "T63A",
@@ -160148,7 +161184,10 @@
     "source": "unicode",
     "tags": [
       "varia"
-    ]
+    ],
+    "transliterationCounts": {
+      "bwn": 5
+    }
   },
   {
     "code": "T87",
@@ -162650,7 +163689,10 @@
     "tags": [
       "hoe"
     ],
-    "signName": "diagonal hoe"
+    "signName": "diagonal hoe",
+    "transliterationCounts": {
+      "mr": 4
+    }
   },
   {
     "code": "U6A",
@@ -162712,7 +163754,10 @@
     "tags": [
       "hoe"
     ],
-    "signName": "horizontal hoe"
+    "signName": "horizontal hoe",
+    "transliterationCounts": {
+      "mr": 22
+    }
   },
   {
     "code": "U7B",
@@ -162890,7 +163935,10 @@
     "tags": [
       "corn measure"
     ],
-    "signName": "grain-measure with grain"
+    "signName": "grain-measure with grain",
+    "transliterationCounts": {
+      "bdt": 4
+    }
   },
   {
     "code": "U10",
@@ -162923,7 +163971,10 @@
     "source": "both",
     "tags": [
       "corn measure"
-    ]
+    ],
+    "transliterationCounts": {
+      "it": 2
+    }
   },
   {
     "code": "U10A",
@@ -163070,7 +164121,11 @@
     "tags": [
       "plough"
     ],
-    "signName": "plough"
+    "signName": "plough",
+    "transliterationCounts": {
+      "hb": 11,
+      "prt": 10
+    }
   },
   {
     "code": "U13A",
@@ -163254,7 +164309,10 @@
     "tags": [
       "sledge"
     ],
-    "signName": "sledge"
+    "signName": "sledge",
+    "transliterationCounts": {
+      "tm": 35
+    }
   },
   {
     "code": "U15A",
@@ -163454,7 +164512,10 @@
     "tags": [
       "pick in earth"
     ],
-    "signName": "pick in ground"
+    "signName": "pick in ground",
+    "transliterationCounts": {
+      "grg": 57
+    }
   },
   {
     "code": "U18",
@@ -163487,7 +164548,10 @@
     "tags": [
       "pick in earth"
     ],
-    "signName": "pick in basin"
+    "signName": "pick in basin",
+    "transliterationCounts": {
+      "grg": 2
+    }
   },
   {
     "code": "U19",
@@ -163538,7 +164602,10 @@
     "tags": [
       "adze"
     ],
-    "signName": "adze"
+    "signName": "adze",
+    "transliterationCounts": {
+      "nw": 37
+    }
   },
   {
     "code": "U19A",
@@ -163598,7 +164665,10 @@
     "tags": [
       "adze"
     ],
-    "signName": "adze"
+    "signName": "adze",
+    "transliterationCounts": {
+      "nw": 6
+    }
   },
   {
     "code": "U21",
@@ -163644,7 +164714,10 @@
     "tags": [
       "adze"
     ],
-    "signName": "adze on wood"
+    "signName": "adze on wood",
+    "transliterationCounts": {
+      "stp": 78
+    }
   },
   {
     "code": "U21A",
@@ -163796,7 +164869,10 @@
     "tags": [
       "chisel"
     ],
-    "signName": "chisel"
+    "signName": "chisel",
+    "transliterationCounts": {
+      "mr": 17
+    }
   },
   {
     "code": "U23A",
@@ -164797,7 +165873,11 @@
     "tags": [
       "pestle"
     ],
-    "signName": "pestle and mortar"
+    "signName": "pestle and mortar",
+    "transliterationCounts": {
+      "smn": 21,
+      "dns": 11
+    }
   },
   {
     "code": "U32A",
@@ -164935,7 +166015,11 @@
     "tags": [
       "pestle"
     ],
-    "signName": "pestle"
+    "signName": "pestle",
+    "transliterationCounts": {
+      "ti": 9,
+      "tit": 5
+    }
   },
   {
     "code": "U33A",
@@ -165769,7 +166853,10 @@
       "measuring instrument",
       "hieratic sign"
     ],
-    "signName": "hieratic post of balance"
+    "signName": "hieratic post of balance",
+    "transliterationCounts": {
+      "rs": 4
+    }
   },
   {
     "code": "U41",
@@ -167377,7 +168464,10 @@
     "source": "unicode",
     "tags": [
       "broom"
-    ]
+    ],
+    "transliterationCounts": {
+      "sk": 2
+    }
   },
   {
     "code": "U110",
@@ -169638,7 +170728,10 @@
       "loop",
       "cartouche"
     ],
-    "signName": "oval cartouche"
+    "signName": "oval cartouche",
+    "transliterationCounts": {
+      "rn": 3
+    }
   },
   {
     "code": "V11",
@@ -169678,7 +170771,10 @@
       "loop",
       "cartouche"
     ],
-    "signName": "end of cartouche"
+    "signName": "end of cartouche",
+    "transliterationCounts": {
+      "dni": 26
+    }
   },
   {
     "code": "V11A",
@@ -169777,7 +170873,10 @@
     "tags": [
       "band"
     ],
-    "signName": "string"
+    "signName": "string",
+    "transliterationCounts": {
+      "arq": 48
+    }
   },
   {
     "code": "V12A",
@@ -170608,7 +171707,10 @@
     "tags": [
       "varia"
     ],
-    "signName": "cord on stick"
+    "signName": "cord on stick",
+    "transliterationCounts": {
+      "wd": 35
+    }
   },
   {
     "code": "V25",
@@ -170638,7 +171740,10 @@
     "tags": [
       "varia"
     ],
-    "signName": "cord on stick with tick"
+    "signName": "cord on stick with tick",
+    "transliterationCounts": {
+      "wd": 31
+    }
   },
   {
     "code": "V26",
@@ -170685,7 +171790,10 @@
     "tags": [
       "shuttle"
     ],
-    "signName": "netting needle"
+    "signName": "netting needle",
+    "transliterationCounts": {
+      "ad": 59
+    }
   },
   {
     "code": "V27",
@@ -170976,7 +172084,11 @@
     "tags": [
       "broom"
     ],
-    "signName": "swab"
+    "signName": "swab",
+    "transliterationCounts": {
+      "sk": 19,
+      "mar": 1
+    }
   },
   {
     "code": "V29A",
@@ -171057,7 +172169,11 @@
     "tags": [
       "basket"
     ],
-    "signName": "basket"
+    "signName": "basket",
+    "transliterationCounts": {
+      "nb": 23,
+      "nbt": 24
+    }
   },
   {
     "code": "V30A",
@@ -171190,7 +172306,11 @@
     "tags": [
       "net or trap"
     ],
-    "signName": "frail"
+    "signName": "frail",
+    "transliterationCounts": {
+      "msn": 3,
+      "msnw": 1
+    }
   },
   {
     "code": "V32E",
@@ -171654,7 +172774,10 @@
     "tags": [
       "bandage"
     ],
-    "signName": "bandage"
+    "signName": "bandage",
+    "transliterationCounts": {
+      "idr": 13
+    }
   },
   {
     "code": "V37A",
@@ -171698,7 +172821,10 @@
     "tags": [
       "bandage"
     ],
-    "signName": "bandage"
+    "signName": "bandage",
+    "transliterationCounts": {
+      "wt": 2
+    }
   },
   {
     "code": "V39",
@@ -171732,7 +172858,10 @@
     "tags": [
       "rope"
     ],
-    "signName": "knot-amulet"
+    "signName": "knot-amulet",
+    "transliterationCounts": {
+      "tit": 2
+    }
   },
   {
     "code": "V39A",
@@ -173089,7 +174218,10 @@
       "receptacle",
       "sign combination",
       "private parts"
-    ]
+    ],
+    "transliterationCounts": {
+      "wtt": 3
+    }
   },
   {
     "code": "V100",
@@ -175458,7 +176590,12 @@
       "without lid",
       "vessel"
     ],
-    "signName": "cup"
+    "signName": "cup",
+    "transliterationCounts": {
+      "iab": 11,
+      "a": 6,
+      "ab": 6
+    }
   },
   {
     "code": "W10A",
@@ -175562,7 +176699,11 @@
       "without handle",
       "vessel"
     ],
-    "signName": "round ring stand"
+    "signName": "round ring stand",
+    "transliterationCounts": {
+      "g": 1,
+      "nst": 12
+    }
   },
   {
     "code": "W11A",
@@ -175632,7 +176773,10 @@
       "without handle",
       "vessel"
     ],
-    "signName": "square ring stand"
+    "signName": "square ring stand",
+    "transliterationCounts": {
+      "nst": 1
+    }
   },
   {
     "code": "W13",
@@ -175737,7 +176881,10 @@
       "water pot",
       "vessel"
     ],
-    "signName": "water jar"
+    "signName": "water jar",
+    "transliterationCounts": {
+      "snbt": 2
+    }
   },
   {
     "code": "W14A",
@@ -175823,7 +176970,10 @@
       "pouring water",
       "vessel"
     ],
-    "signName": "water jar with water"
+    "signName": "water jar with water",
+    "transliterationCounts": {
+      "qbb": 7
+    }
   },
   {
     "code": "W15A",
@@ -175926,7 +177076,10 @@
       "group",
       "vessel"
     ],
-    "signName": "water jar with water in ring stand"
+    "signName": "water jar with water in ring stand",
+    "transliterationCounts": {
+      "qbb": 4
+    }
   },
   {
     "code": "W16A",
@@ -176293,7 +177446,11 @@
       "without lid",
       "vessel"
     ],
-    "signName": "milk jug in net"
+    "signName": "milk jug in net",
+    "transliterationCounts": {
+      "mhr": 1,
+      "mi": 14
+    }
   },
   {
     "code": "W20",
@@ -176330,7 +177487,10 @@
       "without lid",
       "vessel"
     ],
-    "signName": "milk jug with leaf"
+    "signName": "milk jug with leaf",
+    "transliterationCounts": {
+      "irtt": 7
+    }
   },
   {
     "code": "W21",
@@ -176367,7 +177527,10 @@
       "group of same sign",
       "vessel"
     ],
-    "signName": "twin wine jars"
+    "signName": "twin wine jars",
+    "transliterationCounts": {
+      "irp": 5
+    }
   },
   {
     "code": "W21D",
@@ -176513,7 +177676,10 @@
       "without lid",
       "vessel"
     ],
-    "signName": "beer jug"
+    "signName": "beer jug",
+    "transliterationCounts": {
+      "wdpw": 2
+    }
   },
   {
     "code": "W23",
@@ -176646,7 +177812,11 @@
       "nw-vase",
       "vessel"
     ],
-    "signName": "bowl"
+    "signName": "bowl",
+    "transliterationCounts": {
+      "nw": 49,
+      "qd": 19
+    }
   },
   {
     "code": "W24A",
@@ -176695,7 +177865,10 @@
       "with long legs",
       "vessel"
     ],
-    "signName": "combination of"
+    "signName": "combination of",
+    "transliterationCounts": {
+      "ini": 19
+    }
   },
   {
     "code": "W25A",
@@ -177717,7 +178890,10 @@
       "nw-vase",
       "pouring water",
       "vessel"
-    ]
+    ],
+    "transliterationCounts": {
+      "wab": 6
+    }
   },
   {
     "code": "W55",
@@ -178135,7 +179311,10 @@
       "without lid",
       "without handle",
       "vessel"
-    ]
+    ],
+    "transliterationCounts": {
+      "nmst": 1
+    }
   },
   {
     "code": "W71",
@@ -178270,7 +179449,10 @@
       "without handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "transliterationCounts": {
+      "swr": 2
+    }
   },
   {
     "code": "W77",
@@ -178361,7 +179543,10 @@
       "without handle",
       "without lid",
       "vessel"
-    ]
+    ],
+    "transliterationCounts": {
+      "ddt": 1
+    }
   },
   {
     "code": "W80",
@@ -179711,7 +180896,10 @@
     "tags": [
       "bread"
     ],
-    "signName": "flat loaf"
+    "signName": "flat loaf",
+    "transliterationCounts": {
+      "t": 9
+    }
   },
   {
     "code": "X2",
@@ -179769,7 +180957,11 @@
     "tags": [
       "bread"
     ],
-    "signName": "tall loaf"
+    "signName": "tall loaf",
+    "transliterationCounts": {
+      "t": 7,
+      "it": 2
+    }
   },
   {
     "code": "X2D",
@@ -179882,7 +181074,10 @@
     "tags": [
       "bread"
     ],
-    "signName": "tall loaf"
+    "signName": "tall loaf",
+    "transliterationCounts": {
+      "t": 1
+    }
   },
   {
     "code": "X3A",
@@ -180208,7 +181403,11 @@
     "tags": [
       "bread"
     ],
-    "signName": "hieratic roll of bread"
+    "signName": "hieratic roll of bread",
+    "transliterationCounts": {
+      "sni": 8,
+      "sn": 2
+    }
   },
   {
     "code": "X5A",
@@ -180410,7 +181609,11 @@
     "tags": [
       "bread"
     ],
-    "signName": "half-loaf"
+    "signName": "half-loaf",
+    "transliterationCounts": {
+      "wnm": 18,
+      "gsw": 9
+    }
   },
   {
     "code": "X8",
@@ -180475,7 +181678,11 @@
     "tags": [
       "bread"
     ],
-    "signName": "conical loaf"
+    "signName": "conical loaf",
+    "transliterationCounts": {
+      "di": 4,
+      "rdi": 6
+    }
   },
   {
     "code": "X8A",
@@ -180822,7 +182029,10 @@
     "tags": [
       "writing implement"
     ],
-    "signName": "scroll"
+    "signName": "scroll",
+    "transliterationCounts": {
+      "mdw": 1
+    }
   },
   {
     "code": "Y2v",
@@ -180894,7 +182104,12 @@
     "tags": [
       "writing implement"
     ],
-    "signName": "scribe's outfit with palette on left"
+    "signName": "scribe's outfit with palette on left",
+    "transliterationCounts": {
+      "snaa": 5,
+      "mnhd": 2,
+      "naa": 16
+    }
   },
   {
     "code": "Y3B",
@@ -181038,7 +182253,10 @@
     "tags": [
       "gaming"
     ],
-    "signName": "game board"
+    "signName": "game board",
+    "transliterationCounts": {
+      "mn": 26
+    }
   },
   {
     "code": "Y5A",
@@ -181118,7 +182336,10 @@
     "tags": [
       "music"
     ],
-    "signName": "harp"
+    "signName": "harp",
+    "transliterationCounts": {
+      "bnt": 1
+    }
   },
   {
     "code": "Y7A",
@@ -181888,7 +183109,10 @@
       "Z2C"
     ],
     "source": "both",
-    "signName": "stroke"
+    "signName": "stroke",
+    "transliterationCounts": {
+      "w": 20
+    }
   },
   {
     "code": "Ff1",
@@ -182148,7 +183372,10 @@
       "Z2A"
     ],
     "source": "both",
-    "signName": "two"
+    "signName": "two",
+    "transliterationCounts": {
+      "snw": 11
+    }
   },
   {
     "code": "Z4B",
@@ -182188,7 +183415,10 @@
       "Z2A"
     ],
     "source": "both",
-    "signName": "curved diagonal stroke"
+    "signName": "curved diagonal stroke",
+    "transliterationCounts": {
+      "ms": 15
+    }
   },
   {
     "code": "Z5A",
@@ -182286,7 +183516,10 @@
       "Z2A"
     ],
     "source": "both",
-    "signName": "hieratic quail chick"
+    "signName": "hieratic quail chick",
+    "transliterationCounts": {
+      "w": 9
+    }
   },
   {
     "code": "Z8",
@@ -182377,7 +183610,11 @@
       "Z2A"
     ],
     "source": "both",
-    "signName": "diagonal cross"
+    "signName": "diagonal cross",
+    "transliterationCounts": {
+      "wp": 11,
+      "wr": 3
+    }
   },
   {
     "code": "Z10",
@@ -182466,7 +183703,11 @@
       "Z2A"
     ],
     "source": "both",
-    "signName": "cross"
+    "signName": "cross",
+    "transliterationCounts": {
+      "wnm": 25,
+      "imi": 23
+    }
   },
   {
     "code": "Z11A",

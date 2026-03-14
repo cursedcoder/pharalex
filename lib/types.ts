@@ -11,6 +11,7 @@ export interface Glyph {
   categoryName: string;
   description: string;
   signName?: string;
+  transliterationCounts?: Record<string, number>;
   meanings: GlyphMeaning[];
   transliteration: string[];
   etymology?: string;

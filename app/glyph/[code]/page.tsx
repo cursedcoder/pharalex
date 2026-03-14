@@ -280,18 +280,39 @@ export default async function GlyphPage({ params }: PageProps) {
                           Transliteration
                         </h2>
                         <div className="flex flex-wrap gap-2">
-                          {glyph.transliteration.map((t) => (
-                            <span
-                              key={t}
-                              className="
-                                px-3 py-1.5
-                                bg-brown/5 rounded-lg
-                                text-brown-light italic font-medium
-                              "
-                            >
-                              {t}
-                            </span>
-                          ))}
+                          {glyph.transliteration.map((t) => {
+                            const count = glyph.transliterationCounts?.[t];
+                            return count ? (
+                              <Link
+                                key={t}
+                                href={`/words?q=${encodeURIComponent(t)}`}
+                                className="
+                                  inline-flex items-baseline gap-1
+                                  px-3 py-1.5
+                                  bg-brown/5 rounded-lg
+                                  text-brown-light italic font-medium
+                                  hover:bg-gold/15 hover:text-gold-dark
+                                  transition-colors group
+                                "
+                              >
+                                {t}
+                                <sup className="text-[10px] not-italic font-normal text-sandstone/70 group-hover:text-gold-dark/70 tabular-nums">
+                                  {count}
+                                </sup>
+                              </Link>
+                            ) : (
+                              <span
+                                key={t}
+                                className="
+                                  px-3 py-1.5
+                                  bg-brown/5 rounded-lg
+                                  text-brown-light italic font-medium
+                                "
+                              >
+                                {t}
+                              </span>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
