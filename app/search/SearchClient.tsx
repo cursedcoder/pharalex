@@ -58,24 +58,29 @@ function SearchContent() {
   const initialShow = searchParams.get("show");
   const initialFilter = initialShow === "words" ? "words" : initialShow === "glyphs" ? "glyphs" : "all";
 
+  const initialExact = searchParams.get("exact") === "true";
+  const initialGardiner = searchParams.get("gardiner") === "true";
+
   const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState<SearchApiResult[]>([]);
   const [isSearching, setIsSearching] = useState(!!initialQuery);
   const [filter, setFilter] = useState<"all" | "glyphs" | "words">(initialFilter);
+  const [exact, setExact] = useState(initialExact);
+  const [gardiner, setGardiner] = useState(initialGardiner);
 
-  // Sync ?show= param on mount (useSearchParams may be empty on first render)
+  // Sync URL params on mount
   useEffect(() => {
     const show = searchParams.get("show");
-    if (show === "words" || show === "glyphs") {
-      setFilter(show);
-    }
+    if (show === "words" || show === "glyphs") setFilter(show);
+    if (searchParams.get("exact") === "true") setExact(true);
+    if (searchParams.get("gardiner") === "true") setGardiner(true);
   }, [searchParams]);
 
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const runSearch = useCallback(async (q: string, exact = false) => {
+  const runSearch = useCallback(async (q: string, opts: { exact?: boolean; gardiner?: boolean } = {}) => {
     if (abortRef.current) abortRef.current.abort();
     if (!q.trim() || q.trim().length < 2) {
       setResults([]);
@@ -89,7 +94,8 @@ function SearchContent() {
 
     try {
       const params = new URLSearchParams({ q: q.trim() });
-      if (exact) params.set("exact", "true");
+      if (opts.exact) params.set("exact", "true");
+      if (opts.gardiner) params.set("gardiner", "true");
       const res = await fetch(`/api/search?${params}`, {
         signal: controller.signal,
       });
@@ -107,27 +113,46 @@ function SearchContent() {
   // Run search on initial query from URL
   useEffect(() => {
     const q = searchParams.get("q") || "";
-    const exact = searchParams.get("exact") === "true";
+    const isExact = searchParams.get("exact") === "true";
+    const isGardiner = searchParams.get("gardiner") === "true";
     setQuery(q);
-    runSearch(q, exact);
+    runSearch(q, { exact: isExact, gardiner: isGardiner });
   }, [searchParams, runSearch]);
 
-  const handleSearch = (newQuery: string) => {
-    setQuery(newQuery);
-
-    // Debounce the actual search
+  const triggerSearch = useCallback((q: string, e: boolean, g: boolean) => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => runSearch(newQuery), 150);
+    debounceRef.current = setTimeout(() => runSearch(q, { exact: e, gardiner: g }), 150);
 
-    // Debounce URL update (longer, just for shareability)
     if (pushTimer.current) clearTimeout(pushTimer.current);
     pushTimer.current = setTimeout(() => {
-      if (newQuery.trim()) {
-        router.replace(`/search?q=${encodeURIComponent(newQuery)}`, { scroll: false });
+      if (q.trim()) {
+        const p = new URLSearchParams({ q });
+        if (e) p.set("exact", "true");
+        if (g) p.set("gardiner", "true");
+        router.replace(`/search?${p}`, { scroll: false });
       } else {
         router.replace("/search", { scroll: false });
       }
     }, 500);
+  }, [runSearch, router]);
+
+  const handleSearch = (newQuery: string) => {
+    setQuery(newQuery);
+    triggerSearch(newQuery, exact, gardiner);
+  };
+
+  const handleExactToggle = () => {
+    const next = !exact;
+    setExact(next);
+    if (next) setGardiner(false);
+    triggerSearch(query, next, false);
+  };
+
+  const handleGardinerToggle = () => {
+    const next = !gardiner;
+    setGardiner(next);
+    if (next) setExact(false);
+    triggerSearch(query, false, next);
   };
 
   const glyphCount = useMemo(() => results.filter((r) => r.kind === "glyph").length, [results]);
@@ -178,6 +203,27 @@ function SearchContent() {
                     </svg>
                   )}
                 </div>
+              </div>
+
+              <div className="mt-3 flex items-center gap-4">
+                <label className="flex items-center gap-1.5 text-sm text-sandstone cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={exact}
+                    onChange={handleExactToggle}
+                    className="rounded border-sandstone/40 text-gold-dark focus:ring-gold/50"
+                  />
+                  Exact match
+                </label>
+                <label className="flex items-center gap-1.5 text-sm text-sandstone cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={gardiner}
+                    onChange={handleGardinerToggle}
+                    className="rounded border-sandstone/40 text-gold-dark focus:ring-gold/50"
+                  />
+                  By Gardiner code
+                </label>
               </div>
 
               {!query && (

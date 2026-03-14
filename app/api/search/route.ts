@@ -46,20 +46,33 @@ function wordScore(word: SearchWord, q: string): number {
   return 0.35;
 }
 
-async function searchWords(query: string, limit = 40, exact = false): Promise<SearchWord[]> {
-  const q = query.trim().toLowerCase();
+interface WordSearchOptions {
+  exact?: boolean;
+  gardiner?: boolean;
+}
+
+async function searchWords(query: string, limit = 40, opts: WordSearchOptions = {}): Promise<SearchWord[]> {
+  const q = query.trim();
   if (!q) return [];
 
+  const ql = q.toLowerCase();
   const words = await loadSearchWords();
   const results: SearchWord[] = [];
+
   for (const w of words) {
     if (results.length >= limit) break;
-    if (exact) {
+
+    if (opts.gardiner) {
+      // Match words containing this Gardiner code in their MdC spelling
+      // MdC uses hyphens: "D2-D21-O34-F27-D52", match whole code segments
+      const codes = w.mdc.split("-");
+      if (codes.includes(q)) results.push(w);
+    } else if (opts.exact) {
       // Compare Unicode forms so MdC "Spt" (špt) doesn't match query "spt"
       if (translitToUnicode(w.transliteration) === translitToUnicode(q)) results.push(w);
     } else if (
-      w.transliteration.toLowerCase().includes(q) ||
-      w.translation.toLowerCase().includes(q)
+      w.transliteration.toLowerCase().includes(ql) ||
+      w.translation.toLowerCase().includes(ql)
     ) {
       results.push(w);
     }
@@ -72,13 +85,14 @@ const MAX_QUERY_LENGTH = 100;
 export async function GET(req: NextRequest) {
   const q = (req.nextUrl.searchParams.get("q")?.trim() ?? "").slice(0, MAX_QUERY_LENGTH);
   const exact = req.nextUrl.searchParams.get("exact") === "true";
+  const gardiner = req.nextUrl.searchParams.get("gardiner") === "true";
   if (!q || q.length < 2) {
     return NextResponse.json({ results: [] });
   }
 
   const ql = q.toLowerCase();
 
-  const glyphResults: GlyphResult[] = exact ? [] : (await fuzzySearch(q, 60)).map((r) => ({
+  const glyphResults: GlyphResult[] = (exact || gardiner) ? [] : (await fuzzySearch(q, 60)).map((r) => ({
     kind: "glyph",
     score: r.score ?? 1,
     code: r.glyph.code,
@@ -93,7 +107,7 @@ export async function GET(req: NextRequest) {
     href: `/glyph/${encodeURIComponent(r.glyph.code)}`,
   }));
 
-  const wordResults: WordResult[] = (await searchWords(q, 40, exact)).map((w) => ({
+  const wordResults: WordResult[] = (await searchWords(q, 40, { exact, gardiner })).map((w) => ({
     kind: "word",
     score: wordScore(w, ql),
     transliteration: w.transliteration,

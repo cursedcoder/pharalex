@@ -550,7 +550,7 @@ export default async function GlyphPage({ params }: PageProps) {
                   </div>
                   {wordsUsingGlyph.length > 5 && (
                     <Link
-                      href={`/search?q=${encodeURIComponent(glyph.code)}`}
+                      href={`/search?q=${encodeURIComponent(glyph.code)}&show=words&gardiner=true`}
                       className="mt-3 block text-center py-2 px-4 bg-gold/10 text-gold-dark rounded-lg hover:bg-gold/20 transition-colors font-medium text-sm"
                     >
                       See all words using {glyph.code} →
