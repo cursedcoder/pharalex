@@ -177,7 +177,9 @@ export default async function WordPage({ params }: Props) {
                             {rep.grammarRaw && rep.grammarRaw.toLowerCase() !== (GRAMMAR_LABELS[rep.grammar ?? ""] ?? "").toLowerCase() && (
                               <span className="text-xs text-sandstone/60 italic">{rep.grammarRaw}</span>
                             )}
-                            {rep.notes.map((n, i) => (
+                            {rep.notes
+                              .filter((n) => n.toLowerCase() !== (rep.grammarRaw ?? "").toLowerCase())
+                              .map((n, i) => (
                               <Badge key={i} variant="outline" size="sm">{n}</Badge>
                             ))}
                           </div>
