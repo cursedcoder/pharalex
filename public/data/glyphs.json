@@ -22496,7 +22496,7 @@
     "source": "unicode"
   },
   {
-    "code": "A013AA",
+    "code": "A13AA",
     "unicode": "𓖹",
     "category": "A",
     "categoryName": "Man and his occupations",
@@ -52524,32 +52524,8 @@
     "source": "aegyptus"
   },
   {
-    "code": "D66 D245",
-    "unicode": "𓃈",
-    "category": "D",
-    "categoryName": "Parts of the human body",
-    "description": "An arm, bent at the elbow, forearm nearly horizontal, hand held like a fist, with a stylus angled over the tip of the fist.",
-    "meanings": [
-      {
-        "text": "Classifier to engrave",
-        "type": "determinative"
-      }
-    ],
-    "transliteration": [
-      "wdꞽ"
-    ],
-    "related": [
-      "D1",
-      "D2",
-      "D3",
-      "D3A",
-      "D4"
-    ],
-    "source": "both"
-  },
-  {
     "code": "D66",
-    "unicode": "",
+    "unicode": "𓃈",
     "category": "D",
     "categoryName": "Parts of the human body",
     "description": "Arm with reed pen",
@@ -52557,10 +52533,15 @@
       {
         "text": "Determinative: Writing",
         "type": "determinative"
+      },
+      {
+        "text": "Classifier to engrave",
+        "type": "determinative"
       }
     ],
     "transliteration": [
-      "spẖr"
+      "spẖr",
+      "wdꞽ"
     ],
     "related": [],
     "source": "aegyptus",
@@ -63939,12 +63920,19 @@
   },
   {
     "code": "E28A",
-    "unicode": "",
+    "unicode": "𓃳",
     "category": "E",
     "categoryName": "Mammals",
     "description": "Combination of , and some type of jar",
-    "meanings": [],
-    "transliteration": [],
+    "meanings": [
+      {
+        "text": "Logogram (Oryx nome, 16th nome of Upper Egypt)",
+        "type": "logogram"
+      }
+    ],
+    "transliteration": [
+      "mꜣ-ḥḏ"
+    ],
     "related": [],
     "source": "aegyptus",
     "signName": "combination of"
@@ -75946,12 +75934,19 @@
   },
   {
     "code": "F31A",
-    "unicode": "",
+    "unicode": "𓄠",
     "category": "F",
     "categoryName": "Parts of mammals",
     "description": "Three skins tied together (simplified)",
-    "meanings": [],
-    "transliteration": [],
+    "meanings": [
+      {
+        "text": "Phonemogram",
+        "type": "other"
+      }
+    ],
+    "transliteration": [
+      "ms"
+    ],
     "related": [],
     "source": "aegyptus",
     "tags": [
@@ -81759,7 +81754,7 @@
     "source": "aegyptus"
   },
   {
-    "code": "AA001C",
+    "code": "Aa1C",
     "unicode": "𓰃",
     "category": "F",
     "categoryName": "Parts of mammals",
@@ -81783,7 +81778,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA001D",
+    "code": "Aa1D",
     "unicode": "𓰄",
     "category": "F",
     "categoryName": "Parts of mammals",
@@ -99937,7 +99932,7 @@
     ]
   },
   {
-    "code": "I96VARA",
+    "code": "I96A",
     "unicode": "𓵛",
     "category": "I",
     "categoryName": "Amphibious animals, reptiles, etc.",
@@ -107035,10 +107030,15 @@
       {
         "text": "Classifier plꜥnts",
         "type": "determinative"
+      },
+      {
+        "text": "Classifier growing",
+        "type": "determinative"
       }
     ],
     "transliteration": [
-      "rd"
+      "rd",
+      "srd"
     ],
     "related": [
       "M1",
@@ -133469,7 +133469,7 @@
     "source": "aegyptus"
   },
   {
-    "code": "AA031",
+    "code": "Aa31",
     "unicode": "𓐭",
     "category": "O",
     "categoryName": "Buildings, parts of buildings, etc.",
@@ -139191,7 +139191,7 @@
     "source": "unicode"
   },
   {
-    "code": "P005AB",
+    "code": "P5AB",
     "unicode": "𔂁",
     "category": "P",
     "categoryName": "Ships and parts of ships",
@@ -146373,7 +146373,7 @@
     ]
   },
   {
-    "code": "R003AJ",
+    "code": "R3AJ",
     "unicode": "𔃝",
     "category": "R",
     "categoryName": "Temple furniture and sacred emblems",
@@ -146397,7 +146397,7 @@
     "source": "unicode"
   },
   {
-    "code": "R003AF",
+    "code": "R3AF",
     "unicode": "𔃞",
     "category": "R",
     "categoryName": "Temple furniture and sacred emblems",
@@ -146517,7 +146517,7 @@
     "source": "unicode"
   },
   {
-    "code": "R003AM",
+    "code": "R3AM",
     "unicode": "𔃡",
     "category": "R",
     "categoryName": "Temple furniture and sacred emblems",
@@ -146541,7 +146541,7 @@
     "source": "unicode"
   },
   {
-    "code": "R003AP",
+    "code": "R3AP",
     "unicode": "𔃢",
     "category": "R",
     "categoryName": "Temple furniture and sacred emblems",
@@ -146613,7 +146613,7 @@
     "source": "unicode"
   },
   {
-    "code": "R003AO",
+    "code": "R3AO",
     "unicode": "𔃦",
     "category": "R",
     "categoryName": "Temple furniture and sacred emblems",
@@ -152788,7 +152788,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA020D",
+    "code": "Aa20D",
     "unicode": "𔇭",
     "category": "S",
     "categoryName": "Crowns, dress, staves, etc.",
@@ -154417,7 +154417,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA021D",
+    "code": "Aa21D",
     "unicode": "𔇦",
     "category": "S",
     "categoryName": "Crowns, dress, staves, etc.",
@@ -154489,7 +154489,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA021E",
+    "code": "Aa21E",
     "unicode": "𔇧",
     "category": "S",
     "categoryName": "Crowns, dress, staves, etc.",
@@ -161320,7 +161320,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA017A",
+    "code": "Aa17A",
     "unicode": "𔈡",
     "category": "T",
     "categoryName": "Warfare, hunting, butchery",
@@ -161344,7 +161344,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA017B",
+    "code": "Aa17B",
     "unicode": "𔈢",
     "category": "T",
     "categoryName": "Warfare, hunting, butchery",
@@ -161368,7 +161368,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA018D",
+    "code": "Aa18D",
     "unicode": "𔈣",
     "category": "T",
     "categoryName": "Warfare, hunting, butchery",
@@ -162587,30 +162587,6 @@
     "source": "unicode",
     "tags": [
       "sledge"
-    ]
-  },
-  {
-    "code": "US1A6BEXTU",
-    "unicode": "𓀈",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "Variant of A6 (seated man under vase from which water flows)",
-    "meanings": [],
-    "transliteration": [],
-    "related": [
-      "U1",
-      "U2",
-      "U6",
-      "U7",
-      "U7B"
-    ],
-    "source": "both",
-    "tags": [
-      "seated",
-      "pouring water",
-      "drops",
-      "holding nothing",
-      "praying"
     ]
   },
   {
@@ -166768,23 +166744,6 @@
     ]
   },
   {
-    "code": "US1Z13EXTU",
-    "unicode": "𓏸",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "A geometrical circle.",
-    "meanings": [],
-    "transliteration": [],
-    "related": [
-      "U1",
-      "U2",
-      "U6",
-      "U7",
-      "U7B"
-    ],
-    "source": "both"
-  },
-  {
     "code": "U113",
     "unicode": "",
     "category": "U",
@@ -166961,7 +166920,7 @@
     ]
   },
   {
-    "code": "US1A22VARA",
+    "code": "A22A",
     "unicode": "𓚤",
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
@@ -167117,33 +167076,6 @@
     ]
   },
   {
-    "code": "US1E28AEXTU",
-    "unicode": "𓃳",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "A basket with four pieces of grain or fruit (M39) in front of an oryx, standing (E28), on top of a parcel of land with irrigation ditches (N24).",
-    "meanings": [
-      {
-        "text": "Logogram (Oryx nome, 16th nome of Upper Egypt)",
-        "type": "logogram"
-      }
-    ],
-    "transliteration": [
-      "mꜣ-ḥḏ"
-    ],
-    "related": [
-      "U1",
-      "U2",
-      "U6",
-      "U7",
-      "U7B"
-    ],
-    "source": "both",
-    "tags": [
-      "antelope"
-    ]
-  },
-  {
     "code": "U128",
     "unicode": "𔊵",
     "category": "U",
@@ -167202,36 +167134,6 @@
     ]
   },
   {
-    "code": "US1M31AEXTU",
-    "unicode": "𓇞",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "Either a tree growing in a pot, or a rhizome of a lotus, with a leaf coming from it.",
-    "meanings": [
-      {
-        "text": "Classifier growing",
-        "type": "determinative"
-      }
-    ],
-    "transliteration": [
-      "srd",
-      "rd"
-    ],
-    "related": [
-      "U1",
-      "U2",
-      "U6",
-      "U7",
-      "U7B"
-    ],
-    "source": "both",
-    "tags": [
-      "root",
-      "lotus",
-      "tree"
-    ]
-  },
-  {
     "code": "U131",
     "unicode": "𔊏",
     "category": "U",
@@ -167277,30 +167179,6 @@
     ]
   },
   {
-    "code": "US1V33AEXTU",
-    "unicode": "𓎥",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "An oval bag or sack with linen, without ties or loops, with three horizontal lines over the bag.",
-    "meanings": [
-      {
-        "text": "Classifier sꜥck, bundle",
-        "type": "determinative"
-      }
-    ],
-    "transliteration": [
-      "ḳꜣr"
-    ],
-    "related": [
-      "U1",
-      "U2",
-      "U6",
-      "U7",
-      "U7B"
-    ],
-    "source": "both"
-  },
-  {
     "code": "U133",
     "unicode": "",
     "category": "U",
@@ -167315,34 +167193,6 @@
       "canine-headed",
       "group",
       "perfume jar"
-    ]
-  },
-  {
-    "code": "US1M40AEXTU",
-    "unicode": "𓇪",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "A vertical bundle of reeds, tied together, with the ties resembling a triangle.",
-    "meanings": [
-      {
-        "text": "Phonemogram",
-        "type": "other"
-      }
-    ],
-    "transliteration": [
-      "ꞽs"
-    ],
-    "related": [
-      "U1",
-      "U2",
-      "U6",
-      "U7",
-      "U7B"
-    ],
-    "source": "both",
-    "tags": [
-      "bundle",
-      "reed"
     ]
   },
   {
@@ -167970,7 +167820,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA023Z",
+    "code": "Aa23Z",
     "unicode": "𔌍",
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
@@ -167987,7 +167837,7 @@
     "source": "unicode"
   },
   {
-    "code": "US22W17BVARE",
+    "code": "W17BE",
     "unicode": "𓏄",
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
@@ -168016,7 +167866,7 @@
     ]
   },
   {
-    "code": "US22W17BVARD",
+    "code": "W17BD",
     "unicode": "𓏆",
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
@@ -168040,34 +167890,7 @@
     ]
   },
   {
-    "code": "US22F31AEXTU",
-    "unicode": "𓄠",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "A simplified representation of three skins of foxes, tied together at the top.",
-    "meanings": [
-      {
-        "text": "Phonemogram",
-        "type": "other"
-      }
-    ],
-    "transliteration": [
-      "ms"
-    ],
-    "related": [
-      "U1",
-      "U2",
-      "U6",
-      "U7",
-      "U7B"
-    ],
-    "source": "both",
-    "tags": [
-      "skin"
-    ]
-  },
-  {
-    "code": "US248Y1VARB",
+    "code": "Y1B",
     "unicode": "𔏏",
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
@@ -168094,7 +167917,7 @@
     ]
   },
   {
-    "code": "US685N1VARA",
+    "code": "N1A",
     "unicode": "𓻄",
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
@@ -168218,7 +168041,7 @@
     "source": "unicode"
   },
   {
-    "code": "AA023Y",
+    "code": "Aa23Y",
     "unicode": "𔌈",
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
@@ -168242,7 +168065,7 @@
     "source": "unicode"
   },
   {
-    "code": "US248E35VARA",
+    "code": "E35A",
     "unicode": "𓃻",
     "category": "U",
     "categoryName": "Agriculture, crafts, and professions",
@@ -170775,7 +170598,7 @@
   },
   {
     "code": "V33A",
-    "unicode": "",
+    "unicode": "𓎥",
     "category": "V",
     "categoryName": "Rope, fibre, baskets, bags, etc.",
     "description": "Bundle",
@@ -170783,10 +170606,15 @@
       {
         "text": "Logogram: qꜣr — bundle",
         "type": "logogram"
+      },
+      {
+        "text": "Classifier sꜥck, bundle",
+        "type": "determinative"
       }
     ],
     "transliteration": [
-      "qꜣr"
+      "qꜣr",
+      "ḳꜣr"
     ],
     "related": [],
     "source": "aegyptus",
@@ -181536,7 +181364,7 @@
   },
   {
     "code": "Z13",
-    "unicode": "",
+    "unicode": "𓏸",
     "category": "Z",
     "categoryName": "Strokes, geometrical figures, etc.",
     "description": "Circle",
@@ -185862,7 +185690,7 @@
     "source": "aegyptus"
   },
   {
-    "code": "AA025B",
+    "code": "Aa25B",
     "unicode": "𔏸",
     "category": "Aa",
     "categoryName": "Unclassified",
