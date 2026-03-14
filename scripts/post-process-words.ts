@@ -9,6 +9,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { fixTypos } from "./typo-fixes";
 import { applyWordPatches } from "./word-patches";
+import { stripLeakedMdC, buildTranslitSet } from "./strip-leaked-mdc";
 
 const WORDS_PATH = path.join(process.cwd(), "public/data/words.json");
 
@@ -31,7 +32,19 @@ for (const w of words) {
 }
 console.log(`  Fixed typos: ${typosFixed}`);
 
-// ── 3. Trim whitespace ──────────────────────────────────────────────────────
+// ── 3. Strip leaked MdC prefixes from translations ────────────────────────
+const knownTranslits = buildTranslitSet(words);
+let mdcStripped = 0;
+for (const w of words) {
+  const { cleaned, stripped } = stripLeakedMdC(w.translation, knownTranslits);
+  if (stripped !== null) {
+    w.translation = cleaned;
+    mdcStripped++;
+  }
+}
+console.log(`  Stripped leaked MdC prefixes: ${mdcStripped}`);
+
+// ── 4. Trim whitespace ──────────────────────────────────────────────────────
 let trimmed = 0;
 for (const w of words) {
   const t = w.transliteration.trim();
