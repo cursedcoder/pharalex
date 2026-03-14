@@ -21,6 +21,7 @@ import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
 import { getWordsByGardinerCode, wordHref } from "@/lib/words";
 import { translitToUnicode } from "@/lib/word-utils";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
+import { UnicodeChar } from "@/components/UnicodeChar";
 import type { ReactNode } from "react";
 
 /** Gardiner code pattern: A1, Aa15, D53B, etc. */
@@ -193,9 +194,7 @@ export default async function GlyphPage({ params }: PageProps) {
                         {glyph.code}
                       </h1>
                       {glyph.unicode && (
-                        <span className="text-2xl text-sandstone/60 font-hieroglyph">
-                          {glyph.unicode}
-                        </span>
+                        <UnicodeChar char={glyph.unicode} className="text-2xl text-sandstone/60" />
                       )}
                       {glyph.signName && (
                         <span className="px-3 py-1 rounded-full bg-gold/15 text-gold-dark text-sm font-medium">
