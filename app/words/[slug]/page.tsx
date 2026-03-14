@@ -161,6 +161,10 @@ export default async function WordPage({ params }: Props) {
                   <div className="space-y-6">
                     {senses.map((spellings, si) => {
                       const rep = spellings[0];
+                      // Notes already shown in the sense header — don't repeat in spelling cards
+                      const headerNotes = new Set(
+                        rep.notes.filter((n) => n.toLowerCase() !== (rep.grammarRaw ?? "").toLowerCase())
+                      );
                       return (
                         <div key={si} className="rounded-xl border border-sandstone/20 overflow-hidden">
                           {/* Sense header */}
@@ -177,16 +181,14 @@ export default async function WordPage({ params }: Props) {
                             {rep.grammarRaw && rep.grammarRaw.toLowerCase() !== (GRAMMAR_LABELS[rep.grammar ?? ""] ?? "").toLowerCase() && (
                               <span className="text-xs text-sandstone/60 italic">{rep.grammarRaw}</span>
                             )}
-                            {rep.notes
-                              .filter((n) => n.toLowerCase() !== (rep.grammarRaw ?? "").toLowerCase())
-                              .map((n, i) => (
+                            {[...headerNotes].map((n, i) => (
                               <Badge key={i} variant="outline" size="sm">{n}</Badge>
                             ))}
                           </div>
                           {/* Spellings for this sense */}
                           <div className="flex flex-wrap gap-3 p-4">
                             {spellings.map((entry, ei) => (
-                              <SpellingCard key={ei} entry={entry} />
+                              <SpellingCard key={ei} entry={entry} sharedNotes={headerNotes} />
                             ))}
                           </div>
                         </div>
@@ -275,13 +277,14 @@ export default async function WordPage({ params }: Props) {
   );
 }
 
-function SpellingCard({ entry }: { entry: DictionaryWord }) {
+function SpellingCard({ entry, sharedNotes }: { entry: DictionaryWord; sharedNotes: Set<string> }) {
+  const uniqueNotes = entry.notes.filter((n) => !sharedNotes.has(n));
   return (
     <div className="inline-flex flex-col items-start bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 space-y-3">
       <WordGlyph mdc={entry.mdc} baseSize={36} />
-      {entry.notes.length > 0 && (
+      {uniqueNotes.length > 0 && (
         <div className="flex flex-wrap gap-1">
-          {entry.notes.map((n, i) => (
+          {uniqueNotes.map((n, i) => (
             <Badge key={i} variant="outline" size="sm">{n}</Badge>
           ))}
         </div>
