@@ -333,8 +333,19 @@ export default async function HomePage() {
                   href={wordHref(word.transliteration)}
                   className="group flex flex-col bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-4 h-full hover:shadow-md hover:border-gold/40 transition-all duration-200"
                 >
-                  <div className="flex items-center min-h-10 mb-3 group-hover:scale-105 transition-transform origin-left overflow-hidden">
-                    <WordGlyph mdc={word.mdc} baseSize={28} disableLinks />
+                  <div className="flex gap-1.5 min-h-10 mb-3 group-hover:scale-105 transition-transform origin-left overflow-hidden">
+                    {word.gardinerCodes.slice(0, 8).map((code: string, i: number) => (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        key={`${code}-${i}`}
+                        src={glyphSvgSrc(code)}
+                        alt={code}
+                        className="w-7 h-7 object-contain shrink-0"
+                      />
+                    ))}
+                    {word.gardinerCodes.length > 8 && (
+                      <span className="text-xs text-sandstone self-center">…</span>
+                    )}
                   </div>
                   <p className="text-sm text-brown-light line-clamp-2 mb-2 flex-1">
                     {word.translation}
