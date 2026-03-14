@@ -11,9 +11,10 @@ interface GlyphCardProps {
   showDescription?: boolean;
   highlight?: boolean;
   variants?: Glyph[];
+  glyphSize?: "sm" | "md" | "lg";
 }
 
-export function GlyphCard({ glyph, showDescription = true, highlight = false, variants }: GlyphCardProps) {
+export function GlyphCard({ glyph, showDescription = true, highlight = false, variants, glyphSize = "lg" }: GlyphCardProps) {
   const primaryMeaning = glyph.meanings[0];
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
@@ -35,7 +36,7 @@ export function GlyphCard({ glyph, showDescription = true, highlight = false, va
       >
         <div className="flex items-start gap-4">
           <div className="group-hover:scale-105 transition-transform">
-            <SmartGlyph glyph={glyph} size="lg" />
+            <SmartGlyph glyph={glyph} size={glyphSize} />
           </div>
 
           <div className="flex-1 min-w-0">

@@ -14,7 +14,7 @@ interface SmartGlyphProps {
 const sizeConfig = {
   xs: { container: "w-8 h-8", font: "text-xl", code: "text-[8px]" },
   sm: { container: "w-12 h-12", font: "text-3xl", code: "text-[10px]" },
-  md: { container: "w-16 h-16", font: "text-5xl", code: "text-xs" },
+  md: { container: "w-[76px] h-[76px]", font: "text-5xl", code: "text-xs" },
   lg: { container: "w-[108px] h-[108px]", font: "text-7xl", code: "text-sm" },
   xl: { container: "w-36 h-36", font: "text-9xl", code: "text-base" },
 };

@@ -543,7 +543,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             </Badge>
                           )}
                         </div>
-                        <p className="text-xs text-sandstone/70 mt-1 line-clamp-1">
+                        <p className="text-sm text-brown-light mt-1 line-clamp-1">
                           {word.translation}
                         </p>
                       </Link>
@@ -571,6 +571,7 @@ export default async function GlyphPage({ params }: PageProps) {
                         key={related.code}
                         glyph={related}
                         showDescription={false}
+                        glyphSize="md"
                       />
                     ))}
                   </div>
