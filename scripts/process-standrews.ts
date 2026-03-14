@@ -52,13 +52,12 @@ function stripMarkup(text: unknown): string {
 }
 
 // Capitalise first letter
-// MdC characters that should NOT be capitalized (they change meaning)
-const MDC_NO_CAP = new Set(["a", "x"]);
+// MdC characters that should NOT be capitalized (uppercase changes meaning)
+// a→A (ꜥ→ꜣ), x→X (ḫ→ẖ), s→S (s→š), t→T (t→ṯ), d→D (d→ḏ)
+const MDC_NO_CAP = new Set(["a", "x", "s", "t", "d"]);
 
 function cap(s: string): string {
   if (!s) return s;
-  // Don't capitalize if first char is an MdC special that changes meaning when uppercased
-  // e.g. x (ḫ) → X (H̱) are different signs
   if (MDC_NO_CAP.has(s.charAt(0))) return s;
   return s.charAt(0).toUpperCase() + s.slice(1);
 }

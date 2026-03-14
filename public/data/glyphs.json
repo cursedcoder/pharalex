@@ -1071,7 +1071,7 @@
     "description": "Man, seated, right knee raised, a vessel on his head, right arm raised in front, with the hand at the vessel, left arm hanging beside the body.",
     "meanings": [
       {
-        "text": "Logogram: ꜣṯp — load",
+        "text": "Logogram: ꜣtp — load",
         "type": "logogram"
       },
       {
@@ -1088,11 +1088,11 @@
       }
     ],
     "transliteration": [
-      "ꜣṯp",
+      "ꜣtp",
       "kꜣt",
       "fꜣj",
-      "ꜣtp",
       "fꜣꞽ",
+      "ꜣṯp",
       "fꜣi",
       "fꜣ"
     ],
@@ -2122,7 +2122,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḫrt — overthrow (infinitive)",
+        "text": "Logogram: sḫrt — overthrow (infinitive)",
         "type": "logogram"
       },
       {
@@ -2527,7 +2527,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šmsw — eldest",
+        "text": "Logogram: smsw — eldest",
         "type": "logogram"
       },
       {
@@ -2561,11 +2561,11 @@
     ],
     "transliteration": [
       "wr",
+      "smsw",
       "ꞽꜣw",
       "jky",
       "old",
       "jꜣwj",
-      "smsw",
       "rhn",
       "tni",
       "ikw",
@@ -2605,11 +2605,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šmsw-hAyt — elder of the portal",
+        "text": "Logogram: smsw-hꜣyt — elder of the portal",
         "type": "logogram"
       },
       {
-        "text": "Logogram: šmsw — eldest",
+        "text": "Logogram: smsw — eldest",
         "type": "logogram"
       }
     ],
@@ -2643,7 +2643,7 @@
     "description": "Man, standing, wearing a short sash-kilt, right arm in front, holding a long stick/staff, left arm hanging beside the body, holding a piece of cloth.",
     "meanings": [
       {
-        "text": "Logogram: šr — official (noun)",
+        "text": "Logogram: sr — official (noun)",
         "type": "logogram"
       },
       {
@@ -2652,8 +2652,8 @@
       }
     ],
     "transliteration": [
-      "smr",
-      "sr"
+      "sr",
+      "smr"
     ],
     "related": [
       "A1",
@@ -2669,8 +2669,8 @@
     ],
     "signName": "man holding staff with handkerchief",
     "transliterationCounts": {
-      "smr": 2,
-      "sr": 8
+      "sr": 8,
+      "smr": 2
     }
   },
   {
@@ -3097,7 +3097,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḏm-aS — servant",
+        "text": "Logogram: sḏm-aS — servant",
         "type": "logogram"
       },
       {
@@ -5496,13 +5496,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣw — guard,protect",
+        "text": "Logogram: sꜣw — guard,protect",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "mnjw",
       "sꜣw",
+      "mnjw",
       "iry",
       "mniw"
     ],
@@ -5819,7 +5819,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šps — noble",
+        "text": "Logogram: sps — noble",
         "type": "logogram"
       },
       {
@@ -5832,9 +5832,9 @@
       }
     ],
     "transliteration": [
-      "šps",
       "=j",
       "špsꞽ",
+      "šps",
       "špsi"
     ],
     "related": [
@@ -6437,7 +6437,7 @@
     "description": "Representing an upright mummy.",
     "meanings": [
       {
-        "text": "Logogram: ṯwt — statue",
+        "text": "Logogram: twt — statue",
         "type": "logogram"
       },
       {
@@ -6580,7 +6580,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḏr — lie",
+        "text": "Logogram: sḏr — lie",
         "type": "logogram"
       },
       {
@@ -6812,7 +6812,7 @@
     "description": "Man, standing, back bent forward, both arms toward the front, holding a hoe with a rope connecting the two pieces (U6), with the forward piece at the level of the feet.",
     "meanings": [
       {
-        "text": "Logogram: šꜣd — dig",
+        "text": "Logogram: sꜣd — dig",
         "type": "logogram"
       },
       {
@@ -6822,8 +6822,8 @@
     ],
     "transliteration": [
       "bꜣ",
-      "šꜣd",
-      "ḫbs"
+      "ḫbs",
+      "šꜣd"
     ],
     "related": [
       "A1",
@@ -31294,7 +31294,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: štḫ — Seth",
+        "text": "Logogram: stḫ — Seth",
         "type": "logogram"
       },
       {
@@ -31308,8 +31308,8 @@
     ],
     "transliteration": [
       "stẖ",
-      "stš/stẖ",
-      "Stḫ"
+      "Stḫ",
+      "stš/stẖ"
     ],
     "etymology": "Representing a god with the head of a Seth-animal 𓃩 (E20).",
     "related": [
@@ -33266,7 +33266,7 @@
     "description": "Squatting god",
     "meanings": [
       {
-        "text": "Logogram: ṯꜣ-tnn — Tatenen",
+        "text": "Logogram: tꜣ-tnn — Tatenen",
         "type": "logogram"
       },
       {
@@ -48347,7 +48347,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯp — head",
+        "text": "Logogram: tp — head",
         "type": "logogram"
       },
       {
@@ -49407,7 +49407,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯjt — image",
+        "text": "Logogram: tjt — image",
         "type": "logogram"
       }
     ],
@@ -49478,7 +49478,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: fnḏ — nose",
+        "text": "Logogram: fnd — nose",
         "type": "logogram"
       },
       {
@@ -49509,8 +49509,8 @@
     "transliteration": [
       "sn",
       "ḫnt",
-      "fnḏ",
       "fnd",
+      "fnḏ",
       "ḫn",
       "btn",
       "šrt",
@@ -49753,7 +49753,7 @@
     "description": "The upper lip of a human with teeth.",
     "meanings": [
       {
-        "text": "Logogram: špt — lip,border",
+        "text": "Logogram: spt — lip,border",
         "type": "logogram"
       },
       {
@@ -49792,7 +49792,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šptj — both lips",
+        "text": "Logogram: sptj — both lips",
         "type": "logogram"
       }
     ],
@@ -50669,7 +50669,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ḏ",
+        "text": "Phonogram: d",
         "type": "phonogram"
       },
       {
@@ -50681,11 +50681,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏj — give",
+        "text": "Logogram: dj — give",
         "type": "logogram"
       },
       {
-        "text": "Logogram: rḏj — give",
+        "text": "Logogram: rdj — give",
         "type": "logogram"
       },
       {
@@ -50695,13 +50695,13 @@
     ],
     "transliteration": [
       "m",
-      "ḏ",
-      "jmj",
-      "ḏj",
-      "rḏj",
       "d",
+      "jmj",
       "dj",
       "rdj",
+      "ḏ",
+      "ḏj",
+      "rḏj",
       "rdi",
       "di",
       "imi",
@@ -51098,17 +51098,17 @@
     "description": "A human hand.",
     "meanings": [
       {
-        "text": "Phonogram: ḏ",
+        "text": "Phonogram: d",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ḏrt — hand",
+        "text": "Logogram: drt — hand",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "ḏrt",
-      "d"
+      "d",
+      "ḏrt"
     ],
     "related": [
       "D1",
@@ -51318,7 +51318,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šsp — palm",
+        "text": "Logogram: ssp — palm",
         "type": "logogram"
       }
     ],
@@ -51585,11 +51585,11 @@
     "description": "A horizontal human finger.",
     "meanings": [
       {
-        "text": "Phonogram: ḏqr",
+        "text": "Phonogram: dqr",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ḏqr — fruit",
+        "text": "Logogram: dqr — fruit",
         "type": "logogram"
       },
       {
@@ -51610,9 +51610,9 @@
       }
     ],
     "transliteration": [
+      "dqr",
       "qꜣw",
       "ṯꜣꞽ",
-      "dqr",
       "ant"
     ],
     "related": [
@@ -51694,7 +51694,7 @@
     "description": "Variant of D52 (phallus)",
     "meanings": [
       {
-        "text": "Phonogram: šmt",
+        "text": "Phonogram: smt",
         "type": "phonogram"
       }
     ],
@@ -52190,7 +52190,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣḥ — toe",
+        "text": "Logogram: sꜣḥ — toe",
         "type": "logogram"
       },
       {
@@ -52459,11 +52459,11 @@
     "description": "The head of a human man, seen in profile, with a line coming from the mouth, angling downwards.",
     "meanings": [
       {
-        "text": "Logogram: šrj — boy",
+        "text": "Logogram: srj — boy",
         "type": "logogram"
       },
       {
-        "text": "Logogram: šrjt — girl",
+        "text": "Logogram: srjt — girl",
         "type": "logogram"
       },
       {
@@ -52476,11 +52476,11 @@
       }
     ],
     "transliteration": [
-      "šrj",
-      "šrjt",
       "ḥnkt",
       "ꞽsd",
-      "psg"
+      "psg",
+      "šrj",
+      "šrjt"
     ],
     "related": [
       "D1",
@@ -61929,7 +61929,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šsmt — horse",
+        "text": "Logogram: ssmt — horse",
         "type": "logogram"
       },
       {
@@ -61950,8 +61950,8 @@
       }
     ],
     "transliteration": [
-      "ḥtr",
       "ssmt",
+      "ḥtr",
       "ibr",
       "zzmt"
     ],
@@ -63016,13 +63016,13 @@
     "description": "A jackal, standing, tail down.",
     "meanings": [
       {
-        "text": "Logogram: šꜣb — jackal,dignitary",
+        "text": "Logogram: sꜣb — jackal,dignitary",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "zꜣb",
-      "sꜣb"
+      "sꜣb",
+      "zꜣb"
     ],
     "related": [
       "E1",
@@ -63045,7 +63045,7 @@
     "description": "Jackal looking back",
     "meanings": [
       {
-        "text": "Logogram: šṯꜣ — drag",
+        "text": "Logogram: sṯꜣ — drag",
         "type": "logogram"
       }
     ],
@@ -63132,7 +63132,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: štḫ — Seth",
+        "text": "Logogram: stḫ — Seth",
         "type": "logogram"
       },
       {
@@ -63154,10 +63154,10 @@
     ],
     "transliteration": [
       "stẖ",
+      "Stḫ",
       "ẖnnw",
       "ꜣš",
-      "stš/stẖ",
-      "Stḫ"
+      "stš/stẖ"
     ],
     "etymology": "A depiction of an unidentified animal associated with Set, the Set animal: a slender canid resembling a greyhound, Saluki or jackal, with a distinctive stiff tail (often forked in later depictions) which stands erect whether the animal is sitting, standing, or walking. Its erect ears are usually depicted as squarish or triangular, narrowest at the base and widest at the squarish(perhaps cropped) tops, and its long nose often has a slight downward curve. It may or may not have been a real animal. It is usually depicted at rest, either sitting like this, or lying down: 𓃫 (E21).",
     "related": [
@@ -63551,7 +63551,7 @@
     "description": "A hippopotamus (Hippopotamus amphibius).",
     "meanings": [
       {
-        "text": "Logogram: ḏb — hippopotamus",
+        "text": "Logogram: db — hippopotamus",
         "type": "logogram"
       },
       {
@@ -63919,7 +63919,7 @@
     "description": "Goat with collar",
     "meanings": [
       {
-        "text": "Logogram: šꜥḥ — rank,dignity",
+        "text": "Logogram: sꜥḥ — rank,dignity",
         "type": "logogram"
       }
     ],
@@ -64225,11 +64225,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏḥwtj — Thoth",
+        "text": "Logogram: dḥwtj — Thoth",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏd — say",
+        "text": "Logogram: dd — say",
         "type": "logogram"
       },
       {
@@ -73514,7 +73514,7 @@
     "description": "The head of a bubalis antelope.",
     "meanings": [
       {
-        "text": "Phonogram: ššꜣ",
+        "text": "Phonogram: ssꜣ",
         "type": "phonogram"
       }
     ],
@@ -74338,7 +74338,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏp — horn",
+        "text": "Logogram: dp — horn",
         "type": "logogram"
       },
       {
@@ -74363,8 +74363,8 @@
       }
     ],
     "transliteration": [
-      "horn",
       "dp",
+      "horn",
       "ꜥb",
       "db"
     ],
@@ -74772,7 +74772,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šdm",
+        "text": "Phonogram: sdm",
         "type": "phonogram"
       },
       {
@@ -74784,15 +74784,15 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: msḏr — ear",
+        "text": "Logogram: msdr — ear",
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḏm — hear",
+        "text": "Logogram: sdm — hear",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏrḏ — leaf",
+        "text": "Logogram: drd — leaf",
         "type": "logogram"
       },
       {
@@ -74815,10 +74815,10 @@
     "transliteration": [
       "ꜥnḫ",
       "sḏm",
-      "msḏr",
-      "ḏrḏ",
-      "ear",
       "sdm",
+      "msḏr",
+      "ear",
+      "ḏrḏ",
       "idn",
       "jdn",
       "listening",
@@ -74944,7 +74944,7 @@
     "description": "A foreleg of a bovid (ox), hoof orientated towards the reading direction.",
     "meanings": [
       {
-        "text": "Logogram: ḫpš — foreleg",
+        "text": "Logogram: ḫps — foreleg",
         "type": "logogram"
       },
       {
@@ -75223,11 +75223,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣb — dappled",
+        "text": "Logogram: sꜣb — dappled",
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣb Swt — dappled of feathers",
+        "text": "Logogram: sꜣb Swt — dappled of feathers",
         "type": "logogram"
       },
       {
@@ -75272,11 +75272,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: št",
+        "text": "Phonogram: st",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: štj — pierce",
+        "text": "Logogram: stj — pierce",
         "type": "logogram"
       },
       {
@@ -75291,8 +75291,8 @@
     "transliteration": [
       "st",
       "sṯ",
-      "sti",
-      "stj"
+      "stj",
+      "sti"
     ],
     "etymology": "Representation of a cowskin with an arrow through it.",
     "related": [
@@ -75585,7 +75585,7 @@
     "description": "The tail of an animal.",
     "meanings": [
       {
-        "text": "Logogram: šd — tail",
+        "text": "Logogram: sd — tail",
         "type": "logogram"
       }
     ],
@@ -75764,7 +75764,7 @@
     "description": "A windpipe and lungs.",
     "meanings": [
       {
-        "text": "Logogram: šmꜣ — lung",
+        "text": "Logogram: smꜣ — lung",
         "type": "logogram"
       }
     ],
@@ -75842,7 +75842,7 @@
     "description": "A spine with four ribs, with a downward curving loop at the end of the spine.",
     "meanings": [
       {
-        "text": "Phonogram: šm",
+        "text": "Phonogram: sm",
         "type": "phonogram"
       },
       {
@@ -76573,11 +76573,11 @@
     "description": "A rib.",
     "meanings": [
       {
-        "text": "Phonogram: špr",
+        "text": "Phonogram: spr",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: špr — rib",
+        "text": "Logogram: spr — rib",
         "type": "logogram"
       },
       {
@@ -76776,7 +76776,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ḏbn",
+        "text": "Phonogram: dbn",
         "type": "phonogram"
       },
       {
@@ -76792,7 +76792,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏbn — go round",
+        "text": "Logogram: dbn — go round",
         "type": "logogram"
       },
       {
@@ -76802,8 +76802,8 @@
     ],
     "transliteration": [
       "pẖr",
-      "qꜣb",
       "dbn",
+      "qꜣb",
       "wḏb"
     ],
     "related": [
@@ -76966,7 +76966,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: špẖr — copy",
+        "text": "Logogram: spẖr — copy",
         "type": "logogram"
       }
     ],
@@ -81498,7 +81498,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ṯjw",
+        "text": "Phonogram: tjw",
         "type": "phonogram"
       },
       {
@@ -82022,7 +82022,7 @@
     "description": "A falcon (G5), on top of a moon-sickle shaped boat with a higher prow than stern, with a rudder, with the head of an antelope (F81) on top of the prow, facing inwards, with a downward line with multiple horizontal lines written over it coming from the head, on top of a sledge (P60B).",
     "meanings": [
       {
-        "text": "Logogram: škr — Sokar",
+        "text": "Logogram: skr — Sokar",
         "type": "logogram"
       },
       {
@@ -82943,7 +82943,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ḏb",
+        "text": "Phonogram: db",
         "type": "phonogram"
       },
       {
@@ -82952,8 +82952,8 @@
       }
     ],
     "transliteration": [
-      "ḏb",
-      "db"
+      "db",
+      "ḏb"
     ],
     "etymology": "Representation of a hoopoe.",
     "related": [
@@ -83343,7 +83343,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏšr — flamingo",
+        "text": "Logogram: dšr — flamingo",
         "type": "logogram"
       },
       {
@@ -83846,11 +83846,11 @@
     "description": "Representation of an egret.",
     "meanings": [
       {
-        "text": "Phonogram: šdꜣ",
+        "text": "Phonogram: sdꜣ",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šdꜣ — egret",
+        "text": "Logogram: sdꜣ — egret",
         "type": "logogram"
       },
       {
@@ -84236,7 +84236,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šꜣ",
+        "text": "Phonogram: sꜣ",
         "type": "phonogram"
       },
       {
@@ -84244,7 +84244,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: št — pintail",
+        "text": "Logogram: st — pintail",
         "type": "logogram"
       },
       {
@@ -84412,7 +84412,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šḥw",
+        "text": "Phonogram: sḥw",
         "type": "phonogram"
       },
       {
@@ -84420,7 +84420,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ṯn",
+        "text": "Phonogram: tn",
         "type": "phonogram"
       },
       {
@@ -84442,17 +84442,17 @@
     ],
     "transliteration": [
       "pꜣ",
-      "p",
-      "ṯn",
       "tn",
+      "p",
       "ḫn",
       "qmꜣ",
       "qmj",
+      "sḥw",
+      "ṯn",
       "qmyt",
       "ḫnj",
       "sḥwj",
-      "qmꜣj",
-      "sḥw"
+      "qmꜣj"
     ],
     "etymology": "Representation of a landing pintail duck.",
     "related": [
@@ -84590,7 +84590,7 @@
     "description": "Variant of G43 (quail chick)",
     "meanings": [
       {
-        "text": "Phonogram: ṯw",
+        "text": "Phonogram: tw",
         "type": "phonogram"
       },
       {
@@ -84847,7 +84847,7 @@
     "description": "Representation of three ducklings in a nest. Compare 𓅷, a representation of a single duckling.",
     "meanings": [
       {
-        "text": "Logogram: šš — nest",
+        "text": "Logogram: ss — nest",
         "type": "logogram"
       },
       {
@@ -84864,9 +84864,9 @@
       }
     ],
     "transliteration": [
-      "šš",
       "sš",
-      "zš"
+      "zš",
+      "šš"
     ],
     "etymology": "Representation of three ducklings in a nest. Compare 𓅷, a representation of a single duckling.",
     "related": [
@@ -84924,7 +84924,7 @@
     "description": "Three ducklings in pool",
     "meanings": [
       {
-        "text": "Logogram: šš — nest",
+        "text": "Logogram: ss — nest",
         "type": "logogram"
       },
       {
@@ -93579,7 +93579,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣ — son",
+        "text": "Logogram: sꜣ — son",
         "type": "logogram"
       },
       {
@@ -94613,7 +94613,7 @@
     "description": "A lizard or gecko.",
     "meanings": [
       {
-        "text": "Phonogram: ꜣšꜣ",
+        "text": "Phonogram: ꜣsꜣ",
         "type": "phonogram"
       },
       {
@@ -94621,7 +94621,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ꜣšꜣ — gecko",
+        "text": "Logogram: ꜣsꜣ — gecko",
         "type": "logogram"
       }
     ],
@@ -95067,7 +95067,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šbk — Sobek",
+        "text": "Logogram: sbk — Sobek",
         "type": "logogram"
       },
       {
@@ -95129,13 +95129,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣq — gather",
+        "text": "Logogram: sꜣq — gather",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "sbk",
       "sꜣq",
+      "sbk",
       "sꜣḳ"
     ],
     "related": [
@@ -95583,18 +95583,18 @@
     "description": "A cobra in repose (Naja haje).",
     "meanings": [
       {
-        "text": "Phonogram: ḏ",
+        "text": "Phonogram: d",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ḏt — cobra",
+        "text": "Logogram: dt — cobra",
         "type": "logogram"
       }
     ],
     "transliteration": [
+      "d",
       "ḏ",
-      "ḏt",
-      "d"
+      "ḏt"
     ],
     "related": [
       "I1",
@@ -100641,7 +100641,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ꜣḏ",
+        "text": "Phonogram: ꜣd",
         "type": "phonogram"
       },
       {
@@ -100649,7 +100649,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ꜣḏw — mullet",
+        "text": "Logogram: ꜣdw — mullet",
         "type": "logogram"
       },
       {
@@ -101778,7 +101778,7 @@
     "description": "Representing the desert locust (Schistocerca gregaria).",
     "meanings": [
       {
-        "text": "Logogram: šnḥm — locust",
+        "text": "Logogram: snḥm — locust",
         "type": "logogram"
       },
       {
@@ -101795,8 +101795,8 @@
       }
     ],
     "transliteration": [
-      "znḥm",
-      "snḥm"
+      "snḥm",
+      "znḥm"
     ],
     "etymology": "Representing the desert locust (Schistocerca gregaria).",
     "related": [
@@ -101820,7 +101820,7 @@
     "description": "Representing the red-headed centipede (Scolopendra morsitans).",
     "meanings": [
       {
-        "text": "Logogram: špꜣ — centipede",
+        "text": "Logogram: spꜣ — centipede",
         "type": "logogram"
       },
       {
@@ -101837,8 +101837,8 @@
       }
     ],
     "transliteration": [
-      "zpꜣ",
-      "spꜣ"
+      "spꜣ",
+      "zpꜣ"
     ],
     "etymology": "Representing the red-headed centipede (Scolopendra morsitans).",
     "related": [
@@ -101920,7 +101920,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šrqt — Selkis",
+        "text": "Logogram: srqt — Selkis",
         "type": "logogram"
       },
       {
@@ -103278,7 +103278,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šnf — last year",
+        "text": "Logogram: snf — last year",
         "type": "logogram"
       },
       {
@@ -103307,8 +103307,8 @@
       }
     ],
     "transliteration": [
-      "tr",
       "snf",
+      "tr",
       "rnp",
       "ḥꜣt-sp",
       "rnpt",
@@ -103330,8 +103330,8 @@
     ],
     "signName": "palm branch",
     "transliterationCounts": {
-      "tr": 2,
       "snf": 2,
+      "tr": 2,
       "rnp": 27,
       "rnpt": 7
     }
@@ -103402,7 +103402,7 @@
     "description": "A variant of 𓆵, formed from the signs 𓆳 and 𓏏.",
     "meanings": [
       {
-        "text": "Phonogram: ṯr",
+        "text": "Phonogram: tr",
         "type": "phonogram"
       },
       {
@@ -103414,7 +103414,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯr — season",
+        "text": "Logogram: tr — season",
         "type": "logogram",
         "period": "ME"
       },
@@ -103516,7 +103516,7 @@
     "description": "A palm branch, stripped of leaves and notched with a round notch (M4), on top of a mouth (D21).",
     "meanings": [
       {
-        "text": "Phonogram: ṯr,tj",
+        "text": "Phonogram: tr,tj",
         "type": "phonogram"
       },
       {
@@ -103528,7 +103528,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯr — season",
+        "text": "Logogram: tr — season",
         "type": "logogram",
         "period": "ME"
       }
@@ -104030,7 +104030,7 @@
     "description": "Representation of a lotus.",
     "meanings": [
       {
-        "text": "Logogram: ššn — lotus",
+        "text": "Logogram: ssn — lotus",
         "type": "logogram"
       },
       {
@@ -104047,8 +104047,8 @@
       }
     ],
     "transliteration": [
-      "ššn",
       "sšn",
+      "ššn",
       "zšn"
     ],
     "etymology": "Representation of a lotus.",
@@ -105051,7 +105051,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḫt — marshland",
+        "text": "Logogram: sḫt — marshland",
         "type": "logogram"
       }
     ],
@@ -105113,7 +105113,7 @@
     "description": "A field of reeds with three flowering reeds and a downward loop at the far end.",
     "meanings": [
       {
-        "text": "Phonogram: šm",
+        "text": "Phonogram: sm",
         "type": "phonogram"
       },
       {
@@ -105121,7 +105121,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šm — plant",
+        "text": "Logogram: sm — plant",
         "type": "logogram"
       }
     ],
@@ -105240,11 +105240,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šw",
+        "text": "Phonogram: sw",
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: š",
+        "text": "Phonogram: s",
         "type": "phonogram"
       },
       {
@@ -105252,7 +105252,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šwt — sedge",
+        "text": "Logogram: swt — sedge",
         "type": "logogram"
       },
       {
@@ -105280,8 +105280,8 @@
       "sw",
       "nswt",
       "swt",
-      "nsw",
       "s",
+      "nsw",
       "nsw-bjtj",
       "n(y)-swt"
     ],
@@ -105386,13 +105386,13 @@
     "description": "A flowering sedge (M23A), on top of a mouth (D21).",
     "meanings": [
       {
-        "text": "Logogram: ṯꜣwj — the two lands",
+        "text": "Logogram: tꜣwj — the two lands",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "rsw/rsy",
-      "tꜣwj"
+      "tꜣwj",
+      "rsw/rsy"
     ],
     "related": [
       "M1",
@@ -105623,7 +105623,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ṯꜣ-Smaw — Upper Egypt",
+        "text": "Logogram: tꜣ-Smaw — Upper Egypt",
         "type": "logogram"
       }
     ],
@@ -106098,7 +106098,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ḏr",
+        "text": "Phonogram: dr",
         "type": "phonogram"
       },
       {
@@ -106748,7 +106748,7 @@
     "description": "A thorn.",
     "meanings": [
       {
-        "text": "Logogram: špd — sharp",
+        "text": "Logogram: spd — sharp",
         "type": "logogram"
       },
       {
@@ -112371,13 +112371,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯꜣ-stj — Taseti (first nome of Upper Egypt)",
+        "text": "Logogram: tꜣ-stj — Taseti (first nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "tꜣ-sty",
-      "Tꜣ-stj"
+      "Tꜣ-stj",
+      "tꜣ-sty"
     ],
     "related": [
       "N1",
@@ -112975,7 +112975,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šw — day",
+        "text": "Logogram: sw — day",
         "type": "logogram"
       },
       {
@@ -113452,7 +113452,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯꜣ-wr — Tawer (eighth nome of Upper Egypt)",
+        "text": "Logogram: tꜣ-wr — Tawer (eighth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113870,7 +113870,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ššp — palm",
+        "text": "Logogram: ssp — palm",
         "type": "logogram"
       },
       {
@@ -113939,7 +113939,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣ — Sha (eleventh nome of Upper Egypt)",
+        "text": "Logogram: sꜣ — Sha (eleventh nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -114094,7 +114094,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šmdt — half-month festival",
+        "text": "Logogram: smdt — half-month festival",
         "type": "logogram"
       },
       {
@@ -114320,7 +114320,7 @@
     "description": "A star.",
     "meanings": [
       {
-        "text": "Phonogram: šbꜣ",
+        "text": "Phonogram: sbꜣ",
         "type": "phonogram"
       },
       {
@@ -114328,7 +114328,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šbꜣ — star",
+        "text": "Logogram: sbꜣ — star",
         "type": "logogram"
       },
       {
@@ -114341,8 +114341,8 @@
       }
     ],
     "transliteration": [
-      "dwꜣ",
       "sbꜣ",
+      "dwꜣ",
       "wnwt"
     ],
     "related": [
@@ -114428,7 +114428,7 @@
     "description": "A star, within a circle.",
     "meanings": [
       {
-        "text": "Logogram: ḏwꜣt — netherworld",
+        "text": "Logogram: dwꜣt — netherworld",
         "type": "logogram"
       },
       {
@@ -114491,11 +114491,11 @@
     "description": "A strip of land, with three grains of sand written beneath it.",
     "meanings": [
       {
-        "text": "Phonogram: ṯꜣ",
+        "text": "Phonogram: tꜣ",
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ṯ",
+        "text": "Phonogram: t",
         "type": "phonogram"
       },
       {
@@ -114503,7 +114503,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯꜣ — earth,land",
+        "text": "Logogram: tꜣ — earth,land",
         "type": "logogram"
       },
       {
@@ -114987,7 +114987,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Phonogram: šns",
+        "text": "Phonogram: sns",
         "type": "phonogram"
       }
     ],
@@ -115102,11 +115102,11 @@
     "description": "A long tongue of land.",
     "meanings": [
       {
-        "text": "Phonogram: wḏb",
+        "text": "Phonogram: wdb",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: wḏb — sandbank",
+        "text": "Logogram: wdb — sandbank",
         "type": "logogram"
       },
       {
@@ -115458,7 +115458,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: špꜣt — district",
+        "text": "Logogram: spꜣt — district",
         "type": "logogram"
       },
       {
@@ -115472,8 +115472,8 @@
     ],
     "transliteration": [
       "tꜣ-wr",
-      "ḥsp",
-      "spꜣt"
+      "spꜣt",
+      "ḥsp"
     ],
     "related": [
       "N1",
@@ -116304,7 +116304,7 @@
     "description": "A lump of clay.",
     "meanings": [
       {
-        "text": "Phonogram: šjn",
+        "text": "Phonogram: sjn",
         "type": "phonogram"
       },
       {
@@ -116313,8 +116313,8 @@
       }
     ],
     "transliteration": [
-      "sꞽn",
       "sjn",
+      "sꞽn",
       "sin",
       "sinw"
     ],
@@ -116809,11 +116809,11 @@
     "description": "A rectangular pool.",
     "meanings": [
       {
-        "text": "Phonogram: š",
+        "text": "Phonogram: s",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: š — pool",
+        "text": "Logogram: s — pool",
         "type": "logogram"
       }
     ],
@@ -121378,7 +121378,7 @@
     "description": "An enclosure wall with battlements on the front side and top, and on the vertical line of the opening.",
     "meanings": [
       {
-        "text": "Logogram: šbḫt — gateway",
+        "text": "Logogram: sbḫt — gateway",
         "type": "logogram"
       },
       {
@@ -121391,9 +121391,9 @@
       }
     ],
     "transliteration": [
+      "sbḫt",
       "wsḫ",
-      "sbḫ",
-      "sbḫt"
+      "sbḫ"
     ],
     "related": [
       "O1",
@@ -121767,11 +121767,11 @@
     "description": "Gateway with serpents",
     "meanings": [
       {
-        "text": "Logogram: ṯꜣytj — he of the door (title)",
+        "text": "Logogram: tꜣytj — he of the door (title)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯꜣ — door (in temple)",
+        "text": "Logogram: tꜣ — door (in temple)",
         "type": "logogram"
       },
       {
@@ -121781,8 +121781,8 @@
     ],
     "transliteration": [
       "tꜣ",
-      "tꜣyt",
       "tꜣytj",
+      "tꜣyt",
       "sbḫt"
     ],
     "related": [],
@@ -122203,14 +122203,14 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḥ — booth",
+        "text": "Logogram: sḥ — booth",
         "type": "logogram"
       }
     ],
     "transliteration": [
+      "sḥ",
       "pr-wr",
-      "zḥ",
-      "sḥ"
+      "zḥ"
     ],
     "related": [
       "O1",
@@ -122337,11 +122337,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šḥ",
+        "text": "Phonogram: sḥ",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šḥ — booth",
+        "text": "Logogram: sḥ — booth",
         "type": "logogram"
       },
       {
@@ -122351,8 +122351,8 @@
     ],
     "transliteration": [
       "ḥꜣb",
-      "zḥ",
-      "sḥ"
+      "sḥ",
+      "zḥ"
     ],
     "related": [
       "O1",
@@ -122955,7 +122955,7 @@
     "description": "An obelisk, with base.",
     "meanings": [
       {
-        "text": "Logogram: ṯḫn — obelisk",
+        "text": "Logogram: tḫn — obelisk",
         "type": "logogram"
       },
       {
@@ -123255,18 +123255,18 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḫnt — support",
+        "text": "Logogram: sḫnt — support",
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḫnwt — the four support (of the sky)",
+        "text": "Logogram: sḫnwt — the four support (of the sky)",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "sḫnt",
-      "zḫnt",
-      "sḫnwt"
+      "sḫnwt",
+      "zḫnt"
     ],
     "related": [
       "O1",
@@ -123375,7 +123375,7 @@
     "description": "A gateway.",
     "meanings": [
       {
-        "text": "Logogram: šbꜣ — door",
+        "text": "Logogram: sbꜣ — door",
         "type": "logogram"
       },
       {
@@ -123514,7 +123514,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šrḫ — banner",
+        "text": "Logogram: srḫ — banner",
         "type": "logogram"
       },
       {
@@ -123670,11 +123670,11 @@
     "description": "A door bolt.",
     "meanings": [
       {
-        "text": "Phonogram: š",
+        "text": "Phonogram: s",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: š — bolt",
+        "text": "Logogram: s — bolt",
         "type": "logogram"
       }
     ],
@@ -123706,11 +123706,11 @@
     "description": "A door bolt (O034) placed above legs in a walking posture, with feet oriented toward the reading direction (D054).",
     "meanings": [
       {
-        "text": "Logogram: šbj — go",
+        "text": "Logogram: sbj — go",
         "type": "logogram"
       },
       {
-        "text": "Logogram: šbj — perish",
+        "text": "Logogram: sbj — perish",
         "type": "logogram"
       },
       {
@@ -123722,15 +123722,15 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šj — who?",
+        "text": "Logogram: sj — who?",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "ꞽs",
       "ms",
-      "js",
       "sbj",
+      "js",
       "sj",
       "sb",
       "is",
@@ -124090,7 +124090,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯm — (part of a title)",
+        "text": "Logogram: tm — (part of a title)",
         "type": "logogram"
       },
       {
@@ -124341,7 +124341,7 @@
     "description": "representing a fence or enclosure.",
     "meanings": [
       {
-        "text": "Phonogram: šsp",
+        "text": "Phonogram: ssp",
         "type": "phonogram"
       },
       {
@@ -125045,15 +125045,15 @@
     "description": "A circular threshing floor covered with grain.",
     "meanings": [
       {
-        "text": "Phonogram: šp",
+        "text": "Phonogram: sp",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šp sn — (two times)",
+        "text": "Logogram: sp sn — (two times)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: špt — threshing floor",
+        "text": "Logogram: spt — threshing floor",
         "type": "logogram"
       },
       {
@@ -132551,7 +132551,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏpt — ship",
+        "text": "Logogram: dpt — ship",
         "type": "logogram"
       },
       {
@@ -137792,7 +137792,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: št",
+        "text": "Phonogram: st",
         "type": "phonogram"
       },
       {
@@ -137812,7 +137812,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: št — seat",
+        "text": "Logogram: st — seat",
         "type": "logogram"
       },
       {
@@ -137901,7 +137901,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: št — seat",
+        "text": "Logogram: st — seat",
         "type": "logogram"
       }
     ],
@@ -138395,7 +138395,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šrf — temperature",
+        "text": "Logogram: srf — temperature",
         "type": "logogram"
       },
       {
@@ -140853,7 +140853,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šnṯr — incense",
+        "text": "Logogram: snṯr — incense",
         "type": "logogram"
       }
     ],
@@ -141310,11 +141310,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ḏd",
+        "text": "Phonogram: dd",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ḏd — djed-column",
+        "text": "Logogram: dd — djed-column",
         "type": "logogram"
       },
       {
@@ -142113,7 +142113,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ššꜣt — Seshat",
+        "text": "Logogram: ssꜣt — Seshat",
         "type": "logogram"
       }
     ],
@@ -142434,7 +142434,7 @@
     "description": "A windpipe and lungs (F36), with a wide cup on each side of the lungs, from which two flowers, simple buds on the left, flowering buds on the right, one vertical, the other crossing the windpipe, come to angle downwards on top of the vertical flower on the other side.",
     "meanings": [
       {
-        "text": "Logogram: šmꜣ — unite",
+        "text": "Logogram: smꜣ — unite",
         "type": "logogram"
       }
     ],
@@ -145683,7 +145683,7 @@
     "description": "The white crown (S1), with the curl of the red crown (S89), on top of a wickerwork basket (V30).",
     "meanings": [
       {
-        "text": "Logogram: šmꜥ=s — crown of Upper Egypt",
+        "text": "Logogram: smꜥ=s — crown of Upper Egypt",
         "type": "logogram"
       },
       {
@@ -145739,7 +145739,7 @@
         "period": "18-"
       },
       {
-        "text": "Logogram: ḏšrt — red crown",
+        "text": "Logogram: dšrt — red crown",
         "type": "logogram"
       },
       {
@@ -145820,7 +145820,7 @@
     "description": "The union of the red crown of Lower Egypt and the white crown of Upper Egypt, with the white crown worn within the red crown. (i.e., the double crown).",
     "meanings": [
       {
-        "text": "Logogram: šḫmtj — double crown",
+        "text": "Logogram: sḫmtj — double crown",
         "type": "logogram"
       },
       {
@@ -145829,8 +145829,8 @@
       }
     ],
     "transliteration": [
-      "sḫmty",
-      "sḫmtj"
+      "sḫmtj",
+      "sḫmty"
     ],
     "related": [
       "S1",
@@ -146490,14 +146490,14 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯḥnt — fayence",
+        "text": "Logogram: tḥnt — fayence",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "ṯḥnt",
       "ṯḥn",
-      "tḥn"
+      "tḥn",
+      "ṯḥnt"
     ],
     "related": [
       "S1",
@@ -146630,11 +146630,11 @@
     "description": "A girdle worn by various gods, with four hanging pieces.",
     "meanings": [
       {
-        "text": "Phonogram: šsm",
+        "text": "Phonogram: ssm",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šsmtt — Shesmetet",
+        "text": "Logogram: ssmtt — Shesmetet",
         "type": "logogram"
       }
     ],
@@ -146826,7 +146826,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šnꜥtj — shenoti",
+        "text": "Logogram: snꜥtj — shenoti",
         "type": "logogram"
       },
       {
@@ -146944,11 +146944,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šṯ",
+        "text": "Phonogram: st",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ṯꜣ-wr — larboard",
+        "text": "Logogram: tꜣ-wr — larboard",
         "type": "logogram"
       },
       {
@@ -147012,7 +147012,7 @@
     "description": "Two pieces of cloth strung together / Two flagellums (S45) on top of/written through a cartouche in a round form (V9).",
     "meanings": [
       {
-        "text": "Phonogram: ḏmḏ",
+        "text": "Phonogram: dmd",
         "type": "phonogram"
       },
       {
@@ -147020,13 +147020,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏmḏ — unite",
+        "text": "Logogram: dmd — unite",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "dmḏ",
-      "dmd"
+      "dmd",
+      "dmḏ"
     ],
     "related": [
       "S1",
@@ -147053,15 +147053,15 @@
     "description": "A girdle knot.",
     "meanings": [
       {
-        "text": "Phonogram: ṯs",
+        "text": "Phonogram: ts",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ṯst — knot",
+        "text": "Logogram: tst — knot",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯs — vertebra",
+        "text": "Logogram: ts — vertebra",
         "type": "logogram"
       },
       {
@@ -147071,8 +147071,8 @@
     ],
     "transliteration": [
       "ṯs",
-      "ṯst",
-      "ṯz"
+      "ṯz",
+      "ṯst"
     ],
     "related": [
       "S1",
@@ -147134,7 +147134,7 @@
     "description": "A kilt or apron.",
     "meanings": [
       {
-        "text": "Logogram: šnḏwt — apron",
+        "text": "Logogram: šndwt — apron",
         "type": "logogram"
       },
       {
@@ -147168,7 +147168,7 @@
     "description": "Apron",
     "meanings": [
       {
-        "text": "Logogram: ḏꜣjw — apron",
+        "text": "Logogram: dꜣjw — apron",
         "type": "logogram"
       },
       {
@@ -147177,8 +147177,8 @@
       }
     ],
     "transliteration": [
-      "dꜣꞽw",
-      "dꜣjw"
+      "dꜣjw",
+      "dꜣꞽw"
     ],
     "related": [],
     "source": "aegyptus",
@@ -147304,7 +147304,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: š",
+        "text": "Phonogram: s",
         "type": "phonogram"
       },
       {
@@ -147385,7 +147385,7 @@
     "description": "Variant of S29 (folded cloth)",
     "meanings": [
       {
-        "text": "Phonogram: šf",
+        "text": "Phonogram: sf",
         "type": "phonogram"
       }
     ],
@@ -147431,7 +147431,7 @@
     "description": "Variant of S29 (folded cloth)",
     "meanings": [
       {
-        "text": "Phonogram: šmꜣ",
+        "text": "Phonogram: smꜣ",
         "type": "phonogram"
       }
     ],
@@ -147454,20 +147454,20 @@
     "description": "A rectangular piece of cloth, with sloping fringes on its front short side, without internal decoration.",
     "meanings": [
       {
-        "text": "Phonogram: šjꜣ",
+        "text": "Phonogram: sjꜣ",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šjꜣt — piece of cloth",
+        "text": "Logogram: sjꜣt — piece of cloth",
         "type": "logogram"
       }
     ],
     "transliteration": [
+      "sjꜣ",
+      "sjꜣt",
       "sꞽꜣ",
       "siꜣ",
-      "siꜣt",
-      "sjꜣt",
-      "sjꜣ"
+      "siꜣt"
     ],
     "related": [
       "S1",
@@ -147513,7 +147513,7 @@
     "description": "A sandal.",
     "meanings": [
       {
-        "text": "Logogram: ṯbt — sandal",
+        "text": "Logogram: tbt — sandal",
         "type": "logogram"
       },
       {
@@ -147609,11 +147609,11 @@
     "description": "A sun shade, made of a staff which holds feathers at the top, resembling a half circle, with internal detail.",
     "meanings": [
       {
-        "text": "Logogram: šwt — shade",
+        "text": "Logogram: swt — shade",
         "type": "logogram"
       },
       {
-        "text": "Logogram: šryt — standard",
+        "text": "Logogram: sryt — standard",
         "type": "logogram"
       },
       {
@@ -147622,8 +147622,8 @@
       }
     ],
     "transliteration": [
-      "šwt",
       "sryt",
+      "šwt",
       "mnḳb"
     ],
     "related": [
@@ -148086,11 +148086,11 @@
     "description": "Sceptre of authority",
     "meanings": [
       {
-        "text": "Phonogram: šḫm",
+        "text": "Phonogram: sḫm",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šḫm — sistrum",
+        "text": "Logogram: sḫm — sistrum",
         "type": "logogram"
       },
       {
@@ -153860,7 +153860,7 @@
     "description": "A dagger within a round tipped sheath.",
     "meanings": [
       {
-        "text": "Phonogram: ṯp",
+        "text": "Phonogram: tp",
         "type": "phonogram"
       }
     ],
@@ -153928,7 +153928,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: pḏt — bow",
+        "text": "Logogram: pdt — bow",
         "type": "logogram"
       },
       {
@@ -153945,9 +153945,9 @@
       }
     ],
     "transliteration": [
-      "pḏt",
       "pd",
-      "pḏ"
+      "pḏ",
+      "pḏt"
     ],
     "etymology": "Representing an archer’s bow consisting of two oryx horns joined by a wooden centerpiece. Compare the Chinese character 弓. The phonogrammatic value of pḏ is derived by the rebus principle from its use as the logogram for pḏt (“bow”).",
     "related": [
@@ -154116,28 +154116,28 @@
     "description": "An arrow with rounded fletching.",
     "meanings": [
       {
-        "text": "Phonogram: šẖr",
+        "text": "Phonogram: sẖr",
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ššr",
+        "text": "Phonogram: ssr",
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šjn",
+        "text": "Phonogram: sjn",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šsr — arrow",
+        "text": "Logogram: ssr — arrow",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "šsr",
-      "sšr",
       "sẖr",
-      "swn",
       "sjn",
+      "sšr",
+      "šsr",
+      "swn",
       "sin",
       "zin",
       "zwn"
@@ -154247,7 +154247,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: rwḏ — bow-string",
+        "text": "Logogram: rwd — bow-string",
         "type": "logogram"
       },
       {
@@ -154391,7 +154391,7 @@
     "description": "Representing a throwstick or, in its function representing foreignness, a club as a foreign weapon of war.",
     "meanings": [
       {
-        "text": "Phonogram: ṯn",
+        "text": "Phonogram: tn",
         "type": "phonogram"
       },
       {
@@ -154399,7 +154399,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯḥnw — Libia",
+        "text": "Logogram: tḥnw — Libia",
         "type": "logogram"
       },
       {
@@ -154462,8 +154462,8 @@
     "transliteration": [
       "ṯn",
       "qmꜣ",
-      "ṯḥnw",
       "nḥsj",
+      "ṯḥnw",
       "ḏꜥr",
       "ꜥꜣm",
       "am",
@@ -154677,7 +154677,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šms — follow",
+        "text": "Logogram: sms — follow",
         "type": "logogram"
       },
       {
@@ -154743,7 +154743,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ṯwr",
+        "text": "Phonogram: twr",
         "type": "phonogram"
       },
       {
@@ -154781,9 +154781,9 @@
     ],
     "transliteration": [
       "qs",
+      "twr",
       "ꜣbw",
       "qrs",
-      "twr",
       "gn",
       "gnwt",
       "msn",
@@ -154807,8 +154807,8 @@
     "signName": "harpoon head",
     "transliterationCounts": {
       "qs": 9,
-      "qrs": 8,
       "twr": 9,
+      "qrs": 8,
       "gn": 2,
       "gnwt": 19,
       "msn": 1
@@ -155110,11 +155110,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šn",
+        "text": "Phonogram: sn",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šnw — two",
+        "text": "Logogram: snw — two",
         "type": "logogram"
       },
       {
@@ -155538,7 +155538,7 @@
     "description": "A bird trap consisting of a horizontal beam and vertical beam, with two lines running from the horizontal beam to the vertical beam, crossing in the middle.",
     "meanings": [
       {
-        "text": "Logogram: šḫt — trap",
+        "text": "Logogram: sḫt — trap",
         "type": "logogram"
       },
       {
@@ -155936,7 +155936,7 @@
     "description": "A depiction of a knife with a curved handle. In an example from Rekhmire's tomb, it is colored red, either to represent danger or copper.\nCompare the Chinese character 刀 (Bronze inscriptional form ).",
     "meanings": [
       {
-        "text": "Logogram: ḏmt — knife",
+        "text": "Logogram: dmt — knife",
         "type": "logogram"
       },
       {
@@ -155959,11 +155959,11 @@
     "transliteration": [
       "smꜣ",
       "ds",
+      "dmt",
       "šꜥd",
       "šꜥ",
       "dm",
       "zfṯ",
-      "dmt",
       "jw",
       "zft"
     ],
@@ -155982,8 +155982,8 @@
     "signName": "knife",
     "transliterationCounts": {
       "ds": 8,
-      "dm": 12,
-      "dmt": 12
+      "dmt": 12,
+      "dm": 12
     }
   },
   {
@@ -156042,7 +156042,7 @@
     "description": "A knife sharpener with a rounded body and a loop at the back.",
     "meanings": [
       {
-        "text": "Phonogram: ššm",
+        "text": "Phonogram: ssm",
         "type": "phonogram"
       }
     ],
@@ -156157,7 +156157,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ššm — butcher",
+        "text": "Logogram: ssm — butcher",
         "type": "logogram"
       }
     ],
@@ -160729,7 +160729,7 @@
     "description": "A sledge.",
     "meanings": [
       {
-        "text": "Phonogram: ṯm",
+        "text": "Phonogram: tm",
         "type": "phonogram"
       }
     ],
@@ -161074,11 +161074,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šṯp",
+        "text": "Phonogram: stp",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: štp — cut up",
+        "text": "Logogram: stp — cut up",
         "type": "logogram"
       },
       {
@@ -162040,11 +162040,11 @@
     "description": "A pottery kiln.",
     "meanings": [
       {
-        "text": "Phonogram: ṯꜣ",
+        "text": "Phonogram: tꜣ",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ṯꜣ — kiln",
+        "text": "Logogram: tꜣ — kiln",
         "type": "logogram"
       }
     ],
@@ -162168,7 +162168,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šḥm — pound",
+        "text": "Logogram: sḥm — pound",
         "type": "logogram"
       },
       {
@@ -162182,9 +162182,9 @@
     ],
     "transliteration": [
       "ḥsmn",
+      "sḥm",
       "smn",
       "dns",
-      "sḥm",
       "zmn",
       "ḥmꜣt",
       "ḥmꜣyt"
@@ -162297,15 +162297,15 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ṯj",
+        "text": "Phonogram: tj",
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: ṯ",
+        "text": "Phonogram: t",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ṯjt — pestle",
+        "text": "Logogram: tjt — pestle",
         "type": "logogram"
       },
       {
@@ -162314,10 +162314,10 @@
       }
     ],
     "transliteration": [
-      "tꞽ",
       "t",
       "tj",
       "tjt",
+      "tꞽ",
       "ti",
       "tit"
     ],
@@ -162706,11 +162706,11 @@
     "description": "The pole of a balance, on a horizontal base, with a angled line on each side as support.",
     "meanings": [
       {
-        "text": "Logogram: wṯst — post (of balance)",
+        "text": "Logogram: wtst — post (of balance)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯsj — raise",
+        "text": "Logogram: tsj — raise",
         "type": "logogram"
       },
       {
@@ -162719,10 +162719,10 @@
       }
     ],
     "transliteration": [
-      "wṯst",
-      "ṯsj",
       "ṯs",
       "wṯs",
+      "wṯst",
+      "ṯsj",
       "mḫꜣt"
     ],
     "related": [
@@ -163188,7 +163188,7 @@
     "description": "The plummet of a balance.",
     "meanings": [
       {
-        "text": "Logogram: ṯḫ — plummet",
+        "text": "Logogram: tḫ — plummet",
         "type": "logogram"
       },
       {
@@ -166362,7 +166362,7 @@
     "description": "A horizontal line, intersected in the middle by a coil of rope (V1).",
     "meanings": [
       {
-        "text": "Phonogram: šṯꜣ",
+        "text": "Phonogram: sṯꜣ",
         "type": "phonogram"
       },
       {
@@ -166370,7 +166370,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šṯꜣ — drag",
+        "text": "Logogram: sṯꜣ — drag",
         "type": "logogram"
       },
       {
@@ -166379,8 +166379,8 @@
       }
     ],
     "transliteration": [
-      "ꜣs",
-      "sṯꜣ"
+      "sṯꜣ",
+      "ꜣs"
     ],
     "related": [
       "V1",
@@ -166457,13 +166457,13 @@
     "description": "A horizontal line, intersected in the middle by three coils of rope (V1).",
     "meanings": [
       {
-        "text": "Phonogram: šṯꜣw",
+        "text": "Phonogram: sṯꜣw",
         "type": "phonogram"
       }
     ],
     "transliteration": [
-      "sṯꜣ",
-      "sṯꜣw"
+      "sṯꜣw",
+      "sṯꜣ"
     ],
     "related": [
       "V1",
@@ -166592,11 +166592,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šs",
+        "text": "Phonogram: ss",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šs — rope",
+        "text": "Logogram: ss — rope",
         "type": "logogram"
       },
       {
@@ -167136,11 +167136,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šꜣ",
+        "text": "Phonogram: sꜣ",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šꜣ — hobble",
+        "text": "Logogram: sꜣ — hobble",
         "type": "logogram"
       },
       {
@@ -167234,7 +167234,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣ — protection",
+        "text": "Logogram: sꜣ — protection",
         "type": "logogram"
       },
       {
@@ -167835,7 +167835,7 @@
     "description": "A string wound on a stick.",
     "meanings": [
       {
-        "text": "Phonogram: wḏ",
+        "text": "Phonogram: wd",
         "type": "phonogram"
       }
     ],
@@ -167900,7 +167900,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ꜣḏ — spool",
+        "text": "Logogram: ꜣd — spool",
         "type": "logogram"
       },
       {
@@ -168169,11 +168169,11 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šk",
+        "text": "Phonogram: sk",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: šk — wipe",
+        "text": "Logogram: sk — wipe",
         "type": "logogram"
       },
       {
@@ -168198,8 +168198,8 @@
       }
     ],
     "transliteration": [
-      "wꜣḥ",
       "sk",
+      "wꜣḥ",
       "ḫsr",
       "mꜥr"
     ],
@@ -168228,7 +168228,7 @@
     "description": "A swab made from a hank of fiber with two loops, with fringes on the wide top-piece.",
     "meanings": [
       {
-        "text": "Phonogram: šk",
+        "text": "Phonogram: sk",
         "type": "phonogram"
       }
     ],
@@ -168522,7 +168522,7 @@
     "description": "A bag or a sack of linen, with a tie towards the front, and a (small) loop at the back.",
     "meanings": [
       {
-        "text": "Phonogram: ššr",
+        "text": "Phonogram: ssr",
         "type": "phonogram"
       },
       {
@@ -168530,7 +168530,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ššr — linen",
+        "text": "Logogram: ssr — linen",
         "type": "logogram"
       },
       {
@@ -168928,7 +168928,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯjt — knot-amulet",
+        "text": "Logogram: tjt — knot-amulet",
         "type": "logogram"
       }
     ],
@@ -171502,7 +171502,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šs — alabaster",
+        "text": "Logogram: ss — alabaster",
         "type": "logogram"
       },
       {
@@ -171786,7 +171786,7 @@
     "description": "A granite vessel with small handles.",
     "meanings": [
       {
-        "text": "Phonogram: mꜣṯ",
+        "text": "Phonogram: mꜣt",
         "type": "phonogram"
       },
       {
@@ -171794,7 +171794,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: mꜣṯ — granite",
+        "text": "Logogram: mꜣt — granite",
         "type": "logogram"
       },
       {
@@ -171807,10 +171807,10 @@
       }
     ],
     "transliteration": [
-      "mꜣṯ",
+      "mꜣt",
       "ꜣb",
       "ꜣbw",
-      "mꜣt"
+      "mꜣṯ"
     ],
     "related": [
       "W1",
@@ -171996,7 +171996,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šḫw",
+        "text": "Phonogram: sḫw",
         "type": "phonogram"
       },
       {
@@ -172019,13 +172019,13 @@
     "transliteration": [
       "ꜥ",
       "ḥnt",
+      "sḫw",
       "wsḫ",
       "ḥnw",
       "ḥnwt",
       "jab",
       "iab",
-      "ab",
-      "sḫw"
+      "ab"
     ],
     "related": [
       "W1",
@@ -172218,7 +172218,7 @@
     "description": "Representation of a pot.",
     "meanings": [
       {
-        "text": "Logogram: ḏšrt — earthenware pot",
+        "text": "Logogram: dšrt — earthenware pot",
         "type": "logogram"
       },
       {
@@ -172861,7 +172861,7 @@
     "description": "A milk jar with two horizontal lines over the jar, with a leaf covering the milk.",
     "meanings": [
       {
-        "text": "Logogram: jrṯt — milk",
+        "text": "Logogram: jrtt — milk",
         "type": "logogram"
       },
       {
@@ -173142,7 +173142,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: nḏ",
+        "text": "Phonogram: nd",
         "type": "phonogram",
         "period": "ME"
       },
@@ -173188,9 +173188,9 @@
       }
     ],
     "transliteration": [
-      "nḏ",
       "nw",
       "m-ẖnw",
+      "nḏ",
       "jn",
       "qd",
       "jnk",
@@ -176208,21 +176208,21 @@
     "description": "A half round loaf of bread.",
     "meanings": [
       {
-        "text": "Phonogram: ṯ",
+        "text": "Phonogram: t",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ṯ — bread",
+        "text": "Logogram: t — bread",
         "type": "logogram"
       },
       {
-        "text": "Logogram: jt-nṯr — god's father (title)",
+        "text": "Logogram: jt-ntr — god's father (title)",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "jt-nṯr",
-      "t"
+      "t",
+      "jt-nṯr"
     ],
     "related": [
       "X2",
@@ -176264,7 +176264,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: jt-nṯr — god's father (title)",
+        "text": "Logogram: jt-ntr — god's father (title)",
         "type": "logogram"
       },
       {
@@ -176560,7 +176560,7 @@
     "description": "A roll of bread, with a circle in the middle.",
     "meanings": [
       {
-        "text": "Phonogram: šn",
+        "text": "Phonogram: sn",
         "type": "phonogram"
       },
       {
@@ -176974,15 +176974,15 @@
     "description": "Generally taken to represent a conical loaf of bread, this glyph was conventionally outlined in black or blue, often with white fill and a red inner triangle; compare 𓏏 X1. Nunn writes that the interpretation of this glyph as bread is questionable: \"neither X1 nor X8 is represented as bread on offering tables in funerary scenes\"; in e.g. 𓏐 X2 and 𓏑 X3 bread is yellow; and conical bread molds did exist but were rounded: this glyph's shape is more like an angular \"funerary cone\", but those were white or red.\nCompare also Cypro-Minoan 𒾩.",
     "meanings": [
       {
-        "text": "Phonogram: ḏ",
+        "text": "Phonogram: d",
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ḏj — give",
+        "text": "Logogram: dj — give",
         "type": "logogram"
       },
       {
-        "text": "Logogram: rḏj — give",
+        "text": "Logogram: rdj — give",
         "type": "logogram"
       },
       {
@@ -176990,7 +176990,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏjw — provisions",
+        "text": "Logogram: djw — provisions",
         "type": "logogram"
       },
       {
@@ -177003,11 +177003,11 @@
       }
     ],
     "transliteration": [
+      "d",
       "jmj",
+      "djw",
       "ḏj",
       "rḏj",
-      "d",
-      "djw",
       "di",
       "rdi",
       "(r)ḏj",
@@ -177206,7 +177206,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: mḏꜣt",
+        "text": "Phonogram: mdꜣt",
         "type": "phonogram"
       },
       {
@@ -177218,11 +177218,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏmḏ — total",
+        "text": "Logogram: dmd — total",
         "type": "logogram"
       },
       {
-        "text": "Logogram: mḏꜣt — papyrus roll",
+        "text": "Logogram: mdꜣt — papyrus roll",
         "type": "logogram"
       },
       {
@@ -177248,9 +177248,9 @@
     ],
     "transliteration": [
       "rḫ",
-      "mḏꜣt",
       "zẖꜣ",
       "dmḏ",
+      "mḏꜣt",
       "mdwt",
       "mꜣꜥt",
       "sspdw"
@@ -177373,15 +177373,15 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šnꜥꜥ — made smooth",
+        "text": "Logogram: snꜥꜥ — made smooth",
         "type": "logogram"
       },
       {
-        "text": "Logogram: mnhḏ — scribe's outfit",
+        "text": "Logogram: mnhd — scribe's outfit",
         "type": "logogram"
       },
       {
-        "text": "Logogram: šš — writing",
+        "text": "Logogram: ss — writing",
         "type": "logogram"
       },
       {
@@ -177395,11 +177395,11 @@
     ],
     "transliteration": [
       "ṯms",
-      "mnhḏ",
+      "mnhd",
       "sš",
       "zš",
+      "mnhḏ",
       "snaa",
-      "mnhd",
       "naa"
     ],
     "related": [
@@ -177415,8 +177415,8 @@
     ],
     "signName": "scribe's outfit with palette on left",
     "transliterationCounts": {
-      "snaa": 5,
       "mnhd": 2,
+      "snaa": 5,
       "naa": 16
     }
   },
@@ -177683,12 +177683,12 @@
     "description": "A sistrum, with the top piece in the form of a shrine encased by two curls.",
     "meanings": [
       {
-        "text": "Phonogram: šḫm",
+        "text": "Phonogram: sḫm",
         "type": "phonogram",
         "period": "13-18"
       },
       {
-        "text": "Logogram: šššt — sistrum",
+        "text": "Logogram: ssst — sistrum",
         "type": "logogram"
       },
       {
@@ -180407,7 +180407,7 @@
     "description": "Two pieces of cloth strung together / a line of thread being woven into a weave.",
     "meanings": [
       {
-        "text": "Phonogram: ṯmꜣ",
+        "text": "Phonogram: tmꜣ",
         "type": "phonogram"
       },
       {
@@ -180416,8 +180416,8 @@
       }
     ],
     "transliteration": [
-      "ṯmꜣ",
-      "tmꜣ"
+      "tmꜣ",
+      "ṯmꜣ"
     ],
     "related": [
       "Aa1",
@@ -180448,7 +180448,7 @@
     "description": "A vertical tool, with an upward curved handle, with the handle towards the back.",
     "meanings": [
       {
-        "text": "Logogram: šqr — smite",
+        "text": "Logogram: sqr — smite",
         "type": "logogram"
       },
       {
@@ -181060,7 +181060,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: šꜣ",
+        "text": "Phonogram: sꜣ",
         "type": "phonogram"
       },
       {
@@ -181068,7 +181068,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šꜣ — back",
+        "text": "Logogram: sꜣ — back",
         "type": "logogram"
       },
       {
@@ -181118,7 +181118,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: š",
+        "text": "Phonogram: s",
         "type": "phonogram"
       },
       {
@@ -181132,8 +181132,8 @@
     ],
     "transliteration": [
       "zꜣ",
-      "sꜣ",
-      "s"
+      "s",
+      "sꜣ"
     ],
     "etymology": "Representing a lid; a later development of Aa17 (𓐟).",
     "related": [
@@ -181395,7 +181395,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: štḫ — Seth",
+        "text": "Logogram: stḫ — Seth",
         "type": "logogram",
         "period": "MK"
       },
@@ -181406,8 +181406,8 @@
     ],
     "transliteration": [
       "wḏꜥ",
-      "sṯš",
-      "Stḫ"
+      "Stḫ",
+      "sṯš"
     ],
     "related": [
       "Aa1",
@@ -181518,7 +181518,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: mḏd — hit",
+        "text": "Logogram: mdd — hit",
         "type": "logogram"
       }
     ],
@@ -182038,7 +182038,7 @@
     "description": "A crescent moon shape written over a thin triangle, point downwards.",
     "meanings": [
       {
-        "text": "Logogram: šmꜣ — clothing priest",
+        "text": "Logogram: smꜣ — clothing priest",
         "type": "logogram"
       }
     ],
@@ -182086,13 +182086,13 @@
     "description": "A pole with a hook at the front to which one binds an enemy.",
     "meanings": [
       {
-        "text": "Phonogram: šbj",
+        "text": "Phonogram: sbj",
         "type": "phonogram"
       }
     ],
     "transliteration": [
-      "sbꞽ",
       "sbj",
+      "sbꞽ",
       "sbi"
     ],
     "related": [
@@ -182434,17 +182434,17 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: štj — Nubian",
+        "text": "Logogram: stj — Nubian",
         "type": "logogram"
       },
       {
-        "text": "Logogram: štj — some mineral",
+        "text": "Logogram: stj — some mineral",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "sty",
       "stj",
+      "sty",
       "sti"
     ],
     "related": [
