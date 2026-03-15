@@ -58,7 +58,16 @@ export default async function CategoryPage({ params }: PageProps) {
   }
 
   const glyphs = (await getGlyphsByCategory(category.id)).filter(
-    (g) => getBaseCode(g.code) === null
+    (g) =>
+      getBaseCode(g.code) === null &&
+      // Hide independent-number variants (e.g. B10 "Variant of B1") that have
+      // no meanings or transliterations of their own — they're already shown
+      // as variants on their parent's glyph page.
+      !(
+        g.description?.startsWith("Variant of ") &&
+        g.meanings.length === 0 &&
+        g.transliteration.length === 0
+      )
   );
   const allCategories = await getAllCategories();
 
