@@ -450,46 +450,53 @@ export default async function GlyphPage({ params }: PageProps) {
                     </p>
                   )}
 
-                  <div className="space-y-4">
-                    {glyph.meanings.map((meaning, index) => (
-                      <div
-                        key={index}
-                        className="
-                          bg-ivory-dark/50 border border-sandstone/20 rounded-xl
-                          p-4 sm:p-6
-                        "
-                      >
-                        <div className="flex items-start gap-3">
+                  {/* Group meanings by type for cleaner display */}
+                  {(() => {
+                    const groups = new Map<string, typeof glyph.meanings>();
+                    for (const m of glyph.meanings) {
+                      const key = m.type;
+                      if (!groups.has(key)) groups.set(key, []);
+                      groups.get(key)!.push(m);
+                    }
+                    return (
+                      <div className="space-y-5">
+                        {[...groups.entries()].map(([type, meanings]) => (
                           <div
-                            className="
-                              w-8 h-8 rounded-lg shrink-0
-                              flex items-center justify-center
-                              text-sm font-medium
-                              bg-gold/10 text-gold-dark
-                            "
+                            key={type}
+                            className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl overflow-hidden"
                           >
-                            {index + 1}
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
-                              <Badge variant={typeColors[meaning.type]}>
-                                {meaning.type}
+                            {/* Type header */}
+                            <div className="flex items-center gap-2 px-4 sm:px-5 py-3 bg-papyrus/30 border-b border-sandstone/15">
+                              <Badge variant={typeColors[type as keyof typeof typeColors]}>
+                                {type}
                               </Badge>
-                              {meaning.period && (
-                                <Badge variant="outline">{meaning.period}</Badge>
-                              )}
+                              <span className="text-xs text-sandstone">
+                                {typeDescriptions[type as keyof typeof typeDescriptions]}
+                              </span>
                             </div>
-                            <p className="text-brown-light leading-relaxed">
-                              {linkifyCodes(meaning.text)}
-                            </p>
-                            <p className="text-xs text-sandstone mt-2">
-                              {typeDescriptions[meaning.type]}
-                            </p>
+                            {/* Meaning entries */}
+                            <div className="px-4 sm:px-5 py-3 space-y-2.5">
+                              {meanings.map((meaning, i) => (
+                                <div key={i} className="flex items-start gap-2.5">
+                                  <span className="text-xs font-medium text-sandstone/50 mt-0.5 w-4 shrink-0 text-right">
+                                    {i + 1}.
+                                  </span>
+                                  <div className="flex-1">
+                                    <p className="text-sm text-brown-light leading-relaxed">
+                                      {linkifyCodes(meaning.text)}
+                                    </p>
+                                    {meaning.period && (
+                                      <Badge variant="outline" size="sm">{meaning.period}</Badge>
+                                    )}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    );
+                  })()}
                 </section>
               )}
 
