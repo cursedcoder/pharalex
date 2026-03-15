@@ -7,12 +7,7 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { GlyphCard } from "@/components/GlyphCard";
-import dynamic from "next/dynamic";
-
-const Quadrat = dynamic(
-  () => import("@/components/Quadrat").then((m) => m.Quadrat),
-  { ssr: false },
-);
+import { Quadrat } from "@/components/Quadrat";
 import type { SearchApiResult } from "@/app/api/search/route";
 
 const GRAMMAR_LABELS: Record<string, string> = {
