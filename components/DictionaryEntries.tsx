@@ -9,10 +9,18 @@ interface Entry {
   glosses: string[];
 }
 
+const POS_ORDER: Record<string, number> = {
+  noun: 0, name: 1, verb: 2, adj: 3, prep: 4, adv: 5,
+  particle: 6, intj: 7, num: 8,
+};
+
 export function DictionaryEntries({ entries }: { entries: Entry[] }) {
+  const sorted = [...entries].sort(
+    (a, b) => (POS_ORDER[a.pos] ?? 99) - (POS_ORDER[b.pos] ?? 99)
+  );
   return (
     <div className="space-y-3">
-      {entries.map((entry, ei) => (
+      {sorted.map((entry, ei) => (
         <div key={ei}>
           <span className="text-xs italic text-sandstone">
             {entry.pos}
