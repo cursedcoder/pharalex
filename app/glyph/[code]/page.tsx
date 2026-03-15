@@ -480,7 +480,7 @@ export default async function GlyphPage({ params }: PageProps) {
                             </Link>
                           </div>
                           {/* Each Wiktionary entry is a separate lexeme — cap total shown */}
-                          <DictionaryEntries entries={wiktEntries} max={4} />
+                          <DictionaryEntries entries={wiktEntries} />
                         </div>
                       );
                     })}
