@@ -122,21 +122,19 @@ function StickyGroupNav({ sections }: { sections: { id: string; title: string; c
           : "opacity-0 -translate-y-2 pointer-events-none"
       }`}>
         <div className="bg-ivory/95 backdrop-blur-sm border-b border-sandstone/20 py-2 -mx-4 px-4 sm:-mx-6 sm:px-6">
-          <nav className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
+          <nav className="flex items-center overflow-x-auto scrollbar-hide">
             {sections.map((s, i) => (
               <Fragment key={s.id}>
-                {i > 0 && <div className="w-8 sm:w-12 border-t border-sandstone/25 shrink-0" />}
                 <button
                   onClick={() => document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth", block: "start" })}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm whitespace-nowrap transition-colors cursor-pointer shrink-0 ${
-                    active === s.id
-                      ? "bg-gold/15 text-gold-dark font-medium"
-                      : "text-sandstone hover:text-brown hover:bg-sandstone/10"
+                  className={`flex items-center gap-2 whitespace-nowrap cursor-pointer transition-colors shrink-0 ${
+                    active === s.id ? "text-brown" : "text-sandstone/60 hover:text-brown"
                   }`}
                 >
-                  <span className="font-display">{s.title}</span>
-                  <span className="text-xs text-sandstone/60 bg-sandstone/10 px-1.5 py-0.5 rounded-full tabular-nums">{s.count}</span>
+                  <span className="font-display text-sm font-semibold">{s.title}</span>
+                  <span className="text-xs text-sandstone/60 bg-sandstone/10 px-2 py-0.5 rounded-full tabular-nums">{s.count}</span>
                 </button>
+                {i < sections.length - 1 && <div className="w-8 sm:w-16 border-t border-sandstone/30 shrink-0 mx-2" />}
               </Fragment>
             ))}
           </nav>
