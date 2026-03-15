@@ -65,12 +65,58 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
 }
 
 // ── Group Header ────────────────────────────────────────────────────────────
-function GroupHeader({ title, count }: { title: string; count: number }) {
+function GroupHeader({ id, title, count }: { id: string; title: string; count: number }) {
   return (
-    <div className="flex items-center gap-3 mt-10 mb-4 first:mt-0">
+    <div id={id} className="flex items-center gap-3 mt-10 mb-4 first:mt-0 scroll-mt-20">
       <h2 className="font-display text-xl font-semibold text-brown whitespace-nowrap">{title}</h2>
       <span className="text-xs text-sandstone/60 bg-sandstone/10 px-2 py-0.5 rounded-full">{count}</span>
       <div className="flex-1 border-t border-sandstone/30" />
+    </div>
+  );
+}
+
+function FloatingIndex({ sections }: { sections: { id: string; title: string; count: number }[] }) {
+  const [active, setActive] = useState(sections[0]?.id ?? "");
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    for (const s of sections) {
+      const el = document.getElementById(s.id);
+      if (!el) continue;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActive(s.id); },
+        { rootMargin: "-20% 0px -70% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    }
+    return () => observers.forEach((o) => o.disconnect());
+  }, [sections]);
+
+  if (sections.length < 2) return null;
+
+  return (
+    <div className="hidden lg:block fixed right-8 top-1/2 -translate-y-1/2 z-40">
+      <nav className="bg-ivory/90 backdrop-blur-sm border border-sandstone/20 rounded-xl shadow-lg p-3 space-y-1 min-w-[180px]">
+        {sections.map((s) => (
+          <a
+            key={s.id}
+            href={`#${s.id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className={`flex items-center justify-between gap-3 px-3 py-1.5 rounded-lg text-sm transition-colors ${
+              active === s.id
+                ? "bg-gold/15 text-gold-dark font-medium"
+                : "text-sandstone hover:text-brown hover:bg-sandstone/10"
+            }`}
+          >
+            <span className="truncate">{s.title}</span>
+            <span className="text-xs tabular-nums">{s.count}</span>
+          </a>
+        ))}
+      </nav>
     </div>
   );
 }
@@ -297,9 +343,15 @@ function SearchContent() {
               {/* Words tab results */}
               {tab === "words" && (
                 <>
+                  <FloatingIndex sections={[
+                    ...(grouped.exactTranslit.length > 0 ? [{ id: "exact", title: "Exact matches", count: grouped.exactTranslit.length }] : []),
+                    ...(grouped.compounds.length > 0 ? [{ id: "compounds", title: "Compounds", count: grouped.compounds.length }] : []),
+                    ...(grouped.meaningMatches.length > 0 ? [{ id: "meanings", title: "Meanings", count: grouped.meaningMatches.length }] : []),
+                    ...(grouped.exactCode.length > 0 ? [{ id: "glyphs", title: "Glyphs", count: grouped.exactCode.length }] : []),
+                  ]} />
                   {grouped.exactTranslit.length > 0 && (
                     <>
-                      <GroupHeader title="Exact transliteration matches" count={grouped.exactTranslit.length} />
+                      <GroupHeader id="exact" title="Exact transliteration matches" count={grouped.exactTranslit.length} />
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {grouped.exactTranslit.map((r, i) => (
                           <WordCard key={`et-${r.transliteration}-${r.mdc}-${i}`} result={r} />
@@ -310,7 +362,7 @@ function SearchContent() {
 
                   {grouped.compounds.length > 0 && (
                     <>
-                      <GroupHeader title={`Compound words containing "${query}"`} count={grouped.compounds.length} />
+                      <GroupHeader id="compounds" title={`Compound words containing "${query}"`} count={grouped.compounds.length} />
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {grouped.compounds.map((r, i) => (
                           <WordCard key={`cp-${r.transliteration}-${r.mdc}-${i}`} result={r} />
@@ -321,7 +373,7 @@ function SearchContent() {
 
                   {grouped.meaningMatches.length > 0 && (
                     <>
-                      <GroupHeader title="Meaning matches" count={grouped.meaningMatches.length} />
+                      <GroupHeader id="meanings" title="Meaning matches" count={grouped.meaningMatches.length} />
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {grouped.meaningMatches.map((r, i) => (
                           <WordCard key={`mm-${r.transliteration}-${r.mdc}-${i}`} result={r} />
@@ -333,7 +385,7 @@ function SearchContent() {
                   {/* Also show glyph code matches if query looks like a code */}
                   {grouped.exactCode.length > 0 && (
                     <>
-                      <GroupHeader title="Glyph matches" count={grouped.exactCode.length} />
+                      <GroupHeader id="glyphs" title="Glyph matches" count={grouped.exactCode.length} />
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {grouped.exactCode.map((r) => (
                           <GlyphCard
@@ -359,7 +411,7 @@ function SearchContent() {
                 <>
                   {grouped.exactCode.length > 0 && (
                     <>
-                      <GroupHeader title="Exact code matches" count={grouped.exactCode.length} />
+                      <GroupHeader id="exact-code" title="Exact code matches" count={grouped.exactCode.length} />
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {grouped.exactCode.map((r) => (
                           <GlyphCard
@@ -379,7 +431,7 @@ function SearchContent() {
                   )}
                   {grouped.otherGlyphs.length > 0 && (
                     <>
-                      <GroupHeader title="Description matches" count={grouped.otherGlyphs.length} />
+                      <GroupHeader id="desc-matches" title="Description matches" count={grouped.otherGlyphs.length} />
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {grouped.otherGlyphs.map((r) => (
                           <GlyphCard
