@@ -48,7 +48,6 @@ export function CopyImageButton({ targetRef, className = "" }: CopyImageButtonPr
             ? "bg-red-500/15 text-red-500"
             : "bg-sandstone/10 text-sandstone hover:bg-sandstone/20 hover:text-brown"
         } ${className}`}
-      title="Copy as image"
     >
       {state === "ok" ? (
         <>
