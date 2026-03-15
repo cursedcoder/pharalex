@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { fuzzySearch } from "@/lib/search";
 import { loadSearchWords, loadSearchGlyphs } from "@/lib/data-loader";
 import { wordHref, translitToUnicode } from "@/lib/word-utils";
+import { wordScore } from "@/lib/word-score";
 import type { SearchWord } from "@/lib/search-types";
 
 export const runtime = "nodejs";
@@ -33,18 +34,6 @@ export type WordResult = {
 };
 
 export type SearchApiResult = GlyphResult | WordResult;
-
-function wordScore(word: SearchWord, q: string): number {
-  const tl = word.transliteration.toLowerCase();
-  const tr = word.translation.toLowerCase();
-  if (tl === q) return 0;
-  if (tl.startsWith(q)) return 0.05;
-  if (tr === q) return 0.08;
-  if (tr.startsWith(q)) return 0.12;
-  if (tl.includes(q)) return 0.2;
-  if (tr.includes(q)) return 0.25;
-  return 0.35;
-}
 
 interface WordSearchOptions {
   exact?: boolean;
@@ -140,7 +129,7 @@ export async function GET(req: NextRequest) {
 
   const wordResults: WordResult[] = (await searchWords(q, 40, { exact, gardiner })).map((w) => ({
     kind: "word",
-    score: wordScore(w, ql),
+    score: wordScore(w, q, ql),
     transliteration: w.transliteration,
     transliterationUnicode: translitToUnicode(w.transliteration),
     translation: w.translation,
