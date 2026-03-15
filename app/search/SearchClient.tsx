@@ -27,10 +27,24 @@ const GRAMMAR_BADGE_VARIANTS: Record<string, "gold" | "sandstone" | "outline" | 
   PREP: "outline", PRON: "outline",
 };
 
+// ── Auto-detect query type ──────────────────────────────────────────────────
+const GARDINER_RE = /^[A-Z][a-z]?\d+[A-Za-z]?$/;
+function looksLikeGardiner(q: string): boolean {
+  return GARDINER_RE.test(q.trim());
+}
+function looksLikeTransliteration(q: string): boolean {
+  const t = q.trim();
+  if (t.length > 12) return false;
+  if (/\s/.test(t) && t.split(/\s+/).length > 3) return false; // too many words = English
+  // MdC/translit: short, ASCII-ish, no common English patterns
+  return /^[a-zA-Z .=\-]+$/.test(t) && !/^(the|and|for|with|from|that|this|have|been|which|their|about|would|there|people|could|other|after|first|under|great|where|those|still|being|place|every|found|these|whole|royal|young|woman|water|stone|black|white|heart|death|house|field|river|south|north|upper|lower)$/i.test(t);
+}
+
+// ── Word Card ───────────────────────────────────────────────────────────────
 function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" }> }) {
   return (
     <Link href={result.href} className="block group">
-      <div className="bg-ivory-dark/50 dark:bg-ivory-dark border border-sandstone/20 rounded-lg p-4 h-full hover:shadow-md hover:border-gold/40 transition-all duration-200">
+      <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-4 h-full hover:shadow-md hover:border-gold/40 transition-all duration-200">
         <div className="w-full rounded-lg bg-papyrus/50 border border-sandstone/20 flex items-center justify-center py-3 mb-4 overflow-hidden group-hover:scale-[1.02] transition-transform">
           <Quadrat mdc={result.mdc} baseSize={36} disableLinks />
         </div>
@@ -44,46 +58,43 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
             </Badge>
           )}
         </div>
-        <p className="text-sm text-sandstone mb-2">Middle Egyptian word</p>
         <p className="text-sm text-brown-light line-clamp-2">{result.translation}</p>
       </div>
     </Link>
   );
 }
 
+// ── Group Header ────────────────────────────────────────────────────────────
+function GroupHeader({ title, count }: { title: string; count: number }) {
+  return (
+    <div className="flex items-center gap-3 mt-8 mb-4 first:mt-0">
+      <h2 className="text-sm font-medium text-sandstone uppercase tracking-wider">{title}</h2>
+      <span className="text-xs text-sandstone/50">{count}</span>
+      <div className="flex-1 border-t border-sandstone/15" />
+    </div>
+  );
+}
+
+// ── Main Search ─────────────────────────────────────────────────────────────
 function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialQuery = searchParams.get("q") || "";
-  const initialShow = searchParams.get("show");
-  const initialFilter = initialShow === "words" ? "words" : initialShow === "glyphs" ? "glyphs" : "all";
-
-  const initialExact = searchParams.get("exact") === "true";
-  const initialGardiner = searchParams.get("gardiner") === "true";
+  const initialTab = searchParams.get("show") === "glyphs" ? "glyphs" as const : "words" as const;
+  const isGardiner = searchParams.get("gardiner") === "true";
 
   const [query, setQuery] = useState(initialQuery);
+  const [tab, setTab] = useState<"words" | "glyphs">(initialTab);
   const [results, setResults] = useState<SearchApiResult[]>([]);
   const [isSearching, setIsSearching] = useState(!!initialQuery);
-  const [filter, setFilter] = useState<"all" | "glyphs" | "words">(initialFilter);
-  const [exact, setExact] = useState(initialExact);
-  const [gardiner, setGardiner] = useState(initialGardiner);
-
-  // Sync URL params on mount
-  useEffect(() => {
-    const show = searchParams.get("show");
-    if (show === "words" || show === "glyphs") setFilter(show);
-    if (searchParams.get("exact") === "true") setExact(true);
-    if (searchParams.get("gardiner") === "true") setGardiner(true);
-  }, [searchParams]);
 
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pushTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const runSearch = useCallback(async (q: string, opts: { exact?: boolean; gardiner?: boolean } = {}) => {
+  const runSearch = useCallback(async (q: string, currentTab: "words" | "glyphs", gardiner = false) => {
     if (abortRef.current) abortRef.current.abort();
-    const minLen = (opts.exact || opts.gardiner) ? 1 : 2;
-    if (!q.trim() || q.trim().length < minLen) {
+    if (!q.trim() || q.trim().length < 1) {
       setResults([]);
       setIsSearching(false);
       return;
@@ -95,74 +106,93 @@ function SearchContent() {
 
     try {
       const params = new URLSearchParams({ q: q.trim() });
-      if (opts.exact) params.set("exact", "true");
-      if (opts.gardiner) params.set("gardiner", "true");
-      const res = await fetch(`/api/search?${params}`, {
-        signal: controller.signal,
-      });
+      // Smart search: always exact for transliteration, always fuzzy for meaning
+      // The API handles both in one call
+      params.set("exact", "true");
+      if (gardiner) params.set("gardiner", "true");
+      const res = await fetch(`/api/search?${params}`, { signal: controller.signal });
       const data = await res.json();
       setResults(data.results ?? []);
     } catch (e) {
-      if ((e as Error).name !== "AbortError") {
-        setResults([]);
-      }
+      if ((e as Error).name !== "AbortError") setResults([]);
     } finally {
       setIsSearching(false);
     }
   }, []);
 
-  // Run search on initial query from URL
+  // Run search on URL change
   useEffect(() => {
     const q = searchParams.get("q") || "";
-    const isExact = searchParams.get("exact") === "true";
-    const isGardiner = searchParams.get("gardiner") === "true";
+    const show = searchParams.get("show");
+    const gard = searchParams.get("gardiner") === "true";
+    const t = show === "glyphs" ? "glyphs" as const : "words" as const;
     setQuery(q);
-    runSearch(q, { exact: isExact, gardiner: isGardiner });
+    setTab(t);
+    runSearch(q, t, gard);
   }, [searchParams, runSearch]);
 
-  const triggerSearch = useCallback((q: string, e: boolean, g: boolean) => {
-    if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => runSearch(q, { exact: e, gardiner: g }), 150);
-
+  const updateURL = useCallback((q: string, t: "words" | "glyphs") => {
     if (pushTimer.current) clearTimeout(pushTimer.current);
     pushTimer.current = setTimeout(() => {
       if (q.trim()) {
-        const p = new URLSearchParams({ q });
-        if (e) p.set("exact", "true");
-        if (g) p.set("gardiner", "true");
+        const p = new URLSearchParams({ q, show: t, exact: "true" });
         router.replace(`/search?${p}`, { scroll: false });
       } else {
-        router.replace("/search", { scroll: false });
+        router.replace(`/search?show=${t}`, { scroll: false });
       }
     }, 500);
-  }, [runSearch, router]);
+  }, [router]);
 
   const handleSearch = (newQuery: string) => {
     setQuery(newQuery);
-    triggerSearch(newQuery, exact, gardiner);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      runSearch(newQuery, tab, isGardiner);
+      updateURL(newQuery, tab);
+    }, 150);
   };
 
-  const handleExactToggle = () => {
-    const next = !exact;
-    setExact(next);
-    if (next) setGardiner(false);
-    triggerSearch(query, next, false);
+  const handleTabChange = (newTab: "words" | "glyphs") => {
+    setTab(newTab);
+    runSearch(query, newTab);
+    updateURL(query, newTab);
   };
 
-  const handleGardinerToggle = () => {
-    const next = !gardiner;
-    setGardiner(next);
-    if (next) setExact(false);
-    triggerSearch(query, false, next);
-  };
+  // ── Group results ───────────────────────────────────────────────────────
+  const grouped = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    const words = results.filter((r): r is Extract<SearchApiResult, { kind: "word" }> => r.kind === "word");
+    const glyphs = results.filter((r): r is Extract<SearchApiResult, { kind: "glyph" }> => r.kind === "glyph");
 
-  const glyphCount = useMemo(() => results.filter((r) => r.kind === "glyph").length, [results]);
-  const wordCount = useMemo(() => results.filter((r) => r.kind === "word").length, [results]);
-  const visible = useMemo(() => {
-    if (filter === "glyphs") return results.filter((r) => r.kind === "glyph");
-    if (filter === "words") return results.filter((r) => r.kind === "word");
-    return results;
-  }, [results, filter]);
+    if (tab === "glyphs") {
+      const exactCode = glyphs.filter((g) => g.code.toLowerCase() === q);
+      const other = glyphs.filter((g) => g.code.toLowerCase() !== q);
+      return { exactCode, otherGlyphs: other, exactTranslit: [] as typeof words, compounds: [] as typeof words, meaningMatches: [] as typeof words };
+    }
+
+    // Words tab: group by match type
+    const normQ = q.replace(/y/g, "i").replace(/j/g, "i");
+    const exactTranslit = words.filter((w) => {
+      const normT = w.transliteration.toLowerCase().replace(/y/g, "i").replace(/j/g, "i");
+      return normT === normQ;
+    });
+    const compounds = words.filter((w) => {
+      const normT = w.transliteration.toLowerCase().replace(/y/g, "i").replace(/j/g, "i");
+      return normT !== normQ && normT.includes(normQ);
+    });
+    const exactTranslitSet = new Set(exactTranslit.map((w) => `${w.transliteration}-${w.mdc}`));
+    const compoundSet = new Set(compounds.map((w) => `${w.transliteration}-${w.mdc}`));
+    const meaningMatches = words.filter((w) => {
+      const key = `${w.transliteration}-${w.mdc}`;
+      return !exactTranslitSet.has(key) && !compoundSet.has(key);
+    });
+
+    return { exactTranslit, compounds, meaningMatches, exactCode: glyphs, otherGlyphs: [] as typeof glyphs };
+  }, [results, query, tab]);
+
+  const totalResults = tab === "glyphs"
+    ? grouped.exactCode.length + grouped.otherGlyphs.length
+    : grouped.exactTranslit.length + grouped.compounds.length + grouped.meaningMatches.length;
 
   return (
     <div className="min-h-screen">
@@ -172,17 +202,32 @@ function SearchContent() {
         <Container>
           <div className="mb-8">
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown mb-4">Search</h1>
-            <p className="text-brown-light mb-6">
-              Search hieroglyphs and Middle Egyptian words by meaning, Gardiner code, or transliteration.
-            </p>
 
+            {/* Tabs */}
+            <div className="flex gap-1 mb-6 bg-sandstone/10 rounded-lg p-1 w-fit">
+              {(["words", "glyphs"] as const).map((t) => (
+                <button
+                  key={t}
+                  onClick={() => handleTabChange(t)}
+                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer ${
+                    tab === t
+                      ? "bg-ivory shadow-sm text-brown"
+                      : "text-sandstone hover:text-brown"
+                  }`}
+                >
+                  {t === "words" ? "Words" : "Glyphs"}
+                </button>
+              ))}
+            </div>
+
+            {/* Search input */}
             <div className="max-w-2xl">
               <div className="relative">
                 <input
                   type="text"
                   value={query}
                   onChange={(e) => handleSearch(e.target.value)}
-                  placeholder="Enter search term..."
+                  placeholder={tab === "words" ? "Transliteration or English meaning..." : "Gardiner code or description..."}
                   autoFocus
                   className="
                     w-full py-4 px-6 text-lg
@@ -206,37 +251,17 @@ function SearchContent() {
                 </div>
               </div>
 
-              <div className="mt-3 flex items-center gap-2">
-                <button
-                  onClick={handleExactToggle}
-                  className={`px-3 py-1 text-xs rounded-full border transition-colors ${
-                    exact
-                      ? "bg-gold/15 border-gold/40 text-gold-dark"
-                      : "border-sandstone/20 text-sandstone hover:border-sandstone/40 hover:text-brown"
-                  }`}
-                >
-                  Exact match
-                </button>
-                <button
-                  onClick={handleGardinerToggle}
-                  className={`px-3 py-1 text-xs rounded-full border transition-colors ${
-                    gardiner
-                      ? "bg-gold/15 border-gold/40 text-gold-dark"
-                      : "border-sandstone/20 text-sandstone hover:border-sandstone/40 hover:text-brown"
-                  }`}
-                >
-                  By Gardiner code
-                </button>
-              </div>
-
               {!query && (
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="text-sm text-sandstone">Try searching for:</span>
-                  {["sun", "water", "bird", "nfr", "A1", "N5", "beautiful"].map((term) => (
+                  <span className="text-sm text-sandstone">Try:</span>
+                  {(tab === "words"
+                    ? ["nfr", "mry", "beloved", "Ra", "sun", "pyramid"]
+                    : ["A1", "G17", "owl", "sun", "seated man"]
+                  ).map((term) => (
                     <button
                       key={term}
                       onClick={() => handleSearch(term)}
-                      className="px-3 py-1 text-sm bg-gold/10 text-gold-dark rounded-full hover:bg-gold/20 transition-colors"
+                      className="px-3 py-1 text-sm bg-gold/10 text-gold-dark rounded-full hover:bg-gold/20 transition-colors cursor-pointer"
                     >
                       {term}
                     </button>
@@ -246,49 +271,7 @@ function SearchContent() {
             </div>
           </div>
 
-          {query && !isSearching && results.length > 0 && (
-            <div className="mb-5 flex items-center gap-3 flex-wrap">
-              <p className="text-sandstone text-sm">
-                {results.length} result{results.length !== 1 ? "s" : ""} for{" "}
-                <span className="text-brown font-medium">&ldquo;{query}&rdquo;</span>
-              </p>
-              <button
-                onClick={() => setFilter("all")}
-                className={`px-3 py-1 text-sm rounded-full border transition-colors ${
-                  filter === "all"
-                    ? "bg-brown text-ivory border-brown"
-                    : "border-sandstone/30 text-sandstone hover:border-brown/40 hover:text-brown"
-                }`}
-              >
-                All
-              </button>
-              {glyphCount > 0 && (
-                <button
-                  onClick={() => setFilter(filter === "glyphs" ? "all" : "glyphs")}
-                  className={`px-3 py-1 text-sm rounded-full border transition-colors ${
-                    filter === "glyphs"
-                      ? "bg-brown text-ivory border-brown"
-                      : "border-sandstone/30 text-sandstone hover:border-brown/40 hover:text-brown"
-                  }`}
-                >
-                  {glyphCount} hieroglyph{glyphCount !== 1 ? "s" : ""}
-                </button>
-              )}
-              {wordCount > 0 && (
-                <button
-                  onClick={() => setFilter(filter === "words" ? "all" : "words")}
-                  className={`px-3 py-1 text-sm rounded-full border transition-colors ${
-                    filter === "words"
-                      ? "bg-gold text-ivory border-gold"
-                      : "border-gold/30 text-gold-dark hover:border-gold/60 hover:text-gold-dark"
-                  }`}
-                >
-                  {wordCount} word{wordCount !== 1 ? "s" : ""}
-                </button>
-              )}
-            </div>
-          )}
-
+          {/* Results */}
           {isSearching ? (
             <div className="flex flex-col items-center justify-center py-20 select-none">
               <div className="relative flex items-center justify-center mb-6">
@@ -298,42 +281,137 @@ function SearchContent() {
               </div>
               <p className="text-sandstone text-sm tracking-widest uppercase">Consulting the scrolls…</p>
             </div>
-          ) : results.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {visible.map((r, i) =>
-                r.kind === "glyph" ? (
-                  <GlyphCard
-                    key={`g-${r.code}`}
-                    glyph={{
-                      code: r.code,
-                      unicode: r.unicode,
-                      category: r.category,
-                      categoryName: r.categoryName,
-                      description: r.description,
-                      transliteration: r.transliteration,
-                      meanings: r.meanings.map((m) => ({
-                        text: m.text,
-                        type: m.type as "logogram" | "phonogram" | "determinative" | "other",
-                      })),
-                      related: r.related,
-                      source: r.source as "wiktionary" | "unicode" | "both" | undefined,
-                    }}
-                  />
-                ) : (
-                  <WordCard key={`w-${r.transliteration}-${i}`} result={r} />
-                )
+          ) : query && totalResults > 0 ? (
+            <div>
+              <p className="text-sandstone text-sm mb-2">
+                {totalResults} result{totalResults !== 1 ? "s" : ""} for{" "}
+                <span className="text-brown font-medium">&ldquo;{query}&rdquo;</span>
+              </p>
+
+              {/* Words tab results */}
+              {tab === "words" && (
+                <>
+                  {grouped.exactTranslit.length > 0 && (
+                    <>
+                      <GroupHeader title="Exact transliteration matches" count={grouped.exactTranslit.length} />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {grouped.exactTranslit.map((r, i) => (
+                          <WordCard key={`et-${r.transliteration}-${r.mdc}-${i}`} result={r} />
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {grouped.compounds.length > 0 && (
+                    <>
+                      <GroupHeader title={`Compound words containing "${query}"`} count={grouped.compounds.length} />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {grouped.compounds.map((r, i) => (
+                          <WordCard key={`cp-${r.transliteration}-${r.mdc}-${i}`} result={r} />
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {grouped.meaningMatches.length > 0 && (
+                    <>
+                      <GroupHeader title="Meaning matches" count={grouped.meaningMatches.length} />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {grouped.meaningMatches.map((r, i) => (
+                          <WordCard key={`mm-${r.transliteration}-${r.mdc}-${i}`} result={r} />
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {/* Also show glyph code matches if query looks like a code */}
+                  {grouped.exactCode.length > 0 && (
+                    <>
+                      <GroupHeader title="Glyph matches" count={grouped.exactCode.length} />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {grouped.exactCode.map((r) => (
+                          <GlyphCard
+                            key={`g-${r.code}`}
+                            glyph={{
+                              code: r.code, unicode: r.unicode, category: r.category,
+                              categoryName: r.categoryName, description: r.description,
+                              transliteration: r.transliteration,
+                              meanings: r.meanings.map((m) => ({ text: m.text, type: m.type as "logogram" | "phonogram" | "determinative" | "other" })),
+                              related: r.related,
+                              source: r.source as "wiktionary" | "unicode" | "both" | undefined,
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </>
+              )}
+
+              {/* Glyphs tab results */}
+              {tab === "glyphs" && (
+                <>
+                  {grouped.exactCode.length > 0 && (
+                    <>
+                      <GroupHeader title="Exact code matches" count={grouped.exactCode.length} />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {grouped.exactCode.map((r) => (
+                          <GlyphCard
+                            key={`g-${r.code}`}
+                            glyph={{
+                              code: r.code, unicode: r.unicode, category: r.category,
+                              categoryName: r.categoryName, description: r.description,
+                              transliteration: r.transliteration,
+                              meanings: r.meanings.map((m) => ({ text: m.text, type: m.type as "logogram" | "phonogram" | "determinative" | "other" })),
+                              related: r.related,
+                              source: r.source as "wiktionary" | "unicode" | "both" | undefined,
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {grouped.otherGlyphs.length > 0 && (
+                    <>
+                      <GroupHeader title="Description matches" count={grouped.otherGlyphs.length} />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {grouped.otherGlyphs.map((r) => (
+                          <GlyphCard
+                            key={`g-${r.code}`}
+                            glyph={{
+                              code: r.code, unicode: r.unicode, category: r.category,
+                              categoryName: r.categoryName, description: r.description,
+                              transliteration: r.transliteration,
+                              meanings: r.meanings.map((m) => ({ text: m.text, type: m.type as "logogram" | "phonogram" | "determinative" | "other" })),
+                              related: r.related,
+                              source: r.source as "wiktionary" | "unicode" | "both" | undefined,
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </>
               )}
             </div>
           ) : query && !isSearching ? (
             <div className="text-center py-12">
               <div className="font-hieroglyph text-6xl text-sandstone/30 mb-4">𓂝</div>
               <p className="text-sandstone mb-4">No results found for &ldquo;{query}&rdquo;</p>
-              <p className="text-sm text-sandstone/70">Try a different term, Gardiner code (like &ldquo;A1&rdquo;), or English meaning.</p>
+              <p className="text-sm text-sandstone/70">
+                {tab === "words"
+                  ? "Try a different transliteration or English meaning."
+                  : "Try a Gardiner code (like A1) or description (like owl)."}
+              </p>
             </div>
           ) : !query ? (
             <div className="text-center py-12">
               <div className="font-hieroglyph text-6xl text-sandstone/30 mb-4">𓁹</div>
-              <p className="text-sandstone">Enter a search term to find hieroglyphs and words</p>
+              <p className="text-sandstone">
+                {tab === "words"
+                  ? "Type a transliteration or English meaning to search words"
+                  : "Type a Gardiner code or description to search glyphs"}
+              </p>
             </div>
           ) : null}
         </Container>
