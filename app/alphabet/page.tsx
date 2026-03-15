@@ -192,7 +192,7 @@ const ALPHABET: AlphabetEntry[] = [
     mdc: "z",
     transName: "S (or Z)",
     signDescription: "Door bolt",
-    pronunciation: "s",
+    pronunciation: "z",
     comments: "same as in English",
     objectDepicted: "(1) bolt (2) folded cloth",
   },
