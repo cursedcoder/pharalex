@@ -116,7 +116,7 @@ function StickyGroupNav({ sections }: { sections: { id: string; title: string; c
       <div ref={sentinelRef} />
 
       {/* Sticky bar — zero height when hidden */}
-      <div className={`sticky top-0 z-30 transition-all duration-200 ${
+      <div className={`sticky top-16 z-30 transition-all duration-200 ${
         isSticky
           ? "opacity-100"
           : "opacity-0 pointer-events-none h-0 overflow-hidden"
