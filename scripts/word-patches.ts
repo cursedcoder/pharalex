@@ -99,6 +99,7 @@ export const WORD_PATCHES: WordPatch[] = [
  */
 export const BLOCKED_QUAD_PAIRS: [string, string][] = [
   ["mk", "G17,D36"],
+  ["mk", "G20,V31"],
 ];
 
 /**
