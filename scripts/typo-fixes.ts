@@ -57,6 +57,10 @@ const TYPOS: [string, string][] = [
   ["renoun", "renown"],
   ["devine", "divine"],
   ["pavllion", "pavilion"],
+  ["abberation", "aberration"],
+  ["accroutrements", "accoutrements"],
+  ["amazonit ", "amazonite "],
+  ["auxilary", "auxiliary"],
 ];
 
 /**
