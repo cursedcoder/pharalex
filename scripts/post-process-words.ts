@@ -203,6 +203,13 @@ for (const w of words) {
   if (w.transliteration === "ra" && t === "sun") {
     t = "sun, Ra (sun god)";
   }
+  // Strip parenthesized MdC at start: "(ra Hr Axty) festival" → "festival"
+  t = t.replace(/^\([^)]*[AHSTDX][^)]*\)\s*/, (match) => {
+    const content = match.slice(1, -2).trim();
+    // Keep if content has English vowels (e.g. "(Dry)", "(Syrian)")
+    if (/[eou]/i.test(content)) return match;
+    return "";
+  });
   // Strip leading "a [MdC]" pattern: "a sSw document" → "document"
   // where [MdC] is a short consonantal token (no e/o/u)
   t = t.replace(/^a ([a-zA-Z.]{2,8}) (?=[A-Za-z])/, (match, mdc, offset) => {
