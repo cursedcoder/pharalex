@@ -17,6 +17,7 @@ export interface Glyph {
   etymology?: string;
   tags?: string[];
   related: string[];
+  contains?: string[];
   source?: "wiktionary" | "unicode" | "both";
 }
 

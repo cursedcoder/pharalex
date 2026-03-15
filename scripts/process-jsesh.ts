@@ -220,6 +220,11 @@ async function main() {
       tagsAdded += existing.size - before;
     }
 
+    // Merge contains (composite sign parts)
+    if (jsesh.contains.length > 0) {
+      (glyph as Record<string, unknown>).contains = jsesh.contains;
+    }
+
     // Merge transliterations — only keyboard/palette ones, to avoid noise.
     // "informative" ones are scholar-only hints not suitable for display.
     const newTranslits = jsesh.transliterations
