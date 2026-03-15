@@ -326,9 +326,14 @@ for (const w of words) {
 if (notesStripped > 0) console.log(`  Stripped technical notes: ${notesStripped}`);
 
 // ── 12. Auto-quad: enrich flat MdC with stacking/grouping operators ─────────
+// First flatten any existing auto-quad grouping so we can re-apply with
+// the latest algorithm (colons/stars → hyphens, preserving special ops).
 let quadded = 0;
 for (const w of words) {
-  const result = autoQuad(w.mdc);
+  // Flatten previous auto-quad: replace : and * with - (but not inside
+  // special constructs like enclosures, ligatures, restored sections)
+  const flat = w.mdc.replace(/[:*]/g, "-");
+  const result = autoQuad(flat);
   if (result !== w.mdc) {
     w.mdc = result;
     quadded++;

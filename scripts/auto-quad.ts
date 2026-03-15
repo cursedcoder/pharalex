@@ -86,10 +86,13 @@ export function autoQuad(mdc: string): string {
 
     // Try vertical stacking A:B
     if (vAB > 0 && vAB >= hAB) {
-      // Check for triple stack: A:B:C
+      // Check for triple stack: A:B:C — only if B:C is comparably frequent
+      // to A:B (at least half). Otherwise the triple is likely two separate
+      // quadrats that share a common sign (e.g. G17:D36 is common in mꜥ words
+      // but G17:D36:V31 doesn't exist — it should be G17:D36-V31).
       if (c) {
         const vBC_triple = vertScore(b, c);
-        if (vBC_triple > 0) {
+        if (vBC_triple > 0 && vBC_triple * 2 >= vAB) {
           quadrats.push(`${a}:${b}:${c}`);
           i += 3;
           continue;
