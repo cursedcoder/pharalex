@@ -8,6 +8,7 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { SmartGlyph } from "@/components/SmartGlyph";
 import { getBaseCode, glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
+import { Select } from "@/components/ui/Select";
 import type { Glyph, Category, MeaningType } from "@/lib/types";
 
 // Grid columns at each breakpoint (mirrors tailwind grid-cols-*)
@@ -263,56 +264,41 @@ function BrowsePageInner({ allGlyphs, categories }: { allGlyphs: Glyph[]; catego
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 mb-8 pb-6 border-b border-sandstone/20">
+          <div className="flex flex-wrap items-center gap-3 mb-8 pb-6 border-b border-sandstone/20">
             <div className="flex items-center gap-2">
-              <label className="text-sm font-medium text-sandstone">
-                Category:
-              </label>
-              <select
+              <label className="text-sm font-medium text-sandstone">Category</label>
+              <Select
                 value={selectedCategory || ""}
-                onChange={(e) =>
-                  setSelectedCategory(e.target.value || null)
-                }
-                className="
-                  px-3 py-2 text-sm rounded-lg
-                  bg-ivory-dark border border-sandstone/30
-                  focus:outline-none focus:ring-2 focus:ring-gold/50
-                "
-              >
-                <option value="">All Categories</option>
-                {categories.map((cat) => (
-                  <option key={cat.id} value={cat.id}>
-                    {cat.id}: {cat.name} ({cat.glyphCount})
-                  </option>
-                ))}
-              </select>
+                onChange={(v) => setSelectedCategory(v || null)}
+                searchable
+                className="w-[260px]"
+                options={[
+                  { value: "", label: "All Categories" },
+                  ...categories.map((cat) => ({
+                    value: cat.id,
+                    label: `${cat.id}: ${cat.name} (${cat.glyphCount})`,
+                  })),
+                ]}
+              />
             </div>
 
             <div className="flex items-center gap-2">
-              <label className="text-sm font-medium text-sandstone">
-                Type:
-              </label>
-              <select
+              <label className="text-sm font-medium text-sandstone">Type</label>
+              <Select
                 value={selectedType || ""}
-                onChange={(e) =>
-                  setSelectedType((e.target.value as MeaningType) || null)
-                }
-                className="
-                  px-3 py-2 text-sm rounded-lg
-                  bg-ivory-dark border border-sandstone/30
-                  focus:outline-none focus:ring-2 focus:ring-gold/50
-                "
-              >
-                <option value="">All Types</option>
-                {meaningTypes.map((type) => (
-                  <option key={type.value} value={type.value}>
-                    {type.label}
-                  </option>
-                ))}
-              </select>
+                onChange={(v) => setSelectedType((v as MeaningType) || null)}
+                className="w-[160px]"
+                options={[
+                  { value: "", label: "All Types" },
+                  ...meaningTypes.map((type) => ({
+                    value: type.value,
+                    label: type.label,
+                  })),
+                ]}
+              />
             </div>
 
-            <label className="flex items-center gap-2 cursor-pointer">
+            <label className="flex items-center gap-2 cursor-pointer select-none ml-1">
               <input
                 type="checkbox"
                 checked={groupVariants}
@@ -342,47 +328,35 @@ function BrowsePageInner({ allGlyphs, categories }: { allGlyphs: Glyph[]; catego
 
             <div className="flex-1" />
 
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-sandstone">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-sandstone tabular-nums">
                 {displayGlyphs.length} glyphs{groupVariants && filteredGlyphs.length !== displayGlyphs.length ? ` (${filteredGlyphs.length} total)` : ""}
               </span>
               <div className="flex border border-sandstone/30 rounded-lg overflow-hidden">
                 <button
                   onClick={() => setViewMode("grid")}
-                  className={`px-3 py-2 text-sm ${
+                  className={`px-2.5 py-2 ${
                     viewMode === "grid"
                       ? "bg-gold/20 text-gold-dark"
                       : "bg-ivory-dark text-sandstone hover:bg-gold/10"
-                  }`}
+                  } transition-colors`}
                   title="Grid view"
                 >
-                  <svg
-                    className="w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                   </svg>
                 </button>
                 <button
                   onClick={() => setViewMode("compact")}
-                  className={`px-3 py-2 text-sm ${
+                  className={`px-2.5 py-2 ${
                     viewMode === "compact"
                       ? "bg-gold/20 text-gold-dark"
                       : "bg-ivory-dark text-sandstone hover:bg-gold/10"
-                  }`}
+                  } transition-colors`}
                   title="Compact view"
                 >
-                  <svg
-                    className="w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                      clipRule="evenodd"
-                    />
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
                   </svg>
                 </button>
               </div>
