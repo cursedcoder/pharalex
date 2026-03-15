@@ -27,6 +27,7 @@ import { WordCardList } from "@/components/WordCardList";
 import { UnicodeChar } from "@/components/UnicodeChar";
 import { ExpandableList } from "@/components/ExpandableList";
 import { DictionaryEntries } from "@/components/DictionaryEntries";
+import { ReportIssueLink } from "@/components/ReportIssueLink";
 import type { ReactNode } from "react";
 
 /** Gardiner code pattern: A1, Aa15, D53B, etc. */
@@ -658,6 +659,8 @@ export default async function GlyphPage({ params }: PageProps) {
                   </div>
                 </section>
               )}
+
+              <ReportIssueLink title={`${glyph.code}: data correction`} className="mt-4" />
             </div>
           </div>
         </Container>

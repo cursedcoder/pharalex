@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { TextReader } from "@/components/TextReader";
 import { GlyphDetailsProvider } from "@/components/GlyphDetailsContext";
+import { ReportIssueLink } from "@/components/ReportIssueLink";
 import { getTextBySlug, getAllTexts } from "@/lib/texts";
 import { getPharaohBySlug } from "@/lib/pharaohs";
 import { buildGlyphDetailsMap } from "@/lib/glyphs";
@@ -226,6 +227,7 @@ export default async function TextPage({ params }: Props) {
                 >
                   ← All texts
                 </Link>
+                <ReportIssueLink title={`${text.title}: data correction`} className="mt-2" />
               </aside>
             </div>
         </Container>
