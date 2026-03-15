@@ -202,6 +202,7 @@ async function main() {
 
   let tagsAdded = 0;
   let translitsAdded = 0;
+  let typesAdded = 0;
   let matchedGlyphs = 0;
 
   for (const glyph of glyphs) {
@@ -238,11 +239,36 @@ async function main() {
         translitsAdded++;
       }
     }
+
+    // Ensure type badges match JSesh type data.
+    // If JSesh says a sign is a phonogram/ideogram but we have no
+    // meaning of that type, add a minimal one.
+    const TYPE_MAP: Record<string, string> = {
+      phonogram: "phonogram",
+      ideogram: "logogram",
+      abbreviation: "logogram",
+      typical: "other",
+    };
+    const existingTypes = new Set(glyph.meanings.map((m: { type: string }) => m.type));
+    for (const t of jsesh.transliterations.filter((t) => t.use !== "informative")) {
+      const mappedType = TYPE_MAP[t.type] ?? t.type;
+      if (!existingTypes.has(mappedType)) {
+        const unicode = mdcToUnicode(t.value).toLowerCase();
+        const label = mappedType === "phonogram" ? "Phonogram" : "Logogram";
+        glyph.meanings.push({
+          text: `${label}: ${unicode}`,
+          type: mappedType,
+        });
+        existingTypes.add(mappedType);
+        typesAdded++;
+      }
+    }
   }
 
   console.log(`Matched ${matchedGlyphs} glyphs`);
   console.log(`Added tags to glyphs: ${tagsAdded} total new tags`);
   console.log(`Added ${translitsAdded} new transliterations`);
+  console.log(`Added ${typesAdded} type badges from JSesh`);
 
   const withTags = glyphs.filter((g) => g.tags && (g.tags as string[]).length > 0).length;
   console.log(`Glyphs with tags: ${withTags} / ${glyphs.length}`);
