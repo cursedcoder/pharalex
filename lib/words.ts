@@ -86,3 +86,20 @@ export async function getWordsByGardinerCode(
   }
   return results;
 }
+
+/** Returns all word senses grouped by transliteration for a given Gardiner code. */
+export async function getDictionaryByGardinerCode(
+  code: string,
+  limit = 20
+): Promise<Map<string, DictionaryWord[]>> {
+  const result = new Map<string, DictionaryWord[]>();
+  let count = 0;
+  for (const [translit, entries] of await wordGroups()) {
+    if (count >= limit) break;
+    if (entries.some((w) => w.gardinerCodes.includes(code))) {
+      result.set(translit, entries);
+      count++;
+    }
+  }
+  return result;
+}
