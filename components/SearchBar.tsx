@@ -174,7 +174,7 @@ export function SearchBar({
                       : "text-sandstone/60 hover:text-sandstone"
                   }`}
                 >
-                  {mode === "words" ? "𓏛 Words" : "𓊹 Glyphs"}
+                  {mode === "words" ? "Words" : "Glyphs"}
                 </button>
               ))}
             </div>
