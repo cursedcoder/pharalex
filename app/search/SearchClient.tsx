@@ -361,11 +361,6 @@ function SearchContent() {
             </div>
           ) : query && totalResults > 0 ? (
             <div>
-              <p className="text-sandstone text-sm mb-2">
-                {totalResults} result{totalResults !== 1 ? "s" : ""} for{" "}
-                <span className="text-brown font-medium">&ldquo;{query}&rdquo;</span>
-              </p>
-
               {/* Words tab results */}
               {tab === "words" && (
                 <>
