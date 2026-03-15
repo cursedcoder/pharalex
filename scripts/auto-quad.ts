@@ -75,10 +75,19 @@ export function autoQuad(mdc: string): string {
     // Lookahead: would B pair better with C?
     const vBC = c ? vertScore(b, c) : 0;
     const hBC = c ? horizScore(b, c) : 0;
-    const bPairsBetterWithC = (vBC > vAB && vBC > hAB) || (hBC > vAB && hBC > hAB);
+    const bcBest = Math.max(vBC, hBC);
+    const abBest = Math.max(vAB, hAB);
+    const bPairsBetterWithC = bcBest > abBest;
 
-    // If B pairs better forward, emit A alone and let B pair with C next iteration
-    if (bPairsBetterWithC) {
+    // Also check: if we take A:B, does C end up orphaned (no pair with D)?
+    // If so, and B:C is attested, prefer A alone + B:C.
+    const d = i + 3 < codes.length ? codes[i + 3] : null;
+    const cOrphaned = c && !d ? true
+      : c && d ? (vertScore(c, d) === 0 && horizScore(c, d) === 0) : false;
+    const preferBCOverAB = bcBest > 0 && cOrphaned && abBest > 0;
+
+    // If B pairs better forward, or B:C saves C from being orphaned
+    if (bPairsBetterWithC || preferBCOverAB) {
       quadrats.push(a);
       i++;
       continue;
