@@ -68,7 +68,7 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
 function GroupHeader({ title, count }: { title: string; count: number }) {
   return (
     <div className="flex items-center gap-3 mt-10 mb-4 first:mt-0">
-      <h2 className="font-display text-lg font-semibold text-brown whitespace-nowrap">{title}</h2>
+      <h2 className="font-display text-xl font-semibold text-brown whitespace-nowrap">{title}</h2>
       <span className="text-xs text-sandstone/60 bg-sandstone/10 px-2 py-0.5 rounded-full">{count}</span>
       <div className="flex-1 border-t border-sandstone/30" />
     </div>
@@ -120,8 +120,12 @@ function SearchContent() {
     }
   }, []);
 
-  // Run search on URL change
+  // Run search on URL change (skip if we just triggered it ourselves)
   useEffect(() => {
+    if (skipNextEffect.current) {
+      skipNextEffect.current = false;
+      return;
+    }
     const q = searchParams.get("q") || "";
     const show = searchParams.get("show");
     const gard = searchParams.get("gardiner") === "true";
@@ -152,9 +156,11 @@ function SearchContent() {
     }, 150);
   };
 
+  const skipNextEffect = useRef(false);
   const handleTabChange = (newTab: "words" | "glyphs") => {
     setTab(newTab);
     runSearch(query, newTab);
+    skipNextEffect.current = true;
     updateURL(query, newTab);
   };
 
