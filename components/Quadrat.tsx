@@ -640,8 +640,6 @@ function LigatureHitArea({
   h: number;
 }) {
   const detail = useGlyphDetail(code);
-  const phonetic = detail?.transliteration;
-  const meaning = detail?.meaning;
 
   if (!code) return null;
 
@@ -654,8 +652,9 @@ function LigatureHitArea({
         content={
           <GlyphTooltipContent
             code={code}
-            transliteration={phonetic}
-            meaning={meaning}
+            transliteration={detail?.transliteration}
+            meaning={detail?.meaning}
+            signName={detail?.signName}
           />
         }
       >
@@ -808,8 +807,6 @@ function SignCell({
 }) {
   const disableLinks = useContext(DisableLinksContext);
   const detail = useGlyphDetail(code);
-  const phonetic = detail?.transliteration;
-  const meaning = detail?.meaning;
 
   if (!code || code === "?" || code === "") return null;
 
@@ -859,8 +856,9 @@ function SignCell({
       content={
         <GlyphTooltipContent
           code={code}
-          transliteration={phonetic}
-          meaning={meaning}
+          transliteration={detail?.transliteration}
+          meaning={detail?.meaning}
+          signName={detail?.signName}
         />
       }
     >
