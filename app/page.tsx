@@ -424,10 +424,10 @@ export default async function HomePage() {
             </div>
             <p>Data from Wiktionary, Unicode, JSesh, St Andrews, and Vygus Dictionary</p>
             <Link
-              href="/acknowledgments"
+              href="/about"
               className="hover:text-gold transition-colors"
             >
-              Acknowledgments
+              About
             </Link>
           </div>
         </Container>
