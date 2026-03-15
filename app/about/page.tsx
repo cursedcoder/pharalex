@@ -563,7 +563,7 @@ export default function AboutPage() {
           <p className="text-xs text-sandstone text-center">
             For the full machine-readable attribution document, see{" "}
             <a
-              href="https://github.com/search?q=pharalex+SOURCES.md"
+              href="https://github.com/cursedcoder/pharalex/blob/main/SOURCES.md"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gold hover:text-gold-dark"
