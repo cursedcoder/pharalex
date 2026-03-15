@@ -467,12 +467,15 @@ export default async function GlyphPage({ params }: PageProps) {
                           className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 sm:p-5"
                         >
                           {/* Header */}
-                          <div className="flex items-baseline gap-2 mb-3">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="font-mono text-lg font-bold text-brown">
+                              {translit}
+                            </span>
                             <Link
                               href={wordHref(toMdc(translit))}
-                              className="font-mono text-lg font-bold text-brown hover:text-gold-dark transition-colors"
+                              className="text-xs text-gold hover:text-gold-dark transition-colors"
                             >
-                              {translit}
+                              Full entry →
                             </Link>
                           </div>
                           {/* POS sub-sections */}
