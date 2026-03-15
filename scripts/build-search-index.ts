@@ -96,18 +96,28 @@ function main() {
     readFileSync(join(DATA_DIR, "words.json"), "utf-8")
   );
 
-  // Deduplicate by transliteration (search only shows one entry per group)
-  // and strip fields not needed for search
-  const seen = new Set<string>();
-  const searchWords: { transliteration: string; translation: string; grammar: string | null; mdc: string }[] = [];
+  // Group by transliteration — merge all translations so search can find any meaning.
+  // "mri" should be searchable by "beloved" AND "Groom" AND "love".
+  const wordGroups = new Map<string, { translations: Set<string>; grammar: string | null; mdc: string }>();
   for (const w of words) {
-    if (seen.has(w.transliteration)) continue;
-    seen.add(w.transliteration);
+    const existing = wordGroups.get(w.transliteration);
+    if (existing) {
+      existing.translations.add(w.translation);
+    } else {
+      wordGroups.set(w.transliteration, {
+        translations: new Set([w.translation]),
+        grammar: w.grammar ?? null,
+        mdc: w.mdc,
+      });
+    }
+  }
+  const searchWords: { transliteration: string; translation: string; grammar: string | null; mdc: string }[] = [];
+  for (const [translit, group] of wordGroups) {
     searchWords.push({
-      transliteration: w.transliteration,
-      translation: w.translation,
-      grammar: w.grammar ?? null,
-      mdc: w.mdc,
+      transliteration: translit,
+      translation: [...group.translations].join(", "),
+      grammar: group.grammar,
+      mdc: group.mdc,
     });
   }
 
