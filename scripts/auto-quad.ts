@@ -17,6 +17,7 @@ import * as path from "path";
 interface QuadIndex {
   vert: Record<string, number>;  // "A,B" → count for A:B
   horiz: Record<string, number>; // "A,B" → count for A*B
+  trigrams: Record<string, string>; // "A,B,C" → "AB:n" | "BC:n" | "AB:n,BC:m"
 }
 
 let _index: QuadIndex | null = null;
@@ -26,10 +27,11 @@ function loadIndex(): QuadIndex {
   const indexPath = path.join(process.cwd(), "public/data/quad-index.json");
   if (!fs.existsSync(indexPath)) {
     console.warn("quad-index.json not found — auto-quad disabled");
-    _index = { vert: {}, horiz: {} };
+    _index = { vert: {}, horiz: {}, trigrams: {} };
     return _index;
   }
   _index = JSON.parse(fs.readFileSync(indexPath, "utf-8")) as QuadIndex;
+  if (!_index.trigrams) _index.trigrams = {};
   return _index;
 }
 
@@ -41,6 +43,32 @@ function vertScore(a: string, b: string): number {
 function horizScore(a: string, b: string): number {
   const idx = loadIndex();
   return idx.horiz[`${a},${b}`] ?? 0;
+}
+
+/**
+ * Check trigram context: for A-B-C, does the corpus prefer grouping
+ * A with B ("AB") or B with C ("BC")?
+ * Returns "AB" | "BC" | null (no data or ambiguous).
+ */
+function trigramPreference(a: string, b: string, c: string): "AB" | "BC" | null {
+  const idx = loadIndex();
+  const entry = idx.trigrams[`${a},${b},${c}`];
+  if (!entry) return null;
+
+  // Parse "AB:n" or "BC:n" or "AB:n,BC:m"
+  let abCount = 0, bcCount = 0;
+  for (const part of entry.split(",")) {
+    const [dir, countStr] = part.split(":");
+    const count = parseInt(countStr, 10);
+    if (dir === "AB") abCount = count;
+    else if (dir === "BC") bcCount = count;
+  }
+
+  if (abCount === 0 && bcCount === 0) return null;
+  // Require at least 2:1 ratio to be decisive
+  if (bcCount > abCount * 2) return "BC";
+  if (abCount > bcCount * 2) return "AB";
+  return null; // ambiguous
 }
 
 export function autoQuad(mdc: string, blockedPairs?: Set<string>): string {
@@ -73,19 +101,35 @@ export function autoQuad(mdc: string, blockedPairs?: Set<string>): string {
     const vAB = abBlocked ? 0 : vertScore(a, b);
     const hAB = abBlocked ? 0 : horizScore(a, b);
 
+    // Trigram context: if we have 3 signs and the corpus tells us which
+    // pair groups, use that instead of greedy pair-frequency guessing.
+    let trigramResolved = false;
+    if (c) {
+      const triPref = trigramPreference(a, b, c);
+      if (triPref === "BC") {
+        // Corpus says B groups with C, not A — emit A alone
+        quadrats.push(a);
+        i++;
+        continue;
+      }
+      if (triPref === "AB") {
+        // Corpus confirms A groups with B — skip lookahead/orphan heuristics
+        trigramResolved = true;
+      }
+    }
+
     // Lookahead: would B pair better with C?
+    // Skip these heuristics if trigram already resolved the grouping.
     const vBC = c ? vertScore(b, c) : 0;
     const hBC = c ? horizScore(b, c) : 0;
     const bcBest = Math.max(vBC, hBC);
     const abBest = Math.max(vAB, hAB);
-    const bPairsBetterWithC = bcBest > abBest;
+    const bPairsBetterWithC = !trigramResolved && bcBest > abBest;
 
-    // Also check: if we take A:B, does C end up orphaned (no pair with D)?
-    // If so, and B:C is attested, prefer A alone + B:C.
     const d = i + 3 < codes.length ? codes[i + 3] : null;
     const cOrphaned = c && !d ? true
       : c && d ? (vertScore(c, d) === 0 && horizScore(c, d) === 0) : false;
-    const preferBCOverAB = bcBest > 0 && cOrphaned && abBest > 0;
+    const preferBCOverAB = !trigramResolved && bcBest > 0 && cOrphaned && abBest > 0;
 
     // If B pairs better forward, or B:C saves C from being orphaned
     if (bPairsBetterWithC || preferBCOverAB) {

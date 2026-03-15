@@ -165,6 +165,82 @@ function processGlyFile(filePath: string): QuadPair[] {
   return allPairs;
 }
 
+/**
+ * 3-sign context: for A-B-C, records whether the grouping break falls
+ * after A ("A-BC") or after B ("AB-C"). Key = "A,B,C", value = "AB" or "BC".
+ */
+interface TrigramEntry {
+  /** "AB" = A groups with B (break after B), "BC" = B groups with C (break after A) */
+  grouping: "AB" | "BC";
+}
+
+/**
+ * Extract 3-sign context windows from a cleaned MdC line.
+ * For each sequence of 3 consecutive signs where exactly one pair is grouped,
+ * record which pair it was.
+ */
+function extractTrigramsFromLine(line: string): { key: string; grouping: "AB" | "BC" }[] {
+  const results: { key: string; grouping: "AB" | "BC" }[] = [];
+
+  if (line.startsWith("+") || line.startsWith("!") || line.trim() === "") return results;
+
+  let cleaned = line;
+  cleaned = cleaned.replace(/\\[a-zA-Z]*\d*/g, "");
+  cleaned = cleaned.replace(/#[be1234]*/g, "");
+  cleaned = cleaned.replace(/\|[0-9]+/g, "");
+  cleaned = cleaned.replace(/PF\d-/g, "");
+  cleaned = cleaned.replace(/\.\./g, "").replace(/\/\//g, "");
+
+  // Parse the line into a sequence of (sign, separatorAfter) tuples
+  // Separator is "-" (quadrat boundary), ":" (vert), or "*" (horiz)
+  // We need to track the separator BETWEEN each sign.
+  const signSeq: { code: string; sepAfter: string }[] = [];
+
+  const quadrats = cleaned.split("-");
+  for (let qi = 0; qi < quadrats.length; qi++) {
+    const quad = quadrats[qi];
+    const tokens = quad.split(/([*:])/).filter(Boolean);
+
+    for (let ti = 0; ti < tokens.length; ti++) {
+      if (tokens[ti] === ":" || tokens[ti] === "*") continue;
+      const code = resolveAlias(tokens[ti].replace(/[()_`]/g, "").trim());
+      if (!isSign(code)) continue;
+
+      // Determine separator after this sign
+      let sep = "-"; // default: quadrat boundary (will be overwritten if within a quad)
+      if (ti + 1 < tokens.length && (tokens[ti + 1] === ":" || tokens[ti + 1] === "*")) {
+        sep = tokens[ti + 1];
+      }
+      // If this is the last sign in the quad and not the last quad, separator is "-"
+      if (ti >= tokens.length - 1 && qi < quadrats.length - 1) {
+        sep = "-";
+      }
+
+      signSeq.push({ code, sepAfter: sep });
+    }
+  }
+
+  // Now scan 3-sign windows
+  for (let i = 0; i < signSeq.length - 2; i++) {
+    const a = signSeq[i];
+    const b = signSeq[i + 1];
+    const c = signSeq[i + 2];
+
+    const abGrouped = a.sepAfter === ":" || a.sepAfter === "*"; // A groups with B
+    const bcGrouped = b.sepAfter === ":" || b.sepAfter === "*"; // B groups with C
+
+    // We want cases where exactly one pair is grouped (ambiguous for auto-quad)
+    if (abGrouped && !bcGrouped) {
+      results.push({ key: `${a.code},${b.code},${c.code}`, grouping: "AB" });
+    } else if (!abGrouped && bcGrouped) {
+      results.push({ key: `${a.code},${b.code},${c.code}`, grouping: "BC" });
+    }
+    // If both grouped (triple) or neither, skip — not useful for disambiguation
+  }
+
+  return results;
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 const textDir = process.argv[2];
@@ -184,21 +260,45 @@ if (glyFiles.length === 0) {
 
 console.log(`Scanning ${glyFiles.length} .gly files in ${resolvedDir}...`);
 
-// Collect all pairs
+// Collect all pairs and trigrams
 const vertCount = new Map<string, number>(); // "A,B" → count for A:B
 const horizCount = new Map<string, number>(); // "A,B" → count for A*B
+// Trigrams: "A,B,C" → { AB: count, BC: count }
+const trigramAB = new Map<string, number>(); // A groups with B
+const trigramBC = new Map<string, number>(); // B groups with C
 
 let totalPairs = 0;
+let totalTrigrams = 0;
 
 for (const file of glyFiles) {
-  const pairs = processGlyFile(file);
-  totalPairs += pairs.length;
-  for (const p of pairs) {
-    const key = `${p.top},${p.bottom}`;
-    if (p.op === ":") {
-      vertCount.set(key, (vertCount.get(key) ?? 0) + 1);
-    } else {
-      horizCount.set(key, (horizCount.get(key) ?? 0) + 1);
+  const content = fs.readFileSync(file, "utf-8");
+  const lines = content.split("\n");
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("++") || trimmed.startsWith("+") || trimmed === "") continue;
+
+    // Pairs
+    const pairs = extractPairsFromLine(trimmed);
+    totalPairs += pairs.length;
+    for (const p of pairs) {
+      const key = `${p.top},${p.bottom}`;
+      if (p.op === ":") {
+        vertCount.set(key, (vertCount.get(key) ?? 0) + 1);
+      } else {
+        horizCount.set(key, (horizCount.get(key) ?? 0) + 1);
+      }
+    }
+
+    // Trigrams
+    const trigrams = extractTrigramsFromLine(trimmed);
+    totalTrigrams += trigrams.length;
+    for (const t of trigrams) {
+      if (t.grouping === "AB") {
+        trigramAB.set(t.key, (trigramAB.get(t.key) ?? 0) + 1);
+      } else {
+        trigramBC.set(t.key, (trigramBC.get(t.key) ?? 0) + 1);
+      }
     }
   }
 }
@@ -206,6 +306,8 @@ for (const file of glyFiles) {
 console.log(`  Total pairs extracted: ${totalPairs}`);
 console.log(`  Unique vertical (:) pairs: ${vertCount.size}`);
 console.log(`  Unique horizontal (*) pairs: ${horizCount.size}`);
+console.log(`  Total trigrams extracted: ${totalTrigrams}`);
+console.log(`  Unique trigram keys: ${new Set([...trigramAB.keys(), ...trigramBC.keys()]).size}`);
 
 // Build the index: only include pairs seen at least 2 times
 const MIN_COUNT = 2;
@@ -220,21 +322,44 @@ for (const [key, count] of horizCount) {
   if (count >= MIN_COUNT) horizPairs[key] = count;
 }
 
+// Build trigram context index: "A,B,C" → "AB" | "BC" | "both"
+// Only include trigrams seen at least MIN_COUNT times in either direction
+const trigramContext: Record<string, string> = {};
+const allTrigramKeys = new Set([...trigramAB.keys(), ...trigramBC.keys()]);
+let trigramCount = 0;
+for (const key of allTrigramKeys) {
+  const ab = trigramAB.get(key) ?? 0;
+  const bc = trigramBC.get(key) ?? 0;
+  if (ab + bc < MIN_COUNT) continue;
+  // Record the dominant grouping (or "both" if roughly equal)
+  if (ab > 0 && bc === 0) {
+    trigramContext[key] = `AB:${ab}`;
+  } else if (bc > 0 && ab === 0) {
+    trigramContext[key] = `BC:${bc}`;
+  } else {
+    trigramContext[key] = `AB:${ab},BC:${bc}`;
+  }
+  trigramCount++;
+}
+
 const index = {
   _meta: {
     generatedAt: new Date().toISOString(),
     sourceFiles: glyFiles.length,
     totalPairs,
+    totalTrigrams,
+    trigramKeys: trigramCount,
     minCount: MIN_COUNT,
   },
   vert: vertPairs,
   horiz: horizPairs,
+  trigrams: trigramContext,
 };
 
 const outPath = path.join(process.cwd(), "public/data/quad-index.json");
 fs.writeFileSync(outPath, JSON.stringify(index, null, 2));
 
-console.log(`\nWrote ${Object.keys(vertPairs).length} vert + ${Object.keys(horizPairs).length} horiz pairs to ${outPath}`);
+console.log(`\nWrote ${Object.keys(vertPairs).length} vert + ${Object.keys(horizPairs).length} horiz pairs + ${trigramCount} trigrams to ${outPath}`);
 
 // Show top patterns
 console.log("\nTop vertical (:) patterns:");
