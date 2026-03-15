@@ -1431,7 +1431,7 @@
     "description": "A captive man kneeling with his arms tied behind his back.",
     "meanings": [
       {
-        "text": "Determinative in ḫfty (“enemy”).",
+        "text": "Determinative in xfty (“enemy”).",
         "type": "determinative"
       },
       {
@@ -2647,7 +2647,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative: ḏignitꜥry",
+        "text": "Determinative: dignitary",
         "type": "determinative"
       }
     ],
@@ -3097,7 +3097,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: sḏm-aS — servant",
+        "text": "Logogram: sḏm-ꜥs — servant",
         "type": "logogram"
       },
       {
@@ -3112,10 +3112,10 @@
     "transliteration": [
       "ꞽ",
       "ꜥš",
+      "sḏm-ꜥš",
       "nis",
       "i",
-      "j",
-      "sḏm-ꜥš"
+      "j"
     ],
     "related": [
       "A1",
@@ -4319,7 +4319,7 @@
     "description": "Man, standing, arms at either side of the body, holding the necks of two emblematic animals with panther heads, connected by a line which runs under the feet of the man.",
     "meanings": [
       {
-        "text": "Logogram (Cusae)",
+        "text": "Logogram (cusae)",
         "type": "logogram"
       },
       {
@@ -4359,7 +4359,7 @@
     "description": "Man, standing on the back of two animals, which look either way, man arms extended at either side of the body, holding both heads of the animals.",
     "meanings": [
       {
-        "text": "Logogram (Cusae)",
+        "text": "Logogram (cusae)",
         "type": "logogram"
       }
     ],
@@ -6686,13 +6686,13 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥtp-Dj-nsw — a boon that the king grants",
+        "text": "Logogram: ḥtp-dj-nsw — a boon that the king grants",
         "type": "logogram"
       }
     ],
     "transliteration": [
-      "ḥtp-dꞽ-ny-swt",
-      "ḥtp-ḏj-nsw"
+      "ḥtp-ḏj-nsw",
+      "ḥtp-dꞽ-ny-swt"
     ],
     "related": [
       "A1",
@@ -7057,7 +7057,7 @@
     "description": "Asiatic",
     "meanings": [
       {
-        "text": "Logogram: wr — Asiatic prince",
+        "text": "Logogram: wr — ꜣsiꜥtic prince",
         "type": "logogram"
       },
       {
@@ -9414,7 +9414,7 @@
     "description": "Man, seated, right knee raised, with a circle (sun disk) on his head, arms raised at either side of the body, supporting the sign for the sky (N1) which has the points at the hands, with the sign on top of the circle.",
     "meanings": [
       {
-        "text": "Logogram (Heh (divinity))",
+        "text": "Logogram (heh (divinity))",
         "type": "logogram"
       }
     ],
@@ -9854,7 +9854,7 @@
     "description": "Man, standing, wearing a long sash-kilt, right arm in front, holding a long stick/staff, left arm hanging beside the body.",
     "meanings": [
       {
-        "text": "Logogram (elder (in ḥr-wr, Haroeris))",
+        "text": "Logogram (elder (in ḥr-wr, haroeris))",
         "type": "logogram"
       }
     ],
@@ -10347,7 +10347,7 @@
     "description": "Child, naked, with side-lock and wearing the hmhm crown (S61), standing, right arm extended in front, held horizontally, holding a sistrum (Y18), left arm forwards 45 degree, holding a bead-necklace with counterweight.",
     "meanings": [
       {
-        "text": "Logogram (Harsomtus)",
+        "text": "Logogram (harsomtus)",
         "type": "logogram"
       }
     ],
@@ -13799,7 +13799,7 @@
     "description": "Man, standing, arms at either side of the body, holding the necks of two emblematic animals with panther heads, which runs under the feet of the man, overlapping as a two ties.",
     "meanings": [
       {
-        "text": "Logogram (Cusae)",
+        "text": "Logogram (cusae)",
         "type": "logogram"
       }
     ],
@@ -13946,7 +13946,7 @@
     "description": "Man, seated on a combination of two front-parts of a horse, facing forward and backwards, arms extended at either side of the body, holding the reins of both horseheads.",
     "meanings": [
       {
-        "text": "Logogram (Cusae)",
+        "text": "Logogram (cusae)",
         "type": "logogram"
       }
     ],
@@ -15866,7 +15866,7 @@
     "description": "God, seated, both knees up, with covered legs and arms, with a long-curved beard, wearing the double crown (S5), holding a flagellum (S45).",
     "meanings": [
       {
-        "text": "Logogram (Atum)",
+        "text": "Logogram (ꜣtum)",
         "type": "logogram"
       }
     ],
@@ -22476,7 +22476,7 @@
     "description": "Child, naked, with side-lock and wearing the hmhm crown (S61), standing, right arm extended in front, held horizontally, holding a sistrum (Y8), left arm hanging beside the body.",
     "meanings": [
       {
-        "text": "Logogram (Harsomtus)",
+        "text": "Logogram (harsomtus)",
         "type": "logogram"
       }
     ],
@@ -22647,7 +22647,7 @@
     "description": "Child, naked, with side-lock and wearing the hmhm crown (S61), standing, right arm extended in front, held horizontally, holding a sistrum (Y8), left arm hanging beside the body, holding a bead-necklace with a counterweight (S18) at the counterweight.",
     "meanings": [
       {
-        "text": "Logogram (Harsomtus)",
+        "text": "Logogram (harsomtus)",
         "type": "logogram"
       }
     ],
@@ -23039,7 +23039,7 @@
     "description": "God, seated, both knees up, with covered legs and arms, wearing the white crown (S1), holding a column with a base, with a tenon at the top (O28B).",
     "meanings": [
       {
-        "text": "Logogram (he of Heliopolis)",
+        "text": "Logogram (he of heliopolis)",
         "type": "logogram"
       }
     ],
@@ -24960,7 +24960,7 @@
     "description": "Child, naked, wearing the hmhm crown (S61), seated upon a block throne on a base, right arm raised in front with hand to mouth, left arm in front, forearm horizontal, holding a tie or strap, used with sandals (ankh sign, S34), which angles forward.",
     "meanings": [
       {
-        "text": "Logogram (Harsomtus)",
+        "text": "Logogram (harsomtus)",
         "type": "logogram"
       }
     ],
@@ -25700,7 +25700,7 @@
     "description": "Woman, seated, both knees up, with covered legs and arms, with long hair, holding a feather (H6) vertically.",
     "meanings": [
       {
-        "text": "Logogram (Maat)",
+        "text": "Logogram (mꜥꜥt)",
         "type": "logogram"
       }
     ],
@@ -26900,7 +26900,7 @@
     "description": "Woman holding",
     "meanings": [
       {
-        "text": "Logogram: jḥyt — (female) sistrum player",
+        "text": "Logogram: jhyt — (female) sistrum player",
         "type": "logogram"
       }
     ],
@@ -30614,11 +30614,11 @@
     "description": "Representing a god with the head of an ibis, 𓅝 (G26) or 𓅞 (G26A).",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏḥwtj — Thoth",
+        "text": "Logogram: ḏḥwtj — thoth",
         "type": "logogram"
       },
       {
@@ -30660,7 +30660,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of an ibis, holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically.",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -31077,7 +31077,7 @@
     "description": "Representing a god with the head of a dog 𓃢 (E15).",
     "meanings": [
       {
-        "text": "Logogram: jnpw — Anubis",
+        "text": "Logogram: jnpw — ꜣnubis",
         "type": "logogram"
       },
       {
@@ -31089,7 +31089,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: wpj-wꜣwt — Upwawet",
+        "text": "Determinative: wpj-wꜣwt — upwawet",
         "type": "determinative"
       },
       {
@@ -31291,11 +31291,11 @@
     "description": "Representing a god with the head of a Seth-animal 𓃩 (E20).",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: stḫ — Seth",
+        "text": "Logogram: stḫ — seth",
         "type": "logogram"
       },
       {
@@ -31337,7 +31337,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of a Seth animal, holding a crook (S38), vertically, with the opening inwards.",
     "meanings": [
       {
-        "text": "Logogram (one who belongs to Seth)",
+        "text": "Logogram (one who belongs to seth)",
         "type": "logogram"
       }
     ],
@@ -31368,7 +31368,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of a Seth animal, holding a tie or strap, used with sandals (ankh sign, S34), angling forward.",
     "meanings": [
       {
-        "text": "Logogram (one who belongs to Seth)",
+        "text": "Logogram (one who belongs to seth)",
         "type": "logogram"
       }
     ],
@@ -31533,11 +31533,11 @@
     "description": "Representing a goddess with sun and horns.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥwt-ḥr — Hathor",
+        "text": "Logogram: ḥwt-ḥr — hathor",
         "type": "logogram"
       },
       {
@@ -31952,11 +31952,11 @@
     "description": "Goddess with feather on head",
     "meanings": [
       {
-        "text": "Logogram (Maat)",
+        "text": "Logogram (mꜥꜥt)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: mꜣꜥt — Maat",
+        "text": "Logogram: mꜣꜥt — mꜥꜥt",
         "type": "logogram"
       },
       {
@@ -31997,7 +31997,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with a cloth band around her head, with a feather (H6) on her head, holding a tie or strap, used with sandals (ankh sign, S34), angling forward.",
     "meanings": [
       {
-        "text": "Logogram (Maat)",
+        "text": "Logogram (mꜥꜥt)",
         "type": "logogram"
       }
     ],
@@ -32029,7 +32029,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with a cloth band around her head, with a feather (H6) on her head, holding a stem of papyrus with a bud (M131) or flower vertically.",
     "meanings": [
       {
-        "text": "Logogram (Maat)",
+        "text": "Logogram (mꜥꜥt)",
         "type": "logogram"
       }
     ],
@@ -32061,7 +32061,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with a cloth band around her head, with a feather (H6) on her head, holding a crook (S38), vertically, with the opening outwards.",
     "meanings": [
       {
-        "text": "Logogram (ruler of truth/Maat)",
+        "text": "Logogram (ruler of truth/mꜥꜥt)",
         "type": "logogram"
       }
     ],
@@ -32125,7 +32125,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with a cloth band around her head, with a feather (H6) on her head, holding the head and neck of a canine animal (F12), vertically.",
     "meanings": [
       {
-        "text": "Logogram (in name Ramses IV)",
+        "text": "Logogram (in name ramses IV)",
         "type": "logogram"
       }
     ],
@@ -32189,7 +32189,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with a cloth band around her head, with a feather (H6) on her head, holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically.",
     "meanings": [
       {
-        "text": "Logogram (Maat)",
+        "text": "Logogram (mꜥꜥt)",
         "type": "logogram"
       }
     ],
@@ -32229,7 +32229,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥḥw — Heh",
+        "text": "Logogram: ḥḥw — heh",
         "type": "logogram"
       },
       {
@@ -32508,11 +32508,11 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, wearing the double-plume headdress (S72A), with a line running from the crown down the back, holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically.",
     "meanings": [
       {
-        "text": "Logogram (Amon)",
+        "text": "Logogram (ꜣmon)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: jmn — Amun",
+        "text": "Logogram: jmn — ꜣmun",
         "type": "logogram"
       }
     ],
@@ -32545,7 +32545,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, wearing the double-plume headdress (S72A), with a line running from the crown down the back, holding a khopesh sword (T16A) vertically.",
     "meanings": [
       {
-        "text": "Logogram (Amon is his strength (sꜣ-rꜥ name Ramses VI))",
+        "text": "Logogram (ꜣmon is his strength (sꜣ-rꜥ name ramses VI))",
         "type": "logogram"
       }
     ],
@@ -32577,7 +32577,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, wearing the double-plume headdress (S72A), with a line running from the crown down the back.",
     "meanings": [
       {
-        "text": "Logogram (Amon)",
+        "text": "Logogram (ꜣmon)",
         "type": "logogram"
       }
     ],
@@ -32639,7 +32639,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, wearing the double-plume headdress (S72A), with a line running from the crown down the back, holding a feather (H6).",
     "meanings": [
       {
-        "text": "Logogram (Maat and Amon)",
+        "text": "Logogram (mꜥꜥt and ꜣmon)",
         "type": "logogram"
       }
     ],
@@ -32670,7 +32670,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, wearing the double-plume headdress (S72A), with a line running from the crown down the back, holding a tie or strap, used with sandals (ankh sign, S34), vertically.",
     "meanings": [
       {
-        "text": "Logogram (Amon)",
+        "text": "Logogram (ꜣmon)",
         "type": "logogram"
       }
     ],
@@ -32701,7 +32701,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, wearing the double-plume headdress (S72A), holding a tie or strap, used with sandals (ankh sign, S34), vertically.",
     "meanings": [
       {
-        "text": "Logogram (Amon)",
+        "text": "Logogram (ꜣmon)",
         "type": "logogram"
       }
     ],
@@ -32732,7 +32732,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, wearing the double-plume headdress (S72A), with a line running from the crown down the back, holding a sceptre (S42).",
     "meanings": [
       {
-        "text": "Logogram (living image of Amon)",
+        "text": "Logogram (living image of ꜣmon)",
         "type": "logogram"
       }
     ],
@@ -32794,7 +32794,7 @@
     "description": "God, standing, with a long-curved beard, wearing the double plume headdress (S72A), right arm forward, hand at the height of the waist, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40) of the same size as the god, vertically, left arm hanging beside the body.",
     "meanings": [
       {
-        "text": "Logogram (Amon)",
+        "text": "Logogram (ꜣmon)",
         "type": "logogram"
       }
     ],
@@ -32904,7 +32904,7 @@
     "description": "Variant of C12",
     "meanings": [
       {
-        "text": "Logogram: jmn-ḥr-ḫpš=f — Amun-her-khepeshef",
+        "text": "Logogram: jmn-ḥr-ḫpš=f — ꜣmun-her-khepeshef",
         "type": "logogram"
       }
     ],
@@ -32952,11 +32952,11 @@
     "description": "Variant of A304",
     "meanings": [
       {
-        "text": "Logogram: jtm — Atum",
+        "text": "Logogram: jtm — ꜣtum",
         "type": "logogram"
       },
       {
-        "text": "Logogram (Atum)",
+        "text": "Logogram (ꜣtum)",
         "type": "logogram"
       }
     ],
@@ -33113,7 +33113,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard and long hair/wig, wearing a headdress consisting of two feathers on ram horns (S77).",
     "meanings": [
       {
-        "text": "Logogram (Tatenen)",
+        "text": "Logogram (tatenen)",
         "type": "logogram"
       }
     ],
@@ -33144,7 +33144,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard and long hair/wig, wearing a headdress consisting of two feathers on ram horns (S77), holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically.",
     "meanings": [
       {
-        "text": "Logogram (Tatenen)",
+        "text": "Logogram (tatenen)",
         "type": "logogram"
       }
     ],
@@ -33208,7 +33208,7 @@
     "description": "God, seated, both knees down, with a long-curved beard and long hair/wig, wearing a headdress consisting of two feathers on ram horns, with a uraeus at either side of the feathers; both arms forward, holding a flagellum (S45).",
     "meanings": [
       {
-        "text": "Logogram (Tatenen)",
+        "text": "Logogram (tatenen)",
         "type": "logogram"
       }
     ],
@@ -33267,7 +33267,7 @@
     "description": "Squatting god",
     "meanings": [
       {
-        "text": "Logogram: tꜣ-tnn — Tatenen",
+        "text": "Logogram: tꜣ-tnn — tatenen",
         "type": "logogram"
       },
       {
@@ -33328,7 +33328,7 @@
     "description": "God, in mummy form, standing upright on a platform, with a long straight beard, wearing a cap, both arms forward, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40) of the same size as the god, vertically.",
     "meanings": [
       {
-        "text": "Logogram: ptḥ — Ptah",
+        "text": "Logogram: ptḥ — ptꜥh",
         "type": "logogram"
       },
       {
@@ -33365,7 +33365,7 @@
     "description": "God, in mummy form, standing upright, with a long straight beard, wearing a cap, both arms forwards, holding a sceptre with a straight shaft, forked bottom, and the vertically oriented head of the Seth animal (S040), of the same size as the god, adorned with an ankh sign (S034) and a djed pillar (R011).",
     "meanings": [
       {
-        "text": "Logogram (Ptah)",
+        "text": "Logogram (ptꜥh)",
         "type": "logogram"
       }
     ],
@@ -33453,7 +33453,7 @@
     "description": "God, in mummy form, standing upright on a platform, with a long straight beard, wearing a cap, both arms forward, holding a sceptre with a straight shaft, forked bottom, and the vertically oriented head of the Seth animal (S040), of the same size as the god, adorned with an ankh sign (S034) and a djed pillar (R011); enclosed within a shrine supported by columns resembling papyrus stems with buds (M013).",
     "meanings": [
       {
-        "text": "Logogram (Ptah)",
+        "text": "Logogram (ptꜥh)",
         "type": "logogram"
       }
     ],
@@ -33860,7 +33860,7 @@
     "description": "God, seated on nothing, with the head of a jackal and tail, right arm forwards, hand at the height of the shoulder, holding a stick vertically, running from the hand to the knee, left arm raised at the back, forearm vertical, holding a stick.",
     "meanings": [
       {
-        "text": "Logogram: bꜣstt — Bastet",
+        "text": "Logogram: bꜣstt — bastet",
         "type": "logogram"
       },
       {
@@ -33908,7 +33908,7 @@
     "description": "A mummy, with the head of a jackal, standing upright.",
     "meanings": [
       {
-        "text": "Logogram (Duamutef)",
+        "text": "Logogram (duamutef)",
         "type": "logogram"
       },
       {
@@ -33977,7 +33977,7 @@
     "description": "God, standing, with the head of a jackal, right arm forward, hand at the height of the shoulder, holding the top of a staff, which angles towards the body, left arm hanging beside the body",
     "meanings": [
       {
-        "text": "Logogram (Anubis)",
+        "text": "Logogram (ꜣnubis)",
         "type": "logogram"
       }
     ],
@@ -34290,7 +34290,7 @@
     "description": "God, seated, both knees up, with covered legs and arms, with a long, curved beard, wearing the double crown (S5).",
     "meanings": [
       {
-        "text": "Logogram (Atum)",
+        "text": "Logogram (ꜣtum)",
         "type": "logogram"
       }
     ],
@@ -34319,7 +34319,7 @@
     "description": "God, seated, both knees up, with covered legs and arms, with a long, curved beard, wearing the double crown (S5), holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically.",
     "meanings": [
       {
-        "text": "Logogram (Atum)",
+        "text": "Logogram (ꜣtum)",
         "type": "logogram"
       }
     ],
@@ -34548,7 +34548,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of a falcon.",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -34930,7 +34930,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of a falcon, wearing the double crown (S5), holding an eye, with the markings of the head of a falcon (wdꜣ.t, D10).",
     "meanings": [
       {
-        "text": "Logogram (eye of Horus)",
+        "text": "Logogram (eye of horus)",
         "type": "logogram"
       }
     ],
@@ -36043,7 +36043,7 @@
     "description": "God, standing, with the head of a falcon, right arm forward, hand at the height of the waist, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40) of the same size as the god, vertically, left arm hanging beside the body.",
     "meanings": [
       {
-        "text": "Logogram (lord of the two lands, when used in connection with a Seth-headed figure)",
+        "text": "Logogram (lord of the two lands, when used in connection with a seth-headed figure)",
         "type": "logogram"
       }
     ],
@@ -36426,7 +36426,7 @@
     "description": "God, standing, with the head of a falcon, wearing the double crown (S5), holding a harpoon with the point down, diagonally over the body, from the tip of the right foot beyond the left shoulder, right arm lowered, right hand holding the harpoon between the waist and knee, left arm raised, holding the shaft near the end, on top of a crocodile (I3).",
     "meanings": [
       {
-        "text": "Logogram (harpooner) or Logogram (Wenty)",
+        "text": "Logogram (harpooner) or logogram (Wenty)",
         "type": "logogram"
       }
     ],
@@ -36808,7 +36808,7 @@
     "description": "Youth, seated, both knees up, feet on the ground, wearing the double crown (S5), right arm raised in front, with hand to mouth, left arm in front of the body, holding a flagellum (S45) which angles against the left shoulder.",
     "meanings": [
       {
-        "text": "Logogram (Horus the child)",
+        "text": "Logogram (horus the child)",
         "type": "logogram"
       }
     ],
@@ -37291,7 +37291,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, wearing the Atef crown without horns (S8A), holding a flagellum (S45) and a crook (S38), opening inwards.",
     "meanings": [
       {
-        "text": "Logogram (one who belongs to Seth)",
+        "text": "Logogram (one who belongs to seth)",
         "type": "logogram"
       }
     ],
@@ -37541,7 +37541,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long straight beard, wearing a cap.",
     "meanings": [
       {
-        "text": "Logogram (Ptah)",
+        "text": "Logogram (ptꜥh)",
         "type": "logogram"
       }
     ],
@@ -37601,7 +37601,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long straight beard, wearing a cap, holding a tie or strap, used with sandals (ankh sign, S34), angling forward.",
     "meanings": [
       {
-        "text": "Logogram (Ptah)",
+        "text": "Logogram (ptꜥh)",
         "type": "logogram"
       }
     ],
@@ -37996,7 +37996,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of a crocodile.",
     "meanings": [
       {
-        "text": "Logogram (Sobek)",
+        "text": "Logogram (sobek)",
         "type": "logogram"
       }
     ],
@@ -38054,7 +38054,7 @@
     "description": "An archaic image of a falcon, with a thorn, pointing upwards in front of it.",
     "meanings": [
       {
-        "text": "Logogram (Sopdu)",
+        "text": "Logogram (sopdu)",
         "type": "logogram"
       }
     ],
@@ -38240,7 +38240,7 @@
     "description": "God, in mummy form, standing upright, with the head of a baboon/monkey.",
     "meanings": [
       {
-        "text": "Logogram (Hapy)",
+        "text": "Logogram (hapy)",
         "type": "logogram"
       }
     ],
@@ -38414,7 +38414,7 @@
     "description": "God, standing, with the head of an ibis, arms hanging at either side of the body.",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -39097,7 +39097,7 @@
     "description": "God, standing, with the head of a falcon, with N6 (The sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus)) on its head, right arm forward, hand at the height of the waist, holding a spear made into a standard (R15A), left arm hanging beside the body, holding a tie or strap, used with sandals (ankh sign, S34) vertically at the loop.",
     "meanings": [
       {
-        "text": "Logogram (Horus of the east)",
+        "text": "Logogram (horus of the east)",
         "type": "logogram"
       }
     ],
@@ -39435,7 +39435,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, wearing the double crown (S5) and a vulture headdress, holding a stem of papyrus with a bud (M131) or flower vertically.",
     "meanings": [
       {
-        "text": "Logogram (together with \\C98 and \\C43A, representing the triad of Dendera)",
+        "text": "Logogram (together with \\C98 and \\C43A, representing the triad of dendera)",
         "type": "logogram"
       }
     ],
@@ -39953,7 +39953,7 @@
     "description": "Goddess, standing, with a headdress of bovine horns with a sun disk (F102), right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the height of the woman, vertically, left arm hanging beside the body.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       }
     ],
@@ -40565,7 +40565,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with the head of a lion/lioness, holding a stem of papyrus with a bud (M13).",
     "meanings": [
       {
-        "text": "Logogram (Sekhmet)",
+        "text": "Logogram (sekhmet)",
         "type": "logogram"
       }
     ],
@@ -40700,7 +40700,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with the head of a lion/lioness, with N6 (The sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus)) on her head.",
     "meanings": [
       {
-        "text": "Logogram (Sekhmet)",
+        "text": "Logogram (sekhmet)",
         "type": "logogram"
       }
     ],
@@ -40760,7 +40760,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with the head of a lion/lioness, with N6 (The sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus)) on her head, holding a tie or strap, used with sandals (ankh sign, S34), angled forwards.",
     "meanings": [
       {
-        "text": "Logogram (Sekhmet)",
+        "text": "Logogram (sekhmet)",
         "type": "logogram"
       }
     ],
@@ -40901,7 +40901,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with the head of a lion/lioness, holding a stem of papyrus with a bud (M13); on top of a stairway (O40).",
     "meanings": [
       {
-        "text": "Logogram (she who is on the throne/stairs (Bastet))",
+        "text": "Logogram (she who is on the throne/stairs (bastet))",
         "type": "logogram"
       }
     ],
@@ -41135,7 +41135,7 @@
     "description": "Goddess, seated on a block throne, with a cloth band around her head, with a feather (H6) on her head, right arm forward, hand at the height of the waist, holding the head and neck of a canine animal (F12) of the length of the figure, vertically, left arm forward, hand on the knee, holding a tie or strap, used with sandals (ankh sign, S34), horizontally at the loop.",
     "meanings": [
       {
-        "text": "Logogram (in name Ramses II)",
+        "text": "Logogram (in name ramses II)",
         "type": "logogram"
       }
     ],
@@ -41167,7 +41167,7 @@
     "description": "Goddess, standing, with a cloth band around her head, with a feather (H6) on her head, right arm forward, hand at the height of the waist, holding the head and neck of a canine animal (F12) of the length of the figure, left arm hanging beside the body.",
     "meanings": [
       {
-        "text": "Logogram (in name Ramses II)",
+        "text": "Logogram (in name ramses II)",
         "type": "logogram"
       }
     ],
@@ -42456,7 +42456,7 @@
     "description": "Goddess, standing, with a flower enclosed by two horns (R20) on her head, right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the height of the woman, vertically, left arm hanging beside the body.",
     "meanings": [
       {
-        "text": "Logogram (Seshat)",
+        "text": "Logogram (seshat)",
         "type": "logogram"
       }
     ],
@@ -42486,7 +42486,7 @@
     "description": "Goddess, standing, with a flower enclosed by two horns (R20) on her head, right arm forward, hand at the height of the waist, holding a club, angled forward, with the head of the club on top a vertical stick held by the left hand.",
     "meanings": [
       {
-        "text": "Logogram (Seshat)",
+        "text": "Logogram (seshat)",
         "type": "logogram"
       }
     ],
@@ -42996,7 +42996,7 @@
     "description": "Goddess, standing, wearing the double crown (S5), right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the height of the woman, vertically, left arm hanging beside the body, holding a tie or strap, used with sandals (ankh sign, S34), at the loop.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       }
     ],
@@ -44661,7 +44661,7 @@
     "description": "Goddess, seated, knees up, with covered arms and legs, with a scorpion (L19) on her head, holding a stem of papyrus with a bud (M13).",
     "meanings": [
       {
-        "text": "Logogram (Serqet)",
+        "text": "Logogram (serqet)",
         "type": "logogram"
       }
     ],
@@ -44690,7 +44690,7 @@
     "description": "Goddess, seated, knees up, with covered arms and legs, with long hair, with a sceptre with a straight shaft, a forked base, topped with the head of the Seth animal, with a fillet and feather (R19), on top of a canal (N36) on her head, holding a tie or strap, used with sandals (ankh sign, S34), angling forward.",
     "meanings": [
       {
-        "text": "Logogram (Thebes)",
+        "text": "Logogram (thebes)",
         "type": "logogram"
       }
     ],
@@ -44977,7 +44977,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with the head of a falcon, wearing the double crown (S5), holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically, upon a canal (N36).",
     "meanings": [
       {
-        "text": "Logogram (beloved of Horus)",
+        "text": "Logogram (beloved of horus)",
         "type": "logogram"
       }
     ],
@@ -45790,7 +45790,7 @@
     "description": "God, seated on a block throne on a base, with the head of a falcon, wearing the double crown (S5), right arm forward, holding a sceptre with a straight shaft, a forked base, topped with the head of the Seth animal (wAs, S40) of the length of the god, left arm forward, hand on the knee.",
     "meanings": [
       {
-        "text": "Logogram (Horus, Behedety)",
+        "text": "Logogram (horus, Behedety)",
         "type": "logogram"
       }
     ],
@@ -45887,7 +45887,7 @@
     "description": "God, seated on a block throne on a base, with the head of a falcon, wearing the double crown (S5), right arm forward, hand a the height of the face, holding a tie or strap, used with sandals (ankh sign, S34) horizontally at the base, left arm forward, hand at the knee, holding a tie or strap, used with sandals (ankh sign, S34) horizontally at the loop.",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -45959,7 +45959,7 @@
     "description": "God, seated on a block throne on a base, with the head of a falcon, wearing the double crown (S5), left arm forward, hand near the knee, holding a sceptre with a straight shaft, a forked base, topped with the head of the Seth animal (wAs, S40), right arm forward, holding a tie or strap, used with sandals (ankh sign, S34) horizontally at the base, above the wAs scepter.",
     "meanings": [
       {
-        "text": "Logogram (Horus, protector of his father, Behedety, the many-coloured of plumage, giving life)",
+        "text": "Logogram (horus, protector of his father, Behedety, the many-coloured of plumage, giving life)",
         "type": "logogram"
       }
     ],
@@ -46057,7 +46057,7 @@
     "description": "Goddess, seated, knees up, with covered legs and arms, with a enclosed hill, with a shrub at the top (N30A) on top of a conical loaf of bread (X8) on her head, holding a stem of papyrus with a bud (M131) or flower vertically.",
     "meanings": [
       {
-        "text": "Logogram (Dendera)",
+        "text": "Logogram (dendera)",
         "type": "logogram"
       }
     ],
@@ -46171,7 +46171,7 @@
     "description": "Goddess, standing, with a cloth band around her head, with a feather (H6) on her head, right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the height of the woman, vertically, left arm hanging beside the body, holding a tie or strap, used with sandals (ankh sign, S34); on top of a platform (Aa11).",
     "meanings": [
       {
-        "text": "Logogram (Maat)",
+        "text": "Logogram (mꜥꜥt)",
         "type": "logogram"
       }
     ],
@@ -46308,7 +46308,7 @@
     "description": "Goddess, seated on a block throne, with a cloth band around her head, with a feather (H6) on her head, right arm forward, hand at the height of the waist, holding the head and neck of a canine animal (F12) of the length of the figure, vertically, left arm forward, hand on the knee, holding a tie or strap, used with sandals (ankh sign, S34), angled forwards.",
     "meanings": [
       {
-        "text": "Logogram (in name Ramses II)",
+        "text": "Logogram (in name ramses II)",
         "type": "logogram"
       }
     ],
@@ -46354,7 +46354,7 @@
     "description": "God, in mummy form, standing upright on a platform, with a long straight beard, wearing a cap, both arms forward, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40) of the same size as the god, vertically, inside a shrine without the pillar at the front.",
     "meanings": [
       {
-        "text": "Logogram (Ptah)",
+        "text": "Logogram (ptꜥh)",
         "type": "logogram"
       }
     ],
@@ -46403,7 +46403,7 @@
     "description": "Goddess, seated on a block throne on a base, wearing the double crown (S5) and vulture headdress, right arm forward, hand at the height of the waist, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40), which has a horizontal tie or strap, used with sandals (ankh sign, S34) at the head of the sceptre; left arm forward, hand on knee.",
     "meanings": [
       {
-        "text": "Logogram (Hathor, giving life)",
+        "text": "Logogram (hathor, giving life)",
         "type": "logogram"
       }
     ],
@@ -46493,7 +46493,7 @@
     "description": "Goddess, seated on a block throne on a base, wearing the double crown (S5) and vulture headdress, right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the height of the woman, vertically, left arm forward, hand on knee.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       }
     ],
@@ -46836,7 +46836,7 @@
     "description": "Goddess, seated on a block throne with a base, wearing a headdress of bovine horns with a sun disk (F102), right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the length of the seated figure, vertically, left arm forward, hand above the height of the bud of the papyrus, holding a tie or strap, used with sandals (ankh sign, S34), horizontally at the base.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       }
     ],
@@ -47052,7 +47052,7 @@
     "description": "Goddess, seated on a block throne, wearing a headdress consisting of the double crown on horns with a feather in the front, right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the length of the seated figure, vertically, left arm forward, hand upon the knee; facing a god, seated on a block throne, with the head of a falcon, with N6 (The sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus)) on his head, right arm forward, hand at the height of the waist, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40), of the length of the seated figure, vertically, left arm forward, hand upon the knee; both on top of a base.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       }
     ],
@@ -47076,7 +47076,7 @@
     "description": "Goddess, seated on a block throne, wearing a headdress consisting of the double crown on horns, right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the length of the seated figure, vertically, left arm forward, hand upon the knee; facing a god, seated on a block throne, with the head of a falcon, wearing the double crown (S5), right arm forward, hand at the height of the waist, holding a sceptre with a straight shaft, forked bottom and head of the Seth animal (S40), of the length of the seated figure, vertically, left arm forward, hand upon the knee; both on top of a base.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       }
     ],
@@ -47172,7 +47172,7 @@
     "description": "God, seated, both knees up, with covered legs and arms, with a long-curved beard and short hair/wig, wearing the hmhm crown (S61), holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically.",
     "meanings": [
       {
-        "text": "Logogram (first person singular, for Harsomtus)",
+        "text": "Logogram (first person singular, for harsomtus)",
         "type": "logogram"
       }
     ],
@@ -47310,7 +47310,7 @@
     "description": "God, seated, knees up, with covered legs and arms, with a long-curved beard, with a feather (H6) on his head, holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically.",
     "meanings": [
       {
-        "text": "Logogram (Shu)",
+        "text": "Logogram (shu)",
         "type": "logogram"
       }
     ],
@@ -47688,7 +47688,7 @@
     "description": "God, seated on a block-throne on a base, with a long straight beard, wearing a cap, both arms forwards, holding a sceptre with a straight shaft, topped with the head of the Seth animal vertically.",
     "meanings": [
       {
-        "text": "Logogram (Ptah)",
+        "text": "Logogram (ptꜥh)",
         "type": "logogram"
       }
     ],
@@ -47836,7 +47836,7 @@
     "description": "God, seated, both knees down, with a long-curved beard and long hair/wig, wearing a headdress consisting of two feathers and a sun disk on ram horns, with a uraeus with a sun disk on the head at either side of the feathers; both arms forward, holding a flagellum (S45) and a crook (S38), opening inwards.",
     "meanings": [
       {
-        "text": "Logogram (Tatenen)",
+        "text": "Logogram (tatenen)",
         "type": "logogram"
       }
     ],
@@ -47880,7 +47880,7 @@
     "description": "God, in mummy form, standing upright, with a long-curved beard, wearing a headdress consisting of two feathers and a sun disk on ram horns (S73).",
     "meanings": [
       {
-        "text": "Logogram (Tatenen)",
+        "text": "Logogram (tatenen)",
         "type": "logogram"
       }
     ],
@@ -48066,7 +48066,7 @@
     "description": "Goddess, seated on a block throne with a base, wearing a headdress of bovine horns with a sun disk (F102), right arm forward, hand at the height of the waist, holding a stem of papyrus with a bud (M131) or flower, of the length of the seated figure, vertically, left arm forward, hand upon the knee.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       }
     ],
@@ -48162,7 +48162,7 @@
     "description": "Goddess, seated, knees up, with covered arms and legs, with a flower enclosed by two horns (R20) on her head.",
     "meanings": [
       {
-        "text": "Logogram (Seshat)",
+        "text": "Logogram (seshat)",
         "type": "logogram"
       }
     ],
@@ -48455,7 +48455,7 @@
     "description": "A lock of hair with three strands.",
     "meanings": [
       {
-        "text": "Logogram: gm wS(.w) — found defective (of text)",
+        "text": "Logogram: gm wš(.w) — found defective (of text)",
         "type": "logogram"
       },
       {
@@ -48846,7 +48846,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Determinative: ꜣnw — Ainu",
+        "text": "Determinative: ꜣnw — ꜣinu",
         "type": "determinative"
       }
     ],
@@ -49035,7 +49035,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: wḏꜣt — the uninjured eye of Horus",
+        "text": "Logogram: wḏꜣt — the uninjured eye of horus",
         "type": "logogram"
       }
     ],
@@ -50084,7 +50084,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: nḥb-kꜣw — Nehebkau",
+        "text": "Determinative: nḥb-kꜣw — nehebkau",
         "type": "determinative"
       }
     ],
@@ -50115,7 +50115,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥm-kA — ka-priest",
+        "text": "Logogram: ḥm-kꜣ — ka-priest",
         "type": "logogram"
       }
     ],
@@ -51648,7 +51648,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative for \"male\", such as in ꜥꜣ (“ass”), ṯꜣy (“male, man”), and kꜣ (“bull”).",
+        "text": "Determinative for \"male\", such as in ꜥꜣ (“ass”), tꜣy (“male, man”), and kꜣ (“bull”).",
         "type": "determinative"
       },
       {
@@ -52542,7 +52542,7 @@
     "description": "The head of a goddess, seen in profile, wearing a headdress of bovine horns with a sun disk (F102), wearing the vulture headdress, on top of a staff with a forked end.",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       },
       {
@@ -54054,7 +54054,7 @@
     "description": "The head of a human male in profile, with beard and coif, with two arms, arms raised at either side, upper arms horizontal.",
     "meanings": [
       {
-        "text": "Logogram (Heh, divinity)",
+        "text": "Logogram (heh, divinity)",
         "type": "logogram"
       }
     ],
@@ -56566,7 +56566,7 @@
     "description": "A forearm with the hand holding a wide cup (W10)",
     "meanings": [
       {
-        "text": "Logogram (to offer, to present) or Phonemogram",
+        "text": "Logogram (to offer, to present) or phonemogram",
         "type": "logogram"
       }
     ],
@@ -60550,7 +60550,7 @@
     "description": "A forearm, with the palm of the hand facing upwards, with a feather (H6) on top of the hand, vertically.",
     "meanings": [
       {
-        "text": "Logogram (offering Maat)",
+        "text": "Logogram (offering mꜥꜥt)",
         "type": "logogram"
       }
     ],
@@ -62618,7 +62618,7 @@
     "description": "A hamadryas baboon (Papio hamadryas), seated, arms forward, holding a palm branch, stripped of leaves and notched with a round notch, with the notch towards the body.",
     "meanings": [
       {
-        "text": "Logogram (New Year's Day)",
+        "text": "Logogram (New year's Day)",
         "type": "logogram"
       }
     ],
@@ -62775,24 +62775,24 @@
     "description": "A jackal, lying down, tail downwards.",
     "meanings": [
       {
-        "text": "Logogram (Anubis)",
+        "text": "Logogram (ꜣnubis)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥrj-sStA — master of secrets",
+        "text": "Logogram: ḥrj-sstꜣ — master of secrets",
         "type": "logogram"
       },
       {
-        "text": "Logogram: jnpw — Anubis",
+        "text": "Logogram: jnpw — ꜣnubis",
         "type": "logogram"
       }
     ],
     "transliteration": [
       "Jnpw",
       "ꞽnpw",
+      "ḥrj-sštꜣ",
       "inpw",
-      "ḥry-sštꜣ",
-      "ḥrj-sštꜣ"
+      "ḥry-sštꜣ"
     ],
     "related": [
       "E1",
@@ -62962,7 +62962,7 @@
     "description": "A jackal, lying down, tail downwards, on top of a vessel with a small base and a wide rim (W77).",
     "meanings": [
       {
-        "text": "Logogram (Anubis)",
+        "text": "Logogram (ꜣnubis)",
         "type": "logogram"
       }
     ],
@@ -63068,11 +63068,11 @@
     "description": "A jackal, standing, tail down (E17), on top of a standard used for the carrying of religious symbols, with an uraeus at the front of the standard.",
     "meanings": [
       {
-        "text": "Logogram (Wepwawet)",
+        "text": "Logogram (wepwawet)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: wpj-wꜣwt — Wepwawet",
+        "text": "Logogram: wpj-wꜣwt — wepwawet",
         "type": "logogram"
       }
     ],
@@ -63129,11 +63129,11 @@
     "description": "A depiction of an unidentified animal associated with Set, the Set animal: a slender canid resembling a greyhound, Saluki or jackal, with a distinctive stiff tail (often forked in later depictions) which stands erect whether the animal is sitting, standing, or walking. Its erect ears are usually depicted as squarish or triangular, narrowest at the base and widest at the squarish(perhaps cropped) tops, and its long nose often has a slight downward curve. It may or may not have been a real animal. It is usually depicted at rest, either sitting like this, or lying down: 𓃫 (E21).",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: stḫ — Seth",
+        "text": "Logogram: stḫ — seth",
         "type": "logogram"
       },
       {
@@ -63216,7 +63216,7 @@
     "description": "A variant of 𓃩 (E20) which is lying down.",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       },
       {
@@ -63288,7 +63288,7 @@
     "description": "The animal of Seth, lying down, tail up (E21), on top of a standard used for the carrying of religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       }
     ],
@@ -63747,7 +63747,7 @@
     "description": "An oryx, standing.",
     "meanings": [
       {
-        "text": "Logogram: mꜣ-HD — oryx",
+        "text": "Logogram: mꜣ-ḥḏ — oryx",
         "type": "logogram"
       },
       {
@@ -63779,7 +63779,7 @@
     "description": "Combination of , and some type of jar",
     "meanings": [
       {
-        "text": "Logogram (Oryx nome, 16th nome of Upper Egypt)",
+        "text": "Logogram (oryx nome, 16th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -64110,7 +64110,7 @@
     "description": "A desert hare, lying down (E34), on top of a standard used for the carrying of religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Hermopolis magna, 15th nome of Upper Egypt)",
+        "text": "Logogram (hermopolis magna, 15th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -64142,7 +64142,7 @@
     "description": "A desert hare, lying down (E34), on top of a standard used for the carrying of religious symbols (R12)",
     "meanings": [
       {
-        "text": "Logogram (Hermopolis magna, 15th nome of Upper Egypt)",
+        "text": "Logogram (hermopolis magna, 15th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -64226,7 +64226,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: dḥwtj — Thoth",
+        "text": "Logogram: dḥwtj — thoth",
         "type": "logogram"
       },
       {
@@ -65119,7 +65119,7 @@
     "description": "A basket with four pieces of grain or fruit (M39) in front of an oryx, standing (E28), on top of a standard used for the carrying of religious symbols with the vertical stick at the far side (R92A).",
     "meanings": [
       {
-        "text": "Logogram (Oryx nome, 16th nome of Upper Egypt)",
+        "text": "Logogram (oryx nome, 16th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -66841,7 +66841,7 @@
     "description": "A lion, lying down, tail curled over the body towards the back, on top of a standard used for the carrying of religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Matit, goddess of 12th nome of Upper Egypt)",
+        "text": "Logogram (mꜥtit, goddess of 12th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -66942,7 +66942,7 @@
     "description": "A baboon, standing on its hind legs, tail down, arms extended forwards, holding a palm branch, stripped of leaves, with multiple sharp notches (M4A), on top of a half round loaf of bread (X1), with the curve outwards.",
     "meanings": [
       {
-        "text": "Logogram (New Year's Day)",
+        "text": "Logogram (New year's Day)",
         "type": "logogram"
       }
     ],
@@ -67697,7 +67697,7 @@
     "description": "A pig, standing on its hind legs, with a forward, downward angling dotted line coming from the mouth, ending in a human mouth, seen from the side; on top of a sand covered mountain over the edge of the cultivated areas (N26).",
     "meanings": [
       {
-        "text": "Logogram (Tefrer, geographical location)",
+        "text": "Logogram (tefrer, geographical location)",
         "type": "logogram"
       }
     ],
@@ -67785,7 +67785,7 @@
     "description": "A jackal, lying down, tail downwards, wearing a wig, on top of a shrine which widens near the top.",
     "meanings": [
       {
-        "text": "Logogram (Anubis)",
+        "text": "Logogram (ꜣnubis)",
         "type": "logogram"
       }
     ],
@@ -67958,7 +67958,7 @@
     "description": "A hamadryas baboon (Papio hamadryas), seated, hands on knees, tail folded under the rear, with a feather (H6) on its knee, angled forwards.",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -68070,7 +68070,7 @@
     "description": "A jackal, lying down, tail downwards, with a feather (H6) angled backwards on its back.",
     "meanings": [
       {
-        "text": "Logogram (Anubis)",
+        "text": "Logogram (ꜣnubis)",
         "type": "logogram"
       }
     ],
@@ -68098,7 +68098,7 @@
     "description": "A jackal, lying down, tail downwards, with a feather (H6) angled backwards on its back (E143); on top of a standard used for the carrying of religious symbols (R12) on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Anubis nome (17th nome of Upper Egypt))",
+        "text": "Logogram (ꜣnubis nome (17th nome of Upper Egypt))",
         "type": "logogram"
       }
     ],
@@ -68126,7 +68126,7 @@
     "description": "A jackal, lying down, tail downwards, with a feather (H6) angled backwards on its back (E143); on top of a standard used for the carrying of religious symbols with the vertical stick at the far side (R92A) on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Anubis nome (17th nome of Upper Egypt))",
+        "text": "Logogram (ꜣnubis nome (17th nome of Upper Egypt))",
         "type": "logogram"
       }
     ],
@@ -68215,7 +68215,7 @@
     "description": "The animal of Seth, standing, tail up.",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       }
     ],
@@ -68289,7 +68289,7 @@
     "description": "The animal of Seth, lying down, tail up (E21), with a knife with a triangular blade and straight handle (T30A) angled at the nose, blade downwards.",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       }
     ],
@@ -69970,7 +69970,7 @@
     "description": "An oryx, standing, on top of a standard used for the carrying of religious symbols on top of a parcel of land with irrigation ditches.",
     "meanings": [
       {
-        "text": "Logogram (Oryx nome, 16th nome of Upper Egypt)",
+        "text": "Logogram (oryx nome, 16th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -70211,7 +70211,7 @@
     "description": "An oryx, standing (E28), with a falcon (G5) on its back, on top of a standard used for the carrying of religious symbols (R12) on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Oryx nome, 16th nome of Upper Egypt)",
+        "text": "Logogram (oryx nome, 16th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -70493,7 +70493,7 @@
     "description": "A donkey/ass, legs bound together, ears in a V shape, tail up.",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       }
     ],
@@ -70548,7 +70548,7 @@
     "description": "A donkey/ass, lying on its back, legs bound together, tail upwards, with a knife with a triangular blade and straight handle (T30A) vertically on top of the hooves, blade towards the back.",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       }
     ],
@@ -70700,7 +70700,7 @@
     "description": "A donkey/ass, lying down, with the ears in a V shape, tail up, with a knife with a triangular blade and straight handle (T30A) vertically on the back, blade towards the back.",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       }
     ],
@@ -70862,7 +70862,7 @@
     "description": "A donkey/ass, legs bound together, ears in a V shape, tail up, with a knife with a triangular blade and straight handle (T30A) vertically on its back, blade towards the back.",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       }
     ],
@@ -71270,7 +71270,7 @@
     "description": "A cult image of a jackal.",
     "meanings": [
       {
-        "text": "Logogram (Anubis)",
+        "text": "Logogram (ꜣnubis)",
         "type": "logogram"
       }
     ],
@@ -71545,7 +71545,7 @@
     "description": "A lioness, lying down, tail raised, on top of a shrine which widens near the top.",
     "meanings": [
       {
-        "text": "Logogram (Pachet)",
+        "text": "Logogram (pachet)",
         "type": "logogram"
       }
     ],
@@ -72021,7 +72021,7 @@
     "description": "A lion, lying down, tail curled over the body towards the back, on top of a shrine which widens towards the top, with a cloth wound on a pole, an emblem of divinity (R8) behind the lion, angling slightly backwards.",
     "meanings": [
       {
-        "text": "Logogram (Pachet)",
+        "text": "Logogram (pachet)",
         "type": "logogram"
       }
     ],
@@ -72591,7 +72591,7 @@
     "description": "A baboon, dancing, right leg vertical, left leg raised, left knee in front of the right leg, left foot behind the right leg, right arm extended forwards and downwards, holding an ornamental chevaux de frise on top of walls, with a circle dividing the top and base (Aa30), of nearly the size of the baboon near the base of the ornament.",
     "meanings": [
       {
-        "text": "Logogram (to adorn) or Logogram (to be friendly)",
+        "text": "Logogram (to adorn) or logogram (to be friendly)",
         "type": "logogram"
       }
     ],
@@ -72804,7 +72804,7 @@
     "description": "A donkey/ass, lying down, legs folded under the body, ears in a V shape, without tail, with a knife with a triangular blade and straight handle (T30A), angled on the nose, blade downwards.",
     "meanings": [
       {
-        "text": "Logogram (Seth)",
+        "text": "Logogram (seth)",
         "type": "logogram"
       }
     ],
@@ -73011,7 +73011,7 @@
     "description": "A flowering sedge (M23A), written over a jackal, standing, tail down (E17); on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Wepwawet of Upper Egypt)",
+        "text": "Logogram (wepwawet of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -73054,7 +73054,7 @@
     "description": "A jackal, standing, tail down (E17), on top of a standard used for the carrying of religious symbols, with an uraeus and šdšd-protuberance at the front of the standard.",
     "meanings": [
       {
-        "text": "Logogram (Wepwawet)?",
+        "text": "Logogram (wepwawet)?",
         "type": "logogram"
       }
     ],
@@ -73578,7 +73578,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šfyt — worth",
+        "text": "Logogram: sfyt — worth",
         "type": "logogram"
       },
       {
@@ -74220,15 +74220,15 @@
     "description": "A ligature of rnp (𓆳) and wp (𓄋).",
     "meanings": [
       {
-        "text": "Logogram for wp-rnpt (“New Year’s Day”).",
+        "text": "Logogram for wp-rnpt (“New year’s Day”).",
         "type": "logogram"
       },
       {
-        "text": "Logogram (New Year's Day)",
+        "text": "Logogram (New year's Day)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: wpt-rnpt — New-Year's Day",
+        "text": "Logogram: wpt-rnpt — new-year's Day",
         "type": "logogram"
       },
       {
@@ -74263,7 +74263,7 @@
     "description": "A palm branch, stripped of leaves, with multiple sharp notches (M4A), written within the horns of a bovid (F13).",
     "meanings": [
       {
-        "text": "Logogram (New Year's Day)",
+        "text": "Logogram (New year's Day)",
         "type": "logogram"
       }
     ],
@@ -74292,11 +74292,11 @@
     "description": "A ligature of rnp (𓆳), ra (𓇳), and wp (𓄋), or equivalently of F14 (𓄍) and ra (𓇳).",
     "meanings": [
       {
-        "text": "Logogram for wp-rnpt (“New Year’s Day”).",
+        "text": "Logogram for wp-rnpt (“New year’s Day”).",
         "type": "logogram"
       },
       {
-        "text": "Logogram (New Year's Day)",
+        "text": "Logogram (New year's Day)",
         "type": "logogram"
       },
       {
@@ -74953,7 +74953,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: msḫtjw — Great Bear",
+        "text": "Determinative: msḫtjw — great bear",
         "type": "determinative"
       }
     ],
@@ -75228,7 +75228,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: sꜣb Swt — dappled of feathers",
+        "text": "Logogram: sꜣb šwt — dappled of feathers",
         "type": "logogram"
       },
       {
@@ -77729,7 +77729,7 @@
     "description": "The head of a jackal on a cup-like base, with two arms, raised in front, hand palms forwards.",
     "meanings": [
       {
-        "text": "Logogram (Ennead)",
+        "text": "Logogram (ennead)",
         "type": "logogram"
       }
     ],
@@ -80848,7 +80848,7 @@
     "description": "A palm branch, stripped of leaves and notched with a round notch (M4), written within the horns of a bovid (F13), on top of an alabaster basin with a diamond shaped inner marking (W3).",
     "meanings": [
       {
-        "text": "Logogram (New Year's Day)",
+        "text": "Logogram (New year's Day)",
         "type": "logogram"
       }
     ],
@@ -81557,15 +81557,15 @@
     "description": "Representing a falcon, variously identified as a lanner falcon or peregrine falcon.",
     "meanings": [
       {
-        "text": "Logogram for ḥr (“Horus”).",
+        "text": "Logogram for ḥr (“horus”).",
         "type": "logogram"
       },
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥr — Horus",
+        "text": "Logogram: ḥr — horus",
         "type": "logogram"
       },
       {
@@ -81675,7 +81675,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ḥr — Horus",
+        "text": "Determinative: ḥr — horus",
         "type": "determinative",
         "period": "OK"
       },
@@ -81869,11 +81869,11 @@
     "description": "A falcon (G5), on top of a collar of beads (S12).",
     "meanings": [
       {
-        "text": "Logogram (golden Horus)",
+        "text": "Logogram (golden horus)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥr-nbw — Gold Horus",
+        "text": "Logogram: ḥr-nbw — Gold horus",
         "type": "logogram"
       }
     ],
@@ -81931,7 +81931,7 @@
     "description": "A falcon (G5), with a flagellum (S45) on its shoulder, on top of a collar of beads, without detail (S12A).",
     "meanings": [
       {
-        "text": "Logogram (golden Horus)",
+        "text": "Logogram (golden horus)",
         "type": "logogram"
       }
     ],
@@ -81960,11 +81960,11 @@
     "description": "A falcon (G5) with a sun disk (N5) on its head.",
     "meanings": [
       {
-        "text": "Logogram (Re-Hor (usually in rꜥ-ḥr-ꜣḫ.ty)",
+        "text": "Logogram (re-hor (usually in rꜥ-ḥr-ꜣḫ.ty)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: rꜥ-ḥr-ꜣḫtj — Re-Harakhti",
+        "text": "Logogram: rꜥ-ḥr-ꜣḫtj — re-ḥꜥrꜥkhti",
         "type": "logogram"
       }
     ],
@@ -81994,7 +81994,7 @@
     "description": "A falcon (G5) with the sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus) (N6) on its head.",
     "meanings": [
       {
-        "text": "Logogram (Re-Hor (usually in rꜥ-ḥr-ꜣḫ.ty)",
+        "text": "Logogram (re-hor (usually in rꜥ-ḥr-ꜣḫ.ty)",
         "type": "logogram"
       }
     ],
@@ -82023,7 +82023,7 @@
     "description": "A falcon (G5), on top of a moon-sickle shaped boat with a higher prow than stern, with a rudder, with the head of an antelope (F81) on top of the prow, facing inwards, with a downward line with multiple horizontal lines written over it coming from the head, on top of a sledge (P60B).",
     "meanings": [
       {
-        "text": "Logogram: skr — Sokar",
+        "text": "Logogram: skr — sokar",
         "type": "logogram"
       },
       {
@@ -82031,7 +82031,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ḥnw — Sokar-bark",
+        "text": "Determinative: ḥnw — sokar-bꜥrk",
         "type": "determinative"
       }
     ],
@@ -82161,7 +82161,7 @@
     "description": "An archaic image of a falcon/cult image of a falcon, wearing a headdress consisting of two plumes (S9).",
     "meanings": [
       {
-        "text": "Logogram: ḥr — Horus",
+        "text": "Logogram: ḥr — horus",
         "type": "logogram"
       },
       {
@@ -82169,7 +82169,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: špdw — Sopdu",
+        "text": "Determinative: špdw — sopdu",
         "type": "determinative"
       }
     ],
@@ -82230,7 +82230,7 @@
     "description": "An archaic image of a falcon/cult image of a falcon, wearing a headdress consisting of two plumes (S9), with a flagellum (S45) on its back.",
     "meanings": [
       {
-        "text": "Logogram (Sopdu (divinity))",
+        "text": "Logogram (sopdu (divinity))",
         "type": "logogram"
       }
     ],
@@ -82283,7 +82283,7 @@
     "description": "A human headed bird (G53A), wearing a headdress consisting of two feathers on top of the horns of a ram (S77), with a flagellum (S45) on its shoulder.",
     "meanings": [
       {
-        "text": "Logogram (He of Edfu)",
+        "text": "Logogram (he of Edfu)",
         "type": "logogram"
       }
     ],
@@ -82552,7 +82552,7 @@
     "description": "Variant of I12 (erect cobra)",
     "meanings": [
       {
-        "text": "Logogram: nbtj — Two Ladies",
+        "text": "Logogram: nbtj — two ladies",
         "type": "logogram"
       }
     ],
@@ -83017,11 +83017,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: rḫyt — common folk",
+        "text": "Logogram: rxyt — common folk",
         "type": "logogram"
       },
       {
-        "text": "Determinative in and ideogram for rḫyt (“subjects”).",
+        "text": "Determinative in and ideogram for rxyt (“subjects”).",
         "type": "determinative"
       },
       {
@@ -83221,7 +83221,7 @@
     "description": "An African sacred ibis (Threskiornis aethiopicus) (G26A), on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       },
       {
@@ -83229,7 +83229,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏḥwtj — Thoth",
+        "text": "Logogram: ḏḥwtj — thoth",
         "type": "logogram"
       }
     ],
@@ -84367,7 +84367,7 @@
     "description": "A greater white-fronted goose (Anser albifrons), flying, with a wing at either side of its body (G40), on top of a standard used for the carrying of religious symbols with the vertical stick at the far side (R92A).",
     "meanings": [
       {
-        "text": "Logogram (Sepa)",
+        "text": "Logogram (sepa)",
         "type": "logogram"
       }
     ],
@@ -86491,7 +86491,7 @@
     "description": "A falcon (G5) with the sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus) (N6) on its head, with a tie or strap, used with sandals (ankh sign, S34) angled forwards, on its toe.",
     "meanings": [
       {
-        "text": "Logogram (Re-Hor (usually in rꜥ-ḥr-ꜣḫ.ty)",
+        "text": "Logogram (re-hor (usually in rꜥ-ḥr-ꜣḫ.ty)",
         "type": "logogram"
       }
     ],
@@ -86519,7 +86519,7 @@
     "description": "A falcon (G5), wearing the double crown (S5).",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -86548,7 +86548,7 @@
     "description": "A falcon (G5), wearing the double crown (S5), with an uraeus on its toe.",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -86600,7 +86600,7 @@
     "description": "A falcon (G5), wearing a headdress consisting of a sun disk between the horns of a bovid, with two plumes on top of the sun disk (S65/S65A).",
     "meanings": [
       {
-        "text": "Logogram (the female Horus)",
+        "text": "Logogram (the female horus)",
         "type": "logogram"
       }
     ],
@@ -86628,7 +86628,7 @@
     "description": "A falcon (G5), wearing a headdress consisting of the horns of a ram with two plumes on top of it (S62).",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -87040,7 +87040,7 @@
     "description": "A falcon (G5), on top of a windpipe and lungs (F36), with a stem of papyrus with a flowering bud (M127) left of the windpipe and a stem of papyrus with a bud (M13) right of the windpipe, both beneath the horizontal bar.",
     "meanings": [
       {
-        "text": "Logogram (Harsomtus)",
+        "text": "Logogram (harsomtus)",
         "type": "logogram"
       }
     ],
@@ -87068,7 +87068,7 @@
     "description": "A falcon (G5), with a flagellum (S45) on its shoulder, on top of a windpipe and lungs (F36), with a stem of papyrus with a flowering bud (M127) left of the windpipe and a stem of papyrus with a bud (M13) right of the windpipe, both beneath the horizontal bar.",
     "meanings": [
       {
-        "text": "Logogram (Harsomtus)",
+        "text": "Logogram (harsomtus)",
         "type": "logogram"
       }
     ],
@@ -87111,7 +87111,7 @@
     "description": "A pole of a balance, with the pole resembling a seat (U39A), in front of a falcon (G5), on top of a standard used for carrying religious symbols, with a loop under the horizontal beam, running over the vertical pole (R12A).",
     "meanings": [
       {
-        "text": "Logogram (Throne of Horus (Edfu))",
+        "text": "Logogram (throne of horus (Edfu))",
         "type": "logogram"
       }
     ],
@@ -87139,7 +87139,7 @@
     "description": "A pole of a balance, with the pole resembling a seat (U39A), in front of a falcon (G5), with a flagellum (S45) on its shoulder, on top of a standard used for carrying religious symbols, with a loop under the horizontal beam, running over the vertical pole (R12A).",
     "meanings": [
       {
-        "text": "Logogram (Throne of Horus (Edfu))",
+        "text": "Logogram (throne of horus (Edfu))",
         "type": "logogram"
       }
     ],
@@ -87163,7 +87163,7 @@
     "description": "A pole of a balance, with the pole resembling a seat (U39A), in front of a falcon (G5), on top of a standard used for carrying religious symbols, with a loop under the horizontal beam, running over the vertical pole (R12A), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Throne of Horus (Edfu, 2nd nome of Upper Egypt))",
+        "text": "Logogram (throne of horus (Edfu, 2nd nome of Upper Egypt))",
         "type": "logogram"
       }
     ],
@@ -87242,7 +87242,7 @@
     "description": "The pole of a balance, with the pole resembling a seat (Q1), with a plummet resembling a heart (F34) hanging from the crossbeam (U39F), in front of a falcon (G5); on top of a standard used for carrying religious symbols, with a loop under the horizontal beam, running over the vertical pole (R12A).",
     "meanings": [
       {
-        "text": "Logogram (Throne of Horus (Edfu))",
+        "text": "Logogram (throne of horus (Edfu))",
         "type": "logogram"
       }
     ],
@@ -87275,7 +87275,7 @@
     "description": "A falcon (G5), on top of a façade of a palace or tomb, with a doorway (O33A).",
     "meanings": [
       {
-        "text": "Logogram (Horus who is on the palace façade)",
+        "text": "Logogram (horus who is on the palace façade)",
         "type": "logogram"
       }
     ],
@@ -87897,7 +87897,7 @@
     "description": "An African sacred ibis (Threskiornis aethiopicus) (G26A), on top of a standard used for the carrying of religious symbols with the vertical stick at the far side (R92A).",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -87965,7 +87965,7 @@
     "description": "An archaic image of a falcon/cult image of a falcon, wearing the white crown (S1), with a counterweight of a necklace (S18A) on its back.",
     "meanings": [
       {
-        "text": "Logogram (Haroeris)",
+        "text": "Logogram (haroeris)",
         "type": "logogram"
       }
     ],
@@ -88037,7 +88037,7 @@
     "description": "An archaic image of a falcon/cult image of a falcon, wearing the white crown with an uraeus (S1A), with a flagellum (S45) on its back.",
     "meanings": [
       {
-        "text": "Logogram (Haroeris)",
+        "text": "Logogram (haroeris)",
         "type": "logogram"
       }
     ],
@@ -88101,7 +88101,7 @@
     "description": "An archaic image of a falcon/cult image of a falcon, wearing the white crown (S1), with a counterweight of a necklace (S18A) and a flagellum (S45) on its back.",
     "meanings": [
       {
-        "text": "Logogram (Haroeris)",
+        "text": "Logogram (haroeris)",
         "type": "logogram"
       }
     ],
@@ -88358,7 +88358,7 @@
     "description": "A falcon, standing, with extended wings at either side of the body, at 45 degree.",
     "meanings": [
       {
-        "text": "Logogram (the one who spreads out his wings ((Dewen-anwy) divinity))",
+        "text": "Logogram (the one who spreads out his wings ((dewen-anwy) divinity))",
         "type": "logogram"
       }
     ],
@@ -88485,7 +88485,7 @@
     "description": "A falcon, standing, with extended wings at either side of the body, at 45 degree; on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (the one who spreads out his wings ((Dewen-anwy) divinity))",
+        "text": "Logogram (the one who spreads out his wings ((dewen-anwy) divinity))",
         "type": "logogram"
       }
     ],
@@ -88937,7 +88937,7 @@
     "description": "An archaic image of a falcon/cult image of a falcon, with a counterweight of a necklace (S18A) on its back.",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -88995,7 +88995,7 @@
     "description": "An archaic image of a falcon/cult image of a falcon, wearing the white crown (S1).",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -89810,7 +89810,7 @@
     "description": "A feather (H6), in front of an African sacred ibis (Threskiornis aethiopicus) (G26A), on top of a standard used for the carrying of religious symbols with the vertical stick at the far side (R92A).",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -89928,7 +89928,7 @@
     "description": "An African sacred ibis (Threskiornis aethiopicus), legs drawn towards the body.",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -89956,7 +89956,7 @@
     "description": "An African sacred ibis (Threskiornis aethiopicus), legs drawn towards the body (G195), with a flagellum (S45) on its back.",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -90012,7 +90012,7 @@
     "description": "An African sacred ibis (Threskiornis aethiopicus), legs drawn towards the body (G195), with a feather (H6), angled forwards, on its toe.",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -91728,7 +91728,7 @@
     "description": "A falcon (G5), on top of a shrine resembling a rectangular coffin with a rounded lid, and upstanding sides, without legs (Q6A).",
     "meanings": [
       {
-        "text": "Logogram (sanctuary of Sokar)",
+        "text": "Logogram (sanctuary of sokar)",
         "type": "logogram"
       }
     ],
@@ -91774,7 +91774,7 @@
     "description": "Two falcons (G5), arranged horizontally, on top of a standard used for carrying religious symbols, with a loop under the horizontal beam, running over the vertical pole (R12A).",
     "meanings": [
       {
-        "text": "Logogram (The two gods, 5th nome of Upper Egypt)",
+        "text": "Logogram (the two gods, 5th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -92171,7 +92171,7 @@
     "description": "A falcon (G5), with a cobra (Naja haje), standing up, with expanded hood (uraeus), wearing the white crown (I55) at its toe.",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -92199,7 +92199,7 @@
     "description": "A falcon (G5) with the sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus) (N6) on its head, with a flagellum (S45) on its shoulder.",
     "meanings": [
       {
-        "text": "Logogram (Re-Hor (usually in rꜥ-ḥr-ꜣḫ.ty)",
+        "text": "Logogram (re-hor (usually in rꜥ-ḥr-ꜣḫ.ty)",
         "type": "logogram"
       }
     ],
@@ -92947,7 +92947,7 @@
     "description": "A falcon (G5), wearing the double crown (S5), with an flagellum (S45) on its back.",
     "meanings": [
       {
-        "text": "Logogram (Horus)",
+        "text": "Logogram (horus)",
         "type": "logogram"
       }
     ],
@@ -93038,7 +93038,7 @@
     "description": "A falcon (G5), wearing the white crown.",
     "meanings": [
       {
-        "text": "Logogram (Sopdu (divinity))",
+        "text": "Logogram (sopdu (divinity))",
         "type": "logogram"
       }
     ],
@@ -93572,7 +93572,7 @@
     "description": "Representing an egg. Compare the Chinese character 卵. As a determinative in pꜥt (“patricians”), it may have originally been a different glyph, a clod of earth. This glyph was conventionally colored white or yellow, reflecting the creamy color of ostrich or goose eggs.",
     "meanings": [
       {
-        "text": "Logogram for zꜣ (“son”) by conflation with zA (𓅭)",
+        "text": "Logogram for zꜣ (“son”) by conflation with zꜣ (𓅭)",
         "type": "logogram"
       },
       {
@@ -94503,7 +94503,7 @@
     "description": "An egg (H8), on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Duau (divinity))",
+        "text": "Logogram (duau (divinity))",
         "type": "logogram"
       }
     ],
@@ -94705,7 +94705,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram for or determinative in ḫntj (an epithet of the god Set as a crocodile).",
+        "text": "Logogram for or determinative in ḫntj (an epithet of the god set as a crocodile).",
         "type": "logogram"
       },
       {
@@ -94721,7 +94721,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative in words relating to crocodiles and their perceived qualities: ḥntj (“to be greedy”), skn (“greedy”), ꜥḫm (name of a demon, literally “Horrifier”), ꜣd (“to be angry or aggressive”), etc.",
+        "text": "Determinative in words relating to crocodiles and their perceived qualities: ḥntj (“to be greedy”), skn (“greedy”), ꜥḫm (name of a demon, literally “horrifier”), ꜣd (“to be angry or aggressive”), etc.",
         "type": "determinative"
       },
       {
@@ -95064,15 +95064,15 @@
     "description": "Representing a crocodile on a shrine. Older variants lack the shrine and instead depict the crocodile as a cult image (fetish) or a mummified crocodile, with only its head emerging from a wrapping of bandages or a sudarium: 𓆍 (I5A).",
     "meanings": [
       {
-        "text": "Logogram for sbk (“Sobek”).",
+        "text": "Logogram for sbk (“sobek”).",
         "type": "logogram"
       },
       {
-        "text": "Logogram: sbk — Sobek",
+        "text": "Logogram: sbk — sobek",
         "type": "logogram"
       },
       {
-        "text": "Determinative in sbk (“Sobek”).",
+        "text": "Determinative in sbk (“sobek”).",
         "type": "determinative"
       },
       {
@@ -95340,7 +95340,7 @@
         "period": "18-"
       },
       {
-        "text": "Determinative in ḥqt (“Heqat”), and in words for frog: qrr (“frog”), ꜥbḫn (“frog”).",
+        "text": "Determinative in ḥqt (“heqat”), and in words for frog: qrr (“frog”), ꜥbḫn (“frog”).",
         "type": "determinative"
       },
       {
@@ -95618,7 +95618,7 @@
     "description": "Cobra with feather",
     "meanings": [
       {
-        "text": "Logogram: wꜣḏyt — Wadjit (tenth nome of Upper Egypt)",
+        "text": "Logogram: wꜣdyt — wꜥdjit (tenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -96145,7 +96145,7 @@
     "description": "A cobra (Naja haje), standing up, with expanded hood (uraeus), with a coiled tail, consisting of three coils.",
     "meanings": [
       {
-        "text": "Logogram (Shai (divinity))",
+        "text": "Logogram (šhꜥi (divinity))",
         "type": "logogram"
       }
     ],
@@ -96262,7 +96262,7 @@
     "description": "A Nile crocodile (Crocodylus niloticus) with its tail curved forward, below the body (I5), wearing a headdress consisting of two feathers on top of the horns of a ram (S77).",
     "meanings": [
       {
-        "text": "Logogram (Sobek (divinity))",
+        "text": "Logogram (sobek (divinity))",
         "type": "logogram"
       }
     ],
@@ -96290,7 +96290,7 @@
     "description": "A Nile crocodile (Crocodylus niloticus), wearing a headdress consisting of two feathers on top of the horns of a ram, with a cobra (Naja haje), standing up, with expanded hood (uraeus), with sun disks its head on either side of the feathers, orientated outwards.",
     "meanings": [
       {
-        "text": "Logogram (Sobek (divinity))",
+        "text": "Logogram (sobek (divinity))",
         "type": "logogram"
       }
     ],
@@ -96686,7 +96686,7 @@
     "description": "A snake with human arms, extended at the sides, with the forearms angling forward.",
     "meanings": [
       {
-        "text": "Logogram (Nehebkau (divinity))",
+        "text": "Logogram (nehebkau (divinity))",
         "type": "logogram"
       }
     ],
@@ -97770,7 +97770,7 @@
     "description": "A cobra (Naja haje), standing up, with expanded hood (uraeus) (I64), wearing a headdress consisting of a sun disk between the horns of a bovid (F102).",
     "meanings": [
       {
-        "text": "Logogram (Hathor)",
+        "text": "Logogram (hathor)",
         "type": "logogram"
       }
     ],
@@ -97857,7 +97857,7 @@
     "description": "A cobra (Naja haje), standing up, with expanded hood (uraeus), with a coiled tail (I12), written over a sceptre with a straight shaft, a forked base, topped with the head of the Seth animal (S40), angling forwards, with a cartouche in a round form (V9) with the loop around the staff.",
     "meanings": [
       {
-        "text": "Logogram (Wadjet (divinity)",
+        "text": "Logogram (wadjet (divinity)",
         "type": "logogram"
       }
     ],
@@ -99091,7 +99091,7 @@
     "description": "A cobra, with the head of a bovid.",
     "meanings": [
       {
-        "text": "Logogram (lady of Dendera)",
+        "text": "Logogram (lady of dendera)",
         "type": "logogram"
       }
     ],
@@ -99120,7 +99120,7 @@
     "description": "A cobra, with the head of a bovid, with a sun disk between the horns.",
     "meanings": [
       {
-        "text": "Logogram (lady of Dendera)",
+        "text": "Logogram (lady of dendera)",
         "type": "logogram"
       }
     ],
@@ -100067,7 +100067,7 @@
     "description": "A cult image of a crocodile, wearing a headdress consisting of two feathers, connected back-to-back (H41) on its head.",
     "meanings": [
       {
-        "text": "Logogram (Sobek (divinity))",
+        "text": "Logogram (sobek (divinity))",
         "type": "logogram"
       }
     ],
@@ -100140,7 +100140,7 @@
     "description": "A Nile crocodile (Crocodylus niloticus), with a feather (H6), angled backwards, on its head; on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Medinet Habu)",
+        "text": "Logogram (Medinet habu)",
         "type": "logogram"
       }
     ],
@@ -100164,7 +100164,7 @@
     "description": "A Nile crocodile (Crocodylus niloticus) on top of a shrine (I4), wearing the Atef crown (S8).",
     "meanings": [
       {
-        "text": "Logogram (Sobek (divinity))",
+        "text": "Logogram (sobek (divinity))",
         "type": "logogram"
       }
     ],
@@ -100189,7 +100189,7 @@
     "description": "A Nile crocodile (Crocodylus niloticus) on top of a shrine (I4), with the sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus) (N6) on top of its head.",
     "meanings": [
       {
-        "text": "Logogram (Sobek-Re (divinity))",
+        "text": "Logogram (sobek-re (divinity))",
         "type": "logogram"
       }
     ],
@@ -100279,7 +100279,7 @@
     "description": "Nile crocodile (Crocodylus niloticus), on a base, with the sun, encircled by a cobra (Naja haje), standing up, with expanded hood (uraeus) (N6) on top of its head.",
     "meanings": [
       {
-        "text": "Logogram (Sobek-Re (divinity))",
+        "text": "Logogram (sobek-re (divinity))",
         "type": "logogram"
       }
     ],
@@ -100303,7 +100303,7 @@
     "description": "A frog or toad (I7), on top of a wickerwork basket (V30).",
     "meanings": [
       {
-        "text": "Logogram (Heqet (divinity))",
+        "text": "Logogram (heqet (divinity))",
         "type": "logogram"
       }
     ],
@@ -101082,7 +101082,7 @@
     "description": "Two mullets (Mugil cephalus), arranged vertically, on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (canal of the Two Fishes (in the second nome of Upper Egypt))",
+        "text": "Logogram (canal of the two Fishes (in the second nome of Upper Egypt))",
         "type": "logogram"
       }
     ],
@@ -101913,15 +101913,15 @@
     "description": "Representing a scorpion. The glyph as usually depicted lacks its tail and venomous stinger for superstitious reasons; this usage began in funerary texts in burial chambers but in time became standard. However, above-ground Old Kingdom examples typically show the scorpion intact, . Some of the earliest (intact) depictions are shown in profile, with all the legs on the underside; later the legs were placed on both sides, representing a more top-down view.",
     "meanings": [
       {
-        "text": "Logogram for srqt (“the goddess Serqet”).",
+        "text": "Logogram for srqt (“the goddess serqet”).",
         "type": "logogram"
       },
       {
-        "text": "Logogram for the name of King Scorpion (reading uncertain).",
+        "text": "Logogram for the name of King scorpion (reading uncertain).",
         "type": "logogram"
       },
       {
-        "text": "Logogram: srqt — Selkis",
+        "text": "Logogram: srqt — selkis",
         "type": "logogram"
       },
       {
@@ -102681,7 +102681,7 @@
     "description": "A scorpion (L19), on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Serket/Selkis (divinity))",
+        "text": "Logogram (serket/selkis (divinity))",
         "type": "logogram"
       }
     ],
@@ -102705,7 +102705,7 @@
     "description": "A covered or winged scorpion, holding a seal, attached to a neck string (S20).",
     "meanings": [
       {
-        "text": "Logogram (Serket/Selkis (divinity))",
+        "text": "Logogram (serket/selkis (divinity))",
         "type": "logogram"
       }
     ],
@@ -102806,7 +102806,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: jꜣm, jmA, jm",
+        "text": "Phonogram: jꜣm, jmꜣ, jm",
         "type": "phonogram"
       },
       {
@@ -103704,7 +103704,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram for ꜣḫt (“Akhet, inundation season”).",
+        "text": "Logogram for ꜣḫt (“ꜣkhet, inundation season”).",
         "type": "logogram"
       },
       {
@@ -103712,7 +103712,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ꜣḫt — Season of Inundation",
+        "text": "Logogram: ꜣḫt — season of inundation",
         "type": "logogram"
       },
       {
@@ -104919,7 +104919,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: hebrew Alef",
+        "text": "Phonogram: hebrew ꜣlef",
         "type": "phonogram"
       },
       {
@@ -105594,7 +105594,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: mḏw Sma — the tens of Upper Egypt",
+        "text": "Logogram: mḏw šmꜥ — the tens of Upper Egypt",
         "type": "logogram"
       }
     ],
@@ -105626,7 +105626,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: tꜣ-Smaw — Upper Egypt",
+        "text": "Logogram: tꜣ-šmꜥw — Upper Egypt",
         "type": "logogram"
       }
     ],
@@ -112286,7 +112286,7 @@
     "description": "The sky.",
     "meanings": [
       {
-        "text": "Phonogram: ḥr, Hrj, Hrw",
+        "text": "Phonogram: ḥr, ḥrj, ḥrw",
         "type": "phonogram"
       },
       {
@@ -112302,7 +112302,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative: šky, high",
+        "text": "Determinative: sky, high",
         "type": "determinative"
       },
       {
@@ -112371,11 +112371,11 @@
     "description": "A strip of land (N17), above a cluster of signs consisting of a bow, of an archaic type (Aa23), in front of a half round loaf of bread (X1), over a strip of land (N17); on top of a standard used for carrying religious symbols (R12), written on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Nubia, 1st nome of Upper Egypt)",
+        "text": "Logogram (nubia, 1st nome of Upper Egypt)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: tꜣ-stj — Taseti (first nome of Upper Egypt)",
+        "text": "Logogram: tꜣ-stj — taseti (first nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -112486,11 +112486,11 @@
     "description": "The pole of a balance, with the crossbar resembling a feather (H6), written horizontally (U39D), in front of a falcon (G5); on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Throne of Horus (Edfu, 2nd nome of Upper Egypt))",
+        "text": "Logogram (throne of horus (Edfu, 2nd nome of Upper Egypt))",
         "type": "logogram"
       },
       {
-        "text": "Logogram: wṯs-ḥr — Wetjes-Hor (second nome of Upper Egypt)",
+        "text": "Logogram: wṯs-ḥr — wetjes-hor (second nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -112726,7 +112726,7 @@
     "description": "A shield with a rounded top, with two arrows crossed over it, fletching upwards (T62) in front of a sedge written on top of a mouth (M24); on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Neith-South, 4th nome of Lower Egypt)",
+        "text": "Logogram (neith-south, 4th nome of Lower Egypt)",
         "type": "logogram"
       },
       {
@@ -112756,11 +112756,11 @@
     "description": "A sceptre with a straight shaft, a forked base, topped with the head of the Seth animal (S40), with a fillet and a backwards angled feather (H6) on top of the staff (R19); on top of a standard used for carrying religious symbols (R12), written on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Thebes)",
+        "text": "Logogram (thebes)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: wꜣst — Waset (fourth nome of Upper Egypt)",
+        "text": "Logogram: wꜣst — waset (fourth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -112869,7 +112869,7 @@
     "description": "The sky (N1) / a pectoral resembling the sky; with three vertical lines consisting of short horizontal strokes, with upwards arrows at the bottom of the vertical lines, with three triangular shapes on top of the sky.",
     "meanings": [
       {
-        "text": "Logogram (to be bright) or Classifier dew/scent/rain",
+        "text": "Logogram (to be bright) or classifier dew/scent/rain",
         "type": "logogram"
       }
     ],
@@ -113075,7 +113075,7 @@
     "description": "Two falcons (G5), arranged horizontally, on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (The two gods, 5th nome of Upper Egypt)",
+        "text": "Logogram (the two gods, 5th nome of Upper Egypt)",
         "type": "logogram"
       },
       {
@@ -113158,7 +113158,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḫꜣsww — Khasu (sixth nome of Lower Egypt)",
+        "text": "Logogram: ḫꜣsww — khasu (sixth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -113367,7 +113367,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥwj-jmntj — Hui-imenti (seventh nome of Lower Egypt)",
+        "text": "Logogram: ḥwj-jmntj — hui-imenti (seventh nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -113393,11 +113393,11 @@
     "description": "An emblem with a human face with cow ears, with two upwards line which curl inwards (R129), on top of a standard used for carrying religious symbols (R12), written on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Bat (7th nome of Upper Egypt))",
+        "text": "Logogram (bꜥt (7th nome of Upper Egypt))",
         "type": "logogram"
       },
       {
-        "text": "Logogram: bꜣt — Bat (seventh nome of Upper Egypt)",
+        "text": "Logogram: bꜣt — bꜥt (seventh nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113426,7 +113426,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥwj-jꜣbtj — Hui-jabtj (eighth nome of Lower Egypt)",
+        "text": "Logogram: ḥwj-jꜣbtj — hui-jꜥbtj (eighth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -113456,7 +113456,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: tꜣ-wr — Tawer (eighth nome of Upper Egypt)",
+        "text": "Logogram: tꜣ-wr — tawer (eighth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113485,7 +113485,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ḥnmmt — sun-folk of Heliopolis",
+        "text": "Logogram: ḥnmmt — sun-folk of heliopolis",
         "type": "logogram"
       },
       {
@@ -113673,7 +113673,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ꜣnḏtj — Anedjiti (ninth nome of Lower Egypt)",
+        "text": "Logogram: ꜣnḏtj — ꜣnedjiti (ninth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -113796,11 +113796,11 @@
     "description": "A cobra in repose (Naja haje) (I10), with a feather (H6) on its back, angling backwards; on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Wadjet, 10th nome of Upper Egypt)",
+        "text": "Logogram (wadjet, 10th nome of Upper Egypt)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: wꜣḏyt — Wadjit (tenth nome of Upper Egypt)",
+        "text": "Logogram: wꜣdyt — wꜥdjit (tenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113826,7 +113826,7 @@
     "description": "A stem of papyrus with a bud (M13), in front of a half round loaf of bread (X1), written below a cobra in repose (Naja haje) (I10); on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Wadjet, 10th nome of Upper Egypt)",
+        "text": "Logogram (wadjet, 10th nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -113914,7 +113914,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥsbw — Hesbu (eleventh nome of Lower Egypt)",
+        "text": "Logogram: ḥsbw — hesbu (eleventh nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -113943,7 +113943,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: sꜣ — Sha (eleventh nome of Upper Egypt)",
+        "text": "Logogram: sꜣ — šhꜥ (eleventh nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -114036,7 +114036,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ṯb-nṯr — Tjeb-netjer (twelfth nome of Lower Egypt)",
+        "text": "Logogram: ṯb-nṯr — tjeb-netjer (twelfth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -114065,7 +114065,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ꜣtft — Atfet (twelfth nome of Upper Egypt)",
+        "text": "Logogram: ꜣtft — ꜣtfet (twelfth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -114139,7 +114139,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥqꜣ-ꜥnḏw — Heqa-ondju (thirteenth nome of Lower Egypt)",
+        "text": "Logogram: ḥqꜣ-ꜥnḏw — heqa-ondju (thirteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -114377,7 +114377,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḫntj-jꜣbtj — Khenti-abt (fourteenth nome of Lower Egypt)",
+        "text": "Logogram: ḫntj-jꜣbtj — khenti-ꜥbt (fourteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -114465,11 +114465,11 @@
     "description": "An African sacred ibis (Threskiornis aethiopicus) (G26A), on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Thot nome, 15th nome of Lower Egypt)",
+        "text": "Logogram (thot nome, 15th nome of Lower Egypt)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏḥwtj — Djehuti (fifteenth nome of Lower Egypt)",
+        "text": "Logogram: ḏḥwtj — djehuti (fifteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -114548,7 +114548,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥꜣt-mḥjt — Hat-mehit (sixteenth nome of Lower Egypt)",
+        "text": "Logogram: ḥꜣt-mḥjt — ḥꜥt-mehit (sixteenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -114574,11 +114574,11 @@
     "description": "A basket with four pieces of grain or fruit (M39) in front of an oryx, standing (E28), on top of a standard used for the carrying of religious symbols (R12) on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Oryx nome, 16th nome of Upper Egypt)",
+        "text": "Logogram (oryx nome, 16th nome of Upper Egypt)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: mꜣ-ḥḏ — Ma-hedi (sixteenth nome of Upper Egypt)",
+        "text": "Logogram: mꜣ-ḥḏ — mꜥ-hedi (sixteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -114720,7 +114720,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: šmꜣ-bḥdt — Sema-Behdet (seventeenth nome of Lower Egypt)",
+        "text": "Logogram: šmꜣ-bḥdt — sema-behdet (seventeenth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -114746,7 +114746,7 @@
     "description": "A windpipe and lungs (F36), in front of a cluster of signs consisting of a tusk of an elephant (F18), above a human hand (D46); above a half round loaf of bread (X1) beside a plan of a crossroads in a village (O49); on top of a standard used for carrying religious symbols (R12), written on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (17th nome of Lower Egypt (Diospolis))",
+        "text": "Logogram (17th nome of Lower Egypt (diospolis))",
         "type": "logogram"
       }
     ],
@@ -114771,7 +114771,7 @@
     "description": "A jackal, lying down, tail downwards (E15), on top of a standard used for the carrying of religious symbols (R12) on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Anubis nome (17th nome of Upper Egypt))",
+        "text": "Logogram (ꜣnubis nome (17th nome of Upper Egypt))",
         "type": "logogram"
       },
       {
@@ -114821,11 +114821,11 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥr-ꜣḫtj — Harakhti",
+        "text": "Logogram: ḥr-ꜣḫtj — ḥꜥrꜥkhti",
         "type": "logogram"
       },
       {
-        "text": "Determinative for deserts and foreign countries, as in ꜣḫt (“place of sunrise/sunset”), ṯḥnw (“Libya”), stt (“Asia”).",
+        "text": "Determinative for deserts and foreign countries, as in ꜣḫt (“place of sunrise/sunset”), ṯḥnw (“libya”), stt (“ꜣsiꜥ”).",
         "type": "determinative"
       },
       {
@@ -114965,7 +114965,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: jmn — Amun",
+        "text": "Logogram: jmn — ꜣmun",
         "type": "logogram"
       }
     ],
@@ -115076,11 +115076,11 @@
     "description": "A human foot and lower leg (D58), written between two sceptres with a straight shaft, a forked base, topped with the head of the Seth animal (S40), on top of a standard used for carrying religious symbols (R12), written on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (place of Igai, 19th nome of Upper Egypt)",
+        "text": "Logogram (place of igꜥi, 19th nome of Upper Egypt)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: wꜣbwj — Wabui (nineteenth nome of Upper Egypt)",
+        "text": "Logogram: wꜣbwj — wabui (nineteenth nome of Upper Egypt)",
         "type": "logogram"
       }
     ],
@@ -115143,7 +115143,7 @@
     "description": "Sign of twentieth nome of Lower Egypt",
     "meanings": [
       {
-        "text": "Logogram: špd — Sopdu (twentieth nome of Lower Egypt)",
+        "text": "Logogram: špd — sopdu (twentieth nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -115699,7 +115699,7 @@
     "description": "The hill country over the edge of the cultivated areas.",
     "meanings": [
       {
-        "text": "Logogram: ḥꜣ — Ha",
+        "text": "Logogram: ḥꜣ — ḥꜥ",
         "type": "logogram"
       },
       {
@@ -116060,7 +116060,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥr — Horus",
+        "text": "Logogram: ḥr — horus",
         "type": "logogram"
       },
       {
@@ -116662,7 +116662,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative for bodies of water, interchanging with 𓈙 (S) in early times.",
+        "text": "Determinative for bodies of water, interchanging with 𓈙 (š) in early times.",
         "type": "determinative"
       },
       {
@@ -118252,7 +118252,7 @@
     "description": "The hill country over the edge of the cultivated areas (N25), on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Ha (divinity))",
+        "text": "Logogram (ḥꜥ (divinity))",
         "type": "logogram"
       }
     ],
@@ -118515,7 +118515,7 @@
     "description": "A sand covered mountain over the edge of the cultivated areas (N26), on top of a standard used for carrying religious symbols (R12)",
     "meanings": [
       {
-        "text": "Logogram (Ha (divinity))",
+        "text": "Logogram (ḥꜥ (divinity))",
         "type": "logogram"
       }
     ],
@@ -118690,7 +118690,7 @@
     "description": "An enclosed hill, with a shrub at the top (N30A), on top of a conical loaf of bread (X8).",
     "meanings": [
       {
-        "text": "Logogram (Dendera)",
+        "text": "Logogram (dendera)",
         "type": "logogram"
       }
     ],
@@ -118718,7 +118718,7 @@
     "description": "A plan of a prehistoric building at the town of Nekhen, written as an oval, with the angled lines touching the oval (O47), on top of a conical loaf of bread (X8).",
     "meanings": [
       {
-        "text": "Logogram (Dendera)",
+        "text": "Logogram (dendera)",
         "type": "logogram"
       }
     ],
@@ -118736,7 +118736,7 @@
     "description": "An oval of sand (N18), written on top of a conical loaf of bread (X8).",
     "meanings": [
       {
-        "text": "Logogram (Dendera)",
+        "text": "Logogram (dendera)",
         "type": "logogram"
       }
     ],
@@ -118754,7 +118754,7 @@
     "description": "A ripple of water (N35), written within an ova (N102), on top of a conical loaf of bread (X8).",
     "meanings": [
       {
-        "text": "Logogram (Dendera)",
+        "text": "Logogram (dendera)",
         "type": "logogram"
       }
     ],
@@ -120194,7 +120194,7 @@
     "description": "A horizontal line written within an oval.",
     "meanings": [
       {
-        "text": "Logogram (island (in ꞽw-ḏsḏs (El-Bahriya oasis)))",
+        "text": "Logogram (island (in ꞽw-ḏsḏs (el-bahriya oasis)))",
         "type": "logogram"
       }
     ],
@@ -121049,7 +121049,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ḥwt-aAt — large building",
+        "text": "Logogram: ḥwt-ꜥꜣt — large building",
         "type": "logogram"
       }
     ],
@@ -121209,7 +121209,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ḥwt-ḥr — Hathor",
+        "text": "Logogram: ḥwt-ḥr — hathor",
         "type": "logogram"
       }
     ],
@@ -121273,7 +121273,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram: ḥwt-Hr — Hut-her",
+        "text": "Logogram: ḥwt-ḥr — hut-her",
         "type": "logogram"
       }
     ],
@@ -122477,7 +122477,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥd-sd — Sed festival",
+        "text": "Logogram: ḥd-sd — sed festival",
         "type": "logogram"
       }
     ],
@@ -122889,7 +122889,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: pyrꜥmid",
+        "text": "Determinative: pyramid",
         "type": "determinative"
       }
     ],
@@ -124244,7 +124244,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: štꜥirwꜥy",
+        "text": "Determinative: stairway",
         "type": "determinative"
       },
       {
@@ -124305,7 +124305,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: štꜥirwꜥy, ascent",
+        "text": "Determinative: stairway, ascent",
         "type": "determinative"
       },
       {
@@ -124986,7 +124986,7 @@
         "type": "logogram"
       },
       {
-        "text": "Determinative in names of settlements and inhabited places, as in kmt (“Egypt”), wꜣst (“Thebes”), spꜣt (“estate, farm”).",
+        "text": "Determinative in names of settlements and inhabited places, as in kmt (“Egypt”), wꜣst (“thebes”), spꜣt (“estate, farm”).",
         "type": "determinative"
       },
       {
@@ -126138,7 +126138,7 @@
     "description": "A falcon (G5), written inside a plan of a rectangular enclosure, with an internal rectangle in the top corner away from the reading direction; on top of a wickerwork basket (V30).",
     "meanings": [
       {
-        "text": "Logogram (Hathor, lady (of))",
+        "text": "Logogram (hathor, lady (of))",
         "type": "logogram"
       }
     ],
@@ -128022,7 +128022,7 @@
     "description": "A low shrine with a round roof, with two vertical lines enclosing the top, on top of a broad base, with a vertical line on either side of the shrine, with three horizontal strokes over it.",
     "meanings": [
       {
-        "text": "Logogram (sanctuary of Sokar)",
+        "text": "Logogram (sanctuary of sokar)",
         "type": "logogram"
       }
     ],
@@ -128063,7 +128063,7 @@
     "description": "A tall shrine with oblique sides, a triangular roof and a doorway.",
     "meanings": [
       {
-        "text": "Logogram (Dendera)",
+        "text": "Logogram (dendera)",
         "type": "logogram"
       }
     ],
@@ -130545,7 +130545,7 @@
     "description": "The head of a bovid, coming from an cone, with a forward, downward line of liquid coming from the mouth, on top of a base.",
     "meanings": [
       {
-        "text": "Logogram (Ennead)",
+        "text": "Logogram (ennead)",
         "type": "logogram"
       }
     ],
@@ -135165,7 +135165,7 @@
     "description": "A boat/ship with a prow and stern resembling the handle of a sickle (U1), on top of a rectangle resembling water, with a circle inside the boat/ship.",
     "meanings": [
       {
-        "text": "Logogram (Amon-Re)",
+        "text": "Logogram (ꜣmon-re)",
         "type": "logogram"
       }
     ],
@@ -135412,7 +135412,7 @@
     "description": "A bovid, lying down, written within a boat/ship with a prow and stern resembling the handle of a sickle (U1) (P106), with a star (N14) above the back of the bovid.",
     "meanings": [
       {
-        "text": "Logogram (Sothis)",
+        "text": "Logogram (sothis)",
         "type": "logogram"
       }
     ],
@@ -135622,7 +135622,7 @@
     "description": "A moon-sickle shaped boat with a higher prow than stern, with the head of an antelope (F81) on top of the prow, on top of a rectangle representing water, with a falcon (G5) standing on top of a façade of a shrine with a flat roof, with oblique sides, with a large doorway (O21B), inside the boat/ship, with an oar/rudder at the back.",
     "meanings": [
       {
-        "text": "Logogram ḥnw (Henu-bark of Sokar) or phonemogram skr",
+        "text": "Logogram ḥnw (henu-bꜥrk of sokar) or phonemogram skr",
         "type": "logogram"
       }
     ],
@@ -135652,7 +135652,7 @@
     "description": "A moon-sickle shaped boat with a higher prow than stern, with the head of an antelope (F81) on top of the prow, on top of a rectangle with a broad base, with a falcon (G5) standing on top of a low cone shape, written inside the boat/ship.",
     "meanings": [
       {
-        "text": "Logogram (Henu-bark of Sokar)",
+        "text": "Logogram (henu-bꜥrk of sokar)",
         "type": "logogram"
       }
     ],
@@ -135881,7 +135881,7 @@
     "description": "A moon-sickle shaped boat with a higher stern than prow, with the head of an antelope (F081) on top of the stern, on top of a rectangle representing water, with a tall shrine with a round roof, with two vertical lines enclosing the top, on a base, without internal decoration (O020D), written inside the boat/ship, with an oar/rudder at the front.",
     "meanings": [
       {
-        "text": "Logogram (Henu-bark of Sokar)",
+        "text": "Logogram (henu-bꜥrk of sokar)",
         "type": "logogram"
       }
     ],
@@ -135979,7 +135979,7 @@
     "description": "A moon-sickle shaped boat with a higher prow than stern, with the head of an antelope (F81) on top of the prow, on top of a rectangle representing water, with a falcon (G5) standing on top of a low cone shape inside the boat/ship, with an oar/rudder at the back.",
     "meanings": [
       {
-        "text": "Logogram (Henu-bark of Sokar)",
+        "text": "Logogram (henu-bꜥrk of sokar)",
         "type": "logogram"
       }
     ],
@@ -136009,7 +136009,7 @@
     "description": "A moon-sickle shaped boat with a higher stern than prow, with the head of an antelope (F81) on top of the stern, on top of a rectangle representing water, with a falcon (G5) standing on top of a low cone shape inside the boat/ship, with an oar/rudder at the front.",
     "meanings": [
       {
-        "text": "Logogram (Henu-bark of Sokar)",
+        "text": "Logogram (henu-bꜥrk of sokar)",
         "type": "logogram"
       }
     ],
@@ -136039,7 +136039,7 @@
     "description": "A moon-sickle shaped boat with a higher prow than stern, with the head of an antelope (F081) on top of the prow, on top of a rectangle representing water, with a falcon with spread wings, on top of a low cone shape inside the boat/ship, embracing the cone with its wings, with an oar/rudder at the back.",
     "meanings": [
       {
-        "text": "Logogram (Henu-bark of Sokar)",
+        "text": "Logogram (henu-bꜥrk of sokar)",
         "type": "logogram"
       }
     ],
@@ -136675,7 +136675,7 @@
     "description": "A moon-sickle shaped boat with a higher prow than stern, with the head of an antelope (F081) on top of the prow, on top of a sledge represented by four vertical lines between two horizontal lines, with a falcon with spread wings, on top of a low cone shape inside the boat/ship, embracing the cone with its wings, with an oar/rudder at the back.",
     "meanings": [
       {
-        "text": "Logogram (Henu-bark of Sokar)",
+        "text": "Logogram (henu-bꜥrk of sokar)",
         "type": "logogram"
       }
     ],
@@ -136705,7 +136705,7 @@
     "description": "A moon-sickle shaped boat with a higher prow than stern, with the head of an antelope (F081) on top of the prow, with a downward line with multiple horizontal lines written over it coming from the head, on top of a sledge represented by four vertical lines between two horizontal lines, with a falcon with spread wings, on top of a low cone shape inside the boat/ship, embracing the cone with its wings, with an oar/rudder at the back.",
     "meanings": [
       {
-        "text": "Logogram (Sokar)",
+        "text": "Logogram (sokar)",
         "type": "logogram"
       }
     ],
@@ -137158,7 +137158,7 @@
     "description": "A moon-sickle shaped boat with a higher prow than stern, with a rudder, with the head of an antelope (F081) on top of the prow, facing inwards, with a downward line with multiple horizontal lines written over it coming from the head, on top of a sledge, with a falcon (G005), standing on top of a rectangular shrine, with vertical lines as internal detail, written inside the boat/ship.",
     "meanings": [
       {
-        "text": "Logogram (Sokar)",
+        "text": "Logogram (sokar)",
         "type": "logogram"
       }
     ],
@@ -137386,7 +137386,7 @@
     "description": "A boat/ship, resembling a crescent moon, on top of a rectangle representing water, with a falcon with spread wings, on top of a low cone shape inside the boat/ship, embracing the cone with its wings, with an oar/rudder at the back.",
     "meanings": [
       {
-        "text": "Logogram (Henu-bark of Sokar)",
+        "text": "Logogram (henu-bꜥrk of sokar)",
         "type": "logogram"
       }
     ],
@@ -137642,7 +137642,7 @@
     "description": "A moon-sickle shaped boat with a higher prow than stern, with the head of an antelope (F81) on top of the prow, on top of a rectangle representing water, with a falcon (G5) standing on top of a tall cone shape, inside the boat/ship, with an oar/rudder at the back.",
     "meanings": [
       {
-        "text": "Logogram (Henu-bark of Sokar)",
+        "text": "Logogram (henu-bꜥrk of sokar)",
         "type": "logogram"
       }
     ],
@@ -137666,7 +137666,7 @@
     "description": "A moon-sickle shaped boat with a higher stern than prow, with the head of an antelope (F081) on top of the stern, on top of a block shaped shrine or table, with a falcon (G005) standing on top of a low cone shape inside the boat/ship, with an oar/rudder at the front.",
     "meanings": [
       {
-        "text": "Logogram (Sokar)",
+        "text": "Logogram (sokar)",
         "type": "logogram"
       }
     ],
@@ -138396,7 +138396,7 @@
     "description": "A brazier with a flame rising from it, flame angling towards the front.",
     "meanings": [
       {
-        "text": "Logogram: nsrsr — Fire-Island",
+        "text": "Logogram: nsrsr — fire-islꜥnd",
         "type": "logogram"
       },
       {
@@ -141117,7 +141117,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖrt-nTr — necropolis",
+        "text": "Logogram: ẖrt-ntr — necropolis",
         "type": "logogram"
       }
     ],
@@ -141907,7 +141907,7 @@
     "description": "A wig without a fillet, with a headdress consisting of two plumes (S9), with a cobra (Naja haje), standing up, with expanded hood (uraeus) written behind the wig, upon a pole.",
     "meanings": [
       {
-        "text": "Logogram (Abydos)",
+        "text": "Logogram (ꜣbydos)",
         "type": "logogram"
       }
     ],
@@ -141938,7 +141938,7 @@
     "description": "A wig without a fillet, with a headdress consisting of two plumes (S9), with a cobra (Naja haje), standing up, with expanded hood (uraeus) written behind the wig, upon a pole (R18A), on top of a sand covered mountain over the edge of the cultivated areas (N26).",
     "meanings": [
       {
-        "text": "Logogram (Abydos)",
+        "text": "Logogram (ꜣbydos)",
         "type": "logogram"
       }
     ],
@@ -141970,7 +141970,7 @@
     "description": "A wig without a fillet, with a headdress consisting of two plumes (S9), with a cobra (Naja haje), standing up, with expanded hood (uraeus) written behind the wig, upon a pole (R18A), on top of the hill country over the edge of the cultivated areas (N25).",
     "meanings": [
       {
-        "text": "Logogram (Abydos)",
+        "text": "Logogram (ꜣbydos)",
         "type": "logogram"
       }
     ],
@@ -142066,11 +142066,11 @@
     "description": "A sceptre with a straight shaft, a forked base, topped with the head of the Seth animal (S40), with a fillet and a backwards angled feather (H6) on top of the staff.",
     "meanings": [
       {
-        "text": "Logogram (Thebes)",
+        "text": "Logogram (thebes)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: wꜣst — Thebes",
+        "text": "Logogram: wꜣst — thebes",
         "type": "logogram"
       }
     ],
@@ -142113,11 +142113,11 @@
     "description": "A flower with a long stem, enclosed by the horns of a bovid, upside-down.",
     "meanings": [
       {
-        "text": "Logogram (Seshat (divinity))",
+        "text": "Logogram (seshat (divinity))",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ssꜣt — Seshat",
+        "text": "Logogram: ssꜣt — seshat",
         "type": "logogram"
       }
     ],
@@ -142146,7 +142146,7 @@
     "description": "A flower, enclosed by the horns of a bovid, upside-down.",
     "meanings": [
       {
-        "text": "Logogram (Seshat (divinity))",
+        "text": "Logogram (seshat (divinity))",
         "type": "logogram"
       }
     ],
@@ -142175,7 +142175,7 @@
     "description": "A flower with a long stem, enclosed by the horns of a bovid, upside-down, with two plumes (S9) on top of the horns.",
     "meanings": [
       {
-        "text": "Logogram (Seshat (divinity))",
+        "text": "Logogram (seshat (divinity))",
         "type": "logogram"
       }
     ],
@@ -142220,7 +142220,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḫm — Ausim",
+        "text": "Logogram: ḫm — ꜣusim",
         "type": "logogram"
       },
       {
@@ -142534,7 +142534,7 @@
     "description": "Bat",
     "meanings": [
       {
-        "text": "Logogram: bꜣt — Bat (symbol of Hathor)",
+        "text": "Logogram: bꜣt — bꜥt (symbol of hathor)",
         "type": "logogram"
       }
     ],
@@ -143316,7 +143316,7 @@
     "description": "A half round loaf of bread (X1), above an egg (H8), in front of a star (N14), written on top of a standard in the shape of a crescent moon, with a loop under the horizontal beam, running over the vertical pole.",
     "meanings": [
       {
-        "text": "Logogram spd.t (Sothis) or ẖn.ty ꞽꜣb.t (foremost of the east)",
+        "text": "Logogram spd.t (sothis) or ẖn.ty ꞽꜣb.t (foremost of the east)",
         "type": "logogram"
       }
     ],
@@ -143344,7 +143344,7 @@
     "description": "An unknown object, resembling a piece of cloth with two bands at the back, on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Duau (divinity))",
+        "text": "Logogram (duau (divinity))",
         "type": "logogram"
       }
     ],
@@ -143372,7 +143372,7 @@
     "description": "An unknown object, on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Duau (divinity))",
+        "text": "Logogram (duau (divinity))",
         "type": "logogram"
       }
     ],
@@ -144513,7 +144513,7 @@
     "description": "A sceptre with a straight shaft, topped with the head of the Seth animal, with a fillet and a backwards angled feather (H6) on top of the staff, on top of a plan of a crossroads in a village (R109).",
     "meanings": [
       {
-        "text": "Logogram (Thebes)",
+        "text": "Logogram (thebes)",
         "type": "logogram"
       }
     ],
@@ -144873,7 +144873,7 @@
     "description": "An emblem with a human face with cow ears, with two upward lines which curl inwards.",
     "meanings": [
       {
-        "text": "Logogram (Bat (7th nome of Upper Egypt))",
+        "text": "Logogram (bꜥt (7th nome of Upper Egypt))",
         "type": "logogram"
       }
     ],
@@ -145056,7 +145056,7 @@
     "description": "Nine times a cloth wound on a pole, an emblem of divinity (R8), arranged horizontally.",
     "meanings": [
       {
-        "text": "Logogram (Ennead)",
+        "text": "Logogram (ennead)",
         "type": "logogram"
       }
     ],
@@ -145355,7 +145355,7 @@
     "description": "A wig without a fillet, with a headdress consisting of two plumes (S9), with a cobra (Naja haje), standing up, with expanded hood (uraeus) written behind the wig, upon a pole (R18A), on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Abydos)",
+        "text": "Logogram (ꜣbydos)",
         "type": "logogram"
       }
     ],
@@ -145542,7 +145542,7 @@
     "description": "A sceptre with a straight shaft, a forked base, topped with the head of the Seth animal (S40), with a backwards angled feather (H6)on top of the staff.",
     "meanings": [
       {
-        "text": "Logogram (Thebes)",
+        "text": "Logogram (thebes)",
         "type": "logogram"
       }
     ],
@@ -145951,7 +145951,7 @@
     "description": "The Atef crown with ram horns and a sun disk.",
     "meanings": [
       {
-        "text": "Logogram (Atef crown)",
+        "text": "Logogram (ꜣtef crown)",
         "type": "logogram"
       },
       {
@@ -146638,7 +146638,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ssmtt — Shesmetet",
+        "text": "Logogram: ssmtt — shesmetet",
         "type": "logogram"
       }
     ],
@@ -147671,7 +147671,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḥpwj — Hepui",
+        "text": "Logogram: ḥpwj — hepui",
         "type": "logogram"
       }
     ],
@@ -147931,7 +147931,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Logogram: ꜣqs — Akes",
+        "text": "Logogram: ꜣqs — ꜣkes",
         "type": "logogram"
       },
       {
@@ -148471,7 +148471,7 @@
     "description": "The white crown of Upper Egypt in front of a flagellum (S45), on top of a standard used for carrying religious symbols, with a loop under the horizontal beam, running over the vertical pole (R12A).",
     "meanings": [
       {
-        "text": "Logogram (Baby (divinity))",
+        "text": "Logogram (baby (divinity))",
         "type": "logogram"
       }
     ],
@@ -148932,7 +148932,7 @@
     "description": "The Atef crown, on top of the horns of a ram, with an uraeus, with a sun disk on the head, facing outwards, at either side of the crown.",
     "meanings": [
       {
-        "text": "Logogram (Atef crown)",
+        "text": "Logogram (ꜣtef crown)",
         "type": "logogram"
       }
     ],
@@ -148975,7 +148975,7 @@
     "description": "A crown, consisting of three horizontally arranged Atef crowns with a round bulb at the top, and the sun disk at the base, on top of the horns of a ram, with an uraeus, with a sun disk on the head, facing outwards, at either side of the crown, with two ureai hanging downwards from the horns at either side.",
     "meanings": [
       {
-        "text": "Logogram (Hemhem crown)",
+        "text": "Logogram (hemhem crown)",
         "type": "logogram"
       }
     ],
@@ -149004,7 +149004,7 @@
     "description": "A crown, consisting of three horizontally arranged Atef crowns with a round bulb at the top, and the sun disk at the base, on top of the horns of a ram, with an uraeus, with a sun disk on the head, facing outwards, at either side of the crown.",
     "meanings": [
       {
-        "text": "Logogram (Hemhem crown)",
+        "text": "Logogram (hemhem crown)",
         "type": "logogram"
       }
     ],
@@ -149390,7 +149390,7 @@
     "description": "A headdress consisting of two feathers on top of the horns of a ram, with a cobra (Naja haje), standing up, with expanded hood (uraeus), with sun disks its head on either side of the feathers, orientated outwards.",
     "meanings": [
       {
-        "text": "Logogram (Elkab)",
+        "text": "Logogram (elkab)",
         "type": "logogram"
       }
     ],
@@ -151494,7 +151494,7 @@
     "description": "Two sceptres with a straight shaft, a forked base, topped with the head of the Seth animal (S40), written on top of a standard used for the carrying of religious symbols with the vertical stick at the far side (R92A).",
     "meanings": [
       {
-        "text": "Logogram (Igai (divinity))",
+        "text": "Logogram (igꜥi (divinity))",
         "type": "logogram"
       }
     ],
@@ -151583,7 +151583,7 @@
     "description": "A sceptre with a straight shaft, a forked base, topped with the head of the Seth animal (S40), under a double crescent moon (N11), arranged vertically, topped with a feather (H6), written on top of a standard used for the carrying of religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Iat (divinity)",
+        "text": "Logogram (iꜥt (divinity)",
         "type": "logogram"
       }
     ],
@@ -151853,7 +151853,7 @@
     "description": "A sceptre, with a short handle with a crossbar, with a long oval shape above the handle.",
     "meanings": [
       {
-        "text": "Logogram (Hetes-staff, baton)",
+        "text": "Logogram (hetes-stꜥff, baton)",
         "type": "logogram"
       }
     ],
@@ -152826,7 +152826,7 @@
     "description": "A crown, consisting of three horizontally arranged Atef crowns, on top of the horns of a ram, with an uraeus, facing outwards, at either side of the crown.",
     "meanings": [
       {
-        "text": "Logogram (Hemhem crown)",
+        "text": "Logogram (hemhem crown)",
         "type": "logogram"
       }
     ],
@@ -153134,7 +153134,7 @@
     "description": "The white crown of Upper Egypt, with an uraeus (S1A), on top of a standard used for carrying religious symbols, with a loop under the horizontal beam, running over the vertical pole (R12A).",
     "meanings": [
       {
-        "text": "Logogram (Tatenen (divinity))",
+        "text": "Logogram (tatenen (divinity))",
         "type": "logogram"
       }
     ],
@@ -153207,7 +153207,7 @@
     "description": "The Atef crown with ram horns and a sun disk, with a circle on top of the split top of the Atef crown.",
     "meanings": [
       {
-        "text": "Logogram (Atef crown)",
+        "text": "Logogram (ꜣtef crown)",
         "type": "logogram"
       }
     ],
@@ -154247,7 +154247,7 @@
     "description": "A bowstring, coiled up, with a loop at the front end, and the back end angled downwards, with a loop on it.",
     "meanings": [
       {
-        "text": "Phonogram: ꜣr, Aj",
+        "text": "Phonogram: ꜣr, ꜣj",
         "type": "phonogram"
       },
       {
@@ -154403,15 +154403,15 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: tḥnw — Libia",
+        "text": "Logogram: tḥnw — libiꜥ",
         "type": "logogram"
       },
       {
-        "text": "Logogram: ꜣꜣm — Asian",
+        "text": "Logogram: ꜣꜣm — ꜣsiꜥn",
         "type": "logogram"
       },
       {
-        "text": "Logogram: nḥsj — Nubian",
+        "text": "Logogram: nḥsj — nubian",
         "type": "logogram"
       },
       {
@@ -154435,7 +154435,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative for foreign countries and people, as in ṯḥnw (“Libya”), ꜥꜣm (“Asiatic”), nḥsj (“Nubian”).",
+        "text": "Determinative for foreign countries and people, as in ṯḥnw (“libya”), ꜥꜣm (“ꜣsiꜥtic”), nḥsj (“nubian”).",
         "type": "determinative"
       },
       {
@@ -158571,7 +158571,7 @@
     "description": "A shield with a rounded top, with two arrows crossed over it, fletching upwards (T62), in front of a sedge (M23); on top of a standard used for carrying religious symbols (R12).",
     "meanings": [
       {
-        "text": "Logogram (Neith-South, 4th nome of Lower Egypt)",
+        "text": "Logogram (neith-south, 4th nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -158601,7 +158601,7 @@
     "description": "A shield with a rounded top, with two arrows crossed over it, fletching upwards (T62) in front of a mouth (D21) written over a sedge (M23); on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Neith-South, 4th nome of Lower Egypt)",
+        "text": "Logogram (neith-south, 4th nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -158630,7 +158630,7 @@
     "description": "A shield with a rounded top, with two arrows crossed over it, fletching upwards (T62) in front of a sedge (M23); on top of a standard used for carrying religious symbols (R12), on top of a parcel of land with irrigation ditches (N24).",
     "meanings": [
       {
-        "text": "Logogram (Neith-South, 4th nome of Lower Egypt)",
+        "text": "Logogram (neith-south, 4th nome of Lower Egypt)",
         "type": "logogram"
       }
     ],
@@ -158824,7 +158824,7 @@
     "description": "An arrow with rectangular fletching, written vertically, on top of a plan of a crossroads in a village (O49).",
     "meanings": [
       {
-        "text": "Logogram (Syene (Aswan))",
+        "text": "Logogram (syene (ꜣswꜥn))",
         "type": "logogram"
       }
     ],
@@ -162180,7 +162180,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ḥmꜣyt — salt",
+        "text": "Determinative: hmꜣyt — salt",
         "type": "determinative"
       }
     ],
@@ -165767,7 +165767,7 @@
     "description": "The sun, within a halo (N5), on top of a sledge (U15).",
     "meanings": [
       {
-        "text": "Logogram (Re-Atoum)",
+        "text": "Logogram (re-ꜣtoum)",
         "type": "logogram"
       }
     ],
@@ -166128,7 +166128,7 @@
     "description": "A hamadryas baboon (Papio hamadryas), seated, hands on knees, tail upwards.",
     "meanings": [
       {
-        "text": "Logogram (Thot)",
+        "text": "Logogram (thot)",
         "type": "logogram"
       }
     ],
@@ -168391,7 +168391,7 @@
         "type": "phonogram"
       },
       {
-        "text": "Phonogram: gꜣw, gAy",
+        "text": "Phonogram: gꜣw, gꜣy",
         "type": "phonogram"
       },
       {
@@ -168928,7 +168928,7 @@
     "description": "A tie or straps with a loop at the top, and a downward hanging loop at either side of the strings.",
     "meanings": [
       {
-        "text": "Logogram (Tit-amulet)",
+        "text": "Logogram (ṯit-amulet)",
         "type": "logogram"
       },
       {
@@ -171683,14 +171683,14 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ẖrj-Hbt — lector priest",
+        "text": "Logogram: ẖrj-ḥbt — lector priest",
         "type": "logogram"
       }
     ],
     "transliteration": [
+      "ẖrj-ḥbt",
       "ẖry-ḥ(ꜣ)bt",
-      "ẖriḥbt",
-      "ẖrj-ḥbt"
+      "ẖriḥbt"
     ],
     "related": [
       "W1",
@@ -171806,7 +171806,7 @@
         "type": "determinative"
       },
       {
-        "text": "Determinative: ꜣbw — Elephantine",
+        "text": "Determinative: ꜣbw — elephantine",
         "type": "determinative"
       }
     ],
@@ -176189,7 +176189,7 @@
     "description": "A granite vessel with small handles, written inside a diamond shaped enclosure, in which the ends of the lines overlap.",
     "meanings": [
       {
-        "text": "Logogram (Elephantine)",
+        "text": "Logogram (elephantine)",
         "type": "logogram"
       }
     ],
@@ -176257,7 +176257,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: ḏḥwtj — Thoth",
+        "text": "Logogram: ḏḥwtj — thoth",
         "type": "logogram"
       },
       {
@@ -176265,7 +176265,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: jnpw — Anubis",
+        "text": "Logogram: jnpw — ꜣnubis",
         "type": "logogram"
       },
       {
@@ -179478,7 +179478,7 @@
     "description": "",
     "meanings": [
       {
-        "text": "Logogram ḫmn (eight)/Logogram ḫmnw (Hermopolis)",
+        "text": "Logogram ḫmn (eight)/logogram ḫmnw (hermopolis)",
         "type": "logogram"
       }
     ],
@@ -180269,7 +180269,7 @@
     "description": "Representing perhaps a part of the steering gear of ships.",
     "meanings": [
       {
-        "text": "Biliteral phonogram for ḥp, as in ḥp (“Apis”), ḥpy (“Hapy”), ḥpt (“steering oar”).",
+        "text": "Biliteral phonogram for ḥp, as in ḥp (“Apis”), hpy (“Hapy”), ḥpt (“steering oar”).",
         "type": "phonogram"
       },
       {
@@ -181401,7 +181401,7 @@
         "type": "logogram"
       },
       {
-        "text": "Logogram: stḫ — Seth",
+        "text": "Logogram: stḫ — seth",
         "type": "logogram",
         "period": "MK"
       },
@@ -182436,11 +182436,11 @@
     "description": "A bow, of an archaic type, with the ends towards the back.",
     "meanings": [
       {
-        "text": "Logogram (Nubia)",
+        "text": "Logogram (nubia)",
         "type": "logogram"
       },
       {
-        "text": "Logogram: stj — Nubian",
+        "text": "Logogram: stj — nubian",
         "type": "logogram"
       },
       {

@@ -173,29 +173,35 @@ for (const g of glyphs) {
 console.log(`  Cleaned broken var references: ${varRefsCleaned}`);
 
 // ── 4. Convert MdC in meaning label transliterations ────────────────────────
-// Only convert the short token right after labels like "Logogram: KA"
+// Patterns: "Phonogram: Hr, Hrj" or "Logogram: KA — bull"
+// Only convert the transliteration tokens (before " — "), not the English description.
 let mdcInMeanings = 0;
-const LABEL_RE = /^((?:Logogram|Phonogram|Phonetic|Determinative)[:\s]+)([A-Za-z.\-=]{1,12})\b/;
+const LABEL_RE = /^((?:Logogram|Phonogram|Phonetic|Determinative)[:\s]+)(.+?)(\s*—\s*.*)?$/;
+const ENGLISH_MEANING_WORDS = new Set([
+  "male", "female", "penis", "man", "woman", "sun", "moon", "time",
+  "day", "boat", "house", "field", "water", "fire", "meat", "bread",
+  "foreign", "peoples", "countries", "in", "council", "sky", "high",
+  "gate", "strike", "force", "effort", "hide", "call", "dance",
+  "turn", "praise", "death", "statue", "eat", "drink", "speech",
+  "food", "pure", "clean", "strong", "sit", "lie", "guard", "protect",
+]);
 for (const g of glyphs) {
   for (const m of g.meanings) {
     const match = m.text.match(LABEL_RE);
-    if (match) {
-      const [, label, token] = match;
-      // Skip if token looks like an English word (all lowercase, common words)
-      const ENGLISH_WORDS = new Set([
-        "male", "female", "penis", "man", "woman", "sun", "moon", "time",
-        "day", "boat", "house", "field", "water", "fire", "meat", "bread",
-        "foreign", "peoples", "countries", "in", "council",
-      ]);
-      if (ENGLISH_WORDS.has(token.toLowerCase())) continue;
-      // Only convert if token contains MdC uppercase (A,H,S,T,D,X) or is short
-      if (!/[AHSTDX]/.test(token) && token === token.toLowerCase()) continue;
-      const converted = mdcToUnicode(token).toLowerCase();
-      const newText = m.text.replace(LABEL_RE, label + converted);
-      if (newText !== m.text) {
-        m.text = newText;
-        mdcInMeanings++;
-      }
+    if (!match) continue;
+    const [, label, translitPart, descPart] = match;
+    // Convert each comma/space-separated token in the translit part
+    const converted = translitPart.replace(/\b([A-Za-z.\-=]{1,12})\b/g, (token) => {
+      if (ENGLISH_MEANING_WORDS.has(token.toLowerCase())) return token;
+      if (!/[AHSTDX]/.test(token) && token === token.toLowerCase()) return token;
+      if (/[ꜣꜥḥḫẖšṯḏ]/.test(token)) return token;
+      const conv = mdcToUnicode(token).toLowerCase();
+      return conv !== token.toLowerCase() ? conv : token;
+    });
+    const newText = label + converted + (descPart ?? "");
+    if (newText !== m.text) {
+      m.text = newText;
+      mdcInMeanings++;
     }
   }
 }
@@ -287,8 +293,8 @@ function fixCorruptedEnglish(text: string): string {
   result = result.split(/(\s+|[,;:()""''".\-—/])/).map((token) => {
     if (!MDC_CHAR_RE.test(token)) return token; // no MdC chars, skip
     if (token.length < 2) return token;
-    // If token contains English vowels (e,o,u), it's a corrupted English word
-    if (/[eou]/i.test(token)) {
+    // If token contains English vowels (e,o,u,y), it's a corrupted English word
+    if (/[eouy]/i.test(token)) {
       let fixed = token;
       for (const [uni, ascii] of Object.entries(REVERSE_MDC)) {
         fixed = fixed.split(uni).join(ascii);
@@ -304,6 +310,10 @@ for (const g of glyphs) {
     let text = fixCorruptedEnglish(m.text);
     // Fix missing space after commas
     text = text.replace(/,([a-zA-Z])/g, ", $1");
+    // Re-capitalize meaning labels that got lowercased
+    text = text.replace(/^(phonogram|logogram|determinative|phonetic)(\b)/i, (_, w, rest) =>
+      w.charAt(0).toUpperCase() + w.slice(1) + rest
+    );
     if (text !== m.text) {
       m.text = text;
       englishFixed++;
