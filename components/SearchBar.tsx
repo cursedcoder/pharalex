@@ -153,6 +153,7 @@ export function SearchBar({
             placeholder-sandstone/60
             focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold
             ${sizes[size]}
+            ${showModeToggle ? "pr-36" : ""}
           `}
         />
         <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
