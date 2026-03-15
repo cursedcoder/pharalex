@@ -18,6 +18,7 @@ interface SearchBarProps {
   placeholder?: string;
   autoFocus?: boolean;
   showResults?: boolean;
+  showModeToggle?: boolean;
 }
 
 const sizes = {
@@ -33,8 +34,13 @@ export function SearchBar({
   placeholder = "Search by meaning, code, or transliteration...",
   autoFocus = false,
   showResults = true,
+  showModeToggle = false,
 }: SearchBarProps) {
   const [query, setQuery] = useState("");
+  const [searchMode, setSearchMode] = useState<"words" | "glyphs">(() => {
+    if (typeof window === "undefined") return "words";
+    return (localStorage.getItem("pharalex-search-mode") as "words" | "glyphs") || "words";
+  });
   const [items, setItems] = useState<MergedItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -104,7 +110,8 @@ export function SearchBar({
             router.push(items[selectedIndex].href);
             setIsOpen(false);
           } else if (query.trim()) {
-            router.push(`/search?q=${encodeURIComponent(query)}`);
+            const showParam = showModeToggle ? `&show=${searchMode}` : "";
+            router.push(`/search?q=${encodeURIComponent(query)}${showParam}`);
             setIsOpen(false);
           }
           break;
@@ -153,6 +160,27 @@ export function SearchBar({
           </svg>
         </div>
       </div>
+
+      {showModeToggle && (
+        <div className="flex justify-center gap-1 mt-2">
+          {(["words", "glyphs"] as const).map((mode) => (
+            <button
+              key={mode}
+              onClick={() => {
+                setSearchMode(mode);
+                localStorage.setItem("pharalex-search-mode", mode);
+              }}
+              className={`px-3 py-1 text-xs rounded-full transition-colors cursor-pointer ${
+                searchMode === mode
+                  ? "bg-gold/20 text-gold-dark font-medium"
+                  : "text-sandstone hover:text-brown hover:bg-sandstone/10"
+              }`}
+            >
+              {mode === "words" ? "Words" : "Glyphs"}
+            </button>
+          ))}
+        </div>
+      )}
 
       {showResults && isOpen && isLoading && items.length === 0 && (
         <div className="absolute z-50 w-full mt-2 bg-ivory dark:bg-ivory-dark border border-sandstone/30 rounded-lg shadow-lg overflow-hidden">
@@ -219,7 +247,7 @@ export function SearchBar({
 
           {query.trim() && (
             <Link
-              href={`/search?q=${encodeURIComponent(query)}`}
+              href={`/search?q=${encodeURIComponent(query)}${showModeToggle ? `&show=${searchMode}` : ""}`}
               onClick={() => setIsOpen(false)}
               className="block px-4 py-3 text-center text-sm text-gold hover:bg-gold/10 border-t border-sandstone/20"
             >

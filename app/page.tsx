@@ -133,6 +133,7 @@ export default async function HomePage() {
                   size="lg"
                   placeholder="Search hieroglyphs, words, or meanings..."
                   autoFocus
+                  showModeToggle
                 />
               </div>
 
