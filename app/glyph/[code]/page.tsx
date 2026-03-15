@@ -478,20 +478,28 @@ export default async function GlyphPage({ params }: PageProps) {
                               Full entry →
                             </Link>
                           </div>
-                          {/* POS sub-sections */}
+                          {/* POS sub-sections — merge same POS */}
                           <div className="space-y-3">
-                            {wiktEntries.map((entry, ei) => (
-                              <div key={ei}>
-                                <span className="text-xs italic text-sandstone">
-                                  {entry.pos}
-                                </span>
-                                <ExpandableList
-                                  items={entry.glosses}
-                                  max={5}
-                                  className="mt-1"
-                                />
-                              </div>
-                            ))}
+                            {(() => {
+                              const posGroups = new Map<string, string[]>();
+                              for (const entry of wiktEntries) {
+                                const existing = posGroups.get(entry.pos) ?? [];
+                                existing.push(...entry.glosses);
+                                posGroups.set(entry.pos, existing);
+                              }
+                              return [...posGroups.entries()].map(([pos, glosses]) => (
+                                <div key={pos}>
+                                  <span className="text-xs italic text-sandstone">
+                                    {pos}
+                                  </span>
+                                  <ExpandableList
+                                    items={glosses}
+                                    max={3}
+                                    className="mt-1"
+                                  />
+                                </div>
+                              ));
+                            })()}
                           </div>
                         </div>
                       );
