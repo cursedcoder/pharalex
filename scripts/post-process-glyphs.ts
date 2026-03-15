@@ -508,7 +508,21 @@ for (const g of glyphs) {
 }
 if (varDescFixed > 0) console.log(`  Fixed truncated variant descriptions: ${varDescFixed}`);
 
-// ── 12c. Link independent-number variants into parent's related array ────────
+// ── 12c. Normalize transliteration hyphens to dots ──────────────────────────
+// Egyptological convention uses dots to separate morphemes, not hyphens.
+let translitFixed = 0;
+for (const g of glyphs) {
+  for (let i = 0; i < g.transliteration.length; i++) {
+    const t = g.transliteration[i];
+    if (t.includes("-")) {
+      g.transliteration[i] = t.replace(/-/g, ".").replace(/\.{2,}/g, ".").replace(/^\.|\.$/g, "");
+      translitFixed++;
+    }
+  }
+}
+console.log(`  Normalized transliteration hyphens: ${translitFixed}`);
+
+// ── 12d. Link independent-number variants into parent's related array ────────
 // Extended Gardiner signs like B10 ("Variant of B1") have independent numbers
 // instead of letter suffixes (B1A). Add them to the parent's `related` array
 // so they show as variants on the parent's glyph page.
