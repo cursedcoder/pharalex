@@ -633,7 +633,11 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A132",
+      "A133",
+      "A135",
+      "A501"
     ],
     "source": "both",
     "tags": [
@@ -1187,7 +1191,11 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A122",
+      "A126",
+      "A130",
+      "A131"
     ],
     "source": "both",
     "tags": [
@@ -1436,7 +1444,18 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A196",
+      "A197",
+      "A203",
+      "A204",
+      "A205",
+      "A207",
+      "A208",
+      "A211",
+      "A212",
+      "D346",
+      "D360"
     ],
     "source": "both",
     "tags": [
@@ -1605,7 +1624,11 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A214",
+      "A215",
+      "A222",
+      "B75"
     ],
     "source": "both",
     "tags": [
@@ -2347,7 +2370,11 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A93",
+      "A94",
+      "A99",
+      "A100"
     ],
     "source": "both",
     "tags": [
@@ -2447,7 +2474,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "B67"
     ],
     "source": "both",
     "tags": [
@@ -2563,7 +2591,12 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A271",
+      "A278",
+      "A280",
+      "A491",
+      "C81"
     ],
     "source": "both",
     "tags": [
@@ -2603,7 +2636,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A276"
     ],
     "source": "both",
     "tags": [
@@ -2812,7 +2846,10 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A110",
+      "A157",
+      "A175"
     ],
     "source": "both",
     "tags": [
@@ -2906,7 +2943,9 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A107",
+      "A499"
     ],
     "source": "both",
     "tags": [
@@ -3009,7 +3048,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A307"
     ],
     "source": "both",
     "tags": [
@@ -3055,7 +3095,10 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A302",
+      "A310",
+      "A465"
     ],
     "source": "both",
     "tags": [
@@ -3305,7 +3348,12 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A151",
+      "A152",
+      "A155",
+      "A202",
+      "B55"
     ],
     "source": "both",
     "tags": [
@@ -3348,7 +3396,9 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A210",
+      "A226"
     ],
     "source": "both",
     "tags": [
@@ -3435,7 +3485,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A83"
     ],
     "source": "both",
     "tags": [
@@ -3575,7 +3626,10 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A137",
+      "A147",
+      "A201"
     ],
     "source": "both",
     "tags": [
@@ -3696,7 +3750,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A74"
     ],
     "source": "both",
     "tags": [
@@ -3825,7 +3880,11 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A229",
+      "A230",
+      "A235",
+      "A237"
     ],
     "source": "both",
     "tags": [
@@ -4120,7 +4179,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A493"
     ],
     "source": "both",
     "tags": [
@@ -4383,7 +4443,12 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A91",
+      "A140",
+      "A143",
+      "A509",
+      "C36"
     ],
     "source": "both",
     "tags": [
@@ -4874,7 +4939,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A500"
     ],
     "source": "both",
     "tags": [
@@ -5158,7 +5224,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A308"
     ],
     "source": "both",
     "tags": [
@@ -5201,7 +5268,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A161"
     ],
     "source": "both",
     "tags": [
@@ -6536,7 +6604,12 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A284",
+      "A286",
+      "A287",
+      "A289",
+      "A299"
     ],
     "source": "both",
     "tags": [
@@ -6599,7 +6672,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A283"
     ],
     "source": "unicode",
     "tags": [
@@ -7522,7 +7596,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A309"
     ],
     "source": "both",
     "tags": [
@@ -7676,7 +7751,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A105"
     ],
     "source": "both",
     "tags": [
@@ -7836,7 +7912,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A156"
     ],
     "source": "both",
     "tags": [
@@ -8276,7 +8353,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A72"
     ],
     "source": "unicode",
     "tags": [
@@ -8395,7 +8473,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A511"
     ],
     "source": "both",
     "tags": [
@@ -8934,7 +9013,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A89"
     ],
     "source": "unicode",
     "tags": [
@@ -9475,7 +9555,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A102"
     ],
     "source": "unicode",
     "tags": [
@@ -10763,7 +10844,9 @@
     "description": "Variant of A9",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "A127"
+    ],
     "source": "aegyptus",
     "tags": [
       "holding something",
@@ -11925,7 +12008,9 @@
     "description": "Variant of Y3 (scribe's outfit with palette on left)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "A149"
+    ],
     "source": "aegyptus",
     "tags": [
       "working",
@@ -12157,7 +12242,9 @@
     "description": "Variant of A35 (man building wall)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "A146"
+    ],
     "source": "aegyptus",
     "tags": [
       "working",
@@ -13215,7 +13302,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A185"
     ],
     "source": "unicode",
     "tags": [
@@ -13406,7 +13494,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A187"
     ],
     "source": "unicode",
     "tags": [
@@ -13669,7 +13758,9 @@
     "description": "Variant of A12 (soldier with bow and quiver)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "A198"
+    ],
     "source": "aegyptus",
     "tags": [
       "armed character",
@@ -13939,7 +14030,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A209"
     ],
     "source": "unicode",
     "tags": [
@@ -14216,7 +14308,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A218"
     ],
     "source": "unicode",
     "tags": [
@@ -14697,7 +14790,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A224"
     ],
     "source": "unicode",
     "tags": [
@@ -14846,7 +14940,9 @@
     "description": "Variant of A227",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "A227"
+    ],
     "source": "aegyptus",
     "tags": [
       "group",
@@ -15324,7 +15420,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A243"
     ],
     "source": "unicode",
     "tags": [
@@ -16835,7 +16932,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A502"
     ],
     "source": "unicode",
     "tags": [
@@ -17879,7 +17977,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "C16"
     ],
     "source": "unicode",
     "tags": [
@@ -18005,7 +18104,8 @@
       "A1C",
       "A2",
       "A2A",
-      "A3"
+      "A3",
+      "A490"
     ],
     "source": "unicode",
     "tags": [
@@ -27997,7 +28097,11 @@
       "B1B",
       "B1F",
       "B1G",
-      "B1I"
+      "B1I",
+      "B10",
+      "B18",
+      "B38",
+      "B46"
     ],
     "source": "both",
     "tags": [
@@ -28670,7 +28774,8 @@
       "B1A",
       "B1B",
       "B1F",
-      "B1G"
+      "B1G",
+      "C152"
     ],
     "source": "both",
     "tags": [
@@ -28879,7 +28984,8 @@
       "B1A",
       "B1B",
       "B1F",
-      "B1G"
+      "B1G",
+      "C311"
     ],
     "source": "both",
     "tags": [
@@ -29349,7 +29455,10 @@
       "B1A",
       "B1B",
       "B1F",
-      "B1G"
+      "B1G",
+      "B14",
+      "B17",
+      "B19"
     ],
     "source": "unicode",
     "tags": [
@@ -29959,7 +30068,8 @@
       "B1A",
       "B1B",
       "B1F",
-      "B1G"
+      "B1G",
+      "B22"
     ],
     "source": "unicode",
     "tags": [
@@ -33340,7 +33450,12 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2A"
+      "C2A",
+      "C48",
+      "C51",
+      "C52",
+      "C53",
+      "C59"
     ],
     "source": "both",
     "tags": [
@@ -33671,7 +33786,11 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C113",
+      "C115",
+      "C284",
+      "C295"
     ],
     "source": "both",
     "tags": [
@@ -33816,7 +33935,11 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C37",
+      "C38",
+      "C249",
+      "C287"
     ],
     "source": "both",
     "tags": [
@@ -34194,7 +34317,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C290"
     ],
     "source": "both",
     "tags": [
@@ -34713,7 +34837,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C154",
+      "C191"
     ],
     "source": "both",
     "tags": [
@@ -35181,7 +35307,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C173"
     ],
     "source": "both",
     "tags": [
@@ -35810,7 +35937,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C14",
+      "C304"
     ],
     "source": "both",
     "tags": [
@@ -36356,7 +36485,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C61"
     ],
     "source": "both",
     "tags": [
@@ -37049,7 +37179,9 @@
     "description": "Variant of C22 (god with head of falcon and moon disk)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C250"
+    ],
     "source": "aegyptus",
     "tags": [
       "canine-headed",
@@ -37564,7 +37696,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C28"
     ],
     "source": "unicode",
     "tags": [
@@ -37827,7 +37960,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C31",
+      "C301"
     ],
     "source": "unicode",
     "tags": [
@@ -37988,7 +38123,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C34"
     ],
     "source": "both",
     "tags": [
@@ -38235,7 +38371,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C41"
     ],
     "source": "unicode",
     "tags": [
@@ -38337,7 +38474,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C42"
     ],
     "source": "unicode",
     "tags": [
@@ -38541,7 +38679,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C44"
     ],
     "source": "unicode",
     "tags": [
@@ -38839,7 +38978,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C60"
     ],
     "source": "unicode",
     "tags": [
@@ -38899,7 +39039,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C47"
     ],
     "source": "unicode",
     "tags": [
@@ -39154,7 +39295,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C63"
     ],
     "source": "unicode",
     "tags": [
@@ -39437,7 +39579,10 @@
     "description": "Variant of C2 (god with head of falcon with sun on head and holding)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C54",
+      "C55"
+    ],
     "source": "aegyptus",
     "tags": [
       "hawk-headed",
@@ -39545,7 +39690,9 @@
     "transliteration": [
       "ḥr-bḥdty"
     ],
-    "related": [],
+    "related": [
+      "C56"
+    ],
     "source": "aegyptus",
     "tags": [
       "hawk-headed",
@@ -39656,7 +39803,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C62"
     ],
     "source": "unicode",
     "tags": [
@@ -39715,7 +39863,9 @@
     "description": "Variant of C2 (god with head of falcon with sun on head and holding)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C57"
+    ],
     "source": "aegyptus",
     "tags": [
       "hawk-headed",
@@ -39928,7 +40078,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C305"
     ],
     "source": "unicode",
     "tags": [
@@ -40104,7 +40255,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C68"
     ],
     "source": "unicode",
     "tags": [
@@ -40364,7 +40516,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C75"
     ],
     "source": "unicode",
     "tags": [
@@ -40844,7 +40997,10 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "A240",
+      "C80",
+      "C82"
     ],
     "source": "unicode",
     "tags": [
@@ -41067,7 +41223,11 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C91",
+      "C93",
+      "C94"
+    ],
     "source": "aegyptus",
     "tags": [
       "nile",
@@ -41357,7 +41517,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C96",
+      "C129"
     ],
     "source": "unicode",
     "tags": [
@@ -41512,7 +41674,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C99",
+      "C100"
     ],
     "source": "unicode",
     "tags": [
@@ -42283,7 +42447,9 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C106"
+    ],
     "source": "aegyptus",
     "tags": [
       "ennemy",
@@ -42358,7 +42524,9 @@
     "description": "Variant of C105",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C265"
+    ],
     "source": "aegyptus",
     "tags": [
       "ennemy",
@@ -42430,7 +42598,11 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C247",
+      "C252",
+      "C253",
+      "C269"
     ],
     "source": "unicode",
     "tags": [
@@ -42517,7 +42689,9 @@
     "transliteration": [
       "spdw"
     ],
-    "related": [],
+    "related": [
+      "C110"
+    ],
     "source": "aegyptus",
     "tags": [
       "hawk-headed",
@@ -42536,7 +42710,9 @@
     "description": "Variant of C109",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C109"
+    ],
     "source": "aegyptus",
     "tags": [
       "hawk-headed",
@@ -42831,7 +43007,9 @@
     "description": "Variant of C3 (god with head of ibis)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C246"
+    ],
     "source": "aegyptus",
     "tags": [
       "ibis-headed",
@@ -42888,7 +43066,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C117"
     ],
     "source": "unicode",
     "tags": [
@@ -44544,7 +44723,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C236",
+      "C237"
     ],
     "source": "unicode",
     "tags": [
@@ -44564,7 +44745,9 @@
     "description": "Variant of C149",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C150"
+    ],
     "source": "aegyptus",
     "tags": [
       "snake-headed",
@@ -44749,7 +44932,10 @@
     "description": "Variant of C9 (goddess with sun and horns)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C155",
+      "C157"
+    ],
     "source": "aegyptus",
     "tags": [
       "hathorian goddess",
@@ -44862,7 +45048,9 @@
     "description": "Variant of C154",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C158"
+    ],
     "source": "aegyptus",
     "tags": [
       "hathorian goddess",
@@ -44924,7 +45112,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C160"
     ],
     "source": "unicode",
     "tags": [
@@ -45249,7 +45438,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C162"
     ],
     "source": "unicode",
     "tags": [
@@ -45411,7 +45601,14 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C166",
+      "C167",
+      "C168",
+      "C169",
+      "C172",
+      "C273",
+      "C289"
     ],
     "source": "unicode",
     "tags": [
@@ -45605,7 +45802,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C230"
     ],
     "source": "both",
     "tags": [
@@ -45638,7 +45836,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C302"
     ],
     "source": "unicode",
     "tags": [
@@ -46001,7 +46200,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C300"
     ],
     "source": "unicode",
     "tags": [
@@ -46037,7 +46237,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C176",
+      "C178"
     ],
     "source": "unicode",
     "tags": [
@@ -46554,7 +46756,10 @@
     "transliteration": [
       "mwt"
     ],
-    "related": [],
+    "related": [
+      "C156",
+      "C184"
+    ],
     "source": "aegyptus",
     "tags": [
       "female",
@@ -46642,7 +46847,8 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C243"
     ],
     "source": "unicode",
     "tags": [
@@ -46779,7 +46985,9 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C187"
+    ],
     "source": "aegyptus",
     "tags": [
       "female",
@@ -46965,7 +47173,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C192",
+      "C194"
     ],
     "source": "unicode",
     "tags": [
@@ -47475,7 +47685,13 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C200",
+      "C201",
+      "C202",
+      "C203",
+      "C204",
+      "C296"
     ],
     "source": "unicode",
     "tags": [
@@ -48823,7 +49039,9 @@
       "C1D",
       "C1A",
       "C1B",
-      "C2"
+      "C2",
+      "C240",
+      "C241"
     ],
     "source": "unicode",
     "tags": [
@@ -50757,7 +50975,9 @@
     "description": "Variant of C199",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "C297"
+    ],
     "source": "aegyptus",
     "tags": [
       "sky-goddess"
@@ -54215,7 +54435,8 @@
       "D3",
       "D3A",
       "D4",
-      "D5"
+      "D5",
+      "D74"
     ],
     "source": "both",
     "tags": [
@@ -54403,7 +54624,8 @@
       "D2",
       "D3",
       "D3A",
-      "D5"
+      "D5",
+      "D136"
     ],
     "source": "both",
     "tags": [
@@ -54696,7 +54918,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D142"
     ],
     "source": "both",
     "tags": [
@@ -54914,7 +55137,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D144"
     ],
     "source": "both",
     "tags": [
@@ -55702,7 +55926,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D397"
     ],
     "source": "both",
     "tags": [
@@ -55973,7 +56198,51 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D160",
+      "D161",
+      "D162",
+      "D163",
+      "D164",
+      "D165",
+      "D166",
+      "D167",
+      "D168",
+      "D169",
+      "D170",
+      "D172",
+      "D173",
+      "D174",
+      "D175",
+      "D177",
+      "D178",
+      "D179",
+      "D180",
+      "D181",
+      "D182",
+      "D183",
+      "D184",
+      "D185",
+      "D186",
+      "D187",
+      "D188",
+      "D332",
+      "D347",
+      "D349",
+      "D351",
+      "D353",
+      "D355",
+      "D357",
+      "D367",
+      "D376",
+      "D379",
+      "D381",
+      "D386",
+      "D388",
+      "D389",
+      "D398",
+      "D399",
+      "D400"
     ],
     "source": "both",
     "tags": [
@@ -56129,7 +56398,9 @@
     "description": "Variant of D28",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "D375"
+    ],
     "source": "aegyptus",
     "tags": [
       "arms"
@@ -56172,7 +56443,16 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D189",
+      "D190",
+      "D191",
+      "D192",
+      "D193",
+      "D195",
+      "D196",
+      "D330",
+      "D403"
     ],
     "source": "both",
     "tags": [
@@ -56203,7 +56483,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D402"
     ],
     "source": "unicode",
     "tags": [
@@ -56322,7 +56603,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "A351"
     ],
     "source": "both",
     "tags": [
@@ -56443,7 +56725,10 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D354",
+      "D383",
+      "D391"
     ],
     "source": "both",
     "tags": [
@@ -56703,7 +56988,20 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D205",
+      "D206",
+      "D212",
+      "D215",
+      "D216",
+      "D221",
+      "D224",
+      "D227",
+      "D230",
+      "D232",
+      "D233",
+      "D345",
+      "D387"
     ],
     "source": "both",
     "tags": [
@@ -56773,7 +57071,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "A176"
     ],
     "source": "both",
     "tags": [
@@ -56832,7 +57131,9 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "A117",
+      "A118"
     ],
     "source": "both",
     "tags": [
@@ -56881,7 +57182,11 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D213",
+      "D214",
+      "D350",
+      "D407"
     ],
     "source": "both",
     "tags": [
@@ -56927,7 +57232,11 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D222",
+      "D226",
+      "D352",
+      "D385"
     ],
     "source": "both",
     "tags": [
@@ -56987,7 +57296,10 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D208",
+      "D209",
+      "D408"
     ],
     "source": "both",
     "tags": [
@@ -57084,7 +57396,9 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D252",
+      "D337"
     ],
     "source": "both",
     "tags": [
@@ -57133,7 +57447,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D368"
     ],
     "source": "both",
     "tags": [
@@ -57218,7 +57533,9 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D265",
+      "D270"
     ],
     "source": "both",
     "tags": [
@@ -57398,7 +57715,9 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D268",
+      "D269"
     ],
     "source": "both",
     "tags": [
@@ -57550,7 +57869,11 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D275",
+      "D276",
+      "D277",
+      "D278"
     ],
     "source": "both",
     "tags": [
@@ -57594,7 +57917,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D329"
     ],
     "source": "both",
     "tags": [
@@ -57834,7 +58158,11 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D281",
+      "D282",
+      "D380",
+      "D390"
     ],
     "source": "both",
     "tags": [
@@ -57905,7 +58233,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D410"
     ],
     "source": "both",
     "tags": [
@@ -58139,7 +58468,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D294"
     ],
     "source": "both",
     "tags": [
@@ -58326,7 +58656,25 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D295",
+      "D296",
+      "D304",
+      "D305",
+      "D306",
+      "D307",
+      "D308",
+      "D310",
+      "D311",
+      "D312",
+      "D313",
+      "D314",
+      "D315",
+      "D316",
+      "D317",
+      "D348",
+      "D409",
+      "D416"
     ],
     "source": "both",
     "tags": [
@@ -58352,7 +58700,12 @@
     "transliteration": [
       "ab"
     ],
-    "related": [],
+    "related": [
+      "D297",
+      "D298",
+      "D299",
+      "D302"
+    ],
     "source": "aegyptus",
     "tags": [
       "legs",
@@ -58392,7 +58745,15 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D301",
+      "D340",
+      "D342",
+      "D343",
+      "D344",
+      "D362",
+      "D384",
+      "D415"
     ],
     "source": "both",
     "tags": [
@@ -58443,7 +58804,10 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D323",
+      "D324",
+      "D361"
     ],
     "source": "both",
     "tags": [
@@ -58562,7 +58926,9 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D320",
+      "D321"
     ],
     "source": "unicode",
     "tags": [
@@ -58691,7 +59057,9 @@
     "transliteration": [
       "sꜣḥ"
     ],
-    "related": [],
+    "related": [
+      "D322"
+    ],
     "source": "aegyptus",
     "tags": [
       "bones",
@@ -61050,7 +61418,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D334"
     ],
     "source": "unicode",
     "tags": [
@@ -62956,7 +63325,16 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D198",
+      "D199",
+      "D201",
+      "D202",
+      "D203",
+      "D204",
+      "D335",
+      "D374",
+      "D404"
     ],
     "source": "unicode",
     "tags": [
@@ -63119,7 +63497,9 @@
     "description": "Variant of D36 (forearm)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "D377"
+    ],
     "source": "aegyptus",
     "tags": [
       "arms"
@@ -63571,7 +63951,9 @@
     "description": "Variant of D36 (forearm)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "D225"
+    ],
     "source": "aegyptus",
     "tags": [
       "arms"
@@ -63759,7 +64141,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D336"
     ],
     "source": "unicode",
     "tags": [
@@ -63824,7 +64207,14 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D239",
+      "D240",
+      "D241",
+      "D247",
+      "D248",
+      "D249",
+      "D258"
     ],
     "source": "unicode",
     "tags": [
@@ -63851,7 +64241,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D236"
     ],
     "source": "unicode",
     "tags": [
@@ -64362,7 +64753,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D256"
     ],
     "source": "unicode",
     "tags": [
@@ -65349,7 +65741,8 @@
       "D2",
       "D3",
       "D3A",
-      "D4"
+      "D4",
+      "D290"
     ],
     "source": "unicode",
     "tags": [
@@ -65573,7 +65966,9 @@
     "description": "Variant of D59",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "D303"
+    ],
     "source": "aegyptus",
     "tags": [
       "legs"
@@ -66172,7 +66567,9 @@
     "description": "Variant of S33 (sandle)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "D328"
+    ],
     "source": "aegyptus",
     "tags": [
       "foot"
@@ -66455,7 +66852,10 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "D338",
+      "D341"
+    ],
     "source": "aegyptus",
     "tags": [
       "arms"
@@ -67841,7 +68241,9 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "D255"
+    ],
     "source": "aegyptus",
     "tags": [
       "arms"
@@ -69741,7 +70143,8 @@
       "E1C",
       "E1A",
       "E2",
-      "E3"
+      "E3",
+      "E138"
     ],
     "source": "both",
     "tags": [
@@ -69992,7 +70395,7 @@
     ],
     "signName": "kid jumping",
     "transliterationCounts": {
-      "ib": 7
+      "ib": 5
     }
   },
   {
@@ -74886,7 +75289,8 @@
       "E1C",
       "E1A",
       "E2",
-      "E3"
+      "E3",
+      "E296"
     ],
     "source": "unicode",
     "tags": [
@@ -79825,7 +80229,8 @@
       "E1C",
       "E1A",
       "E2",
-      "E3"
+      "E3",
+      "E265"
     ],
     "source": "unicode",
     "tags": [
@@ -82450,7 +82855,11 @@
       "F1A",
       "F2",
       "F2A",
-      "F2B"
+      "F2B",
+      "F101",
+      "F103",
+      "F104",
+      "F105"
     ],
     "source": "both",
     "tags": [
@@ -83767,7 +84176,8 @@
       "F1A",
       "F2",
       "F2A",
-      "F2B"
+      "F2B",
+      "T58"
     ],
     "source": "both",
     "tags": [
@@ -84977,7 +85387,8 @@
       "F1A",
       "F2",
       "F2A",
-      "F2B"
+      "F2B",
+      "T103"
     ],
     "source": "both",
     "tags": [
@@ -89683,7 +90094,9 @@
     "transliteration": [
       "rḫty"
     ],
-    "related": [],
+    "related": [
+      "F177"
+    ],
     "source": "aegyptus",
     "tags": [
       "bovid",
@@ -90147,7 +90560,8 @@
       "G3",
       "G4",
       "G4A",
-      "G5"
+      "G5",
+      "G64"
     ],
     "source": "both",
     "tags": [
@@ -90408,7 +90822,24 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G99",
+      "G100",
+      "G101",
+      "G102",
+      "G110",
+      "G111",
+      "G122",
+      "G123",
+      "G124",
+      "G128",
+      "G134",
+      "G135",
+      "G137",
+      "G141",
+      "G146",
+      "G149",
+      "G157"
     ],
     "source": "both",
     "tags": [
@@ -90533,7 +90964,12 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G115",
+      "G116",
+      "G117",
+      "G118",
+      "G119"
     ],
     "source": "both",
     "tags": [
@@ -90715,7 +91151,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G138"
     ],
     "source": "unicode",
     "tags": [
@@ -90903,7 +91340,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G104"
     ],
     "source": "unicode",
     "tags": [
@@ -90949,7 +91387,9 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "P59",
+      "P60"
     ],
     "source": "both",
     "tags": [
@@ -90998,7 +91438,9 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G163",
+      "G164"
     ],
     "source": "both",
     "tags": [
@@ -91065,7 +91507,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "C108"
     ],
     "source": "both",
     "tags": [
@@ -91343,7 +91786,10 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G177",
+      "G178",
+      "G180"
     ],
     "source": "both",
     "tags": [
@@ -91407,7 +91853,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G183"
     ],
     "source": "both",
     "tags": [
@@ -91560,7 +92007,21 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G19",
+      "G20",
+      "G86",
+      "G87",
+      "G88",
+      "G89",
+      "G90",
+      "G91",
+      "G92",
+      "G93",
+      "G94",
+      "G95",
+      "G96",
+      "G98"
     ],
     "source": "both",
     "tags": [
@@ -91866,7 +92327,10 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G65",
+      "G103",
+      "G176"
     ],
     "source": "both",
     "tags": [
@@ -92418,7 +92882,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G166"
     ],
     "source": "both",
     "tags": [
@@ -93302,7 +93767,9 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G170",
+      "G171"
     ],
     "source": "both",
     "tags": [
@@ -93362,7 +93829,12 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G69",
+      "G70",
+      "G71",
+      "G79",
+      "G80"
     ],
     "source": "both",
     "tags": [
@@ -93444,7 +93916,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G76"
     ],
     "source": "both",
     "tags": [
@@ -93558,7 +94031,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G75"
     ],
     "source": "both",
     "tags": [
@@ -93995,7 +94469,10 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G234",
+      "G235",
+      "G236"
     ],
     "source": "both",
     "tags": [
@@ -94243,7 +94720,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G167"
     ],
     "source": "both",
     "tags": [
@@ -94458,7 +94936,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G204"
     ],
     "source": "unicode",
     "tags": [
@@ -95245,7 +95724,9 @@
     "transliteration": [
       "ḥtr"
     ],
-    "related": [],
+    "related": [
+      "G77"
+    ],
     "source": "aegyptus",
     "tags": [
       "group",
@@ -95360,7 +95841,9 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G84",
+      "G85"
     ],
     "source": "unicode",
     "tags": [
@@ -95816,7 +96299,9 @@
     "transliteration": [
       "mds"
     ],
-    "related": [],
+    "related": [
+      "G97"
+    ],
     "source": "aegyptus",
     "tags": [
       "owl"
@@ -96712,7 +97197,9 @@
     "description": "Variant of G5 (falcon)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "G126"
+    ],
     "source": "aegyptus",
     "tags": [
       "falcon",
@@ -98016,7 +98503,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G140"
     ],
     "source": "both",
     "tags": [
@@ -98301,7 +98789,9 @@
     "description": "Variant of G144",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "G150"
+    ],
     "source": "aegyptus",
     "tags": [
       "falcon",
@@ -98459,7 +98949,9 @@
     "description": "Variant of G5 (falcon)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "G155"
+    ],
     "source": "aegyptus",
     "tags": [
       "falcon",
@@ -98644,7 +99136,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G154"
     ],
     "source": "unicode",
     "tags": [
@@ -98739,7 +99232,9 @@
     "transliteration": [
       "sꜣb-šwt-pr-m-ꜣḫt"
     ],
-    "related": [],
+    "related": [
+      "G156"
+    ],
     "source": "aegyptus",
     "tags": [
       "falcon",
@@ -98820,7 +99315,9 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G159",
+      "G160"
     ],
     "source": "unicode",
     "tags": [
@@ -99276,7 +99773,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G169"
     ],
     "source": "unicode",
     "tags": [
@@ -99641,7 +100139,9 @@
     "description": "Variant of G14 (vulture)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "G181"
+    ],
     "source": "aegyptus",
     "tags": [
       "vulture",
@@ -99733,7 +100233,9 @@
     "description": "Variant of G15",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "G184"
+    ],
     "source": "aegyptus",
     "tags": [
       "vulture"
@@ -101407,7 +101909,8 @@
       "G2",
       "G3",
       "G4",
-      "G4A"
+      "G4A",
+      "G233"
     ],
     "source": "unicode",
     "tags": [
@@ -104043,7 +104546,10 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "H11",
+      "H12"
+    ],
     "source": "aegyptus",
     "tags": [
       "head"
@@ -104463,7 +104969,9 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "H22"
+    ],
     "source": "aegyptus",
     "tags": [
       "head"
@@ -106325,7 +106833,9 @@
       "I2",
       "I3",
       "I3A",
-      "I3C"
+      "I3C",
+      "G16",
+      "I66"
     ],
     "source": "both",
     "tags": [
@@ -106627,7 +107137,8 @@
       "I2",
       "I3",
       "I3A",
-      "I3C"
+      "I3C",
+      "I92"
     ],
     "source": "unicode",
     "tags": [
@@ -108139,7 +108650,8 @@
       "I2",
       "I3",
       "I3A",
-      "I3C"
+      "I3C",
+      "I51"
     ],
     "source": "unicode",
     "tags": [
@@ -109040,7 +109552,8 @@
       "I2",
       "I3",
       "I3A",
-      "I3C"
+      "I3C",
+      "I79"
     ],
     "source": "unicode",
     "tags": [
@@ -109283,7 +109796,8 @@
       "I2",
       "I3",
       "I3A",
-      "I3C"
+      "I3C",
+      "I87"
     ],
     "source": "unicode",
     "tags": [
@@ -112373,7 +112887,9 @@
     "transliteration": [
       "špt"
     ],
-    "related": [],
+    "related": [
+      "K24"
+    ],
     "source": "aegyptus",
     "tags": [
       "part-of-fish"
@@ -114536,7 +115052,8 @@
       "M1C",
       "M1D",
       "M2",
-      "M2B"
+      "M2B",
+      "M64"
     ],
     "source": "both",
     "tags": [
@@ -114728,7 +115245,8 @@
       "M1C",
       "M1D",
       "M2",
-      "M2B"
+      "M2B",
+      "M69"
     ],
     "source": "both",
     "tags": [
@@ -115060,7 +115578,8 @@
       "M1C",
       "M1D",
       "M2",
-      "M2B"
+      "M2B",
+      "M77"
     ],
     "source": "both",
     "tags": [
@@ -116539,7 +117058,8 @@
       "M1C",
       "M1D",
       "M2",
-      "M2B"
+      "M2B",
+      "M27"
     ],
     "source": "both",
     "tags": [
@@ -116597,7 +117117,9 @@
       "šmꜥ",
       "Šmꜥw"
     ],
-    "related": [],
+    "related": [
+      "M159"
+    ],
     "source": "aegyptus",
     "tags": [
       "rush",
@@ -116750,7 +117272,8 @@
       "M1C",
       "M1D",
       "M2",
-      "M2B"
+      "M2B",
+      "V130"
     ],
     "source": "both",
     "tags": [
@@ -117693,7 +118216,8 @@
       "M1C",
       "M1D",
       "M2",
-      "M2B"
+      "M2B",
+      "M187"
     ],
     "source": "both",
     "tags": [
@@ -117866,7 +118390,8 @@
       "M1C",
       "M1D",
       "M2",
-      "M2B"
+      "M2B",
+      "Z22"
     ],
     "source": "both",
     "tags": [
@@ -126307,7 +126832,8 @@
       "NL1",
       "NU1",
       "N2",
-      "NL2"
+      "NL2",
+      "O239"
     ],
     "source": "both",
     "tags": [
@@ -129426,7 +129952,9 @@
     "transliteration": [
       "iꜥḥ"
     ],
-    "related": [],
+    "related": [
+      "U104"
+    ],
     "source": "aegyptus",
     "tags": [
       "moon"
@@ -129747,7 +130275,9 @@
     "description": "Variant of N73",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "N143"
+    ],
     "source": "aegyptus",
     "tags": [
       "with standard",
@@ -133077,7 +133607,8 @@
       "O1B",
       "O3",
       "O4",
-      "O4B"
+      "O4B",
+      "O98"
     ],
     "source": "both",
     "tags": [
@@ -134047,7 +134578,8 @@
       "O1B",
       "O3",
       "O4",
-      "O4B"
+      "O4B",
+      "R31"
     ],
     "source": "unicode",
     "tags": [
@@ -134161,7 +134693,8 @@
       "O1B",
       "O3",
       "O4",
-      "O4B"
+      "O4B",
+      "O172"
     ],
     "source": "both",
     "tags": [
@@ -136247,7 +136780,8 @@
       "O1B",
       "O3",
       "O4",
-      "O4B"
+      "O4B",
+      "V126"
     ],
     "source": "both",
     "tags": [
@@ -140695,7 +141229,8 @@
       "O1B",
       "O3",
       "O4",
-      "O4B"
+      "O4B",
+      "O186"
     ],
     "source": "unicode",
     "tags": [
@@ -144147,7 +144682,8 @@
       "O1B",
       "O3",
       "O4",
-      "O4B"
+      "O4B",
+      "J31"
     ],
     "source": "both",
     "signName": "frieze"
@@ -150410,7 +150946,8 @@
       "Q1B",
       "Q2",
       "Q2C",
-      "Q2B"
+      "Q2B",
+      "Q35"
     ],
     "source": "both",
     "tags": [
@@ -151167,7 +151704,8 @@
       "Q1B",
       "Q2",
       "Q2C",
-      "Q2B"
+      "Q2B",
+      "Q21"
     ],
     "source": "unicode",
     "tags": [
@@ -153234,7 +153772,8 @@
       "R1G",
       "R1E",
       "R1h",
-      "R1I"
+      "R1I",
+      "H32"
     ],
     "source": "both",
     "tags": [
@@ -153845,7 +154384,8 @@
       "R1G",
       "R1E",
       "R1h",
-      "R1I"
+      "R1I",
+      "R92"
     ],
     "source": "both",
     "tags": [
@@ -153929,7 +154469,8 @@
       "R1G",
       "R1E",
       "R1h",
-      "R1I"
+      "R1I",
+      "G264"
     ],
     "source": "both",
     "tags": [
@@ -153997,7 +154538,8 @@
       "R1G",
       "R1E",
       "R1h",
-      "R1I"
+      "R1I",
+      "R110"
     ],
     "source": "both",
     "tags": [
@@ -154093,7 +154635,9 @@
       "R1G",
       "R1E",
       "R1h",
-      "R1I"
+      "R1I",
+      "D414",
+      "R111"
     ],
     "source": "both",
     "tags": [
@@ -155264,7 +155808,8 @@
       "R1G",
       "R1E",
       "R1h",
-      "R1I"
+      "R1I",
+      "R38"
     ],
     "source": "unicode",
     "tags": [
@@ -158313,7 +158858,8 @@
       "S1A",
       "S2A",
       "S3",
-      "S4"
+      "S4",
+      "S49"
     ],
     "source": "both",
     "tags": [
@@ -158418,7 +158964,8 @@
       "S1A",
       "S2",
       "S2A",
-      "S4"
+      "S4",
+      "S51"
     ],
     "source": "both",
     "tags": [
@@ -158507,7 +159054,9 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S53",
+      "S185"
     ],
     "source": "both",
     "tags": [
@@ -158654,7 +159203,9 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S60",
+      "S186"
     ],
     "source": "both",
     "tags": [
@@ -159030,7 +159581,9 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S13",
+      "S14"
     ],
     "source": "both",
     "tags": [
@@ -159430,7 +159983,8 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S195"
     ],
     "source": "both",
     "tags": [
@@ -160083,7 +160637,8 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S113"
     ],
     "source": "both",
     "tags": [
@@ -160210,7 +160765,9 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S30",
+      "S31"
     ],
     "source": "both",
     "tags": [
@@ -160433,7 +160990,8 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "D327"
     ],
     "source": "both",
     "tags": [
@@ -161052,7 +161610,8 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S154"
     ],
     "source": "both",
     "tags": [
@@ -161114,7 +161673,8 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S163"
     ],
     "source": "both",
     "tags": [
@@ -161271,7 +161831,8 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S199"
     ],
     "source": "both",
     "tags": [
@@ -161635,7 +162196,9 @@
     "description": "Variant of S3 (red crown)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "S52"
+    ],
     "source": "aegyptus",
     "tags": [
       "crown"
@@ -161788,7 +162351,9 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S58",
+      "S59"
     ],
     "source": "both",
     "tags": [
@@ -162163,7 +162728,8 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S184"
     ],
     "source": "unicode",
     "tags": [
@@ -162193,7 +162759,9 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S65",
+      "S70"
     ],
     "source": "unicode",
     "tags": [
@@ -162309,7 +162877,9 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "S68"
+    ],
     "source": "aegyptus",
     "tags": [
       "crown"
@@ -162354,7 +162924,9 @@
     "description": "Variant of S66",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "S69"
+    ],
     "source": "aegyptus",
     "tags": [
       "crown"
@@ -162520,7 +163092,9 @@
       "S1A",
       "S2",
       "S2A",
-      "S3"
+      "S3",
+      "S78",
+      "S80"
     ],
     "source": "unicode",
     "tags": [
@@ -162715,7 +163289,9 @@
     "description": "Variant of S73",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "S79"
+    ],
     "source": "aegyptus",
     "tags": [
       "crown"
@@ -162767,7 +163343,9 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "S206"
+    ],
     "source": "aegyptus",
     "tags": [
       "crown"
@@ -163192,7 +163770,9 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "S97"
+    ],
     "source": "aegyptus",
     "tags": [
       "necklace"
@@ -163320,7 +163900,11 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "S101",
+      "S102",
+      "S103"
+    ],
     "source": "aegyptus",
     "tags": [
       "necklace"
@@ -165140,7 +165724,11 @@
     "description": "Variant of S42 (sceptre of authority)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "S155",
+      "S156",
+      "S157"
+    ],
     "source": "aegyptus",
     "tags": [
       "scepter",
@@ -168100,7 +168688,8 @@
       "T2",
       "T3",
       "T3C",
-      "T3F"
+      "T3F",
+      "D356"
     ],
     "source": "both",
     "tags": [
@@ -168562,7 +169151,11 @@
       "T2",
       "T3",
       "T3C",
-      "T3F"
+      "T3F",
+      "D325",
+      "D326",
+      "T77",
+      "T78"
     ],
     "source": "both",
     "tags": [
@@ -169641,7 +170234,8 @@
       "T2",
       "T3",
       "T3C",
-      "T3F"
+      "T3F",
+      "T101"
     ],
     "source": "both",
     "tags": [
@@ -170296,7 +170890,8 @@
       "T2",
       "T3",
       "T3C",
-      "T3F"
+      "T3F",
+      "T133"
     ],
     "source": "unicode",
     "tags": [
@@ -171978,7 +172573,8 @@
       "T2",
       "T3",
       "T3C",
-      "T3F"
+      "T3F",
+      "T100"
     ],
     "source": "unicode",
     "tags": [
@@ -174082,7 +174678,9 @@
       "mꜣꜣ",
       "mꜣ"
     ],
-    "related": [],
+    "related": [
+      "U43"
+    ],
     "source": "aegyptus",
     "tags": [
       "sickle",
@@ -174466,7 +175064,10 @@
       "U2",
       "U6",
       "U7",
-      "U7B"
+      "U7B",
+      "U50",
+      "U51",
+      "U52"
     ],
     "source": "both",
     "tags": [
@@ -174860,7 +175461,8 @@
       "U2",
       "U6",
       "U7",
-      "U7B"
+      "U7B",
+      "U133"
     ],
     "source": "both",
     "tags": [
@@ -175167,7 +175769,8 @@
       "U2",
       "U6",
       "U7",
-      "U7B"
+      "U7B",
+      "U118"
     ],
     "source": "both",
     "tags": [
@@ -176544,7 +177147,9 @@
     "transliteration": [
       "ḫsf"
     ],
-    "related": [],
+    "related": [
+      "U130"
+    ],
     "source": "aegyptus",
     "tags": [
       "spindle",
@@ -176737,7 +177342,8 @@
       "U2",
       "U6",
       "U7",
-      "U7B"
+      "U7B",
+      "U92"
     ],
     "source": "both",
     "tags": [
@@ -178483,7 +179089,8 @@
       "U2",
       "U6",
       "U7",
-      "U7B"
+      "U7B",
+      "U95"
     ],
     "source": "unicode",
     "tags": [
@@ -180795,7 +181402,8 @@
       "V2",
       "V4",
       "V5",
-      "V6"
+      "V6",
+      "V43"
     ],
     "source": "both",
     "tags": [
@@ -181045,7 +181653,8 @@
       "V2",
       "V3",
       "V4",
-      "V5"
+      "V5",
+      "N89"
     ],
     "source": "both",
     "tags": [
@@ -181196,7 +181805,11 @@
       "V2",
       "V3",
       "V4",
-      "V5"
+      "V5",
+      "V55",
+      "V57",
+      "V114",
+      "V123"
     ],
     "source": "both",
     "tags": [
@@ -181350,7 +181963,8 @@
       "V2",
       "V3",
       "V4",
-      "V5"
+      "V5",
+      "V62"
     ],
     "source": "both",
     "tags": [
@@ -182141,7 +182755,8 @@
       "V2",
       "V3",
       "V4",
-      "V5"
+      "V5",
+      "V68"
     ],
     "source": "both",
     "tags": [
@@ -182419,7 +183034,8 @@
       "V2",
       "V3",
       "V4",
-      "V5"
+      "V5",
+      "V84"
     ],
     "source": "both",
     "tags": [
@@ -182620,7 +183236,9 @@
       "V2",
       "V3",
       "V4",
-      "V5"
+      "V5",
+      "V81",
+      "V116"
     ],
     "source": "both",
     "tags": [
@@ -183944,7 +184562,9 @@
     "description": "Variant of V10 (oval cartouche)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "V56"
+    ],
     "source": "aegyptus",
     "tags": [
       "cartouche",
@@ -184568,7 +185188,9 @@
     "description": "Variant of V29 (swab)",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "V90"
+    ],
     "source": "aegyptus",
     "tags": [
       "basket",
@@ -184646,7 +185268,11 @@
       "wꜣḥ",
       "sk"
     ],
-    "related": [],
+    "related": [
+      "V85",
+      "V86",
+      "V87"
+    ],
     "source": "aegyptus",
     "tags": [
       "broom",
@@ -184984,7 +185610,10 @@
       "V2",
       "V3",
       "V4",
-      "V5"
+      "V5",
+      "V99",
+      "V100",
+      "V101"
     ],
     "source": "unicode",
     "tags": [
@@ -185082,7 +185711,14 @@
       "V2",
       "V3",
       "V4",
-      "V5"
+      "V5",
+      "V103",
+      "V104",
+      "V105",
+      "V106",
+      "V107",
+      "V108",
+      "V109"
     ],
     "source": "unicode",
     "tags": [
@@ -186995,7 +187631,8 @@
       "W1B",
       "W2",
       "W2B",
-      "W3"
+      "W3",
+      "X11"
     ],
     "source": "both",
     "tags": [
@@ -188257,7 +188894,8 @@
       "W1B",
       "W2",
       "W2B",
-      "W3"
+      "W3",
+      "V120"
     ],
     "source": "both",
     "tags": [
@@ -189273,7 +189911,8 @@
       "W1B",
       "W2",
       "W2B",
-      "W3"
+      "W3",
+      "W55"
     ],
     "source": "unicode",
     "tags": [
@@ -192531,7 +193170,8 @@
       "Y2",
       "Y3B",
       "Y3C",
-      "Y5"
+      "Y5",
+      "A139"
     ],
     "source": "both",
     "tags": [
@@ -193187,7 +193827,9 @@
     "description": "",
     "meanings": [],
     "transliteration": [],
-    "related": [],
+    "related": [
+      "Y26"
+    ],
     "source": "aegyptus",
     "tags": [
       "music",
@@ -194819,7 +195461,9 @@
       "psḥ",
       "spd"
     ],
-    "related": [],
+    "related": [
+      "Z23"
+    ],
     "source": "aegyptus",
     "contains": [
       "M44"
@@ -195226,7 +195870,8 @@
       "Aa3",
       "Aa3A",
       "Aa3B",
-      "Aa4"
+      "Aa4",
+      "J1"
     ],
     "source": "both",
     "tags": [
@@ -195295,7 +195940,8 @@
       "Aa3",
       "Aa3A",
       "Aa3B",
-      "Aa4"
+      "Aa4",
+      "J2"
     ],
     "source": "both",
     "tags": [
@@ -195343,7 +195989,8 @@
       "Aa2",
       "Aa3A",
       "Aa3B",
-      "Aa4"
+      "Aa4",
+      "J3"
     ],
     "source": "both",
     "tags": [
@@ -195486,7 +196133,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J4"
     ],
     "source": "both",
     "tags": [
@@ -195563,7 +196211,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J5"
     ],
     "source": "both",
     "signName": "navigation instrument"
@@ -195688,7 +196337,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J6"
     ],
     "source": "both",
     "signName": "instrument"
@@ -195733,7 +196383,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J7"
     ],
     "source": "both",
     "signName": "instrument"
@@ -195867,7 +196518,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J8"
     ],
     "source": "both",
     "tags": [
@@ -195965,7 +196617,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J9"
     ],
     "source": "both",
     "signName": "instrument"
@@ -196009,7 +196662,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J10"
     ],
     "source": "both",
     "signName": "unknown"
@@ -196055,7 +196709,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J11"
     ],
     "source": "both",
     "tags": [
@@ -196105,7 +196760,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J12"
     ],
     "source": "both",
     "tags": [
@@ -196169,7 +196825,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J13"
     ],
     "source": "both",
     "tags": [
@@ -196215,7 +196872,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J14"
     ],
     "source": "both",
     "tags": [
@@ -196257,7 +196915,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J15"
     ],
     "source": "both",
     "tags": [
@@ -196323,7 +196982,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J16"
     ],
     "source": "both",
     "tags": [
@@ -196381,7 +197041,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J17"
     ],
     "source": "both",
     "signName": "lid",
@@ -196439,7 +197100,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J18"
     ],
     "source": "both",
     "signName": "square lid",
@@ -196517,7 +197179,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J19"
     ],
     "source": "both",
     "signName": "instrument"
@@ -196559,7 +197222,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J20"
     ],
     "source": "both",
     "tags": [
@@ -196720,7 +197384,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J21"
     ],
     "source": "both",
     "tags": [
@@ -196844,7 +197509,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J23"
     ],
     "source": "both",
     "tags": [
@@ -197287,7 +197953,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J24"
     ],
     "source": "both",
     "tags": [
@@ -197381,7 +198048,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J25"
     ],
     "source": "both",
     "signName": "unknown"
@@ -197430,7 +198098,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J26"
     ],
     "source": "both",
     "signName": "unknown"
@@ -197466,7 +198135,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J27"
     ],
     "source": "both",
     "signName": "spindle"
@@ -197634,7 +198304,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J28"
     ],
     "source": "both",
     "signName": "level"
@@ -197675,7 +198346,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J29"
     ],
     "source": "both",
     "signName": "instrument"
@@ -197719,7 +198391,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J30"
     ],
     "source": "both",
     "signName": "frieze"
@@ -197802,7 +198475,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J32"
     ],
     "source": "both",
     "signName": "archaic bow"
@@ -197860,7 +198534,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J34"
     ],
     "source": "unicode",
     "contains": [
@@ -198015,7 +198690,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J42"
     ],
     "source": "unicode"
   },
@@ -198162,7 +198838,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J50"
     ],
     "source": "unicode"
   },
@@ -198221,7 +198898,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J52"
     ],
     "source": "unicode"
   },
@@ -198257,7 +198935,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J53"
     ],
     "source": "unicode"
   },
@@ -198306,7 +198985,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J55"
     ],
     "source": "unicode"
   },
@@ -198341,7 +199021,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J56"
     ],
     "source": "both"
   },
@@ -198519,7 +199200,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J70"
     ],
     "source": "unicode"
   },
@@ -198648,7 +199330,8 @@
       "Aa2",
       "Aa3",
       "Aa3A",
-      "Aa3B"
+      "Aa3B",
+      "J80"
     ],
     "source": "unicode"
   },

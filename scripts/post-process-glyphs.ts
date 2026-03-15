@@ -508,6 +508,28 @@ for (const g of glyphs) {
 }
 if (varDescFixed > 0) console.log(`  Fixed truncated variant descriptions: ${varDescFixed}`);
 
+// ── 12c. Link independent-number variants into parent's related array ────────
+// Extended Gardiner signs like B10 ("Variant of B1") have independent numbers
+// instead of letter suffixes (B1A). Add them to the parent's `related` array
+// so they show as variants on the parent's glyph page.
+let variantLinks = 0;
+for (const g of glyphs) {
+  if (!g.description) continue;
+  const m = g.description.match(/^Variant of ([A-Za-z]+\d+[A-Za-z]*)/);
+  if (!m) continue;
+  const parentCode = m[1];
+  // Skip if this glyph IS a letter-suffix variant (already linked by convention)
+  const codeParts = g.code.match(/^([A-Za-z]+)(\d+)([A-Za-z]*)$/);
+  if (codeParts && codeParts[3]) continue; // has letter suffix, already handled
+  const parent = codeMap.get(parentCode);
+  if (!parent) continue;
+  if (!parent.related.includes(g.code)) {
+    parent.related.push(g.code);
+    variantLinks++;
+  }
+}
+console.log(`  Linked independent-number variants to parents: ${variantLinks}`);
+
 // ── 13. Transliteration frequency ranking (TLA corpus) ──────────────────────
 let ranked = 0;
 const translitFreq = new Map<string, number>();
