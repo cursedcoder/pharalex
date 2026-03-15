@@ -16,6 +16,10 @@ export interface WordPatch {
   newTranslation?: string | null;
   /** Override grammar if set */
   grammar?: string;
+  /** Override MdC string (fix quadrat grouping) */
+  mdc?: string;
+  /** Match on existing MdC to target a specific spelling */
+  mdcMatch?: string;
 }
 
 export const WORD_PATCHES: WordPatch[] = [
@@ -85,10 +89,22 @@ export const WORD_PATCHES: WordPatch[] = [
 ];
 
 /**
+ * MdC quadrat overrides — fix auto-quad grouping that pair-frequency
+ * alone can't resolve. Format: [transliteration, oldMdcSubstring, newMdcSubstring]
+ *
+ * mk: G17 (owl) should NOT stack with D36 (forearm). Vygus shows them
+ * side-by-side. Auto-quad applies G17:D36 from other words (mꜥ) but
+ * in mk words D36 stacks with V31 instead.
+ */
+export const MDC_OVERRIDES: [string, string, string][] = [
+  ["mk", "G17:D36", "G17-D36"],
+];
+
+/**
  * Apply patches to a words array. Returns count of patches applied.
  */
 export function applyWordPatches(
-  words: Array<{ transliteration: string; translation: string; grammar: string | null }>,
+  words: Array<{ transliteration: string; translation: string; grammar: string | null; mdc: string }>,
 ): number {
   let applied = 0;
   for (let i = words.length - 1; i >= 0; i--) {
@@ -96,6 +112,7 @@ export function applyWordPatches(
     for (const patch of WORD_PATCHES) {
       if (w.transliteration !== patch.transliteration) continue;
       if (!w.translation.includes(patch.translationMatch)) continue;
+      if (patch.mdcMatch && !w.mdc.includes(patch.mdcMatch)) continue;
 
       if (patch.newTranslation === null) {
         // Delete this entry
@@ -105,6 +122,9 @@ export function applyWordPatches(
       }
       if (patch.grammar !== undefined) {
         w.grammar = patch.grammar;
+      }
+      if (patch.mdc !== undefined) {
+        w.mdc = patch.mdc;
       }
       applied++;
       break;
