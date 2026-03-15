@@ -133,37 +133,40 @@ export default async function WordPage({ params }: Props) {
 
               {/* Header card */}
               <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-2xl p-6 sm:p-8">
-                <CopyableWordGlyph
-                  mdc={primaryEntry.mdc}
-                  baseSize={48}
-                  className="mb-5"
-                />
+                <div className="flex flex-col sm:flex-row items-start gap-6">
+                  <CopyableWordGlyph
+                    mdc={primaryEntry.mdc}
+                    baseSize={48}
+                  />
 
-                <h1 className="font-mono text-3xl sm:text-4xl font-bold text-brown leading-tight mb-0.5">
-                  {translitToUnicode(primaryEntry.transliteration)}
-                </h1>
-                <p className="font-mono text-sm text-sandstone mb-1">
-                  {primaryEntry.transliteration.replace(/ /g, ".").replace(/\.{2,}/g, ".")}
-                </p>
-                <p className="text-brown-light text-lg leading-relaxed mb-3">
-                  {primaryEntry.translation}
-                </p>
+                  <div className="flex-1">
+                    <h1 className="font-mono text-3xl sm:text-4xl font-bold text-brown leading-tight mb-0.5">
+                      {translitToUnicode(primaryEntry.transliteration)}
+                    </h1>
+                    <p className="font-mono text-sm text-sandstone mb-2">
+                      {primaryEntry.transliteration.replace(/ /g, ".").replace(/\.{2,}/g, ".")}
+                    </p>
+                    <p className="text-brown-light text-lg leading-relaxed mb-3">
+                      {primaryEntry.translation}
+                    </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {primaryEntry.grammar && (
-                    <Badge
-                      variant={GRAMMAR_BADGE_VARIANTS[primaryEntry.grammar] ?? "outline"}
-                      size="md"
-                    >
-                      {GRAMMAR_LABELS[primaryEntry.grammar] ?? primaryEntry.grammar}
-                    </Badge>
-                  )}
-                  {primaryEntry.grammarRaw && primaryEntry.grammarRaw.toLowerCase() !== (GRAMMAR_LABELS[primaryEntry.grammar ?? ""] ?? "").toLowerCase() && (
-                    <Badge variant="outline" size="md">{primaryEntry.grammarRaw}</Badge>
-                  )}
-                  {primaryEntry.notes.map((note, i) => (
-                    <Badge key={i} variant="outline" size="md">{note}</Badge>
-                  ))}
+                    <div className="flex flex-wrap gap-2">
+                      {primaryEntry.grammar && (
+                        <Badge
+                          variant={GRAMMAR_BADGE_VARIANTS[primaryEntry.grammar] ?? "outline"}
+                          size="md"
+                        >
+                          {GRAMMAR_LABELS[primaryEntry.grammar] ?? primaryEntry.grammar}
+                        </Badge>
+                      )}
+                      {primaryEntry.grammarRaw && primaryEntry.grammarRaw.toLowerCase() !== (GRAMMAR_LABELS[primaryEntry.grammar ?? ""] ?? "").toLowerCase() && (
+                        <Badge variant="outline" size="md">{primaryEntry.grammarRaw}</Badge>
+                      )}
+                      {primaryEntry.notes.map((note, i) => (
+                        <Badge key={i} variant="outline" size="md">{note}</Badge>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
