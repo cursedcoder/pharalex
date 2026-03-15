@@ -83,7 +83,10 @@ export async function generateMetadata({ params }: PageProps) {
 
   const primaryMeaning = glyph.meanings[0]?.text || "";
   const displayName = glyph.signName || primaryMeaning || glyph.categoryName;
-  const title = `${glyph.code} ${glyph.unicode} — ${displayName}`;
+  // Only include Unicode char in title if it's in the basic Egyptian block (most fonts support U+13000–U+1342F)
+  const cp = glyph.unicode?.codePointAt(0) ?? 0;
+  const titleChar = cp >= 0x13000 && cp <= 0x1342F ? ` ${glyph.unicode}` : "";
+  const title = `${glyph.code}${titleChar} — ${displayName}`;
   const description = `${glyph.code}: ${primaryMeaning} — Egyptian hieroglyph from the ${glyph.categoryName} (${glyph.category}) category.`;
 
   return {
