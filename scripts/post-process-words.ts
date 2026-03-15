@@ -8,7 +8,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { fixTypos } from "./typo-fixes";
-import { applyWordPatches } from "./word-patches";
+import { applyWordPatches, MDC_OVERRIDES } from "./word-patches";
 import { stripLeakedMdC, buildTranslitSet } from "./strip-leaked-mdc";
 import { autoQuad } from "./auto-quad";
 
@@ -340,6 +340,18 @@ for (const w of words) {
   }
 }
 console.log(`  Auto-quadded MdC: ${quadded}`);
+
+// ── 13. MdC overrides — fix auto-quad groupings that pair-frequency can't resolve
+let mdcOverrides = 0;
+for (const w of words) {
+  for (const [translit, oldSub, newSub] of MDC_OVERRIDES) {
+    if (w.transliteration === translit && w.mdc.includes(oldSub)) {
+      w.mdc = w.mdc.replace(oldSub, newSub);
+      mdcOverrides++;
+    }
+  }
+}
+console.log(`  MdC overrides applied: ${mdcOverrides}`);
 
 // ── Write output ────────────────────────────────────────────────────────────
 fs.writeFileSync(WORDS_PATH, JSON.stringify(words));
