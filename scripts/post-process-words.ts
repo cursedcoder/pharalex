@@ -10,6 +10,7 @@ import * as path from "path";
 import { fixTypos } from "./typo-fixes";
 import { applyWordPatches } from "./word-patches";
 import { stripLeakedMdC, buildTranslitSet } from "./strip-leaked-mdc";
+import { autoQuad } from "./auto-quad";
 
 const WORDS_PATH = path.join(process.cwd(), "public/data/words.json");
 
@@ -298,6 +299,42 @@ for (const w of words) {
   }
 }
 console.log(`  Trimmed whitespace: ${trimmed}`);
+
+// ── 11. Strip technical editorial notes (Gardiner code references, rendering) ─
+const GARDINER_RE = /[A-Z]\d+[A-Z]?\b/;
+let notesStripped = 0;
+for (const w of words) {
+  if (!w.notes || w.notes.length === 0) continue;
+  const before = w.notes.length;
+  w.notes = w.notes.filter((n: string) => {
+    const nl = n.toLowerCase();
+    // Strip notes about sign rendering/orientation
+    if (nl.includes("should be")) return false;
+    if (nl.includes("rotated")) return false;
+    if (nl.includes("mirrored")) return false;
+    if (nl.includes("lying flat")) return false;
+    if (nl.includes("elongated")) return false;
+    // Strip "uncertain of [CODE]" and "[CODE] or [CODE]" patterns
+    if (nl.startsWith("uncertain of") && GARDINER_RE.test(n)) return false;
+    if (nl.startsWith("uncertain whether") && GARDINER_RE.test(n)) return false;
+    if (nl.startsWith("uncertain which") && GARDINER_RE.test(n)) return false;
+    if (/^[A-Z]\d+/.test(n) && /\bor\b/.test(nl)) return false;
+    return true;
+  });
+  if (w.notes.length < before) notesStripped += (before - w.notes.length);
+}
+if (notesStripped > 0) console.log(`  Stripped technical notes: ${notesStripped}`);
+
+// ── 12. Auto-quad: enrich flat MdC with stacking/grouping operators ─────────
+let quadded = 0;
+for (const w of words) {
+  const result = autoQuad(w.mdc);
+  if (result !== w.mdc) {
+    w.mdc = result;
+    quadded++;
+  }
+}
+console.log(`  Auto-quadded MdC: ${quadded}`);
 
 // ── Write output ────────────────────────────────────────────────────────────
 fs.writeFileSync(WORDS_PATH, JSON.stringify(words));
