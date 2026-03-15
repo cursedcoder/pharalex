@@ -89,17 +89,19 @@ export const WORD_PATCHES: WordPatch[] = [
 ];
 
 /**
- * Blocked quad pairs per transliteration — prevents auto-quad from
- * pairing signs that pair-frequency incorrectly groups together.
- * Format: [transliteration, "A,B"] where A,B should NOT be stacked.
- *
- * mk: G17 (owl) should NOT stack with D36 (forearm). Vygus shows them
- * side-by-side. Auto-quad applies G17:D36 from other words (mꜥ) but
- * in mk words D36 stacks with V31 instead.
+ * Blocked quad pairs — prevents auto-quad from pairing signs that
+ * pair-frequency incorrectly groups together.
+ * Format: [transliteration, "A,B", mdcMustContain?]
+ *   - A,B should NOT be stacked
+ *   - optional 3rd element: only apply if flat MdC contains this sign
  */
-export const BLOCKED_QUAD_PAIRS: [string, string][] = [
+export const BLOCKED_QUAD_PAIRS: [string, string, string?][] = [
+  // mk: G17 (owl) should NOT stack with D36 (forearm)
   ["mk", "G17,D36"],
+  // mk: G20 and V31 are separate in Vygus
   ["mk", "G20,V31"],
+  // mk with J15: all three signs (J15, D36, V31) are separate in Vygus
+  ["mk", "D36,V31", "J15"],
 ];
 
 /**
