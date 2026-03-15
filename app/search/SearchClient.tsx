@@ -49,7 +49,7 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
   return (
     <div onClick={handleClick} className="block group cursor-pointer">
       <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-4 h-full hover:shadow-md hover:border-gold/40 transition-all duration-200">
-        <div className="w-full rounded-lg bg-papyrus/50 border border-sandstone/20 flex items-center justify-center py-3 mb-4 overflow-hidden group-hover:scale-[1.02] transition-transform">
+        <div className="w-full rounded-lg bg-papyrus/50 border border-sandstone/20 flex items-center justify-center py-3 mb-4 overflow-x-auto group-hover:scale-[1.02] transition-transform">
           <Quadrat mdc={result.mdc} baseSize={36} />
         </div>
         <div className="flex items-center gap-2 mb-1">
