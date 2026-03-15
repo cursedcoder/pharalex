@@ -1,0 +1,48 @@
+name: Data Correction
+description: Report an incorrect translation, transliteration, hieroglyphic spelling, or quadrat layout
+labels: ["data", "correction"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: What needs correcting?
+      options:
+        - Translation / meaning
+        - Transliteration (MdC)
+        - Hieroglyphic spelling (wrong signs)
+        - Quadrat layout (signs grouped incorrectly)
+        - Missing word or glyph
+        - Sign description or category
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Link to the PharaLex page with the error
+      placeholder: https://pharalex.app/words/nfr
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What it currently shows
+      placeholder: "e.g. mk is shown as a single word, G17 stacked on D36"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What it should be
+      placeholder: "e.g. m.k with G17 separate, D36:V31 stacked"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Reference source
+      description: Dictionary, grammar, or publication that supports the correction
+      placeholder: "e.g. Gardiner's Egyptian Grammar p.123, or Faulkner's Dictionary"
+    validations:
+      required: false
