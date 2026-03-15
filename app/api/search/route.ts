@@ -84,11 +84,12 @@ async function searchWords(query: string, limit = 40, opts: WordSearchOptions = 
       const codes = w.mdc.split("-");
       if (codes.includes(q)) results.push(w);
     } else if (opts.exact) {
-      // Exact = exact transliteration match (with y↔i normalization) OR translation contains
+      // Exact = exact transliteration match (with y↔i normalization) OR translation word-boundary match
       const normQ = ql.replace(/y/g, "i").replace(/j/g, "i");
       const normT = w.transliteration.toLowerCase().replace(/y/g, "i").replace(/j/g, "i");
       const tlExact = normT === normQ;
-      const trMatch = w.translation.toLowerCase().includes(ql);
+      const trRe = new RegExp(`\\b${ql.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+      const trMatch = trRe.test(w.translation);
       if (tlExact || trMatch) results.push(w);
     } else {
       // Normalize y↔i for transliteration matching (mry = mri in Vygus)
