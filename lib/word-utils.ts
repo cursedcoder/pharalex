@@ -20,6 +20,8 @@ export function translitToUnicode(translit: string): string {
   for (const [from, to] of MdC_TO_UNICODE) {
     s = s.split(from).join(to);
   }
+  // Egyptological convention: dots separate morphemes (aHa.n → ꜥḥꜥ.n)
+  s = s.replace(/ /g, ".").replace(/\.{2,}/g, ".");
   return s;
 }
 

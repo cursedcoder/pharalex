@@ -137,9 +137,12 @@ export default async function WordPage({ params }: Props) {
                   className="mb-5"
                 />
 
-                <h1 className="font-mono text-3xl sm:text-4xl font-bold text-brown leading-tight mb-1">
+                <h1 className="font-mono text-3xl sm:text-4xl font-bold text-brown leading-tight mb-0.5">
                   {translitToUnicode(primaryEntry.transliteration)}
                 </h1>
+                <p className="font-mono text-sm text-sandstone mb-1">
+                  {primaryEntry.transliteration.replace(/ /g, ".").replace(/\.{2,}/g, ".")}
+                </p>
                 <p className="text-brown-light text-lg leading-relaxed mb-3">
                   {primaryEntry.translation}
                 </p>
