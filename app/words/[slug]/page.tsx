@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { WordGlyph } from "@/components/WordGlyph";
 import { CopyableWordGlyph } from "@/components/CopyableWordGlyph";
+import { FitWordGlyph } from "@/components/FitWordGlyph";
 import { WordCardList } from "@/components/WordCardList";
 import {
   getWordsBySlug,
@@ -322,7 +323,7 @@ function SpellingCard({ entry, sharedNotes }: { entry: DictionaryWord; sharedNot
   const uniqueNotes = entry.notes.filter((n) => !sharedNotes.has(n));
   return (
     <div className="inline-flex flex-col items-start bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 space-y-3">
-      <WordGlyph mdc={entry.mdc} baseSize={36} />
+      <FitWordGlyph mdc={entry.mdc} baseSize={36} />
       {uniqueNotes.length > 0 && (
         <div className="flex flex-wrap gap-1">
           {uniqueNotes.map((n, i) => (

@@ -259,7 +259,15 @@ function normalize(raw: string): string {
   // 9. Strip bloat
   svg = stripBloat(svg);
 
-  // 7. Collapse excessive whitespace/newlines
+  // 10. Fix unclosed <g> tags (malformed JSesh exports)
+  const openGs = (svg.match(/<g[\s>]/g) ?? []).length;
+  const closeGs = (svg.match(/<\/g>/g) ?? []).length;
+  if (openGs > closeGs) {
+    const missing = openGs - closeGs;
+    svg = svg.replace(/<\/svg>\s*$/, "</g>".repeat(missing) + "\n</svg>");
+  }
+
+  // 11. Collapse excessive whitespace/newlines
   svg = svg.replace(/\n{3,}/g, "\n").trim();
 
   return svg;
