@@ -203,11 +203,13 @@ for (const w of words) {
     if (/[eou]/i.test(mdc)) return match; // has English vowels, keep
     return "";
   });
-  // Strip "MdC / MdC ..." slash-separated alternates at start
-  t = t.replace(/^([a-zA-Z.]{2,8} \/ )+(?=[A-Za-z])/, (match) => {
-    const tokens = match.split(" / ").map(s => s.trim()).filter(Boolean);
-    if (tokens.every(tok => !/[eou]/i.test(tok))) return ""; // all MdC, strip
-    return match;
+  // Strip complex MdC alternates: "a sXAw / r a sSw document" → "document"
+  // Also "a / rA a limit" → "limit", "a / HAty a beginning" → "beginning"
+  t = t.replace(/^(?:(?:a |)[a-zA-Z.]{1,10} ?\/ ?)+(?:a |)[a-zA-Z.]{1,10} (?=[A-Z(a-z])/, (match) => {
+    // Only strip if the prefix is all consonantal MdC (no e/o/u)
+    const stripped = match.replace(/[/ ]/g, "");
+    if (/[eou]/i.test(stripped)) return match;
+    return "";
   });
   // Strip leading MdC token (with AHSTDX uppercase) before capitalized English
   t = t.replace(/^([a-zA-Z.]{2,10}) (?=[A-Z(])/, (match, mdc) => {
