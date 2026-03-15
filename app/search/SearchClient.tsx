@@ -121,7 +121,7 @@ function StickyGroupNav({ sections }: { sections: { id: string; title: string; c
           ? "opacity-100"
           : "opacity-0 pointer-events-none"
       }`}>
-        <div className={`bg-ivory/98 backdrop-blur-md border-b border-sandstone/30 py-2.5 shadow-md ${
+        <div className={`bg-ivory/98 backdrop-blur-md border-b border-sandstone/30 py-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.08)] ${
           isSticky ? "" : "-mb-12"
         }`} style={{ marginLeft: "calc(-50vw + 50%)", marginRight: "calc(-50vw + 50%)", paddingLeft: "calc(50vw - 50% + 1rem)", paddingRight: "calc(50vw - 50% + 1rem)" }}>
           <nav className="flex items-center justify-between">
