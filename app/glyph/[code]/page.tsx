@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { GlyphCard } from "@/components/GlyphCard";
 import { SmartGlyph } from "@/components/SmartGlyph";
+import { CopyableGlyph } from "@/components/CopyableGlyph";
 import { Badge } from "@/components/ui/Badge";
 import {
   getGlyphByCode,
@@ -220,7 +221,7 @@ export default async function GlyphPage({ params }: PageProps) {
                 "
               >
                 <div className="flex flex-col sm:flex-row items-start gap-6">
-                  <SmartGlyph glyph={glyph} size="xl" />
+                  <CopyableGlyph glyph={glyph} size="xl" />
 
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
