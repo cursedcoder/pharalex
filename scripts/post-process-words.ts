@@ -197,6 +197,12 @@ for (const w of words) {
   t = t.replace(/\.{3,}/g, "…");
   // "badly of" at end → "badly off" (word-boundary aware)
   t = t.replace(/badly of$/g, "badly off");
+  // "Re" (god name) → "Ra" per Egyptological convention
+  t = t.replace(/\bRe\b/g, "Ra");
+  // Add "Ra (sun god)" to bare "sun" entries for ra transliteration
+  if (w.transliteration === "ra" && t === "sun") {
+    t = "sun, Ra (sun god)";
+  }
   // Strip leading "a [MdC]" pattern: "a sSw document" → "document"
   // where [MdC] is a short consonantal token (no e/o/u)
   t = t.replace(/^a ([a-zA-Z.]{2,8}) (?=[A-Za-z])/, (match, mdc, offset) => {
