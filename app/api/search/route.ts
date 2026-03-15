@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fuzzySearch } from "@/lib/search";
-import { loadSearchWords } from "@/lib/data-loader";
+import { loadSearchWords, loadSearchGlyphs } from "@/lib/data-loader";
 import { wordHref, translitToUnicode } from "@/lib/word-utils";
 import type { SearchWord } from "@/lib/search-types";
 
@@ -51,6 +51,18 @@ interface WordSearchOptions {
   gardiner?: boolean;
 }
 
+async function exactGlyphSearch(query: string) {
+  const glyphs = await loadSearchGlyphs();
+  const q = query.trim().toUpperCase();
+  const results = [];
+  for (const g of glyphs) {
+    if (g.code.toUpperCase() === q) {
+      results.push({ glyph: g, score: 0, matches: [] });
+    }
+  }
+  return results;
+}
+
 async function searchWords(query: string, limit = 40, opts: WordSearchOptions = {}): Promise<SearchWord[]> {
   const q = query.trim();
   if (!q) return [];
@@ -72,7 +84,12 @@ async function searchWords(query: string, limit = 40, opts: WordSearchOptions = 
       const codes = w.mdc.split("-");
       if (codes.includes(q)) results.push(w);
     } else if (opts.exact) {
-      if (translitToUnicode(w.transliteration) === translitToUnicode(q)) results.push(w);
+      // Exact = exact transliteration match (with y↔i normalization) OR translation contains
+      const normQ = ql.replace(/y/g, "i").replace(/j/g, "i");
+      const normT = w.transliteration.toLowerCase().replace(/y/g, "i").replace(/j/g, "i");
+      const tlExact = normT === normQ;
+      const trMatch = w.translation.toLowerCase().includes(ql);
+      if (tlExact || trMatch) results.push(w);
     } else {
       // Normalize y↔i for transliteration matching (mry = mri in Vygus)
       const normQ = ql.replace(/y/g, "i").replace(/j/g, "i");
@@ -101,7 +118,7 @@ export async function GET(req: NextRequest) {
 
   const ql = q.toLowerCase();
 
-  const glyphResults: GlyphResult[] = (exact || gardiner) ? [] : (await fuzzySearch(q, 60)).map((r) => ({
+  const glyphResults: GlyphResult[] = gardiner ? [] : (exact ? await exactGlyphSearch(q) : (await fuzzySearch(q, 60))).map((r) => ({
     kind: "glyph",
     score: r.score ?? 1,
     code: r.glyph.code,
