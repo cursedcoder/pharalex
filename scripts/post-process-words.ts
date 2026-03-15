@@ -330,18 +330,19 @@ if (notesStripped > 0) console.log(`  Stripped technical notes: ${notesStripped}
 // the latest algorithm (colons/stars → hyphens, preserving special ops).
 // Then apply MdC overrides on the FLAT form before auto-quad runs, so the
 // auto-quad algorithm sees the corrected sign sequence.
-// Build per-transliteration blocked pair sets
-const blockedByTranslit = new Map<string, Set<string>>();
-for (const [translit, pair] of BLOCKED_QUAD_PAIRS) {
-  if (!blockedByTranslit.has(translit)) blockedByTranslit.set(translit, new Set());
-  blockedByTranslit.get(translit)!.add(pair);
-}
-
 let quadded = 0;
 let blockedApplied = 0;
 for (const w of words) {
   const flat = w.mdc.replace(/[:*]/g, "-");
-  const blocked = blockedByTranslit.get(w.transliteration);
+
+  // Build blocked pairs set for this specific word
+  let blocked: Set<string> | undefined;
+  for (const [translit, pair, mdcContext] of BLOCKED_QUAD_PAIRS) {
+    if (w.transliteration !== translit) continue;
+    if (mdcContext && !flat.includes(mdcContext)) continue;
+    if (!blocked) blocked = new Set();
+    blocked.add(pair);
+  }
   if (blocked) blockedApplied++;
   const result = autoQuad(flat, blocked);
   if (result !== w.mdc) {
