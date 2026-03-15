@@ -67,7 +67,7 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
 // ── Group Header ────────────────────────────────────────────────────────────
 function GroupHeader({ id, title, count }: { id: string; title: string; count: number }) {
   return (
-    <div id={id} className="flex items-center gap-3 mt-10 mb-4 first:mt-0 scroll-mt-20">
+    <div id={id} className="flex items-center gap-3 mt-8 mb-3 first:mt-0 scroll-mt-16">
       <h2 className="font-display text-xl font-semibold text-brown whitespace-nowrap">{title}</h2>
       <span className="text-xs text-sandstone/60 bg-sandstone/10 px-2 py-0.5 rounded-full">{count}</span>
       <div className="flex-1 border-t border-sandstone/30" />
@@ -276,11 +276,12 @@ function SearchContent() {
 
       <main className="py-8 sm:py-12">
         <Container>
-          <div className="mb-8">
-            <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown mb-4">Search</h1>
+          <div className="mb-4">
+            <div className="flex items-center gap-4 mb-4">
+              <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown">Search</h1>
 
-            {/* Tabs */}
-            <div className="flex gap-1 mb-6 bg-sandstone/10 rounded-lg p-1 w-fit">
+              {/* Tabs */}
+              <div className="flex gap-1 bg-sandstone/10 rounded-lg p-1">
               {(["words", "glyphs"] as const).map((t) => (
                 <button
                   key={t}
@@ -294,6 +295,7 @@ function SearchContent() {
                   {t === "words" ? "Words" : "Glyphs"}
                 </button>
               ))}
+              </div>
             </div>
 
             {/* Search input */}
