@@ -342,6 +342,22 @@ for (const g of glyphs) {
 }
 console.log(`  Fixed typos: ${typosFixed}`);
 
+// ── 7b. Split comma-separated transliterations ──────────────────────────────
+let translitSplit = 0;
+for (const g of glyphs) {
+  const expanded: string[] = [];
+  for (const t of g.transliteration) {
+    if (t.includes(",")) {
+      expanded.push(...t.split(",").map((s: string) => s.trim()).filter(Boolean));
+      translitSplit++;
+    } else {
+      expanded.push(t);
+    }
+  }
+  g.transliteration = expanded;
+}
+if (translitSplit > 0) console.log(`  Split comma-separated transliterations: ${translitSplit}`);
+
 // ── 8. Final transliteration dedup ──────────────────────────────────────────
 let translitDeduped = 0;
 for (const g of glyphs) {

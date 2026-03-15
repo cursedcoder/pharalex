@@ -181,6 +181,10 @@ for (const w of words) {
   t = t.replace(/\{([^}]*)\)/g, "($1)");
   t = t.replace(/\[([^\]]*)\}/g, "[$1]");
   t = t.replace(/\{([^}]*)\]/g, "[$1]");
+  // Strip editorial notes in curly braces {V11 should be 'mirrored'}
+  t = t.replace(/\s*\{[^}]*\}/g, "");
+  // Also strip unclosed editorial notes {... at end of string
+  t = t.replace(/\s*\{[^}]*$/g, "");
   // Trailing comma
   t = t.replace(/,\s*$/, "");
   // Missing space after comma (but not in scientific names like "nycticorax,nycticorax")
