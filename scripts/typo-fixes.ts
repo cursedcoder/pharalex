@@ -54,6 +54,8 @@ const TYPOS: [string, string][] = [
   ["complait", "complaint"],
   ["totlaity", "totality"],
   [" gosd", " god"],
+  ["renoun", "renown"],
+  ["devine", "divine"],
 ];
 
 /**
