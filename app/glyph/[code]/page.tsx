@@ -538,16 +538,25 @@ export default async function GlyphPage({ params }: PageProps) {
                         if (!grammarGroups.has(key)) grammarGroups.set(key, []);
                         grammarGroups.get(key)!.push(s);
                       }
-                      return [...grammarGroups.entries()].map(([grammar, entries]) => {
-                        // Deduplicate translations
+                      return [...grammarGroups.entries()]
+                        .filter(([grammar]) => grammar !== "(unclassified)")
+                        .map(([grammar, entries]) => {
+                        // Deduplicate translations (also fuzzy-dedup overlapping glosses)
                         const seen = new Set<string>();
                         const unique = entries.filter((e) => {
                           const k = e.translation.toLowerCase().trim();
                           if (seen.has(k)) return false;
+                          // Also skip if a shorter version of an existing gloss
+                          for (const s of seen) {
+                            if (s.includes(k) || k.includes(s)) return false;
+                          }
                           seen.add(k);
                           return true;
                         });
                         if (unique.length === 0) return null;
+                        const MAX_DEFS = 6;
+                        const shown = unique.slice(0, MAX_DEFS);
+                        const remaining = unique.length - shown.length;
                         const GRAMMAR_LABELS: Record<string, string> = {
                           NOUN: "noun", VERB: "verb", ADJ: "adjective", ADV: "adverb",
                           PREP: "preposition", PRON: "pronoun", PART: "particle",
@@ -571,13 +580,21 @@ export default async function GlyphPage({ params }: PageProps) {
                                 </span>
                               )}
                             </div>
-                            <ol className="space-y-1.5 list-decimal list-inside text-sm text-brown-light">
-                              {unique.map((entry, i) => (
+                            <ol className="space-y-1 list-decimal list-inside text-sm text-brown-light">
+                              {shown.map((entry, i) => (
                                 <li key={i} className="leading-relaxed">
                                   {entry.translation}
                                 </li>
                               ))}
                             </ol>
+                            {remaining > 0 && (
+                              <Link
+                                href={wordHref(toMdc(translit))}
+                                className="mt-2 block text-xs text-gold hover:text-gold-dark transition-colors"
+                              >
+                                +{remaining} more →
+                              </Link>
+                            )}
                           </div>
                         );
                       });
