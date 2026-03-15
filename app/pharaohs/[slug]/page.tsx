@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { RoyalNamesDisplay } from "@/components/Cartouche";
 import { GlyphDetailsProvider } from "@/components/GlyphDetailsContext";
+import { ReportIssueLink } from "@/components/ReportIssueLink";
 import {
   getPharaohBySlug,
   getDynastyById,
@@ -394,6 +395,7 @@ export default async function PharaohPage({ params }: Props) {
                 </svg>
                 Back to all pharaohs
               </Link>
+              <ReportIssueLink title={`${pharaoh.name}: data correction`} className="mt-2" />
             </aside>
           </div>
         </Container>

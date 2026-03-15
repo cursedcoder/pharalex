@@ -19,6 +19,7 @@ import {
 import { getAllTexts } from "@/lib/texts";
 import { buildGlyphDetailsMap } from "@/lib/glyphs";
 import { GlyphDetailsProvider } from "@/components/GlyphDetailsContext";
+import { ReportIssueLink } from "@/components/ReportIssueLink";
 import type { DictionaryWord } from "@/lib/types";
 
 interface Props {
@@ -299,12 +300,15 @@ export default async function WordPage({ params }: Props) {
                 </section>
               )}
 
-              <Link
-                href="/search"
-                className="flex items-center gap-2 text-sm text-sandstone hover:text-gold transition-colors"
-              >
-                ← Back to search
-              </Link>
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/search"
+                  className="flex items-center gap-2 text-sm text-sandstone hover:text-gold transition-colors"
+                >
+                  ← Back to search
+                </Link>
+                <ReportIssueLink title={`${translitToUnicode(w.transliteration)}: data correction`} />
+              </div>
             </aside>
           </div>
         </Container>
