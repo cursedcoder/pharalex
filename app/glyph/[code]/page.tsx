@@ -340,6 +340,7 @@ export default async function GlyphPage({ params }: PageProps) {
                         </h2>
                         <div className="flex flex-wrap gap-2">
                           {glyph.transliteration.map((t) => {
+                            const display = translitToUnicode(t);
                             const count = glyph.transliterationCounts?.[t];
                             return count ? (
                               <Link
@@ -354,7 +355,7 @@ export default async function GlyphPage({ params }: PageProps) {
                                   transition-colors group
                                 "
                               >
-                                {t}
+                                {display}
                                 <sup className="text-[10px] not-italic font-normal text-sandstone/70 group-hover:text-gold-dark/70 tabular-nums">
                                   {count}
                                 </sup>
@@ -368,7 +369,7 @@ export default async function GlyphPage({ params }: PageProps) {
                                   text-brown-light italic font-medium
                                 "
                               >
-                                {t}
+                                {display}
                               </span>
                             );
                           })}

@@ -21,7 +21,7 @@ export function translitToUnicode(translit: string): string {
     s = s.split(from).join(to);
   }
   // Egyptological convention: dots separate morphemes (aHa.n → ꜥḥꜥ.n)
-  s = s.replace(/ /g, ".").replace(/\.{2,}/g, ".");
+  s = s.replace(/[ -]/g, ".").replace(/\.{2,}/g, ".").replace(/^\.|\.$/g, "");
   return s;
 }
 
