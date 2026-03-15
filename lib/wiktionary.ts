@@ -22,7 +22,17 @@ function loadWiktionary(): Map<string, WiktionaryEntry[]> {
     const pos: string = raw.pos;
     const glosses: string[] = (raw.senses ?? [])
       .flatMap((s: { glosses?: string[] }) => s.glosses ?? [])
-      .filter((g: string) => !g.startsWith("Manuel de Codage")); // skip MdC romanization notes
+      .filter((g: string) => !g.startsWith("Manuel de Codage"))
+      .map((g: string) =>
+        g
+          // Strip parenthetical grammar notes: (+ m or m-dj: with...), (+ n: for...)
+          .replace(/\s*\(\+[^)]*\)/g, "")
+          // Simplify "to be(come)" → "to become"
+          .replace(/to be\(come\)/g, "to become")
+          // Clean up trailing/leading whitespace and double spaces
+          .replace(/\s{2,}/g, " ")
+          .trim()
+      );
 
     if (glosses.length === 0) continue;
     if (pos === "romanization") continue; // skip romanization entries
