@@ -18,7 +18,7 @@ import {
   glyphHref,
 } from "@/lib/glyphs";
 import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
-import { getWordsByGardinerCode, wordHref } from "@/lib/words";
+import { getWordsByGardinerCode, getDictionaryByGardinerCode, wordHref } from "@/lib/words";
 import { translitToUnicode } from "@/lib/word-utils";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
 import { UnicodeChar } from "@/components/UnicodeChar";
@@ -124,7 +124,8 @@ export default async function GlyphPage({ params }: PageProps) {
   const baseGlyph = baseCode ? await getGlyphByCode(baseCode) : null;
   const variantSiblings = await getVariantSiblings(glyph.code);
   const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
-  const wordsUsingGlyph = await getWordsByGardinerCode(glyph.code, 6);
+  const wordsUsingGlyph = await getWordsByGardinerCode(glyph.code, 30);
+  const dictionary = await getDictionaryByGardinerCode(glyph.code, 15);
 
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
@@ -502,6 +503,68 @@ export default async function GlyphPage({ params }: PageProps) {
                       </div>
                     );
                   })()}
+                </section>
+              )}
+
+              {dictionary.size > 0 && (
+                <section>
+                  <h2 className="font-display text-2xl font-semibold text-brown mb-4">
+                    Dictionary
+                  </h2>
+                  <div className="space-y-4">
+                    {[...dictionary.entries()].map(([translit, senses]) => {
+                      // Group senses by grammar for cleaner display
+                      const grammarGroups = new Map<string, typeof senses>();
+                      for (const s of senses) {
+                        const key = s.grammar ?? "(unclassified)";
+                        if (!grammarGroups.has(key)) grammarGroups.set(key, []);
+                        grammarGroups.get(key)!.push(s);
+                      }
+                      return [...grammarGroups.entries()].map(([grammar, entries]) => {
+                        // Deduplicate translations
+                        const seen = new Set<string>();
+                        const unique = entries.filter((e) => {
+                          const k = e.translation.toLowerCase().trim();
+                          if (seen.has(k)) return false;
+                          seen.add(k);
+                          return true;
+                        });
+                        if (unique.length === 0) return null;
+                        const GRAMMAR_LABELS: Record<string, string> = {
+                          NOUN: "noun", VERB: "verb", ADJ: "adjective", ADV: "adverb",
+                          PREP: "preposition", PRON: "pronoun", PART: "particle",
+                          CONJ: "conjunction", INTJ: "interjection", NUM: "numeral",
+                        };
+                        return (
+                          <div
+                            key={`${translit}-${grammar}`}
+                            className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 sm:p-5"
+                          >
+                            <div className="flex items-baseline gap-2 mb-3">
+                              <Link
+                                href={wordHref(translit)}
+                                className="font-mono text-lg font-bold text-brown hover:text-gold-dark transition-colors"
+                              >
+                                {translitToUnicode(translit)}
+                              </Link>
+                              {grammar !== "(unclassified)" && (
+                                <span className="text-sm italic text-sandstone">
+                                  {GRAMMAR_LABELS[grammar] ?? grammar.toLowerCase()}
+                                </span>
+                              )}
+                            </div>
+                            <ol className="space-y-1.5 list-decimal list-inside text-sm text-brown-light">
+                              {unique.map((entry, i) => (
+                                <li key={i} className="leading-relaxed">
+                                  {entry.translation}
+                                </li>
+                              ))}
+                            </ol>
+                          </div>
+                        );
+                      });
+                    })}
+                  </div>
                 </section>
               )}
 
