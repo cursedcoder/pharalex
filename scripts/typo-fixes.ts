@@ -61,6 +61,23 @@ const TYPOS: [string, string][] = [
   ["accroutrements", "accoutrements"],
   ["amazonit ", "amazonite "],
   ["auxilary", "auxiliary"],
+  ["digusted", "disgusted"],
+  ["diposed", "disposed"],
+  ["dolorite", "dolerite"],
+  ["excell", "excel"],
+  ["forsee", "foresee"],
+  ["messengerrs", "messengers"],
+  ["misdemeaner", "misdemeanor"],
+  ["nonesense", "nonsense"],
+  ["oxydation", "oxidation"],
+  ["plummage", "plumage"],
+  ["properity", "prosperity"],
+  ["renownce", "renounce"],
+  ["skelton", "skeleton"],
+  ["somone", "someone"],
+  ["sulpher", "sulphur"],
+  ["tempel", "temple"],
+  ["coomend", "commend"],
 ];
 
 /**
