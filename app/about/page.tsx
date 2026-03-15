@@ -558,22 +558,6 @@ export default function AboutPage() {
         </Container>
       </main>
 
-      <footer className="py-5 border-t border-sandstone/20">
-        <Container>
-          <p className="text-xs text-sandstone text-center">
-            For the full machine-readable attribution document, see{" "}
-            <a
-              href="https://github.com/cursedcoder/pharalex/blob/main/SOURCES.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gold hover:text-gold-dark"
-            >
-              SOURCES.md
-            </a>{" "}
-            in the repository.
-          </p>
-        </Container>
-      </footer>
     </div>
   );
 }

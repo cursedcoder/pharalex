@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Source_Serif_4 } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -78,6 +79,7 @@ export default function RootLayout({
         className={`${cormorant.variable} ${sourceSerif.variable} font-serif antialiased bg-ivory text-brown min-h-screen`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
