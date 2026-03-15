@@ -243,7 +243,8 @@ function SearchContent() {
 
   // ── Group results ───────────────────────────────────────────────────────
   const grouped = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    // Normalize dots to spaces: display uses dots (aHa.n) but data stores spaces (aHa n)
+    const q = query.trim().replace(/\./g, " ").toLowerCase();
     const words = results.filter((r): r is Extract<SearchApiResult, { kind: "word" }> => r.kind === "word");
     const glyphs = results.filter((r): r is Extract<SearchApiResult, { kind: "glyph" }> => r.kind === "glyph");
 

@@ -99,15 +99,17 @@ async function searchWords(query: string, limit = 40, opts: WordSearchOptions = 
 const MAX_QUERY_LENGTH = 100;
 
 export async function GET(req: NextRequest) {
-  const q = (req.nextUrl.searchParams.get("q")?.trim() ?? "").slice(0, MAX_QUERY_LENGTH);
+  const qRaw = (req.nextUrl.searchParams.get("q")?.trim() ?? "").slice(0, MAX_QUERY_LENGTH);
   const exact = req.nextUrl.searchParams.get("exact") !== "false";
   const gardiner = req.nextUrl.searchParams.get("gardiner") === "true";
   // Allow single-char searches in exact/gardiner mode (Egyptian uniliterals like m, n, r)
   const minLength = (exact || gardiner) ? 1 : 2;
-  if (!q || q.length < minLength) {
+  if (!qRaw || qRaw.length < minLength) {
     return NextResponse.json({ results: [] });
   }
 
+  // Normalize dots to spaces: display uses dots (aHa.n) but data stores spaces (aHa n)
+  const q = gardiner ? qRaw : qRaw.replace(/\./g, " ");
   const ql = q.toLowerCase();
 
   // Glyphs: exact code match + fuzzy description match
