@@ -112,8 +112,7 @@ export function SearchBar({
             setIsOpen(false);
           } else if (query.trim()) {
             const showParam = showModeToggle ? `&show=${searchMode}` : "";
-            const exactParam = showModeToggle ? "&exact=true" : "";
-            router.push(`/search?q=${encodeURIComponent(query)}${showParam}${exactParam}`);
+            router.push(`/search?q=${encodeURIComponent(query)}${showParam}&exact=true`);
             setIsOpen(false);
           }
           break;
@@ -253,7 +252,7 @@ export function SearchBar({
 
           {query.trim() && (
             <Link
-              href={`/search?q=${encodeURIComponent(query)}${showModeToggle ? `&show=${searchMode}&exact=true` : ""}`}
+              href={`/search?q=${encodeURIComponent(query)}${showModeToggle ? `&show=${searchMode}` : ""}&exact=true`}
               onClick={() => setIsOpen(false)}
               className="block px-4 py-3 text-center text-sm text-gold hover:bg-gold/10 border-t border-sandstone/20"
             >
