@@ -5,6 +5,7 @@ import { getBaseCode } from "./glyph-utils";
 export type GlyphDetail = {
   transliteration?: string;
   meaning?: string;
+  signName?: string;
 };
 export type GlyphDetailsMap = Record<string, GlyphDetail>;
 
@@ -144,6 +145,7 @@ export async function buildGlyphDetailsMap(
       map[code.toLowerCase()] = {
         transliteration: g.transliteration[0],
         meaning: g.meanings[0]?.text ?? g.description,
+        signName: g.signName,
       };
     }
   }

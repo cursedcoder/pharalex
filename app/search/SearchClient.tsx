@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef, useCallback, Suspense, Fragment } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback, Suspense, Fragment, type MouseEvent } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
@@ -8,6 +8,8 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { GlyphCard } from "@/components/GlyphCard";
 import { Quadrat } from "@/components/Quadrat";
+import { GlyphDetailsProvider } from "@/components/GlyphDetailsContext";
+import type { GlyphDetailsMap } from "@/lib/glyphs";
 import type { SearchApiResult } from "@/app/api/search/route";
 
 const GRAMMAR_LABELS: Record<string, string> = {
@@ -37,11 +39,18 @@ function looksLikeTransliteration(q: string): boolean {
 
 // ── Word Card ───────────────────────────────────────────────────────────────
 function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" }> }) {
+  const router = useRouter();
+  const handleClick = useCallback((e: MouseEvent) => {
+    // Only navigate to word page if the click wasn't on a glyph link
+    if (!(e.target as HTMLElement).closest("a")) {
+      router.push(result.href);
+    }
+  }, [router, result.href]);
   return (
-    <Link href={result.href} className="block group">
+    <div onClick={handleClick} className="block group cursor-pointer">
       <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-4 h-full hover:shadow-md hover:border-gold/40 transition-all duration-200">
         <div className="w-full rounded-lg bg-papyrus/50 border border-sandstone/20 flex items-center justify-center py-3 mb-4 overflow-hidden group-hover:scale-[1.02] transition-transform">
-          <Quadrat mdc={result.mdc} baseSize={36} disableLinks />
+          <Quadrat mdc={result.mdc} baseSize={36} />
         </div>
         <div className="flex items-center gap-2 mb-1">
           <h3 className="font-display text-lg font-semibold text-brown">
@@ -55,7 +64,7 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
         </div>
         <p className="text-sm text-brown-light line-clamp-2">{result.translation}</p>
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -152,6 +161,7 @@ function SearchContent() {
   const [query, setQuery] = useState(initialQuery);
   const [tab, setTab] = useState<"words" | "glyphs">(initialTab);
   const [results, setResults] = useState<SearchApiResult[]>([]);
+  const [glyphDetails, setGlyphDetails] = useState<GlyphDetailsMap>({});
   const [isSearching, setIsSearching] = useState(!!initialQuery);
 
   const abortRef = useRef<AbortController | null>(null);
@@ -179,8 +189,9 @@ function SearchContent() {
       const res = await fetch(`/api/search?${params}`, { signal: controller.signal });
       const data = await res.json();
       setResults(data.results ?? []);
+      setGlyphDetails(data.glyphDetails ?? {});
     } catch (e) {
-      if ((e as Error).name !== "AbortError") setResults([]);
+      if ((e as Error).name !== "AbortError") { setResults([]); setGlyphDetails({}); }
     } finally {
       setIsSearching(false);
     }
@@ -360,7 +371,7 @@ function SearchContent() {
             <div>
               {/* Words tab results */}
               {tab === "words" && (
-                <>
+                <GlyphDetailsProvider details={glyphDetails}>
                   <StickyGroupNav sections={[
                     ...(grouped.exactTranslit.length > 0 ? [{ id: "exact", title: "Exact matches", count: grouped.exactTranslit.length }] : []),
                     ...(grouped.compounds.length > 0 ? [{ id: "compounds", title: "Compounds", count: grouped.compounds.length }] : []),
@@ -399,7 +410,7 @@ function SearchContent() {
                     </>
                   )}
 
-                </>
+                </GlyphDetailsProvider>
               )}
 
               {/* Glyphs tab results */}

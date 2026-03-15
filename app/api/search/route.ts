@@ -3,6 +3,8 @@ import { fuzzySearch } from "@/lib/search";
 import { loadSearchWords, loadSearchGlyphs } from "@/lib/data-loader";
 import { wordHref, translitToUnicode } from "@/lib/word-utils";
 import { wordScore } from "@/lib/word-score";
+import { mdcToCodes } from "@/lib/mdc";
+import { buildGlyphDetailsMap } from "@/lib/glyphs";
 import type { SearchWord } from "@/lib/search-types";
 
 export const runtime = "nodejs";
@@ -142,5 +144,12 @@ export async function GET(req: NextRequest) {
     (a, b) => a.score - b.score
   );
 
-  return NextResponse.json({ results });
+  // Build glyph details map for word-card tooltips
+  const allCodes = new Set<string>();
+  for (const w of wordResults) {
+    for (const code of mdcToCodes(w.mdc)) allCodes.add(code);
+  }
+  const glyphDetails = await buildGlyphDetailsMap([...allCodes]);
+
+  return NextResponse.json({ results, glyphDetails });
 }
