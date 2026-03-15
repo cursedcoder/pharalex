@@ -37,10 +37,11 @@ export function SearchBar({
   showModeToggle = false,
 }: SearchBarProps) {
   const [query, setQuery] = useState("");
-  const [searchMode, setSearchMode] = useState<"words" | "glyphs">(() => {
-    if (typeof window === "undefined") return "words";
-    return (localStorage.getItem("pharalex-search-mode") as "words" | "glyphs") || "words";
-  });
+  const [searchMode, setSearchMode] = useState<"words" | "glyphs">("words");
+  useEffect(() => {
+    const saved = localStorage.getItem("pharalex-search-mode") as "words" | "glyphs" | null;
+    if (saved) setSearchMode(saved);
+  }, []);
   const [items, setItems] = useState<MergedItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
