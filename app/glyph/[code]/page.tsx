@@ -660,7 +660,7 @@ export default async function GlyphPage({ params }: PageProps) {
                 </section>
               )}
 
-              <ReportIssueLink title={`${glyph.code}: data correction`} className="mt-4" />
+              <ReportIssueLink title={`${glyph.code}: data correction`} />
             </div>
           </div>
         </Container>
