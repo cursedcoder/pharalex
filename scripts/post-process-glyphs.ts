@@ -368,6 +368,19 @@ for (const g of glyphs) {
 }
 if (translitSplit > 0) console.log(`  Split comma-separated transliterations: ${translitSplit}`);
 
+// ── 7c. Replace unsupported ꞽ (U+A7BD) with i͗ (i + combining stroke) ────────
+let yodFixed = 0;
+for (const g of glyphs) {
+  g.transliteration = g.transliteration.map((t: string) => {
+    if (t.includes("ꞽ")) {
+      yodFixed++;
+      return t.replace(/ꞽ/g, "i͗");
+    }
+    return t;
+  });
+}
+if (yodFixed > 0) console.log(`  Replaced ꞽ→i͗ in transliterations: ${yodFixed}`);
+
 // ── 8. Final transliteration dedup ──────────────────────────────────────────
 let translitDeduped = 0;
 for (const g of glyphs) {
