@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef, useCallback, Suspense } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback, Suspense, Fragment } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
@@ -75,17 +75,20 @@ function GroupHeader({ id, title, count }: { id: string; title: string; count: n
   );
 }
 
-function FloatingIndex({ sections }: { sections: { id: string; title: string; count: number }[] }) {
+function StickyGroupNav({ sections }: { sections: { id: string; title: string; count: number }[] }) {
   const [active, setActive] = useState(sections[0]?.id ?? "");
+  const [isSticky, setIsSticky] = useState(false);
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Track which section is visible
     const observers: IntersectionObserver[] = [];
     for (const s of sections) {
       const el = document.getElementById(s.id);
       if (!el) continue;
       const obs = new IntersectionObserver(
         ([entry]) => { if (entry.isIntersecting) setActive(s.id); },
-        { rootMargin: "-20% 0px -70% 0px" }
+        { rootMargin: "-80px 0px -70% 0px" }
       );
       obs.observe(el);
       observers.push(obs);
@@ -93,31 +96,53 @@ function FloatingIndex({ sections }: { sections: { id: string; title: string; co
     return () => observers.forEach((o) => o.disconnect());
   }, [sections]);
 
-  if (sections.length < 2) return null;
+  useEffect(() => {
+    // Show sticky bar when sentinel scrolls out of view
+    const el = sentinelRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setIsSticky(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  if (sections.length < 2) return <div ref={sentinelRef} />;
 
   return (
-    <div className="hidden lg:block fixed right-8 top-1/2 -translate-y-1/2 z-40">
-      <nav className="bg-ivory/90 backdrop-blur-sm border border-sandstone/20 rounded-xl shadow-lg p-3 space-y-1 min-w-[180px]">
-        {sections.map((s) => (
-          <a
-            key={s.id}
-            href={`#${s.id}`}
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className={`flex items-center justify-between gap-3 px-3 py-1.5 rounded-lg text-sm transition-colors ${
-              active === s.id
-                ? "bg-gold/15 text-gold-dark font-medium"
-                : "text-sandstone hover:text-brown hover:bg-sandstone/10"
-            }`}
-          >
-            <span className="truncate">{s.title}</span>
-            <span className="text-xs tabular-nums">{s.count}</span>
-          </a>
-        ))}
-      </nav>
-    </div>
+    <>
+      {/* Sentinel — when this scrolls out, sticky bar appears */}
+      <div ref={sentinelRef} />
+
+      {/* Sticky bar */}
+      <div className={`sticky top-0 z-30 transition-all duration-200 ${
+        isSticky
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-2 pointer-events-none"
+      }`}>
+        <div className="bg-ivory/95 backdrop-blur-sm border-b border-sandstone/20 py-2 -mx-4 px-4 sm:-mx-6 sm:px-6">
+          <nav className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
+            {sections.map((s, i) => (
+              <Fragment key={s.id}>
+                {i > 0 && <div className="w-8 sm:w-12 border-t border-sandstone/25 shrink-0" />}
+                <button
+                  onClick={() => document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm whitespace-nowrap transition-colors cursor-pointer shrink-0 ${
+                    active === s.id
+                      ? "bg-gold/15 text-gold-dark font-medium"
+                      : "text-sandstone hover:text-brown hover:bg-sandstone/10"
+                  }`}
+                >
+                  <span className="font-display">{s.title}</span>
+                  <span className="text-xs text-sandstone/60 bg-sandstone/10 px-1.5 py-0.5 rounded-full tabular-nums">{s.count}</span>
+                </button>
+              </Fragment>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -246,6 +271,7 @@ function SearchContent() {
     ? grouped.exactCode.length + grouped.otherGlyphs.length
     : grouped.exactTranslit.length + grouped.compounds.length + grouped.meaningMatches.length;
 
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -343,11 +369,10 @@ function SearchContent() {
               {/* Words tab results */}
               {tab === "words" && (
                 <>
-                  <FloatingIndex sections={[
+                  <StickyGroupNav sections={[
                     ...(grouped.exactTranslit.length > 0 ? [{ id: "exact", title: "Exact matches", count: grouped.exactTranslit.length }] : []),
                     ...(grouped.compounds.length > 0 ? [{ id: "compounds", title: "Compounds", count: grouped.compounds.length }] : []),
                     ...(grouped.meaningMatches.length > 0 ? [{ id: "meanings", title: "Meanings", count: grouped.meaningMatches.length }] : []),
-                    ...(grouped.exactCode.length > 0 ? [{ id: "glyphs", title: "Glyphs", count: grouped.exactCode.length }] : []),
                   ]} />
                   {grouped.exactTranslit.length > 0 && (
                     <>
@@ -382,27 +407,6 @@ function SearchContent() {
                     </>
                   )}
 
-                  {/* Also show glyph code matches if query looks like a code */}
-                  {grouped.exactCode.length > 0 && (
-                    <>
-                      <GroupHeader id="glyphs" title="Glyph matches" count={grouped.exactCode.length} />
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {grouped.exactCode.map((r) => (
-                          <GlyphCard
-                            key={`g-${r.code}`}
-                            glyph={{
-                              code: r.code, unicode: r.unicode, category: r.category,
-                              categoryName: r.categoryName, description: r.description,
-                              transliteration: r.transliteration,
-                              meanings: r.meanings.map((m) => ({ text: m.text, type: m.type as "logogram" | "phonogram" | "determinative" | "other" })),
-                              related: r.related,
-                              source: r.source as "wiktionary" | "unicode" | "both" | undefined,
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </>
-                  )}
                 </>
               )}
 
