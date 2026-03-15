@@ -14,10 +14,10 @@ const FUSE_KEYS = [
 
 const FUSE_OPTIONS = {
   keys: FUSE_KEYS,
-  threshold: 0.2,
+  threshold: 0.1,
   includeScore: true,
   ignoreLocation: true,
-  minMatchCharLength: 3,
+  minMatchCharLength: 2,
 };
 
 function getFuseInstance(): Promise<Fuse<SearchGlyph>> {
