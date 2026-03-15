@@ -13,10 +13,11 @@ export interface SearchGlyph {
   source?: string;
 }
 
-/** Compact word record for search (no gardinerCodes, grammarRaw, notes). */
+/** Compact word record for search — one per distinct meaning+spelling. */
 export interface SearchWord {
   transliteration: string;
   translation: string;
   grammar: string | null;
   mdc: string;
+  gardinerCodes: string[];
 }
