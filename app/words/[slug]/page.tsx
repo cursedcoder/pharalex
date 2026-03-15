@@ -7,6 +7,7 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { WordGlyph } from "@/components/WordGlyph";
+import { CopyableWordGlyph } from "@/components/CopyableWordGlyph";
 import { WordCardList } from "@/components/WordCardList";
 import {
   getWordsBySlug,
@@ -131,7 +132,7 @@ export default async function WordPage({ params }: Props) {
 
               {/* Header card */}
               <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-2xl p-6 sm:p-8">
-                <WordGlyph
+                <CopyableWordGlyph
                   mdc={primaryEntry.mdc}
                   baseSize={48}
                   className="mb-5"
