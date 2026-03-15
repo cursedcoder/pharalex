@@ -43,7 +43,7 @@ export function CopyImageButton({ targetRef, className = "" }: CopyImageButtonPr
       className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs
         transition-all duration-200 cursor-pointer select-none
         ${state === "ok"
-          ? "bg-green-500/15 text-green-600"
+          ? "bg-gold/15 text-gold-dark"
           : state === "err"
             ? "bg-red-500/15 text-red-500"
             : "bg-sandstone/10 text-sandstone hover:bg-sandstone/20 hover:text-brown"
