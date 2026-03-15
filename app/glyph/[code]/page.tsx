@@ -113,6 +113,11 @@ export default async function GlyphPage({ params }: PageProps) {
   }
 
   const relatedGlyphs = await getRelatedGlyphs(glyph.code);
+  // Fetch incorporated (contains) glyphs separately — they're not in related
+  const containsCodes = glyph.contains ?? [];
+  const incorporatedGlyphs = (await Promise.all(
+    containsCodes.map((c) => getGlyphByCode(c))
+  )).filter(Boolean) as NonNullable<Awaited<ReturnType<typeof getGlyphByCode>>>[];
   const category = await getCategoryById(glyph.category);
   const variants = await getGlyphVariants(glyph.code);
   const baseCode = getBaseCode(glyph.code);
@@ -569,6 +574,24 @@ export default async function GlyphPage({ params }: PageProps) {
                       See all words using {glyph.code} →
                     </Link>
                   )}
+                </section>
+              )}
+
+              {incorporatedGlyphs.length > 0 && (
+                <section>
+                  <h3 className="font-display text-lg font-semibold text-brown mb-4">
+                    Incorporates
+                  </h3>
+                  <div className="space-y-3">
+                    {incorporatedGlyphs.map((g) => (
+                      <GlyphCard
+                        key={g.code}
+                        glyph={g}
+                        showDescription={false}
+                        glyphSize="md"
+                      />
+                    ))}
+                  </div>
                 </section>
               )}
 
