@@ -15,11 +15,11 @@ export function CopyableGlyph({ glyph, size = "xl", className }: CopyableGlyphPr
   const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div className={`group flex items-start gap-3 ${className ?? ""}`}>
+    <div className={`group flex flex-col items-center gap-2 ${className ?? ""}`}>
       <div ref={ref} className="inline-block">
         <SmartGlyph glyph={glyph} size={size} />
       </div>
-      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 pt-1">
+      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         <CopyImageButton targetRef={ref} />
       </div>
     </div>
