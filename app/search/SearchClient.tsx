@@ -67,7 +67,7 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
 // ── Group Header ────────────────────────────────────────────────────────────
 function GroupHeader({ id, title, count }: { id: string; title: string; count: number }) {
   return (
-    <div id={id} className="flex items-center gap-3 mt-8 mb-3 first:mt-0 scroll-mt-16">
+    <div id={id} className="flex items-center gap-3 mt-12 mb-3 first:mt-2 scroll-mt-16">
       <h2 className="font-display text-xl font-semibold text-brown whitespace-nowrap">{title}</h2>
       <span className="text-xs text-sandstone/60 bg-sandstone/10 px-2 py-0.5 rounded-full">{count}</span>
       <div className="flex-1 border-t border-sandstone/30" />
@@ -115,11 +115,11 @@ function StickyGroupNav({ sections }: { sections: { id: string; title: string; c
       {/* Sentinel — when this scrolls out, sticky bar appears */}
       <div ref={sentinelRef} />
 
-      {/* Sticky bar */}
+      {/* Sticky bar — zero height when hidden */}
       <div className={`sticky top-0 z-30 transition-all duration-200 ${
         isSticky
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 -translate-y-2 pointer-events-none"
+          ? "opacity-100"
+          : "opacity-0 pointer-events-none h-0 overflow-hidden"
       }`}>
         <div className="bg-ivory/95 backdrop-blur-sm border-b border-sandstone/20 py-2 -mx-4 px-4 sm:-mx-6 sm:px-6">
           <nav className="flex items-center justify-between">
@@ -276,8 +276,8 @@ function SearchContent() {
 
       <main className="py-6 sm:py-8">
         <Container>
-          <div className="mb-3">
-            <div className="flex items-center gap-4 mb-3">
+          <div className="mb-2">
+            <div className="flex items-center gap-4 mb-2">
               <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown">Search</h1>
 
               {/* Tabs */}
