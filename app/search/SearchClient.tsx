@@ -67,10 +67,10 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
 // ── Group Header ────────────────────────────────────────────────────────────
 function GroupHeader({ title, count }: { title: string; count: number }) {
   return (
-    <div className="flex items-center gap-3 mt-8 mb-4 first:mt-0">
-      <h2 className="text-sm font-medium text-sandstone uppercase tracking-wider">{title}</h2>
-      <span className="text-xs text-sandstone/50">{count}</span>
-      <div className="flex-1 border-t border-sandstone/15" />
+    <div className="flex items-center gap-3 mt-10 mb-4 first:mt-0">
+      <h2 className="text-sm font-semibold text-brown uppercase tracking-wider whitespace-nowrap">{title}</h2>
+      <span className="text-xs text-sandstone/60 bg-sandstone/10 px-2 py-0.5 rounded-full">{count}</span>
+      <div className="flex-1 border-t border-sandstone/30" />
     </div>
   );
 }
