@@ -261,7 +261,7 @@ export default function AboutPage() {
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown mb-3">
               About PharaLex
             </h1>
-            <p className="text-brown-light max-w-2xl leading-relaxed">
+            <p className="text-brown-light leading-relaxed">
               PharaLex is a community project that aims to make ancient Egyptian
               hieroglyphs accessible and browsable. It is not an academic
               publication and its creator is not a professional Egyptologist.
@@ -306,7 +306,7 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-brown mb-3">
               Acknowledgments
             </h2>
-            <p className="text-brown-light max-w-2xl leading-relaxed">
+            <p className="text-brown-light leading-relaxed">
               PharaLex is built entirely on the shoulders of open scholarship.
               Every glyph shape, every meaning, every transliteration comes from
               the generous work of researchers, linguists, type designers, and

@@ -1,0 +1,43 @@
+name: Bug Report
+description: Something isn't working correctly on the site
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      placeholder: Describe what went wrong
+    validations:
+      required: true
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      placeholder: https://pharalex.app/...
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: false
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag and drop a screenshot if helpful
+    validations:
+      required: false
