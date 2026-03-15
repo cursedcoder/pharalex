@@ -64,7 +64,7 @@ for (const w of words) {
     const KNOWN_ENGLISH_AI = new Set([
       "Day", "Dill", "Half", "District", "High", "Main", "King", "Clan", "Standard",
       "Tamarisk", "Sandal", "Syrian", "Acacia", "Strain", "Scribal", "Asiatic",
-      "Attack", "Daily", "Thighs",
+      "Attack", "Daily", "Thighs", "Hand",
     ]);
     const isShortEnglish = new Set(["He", "She", "His"]);
     const isPlainEnglish = (/^[A-Z][a-z]{2,}$/.test(p) && (/[eou]/i.test(p) || KNOWN_ENGLISH_AI.has(p))) || isShortEnglish.has(p);
@@ -105,7 +105,7 @@ for (const w of words) {
   const KNOWN_ENG = new Set([
     "Day", "Dill", "Half", "District", "High", "Main", "King", "Clan", "Standard",
     "His", "Tamarisk", "Sandal", "Syrian", "Acacia", "Strain", "Scribal",
-    "Asiatic", "Attack", "Daily", "Thighs",
+    "Asiatic", "Attack", "Daily", "Thighs", "Hand",
   ]);
   if (KNOWN_ENG.has(first)) continue;
   // Next word should look like English (not another MdC token)
