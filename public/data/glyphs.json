@@ -8401,7 +8401,8 @@
       }
     ],
     "transliteration": [
-      "sḏr, sṯs"
+      "sḏr",
+      "sṯs"
     ],
     "related": [
       "A1",
@@ -50696,6 +50697,7 @@
     "transliteration": [
       "m",
       "d",
+      "mj",
       "jmj",
       "dj",
       "rdj",
@@ -50705,7 +50707,6 @@
       "rdi",
       "di",
       "imi",
-      "mj,m",
       "ḏꞽ > dꞽ",
       "mi"
     ],
@@ -50761,7 +50762,6 @@
     "transliteration": [
       "m",
       "mj",
-      "m,mj",
       "jmj",
       "mi"
     ],
@@ -56779,7 +56779,8 @@
       }
     ],
     "transliteration": [
-      "dndn, ḏsr"
+      "ḏsr",
+      "dndn"
     ],
     "related": [
       "D1",
@@ -102831,6 +102832,7 @@
     ],
     "transliteration": [
       "ꜥš",
+      "jꜣm",
       "nbs",
       "nht",
       "im",
@@ -102838,7 +102840,8 @@
       "mꜥr",
       "iꜣm",
       "imꜣ",
-      "jꜣm,jmꜣ,jm"
+      "jmꜣ",
+      "jm"
     ],
     "etymology": "Representation of a tree.",
     "related": [
@@ -103537,7 +103540,7 @@
       "tr",
       "rj",
       "ti",
-      "tr,tj",
+      "tj",
       "ri"
     ],
     "related": [
@@ -112311,7 +112314,8 @@
       "ḥr",
       "pt",
       "Jnj-ḥrt",
-      "ḥr,ḥrj,ḥrw"
+      "ḥrj",
+      "ḥrw"
     ],
     "related": [
       "NL1",
@@ -116683,8 +116687,7 @@
       "mj",
       "mjzt",
       "mjꜥḥꜥt",
-      "mi",
-      "mr, mj"
+      "mi"
     ],
     "etymology": "Representing a canal bordered by banks and dikes. In detailed Old Kingdom depictions the water area is covered with zigzagging ripples,\n\n\n\n. Sometimes the canal is shown curved rather than straight,\n\n\n\n, especially in the Old Kingdom. This glyph partly supplanted N22 (𓈆), its variants N21 (𓈅) and N20 (𓈄), and Aa12 (𓐚) as a determinative for cultivated land in the 8th Dynasty, but in this function eventually changed into the form N23 (𓈇) in the 11th Dynasty. The water in the canal is conventionally green, or sometimes (lighter) blue; the outline is (darker) blue, perhaps representing mud brick. The phonogrammatic value of mr is derived by the rebus principle from its use as a logogram for mr (“canal”).",
     "related": [
@@ -127266,7 +127269,8 @@
       }
     ],
     "transliteration": [
-      "hꜣy,t"
+      "hꜣy",
+      "t"
     ],
     "related": [
       "O1",
@@ -128602,7 +128606,8 @@
       }
     ],
     "transliteration": [
-      "hꜣy,t"
+      "hꜣy",
+      "t"
     ],
     "related": [
       "O1",
@@ -140795,8 +140800,7 @@
     ],
     "transliteration": [
       "kꜣp",
-      "kp",
-      "kꜣp,kp"
+      "kp"
     ],
     "etymology": "Representation of a censer.",
     "related": [
@@ -154260,7 +154264,7 @@
       "ꜣr",
       "rwd",
       "ꜣi",
-      "ꜣr,ꜣj"
+      "ꜣj"
     ],
     "related": [
       "T1",
@@ -168404,7 +168408,7 @@
       "gꜣw",
       "msnw",
       "gꜣwt",
-      "gꜣw,gꜣy"
+      "gꜣy"
     ],
     "related": [
       "V1",
@@ -172828,10 +172832,10 @@
     ],
     "transliteration": [
       "mꞽ",
+      "mr",
       "mhr",
       "mi",
-      "mj",
-      "mr,mj"
+      "mj"
     ],
     "etymology": "Representation of a jug of milk with a handle. The original sound value was mr.",
     "related": [
@@ -172849,6 +172853,7 @@
     ],
     "signName": "milk jug in net",
     "transliterationCounts": {
+      "mr": 1,
       "mhr": 1,
       "mi": 14
     }
@@ -176669,7 +176674,8 @@
       }
     ],
     "transliteration": [
-      "t | sn, fḳꜣ"
+      "t | sn",
+      "fḳꜣ"
     ],
     "related": [],
     "source": "aegyptus",
