@@ -105,7 +105,7 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
+      <Header hideSearch />
 
       <main>
         {/* Hero */}
