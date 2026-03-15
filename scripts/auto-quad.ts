@@ -43,7 +43,7 @@ function horizScore(a: string, b: string): number {
   return idx.horiz[`${a},${b}`] ?? 0;
 }
 
-export function autoQuad(mdc: string): string {
+export function autoQuad(mdc: string, blockedPairs?: Set<string>): string {
   // Only process flat sequences (all dashes, no existing grouping)
   if (mdc.includes(":") || mdc.includes("*") || mdc.includes("&") ||
       mdc.includes("<") || mdc.includes("[") || mdc.includes("(")) {
@@ -69,8 +69,9 @@ export function autoQuad(mdc: string): string {
     const b = codes[i + 1];
     const c = i + 2 < codes.length ? codes[i + 2] : null;
 
-    const vAB = vertScore(a, b);
-    const hAB = horizScore(a, b);
+    const abBlocked = blockedPairs?.has(`${a},${b}`) ?? false;
+    const vAB = abBlocked ? 0 : vertScore(a, b);
+    const hAB = abBlocked ? 0 : horizScore(a, b);
 
     // Lookahead: would B pair better with C?
     const vBC = c ? vertScore(b, c) : 0;

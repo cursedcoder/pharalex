@@ -8,7 +8,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { fixTypos } from "./typo-fixes";
-import { applyWordPatches, MDC_OVERRIDES } from "./word-patches";
+import { applyWordPatches, BLOCKED_QUAD_PAIRS } from "./word-patches";
 import { stripLeakedMdC, buildTranslitSet } from "./strip-leaked-mdc";
 import { autoQuad } from "./auto-quad";
 
@@ -328,30 +328,29 @@ if (notesStripped > 0) console.log(`  Stripped technical notes: ${notesStripped}
 // ── 12. Auto-quad: enrich flat MdC with stacking/grouping operators ─────────
 // First flatten any existing auto-quad grouping so we can re-apply with
 // the latest algorithm (colons/stars → hyphens, preserving special ops).
+// Then apply MdC overrides on the FLAT form before auto-quad runs, so the
+// auto-quad algorithm sees the corrected sign sequence.
+// Build per-transliteration blocked pair sets
+const blockedByTranslit = new Map<string, Set<string>>();
+for (const [translit, pair] of BLOCKED_QUAD_PAIRS) {
+  if (!blockedByTranslit.has(translit)) blockedByTranslit.set(translit, new Set());
+  blockedByTranslit.get(translit)!.add(pair);
+}
+
 let quadded = 0;
+let blockedApplied = 0;
 for (const w of words) {
-  // Flatten previous auto-quad: replace : and * with - (but not inside
-  // special constructs like enclosures, ligatures, restored sections)
   const flat = w.mdc.replace(/[:*]/g, "-");
-  const result = autoQuad(flat);
+  const blocked = blockedByTranslit.get(w.transliteration);
+  if (blocked) blockedApplied++;
+  const result = autoQuad(flat, blocked);
   if (result !== w.mdc) {
     w.mdc = result;
     quadded++;
   }
 }
+if (blockedApplied > 0) console.log(`  Blocked quad pairs applied to: ${blockedApplied} words`);
 console.log(`  Auto-quadded MdC: ${quadded}`);
-
-// ── 13. MdC overrides — fix auto-quad groupings that pair-frequency can't resolve
-let mdcOverrides = 0;
-for (const w of words) {
-  for (const [translit, oldSub, newSub] of MDC_OVERRIDES) {
-    if (w.transliteration === translit && w.mdc.includes(oldSub)) {
-      w.mdc = w.mdc.replace(oldSub, newSub);
-      mdcOverrides++;
-    }
-  }
-}
-console.log(`  MdC overrides applied: ${mdcOverrides}`);
 
 // ── Write output ────────────────────────────────────────────────────────────
 fs.writeFileSync(WORDS_PATH, JSON.stringify(words));

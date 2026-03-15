@@ -89,15 +89,16 @@ export const WORD_PATCHES: WordPatch[] = [
 ];
 
 /**
- * MdC quadrat overrides — fix auto-quad grouping that pair-frequency
- * alone can't resolve. Format: [transliteration, oldMdcSubstring, newMdcSubstring]
+ * Blocked quad pairs per transliteration — prevents auto-quad from
+ * pairing signs that pair-frequency incorrectly groups together.
+ * Format: [transliteration, "A,B"] where A,B should NOT be stacked.
  *
  * mk: G17 (owl) should NOT stack with D36 (forearm). Vygus shows them
  * side-by-side. Auto-quad applies G17:D36 from other words (mꜥ) but
  * in mk words D36 stacks with V31 instead.
  */
-export const MDC_OVERRIDES: [string, string, string][] = [
-  ["mk", "G17:D36", "G17-D36"],
+export const BLOCKED_QUAD_PAIRS: [string, string][] = [
+  ["mk", "G17,D36"],
 ];
 
 /**
