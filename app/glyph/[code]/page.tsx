@@ -22,6 +22,7 @@ import { getWordsByGardinerCode, wordHref } from "@/lib/words";
 import { getWiktionaryEntries } from "@/lib/wiktionary";
 import { translitToUnicode } from "@/lib/word-utils";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
+import { WordCardList } from "@/components/WordCardList";
 import { UnicodeChar } from "@/components/UnicodeChar";
 import { ExpandableList } from "@/components/ExpandableList";
 import { DictionaryEntries } from "@/components/DictionaryEntries";
@@ -542,43 +543,7 @@ export default async function GlyphPage({ params }: PageProps) {
                   <h3 className="font-display text-lg font-semibold text-brown mb-3">
                     Words Using This Glyph
                   </h3>
-                  <div className="space-y-2">
-                    {wordsUsingGlyph.slice(0, 5).map((word) => (
-                      <Link
-                        key={word.transliteration}
-                        href={wordHref(word.transliteration)}
-                        className="block bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-3 hover:border-gold/40 hover:shadow-sm transition-all group"
-                      >
-                        <div className="flex gap-2 mb-2 overflow-hidden">
-                          {word.gardinerCodes.slice(0, 8).map((code, i) => (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img
-                              key={`${code}-${i}`}
-                              src={glyphSvgSrc(code)}
-                              alt={code}
-                              className="w-6 h-6 object-contain shrink-0"
-                            />
-                          ))}
-                          {word.gardinerCodes.length > 8 && (
-                            <span className="text-xs text-sandstone self-center">…</span>
-                          )}
-                        </div>
-                        <div className="flex items-baseline justify-between gap-2">
-                          <span className="text-sm font-medium text-brown group-hover:text-gold-dark transition-colors italic">
-                            {translitToUnicode(word.transliteration)}
-                          </span>
-                          {word.grammar && (
-                            <Badge variant="outline" size="sm">
-                              {word.grammar}
-                            </Badge>
-                          )}
-                        </div>
-                        <p className="text-sm text-brown-light mt-1 line-clamp-1">
-                          {word.translation}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
+                  <WordCardList words={wordsUsingGlyph} max={5} />
                   {wordsUsingGlyph.length > 5 && (
                     <Link
                       href={`/search?q=${encodeURIComponent(glyph.code)}&show=words&gardiner=true`}

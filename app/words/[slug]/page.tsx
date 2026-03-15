@@ -7,13 +7,17 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { WordGlyph } from "@/components/WordGlyph";
+import { WordCardList } from "@/components/WordCardList";
 import {
   getWordsBySlug,
   getAllTransliterations,
   wordSlug,
   translitToUnicode,
+  getWordRelations,
 } from "@/lib/words";
 import { getAllTexts } from "@/lib/texts";
+import { buildGlyphDetailsMap } from "@/lib/glyphs";
+import { GlyphDetailsProvider } from "@/components/GlyphDetailsContext";
 import type { DictionaryWord } from "@/lib/types";
 
 interface Props {
@@ -98,9 +102,20 @@ export default async function WordPage({ params }: Props) {
     )
   );
 
+  // Related words
+  const related = getWordRelations(w.transliteration);
+
+  // Collect all Gardiner codes for glyph tooltips
+  const allCodes = new Set<string>();
+  for (const e of entries) {
+    for (const c of e.gardinerCodes) allCodes.add(c);
+  }
+  const glyphDetails = await buildGlyphDetailsMap([...allCodes]);
+
   return (
     <>
       <Header />
+      <GlyphDetailsProvider details={glyphDetails}>
       <main className="py-8 sm:py-12">
         <Container size="lg">
           {/* Breadcrumb */}
@@ -230,7 +245,7 @@ export default async function WordPage({ params }: Props) {
             </div>
 
             {/* Sidebar */}
-            <aside className="lg:sticky lg:top-24 space-y-4">
+            <aside className="space-y-4">
               <div className="bg-papyrus/40 border border-gold/20 rounded-xl p-5 space-y-4">
                 <h3 className="font-display text-lg text-brown">Quick Info</h3>
                 <dl className="space-y-3 text-sm">
@@ -263,6 +278,23 @@ export default async function WordPage({ params }: Props) {
                 </dl>
               </div>
 
+              {related.length > 0 && (
+                <section>
+                  <h3 className="font-display text-lg font-semibold text-brown mb-3">
+                    Related Words
+                  </h3>
+                  <WordCardList
+                    words={related.map((r) => ({
+                      transliteration: r.translit,
+                      translation: r.translation,
+                      grammar: r.grammar,
+                      mdc: r.mdc,
+                    }))}
+                    max={5}
+                  />
+                </section>
+              )}
+
               <Link
                 href="/search"
                 className="flex items-center gap-2 text-sm text-sandstone hover:text-gold transition-colors"
@@ -273,6 +305,7 @@ export default async function WordPage({ params }: Props) {
           </div>
         </Container>
       </main>
+      </GlyphDetailsProvider>
     </>
   );
 }
