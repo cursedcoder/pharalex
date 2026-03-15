@@ -109,7 +109,7 @@ const MAX_QUERY_LENGTH = 100;
 
 export async function GET(req: NextRequest) {
   const q = (req.nextUrl.searchParams.get("q")?.trim() ?? "").slice(0, MAX_QUERY_LENGTH);
-  const exact = req.nextUrl.searchParams.get("exact") !== "false"; // default to exact
+  const exact = req.nextUrl.searchParams.get("exact") !== "false";
   const gardiner = req.nextUrl.searchParams.get("gardiner") === "true";
   // Allow single-char searches in exact/gardiner mode (Egyptian uniliterals like m, n, r)
   const minLength = (exact || gardiner) ? 1 : 2;
@@ -119,7 +119,11 @@ export async function GET(req: NextRequest) {
 
   const ql = q.toLowerCase();
 
-  const glyphResults: GlyphResult[] = gardiner ? [] : (exact ? await exactGlyphSearch(q) : (await fuzzySearch(q, 60))).map((r) => ({
+  // Glyphs: exact code match + fuzzy description match
+  const exactGlyphs = gardiner ? [] : await exactGlyphSearch(q);
+  const fuzzyGlyphs = (gardiner || exactGlyphs.length > 0) ? [] : await fuzzySearch(q, 20);
+  const allGlyphResults = [...exactGlyphs, ...fuzzyGlyphs];
+  const glyphResults: GlyphResult[] = allGlyphResults.map((r) => ({
     kind: "glyph",
     score: r.score ?? 1,
     code: r.glyph.code,
