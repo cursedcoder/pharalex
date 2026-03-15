@@ -111,8 +111,11 @@ export async function getWordsByGardinerCode(
   const results: DictionaryWord[] = [];
   for (const [, entries] of await wordGroups()) {
     if (results.length >= limit) break;
-    if (entries.some((w) => w.gardinerCodes.includes(code))) {
-      results.push(entries[0]);
+    // Pick the entry that actually uses this glyph, not entries[0] which may
+    // have a different spelling (e.g. aHa has A21 and D36-P6 variants)
+    const match = entries.find((w) => w.gardinerCodes.includes(code));
+    if (match) {
+      results.push(match);
     }
   }
   return results;
