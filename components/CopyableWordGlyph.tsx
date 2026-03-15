@@ -14,11 +14,11 @@ export function CopyableWordGlyph({ mdc, baseSize = 40, className }: CopyableWor
   const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div className={className ?? ""}>
+    <div className={`group flex items-start gap-3 ${className ?? ""}`}>
       <div ref={ref} className="inline-block">
         <WordGlyph mdc={mdc} baseSize={baseSize} />
       </div>
-      <div className="mt-2">
+      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 pt-1">
         <CopyImageButton targetRef={ref} />
       </div>
     </div>
