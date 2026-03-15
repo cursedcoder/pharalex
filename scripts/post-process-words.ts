@@ -204,7 +204,20 @@ for (const w of words) {
 }
 if (punctFixed > 0) console.log(`  Fixed punctuation: ${punctFixed}`);
 
-// ── 8. Clean transliteration oddities ─────────────────────────────────────────
+// ── 8. Strip scholarly restoration parentheses from transliterations ──────────
+// "(tA)" → "tA", "(m) biAt" → "m biAt" — parens mark lacuna restorations
+let parenStripped = 0;
+for (const w of words) {
+  if (w.transliteration.includes("(")) {
+    w.transliteration = w.transliteration.replace(/[()]/g, "").replace(/\s{2,}/g, " ").trim();
+    // Also strip from translation
+    w.translation = w.translation.replace(/^\(([^)]+)\)\s*/, "$1 ").trim();
+    parenStripped++;
+  }
+}
+if (parenStripped > 0) console.log(`  Stripped restoration parens: ${parenStripped}`);
+
+// ── 9. Clean transliteration oddities ─────────────────────────────────────────
 let translitCleaned = 0;
 for (const w of words) {
   let tr = w.transliteration;
