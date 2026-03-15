@@ -1,0 +1,41 @@
+import * as fs from "fs";
+import * as path from "path";
+
+export interface WiktionaryEntry {
+  word: string;
+  pos: string;
+  glosses: string[];
+}
+
+let _cache: Map<string, WiktionaryEntry[]> | null = null;
+
+function loadWiktionary(): Map<string, WiktionaryEntry[]> {
+  if (_cache && process.env.NODE_ENV === "production") return _cache;
+
+  const filePath = path.join(process.cwd(), "lib/data/wiktionary-egyptian.jsonl");
+  const lines = fs.readFileSync(filePath, "utf-8").trim().split("\n");
+
+  const byWord = new Map<string, WiktionaryEntry[]>();
+  for (const line of lines) {
+    const raw = JSON.parse(line);
+    const word: string = raw.word;
+    const pos: string = raw.pos;
+    const glosses: string[] = (raw.senses ?? [])
+      .flatMap((s: { glosses?: string[] }) => s.glosses ?? [])
+      .filter((g: string) => !g.startsWith("Manuel de Codage")); // skip MdC romanization notes
+
+    if (glosses.length === 0) continue;
+    if (pos === "romanization") continue; // skip romanization entries
+
+    if (!byWord.has(word)) byWord.set(word, []);
+    byWord.get(word)!.push({ word, pos, glosses });
+  }
+
+  _cache = byWord;
+  return byWord;
+}
+
+/** Look up Wiktionary entries for a Unicode transliteration. */
+export function getWiktionaryEntries(translit: string): WiktionaryEntry[] {
+  return loadWiktionary().get(translit) ?? [];
+}

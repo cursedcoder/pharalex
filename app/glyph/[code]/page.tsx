@@ -18,10 +18,12 @@ import {
   glyphHref,
 } from "@/lib/glyphs";
 import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
-import { getWordsByGardinerCode, getWordsByTransliteration, wordHref } from "@/lib/words";
+import { getWordsByGardinerCode, wordHref } from "@/lib/words";
+import { getWiktionaryEntries } from "@/lib/wiktionary";
 import { translitToUnicode } from "@/lib/word-utils";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
 import { UnicodeChar } from "@/components/UnicodeChar";
+import { ExpandableList } from "@/components/ExpandableList";
 import type { ReactNode } from "react";
 
 /** Gardiner code pattern: A1, Aa15, D53B, etc. */
@@ -125,9 +127,8 @@ export default async function GlyphPage({ params }: PageProps) {
   const variantSiblings = await getVariantSiblings(glyph.code);
   const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
   const wordsUsingGlyph = await getWordsByGardinerCode(glyph.code, 30);
-  // Dictionary: look up word definitions for each of the glyph's transliteration values.
-  // Glyph transliterations are in Unicode (ṯḥn), words are stored in MdC (THn).
-  // Convert Unicode → MdC for lookup.
+  // Dictionary: look up Wiktionary definitions for each transliteration value.
+  // Wiktionary has curated, concise definitions (vs Vygus which has massive duplication).
   const UNICODE_TO_MDC: Record<string, string> = {
     "ꜣ": "A", "ꜥ": "a", "ḥ": "H", "ḫ": "x", "ẖ": "X", "š": "S", "ṯ": "T", "ḏ": "D",
   };
@@ -136,10 +137,9 @@ export default async function GlyphPage({ params }: PageProps) {
     for (const ch of s) r += UNICODE_TO_MDC[ch] ?? ch;
     return r;
   }
-  const dictionary = new Map<string, Awaited<ReturnType<typeof getWordsByTransliteration>>>();
+  const dictionary = new Map<string, ReturnType<typeof getWiktionaryEntries>>();
   for (const t of glyph.transliteration) {
-    const mdcKey = toMdc(t);
-    const entries = await getWordsByTransliteration(mdcKey);
+    const entries = getWiktionaryEntries(t);
     if (entries.length > 0) {
       dictionary.set(t, entries);
     }
@@ -444,161 +444,82 @@ export default async function GlyphPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {glyph.description && glyph.meanings.length === 0 && (
-                <section>
-                  <h2 className="font-display text-2xl font-semibold text-brown mb-4">
-                    Description
-                  </h2>
-                  <div
-                    className="
-                      bg-ivory-dark/50 border border-sandstone/20 rounded-xl
-                      p-4 sm:p-6
-                    "
-                  >
-                    <p className="text-brown-light leading-relaxed">
-                      {linkifyCodes(glyph.description)}
-                    </p>
-                  </div>
-                </section>
-              )}
-
-              {glyph.meanings.length > 0 && (
+              {/* Combined Meanings & Dictionary section */}
+              {(glyph.meanings.length > 0 || dictionary.size > 0 || glyph.description) && (
                 <section>
                   <h2 className="font-display text-2xl font-semibold text-brown mb-4">
                     Meanings
                   </h2>
 
-                  {glyph.description && (
+                  {glyph.description && dictionary.size === 0 && (
                     <p className="text-sm text-brown-light/70 italic mb-4 leading-relaxed">
                       {linkifyCodes(glyph.description)}
                     </p>
                   )}
 
-                  {/* Group meanings by type for cleaner display */}
-                  {(() => {
-                    const groups = new Map<string, typeof glyph.meanings>();
-                    for (const m of glyph.meanings) {
-                      const key = m.type;
-                      if (!groups.has(key)) groups.set(key, []);
-                      groups.get(key)!.push(m);
-                    }
-                    return (
-                      <div className="space-y-5">
-                        {[...groups.entries()].map(([type, meanings]) => (
-                          <div
-                            key={type}
-                            className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl overflow-hidden"
-                          >
-                            {/* Type header */}
-                            <div className="flex items-center gap-2 px-4 sm:px-5 py-3 bg-papyrus/30 border-b border-sandstone/15">
-                              <Badge variant={typeColors[type as keyof typeof typeColors]}>
-                                {type}
-                              </Badge>
-                              <span className="text-xs text-sandstone">
-                                {typeDescriptions[type as keyof typeof typeDescriptions]}
-                              </span>
-                            </div>
-                            {/* Meaning entries */}
-                            <div className="px-4 sm:px-5 py-3 space-y-2.5">
-                              {meanings.map((meaning, i) => (
-                                <div key={i} className="flex items-start gap-2.5">
-                                  <span className="text-xs font-medium text-sandstone/50 mt-0.5 w-4 shrink-0 text-right">
-                                    {i + 1}.
-                                  </span>
-                                  <div className="flex-1">
-                                    <p className="text-sm text-brown-light leading-relaxed">
-                                      {linkifyCodes(meaning.text)}
-                                    </p>
-                                    {meaning.period && (
-                                      <Badge variant="outline" size="sm">{meaning.period}</Badge>
-                                    )}
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    );
-                  })()}
-                </section>
-              )}
-
-              {dictionary.size > 0 && (
-                <section>
-                  <h2 className="font-display text-2xl font-semibold text-brown mb-4">
-                    Dictionary
-                  </h2>
                   <div className="space-y-4">
-                    {[...dictionary.entries()].map(([translit, senses]) => {
-                      // Group senses by grammar for cleaner display
-                      const grammarGroups = new Map<string, typeof senses>();
-                      for (const s of senses) {
-                        const key = s.grammar ?? "(unclassified)";
-                        if (!grammarGroups.has(key)) grammarGroups.set(key, []);
-                        grammarGroups.get(key)!.push(s);
-                      }
-                      return [...grammarGroups.entries()]
-                        .filter(([grammar]) => grammar !== "(unclassified)")
-                        .map(([grammar, entries]) => {
-                        // Deduplicate translations (also fuzzy-dedup overlapping glosses)
-                        const seen = new Set<string>();
-                        const unique = entries.filter((e) => {
-                          const k = e.translation.toLowerCase().trim();
-                          if (seen.has(k)) return false;
-                          // Also skip if a shorter version of an existing gloss
-                          for (const s of seen) {
-                            if (s.includes(k) || k.includes(s)) return false;
-                          }
-                          seen.add(k);
-                          return true;
-                        });
-                        if (unique.length === 0) return null;
-                        const MAX_DEFS = 6;
-                        const shown = unique.slice(0, MAX_DEFS);
-                        const remaining = unique.length - shown.length;
-                        const GRAMMAR_LABELS: Record<string, string> = {
-                          NOUN: "noun", VERB: "verb", ADJ: "adjective", ADV: "adverb",
-                          PREP: "preposition", PRON: "pronoun", PART: "particle",
-                          CONJ: "conjunction", INTJ: "interjection", NUM: "numeral",
-                        };
-                        return (
-                          <div
-                            key={`${translit}-${grammar}`}
-                            className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 sm:p-5"
-                          >
-                            <div className="flex items-baseline gap-2 mb-3">
-                              <Link
-                                href={wordHref(toMdc(translit))}
-                                className="font-mono text-lg font-bold text-brown hover:text-gold-dark transition-colors"
-                              >
-                                {translitToUnicode(translit)}
-                              </Link>
-                              {grammar !== "(unclassified)" && (
-                                <span className="text-sm italic text-sandstone">
-                                  {GRAMMAR_LABELS[grammar] ?? grammar.toLowerCase()}
-                                </span>
-                              )}
-                            </div>
-                            <ol className="space-y-1 list-decimal list-inside text-sm text-brown-light">
-                              {shown.map((entry, i) => (
-                                <li key={i} className="leading-relaxed">
-                                  {entry.translation}
-                                </li>
-                              ))}
-                            </ol>
-                            {remaining > 0 && (
-                              <Link
-                                href={wordHref(toMdc(translit))}
-                                className="mt-2 block text-xs text-gold hover:text-gold-dark transition-colors"
-                              >
-                                +{remaining} more →
-                              </Link>
-                            )}
+                    {/* Dictionary entries from Wiktionary — one card per transliteration */}
+                    {[...dictionary.entries()].map(([translit, wiktEntries]) => {
+                      if (wiktEntries.length === 0) return null;
+                      return (
+                        <div
+                          key={translit}
+                          className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-4 sm:p-5"
+                        >
+                          {/* Header */}
+                          <div className="flex items-baseline gap-2 mb-3">
+                            <Link
+                              href={wordHref(toMdc(translit))}
+                              className="font-mono text-lg font-bold text-brown hover:text-gold-dark transition-colors"
+                            >
+                              {translit}
+                            </Link>
                           </div>
-                        );
-                      });
+                          {/* POS sub-sections */}
+                          <div className="space-y-3">
+                            {wiktEntries.map((entry, ei) => (
+                              <div key={ei}>
+                                <span className="text-xs italic text-sandstone">
+                                  {entry.pos}
+                                </span>
+                                <ExpandableList
+                                  items={entry.glosses}
+                                  max={5}
+                                  className="mt-1"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
                     })}
+
+                    {/* Sign-level meanings (from St Andrews etc.) if no dictionary data */}
+                    {dictionary.size === 0 && glyph.meanings.length > 0 && (() => {
+                      const groups = new Map<string, typeof glyph.meanings>();
+                      for (const m of glyph.meanings) {
+                        if (!groups.has(m.type)) groups.set(m.type, []);
+                        groups.get(m.type)!.push(m);
+                      }
+                      return [...groups.entries()].map(([type, meanings]) => (
+                        <div
+                          key={type}
+                          className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl overflow-hidden"
+                        >
+                          <div className="flex items-center gap-2 px-4 py-3 bg-papyrus/30 border-b border-sandstone/15">
+                            <Badge variant={typeColors[type as keyof typeof typeColors]}>{type}</Badge>
+                            <span className="text-xs text-sandstone">{typeDescriptions[type as keyof typeof typeDescriptions]}</span>
+                          </div>
+                          <div className="px-4 py-3 space-y-1">
+                            {meanings.map((m, i) => (
+                              <p key={i} className="text-sm text-brown-light">
+                                {i + 1}. {linkifyCodes(m.text)}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      ));
+                    })()}
                   </div>
                 </section>
               )}
