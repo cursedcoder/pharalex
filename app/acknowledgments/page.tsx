@@ -101,9 +101,20 @@ const GLYPH_SOURCES: GlyphSource[] = [
 
 const DATA_SOURCES: DataSource[] = [
   {
+    name: "Vygus Middle Egyptian Dictionary",
+    records: "45,555",
+    provides:
+      "Complete Middle Egyptian word list with transliterations, translations, grammar, and hieroglyphic spellings (Gardiner codes)",
+    author: "Raymond Faulkner (original), compiled by Vygus (2018)",
+    url: "http://www.pyramidtextsonline.com/documents/VygusDictionaryJune2018.pdf",
+    license: "Academic",
+    licenseVariant: "sandstone",
+    commercial: false,
+  },
+  {
     name: "Wiktionary Egyptian Dictionary",
-    records: "~260",
-    provides: "Meanings, transliterations, etymology, usage examples",
+    records: "5,308",
+    provides: "Curated definitions with part-of-speech, glosses, and etymology",
     author: "Wiktionary contributors (via kaikki.org)",
     url: "https://kaikki.org/dictionary/Ancient%20Egyptian/",
     license: "CC BY-SA 3.0",
@@ -133,6 +144,17 @@ const DATA_SOURCES: DataSource[] = [
     commercial: true,
   },
   {
+    name: "JSesh Texts Corpus",
+    records: "190 texts",
+    provides:
+      "Hieroglyphic quadrat patterns (94,652 sign pairs) learned from authored .gly files, used for auto-quadding word spellings",
+    author: "Serge Rosmorduc and contributors",
+    url: "https://github.com/rosmord/jsesh",
+    license: "CC BY (texts)",
+    licenseVariant: "gold",
+    commercial: true,
+  },
+  {
     name: "St Andrews Unicode Sign List",
     records: "1,071",
     provides:
@@ -142,6 +164,28 @@ const DATA_SOURCES: DataSource[] = [
     license: "Academic open",
     licenseVariant: "sandstone",
     commercial: false,
+  },
+  {
+    name: "TLA Earlier Egyptian Corpus",
+    records: "12,773 sentences",
+    provides:
+      "Attested text examples with hieroglyphs, transliteration, and translation for Old/Middle Egyptian (~3000–1550 BCE)",
+    author: "Thesaurus Linguae Aegyptiae",
+    url: "https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-Earlier_Egyptian_original-v18-premium",
+    license: "CC BY-SA 4.0",
+    licenseVariant: "gold",
+    commercial: true,
+  },
+  {
+    name: "TLA Late Egyptian Corpus",
+    records: "3,606 sentences",
+    provides:
+      "Attested text examples for Late Egyptian period (~1550–700 BCE)",
+    author: "Thesaurus Linguae Aegyptiae",
+    url: "https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-late_egyptian-v19-premium",
+    license: "CC BY-SA 4.0",
+    licenseVariant: "gold",
+    commercial: true,
   },
   {
     name: "Aegyptus Glyph List",

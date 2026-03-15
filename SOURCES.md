@@ -42,30 +42,38 @@ All extracted SVGs use `fill="currentColor"` so they respect the site's light/da
 
 ## Dictionary & Metadata Sources
 
-Glyph names, meanings, transliterations, phonetic values, and Gardiner categorisation come from five open datasets that were downloaded, parsed, and merged by the scripts in `scripts/`.
+Glyph names, meanings, transliterations, phonetic values, and Gardiner categorisation come from open datasets that were downloaded, parsed, and merged by the scripts in `scripts/`.
 
 | Source | Records | What it provides | How obtained | License |
 |--------|--------:|------------------|--------------|---------|
-| **Wiktionary Egyptian Dictionary** (kaikki.org) | ~260 entries | Meanings, transliterations, etymology, usage examples | Downloaded JSONL from [kaikki.org](https://kaikki.org/dictionary/Ancient%20Egyptian/) and parsed with `scripts/process-data.ts` | CC BY-SA 3.0 |
+| **Vygus Middle Egyptian Dictionary** (2018) | 45,555 words | Complete Middle Egyptian word list with transliterations, translations, grammar, and hieroglyphic spellings (Gardiner codes) | Parsed from [PDF](http://www.pyramidtextsonline.com/documents/VygusDictionaryJune2018.pdf) with `scripts/parse-vygus.ts`; post-processed with `scripts/post-process-words.ts` | Academic |
+| **Wiktionary Egyptian Dictionary** (kaikki.org) | 5,308 entries | Curated definitions with part-of-speech, glosses, and etymology | Downloaded JSONL from [kaikki.org](https://kaikki.org/dictionary/Ancient%20Egyptian/) and parsed with `scripts/process-data.ts` | CC BY-SA 3.0 |
 | **Unicode Unikemet database** (Unicode 16.0) | 4,376 entries | Gardiner/Hieroglyphica codes, Unicode codepoints, phonetic values (`kEH_FVal`), descriptions (`kEH_Desc`), category (`kEH_Cat`), cross-references (`kEH_UniK`, `kEH_JSesh`) | Downloaded `Unikemet.txt` from [unicode.org](https://unicode.org/); parsed with `scripts/process-unikemet.ts` | Unicode License |
 | **Aegyptus glyph list** | 3,900 entries | Additional Hieroglyphica sign codes (extended corpus beyond Unikemet) | Derived from Aegyptus font's character map; imported via `scripts/process-aegyptus.ts` | — |
-| **JSesh sign descriptions** (`signs_description.xml`) | 6,783 entries | Shape/visual tags (e.g. "seated", "holding something", "bird-headed"), additional phonetic transliterations with use/type metadata, composite part relationships | Cloned [`rosmord/jsesh`](https://github.com/rosmord/jsesh); extracted `jsesh/src/main/resources/jsesh/hieroglyphs/resources/signs_description.xml`; parsed with `scripts/process-jsesh.ts` | LGPL-3.0 |
-| **St Andrews Unicode Sign List** | 1,071 entries | English physical descriptions (e.g. "seated man", "owl"), semantic uses (logogram/phonogram/determinative) with transliterations and translations | Downloaded `signdescriptioneng.xml` and `signuse.xml` from [mjn.host.cs.st-andrews.ac.uk](https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/); parsed with `scripts/process-standrews.ts` | Academic open |
-| **TLA Earlier Egyptian corpus** (v18) | 12,773 sentences | Attested text examples: hieroglyphs + transliteration + German translation + date range, for Old/Middle Egyptian period (~3000–1550 BCE) | Downloaded `train.jsonl` from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-Earlier_Egyptian_original-v18-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
-| **TLA Late Egyptian corpus** (v19) | 3,606 sentences | Same as above for Late Egyptian period (~1550–700 BCE) | Downloaded `train.jsonl` from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-late_egyptian-v19-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
-| **Combined** | **8,132** | All of the above, deduplicated and merged by Gardiner code | Final output at `lib/data/glyphs.json` | — |
+| **JSesh sign descriptions** (`signs_description.xml`) | 6,783 entries | Shape/visual tags, additional phonetic transliterations with use/type metadata, composite part relationships | Cloned [`rosmord/jsesh`](https://github.com/rosmord/jsesh); parsed with `scripts/process-jsesh.ts` | LGPL-3.0 |
+| **JSesh texts corpus** | 190 `.gly` files | Hieroglyphic quadrat patterns (94,652 sign pairs) for data-driven auto-quadding | From `jsesh-installer/src/binary/texts/`; parsed with `scripts/build-quad-index.ts` | CC BY (texts) |
+| **St Andrews Unicode Sign List** | 1,071 entries | English physical descriptions, semantic uses (logogram/phonogram/determinative) with transliterations and translations | Downloaded from [mjn.host.cs.st-andrews.ac.uk](https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/); parsed with `scripts/process-standrews.ts` | Academic open |
+| **TLA Earlier Egyptian corpus** (v18) | 12,773 sentences | Attested text examples: hieroglyphs + transliteration + translation + date range, for Old/Middle Egyptian (~3000–1550 BCE) | Downloaded from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-Earlier_Egyptian_original-v18-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
+| **TLA Late Egyptian corpus** (v19) | 3,606 sentences | Same as above for Late Egyptian period (~1550–700 BCE) | Downloaded from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-late_egyptian-v19-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
+| **Combined glyphs** | **8,132** | All glyph data, deduplicated and merged by Gardiner code | Final output at `public/data/glyphs.json` | — |
 
 ---
 
 ## Data Pipeline
 
 ```
+Vygus PDF                 → scripts/parse-vygus.ts         ─→ public/data/words.json (raw)
+                          → scripts/post-process-words.ts  ─→ public/data/words.json (cleaned + auto-quadded)
+
 kaikki.org JSONL          → scripts/process-data.ts        ─┐
 Unicode Unikemet.txt      → scripts/process-unikemet.ts    ─┤
-Aegyptus font cmap        → scripts/process-aegyptus.ts    ─┼→ lib/data/glyphs.json
-JSesh signs_description   → scripts/process-jsesh.ts       ─┤
-St Andrews sign list XMLs → scripts/process-standrews.ts   ─┤
-TLA corpus JSONL (×2)     → scripts/process-tla.ts         ─┘
+Aegyptus font cmap        → scripts/process-aegyptus.ts    ─┼→ public/data/glyphs.json
+JSesh signs_description   → scripts/process-jsesh.ts       ─┤   → scripts/post-process-glyphs.ts
+St Andrews sign list XMLs → scripts/process-standrews.ts   ─┘
+
+JSesh .gly texts (190)    → scripts/build-quad-index.ts    ─→ public/data/quad-index.json
+words.json                → scripts/build-word-relations.ts ─→ public/data/word-relations.json
+words.json + glyphs.json  → scripts/build-search-index.ts  ─→ public/data/search-*.json
 
 JSesh SVGs (repo)         ─┐
 NewGardiner TTF extract   ─┤
