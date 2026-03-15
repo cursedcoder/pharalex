@@ -274,10 +274,10 @@ function SearchContent() {
     <div className="min-h-screen">
       <Header />
 
-      <main className="py-8 sm:py-12">
+      <main className="py-6 sm:py-8">
         <Container>
-          <div className="mb-4">
-            <div className="flex items-center gap-4 mb-4">
+          <div className="mb-3">
+            <div className="flex items-center gap-4 mb-3">
               <h1 className="font-display text-3xl sm:text-4xl font-bold text-brown">Search</h1>
 
               {/* Tabs */}
