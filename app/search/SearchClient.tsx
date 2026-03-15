@@ -272,7 +272,7 @@ function SearchContent() {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header hideSearch />
 
       <main className="py-6 sm:py-8">
         <Container>
@@ -482,7 +482,7 @@ export default function SearchClient() {
     <Suspense
       fallback={
         <div className="min-h-screen">
-          <Header />
+          <Header hideSearch />
           <main className="py-8 sm:py-12">
             <Container>
               <div className="animate-pulse">

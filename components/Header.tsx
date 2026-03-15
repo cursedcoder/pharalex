@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SearchBar } from "./SearchBar";
 import { ThemeToggle } from "./ThemeToggle";
 
-export function Header() {
+export function Header({ hideSearch = false }: { hideSearch?: boolean } = {}) {
   return (
     <header className="header-blur sticky top-0 z-40 bg-ivory/95 dark:bg-ivory-dark/95 border-b border-sandstone/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -14,9 +14,11 @@ export function Header() {
             </span>
           </Link>
 
-          <div className="flex-1 max-w-xl hidden md:block">
-            <SearchBar size="sm" placeholder="Search hieroglyphs..." />
-          </div>
+          {!hideSearch && (
+            <div className="flex-1 max-w-xl hidden md:block">
+              <SearchBar size="sm" placeholder="Search hieroglyphs..." />
+            </div>
+          )}
 
           <nav className="flex items-center gap-0.5 sm:gap-1 shrink-0">
             <Link
