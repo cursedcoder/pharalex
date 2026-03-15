@@ -74,7 +74,10 @@ async function searchWords(query: string, limit = 40, opts: WordSearchOptions = 
     } else if (opts.exact) {
       if (translitToUnicode(w.transliteration) === translitToUnicode(q)) results.push(w);
     } else {
-      const tlMatch = w.transliteration.toLowerCase().includes(ql);
+      // Normalize y↔i for transliteration matching (mry = mri in Vygus)
+      const normQ = ql.replace(/y/g, "i").replace(/j/g, "i");
+      const normT = w.transliteration.toLowerCase().replace(/y/g, "i").replace(/j/g, "i");
+      const tlMatch = normT.includes(normQ) || w.transliteration.toLowerCase().includes(ql);
       const trMatch = translationRe
         ? translationRe.test(w.translation)
         : w.translation.toLowerCase().includes(ql);
