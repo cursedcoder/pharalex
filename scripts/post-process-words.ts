@@ -197,6 +197,26 @@ for (const w of words) {
   t = t.replace(/\.{3,}/g, "…");
   // "badly of" at end → "badly off" (word-boundary aware)
   t = t.replace(/badly of$/g, "badly off");
+  // Strip leading "a [MdC]" pattern: "a sSw document" → "document"
+  // where [MdC] is a short consonantal token (no e/o/u)
+  t = t.replace(/^a ([a-zA-Z.]{2,8}) (?=[A-Za-z])/, (match, mdc, offset) => {
+    if (/[eou]/i.test(mdc)) return match; // has English vowels, keep
+    return "";
+  });
+  // Strip "MdC / MdC ..." slash-separated alternates at start
+  t = t.replace(/^([a-zA-Z.]{2,8} \/ )+(?=[A-Za-z])/, (match) => {
+    const tokens = match.split(" / ").map(s => s.trim()).filter(Boolean);
+    if (tokens.every(tok => !/[eou]/i.test(tok))) return ""; // all MdC, strip
+    return match;
+  });
+  // Strip leading MdC token (with AHSTDX uppercase) before capitalized English
+  t = t.replace(/^([a-zA-Z.]{2,10}) (?=[A-Z(])/, (match, mdc) => {
+    if (/[eou]/i.test(mdc)) return match;
+    if (!/[AHSTDX]/.test(mdc)) return match;
+    const KNOWN_ENG = new Set(["Day","Dill","Half","District","High","Main","King","Clan","Standard","Tamarisk","Sandal","Syrian","Acacia","Strain","Scribal","Asiatic","Attack","Daily","Thighs","Hand","His"]);
+    if (KNOWN_ENG.has(mdc)) return match;
+    return "";
+  });
   if (t !== w.translation) {
     w.translation = t;
     punctFixed++;
