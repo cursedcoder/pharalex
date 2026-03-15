@@ -18,7 +18,7 @@ import {
   glyphHref,
 } from "@/lib/glyphs";
 import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
-import { getWordsByGardinerCode, getDictionaryByGardinerCode, wordHref } from "@/lib/words";
+import { getWordsByGardinerCode, getWordsByTransliteration, wordHref } from "@/lib/words";
 import { translitToUnicode } from "@/lib/word-utils";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
 import { UnicodeChar } from "@/components/UnicodeChar";
@@ -125,7 +125,25 @@ export default async function GlyphPage({ params }: PageProps) {
   const variantSiblings = await getVariantSiblings(glyph.code);
   const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
   const wordsUsingGlyph = await getWordsByGardinerCode(glyph.code, 30);
-  const dictionary = await getDictionaryByGardinerCode(glyph.code, 15);
+  // Dictionary: look up word definitions for each of the glyph's transliteration values.
+  // Glyph transliterations are in Unicode (ṯḥn), words are stored in MdC (THn).
+  // Convert Unicode → MdC for lookup.
+  const UNICODE_TO_MDC: Record<string, string> = {
+    "ꜣ": "A", "ꜥ": "a", "ḥ": "H", "ḫ": "x", "ẖ": "X", "š": "S", "ṯ": "T", "ḏ": "D",
+  };
+  function toMdc(s: string): string {
+    let r = "";
+    for (const ch of s) r += UNICODE_TO_MDC[ch] ?? ch;
+    return r;
+  }
+  const dictionary = new Map<string, Awaited<ReturnType<typeof getWordsByTransliteration>>>();
+  for (const t of glyph.transliteration) {
+    const mdcKey = toMdc(t);
+    const entries = await getWordsByTransliteration(mdcKey);
+    if (entries.length > 0) {
+      dictionary.set(t, entries);
+    }
+  }
 
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
@@ -542,7 +560,7 @@ export default async function GlyphPage({ params }: PageProps) {
                           >
                             <div className="flex items-baseline gap-2 mb-3">
                               <Link
-                                href={wordHref(translit)}
+                                href={wordHref(toMdc(translit))}
                                 className="font-mono text-lg font-bold text-brown hover:text-gold-dark transition-colors"
                               >
                                 {translitToUnicode(translit)}
