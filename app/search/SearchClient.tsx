@@ -116,14 +116,14 @@ function StickyGroupNav({ sections }: { sections: { id: string; title: string; c
       <div ref={sentinelRef} />
 
       {/* Sticky bar — zero height when hidden */}
-      <div className={`sticky top-16 z-30 transition-opacity duration-200 ${
+      <div className={`sticky top-0 z-30 transition-opacity duration-200 ${
         isSticky
           ? "opacity-100"
           : "opacity-0 pointer-events-none"
       }`}>
-        <div className={`bg-ivory/95 backdrop-blur-sm border-b border-sandstone/20 py-2 -mx-4 px-4 sm:-mx-6 sm:px-6 ${
+        <div className={`bg-ivory/95 backdrop-blur-sm border-b border-sandstone/20 py-2 ${
           isSticky ? "" : "-mb-12"
-        }`}>
+        }`} style={{ marginLeft: "calc(-50vw + 50%)", marginRight: "calc(-50vw + 50%)", paddingLeft: "calc(50vw - 50% + 1rem)", paddingRight: "calc(50vw - 50% + 1rem)" }}>
           <nav className="flex items-center justify-between">
             {sections.map((s, i) => (
               <Fragment key={s.id}>
