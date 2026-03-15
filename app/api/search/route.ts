@@ -109,7 +109,7 @@ const MAX_QUERY_LENGTH = 100;
 
 export async function GET(req: NextRequest) {
   const q = (req.nextUrl.searchParams.get("q")?.trim() ?? "").slice(0, MAX_QUERY_LENGTH);
-  const exact = req.nextUrl.searchParams.get("exact") === "true";
+  const exact = req.nextUrl.searchParams.get("exact") !== "false"; // default to exact
   const gardiner = req.nextUrl.searchParams.get("gardiner") === "true";
   // Allow single-char searches in exact/gardiner mode (Egyptian uniliterals like m, n, r)
   const minLength = (exact || gardiner) ? 1 : 2;
