@@ -23,7 +23,7 @@ export function ExpandableList({ items, max = 3, className = "" }: ExpandableLis
       {!expanded && remaining > 0 && (
         <button
           onClick={() => setExpanded(true)}
-          className="mt-1 text-xs text-gold hover:text-gold-dark transition-colors"
+          className="mt-1 text-xs text-gold hover:text-gold-dark transition-colors cursor-pointer"
         >
           +{remaining} more →
         </button>
