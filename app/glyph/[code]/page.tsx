@@ -24,6 +24,7 @@ import { translitToUnicode } from "@/lib/word-utils";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
 import { UnicodeChar } from "@/components/UnicodeChar";
 import { ExpandableList } from "@/components/ExpandableList";
+import { DictionaryEntries } from "@/components/DictionaryEntries";
 import type { ReactNode } from "react";
 
 /** Gardiner code pattern: A1, Aa15, D53B, etc. */
@@ -478,29 +479,8 @@ export default async function GlyphPage({ params }: PageProps) {
                               Full entry →
                             </Link>
                           </div>
-                          {/* POS sub-sections — merge same POS */}
-                          <div className="space-y-3">
-                            {(() => {
-                              const posGroups = new Map<string, string[]>();
-                              for (const entry of wiktEntries) {
-                                const existing = posGroups.get(entry.pos) ?? [];
-                                existing.push(...entry.glosses);
-                                posGroups.set(entry.pos, existing);
-                              }
-                              return [...posGroups.entries()].map(([pos, glosses]) => (
-                                <div key={pos}>
-                                  <span className="text-xs italic text-sandstone">
-                                    {pos}
-                                  </span>
-                                  <ExpandableList
-                                    items={glosses}
-                                    max={3}
-                                    className="mt-1"
-                                  />
-                                </div>
-                              ));
-                            })()}
-                          </div>
+                          {/* Each Wiktionary entry is a separate lexeme — cap total shown */}
+                          <DictionaryEntries entries={wiktEntries} max={4} />
                         </div>
                       );
                     })}
