@@ -227,7 +227,7 @@ export function SearchBar({
               </Link>
             ) : (
               <Link
-                key={`w-${item.transliteration}`}
+                key={`w-${item.transliteration}-${item.mdc}`}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className={`flex gap-3 px-4 py-2.5 hover:bg-gold/10 transition-colors ${index === selectedIndex ? "bg-gold/10" : ""} ${index !== items.length - 1 ? "border-b border-sandstone/10" : ""}`}
