@@ -96,22 +96,33 @@ function main() {
     readFileSync(join(DATA_DIR, "words.json"), "utf-8")
   );
 
-  // Keep one entry per unique (transliteration, translation, grammar) combo.
-  // Each distinct meaning+spelling is a separate search result so learners
-  // can match hieroglyphic spellings from a papyrus.
-  const seen = new Set<string>();
-  const searchWords: { transliteration: string; translation: string; grammar: string | null; mdc: string; gardinerCodes: string[] }[] = [];
+  // Group by (transliteration, MdC spelling) — same hieroglyphic spelling
+  // gets one card with all its meanings merged.
+  const wordBySpelling = new Map<string, { translations: Set<string>; grammar: string | null; mdc: string; gardinerCodes: string[] }>();
   for (const w of words) {
-    // Dedup by transliteration + translation (same meaning, different spelling = keep first)
-    const key = `${w.transliteration}||${w.translation.toLowerCase().trim()}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
+    const key = `${w.transliteration}||${w.mdc}`;
+    const existing = wordBySpelling.get(key);
+    if (existing) {
+      existing.translations.add(w.translation);
+      if (!existing.grammar && w.grammar) existing.grammar = w.grammar;
+    } else {
+      wordBySpelling.set(key, {
+        translations: new Set([w.translation]),
+        grammar: w.grammar ?? null,
+        mdc: w.mdc,
+        gardinerCodes: w.gardinerCodes ?? [],
+      });
+    }
+  }
+  const searchWords: { transliteration: string; translation: string; grammar: string | null; mdc: string; gardinerCodes: string[] }[] = [];
+  for (const [key, group] of wordBySpelling) {
+    const translit = key.split("||")[0];
     searchWords.push({
-      transliteration: w.transliteration,
-      translation: w.translation,
-      grammar: w.grammar ?? null,
-      mdc: w.mdc,
-      gardinerCodes: w.gardinerCodes ?? [],
+      transliteration: translit,
+      translation: [...group.translations].join(", "),
+      grammar: group.grammar,
+      mdc: group.mdc,
+      gardinerCodes: group.gardinerCodes,
     });
   }
 
