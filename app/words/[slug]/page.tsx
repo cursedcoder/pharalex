@@ -10,6 +10,7 @@ import { WordGlyph } from "@/components/WordGlyph";
 import { CopyableWordGlyph } from "@/components/CopyableWordGlyph";
 import { FitWordGlyph } from "@/components/FitWordGlyph";
 import { WordCardList } from "@/components/WordCardList";
+import { BookmarkButton } from "@/components/BookmarkButton";
 import {
   getWordsBySlug,
   getAllTransliterations,
@@ -140,9 +141,17 @@ export default async function WordPage({ params }: Props) {
                   className="mb-5"
                 />
 
-                <h1 className="font-mono text-3xl sm:text-4xl font-bold text-brown leading-tight mb-0.5">
-                  {translitToUnicode(primaryEntry.transliteration)}
-                </h1>
+                <div className="flex items-center gap-3 mb-0.5">
+                  <h1 className="font-mono text-3xl sm:text-4xl font-bold text-brown leading-tight">
+                    {translitToUnicode(primaryEntry.transliteration)}
+                  </h1>
+                  <BookmarkButton
+                    type="word"
+                    id={wordSlug(primaryEntry.transliteration)}
+                    label={`${translitToUnicode(primaryEntry.transliteration)} – ${primaryEntry.translation}`}
+                    size="sm"
+                  />
+                </div>
                 <p className="font-mono text-sm text-sandstone mb-2">
                   {primaryEntry.transliteration.replace(/ /g, ".").replace(/\.{2,}/g, ".")}
                 </p>
