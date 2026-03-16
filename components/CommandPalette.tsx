@@ -19,6 +19,7 @@ const QUICK_LINKS: QuickLink[] = [
   { label: "Ancient Texts", href: "/texts", section: "Pages" },
   { label: "Corpus Statistics", href: "/stats", section: "Pages" },
   { label: "Alphabet", href: "/alphabet", section: "Pages" },
+  { label: "Bookmarks", href: "/bookmarks", section: "Pages" },
   { label: "Guide", href: "/guide", section: "Guide" },
   { label: "Introduction to Hieroglyphs", href: "/guide/introduction", section: "Guide" },
   { label: "Understanding Transliteration", href: "/guide/transliteration", section: "Guide" },

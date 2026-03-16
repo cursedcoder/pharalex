@@ -28,6 +28,7 @@ import { UnicodeChar } from "@/components/UnicodeChar";
 import { ExpandableList } from "@/components/ExpandableList";
 import { DictionaryEntries } from "@/components/DictionaryEntries";
 import { ReportIssueLink } from "@/components/ReportIssueLink";
+import { BookmarkButton } from "@/components/BookmarkButton";
 import type { ReactNode } from "react";
 
 /** Gardiner code pattern: A1, Aa15, D53B, etc. */
@@ -237,6 +238,12 @@ export default async function GlyphPage({ params }: PageProps) {
                           {glyph.signName}
                         </span>
                       )}
+                      <BookmarkButton
+                        type="glyph"
+                        id={glyph.code}
+                        label={`${glyph.code} – ${glyph.meanings[0]?.text || glyph.description}`}
+                        size="sm"
+                      />
                     </div>
 
                     <div className="flex items-center gap-2 flex-wrap mb-4">

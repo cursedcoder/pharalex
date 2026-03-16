@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/Badge";
 import { RoyalNamesDisplay } from "@/components/Cartouche";
 import { GlyphDetailsProvider } from "@/components/GlyphDetailsContext";
 import { ReportIssueLink } from "@/components/ReportIssueLink";
+import { BookmarkButton } from "@/components/BookmarkButton";
 import {
   getPharaohBySlug,
   getDynastyById,
@@ -170,6 +171,12 @@ export default async function PharaohPage({ params }: Props) {
                       {pharaoh.notable && (
                         <span className="text-gold text-xl" title="Notable pharaoh">★</span>
                       )}
+                      <BookmarkButton
+                        type="pharaoh"
+                        id={pharaoh.slug}
+                        label={pharaoh.name}
+                        size="sm"
+                      />
                     </div>
                     {pharaoh.alternateNames.length > 0 && (
                       <p className="text-sandstone text-sm">
