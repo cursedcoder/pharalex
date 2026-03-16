@@ -92,4 +92,13 @@ export function getPharaohStats() {
   };
 }
 
+export function getAdjacentPharaohs(slug: string): { prev?: Pharaoh; next?: Pharaoh } {
+  const idx = PHARAOHS.findIndex((p) => p.slug === slug);
+  if (idx === -1) return {};
+  return {
+    prev: idx > 0 ? PHARAOHS[idx - 1] : undefined,
+    next: idx < PHARAOHS.length - 1 ? PHARAOHS[idx + 1] : undefined,
+  };
+}
+
 export { formatYear, formatReign } from "./pharaoh-utils";

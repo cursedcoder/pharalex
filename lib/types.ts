@@ -59,9 +59,11 @@ export interface RoyalNameSource {
 
 export interface RoyalName {
   codes: string[];
+  mdc?: string;
   transliteration: string;
   translation?: string;
   sources?: RoyalNameSource[];
+  variants?: RoyalName[];
 }
 
 export interface RoyalNames {
