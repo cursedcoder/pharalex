@@ -64,10 +64,8 @@ export default async function PharaohPage({ params }: Props) {
   const dynasty = getDynastyById(pharaoh.dynastyId);
   const period  = dynasty ? getPeriodById(dynasty.period) : undefined;
 
-  // Siblings: other pharaohs in the same dynasty
-  const siblings = getPharaohsByDynasty(pharaoh.dynastyId).filter(
-    (p) => p.slug !== pharaoh.slug
-  );
+  // All pharaohs in the same dynasty (including current)
+  const dynastyPharaohs = getPharaohsByDynasty(pharaoh.dynastyId);
 
   const relatedTexts = getTextsByPharaoh(pharaoh.slug);
 
@@ -132,7 +130,7 @@ export default async function PharaohPage({ params }: Props) {
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main content */}
+            {/* Hero + Details */}
             <div className="lg:col-span-2 space-y-6">
               {/* Hero card */}
               <div className="bg-papyrus/40 border border-sandstone/20 rounded-xl p-6 sm:p-8">
@@ -227,86 +225,6 @@ export default async function PharaohPage({ params }: Props) {
                   </InfoCard>
                 )}
               </div>
-
-              {/* Royal Names / Cartouches */}
-              {pharaoh.royalNames && (
-                <section className="border border-sandstone/20 rounded-xl p-5 sm:p-6 bg-ivory-dark/30">
-                  <h2 className="font-display text-xl font-semibold text-brown mb-5">
-                    Royal Names in Hieroglyphs
-                  </h2>
-                  <GlyphDetailsProvider details={glyphDetails}>
-                    <RoyalNamesDisplay
-                      prenomen={pharaoh.royalNames.prenomen}
-                      nomen={pharaoh.royalNames.nomen}
-                      horus={pharaoh.royalNames.horus}
-                      nebty={pharaoh.royalNames.nebty}
-                      golden={pharaoh.royalNames.golden}
-                      size="lg"
-                    />
-                  </GlyphDetailsProvider>
-                  <p className="text-xs text-sandstone mt-5 pt-4 border-t border-sandstone/15">
-                    Click any glyph to learn more about it. The cartouche (oval frame) 
-                    indicates a royal name.
-                  </p>
-                </section>
-              )}
-
-              {/* Fallback for pharaohs without cartouche data */}
-              {!pharaoh.royalNames && (
-                <div className="border border-dashed border-sandstone/30 rounded-xl p-5 bg-ivory-dark/20 text-center">
-                  <p className="text-sm text-sandstone">
-                    Royal name hieroglyphs not yet documented for this ruler.
-                  </p>
-                </div>
-              )}
-
-              {/* Attested Texts */}
-              {relatedTexts.length > 0 && (
-                <section className="border border-sandstone/20 rounded-xl p-5 sm:p-6 bg-ivory-dark/30">
-                  <h2 className="font-display text-xl font-semibold text-brown mb-4">
-                    Attested Texts
-                  </h2>
-                  <div className="space-y-3">
-                    {relatedTexts.map((text) => {
-                      const previewCodes = text.lines[0]?.tokens
-                        .slice(0, 5)
-                        .flatMap((t) => mdcToCodes(t.mdc))
-                        .slice(0, 8);
-                      return (
-                        <Link
-                          key={text.slug}
-                          href={`/texts/${text.slug}`}
-                          className="group flex items-center gap-4 p-3 rounded-lg hover:bg-papyrus/40 transition-colors"
-                        >
-                          {/* Glyph preview */}
-                          {previewCodes && previewCodes.length > 0 && (
-                            <div className="flex items-center gap-0.5 shrink-0 opacity-70 group-hover:opacity-100 transition-opacity">
-                              {previewCodes.map((code, i) => (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img
-                                  key={`${code}-${i}`}
-                                  src={glyphSvgSrc(code)}
-                                  alt={code}
-                                  className="w-5 h-5 object-contain"
-                                />
-                              ))}
-                            </div>
-                          )}
-                          <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-brown-light group-hover:text-gold-dark transition-colors truncate">
-                              {text.title}
-                            </p>
-                            <p className="text-xs text-sandstone">{text.date}</p>
-                          </div>
-                          <span className="text-xs text-gold-dark shrink-0 group-hover:translate-x-0.5 transition-transform">
-                            Read →
-                          </span>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </section>
-              )}
             </div>
 
             {/* Sidebar */}
@@ -358,31 +276,46 @@ export default async function PharaohPage({ params }: Props) {
               </div>
 
               {/* Same dynasty */}
-              {siblings.length > 0 && (
+              {dynastyPharaohs.length > 1 && (
                 <div className="bg-ivory-dark/50 border border-sandstone/20 rounded-xl p-5">
                   <h2 className="font-display text-lg font-semibold text-brown mb-3">
                     Same Dynasty
                   </h2>
                   <ul className="space-y-1.5">
-                    {siblings.slice(0, 8).map((s) => (
-                      <li key={s.slug}>
-                        <Link
-                          href={`/pharaohs/${s.slug}`}
-                          className="flex items-center justify-between text-sm group"
-                        >
-                          <span className="text-brown-light group-hover:text-gold transition-colors">
-                            {s.name}
-                            {s.notable && <span className="ml-1 text-gold-dark text-xs">★</span>}
-                          </span>
-                          <span className="text-sandstone text-xs tabular-nums">
-                            {formatReign(s)}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                    {siblings.length > 8 && (
+                    {dynastyPharaohs.slice(0, 9).map((s) => {
+                      const isCurrent = s.slug === pharaoh.slug;
+                      return (
+                        <li key={s.slug}>
+                          {isCurrent ? (
+                            <span className="flex items-center justify-between text-sm py-0.5 px-2 -mx-2 rounded-md bg-gold/10 border border-gold/20">
+                              <span className="text-gold-dark font-semibold">
+                                {s.name}
+                                {s.notable && <span className="ml-1 text-xs">★</span>}
+                              </span>
+                              <span className="text-gold-dark/60 text-xs tabular-nums">
+                                {formatReign(s)}
+                              </span>
+                            </span>
+                          ) : (
+                            <Link
+                              href={`/pharaohs/${s.slug}`}
+                              className="flex items-center justify-between text-sm group"
+                            >
+                              <span className="text-brown-light group-hover:text-gold transition-colors">
+                                {s.name}
+                                {s.notable && <span className="ml-1 text-gold-dark text-xs">★</span>}
+                              </span>
+                              <span className="text-sandstone text-xs tabular-nums">
+                                {formatReign(s)}
+                              </span>
+                            </Link>
+                          )}
+                        </li>
+                      );
+                    })}
+                    {dynastyPharaohs.length > 9 && (
                       <li className="text-xs text-sandstone mt-1">
-                        +{siblings.length - 8} more in this dynasty
+                        +{dynastyPharaohs.length - 9} more in this dynasty
                       </li>
                     )}
                   </ul>
@@ -404,6 +337,87 @@ export default async function PharaohPage({ params }: Props) {
               </Link>
               <ReportIssueLink title={`${pharaoh.name}: data correction`} className="mt-2" />
             </aside>
+
+            {/* Royal Names / Cartouches — full width */}
+            {pharaoh.royalNames && (
+              <section className="lg:col-span-3">
+                <h2 className="font-display text-xl font-semibold text-brown mb-6">
+                  Royal Names in Hieroglyphs
+                </h2>
+                <GlyphDetailsProvider details={glyphDetails}>
+                  <RoyalNamesDisplay
+                    prenomen={pharaoh.royalNames.prenomen}
+                    nomen={pharaoh.royalNames.nomen}
+                    horus={pharaoh.royalNames.horus}
+                    nebty={pharaoh.royalNames.nebty}
+                    golden={pharaoh.royalNames.golden}
+                    dynastyId={pharaoh.dynastyId}
+                    size="lg"
+                  />
+                </GlyphDetailsProvider>
+                <p className="text-xs text-sandstone mt-6">
+                  Click any glyph to learn more about it. The cartouche (oval frame)
+                  indicates a royal name.
+                </p>
+              </section>
+            )}
+
+            {/* Fallback for pharaohs without cartouche data */}
+            {!pharaoh.royalNames && (
+              <div className="lg:col-span-3 border border-dashed border-sandstone/30 rounded-xl p-5 bg-ivory-dark/20 text-center">
+                <p className="text-sm text-sandstone">
+                  Royal name hieroglyphs not yet documented for this ruler.
+                </p>
+              </div>
+            )}
+
+            {/* Attested Texts */}
+            {relatedTexts.length > 0 && (
+              <section className="lg:col-span-2 border border-sandstone/20 rounded-xl p-5 sm:p-6 bg-ivory-dark/30">
+                <h2 className="font-display text-xl font-semibold text-brown mb-4">
+                  Attested Texts
+                </h2>
+                <div className="space-y-3">
+                  {relatedTexts.map((text) => {
+                    const previewCodes = text.lines[0]?.tokens
+                      .slice(0, 5)
+                      .flatMap((t) => mdcToCodes(t.mdc))
+                      .slice(0, 8);
+                    return (
+                      <Link
+                        key={text.slug}
+                        href={`/texts/${text.slug}`}
+                        className="group flex items-center gap-4 p-3 rounded-lg hover:bg-papyrus/40 transition-colors"
+                      >
+                        {/* Glyph preview */}
+                        {previewCodes && previewCodes.length > 0 && (
+                          <div className="flex items-center gap-0.5 shrink-0 opacity-70 group-hover:opacity-100 transition-opacity">
+                            {previewCodes.map((code, i) => (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img
+                                key={`${code}-${i}`}
+                                src={glyphSvgSrc(code)}
+                                alt={code}
+                                className="w-5 h-5 object-contain"
+                              />
+                            ))}
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-brown-light group-hover:text-gold-dark transition-colors truncate">
+                            {text.title}
+                          </p>
+                          <p className="text-xs text-sandstone">{text.date}</p>
+                        </div>
+                        <span className="text-xs text-gold-dark shrink-0 group-hover:translate-x-0.5 transition-transform">
+                          Read →
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
           </div>
         </Container>
       </main>
