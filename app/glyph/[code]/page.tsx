@@ -29,6 +29,8 @@ import { ExpandableList } from "@/components/ExpandableList";
 import { DictionaryEntries } from "@/components/DictionaryEntries";
 import { ReportIssueLink } from "@/components/ReportIssueLink";
 import { BookmarkButton } from "@/components/BookmarkButton";
+import { GlyphLightbox } from "@/components/GlyphLightbox";
+import type { GlyphLightboxItem } from "@/components/GlyphLightbox";
 import type { ReactNode } from "react";
 
 /** Gardiner code pattern: A1, Aa15, D53B, etc. */
@@ -153,6 +155,15 @@ export default async function GlyphPage({ params }: PageProps) {
     }
   }
 
+  // Build lightbox items: current glyph + variants
+  const lightboxItems: GlyphLightboxItem[] = [
+    { code: glyph.code, label: glyph.meanings[0]?.text || glyph.description },
+    ...variants.map((v) => ({
+      code: v.code,
+      label: v.meanings[0]?.text || v.description,
+    })),
+  ];
+
   const typeColors: Record<string, "gold" | "sandstone" | "outline"> = {
     logogram: "gold",
     phonogram: "sandstone",
@@ -223,7 +234,11 @@ export default async function GlyphPage({ params }: PageProps) {
                 "
               >
                 <div className="flex flex-col sm:flex-row items-start gap-6">
-                  <CopyableGlyph glyph={glyph} size="xl" />
+                  <GlyphLightbox
+                    items={lightboxItems}
+                    initialIndex={0}
+                    trigger={<CopyableGlyph glyph={glyph} size="xl" />}
+                  />
 
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
