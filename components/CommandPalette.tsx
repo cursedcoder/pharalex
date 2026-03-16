@@ -205,7 +205,8 @@ export function CommandPalette() {
             onChange={(e) => handleQueryChange(e.target.value)}
             onKeyDown={handleInputKeyDown}
             placeholder="Search glyphs, words, pages..."
-            className="flex-1 py-3.5 bg-transparent text-brown placeholder-sandstone/50 focus:outline-none text-base"
+            className="flex-1 py-3.5 bg-transparent text-brown placeholder-sandstone/50 outline-none text-base"
+            data-no-focus-ring
           />
           <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] text-sandstone/60 bg-sandstone/8 border border-sandstone/20 rounded font-mono">
             esc

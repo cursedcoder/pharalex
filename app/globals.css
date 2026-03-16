@@ -148,7 +148,7 @@ body {
 }
 
 /* Focus styles */
-:focus-visible {
+:focus-visible:not([data-no-focus-ring]) {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
