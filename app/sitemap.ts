@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllGlyphs, getAllCategories } from "@/lib/glyphs";
 import { PHARAOHS } from "@/lib/data/pharaohs";
+import { getAllGuidePages } from "@/lib/guide";
 
 const BASE_URL = "https://pharalex.app";
 
@@ -48,6 +49,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
+      url: `${BASE_URL}/guide`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${BASE_URL}/stats`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -82,10 +89,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const guideRoutes: MetadataRoute.Sitemap = getAllGuidePages().map((page) => ({
+    url: `${BASE_URL}/guide/${page.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
     ...pharaohRoutes,
+    ...guideRoutes,
     ...glyphRoutes,
   ];
 }
