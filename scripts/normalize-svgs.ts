@@ -259,12 +259,22 @@ function normalize(raw: string): string {
   // 9. Strip bloat
   svg = stripBloat(svg);
 
-  // 10. Fix unclosed <g> tags (malformed JSesh exports)
+  // 10. Fix mismatched <g> tags (malformed JSesh/Inkscape exports)
   const openGs = (svg.match(/<g[\s>]/g) ?? []).length;
+  const selfCloseGs = (svg.match(/<g\s*\/>/g) ?? []).length;
+  const netOpenGs = openGs - selfCloseGs;
   const closeGs = (svg.match(/<\/g>/g) ?? []).length;
-  if (openGs > closeGs) {
-    const missing = openGs - closeGs;
+  if (netOpenGs > closeGs) {
+    // Missing closing tags — add them before </svg>
+    const missing = netOpenGs - closeGs;
     svg = svg.replace(/<\/svg>\s*$/, "</g>".repeat(missing) + "\n</svg>");
+  } else if (closeGs > netOpenGs) {
+    // Extra closing tags — remove them (from innermost outward)
+    let excess = closeGs - netOpenGs;
+    while (excess > 0) {
+      svg = svg.replace(/\s*<\/g>\s*(?=<\/svg>)/, "");
+      excess--;
+    }
   }
 
   // 11. Collapse excessive whitespace/newlines
