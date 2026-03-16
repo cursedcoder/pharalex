@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { CommandPalette } from "@/components/CommandPalette";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -80,6 +81,7 @@ export default function RootLayout({
       >
         {children}
         <Footer />
+        <CommandPalette />
       </body>
     </html>
   );
