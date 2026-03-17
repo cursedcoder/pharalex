@@ -3124,8 +3124,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   "amenemhat-iii": {
     horus: {
-      codes: ["O29", "G30"],
-      mdc: "aA:G30",
+      codes: ["O29v", "G30"],
+      mdc: "aAv:G30",
       transliteration: "ꜤꜢ-bꜢw",
       translation: "Great of might",
       sources: [
@@ -3594,8 +3594,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["N5", "O29", "D36", "N29", "N35", "N35"],
-          mdc: "ra-aA:a-q:n:n",
+          codes: ["N5", "O29v", "D36", "N29", "N35", "N35"],
+          mdc: "ra-aAv:a-q:n:n",
           transliteration: "ꜤꜢ-ḳni͗.n-rꜤ",
           translation: "The great one, whom Ra has made brave",
           sources: [
@@ -3605,8 +3605,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N5", "O29", "Z1", "D36", "Y1", "F78", "S29"],
-          mdc: "ra-aA:Z1:a:Y1-F78-s",
+          codes: ["N5", "O29v", "Z1", "D36", "Y1", "F78", "S29"],
+          mdc: "ra-aAv:Z1:a:Y1-F78-s",
           transliteration: "ꜤꜢ-wsr-rꜤ",
           translation: "The great one, whom Ra has made strong",
           sources: [
@@ -3616,8 +3616,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N5", "O29", "F12"],
-          mdc: "ra:aA-wsr",
+          codes: ["N5", "O29v", "F12"],
+          mdc: "ra:aAv-wsr",
           transliteration: "ꜤꜢ-wsr-rꜤ",
           translation: "The great one, whom Ra has made strong",
           sources: [
@@ -3628,8 +3628,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["S38", "N29", "Y1", "N35", "O6", "X1", "D56", "X1", "N35", "N5", "O29", "D36", "F12", "S29"],
-          mdc: "HqA-q:Y1:n-O6:t-D56-t:n-ra-aA:a-wsr-s",
+          codes: ["S38", "N29", "Y1", "N35", "O6", "X1", "D56", "X1", "N35", "N5", "O29v", "D36", "F12", "S29"],
+          mdc: "HqA-q:Y1:n-O6:t-D56-t:n-ra-aAv:a-wsr-s",
           transliteration: "ḥḳꜢ n ḥwt-wꜤrt ꜤꜢ-wsr-rꜤ",
           translation: "The ruler of Avaris, Aauserra",
         },
@@ -3899,8 +3899,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   "ahmose-i": {
     horus: {
-      codes: ["O29", "L1", "G43"],
-      mdc: "aA:xpr*w",
+      codes: ["O29v", "L1", "G43"],
+      mdc: "aAv:xpr*w",
       transliteration: "ꜤꜢ-ḫprw",
       translation: "Great of manifestations",
       sources: [
@@ -4009,8 +4009,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     nebty: {
-      codes: ["O29", "N35", "D21", "H4", "G43"],
-      mdc: "aA:n:r-H4-w",
+      codes: ["O29v", "N35", "D21", "H4", "G43"],
+      mdc: "aAv:n:r-H4-w",
       transliteration: "ꜤꜢ-nrw",
       translation: "He who inspires great fear",
       sources: [
@@ -4152,8 +4152,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     nebty: {
-      codes: ["G17", "N28", "N35", "O34", "D21", "X1", "O29", "F9", "F9"],
-      mdc: "m&xa-n:z:r-t:aA:F9*F9",
+      codes: ["G17", "N28", "N35", "O34", "D21", "X1", "O29v", "F9", "F9"],
+      mdc: "m&xa-n:z:r-t:aAv:F9*F9",
       transliteration: "ḫꜤi͗-m-nsrt ꜤꜢ-pḥti͗",
       translation: "He who appears with the uraeus, great of stength",
       sources: [
@@ -4193,8 +4193,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     golden: {
-      codes: ["O29", "F9", "F9", "F12", "S29", "F23", "M13", "M4", "M4", "M4", "G17", "O8", "C10", "X1", "O1"],
-      mdc: "aA:F9*F9-wsr-s-xpS-wAD-rnp-rnp-rnp-m-O8-mAat-t:pr",
+      codes: ["O29v", "F9", "F9", "F12", "S29", "F23", "M13", "M4", "M4", "M4", "G17", "O8", "C10", "X1", "O1"],
+      mdc: "aAv:F9*F9-wsr-s-xpS-wAD-rnp-rnp-rnp-m-O8-mAat-t:pr",
       transliteration: "ꜤꜢ-pḥti͗ wsr-ḫpš wꜢḏ-rnpwt-m-ḥwt-ꜤꜢt-mꜢꜤt",
       translation: "Great of strength and strong-armed, enduring of years in the temple of Maat",
       sources: [
@@ -4235,8 +4235,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["N5", "O29", "L1", "D28", "U21", "N5", "N35"],
-          mdc: "ra:aA-xpr-kA-stp&ra:n",
+          codes: ["N5", "O29v", "L1", "D28", "U21", "N5", "N35"],
+          mdc: "ra:aAv-xpr-kA-stp&ra:n",
           transliteration: "ꜤꜢ-ḫpr-kꜢ-rꜤ stp.n-rꜤ",
           translation: "Great is the manifestation of the soul of Ra, chosen of Ra",
           sources: [
@@ -4246,8 +4246,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N5", "O29", "L1", "D28", "N5", "D4", "N35"],
-          mdc: "ra:aA-xpr-kA:ra-ir:n",
+          codes: ["N5", "O29v", "L1", "D28", "N5", "D4", "N35"],
+          mdc: "ra:aAv-xpr-kA:ra-ir:n",
           transliteration: "ꜤꜢ-ḫpr-kꜢ-rꜤ i͗ri͗.n-rꜤ",
           translation: "Great is the manifestation of the soul of Ra, who Ra has made",
           sources: [
@@ -4257,8 +4257,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N5", "O29", "L1", "D28", "M17", "Y5", "N35", "D17"],
-          mdc: "ra:aA-xpr-kA-i-mn:n:D17",
+          codes: ["N5", "O29v", "L1", "D28", "M17", "Y5", "N35", "D17"],
+          mdc: "ra:aAv-xpr-kA-i-mn:n:D17",
           transliteration: "ꜤꜢ-ḫpr-kꜢ-rꜤ i͗ti͗-i͗mn",
           translation: "Great is the manifestation of the soul of Ra, the image of Amun",
           sources: [
@@ -4268,8 +4268,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N5", "O29", "L1", "D28", "N5", "U7", "N35"],
-          mdc: "ra:aA-xpr-kA:ra-U7:n",
+          codes: ["N5", "O29v", "L1", "D28", "N5", "U7", "N35"],
+          mdc: "ra:aAv-xpr-kA:ra-U7:n",
           transliteration: "ꜤꜢ-ḫpr-kꜢ-rꜤ mri͗.n-rꜤ",
           translation: "Great is the manifestation of the soul of Ra, beloved of Ra",
         },
@@ -4347,8 +4347,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     prenomen: {
-      codes: ["N5", "O29", "L1", "N35"],
-      mdc: "ra:aA-xpr:n",
+      codes: ["N5", "O29v", "L1", "N35"],
+      mdc: "ra:aAv-xpr:n",
       transliteration: "ꜤꜢ-ḫpr-n-rꜤ",
       translation: "Great is the manifestation of Ra",
       sources: [
@@ -4615,8 +4615,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O29", "F8", "X1", "G17", "N17", "N17", "N17", "V30"],
-          mdc: "aA-F8:t-m-N17:N17:N17:nb",
+          codes: ["O29v", "F8", "X1", "G17", "N17", "N17", "N17", "V30"],
+          mdc: "aAv-F8:t-m-N17:N17:N17:nb",
           transliteration: "ꜤꜢ-šfi͗t-m-tꜢw-nb(w)",
           translation: "Great of majesty in all lands",
           sources: [
@@ -4689,8 +4689,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O29", "F24", "V28", "A24", "T10", "Z2", "Z2", "Z2"],
-          mdc: "aA:F24\\-H-A24-pD:Z2-Z2:Z2",
+          codes: ["O29v", "F24", "V28", "A24", "T10", "Z2", "Z2", "Z2"],
+          mdc: "aAv:F24\\-H-A24-pD:Z2-Z2:Z2",
           transliteration: "ꜤꜢ-ḫpš ḥwi͗-pḏt",
           translation: "He of great of strength who has struck down the Nine Bows",
           sources: [
@@ -4774,8 +4774,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N5", "Y5", "L1", "O34", "O29", "N35"],
-          mdc: "ra:mn-xpr-z:aA:n",
+          codes: ["N5", "Y5", "L1", "O34", "O29v", "N35"],
+          mdc: "ra:mn-xpr-z:aAv:n",
           transliteration: "mn-ḫpr-rꜤ sꜤꜢ.n-rꜤ",
           translation: "Lasting is the Manifestation of Ra, whom Ra made great",
           sources: [
@@ -4958,8 +4958,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["E1", "D40", "O29", "F9", "F9"],
-          mdc: "E1:D40-aA:F9*F9",
+          codes: ["E1", "D40", "O29v", "F9", "F9"],
+          mdc: "E1:D40-aAv:F9*F9",
           transliteration: "kꜢ-nḫt ꜤꜢ-pḥti͗",
           translation: "The strong bull, great of might",
           sources: [
@@ -5015,8 +5015,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     prenomen: {
-      codes: ["N5", "O29", "L1", "Z2"],
-      mdc: "ra:aA-xpr-Z2",
+      codes: ["N5", "O29v", "L1", "Z2"],
+      mdc: "ra:aAv-xpr-Z2",
       transliteration: "ꜤꜢ-ḫprw-rꜤ",
       translation: "Great are the Manifestations of Ra",
       sources: [
@@ -5026,8 +5026,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["N5", "O29", "L1", "Z2", "N35"],
-          mdc: "ra:aA-xpr:Z2-n",
+          codes: ["N5", "O29v", "L1", "Z2", "N35"],
+          mdc: "ra:aAv-xpr:Z2-n",
           transliteration: "ꜤꜢ-ḫprw-n-rꜤ",
           translation: "Great are the Manifestations of Ra",
           sources: [
@@ -5320,8 +5320,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O29", "N35", "D21", "G43", "H1", "D40", "Z2", "D2", "Z1", "N25", "V30", "X1"],
-          mdc: "aA:n:r-w-H1:D40:Z2-D2:1-N25:nb:t",
+          codes: ["O29v", "N35", "D21", "G43", "H1", "D40", "Z2", "D2", "Z1", "N25", "V30", "X1"],
+          mdc: "aAv:n:r-w-H1:D40:Z2-D2:1-N25:nb:t",
           transliteration: "ꜤꜢ-nrw-ḥr-ḫꜢst-nbt",
           translation: "Dreaded in every foreign land",
           sources: [
@@ -5339,8 +5339,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     golden: {
-      codes: ["O29", "F23", "D40", "V28", "A24", "S22", "X1", "G1", "Z2"],
-      mdc: "aA:xpS:D40-H-A24-S22:t-A&Z2",
+      codes: ["O29v", "F23", "D40", "V28", "A24", "S22", "X1", "G1", "Z2"],
+      mdc: "aAv:xpS:D40-H-A24-S22:t-A&Z2",
       transliteration: "ꜤꜢ-ḫpš-hwi͗-sṯti͗w",
       translation: "Great of valour, smiting the Asiatics",
       sources: [
@@ -5380,8 +5380,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O34", "O29", "D36", "O7", "X1", "I9", "N35", "X1", "I10", "X1", "N17"],
-          mdc: "z:aA:a-O7-t:f:n:t-D&t:N17",
+          codes: ["O34", "O29v", "D36", "O7", "X1", "I9", "N35", "X1", "I10", "X1", "N17"],
+          mdc: "z:aAv:a-O7-t:f:n:t-D&t:N17",
           transliteration: "sꜤꜢ-ḥwt.f-nt-ḏt",
           translation: "Who has magnified his temple of eternity",
         },
@@ -6386,8 +6386,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["E1", "D40", "O29", "F8", "C2A", "U6"],
-          mdc: "E1:D40-aA:F8-C2A-mr",
+          codes: ["E1", "D40", "O29v", "F8", "C2A", "U6"],
+          mdc: "E1:D40-aAv:F8-C2A-mr",
           transliteration: "kꜢ-nḫt ꜤꜢ-šfi͗t mri͗-rꜤ",
           translation: "Stong bull great of majesty and beloved of Ra",
           sources: [
@@ -6488,8 +6488,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["E1", "D40", "O29", "D36", "F23"],
-          mdc: "E1:D40-aA:a:xpS",
+          codes: ["E1", "D40", "O29v", "D36", "F23"],
+          mdc: "E1:D40-aAv:a:xpS",
           transliteration: "kꜢ-nḫt ꜤꜢ-ḫpš",
           translation: "The Strong bull, great of strong arm",
           sources: [
@@ -6499,8 +6499,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["E1", "D40", "O29", "F9", "F9"],
-          mdc: "E1:D40-aA:F9*F9",
+          codes: ["E1", "D40", "O29v", "F9", "F9"],
+          mdc: "E1:D40-aAv:F9*F9",
           transliteration: "kꜢ-nḫt ꜤꜢ-pḥty",
           translation: "The Strong bull great of might",
         },
@@ -7196,8 +7196,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["E1", "D40", "O29", "D36", "H4", "Z1"],
-          mdc: "E1:D40-aA:a:H4*3",
+          codes: ["E1", "D40", "O29v", "D36", "H4", "Z1"],
+          mdc: "E1:D40-aAv:a:H4*3",
           transliteration: "kꜢ-nḫt ꜤꜢꜤ-rm-3",
           sources: [
             { text: "Kitchen, Ramesside Inscriptions , II, 501:7" },
@@ -7213,8 +7213,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["E1", "D40", "O29", "F7", "X1", "Z1"],
-          mdc: "E1:D40-aA:F7-t:3",
+          codes: ["E1", "D40", "O29v", "F7", "X1", "Z1"],
+          mdc: "E1:D40-aAv:F7-t:3",
           transliteration: "kꜢ-nḫt ꜤꜢ-šfi͗t",
           translation: "The strong bull, great of majesty",
           sources: [
@@ -7421,8 +7421,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     golden: {
-      codes: ["F12", "S29", "M4", "M4", "M4", "O29", "D40", "Z2"],
-      mdc: "wsr-s-rnp-rnp-rnp-aA:D40:Z2",
+      codes: ["F12", "S29", "M4", "M4", "M4", "O29v", "D40", "Z2"],
+      mdc: "wsr-s-rnp-rnp-rnp-aAv:D40:Z2",
       transliteration: "wsr-rnpwt ꜤꜢ-nḫtw",
       translation: "Rich in years, great in victories",
       sources: [
@@ -7472,8 +7472,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O29", "F23", "U6", "M17", "M17", "N17", "N17", "N21", "N21"],
-          mdc: "aA:xpS-mr-i-i-N17:N17:N21*N21",
+          codes: ["O29v", "F23", "U6", "M17", "M17", "N17", "N17", "N21", "N21"],
+          mdc: "aAv:xpS-mr-i-i-N17:N17:N21*N21",
           transliteration: "ꜤꜢ-ḫpš mri͗-tꜢwi͗",
           translation: "Great of effectiveness, beloved of the Two Lands",
           sources: [
@@ -8138,16 +8138,16 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O29", "D36", "F9", "F9", "G36", "D21", "N35", "M3", "Aa1", "D40", "X1", "Z7"],
-          mdc: "aA:a:F9*F9-wr:r-n:xt:x^^^D40:t*W",
+          codes: ["O29v", "D36", "F9", "F9", "G36", "D21", "N35", "M3", "Aa1", "D40", "X1", "Z7"],
+          mdc: "aAv:a:F9*F9-wr:r-n:xt:x^^^D40:t*W",
           transliteration: "ꜤꜢ-pḥti͗ wr-nḫtw",
           translation: "Great of might and important of victories",
         },
       ],
     },
     golden: {
-      codes: ["V30", "G54", "O29", "N37", "I9", "F8"],
-      mdc: "nb:snD-aA:N37:f-F8",
+      codes: ["V30", "G54", "O29v", "N37", "I9", "F8"],
+      mdc: "nb:snD-aAv:N37:f-F8",
       transliteration: "nb-snḏ ꜤꜢ-šfit",
       translation: "Lord of fear and great of majesty",
       sources: [
@@ -8335,8 +8335,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     golden: {
-      codes: ["O29", "Aa15", "N17", "N17", "N17", "V30", "Z7", "Z2"],
-      mdc: "aA:nr:Aa15-N17:N17:N17:nb:W*Z2",
+      codes: ["O29v", "Aa15", "N17", "N17", "N17", "V30", "Z7", "Z2"],
+      mdc: "aAv:nr:Aa15-N17:N17:N17:nb:W*Z2",
       transliteration: "ꜤꜢ-nrw-m-tꜢw-nbw",
       translation: "He whose victories are great in all the lands",
       sources: [
@@ -8347,8 +8347,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["O29", "D36", "Y1", "N35", "M3", "Aa1", "D40", "X1", "Z2", "Aa15", "N17", "N17", "N17", "V30", "Z7", "Z2"],
-          mdc: "aA:a:Y1-n:M3-x^^^D40:t*Z2-Aa15:N17:N17:N17-nb:W*Z2",
+          codes: ["O29v", "D36", "Y1", "N35", "M3", "Aa1", "D40", "X1", "Z2", "Aa15", "N17", "N17", "N17", "V30", "Z7", "Z2"],
+          mdc: "aAv:a:Y1-n:M3-x^^^D40:t*Z2-Aa15:N17:N17:N17-nb:W*Z2",
           transliteration: "ꜤꜢ-nḫtw m tꜢw-nbw",
           translation: "Great of victories in all lands",
         },
@@ -8484,8 +8484,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       translation: "He who is great of miracles in Karnak Temple",
     },
     golden: {
-      codes: ["O29", "F23", "S29", "O29", "D36", "R19", "X1", "O49", "N35", "F31", "S29", "M23"],
-      mdc: "aA:xpS-s-aA:a-R19-t:O49-n:ms*s*sw",
+      codes: ["O29v", "F23", "S29", "O29", "D36", "R19", "X1", "O49", "N35", "F31", "S29", "M23"],
+      mdc: "aAv:xpS-s-aAv:a-R19-t:O49-n:ms*s*sw",
       transliteration: "ꜤꜢ-ḫpš sꜤꜢ wꜢst n ms sw",
       translation: "The one great of might, who has magnified Thebes for the one who bore him",
     },
@@ -8563,8 +8563,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     nebty: {
-      codes: ["S29", "O29", "D36", "G1", "Y1", "O28", "W24", "O49"],
-      mdc: "s-aA:a-A-Y1-iwn-nw:O49",
+      codes: ["S29", "O29v", "D36", "G1", "Y1", "O28", "W24", "O49"],
+      mdc: "s-aAv:a-A-Y1-iwn-nw:O49",
       transliteration: "sꜤꜢ-iwnw ḳꜢb ꜤꜢbt dit mꜢꜤt n rꜤ m-ẖrt-hrw",
       translation: "Enlarging Heliopolis, doubling the offerings, presenting Right to Ra daily",
     },
@@ -8913,8 +8913,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   "ramesses-iii": {
     horus: {
-      codes: ["E1", "D40", "O29", "M23", "M17", "M17", "X1", "Z2"],
-      mdc: "E1:D40-aA-sw-i-i-t:Z2",
+      codes: ["E1", "D40", "O29v", "M23", "M17", "M17", "X1", "Z2"],
+      mdc: "E1:D40-aAv-sw-i-i-t:Z2",
       transliteration: "kꜢ-nḫt ꜤꜢ-nsyt",
       translation: "The great bull, great of kingship",
       sources: [
@@ -9026,8 +9026,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O34", "O29", "D36", "Y1", "N28", "Z1", "W19", "N27", "X1", "Z4", "O1", "Z7", "D58", "N35", "N8", "I9", "S34", "X1", "G24A", "Z1"],
-          mdc: "z:aA:a:Y1-xa:3-mi-N27:t-y:pr-W*b:n-N8:f-anx:t-G24A:3",
+          codes: ["O34", "O29v", "D36", "Y1", "N28", "Z1", "W19", "N27", "X1", "Z4", "O1", "Z7", "D58", "N35", "N8", "I9", "S34", "X1", "G24A", "Z1"],
+          mdc: "z:aAv:a:Y1-xa:3-mi-N27:t-y:pr-W*b:n-N8:f-anx:t-G24A:3",
           transliteration: "sꜤꜢ-ḫꜤw-mi͗-Ꜣḫti͗ wbn.f-Ꜥnḫ-rḫyt",
           translation: "Who has magnified his appearances like the One of the Two Horizons when he rises, the life of the Rekhyet people",
           sources: [
@@ -9357,8 +9357,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   "ramesses-vi": {
     horus: {
-      codes: ["E1", "D40", "O29", "D36", "Y1", "N35", "M3", "Aa1", "X1", "D40", "Z2", "S29", "S34", "M127", "M13"],
-      mdc: "E1:D40-aA:a:Y1-n:xt:x*t-D40:Z2-s-anx-M127-wAD",
+      codes: ["E1", "D40", "O29v", "D36", "Y1", "N35", "M3", "Aa1", "X1", "D40", "Z2", "S29", "S34", "M127", "M13"],
+      mdc: "E1:D40-aAv:a:Y1-n:xt:x*t-D40:Z2-s-anx-M127-wAD",
       transliteration: "kꜢ-nḫt ꜤꜢ-nḫtw sꜤnḫ-tꜢwi͗",
       translation: "The strong bull, whose victories are great, he who gives life to the Two Lands",
       sources: [
@@ -9367,8 +9367,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["E1", "D40", "O29", "N35", "M3", "Aa1", "X1", "D40"],
-          mdc: "E1:D40-aA:n:xt-x*t:D40",
+          codes: ["E1", "D40", "O29v", "N35", "M3", "Aa1", "X1", "D40"],
+          mdc: "E1:D40-aAv:n:xt-x*t:D40",
           transliteration: "kꜢ-nḫt ꜤꜢ-nḫt(w)",
           translation: "The strong bull, whose victories are great",
           sources: [
@@ -9377,8 +9377,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O29", "D36", "Y1", "N35", "M3", "Aa1", "X1", "A24", "X1", "Z7"],
-          mdc: "aA:a:Y1-n:xt:x*t-A24:t*W",
+          codes: ["O29v", "D36", "Y1", "N35", "M3", "Aa1", "X1", "A24", "X1", "Z7"],
+          mdc: "aAv:a:Y1-n:xt:x*t-A24:t*W",
           transliteration: "kꜢ-nḫt ꜤꜢ-nḫt(w)",
           translation: "The strong bull, whose victories are great",
         },
@@ -9799,8 +9799,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       translation: "Who has united lands, repelled the Nine Bows, and seized with his strong arm all lands",
     },
     prenomen: {
-      codes: ["N5", "O29", "L1", "C12", "U21", "N35"],
-      mdc: "ra:aA-xpr-C12-stp:n",
+      codes: ["N5", "O29v", "L1", "C12", "U21", "N35"],
+      mdc: "ra:aAv-xpr-C12-stp:n",
       transliteration: "ꜤꜢ-ḫpr-rꜤ stp.n-i͗mn",
       translation: "The great one is a manifestation of Ra, chosen by Amun",
       sources: [
@@ -9819,8 +9819,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N5", "O29", "L1", "C10A", "U21", "N35"],
-          mdc: "ra:aA-xpr-C10A-stp:n",
+          codes: ["N5", "O29v", "L1", "C10A", "U21", "N35"],
+          mdc: "ra:aAv-xpr-C10A-stp:n",
           transliteration: "ꜤꜢ-ḫpr-rꜤ stp.n-mꜢꜤt",
           translation: "The great one is a manifestation of Ra, chosen by Maat",
         },
@@ -10214,8 +10214,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     nebty: {
-      codes: ["S29", "O29", "D36", "L1", "D21", "Z7", "A53", "G36", "D21", "U16", "Y1", "Z2"],
-      mdc: "s-aA:a-xpr:r-W-A53-wr:r-U16-Y1:Z2",
+      codes: ["S29", "O29v", "D36", "L1", "D21", "Z7", "A53", "G36", "D21", "U16", "Y1", "Z2"],
+      mdc: "s-aAv:a-xpr:r-W-A53-wr:r-U16-Y1:Z2",
       transliteration: "sꜤꜢ-ḫprw wr-bi͗Ꜣwt",
       translation: "The one who has magnified (his) manifestations is one great of marvels",
     },
@@ -10774,8 +10774,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["L1", "O29", "Z2"],
-          mdc: "xpr-aA:Z2",
+          codes: ["L1", "O29v", "Z2"],
+          mdc: "xpr-aAv:Z2",
           transliteration: "ꜤꜢ-ḫprw-rꜤ",
           translation: "The great one is a manifestation of Ra",
           sources: [
@@ -10794,8 +10794,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N5", "O29", "L1", "C2", "U21", "N35", "N5"],
-          mdc: "ra:aA-xpr-C2-stp&n&ra",
+          codes: ["N5", "O29v", "L1", "C2", "U21", "N35", "N5"],
+          mdc: "ra:aAv-xpr-C2-stp&n&ra",
           transliteration: "ꜤꜢ-ḫprw-rꜤ stp.n-rꜤ",
           translation: "The great one is a manifestation of Ra, chosen by Ra",
         },
@@ -10831,8 +10831,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   "osorkon-iv": {
     prenomen: {
-      codes: ["N5", "O29", "L1", "C12", "U21", "N35"],
-      mdc: "ra:aA-xpr-C12-stp:n",
+      codes: ["N5", "O29v", "L1", "C12", "U21", "N35"],
+      mdc: "ra:aAv-xpr-C12-stp:n",
       transliteration: "ꜤꜢ-ḫprw-rꜤ stp.n-i͗mn",
       translation: "The great one is a manifestation of Ra, chosen by Amun",
       sources: [
@@ -10841,8 +10841,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["N6B", "N5", "O29", "L1", "C12", "U21", "N35"],
-          mdc: "N6B-ra:aA-xpr-C12-stp:n",
+          codes: ["N6B", "N5", "O29v", "L1", "C12", "U21", "N35"],
+          mdc: "N6B-ra:aAv-xpr-C12-stp:n",
           transliteration: "ni͗-swt-bi͗t ꜤꜢ-ḫpr-rꜤ stp.n-i͗mn",
           translation: "(The Dual King) The great one is a manifestation of Ra, chosen by Amun",
         },
@@ -11422,8 +11422,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     nebty: {
-      codes: ["O29", "D36", "F8", "G17", "N17", "N17", "N17", "V30"],
-      mdc: "aA:a-F8-m-N17:N17:N17:nb",
+      codes: ["O29v", "D36", "F8", "G17", "N17", "N17", "N17", "V30"],
+      mdc: "aAv:a-F8-m-N17:N17:N17:nb",
       transliteration: "ꜤꜢ-šfit-m-tꜢw-nb(w)",
       translation: "Great of majesty in all lands",
       sources: [
@@ -11449,8 +11449,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     golden: {
-      codes: ["O29", "D36", "F23", "V28", "A24", "T10", "Z1", "Z1", "Z1"],
-      mdc: "aA:a:xpS-H-A24-pD:3:3*3",
+      codes: ["O29v", "D36", "F23", "V28", "A24", "T10", "Z1", "Z1", "Z1"],
+      mdc: "aAv:a:xpS-H-A24-pD:3:3*3",
       transliteration: "ꜤꜢ-ḥpš ḥwi͗-pḏt",
       translation: "The one great of strength who has struck down the Nine Bows",
       sources: [
@@ -11653,8 +11653,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   "psamtik-i": {
     horus: {
-      codes: ["O29", "F34", "Z1"],
-      mdc: "aA:ib*Z1",
+      codes: ["O29v", "F34", "Z1"],
+      mdc: "aAv:ib*Z1",
       transliteration: "ꜤꜢ-ib",
       translation: "Strong-minded",
       sources: [
@@ -11664,8 +11664,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["O29", "F34"],
-          mdc: "aA:ib",
+          codes: ["O29v", "F34"],
+          mdc: "aAv:ib",
           transliteration: "ꜤꜢ-i͗b",
           translation: "Strong-minded",
           sources: [
@@ -11674,8 +11674,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O29", "F34", "D36"],
-          mdc: "aA:ib:a",
+          codes: ["O29v", "F34", "D36"],
+          mdc: "aAv:ib:a",
           transliteration: "ꜤꜢ-i͗b",
           translation: "Strong-minded",
           sources: [
@@ -11684,8 +11684,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["O29", "D36", "F34"],
-          mdc: "aA:a:ib",
+          codes: ["O29v", "D36", "F34"],
+          mdc: "aAv:a:ib",
           transliteration: "ꜤꜢ-i͗b",
           translation: "Strong-minded",
         },
@@ -12171,8 +12171,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   "neferites-i": {
     horus: {
-      codes: ["O29", "D36", "F34"],
-      mdc: "aA:a-ib",
+      codes: ["O29v", "D36", "F34"],
+      mdc: "aAv:a-ib",
       transliteration: "ꜤꜢ-i͗b",
       translation: "Strong-minded",
     },
@@ -12193,8 +12193,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
     },
     nomen: {
-      codes: ["N35", "G1", "Z4", "I9", "O29", "Z7", "Z2", "T12"],
-      mdc: "n:A&y-f:aA:W*Z2-T12",
+      codes: ["N35", "G1", "Z4", "I9", "O29v", "Z7", "Z2", "T12"],
+      mdc: "n:A&y-f:aAv:W*Z2-T12",
       transliteration: "nꜢy.f-ꜤꜢw-rwḏ",
       translation: "His greatness is flourishing",
       sources: [
@@ -12203,8 +12203,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["N35", "T12", "M17", "I9", "O29", "Z7", "T12"],
-          mdc: "n:Ai-i-f:aA-W-rwD",
+          codes: ["N35", "T12", "M17", "I9", "O29v", "Z7", "T12"],
+          mdc: "n:Ai-i-f:aAv-W-rwD",
           transliteration: "nꜢy.f-ꜤꜢw-rwḏ(w)",
           translation: "His greatness is flourishing",
           sources: [
@@ -12212,8 +12212,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
           ],
         },
         {
-          codes: ["N35", "G1", "M17", "M17", "I9", "O29", "Z7", "T12", "Z2"],
-          mdc: "n:G1*i*i-f:aA-W*rwD:Z2",
+          codes: ["N35", "G1", "M17", "M17", "I9", "O29v", "Z7", "T12", "Z2"],
+          mdc: "n:G1*i*i-f:aAv-W*rwD:Z2",
           transliteration: "nꜢy.f-ꜤꜢw-rwḏ(w)",
           translation: "His greatness is flourishing",
           sources: [
@@ -12227,8 +12227,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   akoris: {
     horus: {
-      codes: ["O29", "F34", "Z1", "N36", "N16", "N16"],
-      mdc: "aA:ib*Z1-N36:N16:N16",
+      codes: ["O29v", "F34", "Z1", "N36", "N16", "N16"],
+      mdc: "aAv:ib*Z1-N36:N16:N16",
       transliteration: "ꜤꜢ-i͗b mri͗-tꜢwi͗",
       translation: "Strong-minded and beloved of the Two Lands",
       sources: [
@@ -12325,8 +12325,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
 
   psammuthis: {
     horus: {
-      codes: ["O29", "F9", "F9", "M30", "O50", "Z1"],
-      mdc: "aA:F9*F9-M30-O50:3",
+      codes: ["O29v", "F9", "F9", "M30", "O50", "Z1"],
+      mdc: "aAv:F9*F9-M30-O50:3",
       transliteration: "ꜤꜢ-pḥti͗ mꜤr-zpw",
       translation: "Great of strength and successful of occasions",
       sources: [
@@ -13786,8 +13786,8 @@ export const ROYAL_NAMES: Record<string, RoyalNames> = {
       ],
       variants: [
         {
-          codes: ["U120", "Z1", "D36", "D40", "O29", "F9", "Z9", "F9", "D40", "V28", "E34", "N35", "W24", "Z7", "A17", "F35", "M30", "U7", "X1", "X1", "D176", "S42", "D19", "X1", "N14", "O1", "O1", "X1"],
-          mdc: "U120:Z1-a:D40:aA-F9*Z9*F9:D40-H-wn:n-nw:W-A17-nfr-M30-U7:t*t-D176-sxm-D19:t-N14:pr-pr:t",
+          codes: ["U120", "Z1", "D36", "D40", "O29v", "F9", "Z9", "F9", "D40", "V28", "E34", "N35", "W24", "Z7", "A17", "F35", "M30", "U7", "X1", "X1", "D176", "S42", "D19", "X1", "N14", "O1", "O1", "X1"],
+          mdc: "U120:Z1-a:D40:aAv-F9*Z9*F9:D40-H-wn:n-nw:W-A17-nfr-M30-U7:t*t-D176-sxm-D19:t-N14:pr-pr:t",
           transliteration: "ṯmꜢ-Ꜥ wr-pḥti͗ ḥwnw-nfr bnr-mrwt kꜢ-nsw sḫm-ḫnti͗-pr-dwꜢt",
           sources: [
             { text: "Lepsius, Denkmäler aus Ägypten und Äthiopien, IV, 74c" },
