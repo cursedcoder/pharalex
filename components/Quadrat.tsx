@@ -4,7 +4,7 @@ import Link from "next/link";
 import { createContext, useContext } from "react";
 import { parseMdc, extractCodes } from "@/lib/mdc";
 import type { MdcNode } from "@/lib/mdc";
-import { glyphHref } from "@/lib/glyph-utils";
+import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
 import { useGlyphDetail } from "./GlyphDetailsContext";
 import { Tooltip, GlyphTooltipContent } from "./Tooltip";
 import {
@@ -821,7 +821,7 @@ function SignCell({
   const img = (
     /* eslint-disable-next-line @next/next/no-img-element */
     <img
-      src={`/glyphs/${code}.svg`}
+      src={glyphSvgSrc(code)}
       alt={code}
       loading="lazy"
       decoding="async"
