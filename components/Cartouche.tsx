@@ -143,13 +143,14 @@ export function Cartouche({
         <div
           className="absolute right-0 top-1/2 -translate-y-1/2 w-1 border-r-2 border-gold/40 z-20"
           style={{ height: '100%' }}
+          aria-hidden="true"
         />
       </div>
       
       {/* Transliteration */}
       <span
         className={`
-          ${config.text} italic text-brown-light mt-2
+          ${config.text} italic text-brown mt-2
           font-medium tracking-wide
         `}
       >
@@ -226,7 +227,7 @@ export function Serekh({
       {/* Transliteration */}
       <span
         className={`
-          ${config.text} italic text-brown-light mt-2
+          ${config.text} italic text-brown mt-2
           font-medium tracking-wide
         `}
       >
@@ -277,6 +278,7 @@ function SerekhFacade({ height, baseUnit }: { height: string; baseUnit: number }
       viewBox={`0 0 ${totalW} 100`}
       preserveAspectRatio="none"
       style={{ display: "block" }}
+      aria-hidden="true"
     >
       <path
         d={d}
@@ -342,7 +344,7 @@ export function PreCartoucheName({
       {/* Transliteration */}
       <span
         className={`
-          ${config.text} italic text-brown-light mt-2
+          ${config.text} italic text-brown mt-2
           font-medium tracking-wide
         `}
       >
@@ -381,7 +383,7 @@ function CartoucheGlyph({
   const wrappedGlyph = showLinks ? (
     <Link
       href={glyphHref(code)}
-      className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150"
+      className="hover:scale-110 hover:drop-shadow-md transition-transform duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold rounded"
     >
       {glyphElement}
     </Link>
@@ -444,7 +446,7 @@ function NameVariants({ variants, nameLabel, size }: {
             </div>
           )}
           <div className="space-y-1">
-            <p className={`${config.text} italic text-brown-light font-medium tracking-wide`}>
+            <p className={`${config.text} italic text-brown font-medium tracking-wide`}>
               {v.transliteration}
             </p>
             {v.translation && (
@@ -499,32 +501,34 @@ export function RoyalNamesDisplay({
 
   const NameSection = ({ type, nameType, label, royalName, renderer }: {
     type: string; nameType: string; label: string; royalName: RoyalName; renderer: "cartouche" | "serekh";
-  }) => (
-    <section key={type}>
+  }) => {
+    const headingId = `royal-name-${type}`;
+    return (
+    <section key={type} aria-labelledby={headingId}>
       {/* ---- Section Name ---- separator */}
-      <div className="flex items-center gap-4 mb-6">
-        <div className="flex-1 border-t border-sandstone/30" />
+      <div className="flex items-center gap-4 mb-6" role="presentation">
+        <div className="flex-1 border-t border-sandstone/30" aria-hidden="true" />
         <span className="inline-flex items-center gap-2 shrink-0">
           {TITLE_GLYPHS[nameType] && (
             <Tooltip content={<span className="text-xs">{TITLE_GLYPHS[nameType].tooltip}</span>}>
-              <span className="inline-flex items-center gap-0.5 cursor-help">
+              <span className="inline-flex items-center gap-0.5 cursor-help" aria-hidden="true">
                 {TITLE_GLYPHS[nameType].codes.map((code) => (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     key={code}
                     src={glyphSvgSrc(code)}
-                    alt={code}
+                    alt=""
                     className="h-6 w-auto object-contain opacity-50"
                   />
                 ))}
               </span>
             </Tooltip>
           )}
-          <span className="text-base font-display font-medium text-sandstone uppercase tracking-wide">
+          <h3 id={headingId} className="text-base font-display font-medium text-sandstone uppercase tracking-wide">
             {label}
-          </span>
+          </h3>
         </span>
-        <div className="flex-1 border-t border-sandstone/30" />
+        <div className="flex-1 border-t border-sandstone/30" aria-hidden="true" />
       </div>
 
       <div className="flex flex-col items-center">
@@ -535,19 +539,46 @@ export function RoyalNamesDisplay({
         )}
       </div>
 
-      {royalName.variants && royalName.variants.length > 0 && (
-        <details className="mt-6 group">
-          <summary className="text-xs text-sandstone uppercase tracking-wide cursor-pointer hover:text-gold-dark transition-colors list-none flex items-center gap-1.5">
-            <span className="text-[10px] transition-transform group-open:rotate-90">▶</span>
-            {royalName.variants.length} variant{royalName.variants.length > 1 ? "s" : ""}
-          </summary>
-          <div className="mt-3">
-            <NameVariants variants={royalName.variants} nameLabel={label} size={size} />
-          </div>
-        </details>
-      )}
+      {/* Sources & variants */}
+      <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+        {royalName.sources && royalName.sources.length > 0 && (
+          <details className="group">
+            <summary className="text-xs text-sandstone uppercase tracking-wide cursor-pointer hover:text-gold-dark transition-colors list-none flex items-center gap-1.5 rounded focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-gold">
+              <span className="text-[10px] transition-transform group-open:rotate-90" aria-hidden="true">▶</span>
+              {royalName.sources.length} source{royalName.sources.length > 1 ? "s" : ""}
+            </summary>
+            <ul className="mt-2 space-y-1 text-xs text-sandstone">
+              {royalName.sources.map((src, i) => (
+                <li key={i} className="flex items-start gap-1.5">
+                  <span className="text-gold-dark/40 mt-0.5 shrink-0" aria-hidden="true">·</span>
+                  {src.url ? (
+                    <a href={src.url} target="_blank" rel="noopener noreferrer" className="hover:text-gold-dark transition-colors">
+                      {src.text}
+                    </a>
+                  ) : (
+                    <span>{src.text}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
+
+        {royalName.variants && royalName.variants.length > 0 && (
+          <details className="group">
+            <summary className="text-xs text-sandstone uppercase tracking-wide cursor-pointer hover:text-gold-dark transition-colors list-none flex items-center gap-1.5 rounded focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-gold">
+              <span className="text-[10px] transition-transform group-open:rotate-90" aria-hidden="true">▶</span>
+              {royalName.variants.length} variant{royalName.variants.length > 1 ? "s" : ""}
+            </summary>
+            <div className="mt-3">
+              <NameVariants variants={royalName.variants} nameLabel={label} size={size} />
+            </div>
+          </details>
+        )}
+      </div>
     </section>
   );
+  };
 
   return (
     <div className="space-y-8">
