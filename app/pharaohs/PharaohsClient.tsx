@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/ui/Container";
@@ -37,8 +38,10 @@ export default function PharaohsClient({
   stats,
   dynastyMap,
 }: PharaohsClientProps) {
+  const searchParams = useSearchParams();
+  const initialPeriod = (searchParams.get("period") ?? "") as PeriodId | "";
   const [search,          setSearch]          = useState("");
-  const [selectedPeriod,  setSelectedPeriod]  = useState<PeriodId | "">("");
+  const [selectedPeriod,  setSelectedPeriod]  = useState<PeriodId | "">(initialPeriod);
   const [notableOnly,     setNotableOnly]     = useState(false);
   const [viewMode,        setViewMode]        = useState<"timeline" | "list">("timeline");
 

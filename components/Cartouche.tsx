@@ -180,6 +180,7 @@ export function Serekh({
   showLinks = true,
 }: SerekhProps) {
   const config = sizeConfig[size];
+  const q = config.quadrat; // base unit
 
   return (
     <div className="inline-flex flex-col items-center">
@@ -188,56 +189,40 @@ export function Serekh({
           {label}
         </span>
       )}
-      
-      {/* Serekh - palace facade frame for Horus name */}
-      <div className="relative">
-        {/* Horus falcon on top */}
-        <div className="flex justify-center mb-1">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/glyphs/G5.svg"
-            alt="Horus"
-            className={`${config.glyph} object-contain opacity-70`}
-          />
-        </div>
-        
-        {/* Palace facade box */}
-        <div
-          className={`
-            inline-flex items-center justify-center ${config.gap} ${config.padding}
-            bg-papyrus/60
-            border-2 border-gold/40
-            border-b-4
-          `}
-          style={{
-            borderBottomStyle: "double",
-          }}
-        >
-          {royalName.mdc ? (
-            <Quadrat mdc={royalName.mdc} baseSize={config.quadrat} />
-          ) : (
-            royalName.codes.map((code, i) => (
-              <CartoucheGlyph
-                key={`${code}-${i}`}
-                code={code}
-                showLinks={showLinks}
-                glyphClassName={config.glyph}
-              />
-            ))
-          )}
-        </div>
 
-        {/* Palace recessed panels (niched facade) */}
-        <div className="flex justify-center gap-1 mt-0.5">
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="w-3 h-2 bg-gold/20 border border-gold/30"
-            />
-          ))}
+      {/* Serekh - palace facade frame for Horus name */}
+      <div className="flex items-center gap-2">
+        {/* Horus falcon with sun disk (G106&N6) */}
+        <Quadrat mdc="G106&N6" baseSize={q} />
+
+        {/* Frame: glyphs on the left, SVG niched facade on the right */}
+        <div className="flex items-stretch">
+          {/* Glyph area with 3-sided border (top, left, bottom) */}
+          <div
+            className="flex items-center justify-center border-t-2 border-l-2 border-b-2 border-gold-dark/40"
+            style={{ paddingInline: q * 0.15, paddingBlock: 2 }}
+          >
+            {royalName.mdc ? (
+              <Quadrat mdc={royalName.mdc} baseSize={q} />
+            ) : (
+              <div className={`flex items-center ${config.gap}`}>
+                {royalName.codes.map((code, i) => (
+                  <CartoucheGlyph
+                    key={`${code}-${i}`}
+                    code={code}
+                    showLinks={showLinks}
+                    glyphClassName={config.glyph}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Niched facade (right side) */}
+          <SerekhFacade height="100%" baseUnit={q} />
         </div>
       </div>
-      
+
       {/* Transliteration */}
       <span
         className={`
@@ -247,14 +232,61 @@ export function Serekh({
       >
         {royalName.transliteration}
       </span>
-      
+
       {/* Translation */}
       {royalName.translation && (
         <span className="text-xs text-sandstone mt-0.5">
-          "{royalName.translation}"
+          &ldquo;{royalName.translation}&rdquo;
         </span>
       )}
     </div>
+  );
+}
+
+/**
+ * SVG niched palace facade for the right side of a serekh.
+ * Draws alternating deep/shallow rectangular recesses.
+ */
+function SerekhFacade({ height, baseUnit }: { height: string; baseUnit: number }) {
+  // All dimensions in a 0-100 viewBox height, width scales to match
+  const nicheCount = 5;
+  const nicheH = 10;
+  const nicheGap = 3;
+  const deepW = 20;
+  const shallowW = 12;
+  const totalNicheH = nicheCount * nicheH + (nicheCount - 1) * nicheGap;
+  const startY = (100 - totalNicheH) / 2;
+  const totalW = deepW + 4; // outer wall + deepest niche
+
+  // Build path: top-right corner, down with niches, bottom-right, bottom-left
+  let d = `M 0 0 L ${totalW} 0 L ${totalW} ${startY}`;
+  for (let i = 0; i < nicheCount; i++) {
+    const ny = startY + i * (nicheH + nicheGap);
+    const depth = i % 2 === 0 ? deepW : shallowW;
+    const nx = totalW - depth;
+    d += ` L ${totalW} ${ny} L ${nx} ${ny} L ${nx} ${ny + nicheH} L ${totalW} ${ny + nicheH}`;
+  }
+  d += ` L ${totalW} 100 L 0 100`;
+
+  const w = Math.round(baseUnit * 0.6);
+
+  return (
+    <svg
+      width={w}
+      height={height}
+      viewBox={`0 0 ${totalW} 100`}
+      preserveAspectRatio="none"
+      style={{ display: "block" }}
+    >
+      <path
+        d={d}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2.5}
+        vectorEffect="non-scaling-stroke"
+        className="text-gold-dark/40"
+      />
+    </svg>
   );
 }
 
@@ -382,12 +414,19 @@ const PRE_CARTOUCHE_DYNASTIES = new Set([
   "dynasty-2",
 ]);
 
-/** Shows all name variants inline. Capped at 8; links to pharaoh.se for overflow. */
-function NameVariants({ variants, size }: { variants: RoyalName[]; size: "sm" | "md" | "lg" }) {
+/** Variant letter label: 0→A, 1→B, etc. */
+const VARIANT_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+/** Shows name variants as individual cards. Capped at 8; links to pharaoh.se for overflow. */
+function NameVariants({ variants, nameLabel, size }: {
+  variants: RoyalName[];
+  nameLabel?: string;
+  size: "sm" | "md" | "lg";
+}) {
   if (variants.length === 0) return null;
 
   const config = sizeConfig[size];
-  const variantBaseSize = Math.round(config.quadrat * 0.65);
+  const variantBaseSize = config.quadrat;
   const maxShown = 8;
   const shown = variants.slice(0, maxShown);
   const hasMore = variants.length > maxShown;
@@ -395,22 +434,29 @@ function NameVariants({ variants, size }: { variants: RoyalName[]; size: "sm" | 
   return (
     <div className="space-y-4">
       {shown.map((v, i) => (
-        <div key={i} className="space-y-1">
+        <article key={i} className="border border-sandstone/20 rounded-lg bg-papyrus/30 p-4 sm:p-5 space-y-3">
+          <p className="text-xs text-sandstone uppercase tracking-wide font-medium">
+            {nameLabel ? `${nameLabel} variant ${VARIANT_LETTERS[i]}` : `Variant ${VARIANT_LETTERS[i]}`}
+          </p>
           {v.mdc && (
-            <div className="overflow-x-auto overflow-y-hidden max-w-full">
+            <div className="overflow-x-auto overflow-y-hidden max-w-full py-1">
               <Quadrat mdc={v.mdc} baseSize={variantBaseSize} />
             </div>
           )}
-          <p className="text-sm italic text-brown-light">{v.transliteration}</p>
-          {v.translation && (
-            <p className="text-xs text-sandstone leading-snug">
-              {v.translation}
+          <div className="space-y-1">
+            <p className={`${config.text} italic text-brown-light font-medium tracking-wide`}>
+              {v.transliteration}
             </p>
-          )}
-        </div>
+            {v.translation && (
+              <p className="text-sm text-sandstone leading-snug">
+                {v.translation}
+              </p>
+            )}
+          </div>
+        </article>
       ))}
       {hasMore && (
-        <p className="text-xs text-sandstone">
+        <p className="text-xs text-sandstone mt-2">
           +{variants.length - maxShown} more on{" "}
           <a href="https://pharaoh.se" target="_blank" rel="noopener noreferrer" className="text-gold-dark hover:text-gold">
             pharaoh.se
@@ -451,61 +497,90 @@ export function RoyalNamesDisplay({
 
   const NameFrame = preCartouche ? PreCartoucheName : Cartouche;
 
-  const names: { type: string; nameType: string; label: string; royalName: RoyalName; renderer: "cartouche" | "serekh" }[] = [];
-  if (horus) names.push({ type: "horus", nameType: "horus", label: "Horus Name", royalName: horus, renderer: "serekh" });
-  if (prenomen) names.push({ type: "prenomen", nameType: "prenomen", label: "Prenomen (Throne Name)", royalName: prenomen, renderer: "cartouche" });
-  if (nomen) names.push({ type: "nomen", nameType: "nomen", label: "Nomen (Birth Name)", royalName: nomen, renderer: "cartouche" });
-  if (nebty) names.push({ type: "nebty", nameType: "nebty", label: "Nebty (Two Ladies) Name", royalName: nebty, renderer: "cartouche" });
-  if (golden) names.push({ type: "golden", nameType: "golden", label: "Golden Horus Name", royalName: golden, renderer: "cartouche" });
+  const NameSection = ({ type, nameType, label, royalName, renderer }: {
+    type: string; nameType: string; label: string; royalName: RoyalName; renderer: "cartouche" | "serekh";
+  }) => (
+    <section key={type}>
+      {/* ---- Section Name ---- separator */}
+      <div className="flex items-center gap-4 mb-6">
+        <div className="flex-1 border-t border-sandstone/30" />
+        <span className="inline-flex items-center gap-2 shrink-0">
+          {TITLE_GLYPHS[nameType] && (
+            <Tooltip content={<span className="text-xs">{TITLE_GLYPHS[nameType].tooltip}</span>}>
+              <span className="inline-flex items-center gap-0.5 cursor-help">
+                {TITLE_GLYPHS[nameType].codes.map((code) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={code}
+                    src={glyphSvgSrc(code)}
+                    alt={code}
+                    className="h-6 w-auto object-contain opacity-50"
+                  />
+                ))}
+              </span>
+            </Tooltip>
+          )}
+          <span className="text-base font-display font-medium text-sandstone uppercase tracking-wide">
+            {label}
+          </span>
+        </span>
+        <div className="flex-1 border-t border-sandstone/30" />
+      </div>
+
+      <div className="flex flex-col items-center">
+        {renderer === "serekh" ? (
+          <Serekh royalName={royalName} size={size} />
+        ) : (
+          <NameFrame royalName={royalName} size={size} />
+        )}
+      </div>
+
+      {royalName.variants && royalName.variants.length > 0 && (
+        <details className="mt-6 group">
+          <summary className="text-xs text-sandstone uppercase tracking-wide cursor-pointer hover:text-gold-dark transition-colors list-none flex items-center gap-1.5">
+            <span className="text-[10px] transition-transform group-open:rotate-90">▶</span>
+            {royalName.variants.length} variant{royalName.variants.length > 1 ? "s" : ""}
+          </summary>
+          <div className="mt-3">
+            <NameVariants variants={royalName.variants} nameLabel={label} size={size} />
+          </div>
+        </details>
+      )}
+    </section>
+  );
 
   return (
     <div className="space-y-8">
-      {names.map(({ type, nameType, label, royalName, renderer }) => (
-        <section key={type}>
-          {/* ---- Section Name ---- separator */}
-          <div className="flex items-center gap-4 mb-6">
-            <div className="flex-1 border-t border-sandstone/30" />
-            <span className="inline-flex items-center gap-2 shrink-0">
-              {TITLE_GLYPHS[nameType] && (
-                <Tooltip content={<span className="text-xs">{TITLE_GLYPHS[nameType].tooltip}</span>}>
-                  <span className="inline-flex items-center gap-0.5 cursor-help">
-                    {TITLE_GLYPHS[nameType].codes.map((code) => (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        key={code}
-                        src={glyphSvgSrc(code)}
-                        alt={code}
-                        className="h-6 w-auto object-contain opacity-50"
-                      />
-                    ))}
-                  </span>
-                </Tooltip>
-              )}
-              <span className="text-base font-display font-medium text-sandstone uppercase tracking-wide">
-                {label}
-              </span>
-            </span>
-            <div className="flex-1 border-t border-sandstone/30" />
-          </div>
+      {/* Horus name — full width */}
+      {horus && (
+        <NameSection type="horus" nameType="horus" label="Horus Name" royalName={horus} renderer="serekh" />
+      )}
 
-          <div className="flex flex-col items-center">
-            {renderer === "serekh" ? (
-              <Serekh royalName={royalName} size={size} />
-            ) : (
-              <NameFrame royalName={royalName} size={size} />
-            )}
-          </div>
+      {/* Prenomen + Nomen paired side-by-side */}
+      {prenomen && nomen ? (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <NameSection type="prenomen" nameType="prenomen" label="Prenomen (Throne Name)" royalName={prenomen} renderer="cartouche" />
+          <NameSection type="nomen" nameType="nomen" label="Nomen (Birth Name)" royalName={nomen} renderer="cartouche" />
+        </div>
+      ) : (
+        <>
+          {prenomen && <NameSection type="prenomen" nameType="prenomen" label="Prenomen (Throne Name)" royalName={prenomen} renderer="cartouche" />}
+          {nomen && <NameSection type="nomen" nameType="nomen" label="Nomen (Birth Name)" royalName={nomen} renderer="cartouche" />}
+        </>
+      )}
 
-          {royalName.variants && royalName.variants.length > 0 && (
-            <div className="mt-6">
-              <p className="text-xs text-sandstone uppercase tracking-wide mb-3">
-                {royalName.variants.length} variant{royalName.variants.length > 1 ? "s" : ""}
-              </p>
-              <NameVariants variants={royalName.variants} size={size} />
-            </div>
-          )}
-        </section>
-      ))}
+      {/* Nebty + Golden Horus paired side-by-side */}
+      {nebty && golden ? (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <NameSection type="nebty" nameType="nebty" label="Nebty (Two Ladies) Name" royalName={nebty} renderer="cartouche" />
+          <NameSection type="golden" nameType="golden" label="Golden Horus Name" royalName={golden} renderer="cartouche" />
+        </div>
+      ) : (
+        <>
+          {nebty && <NameSection type="nebty" nameType="nebty" label="Nebty (Two Ladies) Name" royalName={nebty} renderer="cartouche" />}
+          {golden && <NameSection type="golden" nameType="golden" label="Golden Horus Name" royalName={golden} renderer="cartouche" />}
+        </>
+      )}
     </div>
   );
 }
