@@ -47,7 +47,7 @@ export function getDynastyById(id: string): Dynasty | undefined {
 }
 
 export function getPharaohsByDynasty(dynastyId: string): Pharaoh[] {
-  return PHARAOHS.filter((p) => p.dynastyId === dynastyId);
+  return PHARAOHS.filter((p) => p.dynastyId === dynastyId).map(enrichWithRoyalNames);
 }
 
 export function getPharaohsByPeriod(periodId: PeriodId): Pharaoh[] {
