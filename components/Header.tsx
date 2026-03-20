@@ -4,6 +4,13 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export function Header({ hideSearch = false }: { hideSearch?: boolean } = {}) {
   return (
+    <>
+    <a
+      href="#main-content"
+      className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-gold focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
+    >
+      Skip to main content
+    </a>
     <header className="header-blur sticky top-0 z-40 bg-ivory/95 dark:bg-ivory-dark/95 border-b border-sandstone/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-2 sm:gap-4 overflow-visible min-w-0">
@@ -142,5 +149,6 @@ export function Header({ hideSearch = false }: { hideSearch?: boolean } = {}) {
         </div>
       </div>
     </header>
+    </>
   );
 }
