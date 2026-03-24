@@ -13,6 +13,7 @@
 
 import { describe, it, expect } from "vitest";
 import glyphs from "../public/data/glyphs.json";
+import { glyphSize } from "../lib/glyph-metrics";
 
 describe("glyphs.json data integrity", () => {
   it("has glyphs", () => {
@@ -206,6 +207,31 @@ describe("glyphs.json data integrity", () => {
       (g: any) => g.tags && g.tags.includes("olw")
     );
     expect(bad.map((g: any) => g.code)).toEqual([]);
+  });
+
+  it("critical glyph metrics are not corrupted by pipeline", () => {
+    // Pin metrics for glyphs with extreme aspect ratios or frequent regressions.
+    // S29 (folded cloth) is very narrow [5, 19.5] and has broken multiple times.
+    // If this fails, the pipeline has changed these metrics — verify the SVG
+    // before updating the pinned values.
+    const pinned: Record<string, [number, number]> = {
+      S29:  [5, 19.5],
+      S29A: [6.4, 20.6],
+      S29B: [10.7, 21.0],
+    };
+    for (const [code, expected] of Object.entries(pinned)) {
+      const actual = glyphSize(code);
+      expect(actual, `${code} metrics changed — was ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`).toEqual(expected);
+    }
+  });
+
+  it("S29 SVG has non-empty path data", () => {
+    const fs = require("fs");
+    const path = require("path");
+    const svg = fs.readFileSync(path.join(process.cwd(), "public/glyphs/S29.svg"), "utf-8");
+    expect(svg).toContain("<path");
+    expect(svg).toContain("currentColor");
+    expect(svg.length).toBeGreaterThan(100);
   });
 
   it("every SVG file exists for each glyph code", () => {

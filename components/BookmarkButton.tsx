@@ -38,7 +38,7 @@ export function BookmarkButton({ type, id, label, size = "md" }: BookmarkButtonP
       title={saved ? "Remove from bookmarks" : "Save to bookmarks"}
       className={`
         ${sizeClasses} inline-flex items-center justify-center rounded-lg
-        border transition-all
+        border transition-all focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-gold
         ${saved
           ? "bg-gold/15 border-gold/40 text-gold-dark hover:bg-gold/25"
           : "bg-ivory-dark/50 border-sandstone/20 text-sandstone/50 hover:text-gold hover:border-gold/30"
@@ -48,6 +48,7 @@ export function BookmarkButton({ type, id, label, size = "md" }: BookmarkButtonP
       <svg
         className={iconSize}
         viewBox="0 0 24 24"
+        aria-hidden="true"
         fill={saved ? "currentColor" : "none"}
         stroke="currentColor"
         strokeWidth={2}

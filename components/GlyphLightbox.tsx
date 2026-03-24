@@ -38,13 +38,16 @@ export function GlyphLightbox({ items, initialIndex = 0, trigger }: GlyphLightbo
 
   return (
     <>
-      <button
+      <div
+        role="button"
+        tabIndex={0}
         onClick={handleOpen}
+        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleOpen(); } }}
         className="cursor-zoom-in"
         aria-label={`View ${current?.code || "glyph"} in lightbox`}
       >
         {trigger}
-      </button>
+      </div>
 
       <Lightbox
         open={open}

@@ -8,7 +8,7 @@ const variants = {
   default: "bg-brown/10 text-brown-light",
   gold: "bg-gold/20 text-gold-dark",
   sandstone: "bg-sandstone/20 text-sandstone",
-  outline: "border border-sandstone/40 text-sandstone",
+  outline: "border border-sandstone/40 text-brown-light",
 };
 
 const sizes = {

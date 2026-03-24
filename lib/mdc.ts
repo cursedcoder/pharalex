@@ -83,6 +83,9 @@ const MDC_ALIASES: Record<string, string> = {
   Hz:"W14", xnt:"W17", mi:"W19", Hnqt:"W22", nw:"W24", ini:"W25", t:"X1",
   rdi:"X8", di:"X8", mDAt:"Y1", zS:"Y3", mnhd:"Y3", mn:"Y5", ibA:"Y6",
   zSSt:"Y8", y:"Z4", W:"Z7", imi:"Z11", wnm:"Z11",
+  nr:"N22", jmn:"C26", jt:"M17", waD:"M13", xaw:"N28", Xt:"F32", nTrA:"R8A", tjw:"G4",
+  Aa18A:"Aa18a", N33AV:"N33Av", O29V:"O29v",
+  "1":"Z1", "2":"Z2", "3":"Z3", "4":"Z4", "5":"Z5", "6":"Z6", "7":"Z7", "8":"Z8", "9":"Z9",
 };
 
 /** Resolve a transliteration alias to its canonical Gardiner code. */
@@ -281,7 +284,9 @@ function parseAtom(s: string): MdcNode {
     return { type: "sign", code, rotation };
   }
 
-  return { type: "sign", code: resolveAlias(s.trim()) };
+  // Strip trailing backslash (MdC mirror marker) — we render the base glyph
+  const trimmed = s.trim().replace(/\\$/, "");
+  return { type: "sign", code: resolveAlias(trimmed) };
 }
 
 /**
