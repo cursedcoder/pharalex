@@ -261,7 +261,7 @@ function normalize(raw: string): string {
 
   // 10. Fix mismatched <g> tags (malformed JSesh/Inkscape exports)
   const openGs = (svg.match(/<g[\s>]/g) ?? []).length;
-  const selfCloseGs = (svg.match(/<g\s*\/>/g) ?? []).length;
+  const selfCloseGs = (svg.match(/<g\b[^>]*\/>/gs) ?? []).length;
   const netOpenGs = openGs - selfCloseGs;
   const closeGs = (svg.match(/<\/g>/g) ?? []).length;
   if (netOpenGs > closeGs) {
