@@ -190,12 +190,6 @@ export default async function PharaohPage({ params }: Props) {
                       ) : (
                         <span className="font-hieroglyph text-4xl text-gold-dark" aria-hidden="true">𓀭</span>
                       )}
-                      <BookmarkButton
-                        type="pharaoh"
-                        id={pharaoh.slug}
-                        label={pharaoh.name}
-                        size="sm"
-                      />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
