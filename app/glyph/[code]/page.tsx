@@ -1,5 +1,4 @@
-// ISR: render on first visit, cache indefinitely until next deploy.
-export const revalidate = false;
+export const dynamic = "force-static";
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -13,7 +12,7 @@ import {
   getGlyphByCode,
   getRelatedGlyphs,
   getGlyphsContaining,
-
+  getAllGlyphs,
   getCategoryById,
   getGlyphVariants,
   getBaseCode,
@@ -113,7 +112,10 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-// No generateStaticParams — 8k glyph pages render on-demand via ISR.
+export async function generateStaticParams() {
+  const glyphs = await getAllGlyphs();
+  return glyphs.map((g) => ({ code: g.code.replace(/\+/g, "%2B") }));
+}
 
 export default async function GlyphPage({ params }: PageProps) {
   const { code } = await params;
