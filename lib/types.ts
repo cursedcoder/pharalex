@@ -141,6 +141,4 @@ export interface DictionaryWord {
   grammarRaw: string | null;
   /** Contextual/domain notes from the source, e.g. ["late egyptian"], ["cryptic"], ["mathematics"] */
   notes: string[];
-  /** Lemma disambiguator for homographs. "" for single-lemma words, 4-char hex hash for secondary lemmas. */
-  lemmaId: string;
 }

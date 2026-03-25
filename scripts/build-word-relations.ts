@@ -21,7 +21,6 @@ interface Word {
   grammar: string | null;
   gardinerCodes: string[];
   mdc: string;
-  lemmaId: string;
 }
 
 const STOP_WORDS = new Set([
@@ -55,13 +54,10 @@ const OUT_PATH = path.join(process.cwd(), "public/data/word-relations.json");
 console.log("Building word relations index...");
 const allWords: Word[] = JSON.parse(fs.readFileSync(WORDS_PATH, "utf-8"));
 
-// ── Step 1: Group words by transliteration + lemmaId ────────────────────────
-// For each unique lemma, merge translations and Gardiner codes
+// ── Step 1: Group words by transliteration ──────────────────────────────────
+// For each unique transliteration, merge translations and Gardiner codes
 interface WordGroup {
   translit: string;
-  lemmaId: string;
-  /** Output key: "translit" or "translit~hash" */
-  outKey: string;
   translations: string[];
   gardinerCodes: Set<string>;
   grammar: string | null;
@@ -71,8 +67,7 @@ interface WordGroup {
 
 const groupMap = new Map<string, WordGroup>();
 for (const w of allWords) {
-  const lemmaId = w.lemmaId ?? "";
-  const key = lemmaId ? `${w.transliteration}~${lemmaId}` : w.transliteration;
+  const key = w.transliteration;
   const existing = groupMap.get(key);
   if (existing) {
     if (!existing.translations.includes(w.translation)) {
@@ -82,9 +77,7 @@ for (const w of allWords) {
     for (const kw of translationKeywords(w.translation)) existing.keywords.add(kw);
   } else {
     groupMap.set(key, {
-      translit: w.transliteration,
-      lemmaId,
-      outKey: key,
+      translit: key,
       translations: [w.translation],
       gardinerCodes: new Set(w.gardinerCodes),
       grammar: w.grammar,
@@ -191,7 +184,7 @@ function scoreRelation(a: WordGroup, b: WordGroup): number {
 }
 
 console.log("  Scoring relations...");
-const relations: Record<string, { translit: string; translation: string; grammar: string | null; gardinerCodes: string[]; mdc: string; score: number; lemmaId?: string }[]> = {};
+const relations: Record<string, { translit: string; translation: string; grammar: string | null; gardinerCodes: string[]; mdc: string; score: number }[]> = {};
 let processed = 0;
 
 for (const group of groups) {
@@ -257,14 +250,13 @@ for (const group of groups) {
       gardinerCodes: [...c.gardinerCodes].slice(0, 8),
       mdc: c.mdc,
       score: scoreRelation(group, c),
-      lemmaId: c.lemmaId || undefined,
     }))
     .filter((r) => r.score > 1) // minimum threshold
     .sort((a, b) => b.score - a.score)
     .slice(0, MAX_RELATED);
 
   if (scored.length > 0) {
-    relations[group.outKey] = scored;
+    relations[group.translit] = scored;
   }
 
   processed++;

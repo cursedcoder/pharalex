@@ -40,7 +40,6 @@ interface RawWord {
   grammar: string | null;
   grammarRaw: string | null;
   notes: string[];
-  lemmaId: string;
 }
 
 // Variant codes have a trailing letter (upper or lowercase) after the base number
@@ -97,11 +96,11 @@ function main() {
     readFileSync(join(DATA_DIR, "words.json"), "utf-8")
   );
 
-  // Group by (transliteration, lemmaId, MdC spelling) — same hieroglyphic spelling
-  // within the same lemma gets one card with all its meanings merged.
-  const wordBySpelling = new Map<string, { translations: Set<string>; grammar: string | null; mdc: string; gardinerCodes: string[]; lemmaId: string }>();
+  // Group by (transliteration, MdC spelling) — same hieroglyphic spelling
+  // gets one card with all its meanings merged.
+  const wordBySpelling = new Map<string, { translations: Set<string>; grammar: string | null; mdc: string; gardinerCodes: string[] }>();
   for (const w of words) {
-    const key = `${w.transliteration}||${w.lemmaId ?? ""}||${w.mdc}`;
+    const key = `${w.transliteration}||${w.mdc}`;
     const existing = wordBySpelling.get(key);
     if (existing) {
       existing.translations.add(w.translation);
@@ -112,11 +111,10 @@ function main() {
         grammar: w.grammar ?? null,
         mdc: w.mdc,
         gardinerCodes: w.gardinerCodes ?? [],
-        lemmaId: w.lemmaId ?? "",
       });
     }
   }
-  const searchWords: { transliteration: string; translation: string; grammar: string | null; mdc: string; gardinerCodes: string[]; lemmaId: string }[] = [];
+  const searchWords: { transliteration: string; translation: string; grammar: string | null; mdc: string; gardinerCodes: string[] }[] = [];
   for (const [key, group] of wordBySpelling) {
     const translit = key.split("||")[0];
     searchWords.push({
@@ -125,7 +123,6 @@ function main() {
       grammar: group.grammar,
       mdc: group.mdc,
       gardinerCodes: group.gardinerCodes,
-      lemmaId: group.lemmaId,
     });
   }
 

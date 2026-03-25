@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fuzzySearch } from "@/lib/search";
 import { loadSearchWords, loadSearchGlyphs } from "@/lib/data-loader";
-import { lemmaHref, translitToUnicode } from "@/lib/word-utils";
+import { wordHref, translitToUnicode } from "@/lib/word-utils";
 import { wordScore } from "@/lib/word-score";
 import { mdcToCodes } from "@/lib/mdc";
 import { buildGlyphDetailsMap } from "@/lib/glyphs";
@@ -139,7 +139,7 @@ export async function GET(req: NextRequest) {
     translation: w.translation,
     grammar: w.grammar ?? null,
     mdc: w.mdc,
-    href: lemmaHref(w.transliteration, w.lemmaId ?? ""),
+    href: wordHref(w.transliteration),
   }));
 
   const results: SearchApiResult[] = [...glyphResults, ...wordResults].sort(

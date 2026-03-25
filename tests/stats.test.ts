@@ -25,7 +25,6 @@ function makeWord(overrides: Partial<DictionaryWord> = {}): DictionaryWord {
     grammar: "NOUN",
     grammarRaw: "noun",
     notes: [],
-    lemmaId: "",
     ...overrides,
   };
 }
