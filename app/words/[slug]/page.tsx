@@ -1,4 +1,5 @@
-export const dynamic = "force-dynamic";
+// ISR: render on first visit, cache indefinitely until next deploy.
+export const revalidate = false;
 
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
