@@ -20,4 +20,5 @@ export interface SearchWord {
   grammar: string | null;
   mdc: string;
   gardinerCodes: string[];
+  lemmaId: string;
 }

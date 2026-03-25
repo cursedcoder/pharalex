@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/Badge";
 import { getAllGlyphs, getAllCategories, getGlyphStats } from "@/lib/glyphs";
 import { getNotablePharaohs } from "@/lib/pharaohs";
 import { getAllTexts } from "@/lib/texts";
-import { getAllWords, wordHref, translitToUnicode } from "@/lib/words";
+import { getAllWords, lemmaHref, translitToUnicode } from "@/lib/words";
 import { mdcToCodes } from "@/lib/mdc";
 import { pickDaily } from "@/lib/daily";
 import type { PeriodId, DictionaryWord } from "@/lib/types";
@@ -331,7 +331,7 @@ export default async function HomePage() {
               {featuredWords.map((word) => (
                 <Link
                   key={word.transliteration}
-                  href={wordHref(word.transliteration)}
+                  href={lemmaHref(word.transliteration, word.lemmaId)}
                   className="group flex flex-col bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-4 h-full hover:shadow-md hover:border-gold/40 transition-all duration-200"
                 >
                   <div className="flex gap-1.5 min-h-10 mb-3 group-hover:scale-105 transition-transform origin-left overflow-hidden">

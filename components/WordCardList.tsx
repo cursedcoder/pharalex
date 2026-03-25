@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { WordGlyph } from "@/components/WordGlyph";
-import { wordHref, translitToUnicode } from "@/lib/word-utils";
+import { wordHref, lemmaHref, translitToUnicode } from "@/lib/word-utils";
 
 export interface WordCardItem {
   transliteration: string;
   translation: string;
   grammar: string | null;
   mdc: string;
+  lemmaId?: string;
 }
 
 interface WordCardListProps {
@@ -24,7 +25,7 @@ export function WordCardList({ words, max }: WordCardListProps) {
       {items.map((word) => (
         <Link
           key={word.transliteration}
-          href={wordHref(word.transliteration)}
+          href={word.lemmaId != null ? lemmaHref(word.transliteration, word.lemmaId) : wordHref(word.transliteration)}
           className="block bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-3 hover:border-gold/40 hover:shadow-sm transition-all group"
         >
           {word.mdc && (

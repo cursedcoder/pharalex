@@ -12,11 +12,14 @@ import { FitWordGlyph } from "@/components/FitWordGlyph";
 import { WordCardList } from "@/components/WordCardList";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import {
-  getWordsBySlug,
-  getAllTransliterations,
-  wordSlug,
+  getWordsByLemmaSlug,
+  getAllLemmaKeys,
+  lemmaSlug,
+  lemmaHref,
   translitToUnicode,
   getWordRelations,
+  getSiblingLemmas,
+  getHomographs,
 } from "@/lib/words";
 import { getAllTexts } from "@/lib/texts";
 import { buildGlyphDetailsMap } from "@/lib/glyphs";
@@ -41,13 +44,15 @@ const GRAMMAR_BADGE_VARIANTS: Record<string, "gold" | "sandstone" | "outline" | 
 };
 
 export async function generateStaticParams() {
-  const translits = await getAllTransliterations();
-  return translits.map((t) => ({ slug: wordSlug(t) }));
+  const keys = await getAllLemmaKeys();
+  return keys.map(({ transliteration, lemmaId }) => ({
+    slug: lemmaSlug(transliteration, lemmaId),
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const entries = await getWordsBySlug(slug);
+  const entries = await getWordsByLemmaSlug(slug);
   if (entries.length === 0) return {};
 
   const w = entries[0];
@@ -65,7 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function WordPage({ params }: Props) {
   const { slug } = await params;
-  const entries = await getWordsBySlug(slug);
+  const entries = await getWordsByLemmaSlug(slug);
   if (entries.length === 0) notFound();
 
   const w = entries[0];
@@ -107,7 +112,16 @@ export default async function WordPage({ params }: Props) {
   );
 
   // Related words
-  const related = getWordRelations(w.transliteration);
+  const related = getWordRelations(w.transliteration, w.lemmaId);
+
+  // Sibling lemmas (same transliteration, different lemmaId)
+  const siblings = (await getSiblingLemmas(w.transliteration)).filter(
+    (s) => s.lemmaId !== w.lemmaId
+  );
+
+  // Homographs (different transliteration, same MdC spelling)
+  const mdcSpellings = entries.map((e) => e.mdc);
+  const homographs = await getHomographs(w.transliteration, mdcSpellings);
 
   // Collect all Gardiner codes for glyph tooltips
   const allCodes = new Set<string>();
@@ -115,6 +129,8 @@ export default async function WordPage({ params }: Props) {
     for (const c of e.gardinerCodes) allCodes.add(c);
   }
   const glyphDetails = await buildGlyphDetailsMap([...allCodes]);
+
+  const currentSlug = lemmaSlug(w.transliteration, w.lemmaId);
 
   return (
     <>
@@ -147,7 +163,7 @@ export default async function WordPage({ params }: Props) {
                   </h1>
                   <BookmarkButton
                     type="word"
-                    id={wordSlug(primaryEntry.transliteration)}
+                    id={currentSlug}
                     label={`${translitToUnicode(primaryEntry.transliteration)} – ${primaryEntry.translation}`}
                     size="sm"
                   />
@@ -176,6 +192,31 @@ export default async function WordPage({ params }: Props) {
                   ))}
                 </div>
               </div>
+
+              {/* Disambiguation: sibling lemmas with same transliteration */}
+              {siblings.length > 0 && (
+                <div className="rounded-xl border border-gold/30 bg-papyrus/20 p-4">
+                  <p className="text-sm text-sandstone mb-2">
+                    Also written as <span className="font-mono text-brown">{translitToUnicode(w.transliteration)}</span>:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {siblings.map((s) => (
+                      <Link
+                        key={s.lemmaId}
+                        href={lemmaHref(w.transliteration, s.lemmaId)}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-ivory-dark/50 border border-sandstone/20 hover:border-gold/40 hover:bg-papyrus/30 transition-all text-sm"
+                      >
+                        <span className="text-brown">{s.translation}</span>
+                        {s.grammar && (
+                          <Badge variant={GRAMMAR_BADGE_VARIANTS[s.grammar] ?? "outline"} size="sm">
+                            {GRAMMAR_LABELS[s.grammar] ?? s.grammar}
+                          </Badge>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Senses — each sense is a distinct meaning, with its own spellings */}
               {senses.length > 0 && (
@@ -228,7 +269,36 @@ export default async function WordPage({ params }: Props) {
                 </section>
               )}
 
-
+              {/* Homograph cross-references: different transliterations sharing a spelling */}
+              {homographs.length > 0 && (
+                <section>
+                  <h2 className="font-display text-2xl font-semibold text-brown mb-4">
+                    Alternate Readings
+                  </h2>
+                  <p className="text-sm text-sandstone mb-3">
+                    Words with a different reading that share a hieroglyphic spelling with this entry:
+                  </p>
+                  <div className="space-y-2">
+                    {homographs.map((h, i) => (
+                      <Link
+                        key={i}
+                        href={lemmaHref(h.transliteration, h.lemmaId)}
+                        className="group flex items-center gap-3 p-3 rounded-xl bg-ivory-dark/50 border border-sandstone/20 hover:border-gold/40 hover:bg-papyrus/30 transition-all"
+                      >
+                        <span className="font-mono text-brown group-hover:text-gold-dark transition-colors">
+                          {translitToUnicode(h.transliteration)}
+                        </span>
+                        <span className="text-brown-light text-sm">{h.translation}</span>
+                        {h.grammar && (
+                          <Badge variant={GRAMMAR_BADGE_VARIANTS[h.grammar] ?? "outline"} size="sm">
+                            {GRAMMAR_LABELS[h.grammar] ?? h.grammar}
+                          </Badge>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               {/* Attested in texts */}
               {texts.length > 0 && (
@@ -304,6 +374,7 @@ export default async function WordPage({ params }: Props) {
                       translation: r.translation,
                       grammar: r.grammar,
                       mdc: r.mdc,
+                      lemmaId: r.lemmaId,
                     }))}
                     max={5}
                   />

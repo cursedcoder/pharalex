@@ -44,3 +44,27 @@ export function wordSlug(transliteration: string): string {
 export function wordHref(transliteration: string): string {
   return `/words/${wordSlug(transliteration)}`;
 }
+
+/** Build a URL slug for a specific lemma. Primary lemma (lemmaId="") uses the bare slug. */
+export function lemmaSlug(transliteration: string, lemmaId: string): string {
+  const base = wordSlug(transliteration);
+  return lemmaId ? `${base}_${lemmaId}` : base;
+}
+
+/** Build a URL path for a specific lemma page. */
+export function lemmaHref(transliteration: string, lemmaId: string): string {
+  return `/words/${lemmaSlug(transliteration, lemmaId)}`;
+}
+
+/** Parse a word page slug into { baseSlug, lemmaId }. */
+export function parseLemmaSlug(slug: string): { baseSlug: string; lemmaId: string } {
+  const idx = slug.lastIndexOf("_");
+  // Only treat as lemma suffix if the part after _ looks like a hex hash (4+ chars)
+  if (idx >= 0) {
+    const suffix = slug.slice(idx + 1);
+    if (/^[0-9a-f]{4,}$/.test(suffix)) {
+      return { baseSlug: slug.slice(0, idx), lemmaId: suffix };
+    }
+  }
+  return { baseSlug: slug, lemmaId: "" };
+}

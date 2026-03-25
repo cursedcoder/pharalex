@@ -11,6 +11,7 @@ import { fixTypos } from "./typo-fixes";
 import { applyWordPatches, BLOCKED_QUAD_PAIRS } from "./word-patches";
 import { stripLeakedMdC, buildTranslitSet } from "./strip-leaked-mdc";
 import { autoQuad } from "./auto-quad";
+import { assignLemmaIds } from "./cluster-lemmas";
 
 const WORDS_PATH = path.join(process.cwd(), "public/data/words.json");
 
@@ -352,6 +353,10 @@ for (const w of words) {
 }
 if (blockedApplied > 0) console.log(`  Blocked quad pairs applied to: ${blockedApplied} words`);
 console.log(`  Auto-quadded MdC: ${quadded}`);
+
+// ── 13. Assign lemma IDs for homograph disambiguation ───────────────────────
+const lemmaSplits = assignLemmaIds(words);
+console.log(`  Lemma splits: ${lemmaSplits} transliterations have multiple lemmas`);
 
 // ── Write output ────────────────────────────────────────────────────────────
 fs.writeFileSync(WORDS_PATH, JSON.stringify(words));
