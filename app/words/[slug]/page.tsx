@@ -1,4 +1,4 @@
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
@@ -12,7 +12,6 @@ import { WordCardList } from "@/components/WordCardList";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import {
   getWordsBySpellingSlug,
-  getAllSpellings,
   getWordsBySlug,
   getPrimarySpellingForTranslit,
   spellingSlug,
@@ -44,10 +43,8 @@ const GRAMMAR_BADGE_VARIANTS: Record<string, "gold" | "sandstone" | "outline" | 
   PREP: "outline", PRON: "outline",
 };
 
-export async function generateStaticParams() {
-  const spellings = await getAllSpellings();
-  return spellings.map((s) => ({ slug: s }));
-}
+// No generateStaticParams — 41k spelling pages are rendered on-demand
+// to avoid inflating the Cloudflare Worker bundle size.
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
