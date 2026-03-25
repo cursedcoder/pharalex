@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/Badge";
 import {
   getGlyphByCode,
   getRelatedGlyphs,
+  getGlyphsContaining,
   getAllGlyphs,
   getCategoryById,
   getGlyphVariants,
@@ -137,6 +138,7 @@ export default async function GlyphPage({ params }: PageProps) {
   const variantSiblings = await getVariantSiblings(glyph.code);
   const pharaohsUsingGlyph = getPharaohsUsingGlyph(glyph.code);
   const wordsUsingGlyph = await getWordsByGardinerCode(glyph.code, 30);
+  const appearsInGlyphs = await getGlyphsContaining(glyph.code);
   // Dictionary: look up Wiktionary definitions for each transliteration value.
   // Wiktionary has curated, concise definitions (vs Vygus which has massive duplication).
   const UNICODE_TO_MDC: Record<string, string> = {
@@ -587,6 +589,24 @@ export default async function GlyphPage({ params }: PageProps) {
                   </h3>
                   <div className="space-y-3">
                     {incorporatedGlyphs.map((g) => (
+                      <GlyphCard
+                        key={g.code}
+                        glyph={g}
+                        showDescription={false}
+                        glyphSize="md"
+                      />
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {appearsInGlyphs.length > 0 && (
+                <section>
+                  <h3 className="font-display text-lg font-semibold text-brown mb-4">
+                    Appears in
+                  </h3>
+                  <div className="space-y-3">
+                    {appearsInGlyphs.map((g) => (
                       <GlyphCard
                         key={g.code}
                         glyph={g}

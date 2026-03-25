@@ -124,6 +124,13 @@ export async function getVariantSiblings(
   return { siblings, currentIndex };
 }
 
+/** Find all glyphs whose `contains` array includes the given code (reverse of "Incorporates"). */
+export async function getGlyphsContaining(code: string): Promise<Glyph[]> {
+  return (await loadGlyphs()).filter(
+    (g) => g.contains?.includes(code)
+  );
+}
+
 export async function getRelatedGlyphs(code: string): Promise<Glyph[]> {
   const glyph = await getGlyphByCode(code);
   if (!glyph) return [];
