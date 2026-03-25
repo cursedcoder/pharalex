@@ -8,6 +8,8 @@ let _categoriesP: Promise<Record<string, string>> | null = null;
 let _searchGlyphsP: Promise<SearchGlyph[]> | null = null;
 let _searchWordsP: Promise<SearchWord[]> | null = null;
 let _searchFuseIndexP: Promise<unknown> | null = null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let _wordRelationsP: Promise<Record<string, any[]>> | null = null;
 
 async function loadJson<T>(filename: string): Promise<T> {
   let cfContext: Awaited<ReturnType<typeof getCloudflareContext>> | null = null;
@@ -84,4 +86,9 @@ export function loadSearchWords(): Promise<SearchWord[]> {
 
 export function loadSearchFuseIndex(): Promise<unknown> {
   return cachedLoad(() => _searchFuseIndexP, (p) => { _searchFuseIndexP = p; }, () => loadJson<unknown>("search-fuse-index.json"));
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function loadWordRelations(): Promise<Record<string, any[]>> {
+  return cachedLoad(() => _wordRelationsP, (p) => { _wordRelationsP = p; }, () => loadJson<Record<string, any[]>>("word-relations.json"));
 }

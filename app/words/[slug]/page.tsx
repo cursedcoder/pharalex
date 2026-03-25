@@ -115,7 +115,7 @@ export default async function WordPage({ params }: Props) {
   );
 
   // Related words (use first transliteration)
-  const related = getWordRelations(w.transliteration);
+  const related = await getWordRelations(w.transliteration);
 
   // Glyph tooltips
   const allCodes = new Set<string>();

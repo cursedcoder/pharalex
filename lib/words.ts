@@ -1,12 +1,10 @@
-import * as fs from "fs";
-import * as path from "path";
 import type { DictionaryWord } from "@/lib/types";
-import { loadWords } from "./data-loader";
+import { loadWords, loadWordRelations } from "./data-loader";
 import { wordSlug } from "./word-utils";
 
 export { translitToUnicode, wordSlug, wordHref, spellingSlug, spellingHref, isSpellingSlug } from "./word-utils";
 
-// ─── Word relations (build-time only, lazy loaded) ───────────────────────────
+// ─── Word relations ──────────────────────────────────────────────────────────
 
 export interface WordRelation {
   translit: string;
@@ -17,22 +15,10 @@ export interface WordRelation {
   score: number;
 }
 
-let _relationsCache: Record<string, WordRelation[]> | null = null;
-
-function loadRelations(): Record<string, WordRelation[]> {
-  if (_relationsCache) return _relationsCache;
-  const relPath = path.join(process.cwd(), "public/data/word-relations.json");
-  try {
-    _relationsCache = JSON.parse(fs.readFileSync(relPath, "utf-8"));
-  } catch {
-    _relationsCache = {};
-  }
-  return _relationsCache!;
-}
-
-/** Get related words for a transliteration. Only used at build time (force-static pages). */
-export function getWordRelations(transliteration: string): WordRelation[] {
-  return loadRelations()[transliteration] ?? [];
+/** Get related words for a transliteration. */
+export async function getWordRelations(transliteration: string): Promise<WordRelation[]> {
+  const relations = await loadWordRelations();
+  return relations[transliteration] ?? [];
 }
 
 // ─── Accessors ────────────────────────────────────────────────────────────────
