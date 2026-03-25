@@ -4,7 +4,7 @@ import type { DictionaryWord } from "@/lib/types";
 import { loadWords } from "./data-loader";
 import { wordSlug } from "./word-utils";
 
-export { translitToUnicode, wordSlug, wordHref } from "./word-utils";
+export { translitToUnicode, wordSlug, wordHref, spellingSlug, spellingHref, isSpellingSlug } from "./word-utils";
 
 // ─── Word relations (build-time only, lazy loaded) ───────────────────────────
 
@@ -52,6 +52,43 @@ function wordGroups(): Promise<Map<string, DictionaryWord[]>> {
   }).catch((err) => { _wordGroupsP = null; throw err; });
   _wordGroupsP = p;
   return p;
+}
+
+// ─── Spelling groups (Gardiner code sequence = word identity) ────────────────
+
+let _spellingGroupsP: Promise<Map<string, DictionaryWord[]>> | null = null;
+
+function spellingGroups(): Promise<Map<string, DictionaryWord[]>> {
+  if (_spellingGroupsP && process.env.NODE_ENV === "production") return _spellingGroupsP;
+  const p = loadWords().then((words) => {
+    const groups = new Map<string, DictionaryWord[]>();
+    for (const w of words) {
+      const key = w.gardinerCodes.join("-");
+      const g = groups.get(key);
+      if (g) g.push(w);
+      else groups.set(key, [w]);
+    }
+    return groups;
+  }).catch((err) => { _spellingGroupsP = null; throw err; });
+  _spellingGroupsP = p;
+  return p;
+}
+
+/** Get all unique Gardiner spellings for static page generation. */
+export async function getAllSpellings(): Promise<string[]> {
+  return [...(await spellingGroups()).keys()];
+}
+
+/** Get all entries for a Gardiner spelling slug (e.g. "L1-D21-X1-Z2"). */
+export async function getWordsBySpellingSlug(slug: string): Promise<DictionaryWord[]> {
+  return (await spellingGroups()).get(slug) ?? [];
+}
+
+/** Get the primary spelling slug for a transliteration (for backward-compat redirects). */
+export async function getPrimarySpellingForTranslit(transliteration: string): Promise<string | null> {
+  const entries = (await wordGroups()).get(transliteration);
+  if (!entries || entries.length === 0) return null;
+  return entries[0].gardinerCodes.join("-");
 }
 
 export async function getAllWords(): Promise<DictionaryWord[]> {

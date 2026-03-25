@@ -45,3 +45,18 @@ export function wordSlug(transliteration: string): string {
 export function wordHref(transliteration: string): string {
   return `/words/${wordSlug(transliteration)}`;
 }
+
+/** Gardiner code sequence as URL slug. Already URL-safe (A-Z, 0-9, -). */
+export function spellingSlug(gardinerCodes: string[]): string {
+  return gardinerCodes.join("-");
+}
+
+/** URL path for a spelling page. */
+export function spellingHref(gardinerCodes: string[]): string {
+  return `/words/${spellingSlug(gardinerCodes)}`;
+}
+
+/** Detect whether a slug looks like a Gardiner sequence (e.g. "L1-D21-X1-Z2") vs a transliteration. */
+export function isSpellingSlug(slug: string): boolean {
+  return /^[A-Z][a-z]?\d+/.test(slug);
+}

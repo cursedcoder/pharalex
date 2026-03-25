@@ -20,7 +20,7 @@ import {
   glyphHref,
 } from "@/lib/glyphs";
 import { getPharaohsUsingGlyph, formatReign } from "@/lib/pharaohs";
-import { getWordsByGardinerCode, wordHref } from "@/lib/words";
+import { getWordsByGardinerCode, spellingHref, wordHref } from "@/lib/words";
 import { getWiktionaryEntries } from "@/lib/wiktionary";
 import { translitToUnicode } from "@/lib/word-utils";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
