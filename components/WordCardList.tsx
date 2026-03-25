@@ -24,7 +24,7 @@ export function WordCardList({ words, max }: WordCardListProps) {
     <div className="space-y-2">
       {items.map((word) => (
         <Link
-          key={word.transliteration}
+          key={`${word.transliteration}_${word.lemmaId ?? ""}_${word.mdc}`}
           href={word.lemmaId != null ? lemmaHref(word.transliteration, word.lemmaId) : wordHref(word.transliteration)}
           className="block bg-ivory-dark/50 border border-sandstone/20 rounded-lg p-3 hover:border-gold/40 hover:shadow-sm transition-all group"
         >
