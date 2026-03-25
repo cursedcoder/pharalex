@@ -7,7 +7,7 @@ export function Header({ hideSearch = false }: { hideSearch?: boolean } = {}) {
     <>
     <a
       href="#main-content"
-      className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-gold focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
+      className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:z-50 focus-visible:top-2 focus-visible:left-2 focus-visible:px-4 focus-visible:py-2 focus-visible:bg-gold focus-visible:text-white focus-visible:rounded-lg focus-visible:text-sm focus-visible:font-medium"
     >
       Skip to main content
     </a>
