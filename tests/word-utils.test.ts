@@ -15,6 +15,7 @@ describe("translitToUnicode", () => {
     expect(translitToUnicode("x")).toBe("ḫ");
     expect(translitToUnicode("X")).toBe("\u1e96");
     expect(translitToUnicode("S")).toBe("š");
+    expect(translitToUnicode("q")).toBe("ḳ");
     expect(translitToUnicode("T")).toBe("ṯ");
     expect(translitToUnicode("D")).toBe("ḏ");
   });

@@ -218,7 +218,7 @@ const ALPHABET: AlphabetEntry[] = [
   },
   {
     codes: ["N29"],
-    transliteration: "q",
+    transliteration: "ḳ",
     mdc: "q",
     transName: "Dotted K (or Q)",
     signDescription: "Hill slope",
