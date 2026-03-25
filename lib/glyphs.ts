@@ -105,9 +105,11 @@ export async function searchGlyphs(query: string): Promise<Glyph[]> {
 
 export async function getGlyphVariants(code: string): Promise<Glyph[]> {
   if (code.startsWith("U+")) return [];
-  return (await loadGlyphs()).filter(
-    (g) => g.code.startsWith(code) && g.code.length > code.length && /^[A-Z]/.test(g.code.slice(code.length))
-  );
+  return (await loadGlyphs())
+    .filter(
+      (g) => g.code.startsWith(code) && g.code.length > code.length && /^[A-Z]/.test(g.code.slice(code.length))
+    )
+    .sort((a, b) => a.code.localeCompare(b.code));
 }
 
 export async function getVariantSiblings(
