@@ -237,23 +237,46 @@ function simpleLigNaturalSize(
   return { w: maxX - minX, h: maxY - minY };
 }
 
+/**
+ * Compute the pixel width for a cadrat given a fixed pixel height.
+ * Like HieroJax/JSesh: scale to fit height, let width follow naturally.
+ * Capped at baseSize so no sign exceeds one cadrat width.
+ */
+export function cadratWidth(node: MdcNode, baseSize: number): number {
+  const nat = naturalSize(node);
+  if (nat.h <= 0) return baseSize;
+  // Scale uniformly to fit height; cap width at one cadrat (baseSize).
+  // Wide/flat signs (D36 arm, X1 bread) fit within a square cadrat —
+  // they just don't fill the full height, which is correct.
+  const w = Math.round(nat.w * (baseSize / nat.h));
+  return Math.max(Math.min(w, baseSize), Math.round(baseSize * 0.15));
+}
+
 export function Quadrat({ mdc, baseSize = 40, disableLinks = false }: QuadratProps) {
   const node = parseMdc(mdc);
+
+  // Like HieroJax: fit each cadrat to line height, let width be natural.
+  let children: { node: MdcNode; w: number }[];
+  if (node.type === "seq") {
+    children = node.children.map((child) => ({
+      node: child,
+      w: cadratWidth(child, baseSize),
+    }));
+  } else {
+    children = [{ node, w: cadratWidth(node, baseSize) }];
+  }
+
   return (
     <DisableLinksContext.Provider value={disableLinks}>
       <div className="inline-flex items-end gap-1">
-        {node.type === "seq" ? (
-          node.children.map((child, i) => (
-            <QuadratNode
-              key={i}
-              node={child}
-              width={baseSize}
-              height={baseSize}
-            />
-          ))
-        ) : (
-          <QuadratNode node={node} width={baseSize} height={baseSize} />
-        )}
+        {children.map((child, i) => (
+          <QuadratNode
+            key={i}
+            node={child.node}
+            width={child.w}
+            height={baseSize}
+          />
+        ))}
       </div>
     </DisableLinksContext.Provider>
   );

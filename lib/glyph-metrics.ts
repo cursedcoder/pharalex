@@ -1688,6 +1688,15 @@ export const CADRAT_HEIGHT = 18;
 export const CADRAT_WIDTH = 22;
 export const SMALL_SKIP = 2;
 
+/**
+ * Return glyph dimensions normalized to fit within one cadrat.
+ * Raw SVG dimensions vary wildly across sources, so we scale each sign
+ * so its larger dimension fits the cadrat (like HieroJax's em-normalization).
+ */
 export function glyphSize(code: string): [number, number] {
-  return D[code] ?? [18, 18];
+  const [w, h] = D[code] ?? [CADRAT_HEIGHT, CADRAT_HEIGHT];
+  const maxDim = Math.max(w, h);
+  if (maxDim <= CADRAT_HEIGHT) return [w, h];
+  const scale = CADRAT_HEIGHT / maxDim;
+  return [w * scale, h * scale];
 }
