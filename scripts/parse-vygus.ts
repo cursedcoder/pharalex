@@ -263,9 +263,15 @@ function parseLine(raw: string): VygusEntry[] {
       if (tok.includes("-")) return false;
       // Known MdC lowercase tokens → NOT English
       if (MdC_LOWERCASE_TOKENS.has(tok)) return false;
-      // Single-char lowercase that is a common English article/particle
+      // Single-char lowercase "a"/"o" — only English if not followed by another MdC token.
+      // Checked via lookahead in the caller; here we just return true as default.
       if (tok.length === 1 && (tok === "a" || tok === "o")) return true;
-      return tok.length >= 2; // any lowercase word ≥2 chars is English ("to", "be", "do", "go"...)
+      // Short (2-3 chars) tokens without non-MdC letters are likely MdC
+      if (tok.length <= 3 && !/[celouv]/.test(tok)) return false;
+      // Longer tokens (≥4 chars) that use only MdC consonants (no c,e,l,o,u,v)
+      // are likely MdC transliterations (e.g. rxyt, snbt, hsmn)
+      if (tok.length <= 6 && !/[celouv]/.test(tok)) return false;
+      return tok.length >= 2; // remaining lowercase words ≥2 chars are English
     }
     // Starts with uppercase — MdC if short (≤4) and no internal vowel run
     if (ch >= "A" && ch <= "Z") {
@@ -285,6 +291,9 @@ function parseLine(raw: string): VygusEntry[] {
     const tok = tokens[i];
     if (!tok) continue;
     if (isEnglishStart(tok)) {
+      // Don't split here if the next token is "/" — the current token is part of
+      // a "translit / alt-translit" pattern (e.g. "r a / rA a limit...")
+      if (tokens[i + 1] === "/") continue;
       splitIdx = i;
       break;
     }
@@ -310,15 +319,15 @@ function parseLine(raw: string): VygusEntry[] {
   // transliteration for the same word. Emit entries for both pronunciations.
   // e.g. "tsmt / tsmw rampart" → two entries: tsmt "rampart" + tsmw "rampart"
   let altTransliteration: string | null = null;
-  const slashMatch = transliteration.match(/^(.+?)\s*\/\s*(\S+)$/);
+  const slashMatch = transliteration.match(/^(.+?)\s*\/\s*(.+)$/);
   if (slashMatch) {
     transliteration = slashMatch[1].trim();
-    const altToken = slashMatch[2];
-    if (isEnglishStart(altToken)) {
-      // Rare edge case: the token after "/" is English, not MdC
-      translation = altToken + (translation ? " " + translation : "");
+    const altPart = slashMatch[2].trim();
+    if (isEnglishStart(altPart.split(/\s+/)[0])) {
+      // Rare edge case: the part after "/" is English, not MdC
+      translation = altPart + (translation ? " " + translation : "");
     } else {
-      altTransliteration = altToken;
+      altTransliteration = altPart;
     }
   }
   // Also strip bare trailing " /" with no altname token captured
