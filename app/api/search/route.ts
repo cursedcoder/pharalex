@@ -85,7 +85,6 @@ async function searchWords(query: string, limit = 40, opts: WordSearchOptions = 
 
   const ql = q.toLowerCase();
   const words = await loadSearchWords();
-  const results: SearchWord[] = [];
 
   // For short queries, use word-boundary matching in translations
   // to avoid "nfr" matching "infront" or "unfriendly"
@@ -93,32 +92,44 @@ async function searchWords(query: string, limit = 40, opts: WordSearchOptions = 
     ? new RegExp(`\\b${ql.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`, "i")
     : null;
 
-  for (const w of words) {
-    if (results.length >= limit) break;
+  const escaped = ql.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const normQ = ql.replace(/y/g, "i").replace(/j/g, "i");
+  // Matches translation that IS the query (standalone or comma-separated item)
+  const exactTrRe = new RegExp(`^${escaped}$|(?:^|, )${escaped}(?:,|$)`, "i");
 
+  // Two-pass: first collect priority matches (exact translit / exact translation)
+  // across the full word list, then fill remaining slots with partial matches.
+  const priority: SearchWord[] = [];
+  const rest: SearchWord[] = [];
+
+  for (const w of words) {
     if (opts.gardiner) {
       const codes = w.mdc.split("-");
-      if (codes.includes(q)) results.push(w);
+      if (codes.includes(q)) rest.push(w);
     } else if (opts.exact) {
-      // Exact = exact transliteration match (with y↔i normalization) OR translation word-boundary match
-      const normQ = ql.replace(/y/g, "i").replace(/j/g, "i");
       const normT = w.transliteration.toLowerCase().replace(/y/g, "i").replace(/j/g, "i");
       const tlExact = normT === normQ;
-      const trRe = new RegExp(`\\b${ql.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+      // Compound: query appears as a whole word within a multi-word transliteration
+      const tlCompound = !tlExact && normT.includes(" ") && normT.split(" ").some((p) => p === normQ);
+      const trRe = new RegExp(`\\b${escaped}\\b`, "i");
       const trMatch = trRe.test(w.translation);
-      if (tlExact || trMatch) results.push(w);
+      if (tlExact || tlCompound || trMatch) {
+        if (tlExact || exactTrRe.test(w.translation)) priority.push(w);
+        else if (rest.length < limit) rest.push(w);
+      }
     } else {
-      // Normalize y↔i for transliteration matching (mry = mri in Vygus)
-      const normQ = ql.replace(/y/g, "i").replace(/j/g, "i");
       const normT = w.transliteration.toLowerCase().replace(/y/g, "i").replace(/j/g, "i");
       const tlMatch = normT.includes(normQ) || w.transliteration.toLowerCase().includes(ql);
       const trMatch = translationRe
         ? translationRe.test(w.translation)
         : w.translation.toLowerCase().includes(ql);
-      if (tlMatch || trMatch) results.push(w);
+      if (tlMatch || trMatch) {
+        if (normT === normQ || normT.startsWith(normQ) || exactTrRe.test(w.translation)) priority.push(w);
+        else if (rest.length < limit) rest.push(w);
+      }
     }
   }
-  return results;
+  return [...priority, ...rest].slice(0, limit);
 }
 
 const MAX_QUERY_LENGTH = 100;
