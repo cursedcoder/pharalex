@@ -59,7 +59,8 @@ const allWords: Word[] = JSON.parse(fs.readFileSync(WORDS_PATH, "utf-8"));
 interface WordGroup {
   translit: string;
   translations: string[];
-  gardinerCodes: Set<string>;
+  allGardinerCodes: Set<string>;  // union of codes across spellings (for scoring)
+  firstGardinerCodes: string[];   // exact codes from first spelling (for linking)
   grammar: string | null;
   mdc: string;
   keywords: Set<string>;
@@ -73,13 +74,14 @@ for (const w of allWords) {
     if (!existing.translations.includes(w.translation)) {
       existing.translations.push(w.translation);
     }
-    for (const c of w.gardinerCodes) existing.gardinerCodes.add(c);
+    for (const c of w.gardinerCodes) existing.allGardinerCodes.add(c);
     for (const kw of translationKeywords(w.translation)) existing.keywords.add(kw);
   } else {
     groupMap.set(key, {
       translit: key,
       translations: [w.translation],
-      gardinerCodes: new Set(w.gardinerCodes),
+      allGardinerCodes: new Set(w.gardinerCodes),
+      firstGardinerCodes: w.gardinerCodes,
       grammar: w.grammar,
       mdc: w.mdc,
       keywords: translationKeywords(w.translation),
@@ -112,7 +114,7 @@ for (const g of groups) {
 // By Gardiner code (for shared-sign lookup)
 const byCode = new Map<string, WordGroup[]>();
 for (const g of groups) {
-  for (const c of g.gardinerCodes) {
+  for (const c of g.allGardinerCodes) {
     if (!byCode.has(c)) byCode.set(c, []);
     byCode.get(c)!.push(g);
   }
@@ -159,8 +161,8 @@ function scoreRelation(a: WordGroup, b: WordGroup): number {
   }
 
   // Shared Gardiner codes (Jaccard similarity)
-  const codesA = a.gardinerCodes;
-  const codesB = b.gardinerCodes;
+  const codesA = a.allGardinerCodes;
+  const codesB = b.allGardinerCodes;
   let intersection = 0;
   for (const c of codesA) {
     if (codesB.has(c)) intersection++;
@@ -208,7 +210,7 @@ for (const group of groups) {
   }
 
   // From Gardiner codes (limit to codes that aren't too common)
-  for (const code of group.gardinerCodes) {
+  for (const code of group.allGardinerCodes) {
     const codeGroup = byCode.get(code);
     if (codeGroup && codeGroup.length < 500) {
       for (const c of codeGroup) {
@@ -247,7 +249,7 @@ for (const group of groups) {
       translit: c.translit,
       translation: c.translations[0],
       grammar: c.grammar,
-      gardinerCodes: [...c.gardinerCodes].slice(0, 8),
+      gardinerCodes: c.firstGardinerCodes,
       mdc: c.mdc,
       score: scoreRelation(group, c),
     }))
