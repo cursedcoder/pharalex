@@ -248,10 +248,12 @@ function SearchContent() {
     const words = results.filter((r): r is Extract<SearchApiResult, { kind: "word" }> => r.kind === "word");
     const glyphs = results.filter((r): r is Extract<SearchApiResult, { kind: "glyph" }> => r.kind === "glyph");
 
+    const empty = [] as typeof words;
+
     if (tab === "glyphs") {
       const exactCode = glyphs.filter((g) => g.code.toLowerCase() === q);
       const other = glyphs.filter((g) => g.code.toLowerCase() !== q);
-      return { exactCode, otherGlyphs: other, exactTranslit: [] as typeof words, compounds: [] as typeof words, meaningMatches: [] as typeof words };
+      return { exactCode, otherGlyphs: other, exactTranslit: empty, compounds: empty, exactTranslation: empty, meaningMatches: empty };
     }
 
     // Words tab: group by match type
@@ -266,17 +268,22 @@ function SearchContent() {
     });
     const exactTranslitSet = new Set(exactTranslit.map((w) => `${w.transliteration}-${w.mdc}`));
     const compoundSet = new Set(compounds.map((w) => `${w.transliteration}-${w.mdc}`));
-    const meaningMatches = words.filter((w) => {
+    const rest = words.filter((w) => {
       const key = `${w.transliteration}-${w.mdc}`;
       return !exactTranslitSet.has(key) && !compoundSet.has(key);
     });
+    // Separate exact translation matches (e.g. "two" → snw "two") from partial meaning matches (e.g. "two eyes")
+    const trRe = new RegExp(`^${q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$|(?:^|, )${q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:,|$)`, "i");
+    const exactTranslation = rest.filter((w) => trRe.test(w.translation));
+    const exactTranslationSet = new Set(exactTranslation.map((w) => `${w.transliteration}-${w.mdc}`));
+    const meaningMatches = rest.filter((w) => !exactTranslationSet.has(`${w.transliteration}-${w.mdc}`));
 
-    return { exactTranslit, compounds, meaningMatches, exactCode: glyphs, otherGlyphs: [] as typeof glyphs };
+    return { exactTranslit, compounds, exactTranslation, meaningMatches, exactCode: glyphs, otherGlyphs: [] as typeof glyphs };
   }, [results, query, tab]);
 
   const totalResults = tab === "glyphs"
     ? grouped.exactCode.length + grouped.otherGlyphs.length
-    : grouped.exactTranslit.length + grouped.compounds.length + grouped.meaningMatches.length;
+    : grouped.exactTranslit.length + grouped.compounds.length + grouped.exactTranslation.length + grouped.meaningMatches.length;
 
 
   return (
@@ -376,6 +383,7 @@ function SearchContent() {
                   <StickyGroupNav sections={[
                     ...(grouped.exactTranslit.length > 0 ? [{ id: "exact", title: "Exact matches", count: grouped.exactTranslit.length }] : []),
                     ...(grouped.compounds.length > 0 ? [{ id: "compounds", title: "Compounds", count: grouped.compounds.length }] : []),
+                    ...(grouped.exactTranslation.length > 0 ? [{ id: "translation", title: "Translation", count: grouped.exactTranslation.length }] : []),
                     ...(grouped.meaningMatches.length > 0 ? [{ id: "meanings", title: "Meanings", count: grouped.meaningMatches.length }] : []),
                   ]} />
                   {grouped.exactTranslit.length > 0 && (
@@ -395,6 +403,17 @@ function SearchContent() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {grouped.compounds.map((r, i) => (
                           <WordCard key={`cp-${r.transliteration}-${r.mdc}-${i}`} result={r} />
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {grouped.exactTranslation.length > 0 && (
+                    <>
+                      <GroupHeader id="translation" title="Exact translation matches" count={grouped.exactTranslation.length} />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {grouped.exactTranslation.map((r, i) => (
+                          <WordCard key={`et-${r.transliteration}-${r.mdc}-${i}`} result={r} />
                         ))}
                       </div>
                     </>
