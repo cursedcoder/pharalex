@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { glyphHref, glyphSvgSrc } from "@/lib/glyph-utils";
@@ -23,6 +23,18 @@ const sizes = {
 };
 
 type MergedItem = SearchApiResult & { href: string };
+
+function KbdShortcut() {
+  const [isMac, setIsMac] = useState(true);
+  useEffect(() => {
+    setIsMac(navigator.platform.toUpperCase().includes("MAC"));
+  }, []);
+  return (
+    <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] text-sandstone/50 bg-sandstone/8 border border-sandstone/20 rounded font-mono">
+      {isMac ? "⌘" : "Ctrl+"}K
+    </kbd>
+  );
+}
 
 export function SearchBar({
   size = "md",
@@ -176,9 +188,7 @@ export function SearchBar({
             </div>
           )}
           {!showModeToggle && (
-            <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] text-sandstone/50 bg-sandstone/8 border border-sandstone/20 rounded font-mono">
-              ⌘K
-            </kbd>
+            <KbdShortcut />
           )}
         </div>
       </div>
