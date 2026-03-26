@@ -16,6 +16,31 @@ const MdC_TO_UNICODE: [string, string][] = [
   ["D", "ḏ"],
 ];
 
+/** Convert Unicode Egyptological transliteration back to ASCII MdC (e.g. ḥ→H, š→S). */
+export function unicodeToTranslit(unicode: string): string {
+  let s = unicode;
+  // Primary mappings (exact Unicode Egyptological chars)
+  for (const [ascii, uni] of MdC_TO_UNICODE) {
+    s = s.split(uni).join(ascii);
+  }
+  // Common lookalike variants that keyboards/IMEs produce
+  s = s.replace(/\u02BF/g, "a")   // ʿ (modifier letter left half ring) → ꜥ
+    .replace(/\u02BE/g, "A")      // ʾ (modifier letter right half ring) → ꜣ
+    .replace(/\u0294/g, "A")      // ʔ (glottal stop) → ꜣ
+    .replace(/[`'ʻ]/g, "");       // strip stray quotes/backticks
+  // Combining-character decomposed forms
+  s = s.normalize("NFD")
+    .replace(/h\u0323/g, "H")   // ḥ as h + combining dot below
+    .replace(/h\u032E/g, "x")   // ḫ as h + combining breve below
+    .replace(/s\u030C/g, "S")   // š as s + combining caron
+    .replace(/t\u0331/g, "T")   // ṯ as t + combining macron below
+    .replace(/d\u0331/g, "D")   // ḏ as d + combining macron below
+    .normalize("NFC");
+  // Strip non-transliteration symbols (arrows, etc.)
+  s = s.replace(/[→←↔]/g, "");
+  return s;
+}
+
 export function translitToUnicode(translit: string): string {
   let s = translit;
   for (const [from, to] of MdC_TO_UNICODE) {

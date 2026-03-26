@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fuzzySearch } from "@/lib/search";
 import { loadSearchWords, loadSearchGlyphs, loadGlyphs } from "@/lib/data-loader";
-import { spellingHref, translitToUnicode } from "@/lib/word-utils";
+import { spellingHref, translitToUnicode, unicodeToTranslit } from "@/lib/word-utils";
 import { wordScore } from "@/lib/word-score";
 import { mdcToCodes } from "@/lib/mdc";
 import { buildGlyphDetailsMap } from "@/lib/glyphs";
@@ -144,8 +144,9 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ results: [] });
   }
 
-  // Normalize dots to spaces: display uses dots (aHa.n) but data stores spaces (aHa n)
-  const q = gardiner ? qRaw : qRaw.replace(/\./g, " ");
+  // Convert Unicode transliteration to ASCII MdC (e.g. ḥ→H, š→S) and
+  // normalize dots to spaces: display uses dots (aHa.n) but data stores spaces (aHa n)
+  const q = gardiner ? qRaw : unicodeToTranslit(qRaw).replace(/\./g, " ");
   const ql = q.toLowerCase();
 
   // Glyphs: exact code match + fuzzy description match
