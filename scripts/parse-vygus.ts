@@ -105,29 +105,29 @@ function codesToMdc(codes: string[]): string {
  * The Gardiner codes are always at the end.
  */
 
-function parseLine(raw: string): VygusEntry | null {
+function parseLine(raw: string): VygusEntry[] {
   // Strip leading/trailing whitespace
   const line = raw.trim();
 
   // Skip blank, page-number, or header lines
-  if (!line) return null;
-  if (/^\d+$/.test(line)) return null;
-  if (line.startsWith("++")) return null;
-  if (line.startsWith("|")) return null;   // table header artefacts from pannous sample (safety)
+  if (!line) return [];
+  if (/^\d+$/.test(line)) return [];
+  if (line.startsWith("++")) return [];
+  if (line.startsWith("|")) return [];   // table header artefacts from pannous sample (safety)
 
   // Must end with at least one Gardiner code (possibly with dashes between)
   // Pattern: one or more "CODE" tokens optionally separated by " - " or "-"
   const codeBlockRe = /([A-Z][a-z]?[0-9][A-Za-z0-9]*(?:\s*-\s*[A-Z][a-z]?[0-9][A-Za-z0-9]*)*)$/;
   const codeMatch = line.match(codeBlockRe);
-  if (!codeMatch) return null;
+  if (!codeMatch) return [];
 
   const codeBlock = codeMatch[1].trim();
   const gardinerCodes = extractGardinerCodes(codeBlock);
-  if (gardinerCodes.length === 0) return null;
+  if (gardinerCodes.length === 0) return [];
 
   // Everything before the code block
   let rest = line.slice(0, line.lastIndexOf(codeBlock)).trim();
-  if (!rest) return null;
+  if (!rest) return [];
 
   // Extract all {…} note blocks from rest
   const notes: string[] = [];
@@ -181,7 +181,7 @@ function parseLine(raw: string): VygusEntry | null {
   //   Split on the first space where the NEXT token starts with a lowercase letter
   //   AND that token is ≥4 chars OR is one of the known English short words.
 
-  if (!rest) return null;
+  if (!rest) return [];
 
   // Split rest into:  transliteration (MdC compound)  |  translation (English)
   //
@@ -306,31 +306,32 @@ function parseLine(raw: string): VygusEntry | null {
   transliteration = transliteration.replace(/\s*\?+$/, "").trim();
   translation = translation.trim();
 
-  // Handle Vygus "word / altname translation" pattern — the slash introduces an
-  // alternate transliteration or epithet, not a path separator.
-  // e.g. "Sw / psD to shine" → translit="Sw", translation="to shine"
-  // e.g. "Hr sA / Hrs bullocks" → translit="Hr sA", translation="bullocks"
-  // The alt token after "/" is always MdC; drop it rather than prepend to translation.
+  // Handle Vygus "word / altname" pattern — the slash introduces an alternate
+  // transliteration for the same word. Emit entries for both pronunciations.
+  // e.g. "tsmt / tsmw rampart" → two entries: tsmt "rampart" + tsmw "rampart"
+  let altTransliteration: string | null = null;
   const slashMatch = transliteration.match(/^(.+?)\s*\/\s*(\S+)$/);
   if (slashMatch) {
     transliteration = slashMatch[1].trim();
     const altToken = slashMatch[2];
-    // Only keep the alt token in translation if it looks like English (rare edge case)
     if (isEnglishStart(altToken)) {
+      // Rare edge case: the token after "/" is English, not MdC
       translation = altToken + (translation ? " " + translation : "");
+    } else {
+      altTransliteration = altToken;
     }
   }
   // Also strip bare trailing " /" with no altname token captured
   transliteration = transliteration.replace(/\s*\/$/, "").trim();
 
   // Skip entries with no meaningful transliteration or translation
-  if (!transliteration || transliteration === "?" || transliteration === "??") return null;
-  if (!translation) return null;
+  if (!transliteration || transliteration === "?" || transliteration === "??") return [];
+  if (!translation) return [];
 
   // Skip entries that are clearly artefacts (only punctuation, only numbers)
-  if (/^[^a-zA-Z]+$/.test(transliteration)) return null;
+  if (/^[^a-zA-Z]+$/.test(transliteration)) return [];
 
-  return {
+  const base: VygusEntry = {
     transliteration,
     translation,
     grammar,
@@ -339,6 +340,12 @@ function parseLine(raw: string): VygusEntry | null {
     mdc: codesToMdc(gardinerCodes),
     notes,
   };
+
+  const results = [base];
+  if (altTransliteration) {
+    results.push({ ...base, transliteration: altTransliteration });
+  }
+  return results;
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -357,9 +364,9 @@ function main() {
   let skipped = 0;
 
   for (const line of lines) {
-    const entry = parseLine(line);
-    if (entry) {
-      entries.push(entry);
+    const parsed = parseLine(line);
+    if (parsed.length > 0) {
+      entries.push(...parsed);
     } else if (line.trim() && !/^\d+$/.test(line.trim()) && !line.trim().startsWith("++")) {
       skipped++;
     }
