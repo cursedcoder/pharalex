@@ -39,7 +39,7 @@ export function CopyImageButton({ targetRef, className = "" }: CopyImageButtonPr
 
   return (
     <button
-      onClick={handleCopy}
+      onClick={(e) => { e.stopPropagation(); handleCopy(); }}
       className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs
         transition-all duration-200 cursor-pointer select-none
         ${state === "ok"

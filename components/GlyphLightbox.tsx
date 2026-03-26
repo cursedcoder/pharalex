@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import Link from "next/link";
 import { Lightbox } from "./Lightbox";
 import { glyphSvgSrc } from "@/lib/glyph-utils";
+import { CopyImageButton } from "./CopyImageButton";
 
 export interface GlyphLightboxItem {
   code: string;
@@ -22,6 +23,7 @@ export function GlyphLightbox({ items, initialIndex = 0, trigger }: GlyphLightbo
 
   const current = items[index];
   const hasMultiple = items.length > 1;
+  const glyphRef = useRef<HTMLDivElement>(null);
 
   const handleOpen = useCallback(() => {
     setIndex(initialIndex);
@@ -68,7 +70,7 @@ export function GlyphLightbox({ items, initialIndex = 0, trigger }: GlyphLightbo
         {current && (
           <div className="flex flex-col items-center p-6 sm:p-8">
             {/* Large glyph */}
-            <div className="w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center mb-4">
+            <div ref={glyphRef} className="w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={glyphSvgSrc(current.code)}
@@ -77,7 +79,7 @@ export function GlyphLightbox({ items, initialIndex = 0, trigger }: GlyphLightbo
               />
             </div>
 
-            {/* Info */}
+            {/* Info + Copy */}
             <div className="text-center">
               <Link
                 href={`/glyph/${encodeURIComponent(current.code)}`}
@@ -86,6 +88,9 @@ export function GlyphLightbox({ items, initialIndex = 0, trigger }: GlyphLightbo
               >
                 {current.code}
               </Link>
+              <div className="mt-2">
+                <CopyImageButton targetRef={glyphRef} />
+              </div>
               {current.label && (
                 <p className="text-sm text-sandstone mt-1">{current.label}</p>
               )}
