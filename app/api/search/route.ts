@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fuzzySearch } from "@/lib/search";
-import { loadSearchWords, loadSearchGlyphs } from "@/lib/data-loader";
+import { loadSearchWords, loadSearchGlyphs, loadGlyphs } from "@/lib/data-loader";
 import { spellingHref, translitToUnicode } from "@/lib/word-utils";
 import { wordScore } from "@/lib/word-score";
 import { mdcToCodes } from "@/lib/mdc";
@@ -49,6 +49,31 @@ async function exactGlyphSearch(query: string) {
   for (const g of glyphs) {
     if (g.code.toUpperCase() === q) {
       results.push({ glyph: g, score: 0, matches: [] });
+    }
+  }
+  // If no match in search index, check full glyphs data (includes variants like F37A)
+  if (results.length === 0 && /^[A-Z][a-z]?\d+[A-Za-z]?$/.test(q)) {
+    const allGlyphs = await loadGlyphs();
+    for (const g of allGlyphs) {
+      if (g.code.toUpperCase() === q) {
+        results.push({
+          glyph: {
+            code: g.code,
+            unicode: g.unicode,
+            transliteration: g.transliteration,
+            searchTransliteration: [],
+            meanings: g.meanings.map((m) => ({ text: m.text, type: m.type })),
+            description: g.description,
+            category: g.category,
+            categoryName: g.categoryName,
+            related: g.related,
+            source: g.source,
+          },
+          score: 0,
+          matches: [],
+        });
+        break;
+      }
     }
   }
   return results;
