@@ -500,7 +500,7 @@ export default async function GlyphPage({ params }: PageProps) {
                         >
                           {/* Header */}
                           <div className="flex items-center justify-between mb-3">
-                            <span className="font-mono text-lg font-bold text-brown">
+                            <span className="text-lg font-medium text-brown italic">
                               {translit}
                             </span>
                             <Link

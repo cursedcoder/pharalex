@@ -89,9 +89,6 @@ body {
   font-weight: 400 700;
   font-display: swap;
   src: url("/fonts/GentiumPlus-Regular.woff2") format("woff2");
-  unicode-range:
-    U+0160-0161, U+032F, U+1E0F, U+1E25, U+1E2B, U+1E33, U+1E6F, U+1E71, U+1E96,
-    U+2E17, U+A723, U+A725, U+A7BC-A7BD;
 }
 
 @font-face {
@@ -100,9 +97,6 @@ body {
   font-weight: 400 700;
   font-display: swap;
   src: url("/fonts/GentiumPlus-Italic.woff2") format("woff2");
-  unicode-range:
-    U+0160-0161, U+032F, U+1E0F, U+1E25, U+1E2B, U+1E33, U+1E6F, U+1E71, U+1E96,
-    U+2E17, U+A723, U+A725, U+A7BC-A7BD;
 }
 
 /* Hieroglyph font — NewGardiner by Mark-Jan Nederhof (SIL OFL 1.1)

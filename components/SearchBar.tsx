@@ -243,7 +243,7 @@ export function SearchBar({
                 </div>
                 <div className="self-start flex-1 min-w-0 flex flex-col justify-start">
                   <div className="flex items-baseline gap-2">
-                    <span className="font-semibold text-sm text-brown font-mono">
+                    <span className="font-medium text-sm text-brown italic">
                       {translitToUnicode(item.transliteration)}
                     </span>
                     {item.grammar && (
