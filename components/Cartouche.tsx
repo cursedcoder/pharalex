@@ -151,7 +151,7 @@ export function Cartouche({
       <span
         className={`
           ${config.text} italic text-brown mt-2
-          font-medium tracking-wide
+          font-medium tracking-wide font-translit
         `}
       >
         {royalName.transliteration}
@@ -228,7 +228,7 @@ export function Serekh({
       <span
         className={`
           ${config.text} italic text-brown mt-2
-          font-medium tracking-wide
+          font-medium tracking-wide font-translit
         `}
       >
         {royalName.transliteration}
@@ -345,7 +345,7 @@ export function PreCartoucheName({
       <span
         className={`
           ${config.text} italic text-brown mt-2
-          font-medium tracking-wide
+          font-medium tracking-wide font-translit
         `}
       >
         {royalName.transliteration}
@@ -446,7 +446,7 @@ function NameVariants({ variants, nameLabel, size }: {
             </div>
           )}
           <div className="space-y-1">
-            <p className={`${config.text} italic text-brown font-medium tracking-wide`}>
+            <p className={`${config.text} italic text-brown font-medium tracking-wide font-translit`}>
               {v.transliteration}
             </p>
             {v.translation && (

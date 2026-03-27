@@ -32,7 +32,7 @@ export function WordCardList({ words, max }: WordCardListProps) {
             <WordGlyph mdc={word.mdc} baseSize={24} className="mb-2" disableLinks />
           )}
           <div className="flex items-baseline justify-between gap-2">
-            <span className="text-sm font-medium text-brown group-hover:text-gold-dark transition-colors italic">
+            <span className="text-sm font-medium text-brown group-hover:text-gold-dark transition-colors italic font-translit">
               {translitToUnicode(word.transliteration)}
             </span>
             {word.grammar && (

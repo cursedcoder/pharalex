@@ -278,10 +278,10 @@ export function CommandPalette() {
                 `}
               >
                 <div className="w-8 h-8 shrink-0 flex items-center justify-center rounded bg-papyrus/60 border border-sandstone/20">
-                  <span className="text-xs italic text-brown-light">{translitToUnicode(item.transliteration).slice(0, 4)}</span>
+                  <span className="text-xs italic text-brown-light font-translit">{translitToUnicode(item.transliteration).slice(0, 4)}</span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-sm font-medium text-brown italic">
+                  <span className="text-sm font-medium text-brown italic font-translit">
                     {translitToUnicode(item.transliteration)}
                   </span>
                   <span className="text-xs text-sandstone ml-2 truncate">{item.translation}</span>

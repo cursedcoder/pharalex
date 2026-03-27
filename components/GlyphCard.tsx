@@ -75,7 +75,7 @@ export function GlyphCard({ glyph, showDescription = true, highlight = false, va
                 {glyph.transliteration.slice(0, 3).map((t) => (
                   <span
                     key={t}
-                    className="text-xs px-1.5 py-0.5 bg-brown/5 rounded text-brown-light italic"
+                    className="text-xs px-1.5 py-0.5 bg-brown/5 rounded text-brown-light italic font-translit"
                   >
                     {t}
                   </span>

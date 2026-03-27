@@ -33,6 +33,7 @@
   --font-serif: var(--font-source-serif), "Gentium Plus", Georgia, serif;
   --font-display:
     var(--font-cormorant), "Cormorant Garamond", "Gentium Plus", Georgia, serif;
+  --font-translit: "Gentium Plus", var(--font-source-serif), Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {

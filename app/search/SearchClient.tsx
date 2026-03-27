@@ -53,7 +53,7 @@ function WordCard({ result }: { result: Extract<SearchApiResult, { kind: "word" 
           <Quadrat mdc={result.mdc} baseSize={36} />
         </div>
         <div className="flex items-center gap-2 mb-1">
-          <h3 className="text-lg font-medium text-brown italic">
+          <h3 className="text-lg font-medium text-brown italic font-translit">
             {result.transliterationUnicode}
           </h3>
           {result.grammar && (

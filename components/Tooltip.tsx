@@ -95,7 +95,7 @@ export function GlyphTooltipContent({ code, transliteration, meaning, signName }
       <span className="flex items-center gap-2">
         <span className="font-semibold text-gold-light">{code}</span>
         {transliteration && (
-          <span className="italic text-[#fefdfb]/70">({transliteration})</span>
+          <span className="italic text-[#fefdfb]/70 font-translit">({transliteration})</span>
         )}
       </span>
       {signName && (

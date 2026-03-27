@@ -79,7 +79,7 @@ function WordBox({
           {/* Divider */}
           <div className="w-full border-t border-stone-300/50 mt-1.5 mb-1" />
           {/* Transliteration */}
-          <span className="text-xs italic text-brown-light font-medium leading-tight text-center">
+          <span className="text-xs italic text-brown-light font-medium leading-tight text-center font-translit">
             {token.transliteration}
           </span>
           {/* Translation */}
@@ -253,7 +253,7 @@ function TokenDetail({ token, onClose }: { token: TextToken; onClose: () => void
         </div>
         <div className="grid grid-cols-[8rem_1fr] gap-x-3 items-baseline">
           <span className="text-xs text-sandstone uppercase tracking-wider font-medium">Transliteration</span>
-          <span className="italic text-brown-light font-medium">{token.transliteration}</span>
+          <span className="italic text-brown-light font-medium font-translit">{token.transliteration}</span>
         </div>
         <div className="grid grid-cols-[8rem_1fr] gap-x-3 items-baseline">
           <span className="text-xs text-sandstone uppercase tracking-wider font-medium">Translation</span>

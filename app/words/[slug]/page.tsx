@@ -165,7 +165,7 @@ export default async function WordPage({ params }: Props) {
 
                 {isSingleReading ? (
                   <>
-                    <h1 className="text-3xl sm:text-4xl font-medium text-brown italic leading-tight mb-1">
+                    <h1 className="text-3xl sm:text-4xl font-medium text-brown italic font-translit leading-tight mb-1">
                       {translitToUnicode(readings[0][0])}
                     </h1>
                     <p className="text-brown-light text-lg leading-relaxed mb-3">
@@ -181,7 +181,7 @@ export default async function WordPage({ params }: Props) {
                   </>
                 ) : (
                   <div>
-                    <h1 className="text-2xl sm:text-3xl font-medium text-brown italic leading-tight mb-1">
+                    <h1 className="text-2xl sm:text-3xl font-medium text-brown italic font-translit leading-tight mb-1">
                       {readings.map(([t]) => translitToUnicode(t)).join(" / ")}
                     </h1>
                     <p className="text-sm text-sandstone">
@@ -207,7 +207,7 @@ export default async function WordPage({ params }: Props) {
                           <span className="text-xs text-sandstone font-medium uppercase tracking-wider w-5">
                             {ri + 1}.
                           </span>
-                          <span className="text-lg font-medium text-brown italic">
+                          <span className="text-lg font-medium text-brown italic font-translit">
                             {translitToUnicode(translit)}
                           </span>
                           <span className="text-xs text-sandstone">{translit}</span>
