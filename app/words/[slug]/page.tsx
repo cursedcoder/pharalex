@@ -39,6 +39,11 @@ const GRAMMAR_LABELS: Record<string, string> = {
   IMPR: "Imperative", NUM: "Numeral", OTHER: "Other",
 };
 
+const SOURCE_LABELS: Record<string, string> = {
+  vygus: "Vygus",
+  tla: "TLA",
+};
+
 const GRAMMAR_BADGE_VARIANTS: Record<string, "gold" | "sandstone" | "outline" | "default"> = {
   NOUN: "gold", VERB: "default", ADJ: "sandstone", ADV: "sandstone",
   PREP: "outline", PRON: "outline",
@@ -177,6 +182,11 @@ export default async function WordPage({ params }: Props) {
                           {GRAMMAR_LABELS[readings[0][1][0].grammar] ?? readings[0][1][0].grammar}
                         </Badge>
                       )}
+                      {readings[0][1][0].gender && (readings[0][1][0].grammar === "NOUN" || readings[0][1][0].grammar === "ADJ") && (
+                        <Badge variant="outline" size="md">
+                          {readings[0][1][0].gender === "m" ? "masc." : "fem."}
+                        </Badge>
+                      )}
                     </div>
                   </>
                 ) : (
@@ -221,12 +231,20 @@ export default async function WordPage({ params }: Props) {
                                   {GRAMMAR_LABELS[entry.grammar] ?? entry.grammar}
                                 </Badge>
                               )}
+                              {entry.gender && (entry.grammar === "NOUN" || entry.grammar === "ADJ") && (
+                                <Badge variant="outline" size="sm">
+                                  {entry.gender === "m" ? "masc." : "fem."}
+                                </Badge>
+                              )}
                               {entry.grammarRaw && entry.grammarRaw.toLowerCase() !== (GRAMMAR_LABELS[entry.grammar ?? ""] ?? "").toLowerCase() && (
                                 <span className="text-xs text-sandstone/60 italic">{entry.grammarRaw}</span>
                               )}
                               {entry.notes.map((n, i) => (
                                 <Badge key={i} variant="outline" size="sm">{n}</Badge>
                               ))}
+                              {entry.source && (
+                                <span className="text-[10px] text-sandstone/50 uppercase tracking-wider">{SOURCE_LABELS[entry.source] ?? entry.source}</span>
+                              )}
                             </div>
                           ))}
                         </div>
@@ -258,12 +276,20 @@ export default async function WordPage({ params }: Props) {
                               {GRAMMAR_LABELS[sense[0].grammar] ?? sense[0].grammar}
                             </Badge>
                           )}
+                          {sense[0].gender && (sense[0].grammar === "NOUN" || sense[0].grammar === "ADJ") && (
+                            <Badge variant="outline" size="sm">
+                              {sense[0].gender === "m" ? "masc." : "fem."}
+                            </Badge>
+                          )}
                           {sense[0].grammarRaw && sense[0].grammarRaw.toLowerCase() !== (GRAMMAR_LABELS[sense[0].grammar ?? ""] ?? "").toLowerCase() && (
                             <span className="text-xs text-sandstone/60 italic">{sense[0].grammarRaw}</span>
                           )}
                           {sense[0].notes.map((n, i) => (
                             <Badge key={i} variant="outline" size="sm">{n}</Badge>
                           ))}
+                          {sense[0].source && (
+                            <span className="text-[10px] text-sandstone/50 uppercase tracking-wider">{SOURCE_LABELS[sense[0].source] ?? sense[0].source}</span>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -322,11 +348,58 @@ export default async function WordPage({ params }: Props) {
                     <dd className="text-brown-light">{entries.length}</dd>
                   </div>
                   <div>
-                    <dt className="text-xs text-sandstone uppercase tracking-wider font-medium mb-0.5">Source</dt>
-                    <dd className="text-brown-light italic text-xs">Vygus Middle Egyptian Dictionary (2018)</dd>
+                    <dt className="text-xs text-sandstone uppercase tracking-wider font-medium mb-0.5">{entries.some((e) => e.source === "tla") && entries.some((e) => !e.source || e.source === "vygus") ? "Sources" : "Source"}</dt>
+                    <dd className="text-brown-light italic text-xs space-y-0.5">
+                      {entries.some((e) => !e.source || e.source === "vygus") && (
+                        <p>Vygus Middle Egyptian Dictionary (2018)</p>
+                      )}
+                      {entries.some((e) => e.source === "tla") && (
+                        <p>Thesaurus Linguae Aegyptiae (2024)</p>
+                      )}
+                    </dd>
                   </div>
                 </dl>
               </div>
+
+              {/* External links (TLA / Wikidata) */}
+              {(() => {
+                const tlaId = entries.find((e) => e.tlaId)?.tlaId;
+                const wikidataId = entries.find((e) => e.wikidataId)?.wikidataId;
+                if (!tlaId && !wikidataId) return null;
+                return (
+                  <div className="bg-papyrus/40 border border-gold/20 rounded-xl p-5 space-y-3">
+                    <h3 className="font-display text-lg text-brown">External Links</h3>
+                    <div className="flex flex-col gap-2">
+                      {tlaId && (
+                        <a
+                          href={`https://thesaurus-linguae-aegyptiae.de/lemma/${tlaId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-gold hover:text-gold-dark transition-colors"
+                        >
+                          <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          Thesaurus Linguae Aegyptiae
+                        </a>
+                      )}
+                      {wikidataId && (
+                        <a
+                          href={`https://www.wikidata.org/wiki/${wikidataId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-gold hover:text-gold-dark transition-colors"
+                        >
+                          <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          Wikidata
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
 
               {related.length > 0 && (
                 <section>
