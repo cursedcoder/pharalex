@@ -137,8 +137,16 @@ export interface DictionaryWord {
   gardinerCodes: string[];
   /** Normalised POS tag: "NOUN" | "VERB" | "ADJ" | "ADV" | "PREP" | "PRON" | "PART" | "CONJ" | "INTJ" | "INTG" | "IMPR" | "NUM" | "OTHER" */
   grammar: string | null;
-  /** Original grammar label from Vygus, e.g. "noun - title", "collective noun", "causative verb" */
+  /** Original grammar label from source, e.g. "noun - title", "collective noun", "causative verb" */
   grammarRaw: string | null;
+  /** Data source: "vygus" or "tla" */
+  source?: string;
   /** Contextual/domain notes from the source, e.g. ["late egyptian"], ["cryptic"], ["mathematics"] */
   notes: string[];
+  /** Grammatical gender: "m" (masculine) or "f" (feminine) */
+  gender?: string;
+  /** TLA lemma ID — links to https://thesaurus-linguae-aegyptiae.de/lemma/{tlaId} */
+  tlaId?: string;
+  /** Wikidata item ID — links to https://www.wikidata.org/wiki/{wikidataId} */
+  wikidataId?: string;
 }
