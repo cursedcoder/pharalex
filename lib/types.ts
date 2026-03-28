@@ -149,4 +149,6 @@ export interface DictionaryWord {
   tlaId?: string;
   /** Wikidata item ID — links to https://www.wikidata.org/wiki/{wikidataId} */
   wikidataId?: string;
+  /** Number of attestations in TLA sentence corpora */
+  attestations?: number;
 }
