@@ -5,10 +5,11 @@
  * Sources:
  *   - TLA Earlier Egyptian sentences (12,773 sentences)
  *   - TLA Late Egyptian sentences (3,606 sentences)
+ *   - PhilologEg texts (101 texts by M.-J. Nederhof, ~9,790 transliteration lines)
  *
  * Matching strategy:
  *   1. By TLA lemma ID (most precise — lemmatization field has "id|translit" pairs)
- *   2. By normalised transliteration (fallback for entries without tlaId)
+ *   2. By normalised transliteration (fallback, also used for PhilologEg)
  *
  * After counting, entries within each spelling group (same gardinerCodes)
  * are sorted: higher attestation first, then source=vygus before source=tla
@@ -67,9 +68,81 @@ for (const corpusPath of CORPORA) {
   }
 }
 
-console.log(`Processed ${totalSentences} sentences from ${CORPORA.length} corpora`);
+console.log(`TLA: ${totalSentences} sentences from ${CORPORA.length} corpora`);
 console.log(`  Unique lemma IDs: ${lemmaCounts.size}`);
 console.log(`  Unique transliterations: ${translitCounts.size}`);
+
+// ── Count attestations from PhilologEg texts ────────────────────────────────
+
+const PHILOLOGEG_DIR = path.join(process.cwd(), "lib/data/philologeg");
+let philologLines = 0;
+let philologFiles = 0;
+
+if (fs.existsSync(PHILOLOGEG_DIR)) {
+  const files = fs.readdirSync(PHILOLOGEG_DIR).filter((f) => f.endsWith(".txt"));
+  philologFiles = files.length;
+
+  for (const file of files) {
+    const content = fs.readFileSync(path.join(PHILOLOGEG_DIR, file), "utf-8");
+
+    // Split on second ### (first ### = before bibliography, second ### = start of text)
+    const parts = content.split("###");
+    if (parts.length < 3) continue;
+
+    const textSection = parts[2];
+    const lines = textSection.split("\n");
+
+    // Format: transliteration line, then ";", then English translation, then blank
+    let prevWasSemicolon = false;
+
+    for (const line of lines) {
+      const stripped = line.trim();
+
+      if (!stripped) {
+        prevWasSemicolon = false;
+        continue;
+      }
+
+      if (stripped === ";") {
+        prevWasSemicolon = true;
+        continue;
+      }
+
+      if (prevWasSemicolon) {
+        // Translation line — skip
+        prevWasSemicolon = false;
+        continue;
+      }
+
+      // This is a transliteration line
+      prevWasSemicolon = false;
+      philologLines++;
+
+      // Strip markup: <note>...</note>, <@xxx>, <1>, <al>...</al> etc.
+      let clean = stripped.replace(/<note>.*?<\/note>/g, "");
+      clean = clean.replace(/<[^>]*>/g, "");
+      clean = clean.trim();
+      if (!clean) continue;
+
+      for (let tok of clean.split(/\s+/)) {
+        // Strip punctuation
+        tok = tok.replace(/^[.,;:!?"]+/, "").replace(/[.,;:!?"]+$/, "");
+        // Strip clitic = prefix
+        tok = tok.replace(/^=/, "");
+        if (!tok || /^\d+$/.test(tok)) continue;
+        // Skip lacuna markers
+        if (tok === "[...]" || tok === "[..]" || tok === "[.]") continue;
+
+        // PhilologEg uses MdC — lowercase for matching
+        const key = tok.toLowerCase();
+        translitCounts.set(key, (translitCounts.get(key) || 0) + 1);
+      }
+    }
+  }
+}
+
+console.log(`PhilologEg: ${philologLines} lines from ${philologFiles} texts`);
+console.log(`  Combined unique transliterations: ${translitCounts.size}`);
 
 // ── Apply attestation counts to words ───────────────────────────────────────
 
