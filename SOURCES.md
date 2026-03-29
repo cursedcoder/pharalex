@@ -54,7 +54,7 @@ Glyph names, meanings, transliterations, phonetic values, and Gardiner categoris
 | **JSesh texts corpus** | 190 `.gly` files | Hieroglyphic quadrat patterns (94,652 sign pairs) for data-driven auto-quadding | From `jsesh-installer/src/binary/texts/`; parsed with `scripts/build-quad-index.ts` | CC BY (texts) |
 | **St Andrews Unicode Sign List** | 1,071 entries | English physical descriptions, semantic uses (logogram/phonogram/determinative) with transliterations and translations | Downloaded from [mjn.host.cs.st-andrews.ac.uk](https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/); parsed with `scripts/process-standrews.ts` | Academic open |
 | **TLA Lemmata + Wikidata** (2024) | 14,800 lemmata | Lemma IDs, Wikidata IDs, grammatical gender, lexical subcategories; adds ~3,500 new word entries and enriches existing entries with gender/external links | Downloaded from [thesaurus-linguae-aegyptiae.de](https://thesaurus-linguae-aegyptiae.de); integrated with `scripts/integrate-tla.ts` | CC BY-SA 4.0 |
-| **PhilologEg texts** (M.-J. Nederhof) | 101 texts | Word-segmented transliterations with English translations for attestation frequency counting (Sinuhe, Shipwrecked Sailor, Ptahhotep, Ebers, stelae, etc.) | Extracted from [PhilologEg](https://github.com/nederhof/philologeg) JAR; parsed with `scripts/build-attestations.ts` | GPL-3.0 |
+| **PhilologEg texts** (M.-J. Nederhof) | 101 texts | Word-segmented transliterations with English translations for attestation frequency counting (Sinuhe, Shipwrecked Sailor, Ptahhotep, Ebers, stelae, etc.) | Extracted from [PhilologEg](https://mjn.host.cs.st-andrews.ac.uk/egyptian/texts/) JAR by Mark-Jan Nederhof (University of St Andrews); parsed with `scripts/build-attestations.ts` | Academic (no explicit license) |
 | **TLA Earlier Egyptian corpus** (v18) | 12,773 sentences | Attested text examples: hieroglyphs + transliteration + translation + date range, for Old/Middle Egyptian (~3000–1550 BCE) | Downloaded from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-Earlier_Egyptian_original-v18-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
 | **TLA Late Egyptian corpus** (v19) | 3,606 sentences | Same as above for Late Egyptian period (~1550–700 BCE) | Downloaded from [HuggingFace](https://huggingface.co/datasets/thesaurus-linguae-aegyptiae/tla-late_egyptian-v19-premium); parsed with `scripts/process-tla.ts` | CC BY-SA 4.0 |
 | **Combined glyphs** | **8,132** | All glyph data, deduplicated and merged by Gardiner code | Final output at `public/data/glyphs.json` | — |
@@ -94,7 +94,7 @@ Noto TTF extract          ─┘
 | JSesh glyphs | LGPL-3.0 | Yes (with attribution) |
 | JSesh sign descriptions | LGPL-3.0 | Yes (with attribution) |
 | St Andrews sign list | Academic open | Non-commercial |
-| PhilologEg texts | GPL-3.0 | Yes (with attribution) |
+| PhilologEg texts | Academic (no explicit license) | Non-commercial (with attribution) |
 | TLA Lemmata + Wikidata (2024) | CC BY-SA 4.0 | Yes (with attribution) |
 | TLA corpus (Earlier + Late Egyptian) | CC BY-SA 4.0 | Yes (with attribution) |
 | NewGardiner / hierojax font | GPL-3.0 | Yes (with attribution) |
