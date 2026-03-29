@@ -719,6 +719,22 @@ for (const g of glyphs) {
     g.transliteration = sorted;
     resorted++;
   }
+
+  // Remap transliterationCounts keys to match surviving transliteration forms
+  if (g.transliterationCounts) {
+    const remapped: Record<string, number> = {};
+    for (const [key, count] of Object.entries(g.transliterationCounts)) {
+      const bk = broadKey(key);
+      // Find the surviving transliteration that matches this key
+      const match = g.transliteration.find((t: string) => broadKey(t) === bk);
+      if (match) {
+        remapped[match] = (remapped[match] ?? 0) + (count as number);
+      }
+    }
+    if (Object.keys(remapped).length > 0) {
+      g.transliterationCounts = remapped;
+    }
+  }
 }
 console.log(`  Dedup fixed (MdC/Unicode pairs): ${dedupFixed}`);
 console.log(`  Re-sorted by corpus + word count: ${resorted}`);
