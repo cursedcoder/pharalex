@@ -242,8 +242,11 @@ export default async function WordPage({ params }: Props) {
                               {entry.notes.map((n, i) => (
                                 <Badge key={i} variant="outline" size="sm">{n}</Badge>
                               ))}
-                              {entry.source && (
-                                <span className="text-[10px] text-sandstone/50 uppercase tracking-wider">{SOURCE_LABELS[entry.source] ?? entry.source}</span>
+                              {(entry.source || entry.attestations) && (
+                                <span className="text-[10px] text-sandstone/50 uppercase tracking-wider">
+                                  {entry.source ? (SOURCE_LABELS[entry.source] ?? entry.source) : ""}
+                                  {entry.attestations ? `${entry.source ? " · " : ""}${entry.attestations}×` : ""}
+                                </span>
                               )}
                             </div>
                           ))}
@@ -287,8 +290,11 @@ export default async function WordPage({ params }: Props) {
                           {sense[0].notes.map((n, i) => (
                             <Badge key={i} variant="outline" size="sm">{n}</Badge>
                           ))}
-                          {sense[0].source && (
-                            <span className="text-[10px] text-sandstone/50 uppercase tracking-wider">{SOURCE_LABELS[sense[0].source] ?? sense[0].source}</span>
+                          {(sense[0].source || sense[0].attestations) && (
+                            <span className="text-[10px] text-sandstone/50 uppercase tracking-wider">
+                              {sense[0].source ? (SOURCE_LABELS[sense[0].source] ?? sense[0].source) : ""}
+                              {sense[0].attestations ? `${sense[0].source ? " · " : ""}${sense[0].attestations}×` : ""}
+                            </span>
                           )}
                         </div>
                       </div>

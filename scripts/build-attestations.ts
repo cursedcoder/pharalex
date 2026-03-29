@@ -149,29 +149,36 @@ console.log(`  Combined unique transliterations: ${translitCounts.size}`);
 const words = JSON.parse(fs.readFileSync(WORDS_PATH, "utf-8"));
 console.log(`  Loaded ${words.length} words`);
 
+// Clear any existing attestation data from previous runs
+for (const w of words) {
+  delete w.attestations;
+}
+
 let matchedByLemma = 0;
 let matchedByTranslit = 0;
 
+// First pass: assign lemma-based counts to TLA entries (precise per-sense)
+const translitHasTlaEntry = new Set<string>();
+
 for (const w of words) {
-  let count = 0;
-
-  // Try lemma ID first (most precise)
-  if (w.tlaId && lemmaCounts.has(w.tlaId)) {
-    count = lemmaCounts.get(w.tlaId)!;
+  if (w.source === "tla" && w.tlaId && lemmaCounts.has(w.tlaId)) {
+    w.attestations = lemmaCounts.get(w.tlaId)!;
     matchedByLemma++;
+    translitHasTlaEntry.add(w.transliteration.toLowerCase());
   }
+}
 
-  // Fallback: transliteration matching
-  if (count === 0) {
-    const key = w.transliteration.toLowerCase();
-    if (translitCounts.has(key)) {
-      count = translitCounts.get(key)!;
-      matchedByTranslit++;
-    }
-  }
-
-  if (count > 0) {
-    w.attestations = count;
+// Second pass: transliteration-based fallback for non-TLA entries
+// Only when no TLA sibling exists with a lemma match (avoids inflating
+// Vygus entries that sit alongside individually-counted TLA senses)
+for (const w of words) {
+  if (w.attestations) continue;
+  if (w.source === "tla") continue; // TLA entries without lemma match stay at 0
+  const key = w.transliteration.toLowerCase();
+  if (translitHasTlaEntry.has(key)) continue; // TLA sibling has per-sense counts
+  if (translitCounts.has(key)) {
+    w.attestations = translitCounts.get(key)!;
+    matchedByTranslit++;
   }
 }
 
