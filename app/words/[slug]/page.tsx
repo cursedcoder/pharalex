@@ -242,12 +242,17 @@ export default async function WordPage({ params }: Props) {
                               {entry.notes.map((n, i) => (
                                 <Badge key={i} variant="outline" size="sm">{n}</Badge>
                               ))}
-                              {(entry.source || entry.attestations) && (
-                                <span className="text-[10px] text-sandstone/50 uppercase tracking-wider">
-                                  {entry.source ? (SOURCE_LABELS[entry.source] ?? entry.source) : ""}
-                                  {entry.attestations ? `${entry.source ? " · " : ""}${entry.attestations}×` : ""}
+                              {entry.attestations ? (
+                                <span
+                                  title={`Attested ${entry.attestations} time${entry.attestations !== 1 ? "s" : ""} in TLA + PhilologEg corpora${entry.source ? ` — source: ${SOURCE_LABELS[entry.source] ?? entry.source}` : ""}`}
+                                  className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-gold/10 text-[10px] text-gold-dark/70 tabular-nums cursor-help"
+                                >
+                                  <svg className="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+                                  {entry.attestations}×
                                 </span>
-                              )}
+                              ) : entry.source ? (
+                                <span className="text-[10px] text-sandstone/40 uppercase tracking-wider">{SOURCE_LABELS[entry.source] ?? entry.source}</span>
+                              ) : null}
                             </div>
                           ))}
                         </div>
@@ -290,12 +295,17 @@ export default async function WordPage({ params }: Props) {
                           {sense[0].notes.map((n, i) => (
                             <Badge key={i} variant="outline" size="sm">{n}</Badge>
                           ))}
-                          {(sense[0].source || sense[0].attestations) && (
-                            <span className="text-[10px] text-sandstone/50 uppercase tracking-wider">
-                              {sense[0].source ? (SOURCE_LABELS[sense[0].source] ?? sense[0].source) : ""}
-                              {sense[0].attestations ? `${sense[0].source ? " · " : ""}${sense[0].attestations}×` : ""}
+                          {sense[0].attestations ? (
+                            <span
+                              title={`Attested ${sense[0].attestations} time${sense[0].attestations !== 1 ? "s" : ""} in TLA + PhilologEg corpora${sense[0].source ? ` — source: ${SOURCE_LABELS[sense[0].source] ?? sense[0].source}` : ""}`}
+                              className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-gold/10 text-[10px] text-gold-dark/70 tabular-nums cursor-help"
+                            >
+                              <svg className="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+                              {sense[0].attestations}×
                             </span>
-                          )}
+                          ) : sense[0].source ? (
+                            <span className="text-[10px] text-sandstone/40 uppercase tracking-wider">{SOURCE_LABELS[sense[0].source] ?? sense[0].source}</span>
+                          ) : null}
                         </div>
                       </div>
                     ))}
