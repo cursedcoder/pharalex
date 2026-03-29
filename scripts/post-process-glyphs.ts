@@ -634,6 +634,28 @@ if (fs.existsSync(WORDS_PATH)) {
 }
 console.log(`  Added transliterationCounts: ${countsAdded}`);
 
+// ── 15. Final transliteration sort by word count ────────────────────────────
+// Re-sort transliterations using transliterationCounts (from words.json) as
+// the primary signal. This catches cases where TLA corpus frequency (step 13)
+// missed MdC vs Unicode equivalents (e.g. 'a' vs 'ꜥ').
+let resorted = 0;
+for (const g of glyphs) {
+  if (g.transliteration.length <= 1) continue;
+  const counts = g.transliterationCounts ?? {};
+  // Only re-sort if we have count data
+  if (Object.keys(counts).length === 0) continue;
+
+  const sorted = [...g.transliteration].sort((a, b) => {
+    return (counts[b] ?? 0) - (counts[a] ?? 0);
+  });
+
+  if (JSON.stringify(sorted) !== JSON.stringify(g.transliteration)) {
+    g.transliteration = sorted;
+    resorted++;
+  }
+}
+console.log(`  Re-sorted by word count: ${resorted}`);
+
 // ── Write output ────────────────────────────────────────────────────────────
 fs.writeFileSync(GLYPHS_PATH, JSON.stringify(glyphs, null, 2));
 console.log(`\nWrote ${glyphs.length} glyphs to ${GLYPHS_PATH}`);
