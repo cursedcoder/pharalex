@@ -544,9 +544,11 @@ for (const g of glyphs) {
 }
 console.log(`  Linked independent-number variants to parents: ${variantLinks}`);
 
-// ── 13. Transliteration frequency ranking (TLA corpus) ──────────────────────
+// ── 13. Transliteration frequency ranking (TLA + PhilologEg corpora) ────────
 let ranked = 0;
 const translitFreq = new Map<string, number>();
+
+// TLA sentence corpora (Unicode transliterations)
 for (const tlaFile of TLA_FILES) {
   if (!fs.existsSync(tlaFile)) continue;
   for (const line of fs.readFileSync(tlaFile, "utf-8").split("\n")) {
@@ -560,6 +562,32 @@ for (const tlaFile of TLA_FILES) {
         }
       }
     } catch { /* skip malformed */ }
+  }
+}
+
+// PhilologEg texts (MdC transliterations)
+const PHILOLOGEG_DIR = path.join(process.cwd(), "lib/data/philologeg");
+if (fs.existsSync(PHILOLOGEG_DIR)) {
+  for (const file of fs.readdirSync(PHILOLOGEG_DIR).filter((f) => f.endsWith(".txt"))) {
+    const content = fs.readFileSync(path.join(PHILOLOGEG_DIR, file), "utf-8");
+    const parts = content.split("###");
+    if (parts.length < 3) continue;
+
+    let prevWasSemicolon = false;
+    for (const line of parts[2].split("\n")) {
+      const stripped = line.trim();
+      if (!stripped) { prevWasSemicolon = false; continue; }
+      if (stripped === ";") { prevWasSemicolon = true; continue; }
+      if (prevWasSemicolon) { prevWasSemicolon = false; continue; }
+      prevWasSemicolon = false;
+
+      let clean = stripped.replace(/<note>.*?<\/note>/g, "").replace(/<[^>]*>/g, "").trim();
+      for (let tok of clean.split(/\s+/)) {
+        tok = tok.replace(/^[.,;:!?"]+/, "").replace(/[.,;:!?"]+$/, "").replace(/^=/, "");
+        if (!tok || /^\d+$/.test(tok) || tok === "[...]") continue;
+        translitFreq.set(tok, (translitFreq.get(tok) || 0) + 1);
+      }
+    }
   }
 }
 
@@ -634,19 +662,57 @@ if (fs.existsSync(WORDS_PATH)) {
 }
 console.log(`  Added transliterationCounts: ${countsAdded}`);
 
-// ── 15. Final transliteration sort by word count ────────────────────────────
-// Re-sort transliterations using transliterationCounts (from words.json) as
-// the primary signal. This catches cases where TLA corpus frequency (step 13)
-// missed MdC vs Unicode equivalents (e.g. 'a' vs 'ꜥ').
+// ── 15. Final dedup + sort by combined corpus + word count ──────────────────
+// The earlier dedup (step 8) misses lowercase MdC like 'a' vs 'ꜥ' because
+// looksLikeMdC() doesn't catch single lowercase MdC chars. Fix here by
+// deduping via a broader key, then sorting by corpus + word count.
+const BROAD_MDC: Record<string, string> = { a: "ꜥ", A: "ꜣ", H: "ḥ", x: "ḫ", X: "ẖ", S: "š", T: "ṯ", D: "ḏ" };
+function broadKey(s: string): string {
+  let r = "";
+  for (const ch of s) r += BROAD_MDC[ch] ?? ch;
+  // Normalize German j → i, and i͗ (i + combining stroke) → i
+  r = r.replace(/j/g, "i").replace(/i\u0357/g, "i").replace(/i͗/g, "i");
+  return r.replace(/\./g, "").toLowerCase();
+}
+
 let resorted = 0;
+let dedupFixed = 0;
 for (const g of glyphs) {
   if (g.transliteration.length <= 1) continue;
-  const counts = g.transliterationCounts ?? {};
-  // Only re-sort if we have count data
-  if (Object.keys(counts).length === 0) continue;
+  const wordCounts = g.transliterationCounts ?? {};
 
-  const sorted = [...g.transliteration].sort((a, b) => {
-    return (counts[b] ?? 0) - (counts[a] ?? 0);
+  // Normalize German j→i for standalone readings, then dedup
+  const normalized = g.transliteration.map((t: string) => {
+    // Only replace standalone 'j' or 'j' as the yod consonant (not in compounds like 'jmn')
+    // j and i are the same consonant; i is the English convention
+    if (t === "j") return "i";
+    if (t === "i͗") return "i"; // i + combining stroke variant
+    return t;
+  });
+
+  // Dedup by broad key, keeping the preferred form
+  const seen = new Map<string, string>();
+  for (const t of normalized) {
+    const key = broadKey(t);
+    if (!seen.has(key)) {
+      seen.set(key, t);
+    } else {
+      const existing = seen.get(key)!;
+      // Prefer Unicode Egyptological over MdC ASCII
+      if (/[ꜣꜥḥḫẖšṯḏ]/.test(t) && !/[ꜣꜥḥḫẖšṯḏ]/.test(existing)) {
+        seen.set(key, t);
+      }
+      dedupFixed++;
+    }
+  }
+  const deduped = [...seen.values()];
+
+  // Sort by corpus frequency (primary) + word count (tiebreaker)
+  const sorted = deduped.sort((a, b) => {
+    const freqA = (translitFreq.get(a) || 0) + (translitFreq.get(a.toLowerCase()) || 0);
+    const freqB = (translitFreq.get(b) || 0) + (translitFreq.get(b.toLowerCase()) || 0);
+    if (freqB !== freqA) return freqB - freqA;
+    return (wordCounts[b] ?? 0) - (wordCounts[a] ?? 0);
   });
 
   if (JSON.stringify(sorted) !== JSON.stringify(g.transliteration)) {
@@ -654,7 +720,8 @@ for (const g of glyphs) {
     resorted++;
   }
 }
-console.log(`  Re-sorted by word count: ${resorted}`);
+console.log(`  Dedup fixed (MdC/Unicode pairs): ${dedupFixed}`);
+console.log(`  Re-sorted by corpus + word count: ${resorted}`);
 
 // ── Write output ────────────────────────────────────────────────────────────
 fs.writeFileSync(GLYPHS_PATH, JSON.stringify(glyphs, null, 2));
