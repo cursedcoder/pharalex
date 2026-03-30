@@ -4096,18 +4096,6 @@
     "signName": "man dancing with arms to the back"
   },
   {
-    "code": "A32H",
-    "unicode": "",
-    "category": "A",
-    "categoryName": "Man and his occupations",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "man dancing with arms to the back"
-  },
-  {
     "code": "A32I",
     "unicode": "𓗠",
     "category": "A",
@@ -4631,8 +4619,8 @@
       }
     ],
     "transliteration": [
-      "afti",
-      "ꜥfty"
+      "ꜥfty",
+      "afti"
     ],
     "related": [
       "A1",
@@ -4769,8 +4757,8 @@
       }
     ],
     "transliteration": [
-      "afti",
-      "ꜥfty"
+      "ꜥfty",
+      "afti"
     ],
     "related": [
       "A1",
@@ -10061,17 +10049,6 @@
     ]
   },
   {
-    "code": "A109H",
-    "unicode": "",
-    "category": "A",
-    "categoryName": "Man and his occupations",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus"
-  },
-  {
     "code": "A110",
     "unicode": "",
     "category": "A",
@@ -14519,17 +14496,6 @@
       "A13",
       "T14"
     ]
-  },
-  {
-    "code": "A216H",
-    "unicode": "",
-    "category": "A",
-    "categoryName": "Man and his occupations",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus"
   },
   {
     "code": "A218",
@@ -35146,18 +35112,6 @@
     ]
   },
   {
-    "code": "C9H",
-    "unicode": "",
-    "category": "C",
-    "categoryName": "Anthropomorphic deities",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "goddess with sun and horns"
-  },
-  {
     "code": "C9I",
     "unicode": "",
     "category": "C",
@@ -37412,18 +37366,6 @@
       "T3",
       "C21A"
     ]
-  },
-  {
-    "code": "C22H",
-    "unicode": "",
-    "category": "C",
-    "categoryName": "Anthropomorphic deities",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "god with head of falcon and moon disk"
   },
   {
     "code": "C22I",
@@ -85518,8 +85460,8 @@
       }
     ],
     "transliteration": [
-      "id",
-      "jdt"
+      "jdt",
+      "id"
     ],
     "related": [
       "F1",
@@ -115292,35 +115234,6 @@
     "signName": "pool with lotus flowers"
   },
   {
-    "code": "M8H",
-    "unicode": "",
-    "category": "M",
-    "categoryName": "Trees and plants",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "pool with lotus flowers"
-  },
-  {
-    "code": "M8I",
-    "unicode": "",
-    "category": "M",
-    "categoryName": "Trees and plants",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "tags": [
-      "pool",
-      "flower",
-      "papyrus or lily"
-    ],
-    "signName": "pool with lotus flowers"
-  },
-  {
     "code": "M8J",
     "unicode": "",
     "category": "M",
@@ -127478,18 +127391,6 @@
     "signName": "irrigation canal system"
   },
   {
-    "code": "N24H",
-    "unicode": "",
-    "category": "N",
-    "categoryName": "Sky, earth, water",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "irrigation canal system"
-  },
-  {
     "code": "N25",
     "unicode": "𓈉",
     "category": "N",
@@ -128089,18 +127990,6 @@
     "tags": [
       "path"
     ],
-    "signName": "road with shrubs"
-  },
-  {
-    "code": "N31H",
-    "unicode": "",
-    "category": "N",
-    "categoryName": "Sky, earth, water",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
     "signName": "road with shrubs"
   },
   {
@@ -128879,8 +128768,8 @@
     ],
     "transliteration": [
       "ḥm",
-      "bjꜣ",
       "jdt",
+      "bjꜣ",
       "pḥww",
       "id"
     ],
@@ -145399,18 +145288,6 @@
     "signName": "ship under sail"
   },
   {
-    "code": "P2H",
-    "unicode": "",
-    "category": "P",
-    "categoryName": "Ships and parts of ships",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "ship under sail"
-  },
-  {
     "code": "P2J",
     "unicode": "",
     "category": "P",
@@ -146086,18 +145963,6 @@
       "mast",
       "with sail"
     ],
-    "signName": "sail"
-  },
-  {
-    "code": "P5H",
-    "unicode": "",
-    "category": "P",
-    "categoryName": "Ships and parts of ships",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
     "signName": "sail"
   },
   {
@@ -152722,18 +152587,6 @@
       "N33",
       "W14"
     ]
-  },
-  {
-    "code": "R1H",
-    "unicode": "",
-    "category": "R",
-    "categoryName": "Temple furniture and sacred emblems",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "high table with offerings"
   },
   {
     "code": "R2",
@@ -169872,18 +169725,6 @@
     "signName": "bird-trap"
   },
   {
-    "code": "T26H",
-    "unicode": "",
-    "category": "T",
-    "categoryName": "Warfare, hunting, butchery",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "bird-trap"
-  },
-  {
     "code": "T27",
     "unicode": "𓌧",
     "category": "T",
@@ -176078,18 +175919,6 @@
     "signName": "drill for stone"
   },
   {
-    "code": "U24H",
-    "unicode": "",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "drill for stone"
-  },
-  {
     "code": "U24I",
     "unicode": "",
     "category": "U",
@@ -177577,18 +177406,6 @@
     "contains": [
       "Q1"
     ]
-  },
-  {
-    "code": "U39H",
-    "unicode": "",
-    "category": "U",
-    "categoryName": "Agriculture, crafts, and professions",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "post of balance"
   },
   {
     "code": "U39J",
@@ -182309,23 +182126,6 @@
     "signName": "hobble"
   },
   {
-    "code": "V20H",
-    "unicode": "𓎎",
-    "category": "V",
-    "categoryName": "Rope, fibre, baskets, bags, etc.",
-    "description": "Egyptian numeral sign representing the number 90.",
-    "meanings": [
-      {
-        "text": "Numeral: 90",
-        "type": "logogram"
-      }
-    ],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
-    "signName": "hobble"
-  },
-  {
     "code": "V20I",
     "unicode": "𓎏",
     "category": "V",
@@ -183637,18 +183437,6 @@
     "tags": [
       "receptacle"
     ],
-    "signName": "receptacle"
-  },
-  {
-    "code": "V36H",
-    "unicode": "",
-    "category": "V",
-    "categoryName": "Rope, fibre, baskets, bags, etc.",
-    "description": "",
-    "meanings": [],
-    "transliteration": [],
-    "related": [],
-    "source": "aegyptus",
     "signName": "receptacle"
   },
   {

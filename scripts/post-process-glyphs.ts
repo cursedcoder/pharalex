@@ -55,8 +55,37 @@ function normalizeForDedup(s: string): string {
 }
 
 console.log("Post-processing glyphs.json...");
-const glyphs: Glyph[] = JSON.parse(fs.readFileSync(GLYPHS_PATH, "utf-8"));
+let glyphs: Glyph[] = JSON.parse(fs.readFileSync(GLYPHS_PATH, "utf-8"));
 console.log(`  Loaded ${glyphs.length} glyphs`);
+
+// ── Remove aegyptus case-duplicate stubs ────────────────────────────────────
+// Some aegyptus-sourced codes differ only by case from another entry
+// (e.g. A32H vs A32h). The aegyptus entries are empty stubs with no unicode,
+// meanings, or transliterations. Remove them so the real entry wins
+// in the case-insensitive index lookup.
+{
+  // Build map: lowercased code → list of glyphs sharing that key
+  const byLower = new Map<string, Glyph[]>();
+  for (const g of glyphs) {
+    const key = g.code.toLowerCase();
+    const arr = byLower.get(key) ?? [];
+    arr.push(g);
+    byLower.set(key, arr);
+  }
+  const before = glyphs.length;
+  glyphs = glyphs.filter((g) => {
+    if (g.source !== "aegyptus") return true;
+    const siblings = byLower.get(g.code.toLowerCase())!;
+    // Keep if this is the only entry for this lowercased code
+    if (siblings.length <= 1) return true;
+    // Remove if a non-aegyptus sibling exists with a different code (case dup)
+    const hasRealSibling = siblings.some(
+      (s) => s !== g && s.source !== "aegyptus" && s.code !== g.code
+    );
+    return !hasRealSibling;
+  });
+  console.log(`  Removed aegyptus case-duplicate stubs: ${before - glyphs.length}`);
+}
 
 // ── 0. Normalize Ff/J code prefixes ─────────────────────────────────────────
 // Ff codes (JSesh font-specific) are variants of F codes: Ff4 → F4A (if F4A free)

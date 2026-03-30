@@ -37,11 +37,6 @@ describe("glyphSvgSrc", () => {
     expect(glyphSvgSrc("A1")).toBe("/glyphs/A1.svg");
   });
 
-  it("applies filename overrides", () => {
-    expect(glyphSvgSrc("P2H")).toBe("/glyphs/P2h.svg");
-    expect(glyphSvgSrc("A32H")).toBe("/glyphs/A32h.svg");
-  });
-
   it("encodes special characters", () => {
     expect(glyphSvgSrc("U+13000")).toBe("/glyphs/U%2B13000.svg");
   });
