@@ -33,7 +33,9 @@ async function loadJsonl(): Promise<string> {
   const fs: typeof import("fs") = await import(/* webpackIgnore: true */ `${nodePrefix}fs`);
   const path: typeof import("path") = await import(/* webpackIgnore: true */ `${nodePrefix}path`);
   const cwd: () => string = (process as NodeJS.Process).cwd.bind(process);
-  return fs.readFileSync(path.join(cwd(), "public", "data", "wiktionary-egyptian.jsonl"), "utf-8");
+  const filePath = path.join(cwd(), "public", "data", "wiktionary-egyptian.jsonl");
+  if (!fs.existsSync(filePath)) return "";
+  return fs.readFileSync(filePath, "utf-8");
 }
 
 async function loadWiktionary(): Promise<Map<string, WiktionaryEntry[]>> {
@@ -41,7 +43,9 @@ async function loadWiktionary(): Promise<Map<string, WiktionaryEntry[]>> {
 
   const p = (async () => {
     const raw = await loadJsonl();
-    const lines = raw.trim().split("\n");
+    const trimmed = raw.trim();
+    if (!trimmed) return new Map<string, WiktionaryEntry[]>();
+    const lines = trimmed.split("\n");
 
   const byWord = new Map<string, WiktionaryEntry[]>();
   for (const line of lines) {
