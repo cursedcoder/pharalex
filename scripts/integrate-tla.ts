@@ -168,9 +168,26 @@ function hieroglyphsToGardiner(
 console.log("Integrating TLA lemmata...");
 console.log(`  CSV: ${CSV_PATH}`);
 
-// Load existing data
-const words = JSON.parse(fs.readFileSync(WORDS_PATH, "utf-8"));
-console.log(`  Loaded ${words.length} existing words`);
+// Load existing data, strip TLA artefacts so integration is idempotent
+const rawWords = JSON.parse(fs.readFileSync(WORDS_PATH, "utf-8"));
+console.log(`  Loaded ${rawWords.length} existing words`);
+
+// Remove previously-added TLA entries (source: "tla") — they'll be re-added
+const words = rawWords.filter((w: Record<string, unknown>) => w.source !== "tla");
+const tlaRemoved = rawWords.length - words.length;
+console.log(`  Stripped ${tlaRemoved} previous TLA entries`);
+
+// Clear TLA-enriched fields from Vygus entries so they can be re-matched correctly
+let fieldsCleared = 0;
+for (const w of words) {
+  if (w.tlaId || w.wikidataId) {
+    delete w.tlaId;
+    delete w.wikidataId;
+    delete w.gender;
+    fieldsCleared++;
+  }
+}
+console.log(`  Cleared TLA fields from ${fieldsCleared} Vygus entries`);
 
 const unicodeToGardiner = buildUnicodeToGardiner(GLYPHS_PATH);
 console.log(`  Built Unicode→Gardiner map: ${unicodeToGardiner.size} glyphs`);
@@ -240,6 +257,30 @@ function isSenseCovered(existingEntries: number[], tlaSense: string): boolean {
     if (tlaKeywords.size > 0 && overlap / tlaKeywords.size >= 0.5) return true;
   }
   return false;
+}
+
+/** Stopwords excluded from word-level overlap checks. */
+const STOP_WORDS = new Set([
+  "a", "an", "the", "of", "to", "in", "for", "on", "at", "by", "or", "and",
+  "be", "is", "it", "do", "so", "up", "out", "etc", "something", "someone",
+]);
+
+/**
+ * Looser overlap check for enrichment: returns true if any meaningful word
+ * from the TLA sense appears in the existing entry's translation.
+ * More permissive than isSenseCovered — used for tlaId/wikidataId tagging
+ * where false negatives (missing links) are worse than false positives.
+ */
+function hasMeaningOverlap(entryIdx: number, tlaSense: string): boolean {
+  const entryNorm = normSense(words[entryIdx].translation);
+  const tlaNorm = normSense(tlaSense);
+  if (entryNorm === tlaNorm) return true;
+
+  const entryWords = new Set(entryNorm.split(/\s+/).filter((w) => !STOP_WORDS.has(w) && w.length > 2));
+  const tlaWords = tlaNorm.split(/\s+/).filter((w) => !STOP_WORDS.has(w) && w.length > 2);
+  if (tlaWords.length === 0) return false;
+
+  return tlaWords.some((w) => entryWords.has(w));
 }
 
 /** Build a TLA word entry. */
@@ -323,21 +364,23 @@ for (let i = 1; i < lines.length; i++) {
   const existing = translitIndex.get(mdcLower);
 
   if (existing && existing.length > 0) {
-    // Enrich existing entries with metadata
+    // Enrich existing entries with metadata — only when meaning overlaps,
+    // since different words can share a transliteration (homographs).
     for (const idx of existing) {
       const w = words[idx];
+      const overlaps = hasMeaningOverlap(idx, senses);
       let changed = false;
 
-      if (genderTag && !w.gender) {
+      if (genderTag && !w.gender && overlaps) {
         w.gender = genderTag;
         genderAdded++;
         changed = true;
       }
-      if (tlaId && !w.tlaId) {
+      if (tlaId && !w.tlaId && overlaps) {
         w.tlaId = tlaId;
         changed = true;
       }
-      if (wikidataId && !w.wikidataId) {
+      if (wikidataId && !w.wikidataId && overlaps) {
         w.wikidataId = wikidataId;
         changed = true;
       }
