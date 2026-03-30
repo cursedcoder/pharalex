@@ -149,9 +149,9 @@ export default async function GlyphPage({ params }: PageProps) {
     for (const ch of s) r += UNICODE_TO_MDC[ch] ?? ch;
     return r;
   }
-  const dictionary = new Map<string, ReturnType<typeof getWiktionaryEntries>>();
+  const dictionary = new Map<string, Awaited<ReturnType<typeof getWiktionaryEntries>>>();
   for (const t of glyph.transliteration) {
-    const entries = getWiktionaryEntries(t);
+    const entries = await getWiktionaryEntries(t);
     if (entries.length > 0) {
       dictionary.set(t, entries);
     }

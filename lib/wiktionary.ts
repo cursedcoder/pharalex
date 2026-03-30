@@ -1,5 +1,4 @@
-import * as fs from "fs";
-import * as path from "path";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export interface WiktionaryEntry {
   word: string;
@@ -7,13 +6,42 @@ export interface WiktionaryEntry {
   glosses: string[];
 }
 
-let _cache: Map<string, WiktionaryEntry[]> | null = null;
+let _cacheP: Promise<Map<string, WiktionaryEntry[]>> | null = null;
 
-function loadWiktionary(): Map<string, WiktionaryEntry[]> {
-  if (_cache && process.env.NODE_ENV === "production") return _cache;
+async function loadJsonl(): Promise<string> {
+  let cfContext: Awaited<ReturnType<typeof getCloudflareContext>> | null = null;
+  try {
+    cfContext = await getCloudflareContext({ async: true });
+  } catch {
+    // Not in CF Workers context
+  }
 
-  const filePath = path.join(process.cwd(), "lib/data/wiktionary-egyptian.jsonl");
-  const lines = fs.readFileSync(filePath, "utf-8").trim().split("\n");
+  if (cfContext?.env?.ASSETS) {
+    try {
+      const res = await cfContext.env.ASSETS.fetch(
+        new Request("http://assets.local/data/wiktionary-egyptian.jsonl")
+      );
+      if (!res.ok) throw new Error(`CF Assets fetch failed: ${res.status}`);
+      return res.text();
+    } catch (e) {
+      if (process.env.NODE_ENV === "production") throw e;
+    }
+  }
+
+  // Filesystem fallback — only runs during `next build` SSG and `next dev`
+  const nodePrefix = "node" + ":";
+  const fs: typeof import("fs") = await import(/* webpackIgnore: true */ `${nodePrefix}fs`);
+  const path: typeof import("path") = await import(/* webpackIgnore: true */ `${nodePrefix}path`);
+  const cwd: () => string = (process as NodeJS.Process).cwd.bind(process);
+  return fs.readFileSync(path.join(cwd(), "public", "data", "wiktionary-egyptian.jsonl"), "utf-8");
+}
+
+async function loadWiktionary(): Promise<Map<string, WiktionaryEntry[]>> {
+  if (_cacheP && process.env.NODE_ENV === "production") return _cacheP;
+
+  const p = (async () => {
+    const raw = await loadJsonl();
+    const lines = raw.trim().split("\n");
 
   const byWord = new Map<string, WiktionaryEntry[]>();
   for (const line of lines) {
@@ -92,11 +120,14 @@ function loadWiktionary(): Map<string, WiktionaryEntry[]> {
     byWord.get(word)!.push({ word, pos, glosses: deduped });
   }
 
-  _cache = byWord;
-  return byWord;
+    return byWord;
+  })();
+
+  _cacheP = p.catch((err) => { _cacheP = null; throw err; });
+  return _cacheP;
 }
 
 /** Look up Wiktionary entries for a Unicode transliteration. */
-export function getWiktionaryEntries(translit: string): WiktionaryEntry[] {
-  return loadWiktionary().get(translit) ?? [];
+export async function getWiktionaryEntries(translit: string): Promise<WiktionaryEntry[]> {
+  return (await loadWiktionary()).get(translit) ?? [];
 }
