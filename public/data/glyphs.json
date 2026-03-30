@@ -35688,7 +35688,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "Variant of C11 (god with arms supporting (the sky)",
+    "signName": "",
     "contains": [
       "M4",
       "M4A",
@@ -35712,7 +35712,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "Variant of C11 (god with arms supporting (the sky)",
+    "signName": "",
     "contains": [
       "M4",
       "M4A",
@@ -35736,7 +35736,7 @@
       "heh",
       "holding something"
     ],
-    "signName": "Variant of C11 (god with arms supporting (the sky)",
+    "signName": "",
     "contains": [
       "M4",
       "W3"
@@ -35778,7 +35778,7 @@
       "holding nothing",
       "heh"
     ],
-    "signName": "Variant of C11 (god with arms supporting (the sky)",
+    "signName": "",
     "contains": [
       "M4",
       "S34"
@@ -35801,7 +35801,7 @@
       "heh",
       "holding nothing"
     ],
-    "signName": "Variant of C11 (god with arms supporting (the sky)",
+    "signName": "",
     "contains": [
       "H6"
     ]
@@ -83119,7 +83119,7 @@
       "bovid",
       "horn"
     ],
-    "signName": "A vase on its side, with liquid issuing from it (W",
+    "signName": "A vase on its side, with liquid issuing from it (W54)",
     "transliterationCounts": {
       "abw": 18
     }
@@ -91144,7 +91144,7 @@
     "tags": [
       "falcon"
     ],
-    "signName": "A falcon (G5) with the sun, encircled by a cobra (",
+    "signName": "A falcon (G5) with the sun",
     "contains": [
       "N6",
       "G5"
@@ -153713,7 +153713,7 @@
     "tags": [
       "netjer-sign"
     ],
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8",
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)",
     "transliterationCounts": {
       "bd": 10
     },
@@ -153756,7 +153756,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8",
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)",
     "contains": [
       "R8",
       "T28",
@@ -153790,7 +153790,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R10G",
@@ -153819,7 +153819,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R10A",
@@ -153842,7 +153842,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R10B",
@@ -153858,7 +153858,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": ""
   },
   {
     "code": "R10C",
@@ -153874,7 +153874,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": ""
   },
   {
     "code": "R10F",
@@ -153890,7 +153890,7 @@
       "netjer-sign",
       "sign combination"
     ],
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": ""
   },
   {
     "code": "R10H",
@@ -153902,7 +153902,7 @@
     "transliteration": [],
     "related": [],
     "source": "aegyptus",
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": ""
   },
   {
     "code": "R10I",
@@ -153921,7 +153921,7 @@
     ],
     "related": [],
     "source": "aegyptus",
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R11",
@@ -158049,7 +158049,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R10K",
@@ -158074,7 +158074,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R10L",
@@ -158099,7 +158099,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R10M",
@@ -158124,7 +158124,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R15C",
@@ -158199,7 +158199,7 @@
       "R1I"
     ],
     "source": "unicode",
-    "signName": "A cloth wound on a pole, an emblem of divinity (R8"
+    "signName": "A cloth wound on a pole, an emblem of divinity (R8)"
   },
   {
     "code": "R10E",
@@ -169848,7 +169848,7 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": "A knife with a rounded blade and rounded handle (T",
+    "signName": "A knife with a rounded blade and rounded handle (T30)",
     "transliterationCounts": {
       "nmt": 3
     }
@@ -169883,7 +169883,7 @@
     "transliterationCounts": {
       "nmt": 1
     },
-    "signName": "A knife with a rounded blade and rounded handle (T"
+    "signName": "A knife with a rounded blade and rounded handle (T30)"
   },
   {
     "code": "T29A",
@@ -169899,7 +169899,7 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": "A knife with a rounded blade and rounded handle (T"
+    "signName": ""
   },
   {
     "code": "T29B",
@@ -169915,7 +169915,7 @@
       "knife, dagger, sword",
       "butcher's block"
     ],
-    "signName": "A knife with a rounded blade and rounded handle (T"
+    "signName": ""
   },
   {
     "code": "T30",

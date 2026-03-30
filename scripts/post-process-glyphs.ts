@@ -476,7 +476,9 @@ console.log(`  Inherited signNames: ${signNamesInherited}`);
 let signNamesTruncated = 0;
 for (const g of glyphs) {
   if (!g.signName) continue;
-  if (/\b(with|on|of|and|from|in)\s*$/.test(g.signName)) {
+  // Detect truncation: dangling preposition, or unclosed parenthesis
+  const hasUnclosedParen = (g.signName.match(/\(/g) || []).length > (g.signName.match(/\)/g) || []).length;
+  if (/\b(with|on|of|and|from|in)\s*$/.test(g.signName) || hasUnclosedParen) {
     if (g.description && g.description.length > g.signName.length) {
       let name = g.description.slice(0, 60);
       for (const cut of [",", ";", ".", " —"]) {
